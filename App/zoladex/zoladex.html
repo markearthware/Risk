@@ -1,28 +1,26 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 		<title>zoladex</title>
 	</head>
 	<body>
-		<h1>Welcome to JavaScriptMVC 3.2!</h1>
-		<ul>
-			<li>Steal plugins and files in <i>zoladex/zoladex.js</i>.</li>
-			<li>Change to production mode by changing <i>steal.js</i> to <i>steal.production.js</i> in this file.</li>
-		</ul>
-		<hr>
-		<b>Here are some links to get you started:</b>
-		<ul>
-			<li><a href="http://javascriptmvc.com/docs.html#!getstarted">Getting Started Guide</a></li>
-			<li><a href="http://javascriptmvc.com/docs.html#!organizing">Organizing Your App</a></li>
-			<li><a href="http://javascriptmvc.com/docs.html#!services">Ajax Service Guidelines</a></li>
-			<li><a href="http://javascriptmvc.com/docs.html#!examples">Example Apps</a></li>
-		</ul>
-		<hr>
-		<b>Join the community:</b>
-		<ul>
-			<li>Follow <a href="http://twitter.com/javascriptmvc">@javascriptmvc</a> on Twitter</li>
-			<li>Join <a href="http://forum.javascriptmvc.com/">the forums</a></li>
-		</ul>
+		<div data-role="page"> 
+			<div data-role="header"><h1>Header</h1></div> 
+			<div data-role="content">Hello World</div> 
+			<div data-role="footer" data-id="foo1" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="footer-persist-a.html" class="ui-btn-active ui-state-persist">Friends</a></li>
+						<li><a href="footer-persist-b.html">Albums</a></li>
+						<li><a href="footer-persist-c.html">Emails</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> 
 		<script type='text/javascript' src='../steal/steal.js?zoladex'></script>
 	</body>
 </html>
