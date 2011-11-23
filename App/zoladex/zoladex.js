@@ -23,12 +23,14 @@ steal(
             $.mobile.touchOverflowEnabled = true;
         });
 
-        $(document).bind('pageload', function (e, args) {
+        $(document).bind('pagebeforecreate', function (e, args) {
+         
+            var folder = '';
 
-            var urlComponents = args.dataUrl.split('/');
-
-            var folder = urlComponents[urlComponents.length - 2];
+            if ($('#HcpPage').length > 0) {
+                folder = 'hcp';
+            }
 
             $('.tabBarContainer').zoladex_tab_bar({ folder: folder });
-        });
+        });     
     }

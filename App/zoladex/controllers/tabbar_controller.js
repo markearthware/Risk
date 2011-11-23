@@ -8,8 +8,6 @@
             init: function () {
 
                 this.element.html(this.view());
-
-                $('.tabBarContainer').trigger('create');
                 
                 switch (this.options.folder) {
                     case "hcp":
