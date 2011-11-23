@@ -15,15 +15,31 @@
                         break;
                     case 'calendar':
                         this.selectCalendar();
+                        break;
+                    case 'progress':
+                        this.selectProgress();
+                        break;
+                    case 'support':
+                        this.selectSupport();
+                        break; 
                     default:
                         //select nothing
                 }
             },
+            makeActive: function (element) {
+                element.addClass('ui-btn-active');
+            },
             selectHcp: function () {
-                $('.hcpTab').addClass('ui-btn-active');
+                this.makeActive($('.hcpTab'));
             },
             selectCalendar: function () {
-                $('.calendarTab').addClass('ui-btn-active');
+                this.makeActive($('.calendarTab'));
+            },
+            selectProgress: function () {
+                this.makeActive($('.progressTab'));
+            },
+            selectSupport: function () {
+                this.makeActive($('.supportTab'));
             }
         });
     });

@@ -15,7 +15,6 @@ steal(
 
     }).then('./lib/jQueryMobile/jquery.mobile-1.0.js')//steal jquery mobile css);
 
-
     function configureJqueryMobile() {
 
         $(document).bind("mobileinit", function () {
@@ -25,14 +24,31 @@ steal(
 
         $(document).bind('pagebeforecreate', function (e, args) {
 
-            var folder = '';
-            if ($(e.target).filter('#HcpPage').length > 0) {
-                folder = 'hcp';
-            }
-            if ($(e.target).filter('#CalendarPage').length > 0) {
-                folder = 'calendar';
-            }
-            $('.tabBarContainer').zoladex_tab_bar('destroy');
-            $('.tabBarContainer').zoladex_tab_bar({ folder: folder });
-        });     
+            bindTabBar(e);
+        });
+    }
+
+    function bindTabBar(e) {
+        
+        var folder = '';
+
+        if ($(e.target).filter('.hcpPage').length > 0) {
+            folder = 'hcp';
+        }
+
+        if ($(e.target).filter('#.calendarPage').length > 0) {
+            folder = 'calendar';
+        }
+
+        if ($(e.target).filter('#.progressPage').length > 0) {
+            folder = 'progress';
+        }
+
+        if ($(e.target).filter('#.supportPage').length > 0) {
+            folder = 'support';
+        }
+
+        $('.tabBarContainer').zoladex_tab_bar('destroy');
+
+        $('.tabBarContainer').zoladex_tab_bar({ folder: folder });
     }
