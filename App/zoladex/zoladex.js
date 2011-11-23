@@ -57,7 +57,6 @@ steal(
     }
 
     function bindPageControllers(e) {
-
         if ($(e.target).filter('#ProfessionalListPage').length > 0) {
             $('#ProfessionalListPage').zoladex_pro_list();
         }    
