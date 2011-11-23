@@ -8,17 +8,22 @@
             init: function () {
 
                 this.element.html(this.view());
-                
+
                 switch (this.options.folder) {
                     case "hcp":
                         this.selectHcp();
                         break;
+                    case 'calendar':
+                        this.selectCalendar();
                     default:
                         //select nothing
                 }
             },
             selectHcp: function () {
                 $('.hcpTab').addClass('ui-btn-active');
+            },
+            selectCalendar: function () {
+                $('.calendarTab').addClass('ui-btn-active');
             }
         });
     });

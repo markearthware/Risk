@@ -24,13 +24,15 @@ steal(
         });
 
         $(document).bind('pagebeforecreate', function (e, args) {
-         
-            var folder = '';
 
-            if ($('#HcpPage').length > 0) {
+            var folder = '';
+            if ($(e.target).filter('#HcpPage').length > 0) {
                 folder = 'hcp';
             }
-
+            if ($(e.target).filter('#CalendarPage').length > 0) {
+                folder = 'calendar';
+            }
+            $('.tabBarContainer').zoladex_tab_bar('destroy');
             $('.tabBarContainer').zoladex_tab_bar({ folder: folder });
         });     
     }
