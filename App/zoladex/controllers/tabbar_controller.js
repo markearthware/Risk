@@ -6,8 +6,21 @@
     .then('../views/tab_bar/init.ejs', function ($) {
         $.Controller('Zoladex.Controllers.TabBar', {
             init: function () {
+
                 this.element.html(this.view());
-                $('#footer').trigger('create');
+
+                $('.tabBarContainer').trigger('create');
+                
+                switch (this.options.folder) {
+                    case "hcp":
+                        this.selectHcp();
+                        break;
+                    default:
+                        //select nothing
+                }
+            },
+            selectHcp: function () {
+                $('.hcpTab').addClass('ui-btn-active');
             }
         });
     });
