@@ -4,15 +4,18 @@ steal(
     './models/models.js', // steals all your models
     './fixtures/fixtures.js', // sets up fixtures for your models
     './controllers/intro_controller',
-    function() { // configure your application
-        
+     './controllers/tabbar_controller',
+    function () { // configure your application
+
         steal.dev.log('jmvc init');
 
         configureJqueryMobile();
-        
+
         $('#page').zoladex_intro();
-        
-    }).then('./lib/jQueryMobile/jquery.mobile-1.0.js' )//steal jquery mobile css);
+
+        $('#footer').zoladex_tab_bar();
+
+    }).then('./lib/jQueryMobile/jquery.mobile-1.0.js')//steal jquery mobile css);
 
 
     function configureJqueryMobile() {
@@ -22,11 +25,7 @@ steal(
             $.mobile.touchOverflowEnabled = true;
         });
 
-        $('#page').live('pagebeforecreate', function () {
-            steal.dev.log('pagebeforecreate');
-        });
-
-        $('#page').live('pagecreate', function () {
-            steal.dev.log('pagecreate');
+        $(document).bind('pageload', function () {
+            $('#footer').zoladex_tab_bar();
         });
     }
