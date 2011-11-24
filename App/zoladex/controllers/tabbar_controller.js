@@ -9,7 +9,7 @@
 
                 this.element.html(this.view());
 
-                switch (this.options.folder) {
+                switch (this.options.page) {
                     case "hcp":
                         this.selectHcp();
                         break;

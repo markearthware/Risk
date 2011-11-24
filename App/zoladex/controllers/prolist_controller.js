@@ -6,9 +6,7 @@
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.ProList', {
-            init: function () {
-                localStorageDB.init(function () {
-                    
+            init: function () {               
                     //find the list
                     for (var i = 0; i < localStorageDB.hcps.length; i++) {
                         alert(localStorageDB.hcps[i].Title);
