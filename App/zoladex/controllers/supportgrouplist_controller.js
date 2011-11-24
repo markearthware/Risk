@@ -4,9 +4,9 @@
     'jquery/controller/view'
     )
     .then(function ($) {
-        $.Controller('Zoladex.Controllers.ProList', {
+        $.Controller('Zoladex.Controllers.SupportGroupList', {
             init: function () {
-                alert('todo: load pro data from local db');
+                alert('todo: load support group data from local db');
             }
         });
     });

@@ -3,9 +3,13 @@ steal(
     './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css   
     './models/models.js', // steals all your models
     './fixtures/fixtures.js', // sets up fixtures for your models
+    // load controllers
     './controllers/intro_controller',
      './controllers/tabbar_controller',
      './controllers/prolist_controller',
+     './controllers/practicelist_controller',
+    './controllers/supportgrouplist_controller',
+    
     function () { // configure your application
 
         steal.dev.log('jmvc is initilasing...');
@@ -65,6 +69,16 @@ steal(
         
         if ($(e.target).filter('#ProfessionalListPage').length > 0) {
             $('#ProfessionalListPage').zoladex_pro_list();
+            return;
+        }
+        
+        if ($(e.target).filter('#PracticeListPage').length > 0) {
+            $('#PracticeListPage').zoladex_practice_list();
+            return;
+        }
+
+        if ($(e.target).filter('#SupportGroupListPage').length > 0) {
+            $('#SupportGroupListPage').zoladex_support_group_list();
             return;
         }   
     }
