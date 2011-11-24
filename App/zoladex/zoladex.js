@@ -8,18 +8,18 @@ steal(
      './controllers/prolist_controller',
     function () { // configure your application
 
-        steal.dev.log('jmvc init');
+        steal.dev.log('jmvc is initilasing...');
 
         configureJqueryMobile();
         
         $('#page').zoladex_intro();
 
-    }).then('./lib/jQueryMobile/jquery.mobile-1.0.js')//steal jquery mobile css);
+    }).then('./lib/jQueryMobile/jquery.mobile-1.0.js')//steal jquery mobile js
 
     function configureJqueryMobile() {
 
         $(document).bind("mobileinit", function () {
-            steal.dev.log('mobileinit');
+            steal.dev.log('jQM is initialising');
             $.mobile.touchOverflowEnabled = true;
         });
 
@@ -32,32 +32,39 @@ steal(
     }
 
     function bindTabBar(e) {
-        
-        var folder = '';
 
-        if ($(e.target).filter('.hcpPage').length > 0) {
-            folder = 'hcp';
-        }
-
-        if ($(e.target).filter('.calendarPage').length > 0) {
-            folder = 'calendar';
-        }
-
-        if ($(e.target).filter('.progressPage').length > 0) {
-            folder = 'progress';
-        }
-
-        if ($(e.target).filter('.supportPage').length > 0) {
-            folder = 'support';
-        }
+        var pageClass = determinePageClass(e);
 
         $('.tabBarContainer').zoladex_tab_bar('destroy');
 
-        $('.tabBarContainer').zoladex_tab_bar({ folder: folder });
+        $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
+    }
+
+    function determinePageClass(e) {
+        
+        if ($(e.target).filter('.hcpPage').length > 0) {
+            return 'hcp';
+        }
+
+        if ($(e.target).filter('.calendarPage').length > 0) {
+            return 'calendar';
+        }
+
+        if ($(e.target).filter('.progressPage').length > 0) {
+            return 'progress';
+        }
+
+        if ($(e.target).filter('.supportPage').length > 0) {
+            return 'support';
+        }
+        
+        return '';
     }
 
     function bindPageControllers(e) {
+        
         if ($(e.target).filter('#ProfessionalListPage').length > 0) {
             $('#ProfessionalListPage').zoladex_pro_list();
-        }    
+            return;
+        }   
     }
