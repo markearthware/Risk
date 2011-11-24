@@ -67,6 +67,7 @@ steal(
 
     function bindPageControllers(e) {
         
+        // hcp controllers
         if ($(e.target).filter('#ProfessionalListPage').length > 0) {
             $('#ProfessionalListPage').zoladex_pro_list();
             return;
@@ -80,5 +81,9 @@ steal(
         if ($(e.target).filter('#SupportGroupListPage').length > 0) {
             $('#SupportGroupListPage').zoladex_support_group_list();
             return;
-        }   
+        }
+
+        // calendar controllers
+        
+        // progress cotnrollers
     }
