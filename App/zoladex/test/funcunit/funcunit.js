@@ -1,2 +1,2 @@
 steal("funcunit")
- .then("./zoladex_test.js");
+ .then("./navBarTests/hcpbutton_test.js", "./navBarTests/calendarbutton_test.js");

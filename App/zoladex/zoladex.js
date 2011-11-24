@@ -16,7 +16,7 @@ steal(
 
         configureJqueryMobile();
         
-        $('#page').zoladex_intro();
+        $('#indexPage').zoladex_intro();
 
     }).then('./lib/jQueryMobile/jquery.mobile-1.0.js')//steal jquery mobile js
 
