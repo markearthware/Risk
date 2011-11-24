@@ -19,7 +19,7 @@
 
                 for (var i = 0; i < localStorageDB.hcps.length; i++) {
                     var item = localStorageDB.hcps[i];
-                    this.addElement(item);
+                    this.addListItem(item);
                 }
 
                 //refresh list
@@ -29,8 +29,14 @@
                 $.mobile.hidePageLoadingMsg();
             }));
         },
-        addElement: function (item) {
-            this.list.append('<li><a>' + item.Title + ' ' + item.FirstName + ' ' + item.Surname + '</a></li>');
+        
+        addListItem: function (item) {
+            var fullName = this.buildFullName(item);
+            this.list.append('<li><a>' + fullName +'</a></li>');
+        },
+        
+        buildFullName: function (item) {
+            return item.Title + ' ' + item.FirstName + ' ' + item.Surname;
         }
     });
 });
