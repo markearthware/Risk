@@ -1,4 +1,4 @@
-﻿var localStorageDB = (function () {
+var localStorageDB = (function () {
 
     var db = null,
     latest = 0,

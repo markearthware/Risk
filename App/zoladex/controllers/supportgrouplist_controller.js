@@ -1,4 +1,4 @@
-﻿steal('jquery/controller',
+steal('jquery/controller',
     'jquery/view/ejs',
     'jquery/dom/form_params',
     'jquery/controller/view'
