@@ -4,13 +4,15 @@ steal(
     './models/models.js', // steals all your models
     './fixtures/fixtures.js', // sets up fixtures for your models
     // load controllers
-    './controllers/intro_controller',
      './controllers/tabbar_controller',
      './controllers/prolist_controller',
      './controllers/practicelist_controller',
     './controllers/supportgrouplist_controller',
-    
+
     function () { // configure your application
+
+
+        localStorageDB.init();
 
         steal.dev.log('jmvc is initilasing...');
 
@@ -30,6 +32,13 @@ steal(
             bindTabBar(e);
 
             bindPageControllers(e);
+        });
+
+        $(document).bind('pagecreate', function (e) {
+            if ($(e.target).filter('#ProfessionalListPage').length > 0) {
+                $('#ProListList').zoladex_pro_list('loadData');
+                return;
+            }
         });
     }
 
@@ -67,7 +76,7 @@ steal(
         
         // hcp controllers
         if ($(e.target).filter('#ProfessionalListPage').length > 0) {
-            $('#ProfessionalListPage').zoladex_pro_list();
+            $('#ProListList').zoladex_pro_list();
             return;
         }
         

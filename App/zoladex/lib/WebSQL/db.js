@@ -16,7 +16,6 @@ var localStorageDB = (function () {
                             var date = new Date();
                             var ticks = date.getTime();
                             tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Street, Town) VALUES (?,?,?,?,?,?,?,?)', [ticks, 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'Windy Lane', 'Letchworth']);
-                            load();
                         });
                     });
                 }
@@ -28,20 +27,21 @@ var localStorageDB = (function () {
         }
     }
 
-    function load() {
+    function readDB(sql) {
+        db = openDatabase("zoladexDB", "1.0", "HTML 5 Database API example", 200000);
+        var dfrd = $.Deferred();
         db.transaction(function (tx) {
-            tx.executeSql('SELECT * FROM HealthcareProfessionals', [], function (tx, results) {
-                if (results.rows && results.rows.length) {
-                    for (var i = 0; i < results.rows.length; i++) {
-                        hcps.push(results.rows.item(i));
-                    }
-                    // fire loaded callback if not null
-                    if (loadedCallback) loadedCallback();
+            tx.executeSql(sql, [],
+                function(tx, result) {
+                    dfrd.resolve(result.rows);
+                },
+                function(tx, error) {
+                    alert('Transaction with the device database failed - ' + error.message + '\nOffending SQL:\n"' + sql + "'");
                 }
-            }, function (tx) {
-                alert('load error occurred, please reset DB');
-            });
+        );
         });
+
+        return dfrd.promise();
     }
 
     //    function addCar(manufacturer) {
@@ -56,7 +56,8 @@ var localStorageDB = (function () {
 
     return {
         init: initDb,
-        hcps: hcps
+        hcps: hcps,
+        readDB: readDB
     };
 })();
 

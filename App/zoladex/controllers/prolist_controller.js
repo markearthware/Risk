@@ -2,41 +2,28 @@ steal('jquery/controller',
     'jquery/view/ejs',
     'jquery/dom/form_params',
     'jquery/controller/view',
-    '../lib/WebSQL/db.js'
-    )
+    '../models/professional.js',
+    '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.ProList', {
-    },
+        },
     {
         init: function () {
 
-            this.list = $('#ProListList');
-
-            //show loading
             $.mobile.showPageLoadingMsg();
-
-            localStorageDB.init(this.callback(function () {
-
-                for (var i = 0; i < localStorageDB.hcps.length; i++) {
-                    var item = localStorageDB.hcps[i];
-                    this.addListItem(item);
-                }
-
-                //refresh list
-                this.list.listview('refresh');
-
-                // hide loading
-                $.mobile.hidePageLoadingMsg();
-            }));
+            this.list = $('#ProListList');
         },
-        
-        addListItem: function (item) {
-            var fullName = this.buildFullName(item);
-            this.list.append('<li><a>' + fullName +'</a></li>');
+        loadData: function () {
+
+            var view = new $.View('//zoladex/views/pro_list/init.ejs', Zoladex.Models.Professional.findAll(), null, this.callback(this.refreshList));
+
+            this.element.html(view);
         },
-        
-        buildFullName: function (item) {
-            return item.Title + ' ' + item.FirstName + ' ' + item.Surname;
+        refreshList: function () {
+
+            $.mobile.hidePageLoadingMsg();
+            
+            this.list.listview('refresh');
         }
     });
-});
+    });
