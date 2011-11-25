@@ -2,7 +2,7 @@
     module("Progress Tab button clicked", {
         setup: function () {
 
-            S.open("//zoladex/index.html");
+            S.open("../index.html");
 
             S('#btnContinue').click();
 

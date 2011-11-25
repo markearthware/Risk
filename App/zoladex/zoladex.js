@@ -16,14 +16,12 @@ steal(
 
         configureJqueryMobile();
         
-        $('#indexPage').zoladex_intro();
-
     }).then('./lib/jQueryMobile/jquery.mobile-1.0.js')//steal jquery mobile js
 
     function configureJqueryMobile() {
 
         $(document).bind("mobileinit", function () {
-            steal.dev.log('jQM is initialising');
+            steal.dev.log('jQM is initialising...');
             $.mobile.touchOverflowEnabled = true;
         });
 

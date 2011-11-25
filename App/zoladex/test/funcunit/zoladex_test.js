@@ -1,7 +1,7 @@
 steal("funcunit", function () {
     module("zoladex test", {
         setup: function () {
-            S.open("//zoladex/index.html");
+            S.open("../index.html");
         }
     });
 
