@@ -1,6 +1,7 @@
 steal(
     './zoladex.css', // application CSS file
-    './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css   
+    './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
+    './lib/jQueryValidation/validation.css',
     './models/models.js', // steals all your models
     './fixtures/fixtures.js', // sets up fixtures for your models
     // load controllers
@@ -9,6 +10,8 @@ steal(
     './controllers/proadd_controller',
      './controllers/practicelist_controller',
     './controllers/supportgrouplist_controller',
+    
+
 
     function () { // configure your application
 
@@ -19,7 +22,7 @@ steal(
 
         configureJqueryMobile();
         
-    }).then('./lib/jQueryMobile/jquery.mobile-1.0.js')//steal jquery mobile js
+    }).then('./lib/jQueryMobile/jquery.mobile-1.0.js','./lib/jQueryValidation/jquery.validate.js')//steal jquery mobile js
 
     function configureJqueryMobile() {
 
@@ -93,6 +96,7 @@ steal(
 
         if ($('#NewHcpForm').length > 0) {
             $('#NewHcpForm').zoladex_pro_add();
+            $('#NewHcpForm').validate();
             return;
         }
 

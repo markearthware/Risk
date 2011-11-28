@@ -15,9 +15,13 @@
 
             ev.preventDefault();
 
-            var params = $(el).formParams();
+            if ($('#NewHcpForm').valid()) {
 
-            var createtask = this.addHcp(params);
+                var params = $(el).formParams();
+
+                var createtask = this.addHcp(params);
+                
+            }
 
             return false;
         },
