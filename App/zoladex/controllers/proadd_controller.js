@@ -19,15 +19,19 @@
 
                 var params = $(el).formParams();
 
-                var createtask = this.addHcp(params);
-                
+                var professional = new Zoladex.Models.Professional(params);
+
+                professional.save(function () { steal.dev.log('hello!'); });
             }
 
             return false;
         },
-        addHcp: function (newhcp) {
-
-            Zoladex.Models.Professional.create(newhcp);
+        onInsertSuccess: function () {
+            steal.dev.log('professional has been added');
+        },
+        onInsertFail: function () {
+            steal.dev.log('professional has not been added');
         }
+
     });
 });
