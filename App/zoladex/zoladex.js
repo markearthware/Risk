@@ -6,6 +6,7 @@ steal(
     // load controllers
      './controllers/tabbar_controller',
      './controllers/prolist_controller',
+    './controllers/proadd_controller',
      './controllers/practicelist_controller',
     './controllers/supportgrouplist_controller',
 
@@ -89,6 +90,13 @@ steal(
             $('#SupportGroupListPage').zoladex_support_group_list();
             return;
         }
+
+        if ($('#NewHcpForm').length > 0) {
+            $('#NewHcpForm').zoladex_pro_add();
+            return;
+        }
+
+       
 
         // calendar controllers
         

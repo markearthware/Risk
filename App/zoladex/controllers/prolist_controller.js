@@ -6,7 +6,7 @@ steal('jquery/controller',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.ProList', {
-        },
+    },
     {
         init: function () {
 
@@ -14,7 +14,6 @@ steal('jquery/controller',
             this.list = $('#ProListList');
         },
         loadData: function () {
-
             var view = new $.View('//zoladex/views/pro_list/init.ejs', Zoladex.Models.Professional.findAll(), null, this.callback(this.refreshList));
 
             this.element.html(view);
@@ -22,8 +21,8 @@ steal('jquery/controller',
         refreshList: function () {
 
             $.mobile.hidePageLoadingMsg();
-            
+
             this.list.listview('refresh');
         }
     });
-    });
+});
