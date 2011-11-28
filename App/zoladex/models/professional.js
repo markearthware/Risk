@@ -7,13 +7,13 @@
       },
 
       findOne: "/recipes/{id}.json",
-      
-      create: function (newhcp) {
-          return localStorageDB.addHcp(newhcp);
+
+      create: function (newhcp, success, error) {
+          return localStorageDB.addHcp(newhcp, success, error);
       },
 
       update: "/recipes/{id}.json",
-      
+
       destroy: "/recipes/{id}.json"
   },
   {});

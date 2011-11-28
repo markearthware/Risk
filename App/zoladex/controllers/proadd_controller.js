@@ -16,12 +16,7 @@
             ev.preventDefault();
 
             if ($('#NewHcpForm').valid()) {
-
-                var params = $(el).formParams();
-
-                var professional = new Zoladex.Models.Professional(params);
-
-                professional.save(function () { steal.dev.log('hello!'); });
+                new Zoladex.Models.Professional(el.formParams()).save(this.callback('onInsertSuccess'));
             }
 
             return false;
