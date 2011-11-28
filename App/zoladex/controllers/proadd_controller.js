@@ -6,7 +6,7 @@ steal('jquery/controller',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.ProAdd', {
-    },
+        },
     {
         init: function () {
 
@@ -22,11 +22,12 @@ steal('jquery/controller',
             return false;
         },
         onInsertSuccess: function () {
-            steal.dev.log('professional has been added');
+            $.mobile.changePage('dialog/success.htm', 'pop', false, true);
         },
         onInsertFail: function () {
             steal.dev.log('professional has not been added');
+            $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         }
 
     });
-});
+    });
