@@ -4,16 +4,14 @@ steal(
     './lib/jQueryValidation/validation.css',
     './models/models.js', // steals all your models
     './fixtures/fixtures.js', // sets up fixtures for your models
-    // load controllers
-     './controllers/tabbar_controller',
-     './controllers/prolist_controller',
+// load controllers
+    './controllers/tabbar_controller',
+    './controllers/prolist_controller',
     './controllers/proadd_controller',
-     './controllers/practicelist_controller',
+    './controllers/practicelist_controller',
     './controllers/supportgrouplist_controller',
-    
 
-
-    function () { // configure your application
+    function() { // configure your application
 
 
         localStorageDB.init();
@@ -21,8 +19,11 @@ steal(
         steal.dev.log('jmvc is initilasing...');
 
         configureJqueryMobile();
-        
-    }).then('./lib/jQueryMobile/jquery.mobile-1.0.js','./lib/jQueryValidation/jquery.validate.js')//steal jquery mobile js
+
+    }).then(
+    './lib/jQueryMobile/jquery.mobile-1.0.js',
+    './lib/jQueryValidation/jquery.validate.js'
+        ); //steal jquery mobile js
 
     function configureJqueryMobile() {
 
