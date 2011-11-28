@@ -55,13 +55,13 @@ var localStorageDB = (function () {
         steal.dev.log('Transaction with the device database failed - ' + error.message + '\nOffending SQL:\n"' + sql + "'");
     }
 
-    function addHcp(hcp) {
+    function addHcp(hcp, success, error) {
 
         db = openDb();
 
         var ticks = createId();
 
-        var defered = $.Deferred();
+        var deferred = $.Deferred();
 
         db.transaction(function (tx) {
 
@@ -74,16 +74,22 @@ var localStorageDB = (function () {
                 [],
                 function () {
                     steal.dev.log("Insert succeeded!");
-                    defered.resolve(ticks);
+                    deferred.resolve(ticks);
                 },
                 function (tx1, error) {
                     logError(error, sql);
-                    defered.resolve(0);
+                    deferred.resolve(0);
                 }
             );
 
-            return defered.promise();
+
+                return deferred.promise();
         });
+
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);        
     }
 
     return {
