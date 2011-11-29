@@ -20,7 +20,11 @@ steal('jquery/model', function () {
 
       update: "/recipes/{id}.json",
 
-      destroy: "/recipes/{id}.json"
+      destroy: "/recipes/{id}.json",
+
+      buildName: function (hcp) {
+          return hcp.Title + ' ' + hcp.FirstName + ' ' + hcp.Surname;
+      }
   },
   {});
 })

@@ -1,5 +1,6 @@
 ﻿steal('jquery/controller',
     'jquery/view/ejs',
+    'jquery/lang/string/deparam/deparam.js',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/hcp.js',
@@ -11,13 +12,34 @@
         init: function () {
             $.mobile.showPageLoadingMsg();
         },
-        loadData: function () {
-            var view = new $.View('//zoladex/views/hcp_details/init.ejs', Zoladex.Models.Hcp.findOne(1322561126028), null, this.callback(this.refreshList));
 
-            this.element.html(view);
+        loadData: function () {
+
+            //get query string params
+            var params = this.getQueryStringParams();
+
+            var deffered = Zoladex.Models.Hcp.findOne(params.Id);
+
+            deffered.done(this.callback('insertData'));
         },
-        refreshList: function () {
-            $('#HcpDetailsPage').trigger('create');
+
+        getQueryStringParams: function () {
+
+            var queryString = window.location.href.split('?')[1];
+
+            return $.String.deparam(queryString);
+        },
+
+        insertData: function (data) {
+
+            $('#HcpDetailsPage h1').html(Zoladex.Models.Hcp.buildName(data.item(0)));
+
+            var view = this.view('//zoladex/views/hcp_details/init.ejs', data);
+
+            $('#HcpDetailsList', this.element).append(view);
+
+            $('#HcpDetailsPage ul').listview('refresh');
+
             $.mobile.hidePageLoadingMsg();
         }
     });

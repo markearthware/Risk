@@ -47,11 +47,13 @@ steal(
                 return;
             }
 
-            if ($(e.target).filter('#HcpDetailsPage').length > 0) {
+        });
+
+        $(document).bind('pagehide', function(e, args) {
+            if ($(args.nextPage).filter('#HcpDetailsPage').length > 0) {
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;
             }
-            
         });
     }
 
