@@ -5,7 +5,7 @@ steal('jquery/controller',
     '../models/hcp.js',
     '../lib/WebSQL/db.js')
     .then(function ($) {
-        $.Controller('Zoladex.Controllers.ProAdd', {
+        $.Controller('Zoladex.Controllers.HcpAdd', {
         },
     {
         init: function () {

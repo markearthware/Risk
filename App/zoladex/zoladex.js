@@ -6,8 +6,8 @@ steal(
     './fixtures/fixtures.js', // sets up fixtures for your models
 // load controllers
     './controllers/tabbar_controller',
-    './controllers/prolist_controller',
-    './controllers/proadd_controller',
+    './controllers/hcplist_controller',
+    './controllers/hcpadd_controller',
     './controllers/practicelist_controller',
     './controllers/supportgrouplist_controller',
 
@@ -41,7 +41,7 @@ steal(
 
         $(document).bind('pagecreate', function (e) {
             if ($(e.target).filter('#HcpListPage').length > 0) {
-                $('#HcpListList').zoladex_pro_list('loadData');
+                $('#HcpListList').zoladex_hcp_list('loadData');
                 return;
             }
         });
@@ -81,7 +81,7 @@ steal(
         
         // hcp controllers
         if ($(e.target).filter('#HcpListPage').length > 0) {
-            $('#HcpListList').zoladex_pro_list();
+            $('#HcpListList').zoladex_hcp_list();
             return;
         }
         
@@ -96,7 +96,7 @@ steal(
         }
 
         if ($('#NewHcpForm').length > 0) {
-            $('#NewHcpForm').zoladex_pro_add();
+            $('#NewHcpForm').zoladex_hcp_add();
             $('#NewHcpForm').validate();
             return;
         }
