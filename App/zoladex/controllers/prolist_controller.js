@@ -2,7 +2,7 @@ steal('jquery/controller',
     'jquery/view/ejs',
     'jquery/dom/form_params',
     'jquery/controller/view',
-    '../models/professional.js',
+    '../models/hcp.js',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.ProList', {
@@ -14,7 +14,7 @@ steal('jquery/controller',
             this.list = $('#HcpListList');
         },
         loadData: function () {
-            var view = new $.View('//zoladex/views/pro_list/init.ejs', Zoladex.Models.Professional.findAll(), null, this.callback(this.refreshList));
+            var view = new $.View('//zoladex/views/pro_list/init.ejs', Zoladex.Models.Hcp.findAll(), null, this.callback(this.refreshList));
 
             this.element.html(view);
         },

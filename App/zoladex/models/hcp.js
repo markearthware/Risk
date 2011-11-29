@@ -1,6 +1,6 @@
 steal('jquery/model', function () {
 
-    $.Model('Zoladex.Models.Professional',
+    $.Model('Zoladex.Models.Hcp',
   {
       findAll: function () {
           return localStorageDB.getRows('SELECT * FROM HealthcareProfessionals');
