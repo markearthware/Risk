@@ -7,6 +7,7 @@ steal(
 // load controllers
     './controllers/tabbar_controller',
     './controllers/hcplist_controller',
+    './controllers/hcpdetails_controller',
     './controllers/hcpadd_controller',
     './controllers/practicelist_controller',
     './controllers/supportgrouplist_controller',
@@ -40,10 +41,17 @@ steal(
         });
 
         $(document).bind('pagecreate', function (e) {
+            
             if ($(e.target).filter('#HcpListPage').length > 0) {
                 $('#HcpListList').zoladex_hcp_list('loadData');
                 return;
             }
+
+            if ($(e.target).filter('#HcpDetailsPage').length > 0) {
+                $('#HcpDetailsPage').zoladex_hcp_details('loadData');
+                return;
+            }
+            
         });
     }
 
@@ -82,6 +90,11 @@ steal(
         // hcp controllers
         if ($(e.target).filter('#HcpListPage').length > 0) {
             $('#HcpListList').zoladex_hcp_list();
+            return;
+        }
+
+        if ($(e.target).filter('#HcpDetailsPage').length > 0) {
+            $('#HcpDetailsPage').zoladex_hcp_details();
             return;
         }
         

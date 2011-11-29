@@ -6,7 +6,13 @@ steal('jquery/model', function () {
           return localStorageDB.getRows('SELECT * FROM HealthcareProfessionals');
       },
 
-      findOne: "/recipes/{id}.json",
+      findOne: function (id) {
+
+          var result = localStorageDB.getRows('SELECT * FROM HealthcareProfessionals WHERE Id =' + id);
+          steal.dev.log("result is:");
+          steal.dev.log(result);
+          return result;
+      },
 
       create: function (newhcp, success, error) {
           return localStorageDB.addHcp(newhcp, success, error);
