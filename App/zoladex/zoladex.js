@@ -1,30 +1,32 @@
 steal(
-    './zoladex.css', // application CSS file
-    './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
-    './lib/jQueryValidation/validation.css',
-    './models/models.js', // steals all your models
-    './fixtures/fixtures.js', // sets up fixtures for your models
-// load controllers
-    './controllers/tabbar_controller',
-    './controllers/hcplist_controller',
-    './controllers/hcpdetails_controller',
-    './controllers/hcpadd_controller',
-    './controllers/practicelist_controller',
-    './controllers/supportgrouplist_controller',
+        'jquery',
+        './zoladex.css', // application CSS file
+        './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
 
-    function() { // configure your application
+        function () { // configure your application
 
+            steal.dev.log('jmvc is initilasing...');
 
-        localStorageDB.init();
+            configureJqueryMobile();
 
-        steal.dev.log('jmvc is initilasing...');
-
-        configureJqueryMobile();
-
-    }).then(
-    './lib/jQueryMobile/jquery.mobile-1.0.js',
-    './lib/jQueryValidation/jquery.validate.js'
-        ); //steal jquery mobile js
+        }
+    ).then( //steal jquery mobile js
+        './lib/jQueryMobile/jquery.mobile-1.0.js'
+    ).then(
+// load controllers and libraries for other pages and init db
+        './lib/jQueryValidation/validation.css',
+        './models/models.js', // steals all your models
+        './lib/jQueryValidation/jquery.validate.js',
+        './controllers/tabbar_controller',
+        './controllers/hcplist_controller',
+        './controllers/hcpdetails_controller',
+        './controllers/hcpadd_controller',
+        './controllers/practicelist_controller',
+        './controllers/supportgrouplist_controller',
+         function () {
+             localStorageDB.init();
+         }
+    );  
 
     function configureJqueryMobile() {
 
