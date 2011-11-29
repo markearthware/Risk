@@ -11,7 +11,7 @@ steal('jquery/controller',
         init: function () {
 
             $.mobile.showPageLoadingMsg();
-            this.list = $('#ProListList');
+            this.list = $('#HcpListList');
         },
         loadData: function () {
             var view = new $.View('//zoladex/views/pro_list/init.ejs', Zoladex.Models.Professional.findAll(), null, this.callback(this.refreshList));

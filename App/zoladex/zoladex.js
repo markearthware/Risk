@@ -40,8 +40,8 @@ steal(
         });
 
         $(document).bind('pagecreate', function (e) {
-            if ($(e.target).filter('#ProfessionalListPage').length > 0) {
-                $('#ProListList').zoladex_pro_list('loadData');
+            if ($(e.target).filter('#HcpListPage').length > 0) {
+                $('#HcpListList').zoladex_pro_list('loadData');
                 return;
             }
         });
@@ -80,8 +80,8 @@ steal(
     function bindPageControllers(e) {
         
         // hcp controllers
-        if ($(e.target).filter('#ProfessionalListPage').length > 0) {
-            $('#ProListList').zoladex_pro_list();
+        if ($(e.target).filter('#HcpListPage').length > 0) {
+            $('#HcpListList').zoladex_pro_list();
             return;
         }
         
