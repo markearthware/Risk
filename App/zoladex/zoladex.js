@@ -6,8 +6,9 @@ steal(
     './fixtures/fixtures.js', // sets up fixtures for your models
 // load controllers
     './controllers/tabbar_controller',
-    './controllers/prolist_controller',
-    './controllers/proadd_controller',
+    './controllers/hcplist_controller',
+    './controllers/hcpdetails_controller',
+    './controllers/hcpadd_controller',
     './controllers/practicelist_controller',
     './controllers/supportgrouplist_controller',
 
@@ -40,8 +41,17 @@ steal(
         });
 
         $(document).bind('pagecreate', function (e) {
-            if ($(e.target).filter('#ProfessionalListPage').length > 0) {
-                $('#ProListList').zoladex_pro_list('loadData');
+            
+            if ($(e.target).filter('#HcpListPage').length > 0) {
+                $('#HcpListList').zoladex_hcp_list('loadData');
+                return;
+            }
+
+        });
+
+        $(document).bind('pagehide', function(e, args) {
+            if ($(args.nextPage).filter('#HcpDetailsPage').length > 0) {
+                $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;
             }
         });
@@ -80,8 +90,13 @@ steal(
     function bindPageControllers(e) {
         
         // hcp controllers
-        if ($(e.target).filter('#ProfessionalListPage').length > 0) {
-            $('#ProListList').zoladex_pro_list();
+        if ($(e.target).filter('#HcpListPage').length > 0) {
+            $('#HcpListList').zoladex_hcp_list();
+            return;
+        }
+
+        if ($(e.target).filter('#HcpDetailsPage').length > 0) {
+            $('#HcpDetailsPage').zoladex_hcp_details();
             return;
         }
         
@@ -96,7 +111,7 @@ steal(
         }
 
         if ($('#NewHcpForm').length > 0) {
-            $('#NewHcpForm').zoladex_pro_add();
+            $('#NewHcpForm').zoladex_hcp_add();
             $('#NewHcpForm').validate();
             return;
         }

@@ -31,6 +31,8 @@ var localStorageDB = (function () {
         db.transaction(function (tx) {
             tx.executeSql(sql, [],
                 function (tx1, result) {
+                    steal.dev.log('select succeeded');
+                    steal.dev.log(result);
                     dfrd.resolve(result.rows);
                 },
                 function (tx1, error) {
@@ -83,13 +85,13 @@ var localStorageDB = (function () {
             );
 
 
-                return deferred.promise();
+            return deferred.promise();
         });
 
 
         // wire up callbacks to defered
         deferred.then(success);
-        deferred.fail(error);        
+        deferred.fail(error);
     }
 
     return {

@@ -10,13 +10,13 @@
 
             S('.hcpTab').click();
 
-            S('#hcpPage').exists();
+            S('#HcpPage').exists();
         }
     });
 
     test("HCP page header", function () {
 
-        equal(S('#hcpPage h1').text(), 'My HCP', "header text is My HCP");
+        equal(S('#HcpPage h1').text(), 'My HCP', "header text is My HCP");
     });
 
     test("current nav bar selected", function () {
