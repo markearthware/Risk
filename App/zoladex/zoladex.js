@@ -30,11 +30,6 @@ steal(
 
     function configureJqueryMobile() {
 
-        $(document).bind("mobileinit", function () {
-            steal.dev.log('jQM is initialising...');
-            $.mobile.touchOverflowEnabled = true;
-        });
-
         $(document).bind('pagebeforecreate', function (e) {
             
             bindTabBar(e);
