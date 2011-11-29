@@ -16,7 +16,8 @@ steal('jquery/controller',
             ev.preventDefault();
 
             if ($('#NewHcpForm').valid()) {
-                new Zoladex.Models.Professional(el.formParams()).save(this.callback('onInsertSuccess'));
+                steal.dev.log('insert hcp form is valid, attempting to save to database...');
+                new Zoladex.Models.Professional(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }
 
             return false;
@@ -28,6 +29,5 @@ steal('jquery/controller',
             steal.dev.log('professional has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         }
-
     });
-    });
+});
