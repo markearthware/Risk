@@ -1,2 +1,10 @@
 steal("funcunit")
- .then("./navBarTests/hcpbutton_test.js", "./navBarTests/calendarbutton_test.js", "./navBarTests/progressbutton_test.js", "./navBarTests/supportbutton_test.js", "./hcpTests/hcplistbutton_test.js", "./hcpTests/hcplocalstorage_test.js");
+ .then(
+ "./navBarTests/hcpbutton_test.js",
+ "./navBarTests/calendarbutton_test.js",
+ "./navBarTests/progressbutton_test.js",
+ "./navBarTests/supportbutton_test.js",
+ "./hcpTests/hcplistbutton_test.js",
+ "./hcpTests/hcplocalstorage_test.js",
+ "./hcpTests/hcpdetailspage_test.js"
+);
