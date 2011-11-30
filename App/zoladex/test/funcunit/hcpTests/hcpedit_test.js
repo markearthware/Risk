@@ -19,7 +19,7 @@
                 S('.hcpAnchor').first().exists().click();
 
                 // check details page has actually loaded the data
-                S('#HcpDetailsList li').size(function(size) {
+                S('#HcpDetailsList li').size(function (size) {
                     return size > 0;
                 });
 
@@ -41,14 +41,11 @@
     });
 
     test("Can successfully edit a new HCP", function () {
-        S('#title').type("blah");
-        S('#firstname').type("blah");
-        S('#surname').type("blah");
-        S('#number').type("234234");
-        S('#street').type("blah");
-        S('#town').type("blah");
-        S('#practicename').type("blah");
+        S('#title').exists().type("\b\b" + "Dr");
+        S('#firstname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b" + "Jim");
+        S('#surname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b\b" + "Bob");
         S('#newhcpbutton').exists().click();
-        ok(false, 'test not implemented');
+        S('#HcpDetailsPage').exists();
+        ok(S('#HcpDetailsPage h1').text("Dr Jim Bob"));
     });
 })
