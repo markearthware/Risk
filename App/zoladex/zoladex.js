@@ -52,6 +52,11 @@ steal(
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;
             }
+            if ($(args.nextPage).filter('#HcpEditPage').length > 0) {
+                $('#EditHcpForm').zoladex_hcp_edit('loadData');
+                return;
+            }
+            
         });
     }
 

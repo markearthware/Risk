@@ -9,7 +9,7 @@
         },
     {
         init: function () {
-
+            $.mobile.showPageLoadingMsg();
             var view = $.View('//zoladex/views/hcp_addedit/init.ejs');
 
             $('#EditHcpForm').html(view);
@@ -18,19 +18,38 @@
 
             ev.preventDefault();
 
-//            if ($('#NewHcpForm').valid()) {
-//                steal.dev.log('insert hcp form is valid, attempting to save to database...');
-//                new Zoladex.Models.Hcp(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
-//            }
+            //            if ($('#NewHcpForm').valid()) {
+            //                steal.dev.log('insert hcp form is valid, attempting to save to database...');
+            //                new Zoladex.Models.Hcp(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+            //            }
 
             return false;
         },
-        onInsertSuccess: function () {
-            $.mobile.changePage('dialog/success.htm', 'pop', false, true);
+        loadData: function () {
+            var params = this.getQueryStringParams();
+
+            var deffered = Zoladex.Models.Hcp.findOne(params.Id);
+
+            deffered.done(this.callback('insertData'));
         },
-        onInsertFail: function () {
-            steal.dev.log('professional has not been added');
-            $.mobile.changePage('dialog/error.htm', 'pop', false, true);
+        getQueryStringParams: function () {
+
+            var queryString = window.location.href.split('?')[1];
+
+            return $.String.deparam(queryString);
+        },
+
+        insertData: function (data) {
+            var item = data.item(0);
+            $('#title').val(item.Title);
+            $('#firstname').val(item.FirstName);
+            $('#surname').val(item.Surname);
+            $('#number').val(item.Telephone);
+            $('#street').val(item.Street);
+            $('#town').val(item.Town);
+            $('#practicename').val(item.PracticeName);
+
+            $.mobile.hidePageLoadingMsg();
         }
     });
     });
