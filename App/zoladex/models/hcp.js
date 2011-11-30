@@ -18,7 +18,9 @@ steal('jquery/model', function () {
           return localStorageDB.addHcp(newhcp, success, error);
       },
 
-      update: "/recipes/{id}.json",
+      update: function (id, hcp, success, error) {
+          return localStorageDB.updateHcp(hcp, success, error);
+      },
 
       destroy: "/recipes/{id}.json",
 

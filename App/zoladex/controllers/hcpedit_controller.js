@@ -16,13 +16,14 @@
 
             ev.preventDefault();
 
-            //            if ($('#NewHcpForm').valid()) {
-            //                steal.dev.log('insert hcp form is valid, attempting to save to database...');
-            //                new Zoladex.Models.Hcp(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
-            //            }
+            if ($('#EditHcpForm').valid()) {
+                steal.dev.log('insert hcp form is valid, attempting to save to database...');
+                new Zoladex.Models.Hcp(el.formParams()).save(this.callback('onUpdateSuccess'), this.callback('onUpdateFail'));
+            }
 
             return false;
         },
+
         loadData: function () {
             var params = this.getQueryStringParams();
 
@@ -30,6 +31,15 @@
 
             deffered.done(this.callback('insertData'));
         },
+
+        onUpdateSuccess: function () {
+            steal.dev.log('edit worked');
+        },
+
+        onUpdateFail: function () {
+            steal.dev.log('edit no worked');
+        },
+
         getQueryStringParams: function () {
 
             var queryString = window.location.href.split('?')[1];

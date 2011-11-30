@@ -43,7 +43,7 @@ var localStorageDB = (function () {
 
         return dfrd.promise();
     }
-    
+
     function getSingleRow(sql) {
         db = openDb();
         var dfrd = $.Deferred();
@@ -113,11 +113,37 @@ var localStorageDB = (function () {
         deferred.fail(error);
     }
 
+    function updateHcp(hcp, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='"+ hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "' WHERE Id=" + hcp.id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Update succeeded!");
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                }
+            );
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
     return {
         init: initDb,
         getRows: getRows,
         getSingleRow: getSingleRow,
-        addHcp: addHcp
+        addHcp: addHcp,
+        updateHcp: updateHcp
     };
 })();
 

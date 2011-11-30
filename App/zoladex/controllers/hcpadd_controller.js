@@ -9,8 +9,9 @@ steal('jquery/controller',
         },
     {
         init: function () {
-            
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { Title: "", 
+
+            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { Id: "",
+                                                                                                Title: "", 
                                                                                                 FirstName: "", 
                                                                                                 Surname: "", 
                                                                                                 PracticeName: "",
