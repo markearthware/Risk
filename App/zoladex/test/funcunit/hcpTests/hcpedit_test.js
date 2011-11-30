@@ -18,6 +18,11 @@
 
                 S('.hcpAnchor').first().exists().click();
 
+                // check details page has actually loaded the data
+                S('#HcpDetailsList li').size(function(size) {
+                    return size > 0;
+                });
+
                 S('#EditHcpButton').exists().click();
 
                 S('#HcpEditPage').exists();
@@ -31,22 +36,19 @@
     });
 
     test("Edit HCP form has been inserted", function () {
-
-        ok(S(S('#EditHcpForm').children()).size(function (size) {
-            return size > 2;
-        }));
+        S('#EditHcpForm').exists();
+        ok(S('#title').exists(), "title loaded");
     });
 
     test("Can successfully edit a new HCP", function () {
-
-//        S('#title').type("blah");
-//        S('#firstname').type("blah");
-//        S('#surname').type("blah");
-//        S('#number').type("234234");
-//        S('#street').type("blah");
-//        S('#town').type("blah");
-//        S('#practicename').type("blah");
-//        S('#newhcpbutton').exists().click();
-        ok(false, 'test not implemented'); 
+        S('#title').type("blah");
+        S('#firstname').type("blah");
+        S('#surname').type("blah");
+        S('#number').type("234234");
+        S('#street').type("blah");
+        S('#town').type("blah");
+        S('#practicename').type("blah");
+        S('#newhcpbutton').exists().click();
+        ok(false, 'test not implemented');
     });
 })
