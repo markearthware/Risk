@@ -6,19 +6,20 @@ steal('jquery/controller',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpAdd', {
-        },
+    },
     {
         init: function () {
 
             var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { Id: "",
-                                                                                                Title: "", 
-                                                                                                FirstName: "", 
-                                                                                                Surname: "", 
-                                                                                                PracticeName: "",
-                                                                                                Number: "",
-                                                                                                Street: "",
-                                                                                                Town: "" });
-            
+                Title: "",
+                FirstName: "",
+                Surname: "",
+                PracticeName: "",
+                Number: "",
+                Street: "",
+                Town: ""
+            });
+
             $('#NewHcpForm').html(view);
         },
         submit: function (el, ev) {
@@ -27,7 +28,12 @@ steal('jquery/controller',
 
             if ($('#NewHcpForm').valid()) {
                 steal.dev.log('insert hcp form is valid, attempting to save to database...');
-                new Zoladex.Models.Hcp(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+
+                var params = el.formParams();
+
+                var hcpDataStructure = { title: params.Title, firstname: params.FirstName, surname: params.Surname, practicename: params.PracticeName, tel: params.Telephone, street: params.Street, town: params.Town };
+
+                new Zoladex.Models.Hcp(hcpDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }
 
             return false;
