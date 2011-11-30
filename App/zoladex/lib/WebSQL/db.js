@@ -8,6 +8,10 @@ var localStorageDB = (function () {
         try {
             if (window.openDatabase) {
                 db = openDb();
+
+                // check if first run and we need to initialise tables
+                initTables();
+
                 if (db) {
                     db.transaction(function (tx) {
                         tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Street, Town)', [], function (tx, result) {
@@ -137,6 +141,40 @@ var localStorageDB = (function () {
         // wire up callbacks to defered
         deferred.then(success);
         deferred.fail(error);
+    }
+
+    function initTables() {
+        // check if tables exist otherwise create and fill
+        checkTableExists("HealthcareLocations", function (tx) {
+            // create table for storing Practices/Hospitals
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (Id unique, Name)'); //TODO add lots more fields later
+        });
+
+        checkTableExists("ApointmentTypes", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS ApointmentTypes (Id unique, Name)', [], function (tx, result) {
+                // populate
+                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (1,"PSA test")');
+                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (2,"Follow up")');
+                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (3,"Zoladex injection")');
+                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (4,"Surgery")');
+                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (5,"Chemotherapy")');
+                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
+            });
+        });
+    }
+
+    // checks if a table exists in the database and if not calls the callback
+    function checkTableExists(tablename, doesntexistcallback) {
+        if (db) {
+            db.transaction(function (tx) {
+                tx.executeSql('select DISTINCT tbl_name from sqlite_master where tbl_name = "' + tablename + '"', [], function (tx, result) {
+                    if (!result.rows.length) {
+                        doesntexistcallback(tx);
+                    }
+                });
+            });
+        }
     }
 
     return {
