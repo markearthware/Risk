@@ -107,7 +107,6 @@ var localStorageDB = (function () {
             return deferred.promise();
         });
 
-
         // wire up callbacks to defered
         deferred.then(success);
         deferred.fail(error);
@@ -119,16 +118,18 @@ var localStorageDB = (function () {
 
         db.transaction(function (tx) {
 
-            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='"+ hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "' WHERE Id=" + hcp.id;
+            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='" + hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "' WHERE Id=" + hcp.id;
 
             tx.executeSql(
                 sql,
                 [],
                 function () {
                     steal.dev.log("Update succeeded!");
+                    deferred.resolve(true);
                 },
                 function (tx1, error) {
                     logError(error, sql);
+                    deferred.resolve(false);
                 }
             );
         });

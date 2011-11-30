@@ -18,7 +18,7 @@
 
             if ($('#EditHcpForm').valid()) {
                 steal.dev.log('insert hcp form is valid, attempting to save to database...');
-                new Zoladex.Models.Hcp(el.formParams()).save(this.callback('onUpdateSuccess'), this.callback('onUpdateFail'));
+                new Zoladex.Models.Hcp(el.formParams()).save(this.callback(this.onUpdateSuccess), this.callback('onUpdateFail'));
             }
 
             return false;
@@ -34,10 +34,12 @@
 
         onUpdateSuccess: function () {
             steal.dev.log('edit worked');
+            $.mobile.changePage('hcpdetails.htm?Id=' + this.currentId);
         },
 
         onUpdateFail: function () {
             steal.dev.log('edit no worked');
+            $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         },
 
         getQueryStringParams: function () {
@@ -48,6 +50,8 @@
         },
 
         insertData: function (data) {
+
+            this.currentId = data.Id;
 
             var view = $.View('//zoladex/views/hcp_addedit/init.ejs', data);
 
