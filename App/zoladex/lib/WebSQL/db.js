@@ -139,12 +139,40 @@ var localStorageDB = (function () {
         deferred.fail(error);
     }
 
+    function deleteHcp(id, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "DELETE FROM HealthcareProfessionals WHERE Id= " + id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Delete succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.resolve(false);
+                }
+            );
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
     return {
         init: initDb,
         getRows: getRows,
         getSingleRow: getSingleRow,
         addHcp: addHcp,
-        updateHcp: updateHcp
+        updateHcp: updateHcp, 
+        deleteHcp: deleteHcp
     };
 })();
 

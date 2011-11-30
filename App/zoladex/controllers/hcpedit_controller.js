@@ -27,7 +27,10 @@
         loadData: function () {
             var params = this.getQueryStringParams();
 
-            var deffered = Zoladex.Models.Hcp.findOne(params.Id);
+            var deffered = Zoladex.Models.Hcp.findOne(params.Id); 
+            
+            var editLink = $('#ButtonDeleteHcp').attr('href') + params.Id;
+            $('#ButtonDeleteHcp').attr('href', editLink);
 
             deffered.done(this.callback('insertData'));
         },

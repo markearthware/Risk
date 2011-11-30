@@ -22,7 +22,9 @@ steal('jquery/model', function () {
           return localStorageDB.updateHcp(hcp, success, error);
       },
 
-      destroy: "/recipes/{id}.json",
+      destroy: function (id, success, error) {
+          return localStorageDB.deleteHcp(id, success, error);
+      },
 
       buildName: function (hcp) {
           return hcp.Title + ' ' + hcp.FirstName + ' ' + hcp.Surname;

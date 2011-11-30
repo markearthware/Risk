@@ -64,8 +64,8 @@ steal(
 
         var pageClass = determinePageClass(e);
 
-        // dont bother for the homepage
-        if (pageClass != "index") {
+        // dont bother for the homepage or for the simple dialogs
+        if (pageClass != "index" && pageClass != "ui-simpledialog-dialog") {
             $('.tabBarContainer').zoladex_tab_bar('destroy');
             $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
         }
