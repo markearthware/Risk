@@ -13,7 +13,7 @@ steal(
     ).then( //steal jquery mobile js
         './lib/jQueryMobile/jquery.mobile-1.0.js'
     ).then(
-// load controllers and libraries for other pages and init db
+        // load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
         './models/models.js', // steals all your models
         './lib/jQueryValidation/jquery.validate.js',
@@ -58,33 +58,19 @@ steal(
 
         var pageClass = determinePageClass(e);
 
-        $('.tabBarContainer').zoladex_tab_bar('destroy');
-
-        $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
+        // dont bother for the homepage
+        if (pageClass != "index") {
+            $('.tabBarContainer').zoladex_tab_bar('destroy');
+            $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
+        }
     }
 
     function determinePageClass(e) {
-        
-        if ($(e.target).filter('.hcpPage').length > 0) {
-            return 'hcp';
-        }
-
-        if ($(e.target).filter('.calendarPage').length > 0) {
-            return 'calendar';
-        }
-
-        if ($(e.target).filter('.progressPage').length > 0) {
-            return 'progress';
-        }
-
-        if ($(e.target).filter('.supportPage').length > 0) {
-            return 'support';
-        }
-        
-        return '';
+        return $(e.target)[0].id.replace("Page", "");
     }
 
     function bindPageControllers(e) {
+        if ($(e.target).filter('#indexPage').length > 0) return '';
         
         // hcp controllers
         if ($(e.target).filter('#HcpListPage').length > 0) {
