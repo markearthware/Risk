@@ -10,7 +10,13 @@ steal('jquery/controller',
     {
         init: function () {
             
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs');
+            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { Title: "", 
+                                                                                                FirstName: "", 
+                                                                                                Surname: "", 
+                                                                                                PracticeName: "",
+                                                                                                Number: "",
+                                                                                                Street: "",
+                                                                                                Town: "" });
             
             $('#NewHcpForm').html(view);
         },
