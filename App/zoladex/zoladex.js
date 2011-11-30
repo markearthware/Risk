@@ -66,7 +66,12 @@ steal(
     }
 
     function determinePageClass(e) {
-        return $(e.target)[0].id.replace("Page", "");
+
+        var pageClass = $(e.target).attr('class');
+        
+        if(pageClass != undefined) {
+            return pageClass.replace('Page', '');
+        }
     }
 
     function bindPageControllers(e) {
