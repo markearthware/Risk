@@ -24,6 +24,7 @@ steal(
         './controllers/hcpedit_controller',
         './controllers/practicelist_controller',
         './controllers/supportgrouplist_controller',
+        './controllers/patientappointmentadd_controller',
          function () {
              localStorageDB.init();
          }
@@ -114,6 +115,12 @@ steal(
             //$('#EditHcpForm').validate();
             return;
         }
+        if ($('#NewAppointmentForm').length > 0) {
+            $('#NewAppointmentForm').zoladex_patient_appointment_add();
+            
+            $('#NewAppointmentForm').validate();
+            return;
+        }        
 
        
 
