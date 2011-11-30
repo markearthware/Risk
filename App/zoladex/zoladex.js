@@ -21,6 +21,7 @@ steal(
         './controllers/hcplist_controller',
         './controllers/hcpdetails_controller',
         './controllers/hcpadd_controller',
+        './controllers/hcpedit_controller',
         './controllers/practicelist_controller',
         './controllers/supportgrouplist_controller',
          function () {
@@ -101,6 +102,11 @@ steal(
         if ($('#NewHcpForm').length > 0) {
             $('#NewHcpForm').zoladex_hcp_add();
             $('#NewHcpForm').validate();
+            return;
+        }
+        if ($('#EditHcpForm').length > 0) {
+            $('#EditHcpForm').zoladex_hcp_edit();
+            //$('#EditHcpForm').validate();
             return;
         }
 
