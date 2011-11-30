@@ -10,9 +10,7 @@
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs');
 
-            $('#EditHcpForm').html(view);
         },
         submit: function (el, ev) {
 
@@ -40,14 +38,14 @@
         },
 
         insertData: function (data) {
-            var item = data.item(0);
-            $('#title').val(item.Title);
-            $('#firstname').val(item.FirstName);
-            $('#surname').val(item.Surname);
-            $('#number').val(item.Telephone);
-            $('#street').val(item.Street);
-            $('#town').val(item.Town);
-            $('#practicename').val(item.PracticeName);
+
+            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', data);
+
+            var form = $('#EditHcpForm');
+
+            form.html(view);
+
+            form.trigger('create');
 
             $.mobile.hidePageLoadingMsg();
         }
