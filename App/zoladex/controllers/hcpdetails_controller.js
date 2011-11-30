@@ -32,9 +32,9 @@
 
         insertData: function (data) {
 
-            $('#HcpDetailsPage h1').html(Zoladex.Models.Hcp.buildName(data.item(0)));
+            $('#HcpDetailsPage h1').html(Zoladex.Models.Hcp.buildName(data));
 
-            var editLink = $('#EditHcpButton').attr('href') + data.item(0).Id;
+            var editLink = $('#EditHcpButton').attr('href') + data.Id;
 
             $('#EditHcpButton').attr('href', editLink);
 

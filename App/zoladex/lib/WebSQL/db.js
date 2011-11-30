@@ -43,6 +43,25 @@ var localStorageDB = (function () {
 
         return dfrd.promise();
     }
+    
+    function getSingleRow(sql) {
+        db = openDb();
+        var dfrd = $.Deferred();
+        db.transaction(function (tx) {
+            tx.executeSql(sql, [],
+                function (tx1, result) {
+                    steal.dev.log('select succeeded');
+                    steal.dev.log(result);
+                    dfrd.resolve(result.rows.item(0));
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                }
+        );
+        });
+
+        return dfrd.promise();
+    }
 
     function openDb() {
         return openDatabase("zoladexDB", "1.0", "Zoladex Mobile App", 200000);
@@ -97,6 +116,7 @@ var localStorageDB = (function () {
     return {
         init: initDb,
         getRows: getRows,
+        getSingleRow: getSingleRow,
         addHcp: addHcp
     };
 })();
