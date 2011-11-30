@@ -7,7 +7,7 @@
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpDetails', {
-    },
+        },
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
@@ -32,7 +32,11 @@
 
         insertData: function (data) {
 
-            $('#HcpDetailsPage h1').html(Zoladex.Models.Hcp.buildName(data.item(0)));
+            $('#HcpDetailsPage h1').html(Zoladex.Models.Hcp.buildName(data));
+
+            var editLink = $('#EditHcpButton').attr('href') + data.Id;
+
+            $('#EditHcpButton').attr('href', editLink);
 
             var view = this.view('//zoladex/views/hcp_details/init.ejs', data);
 
@@ -43,4 +47,4 @@
             $.mobile.hidePageLoadingMsg();
         }
     });
-});
+    });

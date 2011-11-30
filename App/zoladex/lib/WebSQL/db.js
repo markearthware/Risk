@@ -11,7 +11,7 @@ var localStorageDB = (function () {
                 if (db) {
                     db.transaction(function (tx) {
                         tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Street, Town)', [], function (tx, result) {
-
+                            // TODO remove before going live
                             var ticks = createId();
                             tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Street, Town) VALUES (?,?,?,?,?,?,?,?)', [ticks, 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'Windy Lane', 'Letchworth']);
                         });
@@ -34,6 +34,25 @@ var localStorageDB = (function () {
                     steal.dev.log('select succeeded');
                     steal.dev.log(result);
                     dfrd.resolve(result.rows);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                }
+        );
+        });
+
+        return dfrd.promise();
+    }
+
+    function getSingleRow(sql) {
+        db = openDb();
+        var dfrd = $.Deferred();
+        db.transaction(function (tx) {
+            tx.executeSql(sql, [],
+                function (tx1, result) {
+                    steal.dev.log('select succeeded');
+                    steal.dev.log(result);
+                    dfrd.resolve(result.rows.item(0));
                 },
                 function (tx1, error) {
                     logError(error, sql);
@@ -88,6 +107,32 @@ var localStorageDB = (function () {
             return deferred.promise();
         });
 
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+    function updateHcp(hcp, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='" + hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "' WHERE Id=" + hcp.id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Update succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.resolve(false);
+                }
+            );
+        });
 
         // wire up callbacks to defered
         deferred.then(success);
@@ -97,7 +142,9 @@ var localStorageDB = (function () {
     return {
         init: initDb,
         getRows: getRows,
-        addHcp: addHcp
+        getSingleRow: getSingleRow,
+        addHcp: addHcp,
+        updateHcp: updateHcp
     };
 })();
 

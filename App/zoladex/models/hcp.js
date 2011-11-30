@@ -8,7 +8,7 @@ steal('jquery/model', function () {
 
       findOne: function (id) {
 
-          var result = localStorageDB.getRows('SELECT * FROM HealthcareProfessionals WHERE Id =' + id);
+          var result = localStorageDB.getSingleRow('SELECT * FROM HealthcareProfessionals WHERE Id =' + id);
           steal.dev.log("result is:");
           steal.dev.log(result);
           return result;
@@ -18,7 +18,9 @@ steal('jquery/model', function () {
           return localStorageDB.addHcp(newhcp, success, error);
       },
 
-      update: "/recipes/{id}.json",
+      update: function (id, hcp, success, error) {
+          return localStorageDB.updateHcp(hcp, success, error);
+      },
 
       destroy: "/recipes/{id}.json",
 

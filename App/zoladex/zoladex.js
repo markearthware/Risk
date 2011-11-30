@@ -13,7 +13,7 @@ steal(
     ).then( //steal jquery mobile js
         './lib/jQueryMobile/jquery.mobile-1.0.js'
     ).then(
-// load controllers and libraries for other pages and init db
+        // load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
         './models/models.js', // steals all your models
         './lib/jQueryValidation/jquery.validate.js',
@@ -21,6 +21,7 @@ steal(
         './controllers/hcplist_controller',
         './controllers/hcpdetails_controller',
         './controllers/hcpadd_controller',
+        './controllers/hcpedit_controller',
         './controllers/practicelist_controller',
         './controllers/supportgrouplist_controller',
          function () {
@@ -51,6 +52,11 @@ steal(
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;
             }
+            if ($(args.nextPage).filter('#HcpEditPage').length > 0) {
+                $('#EditHcpForm').zoladex_hcp_edit('loadData');
+                return;
+            }
+            
         });
     }
 
@@ -58,33 +64,24 @@ steal(
 
         var pageClass = determinePageClass(e);
 
-        $('.tabBarContainer').zoladex_tab_bar('destroy');
-
-        $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
+        // dont bother for the homepage
+        if (pageClass != "index") {
+            $('.tabBarContainer').zoladex_tab_bar('destroy');
+            $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
+        }
     }
 
     function determinePageClass(e) {
+
+        var pageClass = $(e.target).attr('class');
         
-        if ($(e.target).filter('.hcpPage').length > 0) {
-            return 'hcp';
+        if(pageClass != undefined) {
+            return pageClass.replace('Page', '');
         }
-
-        if ($(e.target).filter('.calendarPage').length > 0) {
-            return 'calendar';
-        }
-
-        if ($(e.target).filter('.progressPage').length > 0) {
-            return 'progress';
-        }
-
-        if ($(e.target).filter('.supportPage').length > 0) {
-            return 'support';
-        }
-        
-        return '';
     }
 
     function bindPageControllers(e) {
+        if ($(e.target).filter('#indexPage').length > 0) return '';
         
         // hcp controllers
         if ($(e.target).filter('#HcpListPage').length > 0) {
@@ -110,6 +107,11 @@ steal(
         if ($('#NewHcpForm').length > 0) {
             $('#NewHcpForm').zoladex_hcp_add();
             $('#NewHcpForm').validate();
+            return;
+        }
+        if ($('#EditHcpForm').length > 0) {
+            $('#EditHcpForm').zoladex_hcp_edit();
+            //$('#EditHcpForm').validate();
             return;
         }
 
