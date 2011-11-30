@@ -9,7 +9,10 @@ steal('jquery/controller',
         },
     {
         init: function () {
-
+            
+            var view = $.View('//zoladex/views/hcp_addedit/init.ejs');
+            
+            $('#NewHcpForm').html(view);
         },
         submit: function (el, ev) {
 
@@ -30,4 +33,4 @@ steal('jquery/controller',
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         }
     });
-});
+    });

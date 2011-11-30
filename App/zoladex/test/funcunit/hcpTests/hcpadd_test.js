@@ -28,7 +28,15 @@
         equal(S('#AddHcpPage h1').text(), "New HCP", "header text is New HCP");
     });
 
+    test("Add HCP form has been inserted", function () {
+
+        ok(S(S('#NewHcpForm').children()).size(function (size) {
+            return size > 2;
+        }));
+    });
+
     test("Can successfully add a new HCP", function () {
+        
         S('#title').type("blah");
         S('#firstname').type("blah");
         S('#surname').type("blah");
@@ -36,9 +44,7 @@
         S('#street').type("blah");
         S('#town').type("blah");
         S('#practicename').type("blah");
-
         S('#newhcpbutton').exists().click();
-
         ok(S('#SuccessDialog').exists());
     });
 })
