@@ -1,16 +1,16 @@
 ﻿	<%for(var i = 0; i < this.length ; i++){ %>
 	<div class="ui-grid-c">
 		<div class="ui-block-a">
-			<div class="ui-bar ui-bar-c"><%=this.item(i).Date%></div>
+			<div class="ui-bar ui-bar-c"><%=this[i].Date%></div>
 		</div>
 		<div class="ui-block-b">
-			<div class="ui-bar ui-bar-c"><%=this.item(i).Time%></div>
+			<div class="ui-bar ui-bar-c"><%=this[i].Time%></div>
 		</div>
 		<div class="ui-block-c">
-			<div class="ui-bar ui-bar-c"><%=this.item(i).Description%></div>
+			<div class="ui-bar ui-bar-c"><%=this[i].Description%></div>
 		</div>
 		<div class="ui-block-d">
-			<div class="ui-bar ui-bar-c"><%=this.item(i).WarningSign%></div>
+			<div class="ui-bar ui-bar-c"><%=this[i].WarningSign%></div>
 		</div>
 	</div>
 <%}%>

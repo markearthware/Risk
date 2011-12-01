@@ -14,6 +14,7 @@
             this.list = $('#SymptomListContainer');
         },
         loadData: function () {
+
             var view = new $.View('//zoladex/views/symptom_list/init.ejs', Zoladex.Models.PatientSymptom.findAll(), null, this.callback(this.refreshList));
 
             this.element.html(view);
@@ -25,4 +26,4 @@
             //this.list.listview('refresh');
         }
     });
-});
+    });

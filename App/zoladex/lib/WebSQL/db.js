@@ -147,7 +147,6 @@ var localStorageDB = (function () {
         deferred.fail(error);
     }
 
-
     function deleteHcp(id, success, error) {
 
         var deferred = $.Deferred();
@@ -237,7 +236,6 @@ var localStorageDB = (function () {
         deferred.fail(error);
     }
 
-
     function deleteAppointment(id, success, error) {
 
         var deferred = $.Deferred();
@@ -322,6 +320,32 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
             });
         });
+        
+        checkTableExists("PatientSymptoms", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (Id unique, Date, Time, SymptomId, WarningSign)', [], function (tx, result) {
+                // populate
+                var currentDate = new Date();
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (1,"' + currentDate + '", ' + currentDate.getTime() + ', 1, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (2,"' + currentDate + '", ' + currentDate.getTime() + ', 2, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (3,"' + currentDate + '", ' + currentDate.getTime() + ', 4, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (4,"' + currentDate + '", ' + currentDate.getTime() + ', 3, "true")');
+            });
+        });
+
+        checkTableExists("Symptoms", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (Id unique, Description, WarningSign)', [], function (tx, result) {
+                
+                // populate
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (1, "Pain in lower Back", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (2, "Vomiting", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (3, "Funny smell", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (4, "Seeing unicorns", "true")');
+                
+            });
+        });
+        
     }
 
     // checks if a table exists in the database and if not calls the callback
@@ -337,7 +361,6 @@ var localStorageDB = (function () {
         }
     }
 
-
     return {
         init: initDb,
         getRows: getRows,
@@ -350,5 +373,3 @@ var localStorageDB = (function () {
         deleteAppointment: deleteAppointment
     };
 })();
-
-
