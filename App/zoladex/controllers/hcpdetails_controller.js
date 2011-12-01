@@ -37,7 +37,7 @@
 
             this.Id = data.Id;
 
-            $('#HcpDetailsPage h1').html(Zoladex.Models.Hcp.buildName(data));
+            $('#HcpDetailsPage h1').html(data.FullName());
 
             var editLink = $('#EditHcpButton').attr('href') + data.Id;
 
