@@ -1,5 +1,6 @@
 var localStorageDB = (function () {
 
+    var dropTables = true; //todo remove before production
     var db = null,
     loadedCallback = null;
 
@@ -8,19 +9,12 @@ var localStorageDB = (function () {
         try {
             if (window.openDatabase) {
                 db = openDb();
-
                 // check if first run and we need to initialise tables
-                initTables();
-
-                if (db) {
-                    db.transaction(function (tx) {
-                        tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Street, Town)', [], function (tx, result) {
-                            // TODO remove before going live
-                            var ticks = createId();
-                            tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Street, Town) VALUES (?,?,?,?,?,?,?,?)', [ticks, 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'Windy Lane', 'Letchworth']);
-                        });
-                    });
+                if (dropTables) {
+                    goDropTables();
                 }
+
+                initTables();
             } else {
                 steal.dev.log('Web Databases not supported');
             }
@@ -29,7 +23,14 @@ var localStorageDB = (function () {
         }
     }
 
-    function getRows(sql, context, success, error) {
+    function goDropTables() {
+        db.transaction(function (tx) {
+            tx.executeSql('DROP TABLE "HealthcareProfessionals"', function () {
+                steal.dev.log("HCP table has been dropped");
+            });
+        });
+    }
+
         db = openDb();
         var deferred = $.Deferred();
         db.transaction(function (tx) {
@@ -117,7 +118,7 @@ var localStorageDB = (function () {
 
         db.transaction(function (tx) {
 
-            var sql = "INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Street, Town) VALUES (" + ticks + ", '" + hcp.title + "','" + hcp.firstname + "', '" + hcp.surname + "', '" + hcp.practicename + "', '" + hcp.tel + "', '" + hcp.street + "', '" + hcp.town + "')";
+            var sql = "INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (" + ticks + ", '" + hcp.title + "','" + hcp.firstname + "', '" + hcp.surname + "', '" + hcp.practicename + "', '" + hcp.tel + "', '" + hcp.email + "', '" + hcp.street + "', '" + hcp.town + "', '" + hcp.county + "', '" + hcp.postcode + "')";
 
             steal.dev.log(sql);
 
@@ -177,7 +178,7 @@ var localStorageDB = (function () {
 
         db.transaction(function (tx) {
 
-            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='" + hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "' WHERE Id=" + hcp.id;
+            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='" + hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Email = '" + hcp.Email + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "', County = '" + hcp.County + "', Postcode = '" + hcp.Postcode + "' WHERE Id=" + hcp.id;
 
             tx.executeSql(
                 sql,
@@ -199,6 +200,13 @@ var localStorageDB = (function () {
     }
 
     function addAppointment(apt, success, error) {
+
+        checkTableExists("HealthcareProfessionals", function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
+            });
+        });
+
 
         db = openDb();
 

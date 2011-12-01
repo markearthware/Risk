@@ -1,5 +1,5 @@
 ﻿steal("funcunit", function () {
-    module("Hcp list item clicked", {
+    module("Hcp item deleted", {
         setup: function () {
 
             S.open("../index.html", function () {
@@ -12,10 +12,6 @@
 
                 S('#HcpListPage').exists();
 
-                S('#HcpListList li.ui-li').size(function(size) {
-                    return size > 0;
-                });
-
                 S('#HcpListList li :first a').exists().click();
 
                 S('#HcpDetailsPage').exists();
@@ -23,12 +19,14 @@
         }
     });
 
-    test("Details page is show", function () {
+    test("Item is deleted", function () {
 
-        equal(S('#HcpDetailsPage h1').text(), "Loading...", "header text is Dr Mark Short");
+        S('#DeleteHcpButton').exists().click();
 
-        ok(S('#HcpDetailsList li').size(function (size) {
-            return size > 0;
-        }), "Data has loaded");
+        S('.ui-simpledialog-container').exists();
+
+        S('.ui-simpledialog-controls a').first().click();
+
+        ok(S('#HcpListPage').exists());
     });
 })

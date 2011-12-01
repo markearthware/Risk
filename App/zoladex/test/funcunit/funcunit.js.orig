@@ -8,8 +8,11 @@ steal("funcunit")
  "./hcpTests/hcplocalstorage_test.js",
  "./hcpTests/hcpdetailspage_test.js",
  "./hcpTests/hcpadd_test.js",
+<<<<<<< HEAD
  "./hcpTests/hcpedit_test.js",
  "./patientappointmentTests/patientappointmentadd_test.js"
+=======
  "./hcpTests/hcpedit_test.js", 
  "./hcpTests/hcpdelete_test.js"
+>>>>>>> 959e41a52fc1f6004b5d34d1c58d1703a346d4c0
 );

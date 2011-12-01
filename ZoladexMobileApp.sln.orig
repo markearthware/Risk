@@ -18,7 +18,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "App", "App\", "{18726109-73
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "64000"
+<<<<<<< HEAD
+		VWDPort = "63074"
+=======
+		VWDPort = "54553"
+>>>>>>> 959e41a52fc1f6004b5d34d1c58d1703a346d4c0
 	EndProjectSection
 EndProject
 Global
