@@ -13,7 +13,7 @@
                 S('#HcpListPage').exists();
 
                 S('#HcpListList li.ui-li').size(function (size) {
-                    return size > 2;
+                    return size > 0;
                 });
 
                 S('.hcpAnchor').first().exists().click();
@@ -41,9 +41,12 @@
     });
 
     test("Can successfully edit a new HCP", function () {
-        S('#title').exists().type("\b\b" + "Dr");
+        S('#title').exists().type("\b\b\b\b\b\b" + "Dr");
         S('#firstname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b" + "Jim");
         S('#surname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b\b" + "Bob");
+        S('#email').exists().type("Dr");
+        S('#county').exists().type("Jim");
+        S('#postcode').exists().type("Bob");
         S('#newhcpbutton').exists().click();
         S('#HcpDetailsPage').exists();
         ok(S('#HcpDetailsPage h1').text("Dr Jim Bob"));

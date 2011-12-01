@@ -1,19 +1,18 @@
 steal("funcunit")
  .then(
- "./patientappointmentTests/patientappointmentadd_test.js",     
  "./navBarTests/hcpbutton_test.js",
  "./navBarTests/calendarbutton_test.js",
  "./navBarTests/progressbutton_test.js",
  "./navBarTests/supportbutton_test.js",
-    //hcp tests
  "./hcpTests/hcplistbutton_test.js",
  "./hcpTests/hcplocalstorage_test.js",
  "./hcpTests/hcpdetailspage_test.js",
  "./hcpTests/hcpadd_test.js",
+<<<<<<< HEAD
  "./hcpTests/hcpedit_test.js",
+ "./patientappointmentTests/patientappointmentadd_test.js"
+=======
  "./hcpTests/hcpedit_test.js", 
- "./hcpTests/hcpdelete_test.js",
-    
-    //symptom tests
-    "./progressTests/symptomTests/symptomlist_test.js"
+ "./hcpTests/hcpdelete_test.js"
+>>>>>>> 959e41a52fc1f6004b5d34d1c58d1703a346d4c0
 );

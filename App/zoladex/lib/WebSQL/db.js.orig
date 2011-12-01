@@ -1,5 +1,6 @@
 var localStorageDB = (function () {
 
+    var dropTables = true; //todo remove before production
     var db = null,
     loadedCallback = null;
 
@@ -8,19 +9,12 @@ var localStorageDB = (function () {
         try {
             if (window.openDatabase) {
                 db = openDb();
-
                 // check if first run and we need to initialise tables
-                initTables();
-
-                if (db) {
-                    db.transaction(function (tx) {
-                        tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Street, Town)', [], function (tx, result) {
-                            // TODO remove before going live
-                            var ticks = createId();
-                            tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Street, Town) VALUES (?,?,?,?,?,?,?,?)', [ticks, 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'Windy Lane', 'Letchworth']);
-                        });
-                    });
+                if (dropTables) {
+                    goDropTables();
                 }
+
+                initTables();
             } else {
                 steal.dev.log('Web Databases not supported');
             }
@@ -29,46 +23,85 @@ var localStorageDB = (function () {
         }
     }
 
-    function getRows(sql) {
-        db = openDb();
-        var dfrd = $.Deferred();
+<<<<<<< HEAD
+    function getRows(sql, context, success, error) {
+=======
+    function goDropTables() {
         db.transaction(function (tx) {
-            tx.executeSql(sql, [],
-                function (tx1, result) {
-                    steal.dev.log('select succeeded');
-                    steal.dev.log(result);
-                    dfrd.resolve(result.rows);
-                },
-                function (tx1, error) {
-                    logError(error, sql);
-                }
-        );
+            tx.executeSql('DROP TABLE "HealthcareProfessionals"', function () {
+                steal.dev.log("HCP table has been dropped");
+            });
         });
-
-        return dfrd.promise();
     }
 
-    function getSingleRow(sql) {
+    function getRows(sql) {
+>>>>>>> 959e41a52fc1f6004b5d34d1c58d1703a346d4c0
         db = openDb();
-        var dfrd = $.Deferred();
+        var deferred = $.Deferred();
         db.transaction(function (tx) {
             tx.executeSql(sql, [],
                 function (tx1, result) {
                     steal.dev.log('select succeeded');
                     steal.dev.log(result);
-                    dfrd.resolve(result.rows.item(0));
+
+                    // rows come back as SQLResultSet so turn them into a real array of the objects instead
+                    if (context && context.models) {
+                        // create REAL models from the data
+                        deferred.resolve(context.models(ArrayFromSQLResultSet(result.rows)));    
+                    }
+                    else {
+                        deferred.resolve(ArrayFromSQLResultSet(result.rows));    
+                    }
                 },
                 function (tx1, error) {
                     logError(error, sql);
+                    deferred.reject(error);
                 }
         );
         });
+        if (success) deferred.then(success);
+        if (error) deferred.fail(error);
+        return deferred.promise();
+    }
 
-        return dfrd.promise();
+    function getSingleRow(sql, context, success, error) {
+        db = openDb();
+        var deferred = $.Deferred();
+        db.transaction(function (tx) {
+            tx.executeSql(sql, [],
+                function (tx1, result) {
+                    steal.dev.log('select succeeded');
+                    steal.dev.log(result);
+                    if (context && context.model) {
+                        // create REAL models from the data
+                        deferred.resolve(context.model(result.rows.item(0)));
+                    }
+                    else {
+                        deferred.resolve(result.rows.item(0));
+                    }                    
+                    
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(error);
+                }
+        );
+        });
+        if (success) deferred.then(success);
+        if (error) deferred.fail(error);
+        return deferred.promise();
     }
 
     function openDb() {
         return openDatabase("zoladexDB", "1.0", "Zoladex Mobile App", 200000);
+    }
+
+    function ArrayFromSQLResultSet(rs) {
+        var res = [];
+        $.each(rs, function (index, value) {
+            res.push(rs.item(index));
+        });
+        return res;
     }
 
     function createId() {
@@ -90,7 +123,7 @@ var localStorageDB = (function () {
 
         db.transaction(function (tx) {
 
-            var sql = "INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Street, Town) VALUES (" + ticks + ", '" + hcp.title + "','" + hcp.firstname + "', '" + hcp.surname + "', '" + hcp.practicename + "', '" + hcp.tel + "', '" + hcp.street + "', '" + hcp.town + "')";
+            var sql = "INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (" + ticks + ", '" + hcp.title + "','" + hcp.firstname + "', '" + hcp.surname + "', '" + hcp.practicename + "', '" + hcp.tel + "', '" + hcp.email + "', '" + hcp.street + "', '" + hcp.town + "', '" + hcp.county + "', '" + hcp.postcode + "')";
 
             steal.dev.log(sql);
 
@@ -103,7 +136,7 @@ var localStorageDB = (function () {
                 },
                 function (tx1, error) {
                     logError(error, sql);
-                    deferred.resolve(0);
+                    deferred.reject(0);
                 }
             );
 
@@ -116,67 +149,7 @@ var localStorageDB = (function () {
         deferred.fail(error);
     }
 
-    function updateHcp(hcp, success, error) {
 
-        var deferred = $.Deferred();
-
-        db.transaction(function (tx) {
-
-            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='" + hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "' WHERE Id=" + hcp.id;
-
-            tx.executeSql(
-                sql,
-                [],
-                function () {
-                    steal.dev.log("Update succeeded!");
-                    deferred.resolve(true);
-                },
-                function (tx1, error) {
-                    logError(error, sql);
-                    deferred.resolve(false);
-                }
-            );
-        });
-
-        // wire up callbacks to defered
-        deferred.then(success);
-        deferred.fail(error);
-    }
-
-<<<<<<< HEAD
-    function initTables() {
-        // check if tables exist otherwise create and fill
-        checkTableExists("HealthcareLocations", function (tx) {
-            // create table for storing Practices/Hospitals
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (Id unique, Name)'); //TODO add lots more fields later
-        });
-
-        checkTableExists("ApointmentTypes", function (tx) {
-            // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS ApointmentTypes (Id unique, Name)', [], function (tx, result) {
-                // populate
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (1,"PSA test")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (2,"Follow up")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (3,"Zoladex injection")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (4,"Surgery")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (5,"Chemotherapy")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
-            });
-        });
-    }
-
-    // checks if a table exists in the database and if not calls the callback
-    function checkTableExists(tablename, doesntexistcallback) {
-        if (db) {
-            db.transaction(function (tx) {
-                tx.executeSql('select DISTINCT tbl_name from sqlite_master where tbl_name = "' + tablename + '"', [], function (tx, result) {
-                    if (!result.rows.length) {
-                        doesntexistcallback(tx);
-                    }
-                });
-            });
-        }
-=======
     function deleteHcp(id, success, error) {
 
         var deferred = $.Deferred();
@@ -194,7 +167,7 @@ var localStorageDB = (function () {
                 },
                 function (tx1, error) {
                     logError(error, sql);
-                    deferred.resolve(false);
+                    deferred.reject(false);
                 }
             );
         });
@@ -202,16 +175,195 @@ var localStorageDB = (function () {
         // wire up callbacks to defered
         deferred.then(success);
         deferred.fail(error);
->>>>>>> 7bd2e51994d023533047dc4de4cb242decb274d2
     }
+
+    function updateHcp(hcp, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "UPDATE HealthcareProfessionals SET Title= '" + hcp.Title + "', FirstName='" + hcp.FirstName + "', Surname='" + hcp.Surname + "', PracticeName='" + hcp.PracticeName + "', Telephone = '" + hcp.Telephone + "', Email = '" + hcp.Email + "', Street='" + hcp.Street + "', Town='" + hcp.Town + "', County = '" + hcp.County + "', Postcode = '" + hcp.Postcode + "' WHERE Id=" + hcp.id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Update succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(false);
+                }
+            );
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+<<<<<<< HEAD
+    function addAppointment(apt, success, error) {
+=======
+    function initTables() {
+
+        checkTableExists("HealthcareProfessionals", function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
+            });
+        });
+
+        // check if tables exist otherwise create and fill
+        checkTableExists("HealthcareLocations", function (tx) {
+            // create table for storing Practices/Hospitals
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (Id unique, Name)'); //TODO add lots more fields later
+        });
+>>>>>>> 959e41a52fc1f6004b5d34d1c58d1703a346d4c0
+
+        db = openDb();
+
+        var ticks = createId();
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+            var sql = "INSERT INTO Appointments (Id,  StartDate, StartTime, TypeId, HcpId, HealthcareLocationId, AlertsEnabled) VALUES (" + ticks + ", '" + apt.StartDate + "','" + apt.StartTime + "', " + apt.TypeId + ", " + apt.HcpId + ", " + apt.HealthcareLocationId + ", " + apt.AlertsEnabled + ")";
+
+            steal.dev.log(sql);
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Insert succeeded!");
+                    deferred.resolve(ticks);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(0);
+                }
+            );
+
+
+            return deferred.promise();
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+
+    function deleteAppointment(id, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "DELETE FROM Appointments WHERE Id= " + id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Delete succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(false);
+                }
+            );
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+    function updateAppointment(apt, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "UPDATE Appointments SET StartDate = '" + apt.StartDate + "', StartTime = '" + apt.StartDate + "', TypeId = " + apt.TypeId + ", HcpId = " + apt.HcpId + ", HealthcareLocationId = " + apt.HealthcareLocationId + ", AlertsEnabled = " + apt.AlertsEnabled + " WHERE Id = " + apt.Id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Update succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(false);
+                }
+            );
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+    function initTables() {
+        // check if tables exist otherwise create and fill
+        checkTableExists("HealthcareLocations", function (tx) {
+            // create table for storing Practices/Hospitals
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (Id unique, Name)'); //TODO add lots more fields later
+        });
+
+        checkTableExists("Appointments", function (tx) {
+            // create table for storing Practices/Hospitals
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (Id unique, StartDate, StartTime, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
+        });
+
+        checkTableExists("AppointmentTypes", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (Id unique, Name)', [], function (tx, result) {
+                // populate
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (1,"PSA test")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (2,"Follow up")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (3,"Zoladex injection")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (4,"Surgery")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (5,"Chemotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
+            });
+        });
+    }
+
+    // checks if a table exists in the database and if not calls the callback
+    function checkTableExists(tablename, doesntexistcallback) {
+        if (db) {
+            db.transaction(function (tx) {
+                tx.executeSql('select DISTINCT tbl_name from sqlite_master where tbl_name = "' + tablename + '"', [], function (tx, result) {
+                    if (!result.rows.length) {
+                        doesntexistcallback(tx);
+                    }
+                });
+            });
+        }
+    }
+
 
     return {
         init: initDb,
         getRows: getRows,
         getSingleRow: getSingleRow,
         addHcp: addHcp,
-        updateHcp: updateHcp, 
+        updateHcp: updateHcp,
+<<<<<<< HEAD
+        deleteHcp: deleteHcp,
+        addAppointment: addAppointment,
+        updateAppointment: updateAppointment,
+        deleteAppointment: deleteAppointment        
+=======
         deleteHcp: deleteHcp
+>>>>>>> 959e41a52fc1f6004b5d34d1c58d1703a346d4c0
     };
 })();
 
