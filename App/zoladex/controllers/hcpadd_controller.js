@@ -26,7 +26,6 @@ steal('jquery/controller',
             $('#NewHcpForm').html(view);
         },
         submit: function (el, ev) {
-
             ev.preventDefault();
 
             if ($('#NewHcpForm').valid()) {
@@ -42,7 +41,7 @@ steal('jquery/controller',
             return false;
         },
         onInsertSuccess: function () {
-            $.mobile.changePage('dialog/success.htm', 'pop', false, true);
+            $.mobile.changePage('hcplist.htm', 'pop', false, true);
         },
         onInsertFail: function () {
             steal.dev.log('professional has not been added');

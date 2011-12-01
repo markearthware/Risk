@@ -1,6 +1,6 @@
 var localStorageDB = (function () {
 
-    var dropTables = false;
+    var dropTables = true; //todo remove before production
     var db = null,
     loadedCallback = null;
 
