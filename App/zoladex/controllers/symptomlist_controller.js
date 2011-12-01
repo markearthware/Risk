@@ -17,13 +17,13 @@
 
             var view = new $.View('//zoladex/views/symptom_list/init.ejs', Zoladex.Models.PatientSymptom.findAll(), null, this.callback(this.refreshList));
 
-            this.element.html(view);
+            this.element.append(view);
         },
         refreshList: function () {
 
             $.mobile.hidePageLoadingMsg();
 
-            //this.list.listview('refresh');
+            this.list.listview();
         }
     });
-    });
+});

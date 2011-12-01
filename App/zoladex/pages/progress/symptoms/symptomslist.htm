@@ -4,25 +4,12 @@
         <a  id="ButtonNewSymptom" data-icon="plus" href="symptomnew.htm" class="ui-btn-right">New</a>
     </div>
     <div data-role="content">
-        <div class="ui-grid-c">
-	        <div class="ui-block-a">
-                <div class="ui-bar ui-bar-b">Date</div>
-            </div>
-            <div class="ui-block-b">
-                <div class="ui-bar ui-bar-b">Time</div>
-            </div>
-            <div class="ui-block-c">
-                <div class="ui-bar ui-bar-b">Symptom</div>
-            </div>
-            <div class="ui-block-d">
-                <div class="ui-bar ui-bar-b">Warning Sign?</div>
-            </div>
-        </div>
-        <div id="SymptomListContainer">
-        
-        </div>
-	    <button type="submit" data-theme="c">Contact HCP</button>
+        <ul date-role="listview"  id="SymptomListContainer" data-inset="true">
+        </ul>
+        <button type="submit" data-theme="c">Contact HCP</button>
 	    <button type="submit" data-theme="b">Warning Signs</button>
+    </div>
+
     <div data-role="footer" data-position="fixed" class="tabBarContainer">
     </div><!-- /footer -->
 </div>

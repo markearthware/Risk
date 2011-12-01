@@ -1,16 +1,13 @@
-﻿	<%for(var i = 0; i < this.length ; i++){ %>
-	<div class="ui-grid-c">
-		<div class="ui-block-a">
-			<div class="ui-bar ui-bar-c"><%=this[i].Date%></div>
+﻿<%for(var i = 0; i < this.length ; i++){ %>
+	<li>
+		<div>
+			<%=this[i].Date%>, <%=this[i].Time%>
 		</div>
-		<div class="ui-block-b">
-			<div class="ui-bar ui-bar-c"><%=this[i].Time%></div>
+		<div>
+			<h2><%=this[i].Description%><h3>
 		</div>
-		<div class="ui-block-c">
-			<div class="ui-bar ui-bar-c"><%=this[i].Description%></div>
+		<div>
+			<%=this[i].WarningSign%>
 		</div>
-		<div class="ui-block-d">
-			<div class="ui-bar ui-bar-c"><%=this[i].WarningSign%></div>
-		</div>
-	</div>
+	</li>
 <%}%>
