@@ -130,12 +130,40 @@ var localStorageDB = (function () {
                 },
                 function (tx1, error) {
                     logError(error, sql);
-                    deferred.resolve(0);
+                    deferred.reject(0);
                 }
             );
 
 
             return deferred.promise();
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+
+    function deleteHcp(id, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "DELETE FROM HealthcareProfessionals WHERE Id= " + id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Delete succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(false);
+                }
+            );
         });
 
         // wire up callbacks to defered
@@ -160,7 +188,97 @@ var localStorageDB = (function () {
                 },
                 function (tx1, error) {
                     logError(error, sql);
-                    deferred.resolve(false);
+                    deferred.reject(false);
+                }
+            );
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+    function addAppointment(apt, success, error) {
+
+        db = openDb();
+
+        var ticks = createId();
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+            var sql = "INSERT INTO Appointments (Id,  StartDate, StartTime, TypeId, HcpId, HealthcareLocationId, AlertsEnabled) VALUES (" + ticks + ", '" + apt.StartDate + "','" + apt.StartTime + "', " + apt.TypeId + ", " + apt.HcpId + ", " + apt.HealthcareLocationId + ", " + apt.AlertsEnabled + ")";
+
+            steal.dev.log(sql);
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Insert succeeded!");
+                    deferred.resolve(ticks);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(0);
+                }
+            );
+
+
+            return deferred.promise();
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+
+    function deleteAppointment(id, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "DELETE FROM Appointments WHERE Id= " + id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Delete succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(false);
+                }
+            );
+        });
+
+        // wire up callbacks to defered
+        deferred.then(success);
+        deferred.fail(error);
+    }
+
+    function updateAppointment(apt, success, error) {
+
+        var deferred = $.Deferred();
+
+        db.transaction(function (tx) {
+
+            var sql = "UPDATE Appointments SET StartDate = '" + apt.StartDate + "', StartTime = '" + apt.StartDate + "', TypeId = " + apt.TypeId + ", HcpId = " + apt.HcpId + ", HealthcareLocationId = " + apt.HealthcareLocationId + ", AlertsEnabled = " + apt.AlertsEnabled + " WHERE Id = " + apt.Id;
+
+            tx.executeSql(
+                sql,
+                [],
+                function () {
+                    steal.dev.log("Update succeeded!");
+                    deferred.resolve(true);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(false);
                 }
             );
         });
@@ -209,32 +327,6 @@ var localStorageDB = (function () {
         }
     }
 
-    function deleteHcp(id, success, error) {
-
-        var deferred = $.Deferred();
-
-        db.transaction(function (tx) {
-
-            var sql = "DELETE FROM HealthcareProfessionals WHERE Id= " + id;
-
-            tx.executeSql(
-                sql,
-                [],
-                function () {
-                    steal.dev.log("Delete succeeded!");
-                    deferred.resolve(true);
-                },
-                function (tx1, error) {
-                    logError(error, sql);
-                    deferred.resolve(false);
-                }
-            );
-        });
-
-        // wire up callbacks to defered
-        deferred.then(success);
-        deferred.fail(error);
-    }
 
     return {
         init: initDb,
@@ -242,7 +334,10 @@ var localStorageDB = (function () {
         getSingleRow: getSingleRow,
         addHcp: addHcp,
         updateHcp: updateHcp,
-        deleteHcp: deleteHcp
+        deleteHcp: deleteHcp,
+        addAppointment: addAppointment,
+        updateAppointment: updateAppointment,
+        deleteAppointment: deleteAppointment        
     };
 })();
 

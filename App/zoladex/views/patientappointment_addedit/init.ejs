@@ -1,25 +1,39 @@
-﻿<input type="hidden" name="id" id="Id" value="<%= this.Id %>" />
+﻿<% if (this.Id.length > 0) { %>
+<input type="hidden" name="id" id="Id" value="<%= this.Id %>" />
+<% } %>
 <label for="HcpId">HCP</label>
-<select name="HcpId">
+<select id="HcpId" name="HcpId">
     <option value="-1">no HCP</option>
 	<option value="0">add new HCP</option>
 	<%for(var i = 0; i < this.Hcps.length ; i++){ %>
 		<option value="<%= this.Hcps[i].Id %>"><%= this.Hcps[i].FullName() %></option>
 	<%}%>     
 </select>
-<label for="AppointmentLocationId">Location:</label>
-<select name="AppointmentLocationId">
-    <option value="-1">no location</option>
-	<option value="0">add new Hospital/Surgury</option>
+<label for="HealthcareLocationId">Location:</label>
+<select id="HealthcareLocationId" name="HealthcareLocationId">
+    <option value="0">no location</option>
+	<option value="">add new Hospital/Surgury</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
 		<option value="<%= this.Locs[i].Id %>"><%= this.Locs[i].Name %></option>
 	<%}%>     
 </select>
-<label for="AppointmentTypeId">Type:</label>
-<select id="AppointmentTypeId">
-	<option value="0">select appointment type</option>
-	<%for(var i = 0; i < this.Types.length ; i++){ %>	
-		<option value="<%= this.Types[i].Id %>"><%= this.Types[i].Name %></option>
-	<%}%> 
+<label for="TypeId">Type:</label>
+<select id="TypeId" class="required" name="TypeId">
+    <option value="">select appointment type</option>
+    <%for(var i = 0; i < this.Types.length ; i++){ %>	
+    <option value="<%= this.Types[i].Id %>"><%= this.Types[i].Name %></option>
+    <%}%> 
 </select>
+<label for="StartDate">Date:</label>
+<input type="text" id="StartDate" placeholder="Click to select date" class="required" name="StartDate" />
+
+<label for="StartTime">Time:</label>
+<input type="text" id="StartTime" placeholder="Click to select time" class="required" name="StartTime" />
+
+<label for="AlertsEnabled">Alerts:</label>
+<select id="AlertsEnabled" data-role="slider" name="AlertsEnabled">
+    <option value="0">Off</option>
+	<option value="1" selected="selected">On</option>
+</select>
+<p><i>NB. Alerts will remind you of your next appointment every time you open the app. The app does not currently support integration with your phone's calendar.</i></p>
 <input type="submit" id="newaapointmentbutton" value="Submit" />

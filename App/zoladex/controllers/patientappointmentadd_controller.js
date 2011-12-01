@@ -6,7 +6,9 @@ steal('jquery/controller',
     '../models/appointmenttype.js',
     '../models/healthcare_location.js',
     '../models/hcp.js',
-    '../lib/WebSQL/db.js')
+    '../lib/WebSQL/db.js',
+    '../lib/mobiscroll/css/mobiscroll-1.5.2.css',
+    '../lib/mobiscroll/js/mobiscroll-1.5.2.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentAdd', {
         },
@@ -36,6 +38,11 @@ steal('jquery/controller',
                 // insert html into form and call jquerymobile create on form
                 $('#NewAppointmentForm').html(view).trigger('create');
 
+                // add date control enhancements
+                var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
+                $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
+                $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
+
                 // hide loading message
                 $.mobile.hidePageLoadingMsg();
             });
@@ -45,8 +52,8 @@ steal('jquery/controller',
             ev.preventDefault();
 
             if ($('#NewAppointmentForm').valid()) {
-                steal.dev.log('insert hcp form is valid, attempting to save to database...');
-                new Zoladex.Models.Hcp(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+                steal.dev.log('insert appointment form is valid, attempting to save to database...');
+                new Zoladex.Models.Appointment(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }
 
             return false;
@@ -55,7 +62,7 @@ steal('jquery/controller',
             $.mobile.changePage('dialog/success.htm', 'pop', false, true);
         },
         onInsertFail: function () {
-            steal.dev.log('professional has not been added');
+            steal.dev.log('appointment has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         }
     });
