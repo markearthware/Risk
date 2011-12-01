@@ -1,10 +1,43 @@
 ﻿<div data-role="page" data-add-back-btn="true" class="progressPage" id="SymptomsListPage">
     <div data-role="header">
         <h1>Symptom History</h1>
+        <a  id="ButtonNewSymptom" data-icon="plus" href="symptomnew.htm" class="ui-btn-right">New</a>
     </div>
-    <ul data-role="listview">
-        <li>Symptom</li>
-	</ul>
+    <div data-role="content">
+        <div class="ui-grid-c">
+	        <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">Date</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-b">Time</div>
+            </div>
+            <div class="ui-block-c">
+                <div class="ui-bar ui-bar-b">Symptom</div>
+            </div>
+            <div class="ui-block-d">
+                <div class="ui-bar ui-bar-b">Warning Sign?</div>
+            </div>
+        </div>
+        <div class="ui-grid-c">
+	        <div class="ui-block-a">
+                <div class="ui-bar ui-bar-c">Date</div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-c">Time</div>
+            </div>
+            <div class="ui-block-c">
+                <div class="ui-bar ui-bar-c">Symptom</div>
+            </div>
+            <div class="ui-block-d">
+                <div class="ui-bar ui-bar-c">Warning Sign?</div>
+            </div>
+        </div>
+
+        <fieldset class="ui-grid-a">
+	        <div class="ui-block-a"><button type="submit" data-theme="c">Contact HCP</button></div>
+	        <div class="ui-block-b"><button type="submit" data-theme="b">Warning Signs</button></div>	   
+        </fieldset>
+    </div>
     <div data-role="footer" data-position="fixed" class="tabBarContainer">
     </div><!-- /footer -->
 </div>
