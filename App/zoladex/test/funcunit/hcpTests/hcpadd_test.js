@@ -13,7 +13,7 @@
                 S('#HcpListPage').exists();
 
                 S('#HcpListList li.ui-li').size(function (size) {
-                    return size > 2;
+                    return size > 0;
                 });
 
                 S('#ButtonNewHcp').exists().click();
@@ -36,7 +36,10 @@
     });
 
     test("Can successfully add a new HCP", function () {
-        
+
+        S('#postcode').type("blah");
+        S('#county').type("blah");
+        S('#email').type("blah");
         S('#title').type("blah");
         S('#firstname').type("blah");
         S('#surname').type("blah");

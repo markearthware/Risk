@@ -1,5 +1,6 @@
 var localStorageDB = (function () {
 
+    var dropTables = false;
     var db = null,
     loadedCallback = null;
 
@@ -9,6 +10,10 @@ var localStorageDB = (function () {
             if (window.openDatabase) {
                 db = openDb();
                 // check if first run and we need to initialise tables
+                if (dropTables) {
+                    goDropTables();
+                }
+
                 initTables();
             } else {
                 steal.dev.log('Web Databases not supported');
@@ -16,6 +21,14 @@ var localStorageDB = (function () {
         } catch (e) {
             steal.dev.log('error occurred during DB init, Web Database supported?');
         }
+    }
+
+    function goDropTables() {
+        db.transaction(function (tx) {
+            tx.executeSql('DROP TABLE "HealthcareProfessionals"', function () {
+                steal.dev.log("HCP table has been dropped");
+            });
+        });
     }
 
     function getRows(sql) {
@@ -136,11 +149,10 @@ var localStorageDB = (function () {
 
         checkTableExists("HealthcareProfessionals", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
-                var ticks = createId();
-                tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [ticks, 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
             });
         });
-        
+
         // check if tables exist otherwise create and fill
         checkTableExists("HealthcareLocations", function (tx) {
             // create table for storing Practices/Hospitals
@@ -206,7 +218,7 @@ var localStorageDB = (function () {
         getRows: getRows,
         getSingleRow: getSingleRow,
         addHcp: addHcp,
-        updateHcp: updateHcp, 
+        updateHcp: updateHcp,
         deleteHcp: deleteHcp
     };
 })();
