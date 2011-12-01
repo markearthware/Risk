@@ -2,11 +2,11 @@
 
     $.Model('Zoladex.Models.PatientSymptom',
   {
-      attributes: {
-          Date: 'date',
-          Time: 'time',
-          WarningSign: 'warning'
-      },
+//      attributes: {
+//          Date: 'date',
+//          Time: 'time',
+//          WarningSign: 'warning'
+//      },
 
       convert: {
           date: function (raw) {
@@ -29,14 +29,11 @@
       },
 
       findAll: function (params) {
-          return localStorageDB.getRows('SELECT ps.Date, ps.Time, s.Description, s.WarningSign FROM PatientSymptoms as ps INNER JOIN Symptoms as s on SymptomId=s.Id', this);
+          return localStorageDB.getRows('SELECT ps.Id, ps.Date, ps.Time, s.Description, s.WarningSign FROM PatientSymptoms as ps INNER JOIN Symptoms as s on SymptomId=s.Id', this);
       },
 
       findOne: function (id) {
-          //          var result = localStorageDB.getSingleRow('SELECT * FROM HealthcareProfessionals WHERE Id =' + id);
-          //          steal.dev.log("result is:");
-          //          steal.dev.log(result);
-          //          return result;
+          return localStorageDB.getSingleRow('SELECT * FROM PatientSymptoms WHERE Id =' + id, this);
       },
 
       create: function (newappointment, success, error) {

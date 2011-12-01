@@ -1,13 +1,15 @@
 ﻿<%for(var i = 0; i < this.length ; i++){ %>
 	<li>
-		<div>
-			<%=this[i].Date%>, <%=this[i].Time%>
-		</div>
-		<div>
-			<h2><%=this[i].Description%><h3>
-		</div>
-		<div>
-			<%=this[i].WarningSign%>
-		</div>
+		<a href="./symptomedit.htm?Id=<%=this[i].Id %>">
+			<div>
+				<%=this[i].Date%>, <%=this[i].Time%>
+			</div>
+			<div>
+				<h2><%=this[i].Description%><h3>
+			</div>
+			<div>
+				<%=this[i].WarningSign%>
+			</div>
+		</a>
 	</li>
 <%}%>

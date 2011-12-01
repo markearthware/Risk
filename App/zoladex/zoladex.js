@@ -26,6 +26,8 @@ steal(
         './controllers/supportgrouplist_controller',
         './controllers/patientappointmentadd_controller',
         './controllers/symptomlist_controller',
+        './controllers/symptomrecord_controller',
+        './controllers/symptomedit_controller',
          function () {
              localStorageDB.init();
          }
@@ -63,28 +65,12 @@ steal(
                 $('#EditHcpForm').zoladex_hcp_edit('loadData');
                 return;
             }
-            
+
+            if ($(args.nextPage).filter('#SymptomEditPage').length > 0) {
+                $('#EditSymptomForm').zoladex_symptom_edit();
+                return;
+            }
         });
-    }
-
-    function bindTabBar(e) {
-
-        var pageClass = determinePageClass(e);
-
-        // dont bother for the homepage or for the simple dialogs
-        if (pageClass != "index" && pageClass != "ui-simpledialog-dialog") {
-            $('.tabBarContainer').zoladex_tab_bar('destroy');
-            $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
-        }
-    }
-
-    function determinePageClass(e) {
-
-        var pageClass = $(e.target).attr('class');
-        
-        if(pageClass != undefined) {
-            return pageClass.replace('Page', '');
-        }
     }
 
     function bindPageControllers(e) {
@@ -118,7 +104,7 @@ steal(
         }
         if ($('#EditHcpForm').length > 0) {
             $('#EditHcpForm').zoladex_hcp_edit();
-            //$('#EditHcpForm').validate();
+            $('#EditHcpForm').validate();
             return;
         }
         if ($('#NewAppointmentForm').length > 0) {
@@ -128,8 +114,6 @@ steal(
             return;
         }        
 
-       
-
         // calendar controllers
 
         // progress cotnrollers
@@ -137,5 +121,30 @@ steal(
         if ($(e.target).filter('#SymptomsListPage').length > 0) {
             $('#SymptomListContainer').zoladex_symptom_list();
             return;
+        }
+
+        if ($(e.target).filter('#SymptomRecordPage').length > 0) {
+            $('#RecordSymptomForm').zoladex_symptom_record();
+            return;
+        }
+    }
+
+    function bindTabBar(e) {
+
+        var pageClass = determinePageClass(e);
+
+        // dont bother for the homepage or for the simple dialogs
+        if (pageClass != "index" && pageClass != "ui-simpledialog-dialog") {
+            $('.tabBarContainer').zoladex_tab_bar('destroy');
+            $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
+        }
+    }
+
+    function determinePageClass(e) {
+
+        var pageClass = $(e.target).attr('class');
+
+        if (pageClass != undefined) {
+            return pageClass.replace('Page', '');
         }
     }

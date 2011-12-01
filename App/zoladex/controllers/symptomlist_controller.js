@@ -15,7 +15,7 @@
         },
         loadData: function () {
 
-            var view = new $.View('//zoladex/views/symptom_list/init.ejs', Zoladex.Models.PatientSymptom.findAll(), null, this.callback(this.refreshList));
+            var view = new $.View('//zoladex/views/symptom_list/init.ejs', Zoladex.Models.PatientSymptom.findAll(this), null, this.callback(this.refreshList));
 
             this.element.append(view);
         },

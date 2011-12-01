@@ -1,0 +1,11 @@
+﻿<label for="SymptomId">Symptom:</label>
+<select id="SymptomId" name="SymptomId">
+	<%for(var i = 0; i < this.Symptoms.length ; i++){ %>
+		<option value="<%= this.Symptoms[i].Id %>"><%= this.Symptoms[i].Description %></option>
+	<%}%>     
+</select>
+<label for="Date">Date:</label>
+<input type="date" id="Date" placeholder="Click to select date" class="required" name="Date" value="<%= this.Date %>" />
+<label for="Time">Time:</label>
+<input type="time" id="Time" placeholder="Click to select time" class="required" name="Time" value="<%= this.Time %>" />
+<input type="submit" id="submitsymptombutton" value="Submit" />
