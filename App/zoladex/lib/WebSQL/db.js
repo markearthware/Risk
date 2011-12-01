@@ -162,6 +162,31 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
             });
         });
+
+        checkTableExists("PatientSymptoms", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (Id unique, Date, Time, SymptomId, WarningSign)', [], function (tx, result) {
+                // populate
+                var currentDate = new Date();
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (1,"' + currentDate + '", ' + currentDate.getTime() + ', 1, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (2,"' + currentDate + '", ' + currentDate.getTime() + ', 1, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (3,"' + currentDate + '", ' + currentDate.getTime() + ', 1, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (4,"' + currentDate + '", ' + currentDate.getTime() + ', 1, "true")');
+            });
+        });
+
+        checkTableExists("Symptoms", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (Id unique, Description, WarningSign)', [], function (tx, result) {
+                
+                // populate
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (1, "Pain in lower Back", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (2, "Pain in lower Back", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (3, "Pain in lower Back", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (4, "Pain in lower Back", "true")');
+                
+            });
+        });
     }
 
     // checks if a table exists in the database and if not calls the callback
@@ -209,7 +234,7 @@ var localStorageDB = (function () {
         getRows: getRows,
         getSingleRow: getSingleRow,
         addHcp: addHcp,
-        updateHcp: updateHcp, 
+        updateHcp: updateHcp,
         deleteHcp: deleteHcp
     };
 })();

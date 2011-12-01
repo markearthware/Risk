@@ -25,6 +25,7 @@ steal(
         './controllers/practicelist_controller',
         './controllers/supportgrouplist_controller',
         './controllers/patientappointmentadd_controller',
+        './controllers/symptomlist_controller',
          function () {
              localStorageDB.init();
          }
@@ -43,6 +44,11 @@ steal(
             
             if ($(e.target).filter('#HcpListPage').length > 0) {
                 $('#HcpListList').zoladex_hcp_list('loadData');
+                return;
+            }
+
+            if ($(e.target).filter('#SymptomsListPage').length > 0) {
+                $('#SymptomListContainer').zoladex_symptom_list('loadData');
                 return;
             }
 
@@ -125,6 +131,11 @@ steal(
        
 
         // calendar controllers
-        
+
         // progress cotnrollers
+
+        if ($(e.target).filter('#SymptomsListPage').length > 0) {
+            $('#SymptomListContainer').zoladex_symptom_list();
+            return;
+        }
     }
