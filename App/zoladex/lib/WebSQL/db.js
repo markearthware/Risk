@@ -29,46 +29,73 @@ var localStorageDB = (function () {
         }
     }
 
-    function getRows(sql) {
+    function getRows(sql, context, success, error) {
         db = openDb();
-        var dfrd = $.Deferred();
+        var deferred = $.Deferred();
         db.transaction(function (tx) {
             tx.executeSql(sql, [],
                 function (tx1, result) {
                     steal.dev.log('select succeeded');
                     steal.dev.log(result);
-                    dfrd.resolve(result.rows);
+
+                    // rows come back as SQLResultSet so turn them into a real array of the objects instead
+                    if (context && context.models) {
+                        // create REAL models from the data
+                        deferred.resolve(context.models(ArrayFromSQLResultSet(result.rows)));    
+                    }
+                    else {
+                        deferred.resolve(ArrayFromSQLResultSet(result.rows));    
+                    }
                 },
                 function (tx1, error) {
                     logError(error, sql);
+                    deferred.reject(error);
                 }
         );
         });
-
-        return dfrd.promise();
+        if (success) deferred.then(success);
+        if (error) deferred.fail(error);
+        return deferred.promise();
     }
 
-    function getSingleRow(sql) {
+    function getSingleRow(sql, context, success, error) {
         db = openDb();
-        var dfrd = $.Deferred();
+        var deferred = $.Deferred();
         db.transaction(function (tx) {
             tx.executeSql(sql, [],
                 function (tx1, result) {
                     steal.dev.log('select succeeded');
                     steal.dev.log(result);
-                    dfrd.resolve(result.rows.item(0));
+                    if (context && context.model) {
+                        // create REAL models from the data
+                        deferred.resolve(context.model(result.rows.item(0)));
+                    }
+                    else {
+                        deferred.resolve(result.rows.item(0));
+                    }                    
+                    
                 },
                 function (tx1, error) {
                     logError(error, sql);
+                    deferred.reject(error);
                 }
         );
         });
-
-        return dfrd.promise();
+        if (success) deferred.then(success);
+        if (error) deferred.fail(error);
+        return deferred.promise();
     }
 
     function openDb() {
         return openDatabase("zoladexDB", "1.0", "Zoladex Mobile App", 200000);
+    }
+
+    function ArrayFromSQLResultSet(rs) {
+        var res = [];
+        $.each(rs, function (index, value) {
+            res.push(rs.item(index));
+        });
+        return res;
     }
 
     function createId() {
@@ -150,16 +177,21 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (Id unique, Name)'); //TODO add lots more fields later
         });
 
-        checkTableExists("ApointmentTypes", function (tx) {
+        checkTableExists("Appointments", function (tx) {
+            // create table for storing Practices/Hospitals
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (Id unique, StartDate, StartTime, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
+        });
+
+        checkTableExists("AppointmentTypes", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS ApointmentTypes (Id unique, Name)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (Id unique, Name)', [], function (tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (1,"PSA test")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (2,"Follow up")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (3,"Zoladex injection")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (4,"Surgery")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (5,"Chemotherapy")');
-                tx.executeSql('INSERT INTO ApointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (1,"PSA test")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (2,"Follow up")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (3,"Zoladex injection")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (4,"Surgery")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (5,"Chemotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
             });
         });
     }
@@ -209,7 +241,7 @@ var localStorageDB = (function () {
         getRows: getRows,
         getSingleRow: getSingleRow,
         addHcp: addHcp,
-        updateHcp: updateHcp, 
+        updateHcp: updateHcp,
         deleteHcp: deleteHcp
     };
 })();
