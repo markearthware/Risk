@@ -1,6 +1,6 @@
 var localStorageDB = (function () {
 
-    var dropTables = true; //todo remove before production
+    var dropTables = false; //todo remove before production
     var db = null,
     loadedCallback = null;
 
@@ -13,8 +13,9 @@ var localStorageDB = (function () {
                 if (dropTables) {
                     goDropTables();
                 }
-
-                initTables();
+                else {
+                    initTables();
+                }
             } else {
                 steal.dev.log('Web Databases not supported');
             }
@@ -24,13 +25,15 @@ var localStorageDB = (function () {
     }
 
     function goDropTables() {
+        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes'];
         db.transaction(function (tx) {
-            tx.executeSql('DROP TABLE "HealthcareProfessionals"', function () {
-                steal.dev.log("HCP table has been dropped");
+            $.each(tables, function (index, value) {
+                tx.executeSql('DROP TABLE ' + tables[index]);
             });
         });
     }
 
+    function getRows(sql, context, success, error) {
         db = openDb();
         var deferred = $.Deferred();
         db.transaction(function (tx) {
@@ -42,10 +45,10 @@ var localStorageDB = (function () {
                     // rows come back as SQLResultSet so turn them into a real array of the objects instead
                     if (context && context.models) {
                         // create REAL models from the data
-                        deferred.resolve(context.models(ArrayFromSQLResultSet(result.rows)));    
+                        deferred.resolve(context.models(ArrayFromSQLResultSet(result.rows)));
                     }
                     else {
-                        deferred.resolve(ArrayFromSQLResultSet(result.rows));    
+                        deferred.resolve(ArrayFromSQLResultSet(result.rows));
                     }
                 },
                 function (tx1, error) {
@@ -73,8 +76,8 @@ var localStorageDB = (function () {
                     }
                     else {
                         deferred.resolve(result.rows.item(0));
-                    }                    
-                    
+                    }
+
                 },
                 function (tx1, error) {
                     logError(error, sql);
@@ -297,6 +300,12 @@ var localStorageDB = (function () {
     }
 
     function initTables() {
+        checkTableExists("HealthcareProfessionals", function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
+            });
+        });
+
         // check if tables exist otherwise create and fill
         checkTableExists("HealthcareLocations", function (tx) {
             // create table for storing Practices/Hospitals
@@ -345,7 +354,7 @@ var localStorageDB = (function () {
         deleteHcp: deleteHcp,
         addAppointment: addAppointment,
         updateAppointment: updateAppointment,
-        deleteAppointment: deleteAppointment        
+        deleteAppointment: deleteAppointment
     };
 })();
 

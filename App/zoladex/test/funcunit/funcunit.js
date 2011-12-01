@@ -1,5 +1,6 @@
 steal("funcunit")
  .then(
+ "./patientappointmentTests/patientappointmentadd_test.js",     
  "./navBarTests/hcpbutton_test.js",
  "./navBarTests/calendarbutton_test.js",
  "./navBarTests/progressbutton_test.js",
@@ -9,7 +10,6 @@ steal("funcunit")
  "./hcpTests/hcpdetailspage_test.js",
  "./hcpTests/hcpadd_test.js",
  "./hcpTests/hcpedit_test.js",
- "./patientappointmentTests/patientappointmentadd_test.js"
  "./hcpTests/hcpedit_test.js", 
  "./hcpTests/hcpdelete_test.js"
 );
