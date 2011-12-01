@@ -48,6 +48,6 @@
         S('#town').type("blah");
         S('#practicename').type("blah");
         S('#newhcpbutton').exists().click();
-        ok(S('#SuccessDialog').exists());
+        ok(S('#HcpListPage').exists());
     });
 })

@@ -9,7 +9,12 @@ steal("funcunit")
  "./hcpTests/hcplocalstorage_test.js",
  "./hcpTests/hcpdetailspage_test.js",
  "./hcpTests/hcpadd_test.js",
- "./hcpTests/hcpedit_test.js",
  "./hcpTests/hcpedit_test.js", 
- "./hcpTests/hcpdelete_test.js"
+ "./hcpTests/hcpdelete_test.js",
+ "./hcpTests/practicelistbutton_test.js",
+ "./hcpTests/practicelocalstorage_test.js",
+ "./hcpTests/practicedetailspage_test.js",
+ "./hcpTests/practiceadd_test.js",
+ "./hcpTests/practiceedit_test.js",
+ "./hcpTests/practicedelete_test.js"
 );

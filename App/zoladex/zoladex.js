@@ -23,6 +23,9 @@ steal(
         './controllers/hcpadd_controller',
         './controllers/hcpedit_controller',
         './controllers/practicelist_controller',
+        './controllers/practicedetails_controller',
+        './controllers/practiceadd_controller',
+        './controllers/practiceedit_controller',
         './controllers/supportgrouplist_controller',
         './controllers/patientappointmentadd_controller',
          function () {
@@ -46,6 +49,11 @@ steal(
                 return;
             }
 
+            if ($(e.target).filter('#PracticeListPage').length > 0) {
+                $('#PracticeListList').zoladex_practice_list('loadData');
+                return;
+            }
+            
         });
 
         $(document).bind('pagehide', function(e, args) {
@@ -55,6 +63,15 @@ steal(
             }
             if ($(args.nextPage).filter('#HcpEditPage').length > 0) {
                 $('#EditHcpForm').zoladex_hcp_edit('loadData');
+                return;
+            }
+
+            if ($(args.nextPage).filter('#PracticeDetailsPage').length > 0) {
+                $('#PracticeDetailsPage').zoladex_practice_details('loadData');
+                return;
+            }
+            if ($(args.nextPage).filter('#PracticeEditPage').length > 0) {
+                $('#EditPracticeForm').zoladex_practice_edit('loadData');
                 return;
             }
             
@@ -95,16 +112,6 @@ steal(
             return;
         }
         
-        if ($(e.target).filter('#PracticeListPage').length > 0) {
-            $('#PracticeListPage').zoladex_practice_list();
-            return;
-        }
-
-        if ($(e.target).filter('#SupportGroupListPage').length > 0) {
-            $('#SupportGroupListPage').zoladex_support_group_list();
-            return;
-        }
-
         if ($('#NewHcpForm').length > 0) {
             $('#NewHcpForm').zoladex_hcp_add();
             $('#NewHcpForm').validate();
@@ -115,6 +122,31 @@ steal(
             //$('#EditHcpForm').validate();
             return;
         }
+        
+        //Practice/Hospitals controllers
+        if ($(e.target).filter('#PracticeListPage').length > 0) {
+            $('#PracticeListList').zoladex_practice_list();
+            return;
+        }
+
+        if ($(e.target).filter('#PracticeDetailsPage').length > 0) {
+            $('#PracticeDetailsPage').zoladex_practice_details();
+            return;
+        }
+
+        if ($('#NewPracticeForm').length > 0) {
+            $('#NewPracticeForm').zoladex_practice_add();
+            $('#NewPracticeForm').validate();
+            return;
+        }
+
+        if ($('#EditPracticeForm').length > 0) {
+            $('#EditPracticeForm').zoladex_practice_edit();
+            //$('#EditPracticeForm').validate();
+            return;
+        }
+
+        //Appointment controllers
         if ($('#NewAppointmentForm').length > 0) {
             $('#NewAppointmentForm').zoladex_patient_appointment_add();
             
@@ -122,9 +154,13 @@ steal(
             return;
         }        
 
-       
-
         // calendar controllers
+
+        // progress cotnrollers 
         
-        // progress cotnrollers
+        //Support controllers
+        if ($(e.target).filter('#SupportGroupListPage').length > 0) {
+            $('#SupportGroupListPage').zoladex_support_group_list();
+            return;
+        }
     }
