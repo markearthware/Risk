@@ -23,10 +23,16 @@
 
                 $('#EditSymptomForm').html(view);
 
-                view.done(function() {
+                view.done(function () {
+                    
                     $("#SymptomId").val(rec.SymptomId);
-                    $("#Date").val(rec.Date);
-                    $("#Time").val(rec.Time);
+                    $("#Date").val(rec.getFormatedDate());
+                    $("#Time").val(rec.getFormatedTime());
+
+                    var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
+                    $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
+                    $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
+                    
                     $('#EditSymptomForm').trigger('create');
                     $.mobile.hidePageLoadingMsg();
                 });
@@ -44,16 +50,12 @@
             return false;
         },
 
-        loadData: function () {
-
-        },
-
         onUpdateSuccess: function () {
-            $.mobile.changePage('hcpdetails.htm?Id=' + this.currentId);
+            //todo: redirects
         },
 
         onUpdateFail: function () {
-            $.mobile.changePage('dialog/error.htm', 'pop', false, true);
+           // todo: dialog
         },
 
         getQueryStringParams: function () {
@@ -61,21 +63,6 @@
             var queryString = window.location.href.split('?')[1];
 
             return $.String.deparam(queryString);
-        },
-
-        insertData: function (data) {
-
-            this.currentId = data.Id;
-
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', data);
-
-            var form = $('#EditHcpForm');
-
-            form.html(view);
-
-            form.trigger('create');
-
-            $.mobile.hidePageLoadingMsg();
         }
     });
     });

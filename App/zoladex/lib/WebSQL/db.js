@@ -25,7 +25,8 @@ var localStorageDB = (function () {
     }
 
     function goDropTables() {
-        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes','Practices'];
+
+        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms'];
         db.transaction(function (tx) {
             $.each(tables, function (index, value) {
                 tx.executeSql('DROP TABLE ' + tables[index]);
@@ -351,13 +352,13 @@ var localStorageDB = (function () {
 
         checkTableExists("PatientSymptoms", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (Id unique, Date, Time, SymptomId, WarningSign)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (Id unique, Date, Time, SymptomId)', [], function (tx, result) {
                 // populate
                 var currentDate = new Date();
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (1,"' + currentDate + '", ' + currentDate.getTime() + ', 1, "true")');
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (2,"' + currentDate + '", ' + currentDate.getTime() + ', 2, "true")');
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (3,"' + currentDate + '", ' + currentDate.getTime() + ', 4, "true")');
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (4,"' + currentDate + '", ' + currentDate.getTime() + ', 3, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (1,"' + currentDate + '", ' + currentDate.getTime() + ', 1)');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (2,"' + currentDate + '", ' + currentDate.getTime() + ', 2)');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (3,"' + currentDate + '", ' + currentDate.getTime() + ', 4)');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (4,"' + currentDate + '", ' + currentDate.getTime() + ', 3)');
             });
         });
 
