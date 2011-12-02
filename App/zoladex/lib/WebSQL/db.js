@@ -33,6 +33,28 @@ var localStorageDB = (function () {
         });
     }
 
+    function executeSql(sql, params, success, error) {
+        db = openDb();
+        var deferred = $.Deferred();
+        db.transaction(function (tx) {
+            tx.executeSql(sql, params,
+                function (tx1, result) {
+                    steal.dev.log('sql succeeded');
+                    steal.dev.log(result);
+
+                    deferred.resolve(result);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(error);
+                }
+        );
+        });
+        if (success) deferred.then(success);
+        if (error) deferred.fail(error);
+        return deferred.promise();
+    }
+
     function getRows(sql, context, success, error) {
         db = openDb();
         var deferred = $.Deferred();
@@ -320,7 +342,7 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
             });
         });
-        
+
         checkTableExists("PatientSymptoms", function (tx) {
             // create table
             tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (Id unique, Date, Time, SymptomId, WarningSign)', [], function (tx, result) {
@@ -336,16 +358,16 @@ var localStorageDB = (function () {
         checkTableExists("Symptoms", function (tx) {
             // create table
             tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (Id unique, Description, WarningSign)', [], function (tx, result) {
-                
+
                 // populate
                 tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (1, "Pain in lower Back", "true")');
                 tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (2, "Vomiting", "true")');
                 tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (3, "Funny smell", "true")');
                 tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (4, "Seeing unicorns", "true")');
-                
+
             });
         });
-        
+
     }
 
     // checks if a table exists in the database and if not calls the callback
@@ -365,6 +387,8 @@ var localStorageDB = (function () {
         init: initDb,
         getRows: getRows,
         getSingleRow: getSingleRow,
+        executeSql: executeSql,
+        createId: createId,
         addHcp: addHcp,
         updateHcp: updateHcp,
         deleteHcp: deleteHcp,

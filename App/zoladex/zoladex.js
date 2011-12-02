@@ -15,6 +15,7 @@ steal(
     ).then(
         // load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
+        './models/websqlmodel.js',
         './models/models.js', // steals all your models
         './lib/jQueryValidation/jquery.validate.js',
         './controllers/tabbar_controller',
