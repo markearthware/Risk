@@ -1,8 +1,8 @@
 ﻿<%for(var i = 0; i < this.length ; i++){ %>
 	<li>
-		<a href="./symptomedit.htm?Id=<%=this[i].Id %>">
+		<a href="./symptomedit.htm?Id=<%=this[i].id %>">
 			<div>
-				<%=this[i].getFormatedDate()%>, <%=this[i].getFormatedTime()%>
+				<%=this[i].getFormatedDate()%>, <%=this[i].Time %>
 			</div>
 			<div>
 				<h2><%=this[i].Description%><h3>

@@ -40,7 +40,7 @@ var localStorageDB = (function () {
         db.transaction(function (tx) {
             tx.executeSql(sql, params,
                 function (tx1, result) {
-                    steal.dev.log('sql succeeded');
+                    steal.dev.log('sql: ' + sql + ' succeeded');
                     steal.dev.log(result);
 
                     deferred.resolve();
@@ -352,25 +352,25 @@ var localStorageDB = (function () {
 
         checkTableExists("PatientSymptoms", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (Id unique, Date, Time, SymptomId)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (id unique, Date, Time, SymptomId INTEGER)', [], function (tx, result) {
                 // populate
                 var currentDate = new Date();
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (1,"' + currentDate + '", ' + currentDate.getTime() + ', 1)');
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (2,"' + currentDate + '", ' + currentDate.getTime() + ', 2)');
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (3,"' + currentDate + '", ' + currentDate.getTime() + ', 4)');
-                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId) VALUES (4,"' + currentDate + '", ' + currentDate.getTime() + ', 3)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (1,"' + currentDate + '", "19:20", 1)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (2,"' + currentDate + '", "18:20", 2)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (3,"' + currentDate + '", "12:20", 4)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (4,"' + currentDate + '", "16:20", 3)');
             });
         });
 
         checkTableExists("Symptoms", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (Id unique, Description, WarningSign)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (id unique, Description, WarningSign INTEGER)', [], function (tx, result) {
 
                 // populate
-                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (1, "Pain in lower Back", "true")');
-                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (2, "Vomiting", "true")');
-                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (3, "Funny smell", "true")');
-                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (4, "Seeing unicorns", "true")');
+                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (1, "Pain in lower Back", 1)');
+                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (2, "Vomiting", 1)');
+                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (3, "Funny smell", 0)');
+                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (4, "Seeing unicorns", 1)');
 
             });
         });

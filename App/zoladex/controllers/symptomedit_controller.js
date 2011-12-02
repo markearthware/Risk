@@ -28,10 +28,10 @@
 
                 view.done(function () {
 
-                    $('#Id').val(rec.Id);
+                    $('#id').val(rec.id);
                     $("#SymptomId").val(rec.SymptomId);
                     $("#Date").val(rec.getFormatedDate());
-                    $("#Time").val(rec.getFormatedTime());
+                    $("#Time").val(rec.Time);
 
                     var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
                     $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
@@ -48,9 +48,8 @@
 
             ev.preventDefault();
 
-            if ($('#EditHcpForm').valid()) {
-                steal.dev.log('insert hcp form is valid, attempting to save to database...');
-                new Zoladex.Models.Hcp(el.formParams()).save(this.callback(this.onUpdateSuccess), this.callback('onUpdateFail'));
+            if ($('#EditSymptomForm').valid()) {
+                Zoladex.Models.PatientSymptom(el.formParams()).save(this.callback('onUpdateSuccess'), this.callback('onUpdateFail'));
             }
 
             return false;
@@ -66,7 +65,7 @@
                 'buttons': {
                     'OK': {
                         click: function () {
-                            self.triggerDestroy($('#Id').val(), self.callback('onDelete'));
+                            self.triggerDestroy($('#id').val(), self.callback('onDelete'));
                             $.mobile.changePage("symptomslist.htm");
                         }
                     },
@@ -91,7 +90,7 @@
         },
 
         onUpdateSuccess: function () {
-            //todo: redirects
+            $.mobile.changePage("symptomslist.htm");
         },
 
         onUpdateFail: function () {

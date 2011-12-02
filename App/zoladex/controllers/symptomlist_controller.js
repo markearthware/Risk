@@ -2,7 +2,7 @@
     'jquery/view/ejs',
     'jquery/dom/form_params',
     'jquery/controller/view',
-    '../models/patientsymptom.js',
+    '../models/patientsymptomlistitem.js',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomList', {
@@ -15,7 +15,7 @@
         },
         loadData: function () {
 
-            var view = new $.View('//zoladex/views/symptom_list/init.ejs', Zoladex.Models.PatientSymptom.findAll(this), null, this.callback(this.refreshList));
+            var view = new $.View('//zoladex/views/symptom_list/init.ejs', Zoladex.Models.PatientSymptomListItem.findAll(this), null, this.callback(this.refreshList));
 
             this.element.append(view);
         },
