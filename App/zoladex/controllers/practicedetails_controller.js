@@ -21,7 +21,7 @@
             //get query string params
             var params = this.getQueryStringParams();
 
-            var deffered = Zoladex.Models.Practice.findOne(params.Id);
+            var deffered = Zoladex.Models.Practice.findOne(params.id);
 
             deffered.done(this.callback('insertData'));
         },
@@ -39,7 +39,7 @@
 
             $('#PracticeDetailsPage h1').html(data.Name);
 
-            var editLink = $('#EditPracticeButton').attr('href') + data.Id;
+            var editLink = $('#EditPracticeButton').attr('href') + data.id;
 
             $('#EditPracticeButton').attr('href', editLink);
 

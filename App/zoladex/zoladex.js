@@ -34,6 +34,7 @@ steal(
         './controllers/symptomedit_controller',
          function () {
              localStorageDB.init();
+             
          }
     );  
 
@@ -90,64 +91,57 @@ steal(
     }
 
     function bindPageControllers(e) {
-        if ($(e.target).filter('#indexPage').length > 0) return '';
+            if ($(e.target).filter('#indexPage').length > 0) return '';
 
-        // hcp controllers
-        if ($(e.target).filter('#HcpListPage').length > 0) {
-            $('#HcpListList').zoladex_hcp_list();
-            return;
-        }
+            // hcp controllers
+            if ($(e.target).filter('#HcpListPage').length > 0) {
+                $('#HcpListList').zoladex_hcp_list();
+                return;
+            }
 
-        if ($(e.target).filter('#HcpDetailsPage').length > 0) {
-            $('#HcpDetailsPage').zoladex_hcp_details();
-            return;
-        }
+            if ($(e.target).filter('#HcpDetailsPage').length > 0) {
+                $('#HcpDetailsPage').zoladex_hcp_details();
+                return;
+            }
 
-        if ($('#NewHcpForm').length > 0) {
-            $('#NewHcpForm').zoladex_hcp_add();
-            $('#NewHcpForm').validate();
-            return;
-        }
-        if ($('#EditHcpForm').length > 0) {
-            $('#EditHcpForm').zoladex_hcp_edit();
-            //$('#EditHcpForm').validate();
-            return;
-        }
-
-        //Practice/Hospitals controllers
-        if ($(e.target).filter('#PracticeListPage').length > 0) {
-            $('#PracticeListList').zoladex_practice_list();
-            return;
-        }
-
-        if ($(e.target).filter('#PracticeDetailsPage').length > 0) {
-            $('#PracticeDetailsPage').zoladex_practice_details();
-            return;
-        }
-
-        if ($('#NewPracticeForm').length > 0) {
-            $('#NewPracticeForm').zoladex_practice_add();
-            $('#NewPracticeForm').validate();
-            return;
-        }
-
-        if ($('#EditPracticeForm').length > 0) {
-            $('#EditPracticeForm').zoladex_practice_edit();
-            //$('#EditPracticeForm').validate();
-        }
-
-        if ($('#EditHcpForm').length > 0) {
+            if ($('#NewHcpForm').length > 0) {
+                $('#NewHcpForm').zoladex_hcp_add();
+                $('#NewHcpForm').validate();
+                return;
+            }
+            if ($('#EditHcpForm').length > 0) {
                 $('#EditHcpForm').zoladex_hcp_edit();
                 $('#EditHcpForm').validate();
                 return;
             }
 
-            //Appointment controllers
+            //Practice/Hospitals controllers
+            if ($(e.target).filter('#PracticeListPage').length > 0) {
+                $('#PracticeListList').zoladex_practice_list();
+                return;
+            }
+
+            if ($(e.target).filter('#PracticeDetailsPage').length > 0) {
+                $('#PracticeDetailsPage').zoladex_practice_details();
+                return;
+            }
+
+            if ($('#NewPracticeForm').length > 0) {
+                $('#NewPracticeForm').zoladex_practice_add();
+                $('#NewPracticeForm').validate();
+                return;
+            }
+
+            if ($('#EditPracticeForm').length > 0) {
+                $('#EditPracticeForm').zoladex_practice_edit();
+                $('#EditPracticeForm').validate();
+            }
+
+                //Appointment controllers
             if ($('#NewAppointmentForm').length > 0) {
                 $('#NewAppointmentForm').zoladex_patient_appointment_add();
-
                 $('#NewAppointmentForm').validate();
-                return;
+                  return;
             }
 
             // calendar controllers
@@ -159,11 +153,12 @@ steal(
                 $('#SupportGroupListPage').zoladex_support_group_list();
                 return;
             }
+        
             // progress cotnrollers
 
             if ($(e.target).filter('#SymptomsListPage').length > 0) {
                 $('#SymptomListContainer').zoladex_symptom_list();
-                return;
+                   return;
             }
 
             if ($(e.target).filter('#SymptomRecordPage').length > 0) {

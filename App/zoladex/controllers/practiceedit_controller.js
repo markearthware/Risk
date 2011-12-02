@@ -27,9 +27,9 @@
         loadData: function () {
             var params = this.getQueryStringParams();
 
-            var deffered = Zoladex.Models.Practice.findOne(params.Id); 
+            var deffered = Zoladex.Models.Practice.findOne(params.id); 
             
-            var editLink = $('#ButtonDeletePractice').attr('href') + params.Id;
+            var editLink = $('#ButtonDeletePractice').attr('href') + params.id;
             $('#ButtonDeletePractice').attr('href', editLink);
 
             deffered.done(this.callback('insertData'));
@@ -54,7 +54,7 @@
 
         insertData: function (data) {
 
-            this.currentId = data.Id;
+            this.currentId = data.id;
 
             var view = $.View('//zoladex/views/practice_addedit/init.ejs', data);
 
