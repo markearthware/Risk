@@ -17,7 +17,7 @@
             ev.preventDefault();
 
             if ($('#EditPracticeForm').valid()) {
-                steal.dev.log('insert hcp form is valid, attempting to save to database...');
+                steal.dev.log('insert practice form is valid, attempting to save to database...');
                 new Zoladex.Models.Practice(el.formParams()).save(this.callback(this.onUpdateSuccess), this.callback('onUpdateFail'));
             }
 

@@ -10,7 +10,7 @@ steal('jquery/controller',
     {
         init: function () {
 
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { Id: "",
+            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { id: "",
                 Title: "",
                 FirstName: "",
                 Surname: "",
@@ -33,11 +33,10 @@ steal('jquery/controller',
 
                 var params = el.formParams();
 
-                var hcpDataStructure = { title: params.Title, firstname: params.FirstName, surname: params.Surname, practicename: params.PracticeName, tel: params.Telephone, email: params.Email, street: params.Street, town: params.Town, county: params.County, postcode: params.Postcode };
+                var hcpDataStructure = { Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, PracticeName: params.PracticeName, Telephone: params.Telephone, Email: params.Email, Street: params.Street, Town: params.Town, County: params.County, Postcode: params.Postcode };
 
                 new Zoladex.Models.Hcp(hcpDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }
-
             return false;
         },
         onInsertSuccess: function () {

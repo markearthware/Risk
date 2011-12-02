@@ -35,8 +35,6 @@
 
         insertData: function (data) {
 
-            this.Id = data.Id;
-
             $('#PracticeDetailsPage h1').html(data.Name);
 
             var editLink = $('#EditPracticeButton').attr('href') + data.id;

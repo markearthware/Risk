@@ -21,7 +21,7 @@
             //get query string params
             var params = this.getQueryStringParams();
 
-            var deffered = Zoladex.Models.Hcp.findOne(params.Id);
+            var deffered = Zoladex.Models.Hcp.findOne(params.id);
 
             deffered.done(this.callback('insertData'));
         },
@@ -35,11 +35,9 @@
 
         insertData: function (data) {
 
-            this.Id = data.Id;
-
             $('#HcpDetailsPage h1').html(data.FullName());
 
-            var editLink = $('#EditHcpButton').attr('href') + data.Id;
+            var editLink = $('#EditHcpButton').attr('href') + data.id;
 
             $('#EditHcpButton').attr('href', editLink);
 
@@ -50,10 +48,6 @@
             $('#HcpDetailsList').listview('refresh');
 
             $.mobile.hidePageLoadingMsg();
-        },
-
-        triggerDestroy: function (id, callback) {
-            Zoladex.Models.Hcp.destroy(id, callback);
         },
 
         onDelete: function () {
@@ -70,7 +64,7 @@
                 'buttons': {
                     'OK': {
                         click: function () {
-                            self.triggerDestroy(self.Id, self.callback('onDelete'));
+                             Zoladex.Models.Hcp.destroy($("#id").val()).done(self.onDelete);
                         }
                     },
                     'Cancel': {

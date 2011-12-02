@@ -41,15 +41,15 @@ steal('jquery/model', function () {
             var sql = "UPDATE " + this.tableName + " SET ";
 
             // loop object getting property names
-            var keys = Object.keys(obj);
+            var keys = $.grep(Object.keys(obj), function (n,i) {
+                return n != "id" && n != "insertId" && n != "rows" && n != "rowsAffected";
+            });
+
             var values = [];
             $.each(keys, function (index, value) {
-                // dont want to include id, or members previously returned by the websql stuff
-                if (value != "id" && value != "insertId" && value != "rows" && value != "rowsAffected") {
-                    sql += value + " = ?";
-                    if (index < obj.length - 1) sql += ", ";
-                    values.push(obj[value]);
-                }
+                sql += value + " = ?";
+                if (index < keys.length - 1) sql += ", ";
+                values.push(obj[value]);
             });
 
             sql += " WHERE id=" + id;

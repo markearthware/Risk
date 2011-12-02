@@ -1,6 +1,6 @@
 ﻿steal('jquery/model', function () {
 
-   Zoladex.Models.WebSqlModel('Zoladex.Models.Practice',
+  Zoladex.Models.WebSqlModel('Zoladex.Models.Practice',
   {
       findAll: function (params) {
           if (params && params.basicdetails) {
@@ -18,7 +18,6 @@
       },
 
       tableName: "Practices"
-
   },
   {
       FullName: function () {
