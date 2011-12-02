@@ -13,11 +13,14 @@ steal('jquery/model', function () {
           return result;
       },
 
-      tableName: "Appointments",
+      tableName: "Appointments"
 
-      buildName: function (appointment) {
-          return appointment.Title + ' ' + appointment.FirstName + ' ' + appointment.Surname;
-      }
-  },
-  {});
+
+    },
+      {
+          FullName: function () {
+              return this.Title + ' ' + this.FirstName + ' ' + this.Surname;
+          }          
+
+      });
 })

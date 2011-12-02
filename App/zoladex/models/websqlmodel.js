@@ -38,13 +38,13 @@ steal('jquery/model', function () {
             var sql = "UPDATE " + this.tableName + " SET";
 
             // loop object getting property names
-            var keys = Object.keys(newobj);
+            var keys = Object.keys(obj);
             var values = [];
             $.each(keys, function (index, value) {
                 if(value!="Id"){
                     sql += value + " = ?";
-                    if (index < newobj.length - 1) sql += ", ";
-                    values.push(newobj[value]);
+                    if (index < obj.length - 1) sql += ", ";
+                    values.push(obj[value]);
                 }
             });
 
