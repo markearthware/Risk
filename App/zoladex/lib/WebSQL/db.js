@@ -329,24 +329,24 @@ var localStorageDB = (function () {
         // check if tables exist otherwise create and fill
         checkTableExists("HealthcareLocations", function (tx) {
             // create table for storing Practices/Hospitals
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (Id unique, Name)'); //TODO add lots more fields later
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (id unique, Name)'); //TODO add lots more fields later
         });
 
         checkTableExists("Appointments", function (tx) {
             // create table for storing Practices/Hospitals
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (Id unique, StartDate, StartTime, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (id unique, StartDate, StartTime, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
         });
 
         checkTableExists("AppointmentTypes", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (Id unique, Name)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (id unique, Name)', [], function (tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (1,"PSA test")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (2,"Follow up")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (3,"Zoladex injection")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (4,"Surgery")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (5,"Chemotherapy")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (1,"PSA test")');
+                tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (2,"Follow up")');
+                tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (3,"Zoladex injection")');
+                tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (4,"Surgery")');
+                tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (5,"Chemotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (6,"Radiotherapy")');
             });
         });
 
