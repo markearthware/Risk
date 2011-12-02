@@ -5,6 +5,7 @@ steal("funcunit")
  "./navBarTests/calendarbutton_test.js",
  "./navBarTests/progressbutton_test.js",
  "./navBarTests/supportbutton_test.js",
+    //hcp tests
  "./hcpTests/hcplistbutton_test.js",
  "./hcpTests/hcplocalstorage_test.js",
  "./hcpTests/hcpdetailspage_test.js",
@@ -16,5 +17,6 @@ steal("funcunit")
  "./hcpTests/practicedetailspage_test.js",
  "./hcpTests/practiceadd_test.js",
  "./hcpTests/practiceedit_test.js",
- "./hcpTests/practicedelete_test.js"
+ "./hcpTests/practicedelete_test.js",
+ "./progressTests/symptomTests/symptomlist_test.js"
 );

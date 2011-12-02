@@ -15,6 +15,7 @@ steal(
     ).then(
         // load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
+        './models/websqlmodel.js',
         './models/models.js', // steals all your models
         './lib/jQueryValidation/jquery.validate.js',
         './controllers/tabbar_controller',
@@ -28,6 +29,9 @@ steal(
         './controllers/practiceedit_controller',
         './controllers/supportgrouplist_controller',
         './controllers/patientappointmentadd_controller',
+        './controllers/symptomlist_controller',
+        './controllers/symptomrecord_controller',
+        './controllers/symptomedit_controller',
          function () {
              localStorageDB.init();
          }
@@ -54,6 +58,12 @@ steal(
                 return;
             }
             
+
+            if ($(e.target).filter('#SymptomsListPage').length > 0) {
+                $('#SymptomListContainer').zoladex_symptom_list('loadData');
+                return;
+            }
+
         });
 
         $(document).bind('pagehide', function(e, args) {
@@ -65,6 +75,7 @@ steal(
                 $('#EditHcpForm').zoladex_hcp_edit('loadData');
                 return;
             }
+
 
             if ($(args.nextPage).filter('#PracticeDetailsPage').length > 0) {
                 $('#PracticeDetailsPage').zoladex_practice_details('loadData');
@@ -78,29 +89,9 @@ steal(
         });
     }
 
-    function bindTabBar(e) {
-
-        var pageClass = determinePageClass(e);
-
-        // dont bother for the homepage or for the simple dialogs
-        if (pageClass != "index" && pageClass != "ui-simpledialog-dialog") {
-            $('.tabBarContainer').zoladex_tab_bar('destroy');
-            $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
-        }
-    }
-
-    function determinePageClass(e) {
-
-        var pageClass = $(e.target).attr('class');
-        
-        if(pageClass != undefined) {
-            return pageClass.replace('Page', '');
-        }
-    }
-
     function bindPageControllers(e) {
         if ($(e.target).filter('#indexPage').length > 0) return '';
-        
+
         // hcp controllers
         if ($(e.target).filter('#HcpListPage').length > 0) {
             $('#HcpListList').zoladex_hcp_list();
@@ -111,7 +102,7 @@ steal(
             $('#HcpDetailsPage').zoladex_hcp_details();
             return;
         }
-        
+
         if ($('#NewHcpForm').length > 0) {
             $('#NewHcpForm').zoladex_hcp_add();
             $('#NewHcpForm').validate();
@@ -122,7 +113,7 @@ steal(
             //$('#EditHcpForm').validate();
             return;
         }
-        
+
         //Practice/Hospitals controllers
         if ($(e.target).filter('#PracticeListPage').length > 0) {
             $('#PracticeListList').zoladex_practice_list();
@@ -143,24 +134,61 @@ steal(
         if ($('#EditPracticeForm').length > 0) {
             $('#EditPracticeForm').zoladex_practice_edit();
             //$('#EditPracticeForm').validate();
-            return;
         }
 
-        //Appointment controllers
-        if ($('#NewAppointmentForm').length > 0) {
-            $('#NewAppointmentForm').zoladex_patient_appointment_add();
-            
-            $('#NewAppointmentForm').validate();
-            return;
-        }        
+        if ($('#EditHcpForm').length > 0) {
+                $('#EditHcpForm').zoladex_hcp_edit();
+                $('#EditHcpForm').validate();
+                return;
+            }
 
-        // calendar controllers
+            //Appointment controllers
+            if ($('#NewAppointmentForm').length > 0) {
+                $('#NewAppointmentForm').zoladex_patient_appointment_add();
 
-        // progress cotnrollers 
-        
-        //Support controllers
-        if ($(e.target).filter('#SupportGroupListPage').length > 0) {
-            $('#SupportGroupListPage').zoladex_support_group_list();
-            return;
+                $('#NewAppointmentForm').validate();
+                return;
+            }
+
+            // calendar controllers
+
+            // progress cotnrollers 
+
+            //Support controllers
+            if ($(e.target).filter('#SupportGroupListPage').length > 0) {
+                $('#SupportGroupListPage').zoladex_support_group_list();
+                return;
+            }
+            // progress cotnrollers
+
+            if ($(e.target).filter('#SymptomsListPage').length > 0) {
+                $('#SymptomListContainer').zoladex_symptom_list();
+                return;
+            }
+
+            if ($(e.target).filter('#SymptomRecordPage').length > 0) {
+                $('#RecordSymptomForm').zoladex_symptom_record();
+                return;
+            }
         }
-    }
+
+        function bindTabBar(e) {
+
+            var pageClass = determinePageClass(e);
+
+            // dont bother for the homepage or for the simple dialogs
+            if (pageClass != "index" && pageClass != "ui-simpledialog-dialog") {
+                $('.tabBarContainer').zoladex_tab_bar('destroy');
+                $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
+            }
+        }
+
+        function determinePageClass(e) {
+
+            var pageClass = $(e.target).attr('class');
+
+            if (pageClass != undefined) {
+                return pageClass.replace('Page', '');
+            }
+            return 0;
+        }

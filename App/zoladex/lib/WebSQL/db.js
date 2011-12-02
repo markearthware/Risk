@@ -33,6 +33,28 @@ var localStorageDB = (function () {
         });
     }
 
+    function executeSql(sql, params, success, error) {
+        db = openDb();
+        var deferred = $.Deferred();
+        db.transaction(function (tx) {
+            tx.executeSql(sql, params,
+                function (tx1, result) {
+                    steal.dev.log('sql succeeded');
+                    steal.dev.log(result);
+
+                    deferred.resolve(result);
+                },
+                function (tx1, error) {
+                    logError(error, sql);
+                    deferred.reject(error);
+                }
+        );
+        });
+        if (success) deferred.then(success);
+        if (error) deferred.fail(error);
+        return deferred.promise();
+    }
+
     function getRows(sql, context, success, error) {
         db = openDb();
         var deferred = $.Deferred();
@@ -238,7 +260,6 @@ var localStorageDB = (function () {
         deferred.fail(error);
     }
 
-
     function deleteHcp(id, success, error) {
 
         var deferred = $.Deferred();
@@ -295,13 +316,6 @@ var localStorageDB = (function () {
 
     function addAppointment(apt, success, error) {
 
-        checkTableExists("HealthcareProfessionals", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (Id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (Id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
-            });
-        });
-
-
         db = openDb();
 
         var ticks = createId();
@@ -334,7 +348,6 @@ var localStorageDB = (function () {
         deferred.then(success);
         deferred.fail(error);
     }
-
 
     function deleteAppointment(id, success, error) {
 
@@ -427,6 +440,32 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO AppointmentTypes (Id, Name) VALUES (6,"Radiotherapy")');
             });
         });
+
+        checkTableExists("PatientSymptoms", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (Id unique, Date, Time, SymptomId, WarningSign)', [], function (tx, result) {
+                // populate
+                var currentDate = new Date();
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (1,"' + currentDate + '", ' + currentDate.getTime() + ', 1, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (2,"' + currentDate + '", ' + currentDate.getTime() + ', 2, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (3,"' + currentDate + '", ' + currentDate.getTime() + ', 4, "true")');
+                tx.executeSql('INSERT INTO PatientSymptoms (Id, Date, Time, SymptomId, WarningSign) VALUES (4,"' + currentDate + '", ' + currentDate.getTime() + ', 3, "true")');
+            });
+        });
+
+        checkTableExists("Symptoms", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (Id unique, Description, WarningSign)', [], function (tx, result) {
+
+                // populate
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (1, "Pain in lower Back", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (2, "Vomiting", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (3, "Funny smell", "true")');
+                tx.executeSql('INSERT INTO Symptoms (Id, Description, WarningSign) VALUES (4, "Seeing unicorns", "true")');
+
+            });
+        });
+
     }
 
     // checks if a table exists in the database and if not calls the callback
@@ -442,11 +481,12 @@ var localStorageDB = (function () {
         }
     }
 
-
     return {
         init: initDb,
         getRows: getRows,
         getSingleRow: getSingleRow,
+        executeSql: executeSql,
+        createId: createId,
         addHcp: addHcp,
         updateHcp: updateHcp,
         deleteHcp: deleteHcp,
@@ -458,5 +498,3 @@ var localStorageDB = (function () {
         deleteAppointment: deleteAppointment
     };
 })();
-
-

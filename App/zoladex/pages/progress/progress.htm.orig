@@ -11,8 +11,13 @@
 			    </a>
             </li>
 			<li>
+<<<<<<< HEAD
                 <a href="symptoms/symptomslist.htm" id="SymptomsList">
                     <img class="margin-a" src="../Images/calendar-icon.png" />
+=======
+                <a href="">
+                    <img class="margin-a" src="" />
+>>>>>>> a65088da5044afcd54cf7e1d4a7eb64c13834986
 				    <h3>Symptoms</h3>
 				    <p>- Record Symptoms</p>
                     <p>- Warning Signs</p>
