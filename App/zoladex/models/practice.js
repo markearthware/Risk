@@ -1,6 +1,6 @@
 ﻿steal('jquery/model', function () {
 
-    $.Model('Zoladex.Models.Practice',
+   Zoladex.Models.WebSqlModel('Zoladex.Models.Practice',
   {
       findAll: function (params) {
           if (params && params.basicdetails) {
@@ -17,17 +17,7 @@
           return result;
       },
 
-      create: function (newpractice, success, error) {
-          return localStorageDB.addPractice(newpractice, success, error);
-      },
-
-      update: function (id, practice, success, error) {
-          return localStorageDB.updatePractice(practice, success, error);
-      },
-
-      destroy: function (id, success, error) {
-          return localStorageDB.deletePractice(id, success, error);
-      }
+      tableName: "Practices"
 
   },
   {

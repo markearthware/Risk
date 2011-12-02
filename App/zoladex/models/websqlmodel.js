@@ -6,7 +6,7 @@ steal('jquery/model', function () {
             // check model has a table name set
             this.checkTableName(error);
 
-            newobj.Id = localStorageDB.createId();
+            newobj.id = localStorageDB.createId();
 
             // build sql string from object
             var sql = "INSERT into " + this.tableName + " (";
@@ -35,20 +35,20 @@ steal('jquery/model', function () {
             this.checkTableName(error);
 
             // build sql string from object
-            var sql = "UPDATE " + this.tableName + " SET";
+            var sql = "UPDATE " + this.tableName + " SET ";
 
             // loop object getting property names
             var keys = Object.keys(obj);
             var values = [];
             $.each(keys, function (index, value) {
-                if(value!="Id"){
+                if(value!=="id"){
                     sql += value + " = ?";
                     if (index < obj.length - 1) sql += ", ";
                     values.push(obj[value]);
                 }
             });
 
-            sql += " WHERE Id=" + id;
+            sql += " WHERE id=" + id;
 
             return localStorageDB.executeSql(sql, values, success, error);
         },
@@ -58,7 +58,7 @@ steal('jquery/model', function () {
             this.checkTableName(error);
 
             // build sql string from object
-            var sql = "DELETE FROM " + this.tableName + " WHERE Id=" + id;
+            var sql = "DELETE FROM " + this.tableName + " WHERE id=" + id;
 
             return localStorageDB.executeSql(sql, success, error);
         },

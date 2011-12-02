@@ -10,7 +10,7 @@ steal('jquery/controller',
     {
         init: function () {
 
-            var view = $.View('//zoladex/views/practice_addedit/init.ejs', { Id: "",
+            var view = $.View('//zoladex/views/practice_addedit/init.ejs', { id: "",
                 Name: ""
             });
 

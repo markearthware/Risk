@@ -25,7 +25,8 @@ var localStorageDB = (function () {
     }
 
     function goDropTables() {
-        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Symptoms'];
+
+        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms'];
         db.transaction(function (tx) {
             $.each(tables, function (index, value) {
                 tx.executeSql('DROP TABLE ' + tables[index]);
@@ -132,98 +133,6 @@ var localStorageDB = (function () {
     function logError(error, sql) {
         steal.dev.log('Transaction with the device database failed - ' + error.message + '\nOffending SQL:\n"' + sql + "'");
     }
-
-    function addPractice(practice, success, error) {
-
-        db = openDb();
-
-        var ticks = createId();
-
-        var deferred = $.Deferred();
-
-        db.transaction(function (tx) {
-
-            var sql = "INSERT INTO Practices (Id, Name) VALUES (" + ticks + ", '" + practice.Name + "')";
-
-            steal.dev.log(sql);
-
-            tx.executeSql(
-                sql,
-                [],
-                function () {
-                    steal.dev.log("Insert succeeded!");
-                    deferred.resolve(ticks);
-                },
-                function (tx1, error) {
-                    logError(error, sql);
-                    deferred.reject(0);
-                }
-            );
-
-
-            return deferred.promise();
-        });
-
-        // wire up callbacks to defered
-        deferred.then(success);
-        deferred.fail(error);
-    }
-
-
-    function deletePractice(id, success, error) {
-
-        var deferred = $.Deferred();
-
-        db.transaction(function (tx) {
-
-            var sql = "DELETE FROM Practices WHERE Id= " + id;
-
-            tx.executeSql(
-                sql,
-                [],
-                function () {
-                    steal.dev.log("Delete succeeded!");
-                    deferred.resolve(true);
-                },
-                function (tx1, error) {
-                    logError(error, sql);
-                    deferred.reject(false);
-                }
-            );
-        });
-
-        // wire up callbacks to defered
-        deferred.then(success);
-        deferred.fail(error);
-    }
-
-    function updatePractice(practice, success, error) {
-
-        var deferred = $.Deferred();
-
-        db.transaction(function (tx) {
-
-            var sql = "UPDATE Practices SET Name= '" + practice.Name + "' WHERE Id=" + practice.id;
-
-            tx.executeSql(
-                sql,
-                [],
-                function () {
-                    steal.dev.log("Update succeeded!");
-                    deferred.resolve(true);
-                },
-                function (tx1, error) {
-                    logError(error, sql);
-                    deferred.reject(false);
-                }
-            );
-        });
-
-        // wire up callbacks to defered
-        deferred.then(success);
-        deferred.fail(error);
-    }
-
     function addHcp(hcp, success, error) {
 
         db = openDb();
@@ -406,8 +315,8 @@ var localStorageDB = (function () {
     function initTables() {
 
         checkTableExists("Practices", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (Id unique, Name)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Practices (Id, Name) VALUES (?,?)', [createId(), 'QE2']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id unique, Name)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO Practices (id, Name) VALUES (?,?)', [createId(), 'QE2']);
             });
         });
         
@@ -490,9 +399,6 @@ var localStorageDB = (function () {
         addHcp: addHcp,
         updateHcp: updateHcp,
         deleteHcp: deleteHcp,
-        addPractice: addPractice,
-        updatePractice: updatePractice,
-        deletePractice: deletePractice,
         addAppointment: addAppointment,
         updateAppointment: updateAppointment,
         deleteAppointment: deleteAppointment
