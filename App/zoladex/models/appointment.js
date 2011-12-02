@@ -18,9 +18,7 @@ steal('jquery/model', function () {
 
     },
       {
-          FullName: function () {
-              return this.Title + ' ' + this.FirstName + ' ' + this.Surname;
-          }          
+     
 
       });
 })

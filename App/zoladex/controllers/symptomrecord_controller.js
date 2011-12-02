@@ -2,7 +2,7 @@
     'jquery/view/ejs',
     'jquery/dom/form_params',
     'jquery/controller/view',
-    '../models/symptom.js',
+    '../models/patientsymptom.js',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomRecord', {
@@ -29,10 +29,11 @@
         },
 
         onInsertSuccess: function () {
-            //$.mobile.changePage('hcplist.htm', 'pop', false, true);
+            $.mobile.changePage('symptomslist.htm', 'pop', false, true);
         },
 
         onInsertFail: function () {
+           //todo: handle erorrs
             //            steal.dev.log('professional has not been added');
             //            $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         },

@@ -1,8 +1,8 @@
-﻿<input type="hidden" Id="Id" />
+﻿<input type="hidden" Id="id" />
 <label for="SymptomId">Symptom:</label>
 <select id="SymptomId" name="SymptomId">
 	<%for(var i = 0; i < this.Symptoms.length ; i++){ %>
-		<option value="<%= this.Symptoms[i].Id %>"><%= this.Symptoms[i].Description %></option>
+		<option value="<%= this.Symptoms[i].id %>"><%= this.Symptoms[i].Description %></option>
 	<%}%>     
 </select>
 <label for="Date">Date:</label>
