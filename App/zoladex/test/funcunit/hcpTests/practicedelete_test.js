@@ -23,7 +23,7 @@
 
         S('#DeletePracticeButton').exists().click();
 
-        S('.ui-simpledialog-container').exists(); //confirm dialog shows
+        S('.ui-simpledialog-container').exists().visible(); //confirm dialog shows
 
         S('.ui-simpledialog-controls a').first().click(); //click OK
 
