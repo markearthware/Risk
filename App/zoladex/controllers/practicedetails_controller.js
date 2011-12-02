@@ -10,7 +10,7 @@
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PracticeDetails', {
-    },
+        },
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
@@ -52,10 +52,6 @@
             $.mobile.hidePageLoadingMsg();
         },
 
-        triggerDestroy: function (id, callback) {
-            Zoladex.Models.Practice.destroy(id, callback);
-        },
-
         onDelete: function () {
             $.mobile.changePage("practicelist.htm");
         },
@@ -70,7 +66,7 @@
                 'buttons': {
                     'OK': {
                         click: function () {
-                            self.triggerDestroy(self.Id, self.callback('onDelete'));
+                            Zoladex.Models.Practice.destroy($("#id").val()).done(self.onDelete);
                         }
                     },
                     'Cancel': {
@@ -84,4 +80,4 @@
             });
         }
     });
-});
+    });

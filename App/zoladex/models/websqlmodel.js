@@ -16,13 +16,16 @@ steal('jquery/model', function () {
             // loop object getting property names
             var keys = Object.keys(newobj);
             $.each(keys, function (index, value) {
-                sql += value;
-                if (index < keys.length - 1) sql += ", ";
+                // dont want to include members previously returned by the websql stuff
+                if (value != "insertId" && value != "rows" && value != "rowsAffected") {
+                    sql += value;
+                    if (index < keys.length - 1) sql += ", ";
 
-                values.push(newobj[value]);
+                    values.push(newobj[value]);
 
-                placeholders += "?";
-                if (index < keys.length - 1) placeholders += ", ";
+                    placeholders += "?";
+                    if (index < keys.length - 1) placeholders += ", ";
+                }
             });
 
             sql += ") VALUES(" + placeholders + ")";
@@ -41,7 +44,8 @@ steal('jquery/model', function () {
             var keys = Object.keys(obj);
             var values = [];
             $.each(keys, function (index, value) {
-                if(value!=="id"){
+                // dont want to include id, or members previously returned by the websql stuff
+                if (value != "id" && value != "insertId" && value != "rows" && value != "rowsAffected") {
                     sql += value + " = ?";
                     if (index < obj.length - 1) sql += ", ";
                     values.push(obj[value]);

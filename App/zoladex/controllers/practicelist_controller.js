@@ -14,14 +14,11 @@ steal('jquery/controller',
             this.list = $('#PracticeListList');
         },
         loadData: function () {
-            var view = new $.View('//zoladex/views/practice_list/init.ejs', Zoladex.Models.Practice.findAll(), null, this.callback(this.refreshList));
-
-            this.element.html(view);
+            $.View('//zoladex/views/practice_list/init.ejs', Zoladex.Models.Practice.findAll(), null, this.callback(this.refreshList));
         },
-        refreshList: function () {
-
+        refreshList: function (html) {
             $.mobile.hidePageLoadingMsg();
-
+            this.element.html(html);
             this.list.listview('refresh');
         }
     });
