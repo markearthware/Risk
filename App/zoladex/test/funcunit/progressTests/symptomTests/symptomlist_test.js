@@ -19,4 +19,11 @@
 
         equal(S('#SymptomsListPage h1').text(), "Symptom History", "header is Symptom History");
     });
+
+    test("Contact HCP button clicked", function () {
+
+        S('#ContactHcpButton').exists().click();
+
+        ok(S('#HcpListPage').exists(), 'have moved to HCP page');
+    });
 })
