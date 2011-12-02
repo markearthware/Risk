@@ -23,7 +23,7 @@
 
         S('#DeleteHcpButton').exists().click();
 
-        S('.ui-simpledialog-container').exists();
+        S('.ui-simpledialog-container').exists().visible();
 
         S('.ui-simpledialog-controls a').first().click();
 

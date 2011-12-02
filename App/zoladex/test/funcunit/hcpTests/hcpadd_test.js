@@ -37,16 +37,16 @@
 
     test("Can successfully add a new HCP", function () {
 
-        S('#postcode').type("blah");
-        S('#county').type("blah");
-        S('#email').type("blah");
-        S('#title').type("blah");
-        S('#firstname').type("blah");
-        S('#surname').type("blah");
-        S('#number').type("234234");
-        S('#street').type("blah");
-        S('#town').type("blah");
-        S('#practicename').type("blah");
+        S('#Postcode').type("blah");
+        S('#County').type("blah");
+        S('#Email').type("blah");
+        S('#Title').type("blah");
+        S('#FirstName').type("blah");
+        S('#Surname').type("blah");
+        S('#Telephone').type("234234");
+        S('#Street').type("blah");
+        S('#Town').type("blah");
+        S('#PracticeName').type("blah");
         S('#newhcpbutton').exists().click();
         ok(S('#HcpListPage').exists());
     });

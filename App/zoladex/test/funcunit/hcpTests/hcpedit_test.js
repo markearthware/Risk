@@ -37,16 +37,16 @@
 
     test("Edit HCP form has been inserted", function () {
         S('#EditHcpForm').exists();
-        ok(S('#title').exists(), "title loaded");
+        ok(S('#Title').exists(), "title loaded");
     });
 
     test("Can successfully edit a new HCP", function () {
-        S('#title').exists().type("\b\b\b\b\b\b" + "Dr");
-        S('#firstname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b" + "Jim");
-        S('#surname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b\b" + "Bob");
-        S('#email').exists().type("Dr");
-        S('#county').exists().type("Jim");
-        S('#postcode').exists().type("Bob");
+        S('#Title').exists().type("\b\b\b\b\b\b" + "Dr");
+        S('#FirstName').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b" + "Jim");
+        S('#Surname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b\b" + "Bob");
+        S('#Email').exists().type("Dr");
+        S('#County').exists().type("Jim");
+        S('#Postcode').exists().type("Bob");
         S('#newhcpbutton').exists().click();
         S('#HcpDetailsPage').exists();
         ok(S('#HcpDetailsPage h1').text("Dr Jim Bob"));
