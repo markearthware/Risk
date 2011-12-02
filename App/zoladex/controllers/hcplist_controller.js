@@ -14,14 +14,11 @@ steal('jquery/controller',
             this.list = $('#HcpListList');
         },
         loadData: function () {
-            var view = new $.View('//zoladex/views/hcp_list/init.ejs', Zoladex.Models.Hcp.findAll(), null, this.callback(this.refreshList));
-
-            this.element.html(view);
+            $.View('//zoladex/views/hcp_list/init.ejs', Zoladex.Models.Hcp.findAll(), null, this.callback(this.refreshList));
         },
-        refreshList: function () {
-
+        refreshList: function (html) {
             $.mobile.hidePageLoadingMsg();
-
+            this.element.html(html);
             this.list.listview('refresh');
         }
     });

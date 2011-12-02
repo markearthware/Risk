@@ -37,7 +37,7 @@
 
         onUpdateSuccess: function () {
             steal.dev.log('edit worked');
-            $.mobile.changePage('practicedetails.htm?Id=' + this.currentId);
+            $.mobile.changePage('practicedetails.htm?id=' + this.currentId);
         },
 
         onUpdateFail: function () {

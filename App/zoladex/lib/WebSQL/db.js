@@ -43,7 +43,7 @@ var localStorageDB = (function () {
                     steal.dev.log('sql succeeded');
                     steal.dev.log(result);
 
-                    deferred.resolve(result);
+                    deferred.resolve();
                 },
                 function (tx1, error) {
                     logError(error, sql);
