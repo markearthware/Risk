@@ -44,16 +44,12 @@
             return false;
         },
 
-        loadData: function () {
-
-        },
-
         onUpdateSuccess: function () {
-            $.mobile.changePage('hcpdetails.htm?Id=' + this.currentId);
+            //todo: redirects
         },
 
         onUpdateFail: function () {
-            $.mobile.changePage('dialog/error.htm', 'pop', false, true);
+           // todo: dialog
         },
 
         getQueryStringParams: function () {
@@ -61,21 +57,6 @@
             var queryString = window.location.href.split('?')[1];
 
             return $.String.deparam(queryString);
-        },
-
-        insertData: function (data) {
-
-            this.currentId = data.Id;
-
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', data);
-
-            var form = $('#EditHcpForm');
-
-            form.html(view);
-
-            form.trigger('create');
-
-            $.mobile.hidePageLoadingMsg();
         }
     });
     });
