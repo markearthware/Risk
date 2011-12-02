@@ -44,8 +44,12 @@ steal('jquery/model', function () {
             var keys = Object.keys(obj);
             var values = [];
             $.each(keys, function (index, value) {
+<<<<<<< HEAD
+                if(value!=="id"){
+=======
                 // dont want to include id, or members previously returned by the websql stuff
-                if (value != "id" && value != "insertId" && value != "rows" && value != "rowsAffected") {
+                if (value != "Id" && value != "insertId" && value != "rows" && value != "rowsAffected") {
+>>>>>>> tweaking websql
                     sql += value + " = ?";
                     if (index < obj.length - 1) sql += ", ";
                     values.push(obj[value]);
