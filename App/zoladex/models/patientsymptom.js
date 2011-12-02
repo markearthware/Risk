@@ -2,21 +2,6 @@
 
     Zoladex.Models.WebSqlModel('Zoladex.Models.PatientSymptom',
   {
-//      attributes: {
-//          Date: 'date',
-//          Time: 'time',
-//          WarningSign: 'warning'
-//      },
-
-      convert: {
-          warning: function (raw) {
-              if (raw) {
-                  return "Yes";
-              }
-              return "No";
-          }
-      },
-
       findAll: function (params) {
           return localStorageDB.getRows('SELECT ps.Id, ps.Date, ps.Time, s.Description, s.WarningSign FROM PatientSymptoms as ps INNER JOIN Symptoms as s on SymptomId=s.Id', this);
       },
@@ -25,13 +10,15 @@
           return localStorageDB.getSingleRow('SELECT * FROM PatientSymptoms WHERE Id =' + id, this);
       },
       
-
-      
-      tableName: "Patient Symptom"
+      tableName: "PatientSymptoms"
   }, {
         getFormatedDate: function() {
           var dateObject = new Date(this.Date);
           return dateObject.getDate() + '/' + dateObject.getMonth() + '/' + dateObject.getFullYear();
+      },
+      getDateForInput: function() {
+          var dateObject = new Date(this.Date);
+          return dateObject.getFullYear() + '-' + dateObject.getMonth() + '-' + dateObject.getDate();
       },
         getFormatedTime: function() {
           var dateObject = new Date(this.Time);

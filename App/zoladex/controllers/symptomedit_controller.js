@@ -23,10 +23,16 @@
 
                 $('#EditSymptomForm').html(view);
 
-                view.done(function() {
+                view.done(function () {
+                    
                     $("#SymptomId").val(rec.SymptomId);
-                    $("#Date").val(rec.Date);
-                    $("#Time").val(rec.Time);
+                    $("#Date").val(rec.getFormatedDate());
+                    $("#Time").val(rec.getFormatedTime());
+
+                    var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
+                    $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
+                    $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
+                    
                     $('#EditSymptomForm').trigger('create');
                     $.mobile.hidePageLoadingMsg();
                 });
