@@ -30,9 +30,11 @@ steal(
         './controllers/practiceedit_controller',
         './controllers/supportgrouplist_controller',
         './controllers/patientappointmentadd_controller',
+        './controllers/patientappointmentlist_controller',
         './controllers/symptomlist_controller',
         './controllers/symptomrecord_controller',
         './controllers/symptomedit_controller',
+        
          function () {
              localStorageDB.init();
              
@@ -142,14 +144,19 @@ steal(
                 $('#EditPracticeForm').validate();
             }
 
-                //Appointment controllers
+            //Appointment controllers
+            if ($(e.target).filter('#calendarPage').length > 0) {
+                $('#AppointmentsList').zoladex_patient_appointment_list();
+                return;
+            }        
+
             if ($('#NewAppointmentForm').length > 0) {
                 $('#NewAppointmentForm').zoladex_patient_appointment_add();
                 $('#NewAppointmentForm').validate();
                   return;
             }
 
-            // calendar controllers
+            
 
             // progress cotnrollers 
 

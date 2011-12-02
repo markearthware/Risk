@@ -1,0 +1,22 @@
+﻿<%
+var currentdate = null;
+%>
+
+<%for(var i = 0; i < this.length ; i++){ %>	
+<%
+if(currentdate!=this[i].StartDate){
+currentdate=this[i].StartDate
+%>
+<li data-role="list-divider"><%= Zoladex.DateFormatter.getShortDateFormat(this[i].StartDate) %></li>
+<% } %>
+<li><a href="patientappointmentdetails.htm?id=<%= this[i].id %>">
+    <h3><%= this[i].TypeName %></h3>
+	<% if(this[i].LocationName && this[i].LocationName.length>0){ %>
+    <p><%= this[i].LocationName %></p>
+    <% } %>
+	<% if(this[i].HcpTitle && this[i].HcpTitle.length>0){ %>
+    <p><%= this[i].HcpTitle %> <%= this[i].HcpFirstName %> <%= this[i].HcpSurname %></p>
+	<% } %>
+	<p class="ui-li-aside"><strong>Zoladex.DateFormatter.getShortDateFormat(this[i].StartDate) <%= this[i].StartTime %></strong>PM</p>
+</a></li>
+<%}%> 
