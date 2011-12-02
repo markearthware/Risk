@@ -3,7 +3,8 @@
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/symptom.js',
-    '../lib/WebSQL/db.js')
+    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
+    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomEdit', {
         },
@@ -17,6 +18,8 @@
 
             var allSymptomsDef = Zoladex.Models.Symptom.findAll();
 
+            $("#DeleteSymptomButton").click(this.callback(this.deleteClicked));
+
             $.when(recordedSymptomDef, allSymptomsDef).done(function (rec, all) {
 
                 var view = new $.View('//zoladex/views/symptom_addedit/init.ejs', { Symptoms: allSymptomsDef, Date: recordedSymptomDef.Date, Time: recordedSymptomDef.Time });
@@ -24,7 +27,8 @@
                 $('#EditSymptomForm').html(view);
 
                 view.done(function () {
-                    
+
+                    $('#Id').val(rec.Id);
                     $("#SymptomId").val(rec.SymptomId);
                     $("#Date").val(rec.getFormatedDate());
                     $("#Time").val(rec.getFormatedTime());
@@ -32,9 +36,11 @@
                     var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
                     $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
                     $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
-                    
+
                     $('#EditSymptomForm').trigger('create');
                     $.mobile.hidePageLoadingMsg();
+
+
                 });
             });
         },
@@ -50,12 +56,46 @@
             return false;
         },
 
+        deleteClicked: function (e) {
+            // hack to maintain context in the on button click handler
+            var self = this;
+            $(e.target).simpledialog({
+                'mode': 'bool',
+                'prompt': 'Are you sure you want to do this?',
+                'useModal': true,
+                'buttons': {
+                    'OK': {
+                        click: function () {
+                            self.triggerDestroy($('#Id').val(), self.callback('onDelete'));
+                            $.mobile.changePage("symptomslist.htm");
+                        }
+                    },
+                    'Cancel': {
+                        click: function () {
+                            //required for the dialog to close (for no obvious reason)
+                        },
+                        icon: "delete",
+                        theme: "c"
+                    }
+                }
+            });
+        },
+
+        triggerDestroy: function (id, callback) {
+            Zoladex.Models.PatientSymptom.destroy(id, callback);
+        },
+
+
+        onDelete: function () {
+            $.mobile.changePage("symptomslist.htm");
+        },
+
         onUpdateSuccess: function () {
             //todo: redirects
         },
 
         onUpdateFail: function () {
-           // todo: dialog
+            // todo: dialog
         },
 
         getQueryStringParams: function () {

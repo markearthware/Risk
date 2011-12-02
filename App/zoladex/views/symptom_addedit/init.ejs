@@ -1,4 +1,5 @@
-﻿<label for="SymptomId">Symptom:</label>
+﻿<input type="hidden" Id="Id" />
+<label for="SymptomId">Symptom:</label>
 <select id="SymptomId" name="SymptomId">
 	<%for(var i = 0; i < this.Symptoms.length ; i++){ %>
 		<option value="<%= this.Symptoms[i].Id %>"><%= this.Symptoms[i].Description %></option>

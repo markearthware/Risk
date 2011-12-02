@@ -67,16 +67,17 @@ steal(
 
         });
 
-        $(document).bind('pagehide', function(e, args) {
+        $(document).bind('pagehide', function (e, args) {
+            
             if ($(args.nextPage).filter('#HcpDetailsPage').length > 0) {
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;
             }
+            
             if ($(args.nextPage).filter('#HcpEditPage').length > 0) {
                 $('#EditHcpForm').zoladex_hcp_edit('loadData');
                 return;
             }
-
 
             if ($(args.nextPage).filter('#PracticeDetailsPage').length > 0) {
                 $('#PracticeDetailsPage').zoladex_practice_details('loadData');
@@ -86,7 +87,10 @@ steal(
                 $('#EditPracticeForm').zoladex_practice_edit('loadData');
                 return;
             }
-            
+            if ($(args.nextPage).filter('#SymptomEditPage').length > 0) {
+                $('#EditSymptomForm').zoladex_symptom_edit();
+                return;
+            }
         });
     }
 
