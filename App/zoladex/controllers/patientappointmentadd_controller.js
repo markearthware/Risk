@@ -17,7 +17,6 @@ steal('jquery/controller',
             // show loading screen
             $.mobile.showPageLoadingMsg();
 
-            var hcpdef;
 
             // load drop down values
             var typesdef = Zoladex.Models.AppointmentType.findAll(),

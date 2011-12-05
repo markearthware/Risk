@@ -3,9 +3,6 @@ steal('jquery/model', function () {
   Zoladex.Models.WebSqlModel('Zoladex.Models.Hcp',
   {
       findAll: function (params) {
-          if (params && params.basicdetails) {
-              return localStorageDB.getRows('SELECT Title, Firstname, Surname FROM HealthcareProfessionals',this);
-          }
           return localStorageDB.getRows('SELECT * FROM HealthcareProfessionals', this);
       },
 
