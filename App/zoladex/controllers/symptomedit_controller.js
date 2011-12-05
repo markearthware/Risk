@@ -49,7 +49,7 @@ steal('jquery/controller',
             ev.preventDefault();
 
             if ($('#EditSymptomForm').valid()) {
-                Zoladex.Models.PatientSymptom(el.formParams()).save(this.callback('onUpdateSuccess'), this.callback('onUpdateFail'));
+                new Zoladex.Models.PatientSymptom(el.formParams()).save(this.callback('onUpdateSuccess'), this.callback('onUpdateFail'));
                 var params = el.formParams();
             }
 
