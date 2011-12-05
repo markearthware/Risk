@@ -9,7 +9,7 @@ currentdate=this[i].StartDate
 %>
 <li data-role="list-divider"><%= Zoladex.DateFormatter.getShortDateFormat(this[i].StartDate) %></li>
 <% } %>
-<li><a href="patientappointmentedit.htm?id=<%= this[i].id %>">
+<li><a class="app-link" href="patientappointmentedit.htm?id=<%= this[i].id %>">
     <h3><%= this[i].TypeName %></h3>
 	<% if(this[i].LocationName && this[i].LocationName.length>0){ %>
     <p><%= this[i].LocationName %></p>

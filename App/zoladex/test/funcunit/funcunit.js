@@ -20,5 +20,7 @@ steal("funcunit")
  "./hcpTests/practicedelete_test.js",
  "./progressTests/symptomTests/symptomlist_test.js",
 "./progressTests/symptomTests/symptomadd_test.js",
-"./progressTests/symptomTests/symptomedit_test.js"
+"./progressTests/symptomTests/symptomedit_test.js",
+"./patientappointmentTests/patientappointmentdelete_test.js",
+"./patientappointmentTests/patientappointmentedit_test.js"
 );
