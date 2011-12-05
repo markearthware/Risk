@@ -3,14 +3,14 @@ steal('jquery/class', function () {
     $.Class('Zoladex.DateFormatter',
     {
         getShortDateFormat: function (dt) {
-            dt = Date.parse(dt);
-            return Zoladex.DateFormatter.getWeekDayName(dt.getDay()) + " " + dt.getDate() + " " + Zoladex.DateFormatter.getMonthName(dt.getMonth());
+            var t = new Date(dt);
+            return Zoladex.DateFormatter.getWeekDayName(t.getDay()) + " " + t.getDate() + " " + Zoladex.DateFormatter.getMonthName(t.getMonth());
         },
         getWeekDayName: function (num) {
-            return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][num];
+            return ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"][num];
         },
         getMonthName: function (num) {
-            return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][num];
+            return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][num];
         }
 
     },
