@@ -12,11 +12,11 @@ steal(
 
         }
     ).then( //steal jquery mobile js
-        './lib/jQueryMobile/jquery.mobile-1.0.js'
+        './lib/jQueryMobile/jquery.mobile-1.0.js',
+        './models/websqlmodel.js'       
     ).then(
         // load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
-        './models/websqlmodel.js',
         './models/models.js', // steals all your models
         './lib/jQueryValidation/jquery.validate.js',
         './controllers/tabbar_controller',
