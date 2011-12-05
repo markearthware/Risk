@@ -177,10 +177,10 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (id unique, Date, Time, SymptomId INTEGER)', [], function (tx, result) {
                 // populate
                 var currentDate = new Date();
-                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (1,"' + currentDate + '", "19:20", 1)');
-                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (2,"' + currentDate + '", "18:20", 2)');
-                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (3,"' + currentDate + '", "12:20", 4)');
-                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (4,"' + currentDate + '", "16:20", 3)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (1,"02/12/2011", "19:20", 1)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (2,"03/12/2011", "18:20", 2)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (3,"04/12/2011", "12:20", 4)');
+                tx.executeSql('INSERT INTO PatientSymptoms (id, Date, Time, SymptomId) VALUES (4,"05/12/2011", "16:20", 3)');
             });
         });
 

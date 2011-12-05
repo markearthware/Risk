@@ -8,9 +8,5 @@
 
             tableName: "PatientSymptoms"
         }, {
-            getFormatedDate: function() {
-                var dateObject = new Date(this.Date);
-                return dateObject.getDate() + '/' + dateObject.getMonth() + '/' + dateObject.getFullYear();
-            }
-        })
+        });
 })

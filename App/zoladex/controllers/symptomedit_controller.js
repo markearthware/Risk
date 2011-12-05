@@ -30,7 +30,7 @@
 
                     $('#id').val(rec.id);
                     $("#SymptomId").val(rec.SymptomId);
-                    $("#Date").val(rec.getFormatedDate());
+                    $("#Date").val(rec.Date);
                     $("#Time").val(rec.Time);
 
                     var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
