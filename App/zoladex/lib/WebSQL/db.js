@@ -148,12 +148,6 @@ var localStorageDB = (function () {
             });
         });
 
-        // check if tables exist otherwise create and fill
-        checkTableExists("HealthcareLocations", function (tx) {
-            // create table for storing Practices/Hospitals
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareLocations (id unique, Name)'); //TODO add lots more fields later
-        });
-
         checkTableExists("Appointments", function (tx) {
             // create table for storing Practices/Hospitals
             tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (id unique, StartDate, StartTime, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later

@@ -1,4 +1,4 @@
-﻿<% if (this.id && this.id.length > 0) { %>
+﻿<% if (this.id) { %>
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <% } %>
 <label for="HcpId">HCP</label>
@@ -6,7 +6,7 @@
     <option value="-1">no HCP</option>
 	<option value="0">add new HCP</option>
 	<%for(var i = 0; i < this.Hcps.length ; i++){ %>
-		<option value="<%= this.Hcps[i].id %>"><%= this.Hcps[i].FullName() %></option>
+		<option <% if(this.HcpId === this.Hcps[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Hcps[i].id %>"><%= this.Hcps[i].FullName() %></option>
 	<%}%>     
 </select>
 <label for="HealthcareLocationId">Location:</label>
@@ -14,26 +14,31 @@
     <option value="0">no location</option>
 	<option value="">add new Hospital/Surgury</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
-		<option value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+		<option <% if(this.LocsId === this.Locs[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>     
 </select>
 <label for="TypeId">Type:</label>
 <select id="TypeId" class="required" name="TypeId">
     <option value="">select appointment type</option>
     <%for(var i = 0; i < this.Types.length ; i++){ %>	
-    <option value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
+    <option <% if(this.TypeId === this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
     <%}%> 
 </select>
 <label for="StartDate">Date:</label>
-<input type="text" id="StartDate" placeholder="Click to select date" class="required" name="StartDate" />
+<input type="text" id="StartDate" placeholder="Click to select date" class="required" name="StartDate" value="<%= this.StartDate %>"/>
 
 <label for="StartTime">Time:</label>
-<input type="text" id="StartTime" placeholder="Click to select time" class="required" name="StartTime" />
+<input type="text" id="StartTime" placeholder="Click to select time" class="required" name="StartTime" value="<%= this.StartTime %>"/>
 
 <label for="AlertsEnabled">Alerts:</label>
 <select id="AlertsEnabled" data-role="slider" name="AlertsEnabled">
-    <option value="0">Off</option>
-	<option value="1" selected="selected">On</option>
+    <option value="0" <% if(this.AlertsEnabled === 0){%> <%= selected = 'selected' %> <%}%>>Off</option>
+	<option value="1" <% if(this.AlertsEnabled === 1){%> <%= selected = 'selected' %> <%}%>>On</option>
 </select>
 <p><i>NB. Alerts will remind you of your next appointment every time you open the app. The app does not currently support integration with your phone's calendar.</i></p>
+
+<% if (this.id) { %>
+<input type="submit" id="newaapointmentbutton" value="Save Changes" />
+<% }else{ %>
 <input type="submit" id="newaapointmentbutton" value="Submit" />
+<% } %>

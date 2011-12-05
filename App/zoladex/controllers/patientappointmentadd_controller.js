@@ -20,7 +20,7 @@ steal('jquery/controller',
 
             // load drop down values
             var typesdef = Zoladex.Models.AppointmentType.findAll(),
-            locsdef = Zoladex.Models.HealthcareLocation.findAll(),
+            locsdef = Zoladex.Models.Practice.findAll(),
             hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true });
 
 

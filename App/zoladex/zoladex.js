@@ -30,6 +30,7 @@ steal(
         './controllers/practiceedit_controller',
         './controllers/supportgrouplist_controller',
         './controllers/patientappointmentadd_controller',
+        './controllers/patientappointmentedit_controller',
         './controllers/patientappointmentlist_controller',
         './controllers/symptomlist_controller',
         './controllers/symptomrecord_controller',
@@ -37,7 +38,6 @@ steal(
         
          function () {
              localStorageDB.init();
-             
          }
     );  
 
@@ -82,6 +82,11 @@ steal(
                 return;
             }
 
+            if ($(args.nextPage).filter('#EditAppointmentPage').length > 0) {
+                $('#EditAppointmentForm').zoladex_patient_appointment_edit('loadData');
+                return;
+            }
+            
             if ($(args.nextPage).filter('#PracticeDetailsPage').length > 0) {
                 $('#PracticeDetailsPage').zoladex_practice_details('loadData');
                 return;
@@ -156,9 +161,13 @@ steal(
                   return;
             }
 
-            
+            if ($('#EditAppointmentForm').length > 0) {
+                $('#EditAppointmentForm').zoladex_patient_appointment_edit();
+                $('#EditAppointmentForm').validate();
+                return;
+            }
 
-            // progress cotnrollers 
+            // progress controllers 
 
             //Support controllers
             if ($(e.target).filter('#SupportGroupListPage').length > 0) {

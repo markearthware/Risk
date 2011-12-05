@@ -7,7 +7,7 @@
     '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomEdit', {
-        },
+    },
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
@@ -50,6 +50,7 @@
 
             if ($('#EditSymptomForm').valid()) {
                 Zoladex.Models.PatientSymptom(el.formParams()).save(this.callback('onUpdateSuccess'), this.callback('onUpdateFail'));
+                var params = el.formParams();
             }
 
             return false;
@@ -104,4 +105,4 @@
             return $.String.deparam(queryString);
         }
     });
-    });
+});
