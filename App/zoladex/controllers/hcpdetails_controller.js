@@ -51,6 +51,12 @@ steal('jquery/controller',
             $.mobile.hidePageLoadingMsg();
         },
 
+
+        onDelete: function () {
+            
+            $.mobile.changePage("/zoladex/pages/hcp/hcplist.htm");
+        },
+
         '#DeleteHcpButton click': function (el) {
             //alert("delete clicked");
             // hack to maintain context in the on button click handler
@@ -62,7 +68,7 @@ steal('jquery/controller',
                 'buttons': {
                     'OK': {
                         click: function () {
-                            Zoladex.Models.Hcp.destroy($("#id").val()).done(function () { $.mobile.changePage("hcplist.htm"); });
+                            Zoladex.Models.Hcp.destroy($("#id").val()).done(this.onDelete());
                         }
                     },
                     'Cancel': {

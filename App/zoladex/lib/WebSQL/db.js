@@ -25,7 +25,7 @@ var localStorageDB = (function () {
     }
 
     function goDropTables() {
-
+        steal.dev.log("dropping tables");
         var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms'];
         db.transaction(function (tx) {
             $.each(tables, function (index, value) {
@@ -141,7 +141,7 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO Practices (id, Name) VALUES (?,?)', [createId(), 'QE2']);
             });
         });
-        
+
         checkTableExists("HealthcareProfessionals", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
                 tx.executeSql('INSERT INTO HealthcareProfessionals (id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
@@ -211,6 +211,7 @@ var localStorageDB = (function () {
         getRows: getRows,
         getSingleRow: getSingleRow,
         executeSql: executeSql,
-        createId: createId
+        createId: createId,
+        dropTables: goDropTables
     };
 })();
