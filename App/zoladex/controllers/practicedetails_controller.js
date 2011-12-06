@@ -55,10 +55,10 @@ steal('jquery/controller',
             
             // if android delay this as has issues with changepages clashing
             if (navigator.userAgent.indexOf('Android') > 0) {
-                setTimeout('$.mobile.changePage("/zoladex/pages/hcp/practicelist.htm");', 1000);
+                setTimeout('$.mobile.changePage("/app/zoladex/pages/hcp/practicelist.htm");', 1000);
             }
             else {
-                $.mobile.changePage("/zoladex/pages/hcp/practicelist.htm");
+                $.mobile.changePage("/app/zoladex/pages/hcp/practicelist.htm");
             }
         },
 

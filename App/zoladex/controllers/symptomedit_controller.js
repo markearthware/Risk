@@ -60,10 +60,10 @@ steal('jquery/controller',
         onDelete: function () {
              // if android delay this as has issues with changepages clashing
             if (navigator.userAgent.indexOf('Android') > 0) {
-                setTimeout('$.mobile.changePage("/zoladex/pages/progress/symptoms/symptomslist.htm");', 1000);
+                setTimeout('$.mobile.changePage("/app/zoladex/pages/progress/symptoms/symptomslist.htm");', 1000);
             }
             else {
-                $.mobile.changePage("/zoladex/pages/progress/symptoms/symptomslist.htm");
+                $.mobile.changePage("/app/zoladex/pages/progress/symptoms/symptomslist.htm");
             }
         },
 
