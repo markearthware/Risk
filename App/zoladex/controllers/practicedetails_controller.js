@@ -6,7 +6,8 @@ steal('jquery/controller',
     '../models/practice.js',
     '../lib/WebSQL/db.js',
     '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js'
+    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
+    '../views/practice_details/init.ejs'
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PracticeDetails', {

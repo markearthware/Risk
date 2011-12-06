@@ -3,13 +3,14 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/hcp.js',
-    '../lib/WebSQL/db.js')
+    '../lib/WebSQL/db.js',
+    '../views/hcp_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpAdd', {
     },
     {
         init: function () {
-
+            
             var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { id: "",
                 Title: "",
                 FirstName: "",
@@ -26,6 +27,7 @@ steal('jquery/controller',
             $('#NewHcpForm').html(view);
         },
         submit: function (el, ev) {
+            
             ev.preventDefault();
 
             if ($('#NewHcpForm').valid()) {
@@ -40,9 +42,11 @@ steal('jquery/controller',
             return false;
         },
         onInsertSuccess: function () {
+            
             $.mobile.changePage('hcplist.htm', 'pop', false, true);
         },
         onInsertFail: function () {
+            
             steal.dev.log('professional has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         }

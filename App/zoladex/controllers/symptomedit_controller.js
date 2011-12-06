@@ -4,7 +4,8 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/symptom.js',
     '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js')
+    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
+    '../views/symptom_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomEdit', {
     },

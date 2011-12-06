@@ -4,7 +4,8 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/appointmentlistitem.js',
     '../models/hcp.js',
-    '../classes/date_formatter.js')
+    '../classes/date_formatter.js',
+    '../views/patientappointment_list/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentList', {
         },

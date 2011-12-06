@@ -3,17 +3,19 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/hcp.js',
-    '../lib/WebSQL/db.js')
+    '../lib/WebSQL/db.js',
+    '../views/hcp_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpEdit', {
         },
     {
         init: function () {
+            
             $.mobile.showPageLoadingMsg();
 
         },
         submit: function (el, ev) {
-
+            
             ev.preventDefault();
 
             if ($('#EditHcpForm').valid()) {
@@ -25,6 +27,7 @@ steal('jquery/controller',
         },
 
         loadData: function () {
+            
             var params = this.getQueryStringParams();
 
             var deffered = Zoladex.Models.Hcp.findOne(params.id); 
@@ -36,11 +39,13 @@ steal('jquery/controller',
         },
 
         onUpdateSuccess: function () {
+            
             steal.dev.log('edit worked');
             $.mobile.changePage('hcpdetails.htm?id=' + this.currentId);
         },
 
         onUpdateFail: function () {
+            
             steal.dev.log('edit no worked');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         },
@@ -53,7 +58,7 @@ steal('jquery/controller',
         },
 
         insertData: function (data) {
-
+            
             this.currentId = data.id;
 
             var view = $.View('//zoladex/views/hcp_addedit/init.ejs', data);

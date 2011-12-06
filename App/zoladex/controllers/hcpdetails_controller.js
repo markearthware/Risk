@@ -6,18 +6,19 @@ steal('jquery/controller',
     '../models/hcp.js',
     '../lib/WebSQL/db.js',
     '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js'
-    )
+    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
+    '../views/hcp_details/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpDetails', {
     },
     {
         init: function () {
+            
             $.mobile.showPageLoadingMsg();
         },
 
         loadData: function () {
-
+            
             //get query string params
             var params = this.getQueryStringParams();
 
@@ -34,7 +35,7 @@ steal('jquery/controller',
         },
 
         insertData: function (data) {
-
+           
             $('#HcpDetailsPage h1').html(data.FullName());
 
             var editLink = $('#EditHcpButton').attr('href') + data.id;
@@ -51,6 +52,7 @@ steal('jquery/controller',
         },
 
         onDelete: function () {
+            
             $.mobile.changePage("hcplist.htm");
         },
 
@@ -64,7 +66,7 @@ steal('jquery/controller',
                 'buttons': {
                     'OK': {
                         click: function () {
-                             Zoladex.Models.Hcp.destroy($("#id").val()).done(self.onDelete);
+                            Zoladex.Models.Hcp.destroy($("#id").val()).done(self.onDelete);
                         }
                     },
                     'Cancel': {

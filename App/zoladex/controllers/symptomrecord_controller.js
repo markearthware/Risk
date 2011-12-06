@@ -3,7 +3,8 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/patientsymptom.js',
-    '../lib/WebSQL/db.js')
+    '../lib/WebSQL/db.js',
+    '../views/symptom_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomRecord', {
         },

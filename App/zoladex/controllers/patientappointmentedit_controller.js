@@ -10,7 +10,8 @@ steal('jquery/controller',
     '../lib/mobiscroll/css/mobiscroll-1.5.2.css',
     '../lib/mobiscroll/js/mobiscroll-1.5.2.js',
     '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js'
+    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
+    '../views/patientappointment_addedit/init.ejs'
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentEdit', {
