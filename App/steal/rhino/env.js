@@ -315,6 +315,7 @@ Envjs.eval = function(context, source, name){};
  * @param {Object} parser
  */
 Envjs.loadLocalScript = function(script){
+
     //console.log("loading script type %s \n source %s", script.type, script.src||script.text.substring(0,32));
     var types,
         src,
@@ -373,12 +374,17 @@ Envjs.loadLocalScript = function(script){
     //console.log('loading script from base %s', base);
     filename = Envjs.uri(script.src, base);
     try {
+        
+
         xhr = new XMLHttpRequest();
         xhr.open("GET", filename, false/*syncronous*/);
         //console.log("loading external script %s", filename);
-        xhr.onreadystatechange = function(){
+        xhr.onreadystatechange = function() {
             //console.log("readyState %s", xhr.readyState);
-            if(xhr.readyState === 4){
+            if (xhr.readyState === 4) {
+                if(script.src.indexOf('mobiscroll-1.5.2.js')>0) {
+                    xhr.responseText = ''; // BIG NASTY HACK as env.js was dieing if it tried to parse this js file, seems to all compress and combine fine even without parsing???
+                }
                 Envjs.eval(
                     script.ownerDocument.ownerWindow,
                     xhr.responseText,
@@ -387,6 +393,7 @@ Envjs.loadLocalScript = function(script){
             }
         };
         xhr.send(null, false);
+        
     } catch(e) {
         console.log("could not load script %s \n %s", filename, e );
         Envjs.onScriptLoadError(script, e);
@@ -7528,7 +7535,7 @@ Aspect.around({
                         node.dispatchEvent( event, false );
                     }
                 }catch(e){
-                    console.log('error loading html element %s %e', node, e.toString());
+                    console.log('error loading html element 1 %s %e', node, e.toString());
                 }
             }
         }
@@ -7557,7 +7564,7 @@ Aspect.around({
                                     node.dispatchEvent( event, false );
                                 }
                             }catch(e){
-                                console.log('error loading html element %s %e', node, e.toString());
+                                console.log('error loading html element 2 %s %e', node, e.toString());
                             }
                         }
                         break;
@@ -7574,7 +7581,7 @@ Aspect.around({
                                 event.initEvent("load", false, false);
                                 node.dispatchEvent( event, false );
                             });
-                            console.log('error loading html element %s %e', node, e.toString());
+                            console.log('error loading html element 4 %s %e', node, e.toString());
                         }
                         try{
                             if (node.src && node.src.length > 0){
@@ -7584,7 +7591,7 @@ Aspect.around({
                                 Envjs.loadFrame(node);
                             }
                         }catch(e){
-                            console.log('error loading html element %s %e', node, e.toString());
+                            console.log('error loading html element 5 %s %e', node, e.toString());
                         }
                         break;
 
@@ -23909,7 +23916,7 @@ var __elementPopped__ = function(ns, name, node){
                                             node.dispatchEvent( event, false );
                                         }
                                     }catch(e){
-                                        console.log('error loading html element %s %s %s %e', ns, name, node, e.toString());
+                                        console.log('error loading html element 3 %s %s %s %e', ns, name, node, e.toString());
                                     }
                                     break;
                                 case 'frame':
@@ -23948,7 +23955,7 @@ var __elementPopped__ = function(ns, name, node){
                                             }catch(e){}
                                         }
                                     }catch(e){
-                                        console.log('error loading html element %s %e', node, e.toString());
+                                        console.log('error loading html element 6 %s %e', node, e.toString());
                                     }
                                     /*try{
                                         if (node.src && node.src.length > 0){
