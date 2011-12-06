@@ -10,16 +10,15 @@ steal('jquery/controller',
     },
     {
         init: function () {
-            
             $.mobile.showPageLoadingMsg();
             this.list = $('#HcpListList');
         },
         loadData: function () {
-            
+
             $.View('//zoladex/views/hcp_list/init.ejs', Zoladex.Models.Hcp.findAll(), null, this.callback(this.refreshList));
         },
         refreshList: function (html) {
-           
+
             $.mobile.hidePageLoadingMsg();
             this.element.html(html);
             this.list.listview('refresh');

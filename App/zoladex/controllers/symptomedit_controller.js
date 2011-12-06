@@ -56,6 +56,16 @@ steal('jquery/controller',
 
             return false;
         },
+        
+        onDelete: function () {
+             // if android delay this as has issues with changepages clashing
+            if (navigator.userAgent.indexOf('Android') > 0) {
+                setTimeout('$.mobile.changePage("/zoladex/pages/progress/symptoms/symptomslist.htm");', 1000);
+            }
+            else {
+                $.mobile.changePage("/zoladex/pages/progress/symptoms/symptomslist.htm");
+            }
+        },
 
         deleteClicked: function (e) {
             // hack to maintain context in the on button click handler
@@ -67,8 +77,7 @@ steal('jquery/controller',
                 'buttons': {
                     'OK': {
                         click: function () {
-                            self.triggerDestroy($('#id').val(), self.callback('onDelete'));
-                            $.mobile.changePage("symptomslist.htm");
+                            Zoladex.Models.PatientSymptom.destroy($("#id").val()).done(self.onDelete);     
                         }
                     },
                     'Cancel': {
@@ -80,15 +89,6 @@ steal('jquery/controller',
                     }
                 }
             });
-        },
-
-        triggerDestroy: function (id, callback) {
-            Zoladex.Models.PatientSymptom.destroy(id, callback);
-        },
-
-
-        onDelete: function () {
-            $.mobile.changePage("symptomslist.htm");
         },
 
         onUpdateSuccess: function () {

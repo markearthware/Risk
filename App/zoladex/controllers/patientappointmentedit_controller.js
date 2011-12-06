@@ -92,7 +92,14 @@ steal('jquery/controller',
         },
 
         onDelete: function () {
-            $.mobile.changePage("calendar.htm");
+            
+            // if android delay this as has issues with changepages clashing
+            if (navigator.userAgent.indexOf('Android') > 0) {
+                setTimeout('$.mobile.changePage("/zoladex/pages/calendar/calendar.htm");', 1000);
+            }
+            else {
+                $.mobile.changePage("/zoladex/pages/calendar/calendar.htm");
+            }
         },
 
         deleteClicked: function (e) {

@@ -52,7 +52,14 @@ steal('jquery/controller',
         },
 
         onDelete: function () {
-            $.mobile.changePage("practicelist.htm");
+            
+            // if android delay this as has issues with changepages clashing
+            if (navigator.userAgent.indexOf('Android') > 0) {
+                setTimeout('$.mobile.changePage("/zoladex/pages/hcp/practicelist.htm");', 1000);
+            }
+            else {
+                $.mobile.changePage("/zoladex/pages/hcp/practicelist.htm");
+            }
         },
 
         '#DeletePracticeButton click': function (el) {

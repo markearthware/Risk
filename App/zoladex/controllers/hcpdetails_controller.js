@@ -51,10 +51,14 @@ steal('jquery/controller',
             $.mobile.hidePageLoadingMsg();
         },
 
-
         onDelete: function () {
-            
-            $.mobile.changePage("/zoladex/pages/hcp/hcplist.htm");
+            // if android delay this as has issues with changepages clashing
+            if (navigator.userAgent.indexOf('Android') > 0) {
+                setTimeout('$.mobile.changePage("/zoladex/pages/hcp/hcplist.htm");', 1000);
+            }
+            else {
+                $.mobile.changePage("/zoladex/pages/hcp/hcplist.htm");
+            }
         },
 
         '#DeleteHcpButton click': function (el) {
@@ -68,7 +72,7 @@ steal('jquery/controller',
                 'buttons': {
                     'OK': {
                         click: function () {
-                            Zoladex.Models.Hcp.destroy($("#id").val()).done(this.onDelete());
+                            Zoladex.Models.Hcp.destroy($("#id").val()).done(self.onDelete);
                         }
                     },
                     'Cancel': {
