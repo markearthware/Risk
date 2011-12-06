@@ -13,12 +13,12 @@ steal('jquery/controller',
     },
     {
         init: function () {
-            
+
             $.mobile.showPageLoadingMsg();
         },
 
         loadData: function () {
-            
+
             //get query string params
             var params = this.getQueryStringParams();
 
@@ -35,7 +35,7 @@ steal('jquery/controller',
         },
 
         insertData: function (data) {
-           
+
             $('#HcpDetailsPage h1').html(data.FullName());
 
             var editLink = $('#EditHcpButton').attr('href') + data.id;
@@ -51,12 +51,8 @@ steal('jquery/controller',
             $.mobile.hidePageLoadingMsg();
         },
 
-        onDelete: function () {
-            
-            $.mobile.changePage("hcplist.htm");
-        },
-
         '#DeleteHcpButton click': function (el) {
+            //alert("delete clicked");
             // hack to maintain context in the on button click handler
             var self = this;
             $(el).simpledialog({
@@ -66,7 +62,7 @@ steal('jquery/controller',
                 'buttons': {
                     'OK': {
                         click: function () {
-                            Zoladex.Models.Hcp.destroy($("#id").val()).done(self.onDelete);
+                            Zoladex.Models.Hcp.destroy($("#id").val()).done(function () { $.mobile.changePage("hcplist.htm"); });
                         }
                     },
                     'Cancel': {

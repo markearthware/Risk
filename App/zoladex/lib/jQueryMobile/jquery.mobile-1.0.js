@@ -2973,11 +2973,13 @@ $.widget( "mobile.page", $.mobile.widget, {
 		if ( typeof toPage == "string" ) {
 			$.mobile.loadPage( toPage, settings )
 				.done(function( url, options, newPage, dupCachedPage ) {
+				    console.log(url);
 					isPageTransitioning = false;
 					options.duplicateCachedPage = dupCachedPage;
 					$.mobile.changePage( newPage, options );
 				})
 				.fail(function( url, options ) {
+				   console.log(url);
 					isPageTransitioning = false;
 
 					//clear out the active button state
@@ -3009,7 +3011,7 @@ $.widget( "mobile.page", $.mobile.widget, {
 			activeIsInitialPage = urlHistory.activeIndex === 0,
 			historyDir = 0,
 			pageTitle = document.title,
-			isDialog = settings.role === "dialog" || toPage.jqmData( "role" ) === "dialog";
+			isDialog = settings.role === "dialog" || toPage.jqmData( "role" ) === "dialog";	    
 
 		// By default, we prevent changePage requests when the fromPage and toPage
 		// are the same element, but folks that generate content manually/dynamically
