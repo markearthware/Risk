@@ -53,7 +53,7 @@ steal('jquery/controller',
 
         onDelete: function () {
             
-            $.mobile.changePage("hcplist.htm");
+            $.mobile.changePage("/zoladex/pages/hcp/hcplist.htm");
         },
 
         '#DeleteHcpButton click': function (el) {
