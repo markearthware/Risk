@@ -3,7 +3,8 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/practice.js',
-    '../lib/WebSQL/db.js')
+    '../lib/WebSQL/db.js',
+    '../views/practice_list/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PracticeList', {
     },
@@ -23,3 +24,4 @@ steal('jquery/controller',
         }
     });
 });
+

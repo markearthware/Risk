@@ -1,6 +1,7 @@
 
 steal(
         'jquery',
+        'jquery/view/ejs',
         './zoladex.css', // application CSS file
         './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
 
