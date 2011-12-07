@@ -20,7 +20,7 @@ steal('jquery/controller',
         loadData: function () {
 
             //get query string params
-            var params = this.getQueryStringParams();
+            var params = Zoladex.QSUtils.getParams();
             var deffered = Zoladex.Models.Hcp.findOne(params.id);
 
             deffered.done(this.callback('insertData'));

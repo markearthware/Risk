@@ -37,7 +37,7 @@ steal(
         './controllers/symptomlist_controller',
         './controllers/symptomrecord_controller',
         './controllers/symptomedit_controller',
-
+        './classes/qsutils.js',
          function () {
              localStorageDB.init();
          }

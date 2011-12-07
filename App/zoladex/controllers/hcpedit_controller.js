@@ -28,7 +28,7 @@ steal('jquery/controller',
 
         loadData: function () {
             
-            var params = this.getQueryStringParams();
+            var params = Zoladex.QSUtils.getParams();
 
             var deffered = Zoladex.Models.Hcp.findOne(params.id); 
             
@@ -48,13 +48,6 @@ steal('jquery/controller',
             
             steal.dev.log('edit no worked');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
-        },
-
-        getQueryStringParams: function () {
-
-            var queryString = window.location.href.split('?')[1];
-
-            return $.String.deparam(queryString);
         },
 
         insertData: function (data) {

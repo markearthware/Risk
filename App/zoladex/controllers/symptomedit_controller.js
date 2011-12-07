@@ -13,7 +13,7 @@ steal('jquery/controller',
         init: function () {
             $.mobile.showPageLoadingMsg();
 
-            var params = this.getQueryStringParams();
+            var params = Zoladex.QSUtils.getParams();
 
             var recordedSymptomDef = Zoladex.Models.PatientSymptom.findOne(params.Id);
 
@@ -97,13 +97,6 @@ steal('jquery/controller',
 
         onUpdateFail: function () {
             // todo: dialog
-        },
-
-        getQueryStringParams: function () {
-
-            var queryString = window.location.href.split('?')[1];
-
-            return $.String.deparam(queryString);
         }
     });
 });

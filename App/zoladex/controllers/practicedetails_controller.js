@@ -20,18 +20,11 @@ steal('jquery/controller',
         loadData: function () {
 
             //get query string params
-            var params = this.getQueryStringParams();
+            var params = Zoladex.QSUtils.getParams();
 
             var deffered = Zoladex.Models.Practice.findOne(params.id);
 
             deffered.done(this.callback('insertData'));
-        },
-
-        getQueryStringParams: function () {
-
-            var queryString = window.location.href.split('?')[1];
-
-            return $.String.deparam(queryString);
         },
 
         insertData: function (data) {

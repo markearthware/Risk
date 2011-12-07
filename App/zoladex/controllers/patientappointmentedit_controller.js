@@ -25,7 +25,7 @@ steal('jquery/controller',
         },
 
         loadData: function () {
-            var params = this.getQueryStringParams();
+            var params = Zoladex.QSUtils.getParams();
             // load drop down values
             var typesdef = Zoladex.Models.AppointmentType.findAll(),
             locsdef = Zoladex.Models.Practice.findAll(),
@@ -82,13 +82,6 @@ steal('jquery/controller',
         onInsertFail: function () {
             steal.dev.log('appointment has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
-        },
-
-        getQueryStringParams: function () {
-
-            var queryString = window.location.href.split('?')[1];
-
-            return $.String.deparam(queryString);
         },
 
         onDelete: function () {
