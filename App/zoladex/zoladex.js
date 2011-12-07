@@ -4,7 +4,6 @@ steal(
         'jquery/view/ejs',
         './zoladex.css', // application CSS file
         './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
-//'./lib/firebug-lite.js',
         function () { // configure your application
 
             steal.dev.log('jmvc is initilasing...');
@@ -38,7 +37,7 @@ steal(
         './controllers/patientappointmentlist_controller',
         './controllers/patientappointmentdelete_controller',
         './controllers/symptomlist_controller',
-        './controllers/symptomrecord_controller',
+        './controllers/symptomadd_controller',
         './controllers/symptomedit_controller',
         './controllers/symptomdelete_controller',
         './classes/qsutils.js',
@@ -205,7 +204,7 @@ steal(
             }
 
             if ($(e.target).filter('#SymptomRecordPage').length > 0) {
-                $('#RecordSymptomForm').zoladex_symptom_record();
+                $('#RecordSymptomForm').zoladex_symptom_add();
                 return;
             }
 
@@ -220,7 +219,7 @@ steal(
             var pageClass = determinePageClass(e);
 
             // dont bother for the homepage or for the simple dialogs
-            if (pageClass != "index" && pageClass != "ui-simpledialog-dialog") {
+            if (pageClass != "index") {
                 $('.tabBarContainer').zoladex_tab_bar('destroy');
                 $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
             }

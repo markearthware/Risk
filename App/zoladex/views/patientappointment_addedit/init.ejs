@@ -25,7 +25,7 @@
     <%}%> 
 </select>
 <label for="StartDate">Date:</label>
-<input type="text" id="StartDate" placeholder="Click to select date" class="required" name="StartDate" value="<%= this.StartDate %>"/>
+<input type="text" id="StartDate" placeholder="Click to select date" class="required" name="StartDate" value="<%= $.scroller.formatDate('dd M yy', this.StartDate) %>"/>
 
 <label for="StartTime">Time:</label>
 <input type="text" id="StartTime" placeholder="Click to select time" class="required" name="StartTime" value="<%= this.StartTime %>"/>

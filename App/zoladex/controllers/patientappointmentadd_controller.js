@@ -40,7 +40,7 @@ steal('jquery/controller',
 
                 // add date control enhancements
                 var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
-                $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
+                $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
                 $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
                 // hide loading message

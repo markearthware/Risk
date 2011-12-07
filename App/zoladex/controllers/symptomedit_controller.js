@@ -6,43 +6,32 @@ steal('jquery/controller',
     '../views/symptom_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomEdit', {
-    },
+        },
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
 
             var params = Zoladex.QSUtils.getParams();
 
-            var recordedSymptomDef = Zoladex.Models.PatientSymptom.findOne(params.id); 
-            
+            var recordedSymptomDef = Zoladex.Models.PatientSymptom.findOne(params.id);
+
             $('#DeleteSymptomButton').attr("href", "../dialog/symptomconfirmdialog.htm?id=" + params.id);
 
             var allSymptomsDef = Zoladex.Models.Symptom.findAll();
 
             $.when(recordedSymptomDef, allSymptomsDef).done(function (rec, all) {
+                rec.Symptoms = all;
+                var view = $.View('//zoladex/views/symptom_addedit/init.ejs', rec);
 
-                var view = new $.View('//zoladex/views/symptom_addedit/init.ejs', { Symptoms: allSymptomsDef, Date: recordedSymptomDef.Date, Time: recordedSymptomDef.Time });
+                $('#EditSymptomForm').html(view).trigger('create');
 
-                $('#EditSymptomForm').html(view);
+                var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
+                $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
+                $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
-                view.done(function () {
 
-                    $('#id').val(rec.id);
-                    $("#SymptomId").val(rec.SymptomId);
-                    $("#Date").val(rec.Date);
-                    $("#Time").val(rec.Time);
+                $.mobile.hidePageLoadingMsg();
 
-                    var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
-                    $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
-                    $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
-
-                    $('#EditSymptomForm').trigger('create');
-
-                   
-
-                    $.mobile.hidePageLoadingMsg();
-
-                });
             });
         },
         submit: function (el, ev) {
@@ -65,4 +54,4 @@ steal('jquery/controller',
             // todo: dialog
         }
     });
-});
+    });

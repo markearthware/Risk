@@ -6,7 +6,7 @@ steal('jquery/controller',
     '../lib/WebSQL/db.js',
     '../views/symptom_addedit/init.ejs')
     .then(function ($) {
-        $.Controller('Zoladex.Controllers.SymptomRecord', {
+        $.Controller('Zoladex.Controllers.SymptomAdd', {
         },
     {
         init: function () {
@@ -42,7 +42,7 @@ steal('jquery/controller',
         refreshForm: function () {
 
             var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
-            $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
+            $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
             $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
             
             $('#RecordSymptomForm').trigger('create');

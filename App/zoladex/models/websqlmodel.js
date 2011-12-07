@@ -21,6 +21,11 @@ steal('jquery/model', function () {
                     sql += value;
                     if (index < keys.length - 1) sql += ", ";
 
+                    // check for dates and convert to milliseconds
+                    if (newobj[value] instanceof Date) {
+                        newobj[value] = newobj[value].getTime();
+                    }
+                    
                     values.push(newobj[value]);
 
                     placeholders += "?";
@@ -41,7 +46,7 @@ steal('jquery/model', function () {
             var sql = "UPDATE " + this.tableName + " SET ";
 
             // loop object getting property names
-            var keys = $.grep(Object.keys(obj), function (n,i) {
+            var keys = $.grep(Object.keys(obj), function (n, i) {
                 return n != "id" && n != "insertId" && n != "rows" && n != "rowsAffected";
             });
 
@@ -49,6 +54,11 @@ steal('jquery/model', function () {
             $.each(keys, function (index, value) {
                 sql += value + " = ?";
                 if (index < keys.length - 1) sql += ", ";
+
+                // check for dates and convert to milliseconds
+                if (obj[value] instanceof Date) {
+                    obj[value] = obj[value].getTime();
+                }
                 values.push(obj[value]);
             });
 
