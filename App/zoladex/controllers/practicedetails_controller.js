@@ -52,13 +52,14 @@ steal('jquery/controller',
         },
 
         onDelete: function () {
-            
+
             // if android delay this as has issues with changepages clashing
             if (navigator.userAgent.indexOf('Android') > 0) {
-                setTimeout('$.mobile.changePage("/app/zoladex/pages/hcp/practicelist.htm");', 1000);
+                var code = '$.mobile.changePage("' + baseurl + '/zoladex/pages/hcp/practicelist.htm");';
+                setTimeout(code, 1000);
             }
             else {
-                $.mobile.changePage("/app/zoladex/pages/hcp/practicelist.htm");
+                $.mobile.changePage(baseurl + "/zoladex/pages/hcp/practicelist.htm");
             }
         },
 

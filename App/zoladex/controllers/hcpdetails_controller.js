@@ -10,7 +10,7 @@ steal('jquery/controller',
     '../views/hcp_details/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpDetails', {
-    },
+        },
     {
         init: function () {
 
@@ -21,7 +21,6 @@ steal('jquery/controller',
 
             //get query string params
             var params = this.getQueryStringParams();
-
             var deffered = Zoladex.Models.Hcp.findOne(params.id);
 
             deffered.done(this.callback('insertData'));
@@ -29,13 +28,13 @@ steal('jquery/controller',
 
         getQueryStringParams: function () {
 
-            var queryString = window.location.href.split('?')[1];
+            var queryString = window.location.href.split('?')[1].split('#')[0];
 
             return $.String.deparam(queryString);
         },
 
         insertData: function (data) {
-
+            
             $('#HcpDetailsPage h1').html(data.FullName());
 
             var editLink = $('#EditHcpButton').attr('href') + data.id;
@@ -52,14 +51,14 @@ steal('jquery/controller',
         },
 
         onDelete: function () {
-           
+
             // if android delay this as has issues with changepages clashing
             if (navigator.userAgent.indexOf('Android') > 0) {
-                setTimeout('$.mobile.changePage("/app/zoladex/pages/hcp/hcplist.htm");', 1000);
+                var code = '$.mobile.changePage("' + baseurl + '/zoladex/pages/hcp/hcplist.htm");';
+                setTimeout(code, 1000);
             }
-            else { 
-                alert("ondelete");
-                $.mobile.changePage("/app/zoladex/pages/hcp/hcplist.htm");
+            else {
+                $.mobile.changePage(baseurl + "/zoladex/pages/hcp/hcplist.htm");
             }
         },
 
@@ -88,4 +87,4 @@ steal('jquery/controller',
             });
         }
     });
-});
+    });
