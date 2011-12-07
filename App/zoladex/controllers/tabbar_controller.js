@@ -6,7 +6,8 @@ steal('jquery/controller',
     .then('../views/tab_bar/init.ejs', function ($) {
         $.Controller('Zoladex.Controllers.TabBar', {
             init: function () {
-
+                
+                
                 this.element.html(this.view());
 
                 switch (this.options.page) {
@@ -21,11 +22,16 @@ steal('jquery/controller',
                         break;
                     case 'support':
                         this.selectSupport();
-                        break; 
+                        break;
                     default:
                         //select nothing
                 }
             },
+
+            generateRelativeUrl: function (currentUrl) {
+                return str;
+            },
+
             makeActive: function (element) {
                 element.addClass('ui-btn-active');
             },

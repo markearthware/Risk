@@ -1,22 +1,23 @@
-
+var baseurl;
 steal(
         'jquery',
         'jquery/view/ejs',
         './zoladex.css', // application CSS file
         './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
-        //'./lib/firebug-lite.js',
+//'./lib/firebug-lite.js',
         function () { // configure your application
 
             steal.dev.log('jmvc is initilasing...');
-
+            //getting base url
+            baseurl = window.location.href.replace(/\/$|\/index\.html/i,'');
             configureJqueryMobile();
 
         }
     ).then( //steal jquery mobile js
         './lib/jQueryMobile/jquery.mobile-1.0.js',
-        './models/websqlmodel.js'       
+        './models/websqlmodel.js'
     ).then(
-        // load controllers and libraries for other pages and init db
+// load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
         './models/models.js', // steals all your models
         './lib/jQueryValidation/jquery.validate.js',
@@ -36,7 +37,7 @@ steal(
         './controllers/symptomlist_controller',
         './controllers/symptomrecord_controller',
         './controllers/symptomedit_controller',
-        
+
          function () {
              localStorageDB.init();
          }
