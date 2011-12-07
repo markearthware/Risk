@@ -199,8 +199,6 @@ steal(
 
             // progress cotnrollers
 
-
-
             if ($(e.target).filter('#SymptomsListPage').length > 0) {
                 $('#SymptomListContainer').zoladex_symptom_list();
                    return;
