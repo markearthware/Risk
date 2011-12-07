@@ -12,9 +12,9 @@
 
                 S('#HcpListPage').exists();
 
-                S('#HcpListList li.ui-li').size(function (size) {
-                    return size > 0;
-                });
+//                S('#HcpListList li.ui-li').size(function (size) {
+//                    return size > 0;
+//                });
 
                 S('.hcpAnchor').first().exists().click();
 

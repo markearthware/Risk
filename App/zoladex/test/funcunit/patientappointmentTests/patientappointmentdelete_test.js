@@ -17,11 +17,13 @@
 
     test("Appointment deleted successfully", function () {
 
+        S('#EditAppointmentForm input').exists();
+
         S('#DeleteAppointmentButton').exists().click();
 
-        S('.ui-simpledialog-container').exists().visible();
+        S('#AppointmentDeleteConfirmDialog').exists();
 
-        S('.ui-simpledialog-controls a').first().click();
+        S('#confirmYes').exists().click();
 
         ok(S('#calendarPage').exists());
 

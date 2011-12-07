@@ -21,11 +21,13 @@
 
     test("Item is deleted", function () {
 
+        S('#PracticeDetailsList li').exists();
+
         S('#DeletePracticeButton').exists().click();
 
-        S('.ui-simpledialog-container').exists().visible(); //confirm dialog shows
+        S('#PracticeDeleteConfirmDialog').exists();
 
-        S('.ui-simpledialog-controls a').first().click(); //click OK
+        S('#confirmYes').exists().click();
 
         ok(S('#PracticeListPage').exists());
     });

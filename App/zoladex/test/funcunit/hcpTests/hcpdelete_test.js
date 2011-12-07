@@ -21,11 +21,13 @@
 
     test("Item is deleted", function () {
 
+        S('#HcpDetailsList li').exists();
+
         S('#DeleteHcpButton').exists().click();
 
-        S('.ui-simpledialog-container').exists().visible();
+        S('#HCPDeleteConfirmDialog').exists();
 
-        S('.ui-simpledialog-controls a').first().click();
+        S('#confirmYes').exists().click();
 
         ok(S('#HcpListPage').exists());
     });

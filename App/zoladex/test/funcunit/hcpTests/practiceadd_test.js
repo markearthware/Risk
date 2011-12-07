@@ -12,9 +12,9 @@
 
                 S('#PracticeListPage').exists();
 
-                S('#PracticeListList li.ui-li').size(function (size) {
-                    return size > 0;
-                });
+//                S('#PracticeListList li.ui-li').size(function (size) {
+//                    return size > 0;
+//                });
 
                 S('#ButtonNewPractice').exists().click();
 

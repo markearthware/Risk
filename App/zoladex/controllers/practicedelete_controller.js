@@ -1,4 +1,4 @@
-﻿steal('jquery/controller',
+steal('jquery/controller',
     'jquery/lang/string/deparam/deparam.js',
     'jquery/controller/view',
     '../models/practice.js')
