@@ -26,15 +26,8 @@ steal('jquery/controller',
             deffered.done(this.callback('insertData'));
         },
 
-        getQueryStringParams: function () {
-
-            var queryString = window.location.href.split('?')[1].split('#')[0];
-
-            return $.String.deparam(queryString);
-        },
-
         insertData: function (data) {
-            
+
             $('#HcpDetailsPage h1').html(data.FullName());
 
             var editLink = $('#EditHcpButton').attr('href') + data.id;
@@ -47,44 +40,9 @@ steal('jquery/controller',
 
             $('#HcpDetailsList').listview('refresh');
 
+            $('#DeleteHcpButton').attr("href", "dialog/confirmdialog.htm?id=" + data.id);
+
             $.mobile.hidePageLoadingMsg();
-        },
-
-        onDelete: function () {
-
-            // if android delay this as has issues with changepages clashing
-            if (navigator.userAgent.indexOf('Android') > 0) {
-                var code = '$.mobile.changePage("' + baseurl + '/zoladex/pages/hcp/hcplist.htm");';
-                setTimeout(code, 1000);
-            }
-            else {
-                $.mobile.changePage(baseurl + "/zoladex/pages/hcp/hcplist.htm");
-            }
-        },
-
-        '#DeleteHcpButton click': function (el) {
-            //alert("delete clicked");
-            // hack to maintain context in the on button click handler
-            var self = this;
-            $(el).simpledialog({
-                'mode': 'bool',
-                'prompt': 'Are you sure you want to do this?',
-                'useModal': true,
-                'buttons': {
-                    'OK': {
-                        click: function () {
-                            Zoladex.Models.Hcp.destroy($("#id").val()).done(self.onDelete);
-                        }
-                    },
-                    'Cancel': {
-                        click: function () {
-                            //required for the dialog to close (for no obvious reason)
-                        },
-                        icon: "delete",
-                        theme: "c"
-                    }
-                }
-            });
         }
     });
     });

@@ -26,6 +26,7 @@ steal(
         './controllers/hcpdetails_controller',
         './controllers/hcpadd_controller',
         './controllers/hcpedit_controller',
+        './controllers/hcpdelete_controller',
         './controllers/practicelist_controller',
         './controllers/practicedetails_controller',
         './controllers/practiceadd_controller',
@@ -128,6 +129,11 @@ steal(
                 $('#EditHcpForm').validate();
                 return;
             }
+            if ($('#HCPDeleteConfirmDialog').length > 0) {
+                $('#HCPDeleteConfirmDialog').zoladex_hcp_delete();
+                return;
+            }
+            
 
             //Practice/Hospitals controllers
             if ($(e.target).filter('#PracticeListPage').length > 0) {
