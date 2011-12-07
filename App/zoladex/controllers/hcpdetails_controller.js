@@ -5,8 +5,6 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/hcp.js',
     '../lib/WebSQL/db.js',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
     '../views/hcp_details/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpDetails', {
@@ -40,7 +38,7 @@ steal('jquery/controller',
 
             $('#HcpDetailsList').listview('refresh');
 
-            $('#DeleteHcpButton').attr("href", "dialog/confirmdialog.htm?id=" + data.id);
+            $('#DeleteHcpButton').attr("href", "dialog/hcpconfirmdialog.htm?id=" + data.id);
 
             $.mobile.hidePageLoadingMsg();
         }

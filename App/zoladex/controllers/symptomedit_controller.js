@@ -3,8 +3,6 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/symptom.js',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
     '../views/symptom_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomEdit', {
@@ -15,11 +13,11 @@ steal('jquery/controller',
 
             var params = Zoladex.QSUtils.getParams();
 
-            var recordedSymptomDef = Zoladex.Models.PatientSymptom.findOne(params.Id);
+            var recordedSymptomDef = Zoladex.Models.PatientSymptom.findOne(params.id); 
+            
+            $('#DeleteSymptomButton').attr("href", "../dialog/symptomconfirmdialog.htm?id=" + params.id);
 
             var allSymptomsDef = Zoladex.Models.Symptom.findAll();
-
-            $("#DeleteSymptomButton").click(this.callback(this.deleteClicked));
 
             $.when(recordedSymptomDef, allSymptomsDef).done(function (rec, all) {
 
@@ -39,8 +37,10 @@ steal('jquery/controller',
                     $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
                     $('#EditSymptomForm').trigger('create');
-                    $.mobile.hidePageLoadingMsg();
 
+                   
+
+                    $.mobile.hidePageLoadingMsg();
 
                 });
             });
@@ -55,40 +55,6 @@ steal('jquery/controller',
             }
 
             return false;
-        },
-        
-        onDelete: function () {
-             // if android delay this as has issues with changepages clashing
-            if (navigator.userAgent.indexOf('Android') > 0) {
-                setTimeout('$.mobile.changePage("/app/zoladex/pages/progress/symptoms/symptomslist.htm");', 1000);
-            }
-            else {
-                $.mobile.changePage("/app/zoladex/pages/progress/symptoms/symptomslist.htm");
-            }
-        },
-
-        deleteClicked: function (e) {
-            // hack to maintain context in the on button click handler
-            var self = this;
-            $(e.target).simpledialog({
-                'mode': 'bool',
-                'prompt': 'Are you sure you want to do this?',
-                'useModal': true,
-                'buttons': {
-                    'OK': {
-                        click: function () {
-                            Zoladex.Models.PatientSymptom.destroy($("#id").val()).done(self.onDelete);     
-                        }
-                    },
-                    'Cancel': {
-                        click: function () {
-                            //required for the dialog to close (for no obvious reason)
-                        },
-                        icon: "delete",
-                        theme: "c"
-                    }
-                }
-            });
         },
 
         onUpdateSuccess: function () {

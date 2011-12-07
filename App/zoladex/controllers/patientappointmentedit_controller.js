@@ -9,8 +9,6 @@ steal('jquery/controller',
     '../lib/WebSQL/db.js',
     '../lib/mobiscroll/css/mobiscroll-1.5.2.css',
     '../lib/mobiscroll/js/mobiscroll-1.5.2.js',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
     '../views/patientappointment_addedit/init.ejs'
     )
     .then(function ($) {
@@ -20,8 +18,6 @@ steal('jquery/controller',
         init: function () {
             // show loading screen
             $.mobile.showPageLoadingMsg();
-
-            $("#DeleteAppointmentButton").click(this.callback(this.deleteClicked));
         },
 
         loadData: function () {
@@ -58,6 +54,7 @@ steal('jquery/controller',
                 $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd/mm/yy', dateOrder: 'ddMMyy' });
                 $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
+                $('#DeleteAppointmentButton').attr("href", "dialog/appointmentconfirmdialog.htm?id=" + params.id);
                 // hide loading message
                 $.mobile.hidePageLoadingMsg();
             });
@@ -82,41 +79,6 @@ steal('jquery/controller',
         onInsertFail: function () {
             steal.dev.log('appointment has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
-        },
-
-        onDelete: function () {
-            
-            // if android delay this as has issues with changepages clashing
-            if (navigator.userAgent.indexOf('Android') > 0) {
-                setTimeout('$.mobile.changePage("/app/zoladex/pages/calendar/calendar.htm");', 1000);
-            }
-            else {
-                $.mobile.changePage("/app/zoladex/pages/calendar/calendar.htm");
-            }
-        },
-
-        deleteClicked: function (e) {
-            // hack to maintain context in the on button click handler
-            var self = this;
-            $(e.target).simpledialog({
-                'mode': 'bool',
-                'prompt': 'Are you sure you want to do this?',
-                'useModal': true,
-                'buttons': {
-                    'OK': {
-                        click: function () {
-                            Zoladex.Models.Appointment.destroy($("#id").val()).done(self.onDelete);
-                        }
-                    },
-                    'Cancel': {
-                        click: function () {
-                            //required for the dialog to close (for no obvious reason)
-                        },
-                        icon: "delete",
-                        theme: "c"
-                    }
-                }
-            });
         }
     });
 });

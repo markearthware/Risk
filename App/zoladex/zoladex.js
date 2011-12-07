@@ -31,13 +31,16 @@ steal(
         './controllers/practicedetails_controller',
         './controllers/practiceadd_controller',
         './controllers/practiceedit_controller',
+        './controllers/practicedelete_controller',
         './controllers/supportgrouplist_controller',
         './controllers/patientappointmentadd_controller',
         './controllers/patientappointmentedit_controller',
         './controllers/patientappointmentlist_controller',
+        './controllers/patientappointmentdelete_controller',
         './controllers/symptomlist_controller',
         './controllers/symptomrecord_controller',
         './controllers/symptomedit_controller',
+        './controllers/symptomdelete_controller',
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
@@ -133,8 +136,7 @@ steal(
                 $('#HCPDeleteConfirmDialog').zoladex_hcp_delete();
                 return;
             }
-            
-
+              
             //Practice/Hospitals controllers
             if ($(e.target).filter('#PracticeListPage').length > 0) {
                 $('#PracticeListList').zoladex_practice_list();
@@ -157,7 +159,19 @@ steal(
                 $('#EditPracticeForm').validate();
             }
 
+            if ($('#PracticeDeleteConfirmDialog').length > 0) {
+                $('#PracticeDeleteConfirmDialog').zoladex_practice_delete();
+                return;
+            }
+
             //Appointment controllers
+            
+            //this if needs to be highest up
+            if ($('#AppointmentDeleteConfirmDialog').length > 0) {
+                $('#AppointmentDeleteConfirmDialog').zoladex_patient_appointment_delete();
+                return;
+            }
+        
             if ($(e.target).filter('#calendarPage').length > 0) {
                 $('#AppointmentsList').zoladex_patient_appointment_list();
                 return;
@@ -167,8 +181,8 @@ steal(
                 $('#NewAppointmentForm').zoladex_patient_appointment_add();
                 $('#NewAppointmentForm').validate();
                   return;
-            }
-
+            }   
+        
             if ($('#EditAppointmentForm').length > 0) {
                 $('#EditAppointmentForm').zoladex_patient_appointment_edit();
                 $('#EditAppointmentForm').validate();
@@ -182,8 +196,10 @@ steal(
                 $('#SupportGroupListPage').zoladex_support_group_list();
                 return;
             }
-        
+
             // progress cotnrollers
+
+
 
             if ($(e.target).filter('#SymptomsListPage').length > 0) {
                 $('#SymptomListContainer').zoladex_symptom_list();
@@ -194,6 +210,11 @@ steal(
                 $('#RecordSymptomForm').zoladex_symptom_record();
                 return;
             }
+
+            if ($('#SymptomDeleteConfirmDialog').length > 0) {
+                $('#SymptomDeleteConfirmDialog').zoladex_symptom_delete();
+                return;
+            }        
         }
 
         function bindTabBar(e) {

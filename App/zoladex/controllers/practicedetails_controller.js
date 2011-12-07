@@ -5,8 +5,6 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/practice.js',
     '../lib/WebSQL/db.js',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.css',
-    '../lib/jQuerySimpleDialog/jquery.mobile.simpledialog.min.js',
     '../views/practice_details/init.ejs'
     )
     .then(function ($) {
@@ -41,43 +39,9 @@ steal('jquery/controller',
 
             $('#PracticeDetailsList').listview('refresh');
 
+            $('#DeletePracticeButton').attr("href", "dialog/practiceconfirmdialog.htm?id=" + data.id);
+
             $.mobile.hidePageLoadingMsg();
-        },
-
-        onDelete: function () {
-
-            // if android delay this as has issues with changepages clashing
-            if (navigator.userAgent.indexOf('Android') > 0) {
-                var code = '$.mobile.changePage("' + baseurl + '/zoladex/pages/hcp/practicelist.htm");';
-                setTimeout(code, 1000);
-            }
-            else {
-                $.mobile.changePage(baseurl + "/zoladex/pages/hcp/practicelist.htm");
-            }
-        },
-
-        '#DeletePracticeButton click': function (el) {
-            // hack to maintain context in the on button click handler
-            var self = this;
-            $(el).simpledialog({
-                'mode': 'bool',
-                'prompt': 'Are you sure you want to do this?',
-                'useModal': true,
-                'buttons': {
-                    'OK': {
-                        click: function () {
-                            Zoladex.Models.Practice.destroy($("#id").val()).done(self.onDelete);
-                        }
-                    },
-                    'Cancel': {
-                        click: function () {
-                            //required for the dialog to close (for no obvious reason)
-                        },
-                        icon: "delete",
-                        theme: "c"
-                    }
-                }
-            });
-        }
+        }   
     });
     });
