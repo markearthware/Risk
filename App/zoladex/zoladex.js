@@ -76,22 +76,33 @@ steal(
         });
 
         $(document).bind('pagehide', function (e, args) {
-            
+
             if ($(args.nextPage).filter('#HcpDetailsPage').length > 0) {
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;
             }
-            
+
             if ($(args.nextPage).filter('#HcpEditPage').length > 0) {
+
                 $('#EditHcpForm').zoladex_hcp_edit('loadData');
                 return;
             }
 
             if ($(args.nextPage).filter('#EditAppointmentPage').length > 0) {
+                //controller might not already be bound, if so, bind
+                if ($('#EditAppointmentForm').controllers().length < 1) {
+                    $('#EditAppointmentForm').zoladex_patient_appointment_edit();
+                }
                 $('#EditAppointmentForm').zoladex_patient_appointment_edit('loadData');
                 return;
             }
-            
+
+            if ($('#NewAppointmentForm').length > 0) {
+                $('#NewAppointmentForm').zoladex_patient_appointment_add();
+                $('#NewAppointmentForm').validate();
+                return;
+            }
+
             if ($(args.nextPage).filter('#PracticeDetailsPage').length > 0) {
                 $('#PracticeDetailsPage').zoladex_practice_details('loadData');
                 return;

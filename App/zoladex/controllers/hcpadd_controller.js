@@ -10,7 +10,7 @@ steal('jquery/controller',
     },
     {
         init: function () {
-            
+
             var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { id: "",
                 Title: "",
                 FirstName: "",
@@ -27,7 +27,7 @@ steal('jquery/controller',
             $('#NewHcpForm').html(view);
         },
         submit: function (el, ev) {
-            
+
             ev.preventDefault();
 
             if ($('#NewHcpForm').valid()) {
@@ -42,11 +42,26 @@ steal('jquery/controller',
             return false;
         },
         onInsertSuccess: function () {
-            
-            $.mobile.changePage('hcplist.htm', 'pop', false, true);
+
+            var params = Zoladex.QSUtils.getParams();
+
+            if (params.onsubmit) {
+
+                if (params.onsubmit == 0) {
+                    //go back to add new appointment
+                    $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
+                }
+                else if (params.onsubmit == 1) {
+                    //go back to edit appointment
+                    $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + params.id, 'flip', false, true);
+                }
+            }
+            else { //standard procedure
+                $.mobile.changePage('hcplist.htm', 'pop', false, true);
+            }
         },
         onInsertFail: function () {
-            
+
             steal.dev.log('professional has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         }

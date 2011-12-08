@@ -12,7 +12,7 @@ steal('jquery/controller',
     '../views/patientappointment_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentAdd', {
-        },
+    },
     {
         init: function () {
             // show loading screen
@@ -64,6 +64,11 @@ steal('jquery/controller',
         onInsertFail: function () {
             steal.dev.log('appointment has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
+        },
+        '#HcpId change': function () {
+            if ($("#HcpId option:selected").val() == 0) {
+                $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=0', 'flip', false, true);
+            }
         }
     });
-    });
+});

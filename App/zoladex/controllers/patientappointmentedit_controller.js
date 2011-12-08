@@ -79,6 +79,12 @@ steal('jquery/controller',
         onInsertFail: function () {
             steal.dev.log('appointment has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
+        },
+        '#HcpId change': function () {
+            if ($("#HcpId option:selected").val() == 0) {
+                var params = Zoladex.QSUtils.getParams();
+                $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=1&'+'id='+params.id , 'flip', false, true);
+            }
         }
     });
 });
