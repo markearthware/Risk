@@ -2,7 +2,7 @@
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <% } %>
 <label for="HcpId">HCP</label>
-<select id="HcpId" name="HcpId">
+<select class="ddl" id="HcpId" name="HcpId">
     <option value="-1">no HCP</option>
 	<option value="0">add new HCP</option>
 	<%for(var i = 0; i < this.Hcps.length ; i++){ %>
@@ -10,7 +10,7 @@
 	<%}%>     
 </select>
 <label for="HealthcareLocationId">Location:</label>
-<select id="HealthcareLocationId" name="HealthcareLocationId">
+<select class="ddl" id="HealthcareLocationId" name="HealthcareLocationId">
     <option value="0">no location</option>
 	<option value="">add new Hospital/Surgury</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
@@ -18,7 +18,7 @@
 	<%}%>     
 </select>
 <label for="TypeId">Type:</label>
-<select id="TypeId" class="required" name="TypeId">
+<select class="ddl" id="TypeId" class="required" name="TypeId">
     <option value="">select appointment type</option>
     <%for(var i = 0; i < this.Types.length ; i++){ %>	
     <option <% if(this.TypeId === this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
@@ -31,7 +31,7 @@
 <input type="text" id="StartTime" placeholder="Click to select time" class="required" name="StartTime" value="<%= this.StartTime %>"/>
 
 <label for="AlertsEnabled">Alerts:</label>
-<select id="AlertsEnabled" data-role="slider" name="AlertsEnabled">
+<select class="switch" id="AlertsEnabled" data-role="slider" name="AlertsEnabled">
     <option value="0" <% if(this.AlertsEnabled === 0){%> <%= selected = 'selected' %> <%}%>>Off</option>
 	<option value="1" <% if(this.AlertsEnabled === 1){%> <%= selected = 'selected' %> <%}%>>On</option>
 </select>
@@ -40,5 +40,5 @@
 <% if (this.id) { %>
 <input type="submit" id="newaapointmentbutton" value="Save Changes" />
 <% }else{ %>
-<input type="submit" id="newaapointmentbutton" value="Submit" />
+<input type="submit" id="newaapointmentbutton" value="Add Appointment" />
 <% } %>
