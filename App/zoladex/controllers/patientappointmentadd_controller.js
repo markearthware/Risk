@@ -69,6 +69,11 @@ steal('jquery/controller',
             if ($("#HcpId option:selected").val() == 0) {
                 $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=0', 'flip', false, true);
             }
+        },
+        '#HealthcareLocationId change': function () {
+            if ($("#HealthcareLocationId option:selected").val() == 0) {
+                $.mobile.changePage('../hcp/practicenew.htm?onsubmit=0', 'flip', false, true);
+            }
         }
     });
 });

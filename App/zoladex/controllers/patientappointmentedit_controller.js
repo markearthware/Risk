@@ -85,6 +85,12 @@ steal('jquery/controller',
                 var params = Zoladex.QSUtils.getParams();
                 $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=1&'+'id='+params.id , 'flip', false, true);
             }
+        },
+        '#HealthcareLocationId change': function () {
+            if ($("#HealthcareLocationId option:selected").val() == 0) {
+                var params = Zoladex.QSUtils.getParams();
+                $.mobile.changePage('../hcp/practicenew.htm?onsubmit=1&' + 'id=' + params.id, 'flip', false, true);
+            }
         }
     });
 });

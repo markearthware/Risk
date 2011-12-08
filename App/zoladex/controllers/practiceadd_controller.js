@@ -33,7 +33,22 @@ steal('jquery/controller',
             return false;
         },
         onInsertSuccess: function () {
-            $.mobile.changePage('practicelist.htm', 'pop', false, true);
+            var params = Zoladex.QSUtils.getParams();
+
+            if (params.onsubmit) {
+
+                if (params.onsubmit == 0) {
+                    //go back to add new appointment
+                    $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
+                }
+                else if (params.onsubmit == 1) {
+                    //go back to edit appointment
+                    $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + params.id, 'flip', false, true);
+                }
+            }
+            else { //standard procedure
+                $.mobile.changePage('practicelist.htm', 'pop', false, true);
+            }
         },
         onInsertFail: function () {
             steal.dev.log('practice has not been added');

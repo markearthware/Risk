@@ -11,8 +11,8 @@
 </select>
 <label for="HealthcareLocationId">Location:</label>
 <select class="ddl" id="HealthcareLocationId" name="HealthcareLocationId">
-    <option value="0">no location</option>
-	<option value="">add new Hospital/Surgury</option>
+    <option value="-1">no location</option>
+	<option value="0">add new Hospital/Surgury</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
 		<option <% if(this.LocsId === this.Locs[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>     
