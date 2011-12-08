@@ -1,5 +1,14 @@
-﻿<%for(var i = 0; i < this.length ; i++){ %>
+﻿<% if( this.length < 1 ){ %>
+	
+	<li>
+		You have no Hospitals/Practices added. To add one, press 'new' on the top right.
+	</li>
+
+<% }else{ %>
+
+
+<%for(var i = 0; i < this.length ; i++){ %>
     <li>
 		<a class="practiceAnchor" href="practicedetails.htm?id=<%=this[i].id%>"><%=this[i].FullName()%></a>
     </li>
-<%}%>
+<%}}%>

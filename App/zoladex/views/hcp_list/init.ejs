@@ -1,5 +1,13 @@
-﻿<%for(var i = 0; i < this.length ; i++){ %>
+﻿<% if( this.length < 1 ){ %>
+	
+	<li>
+		You have no HCP's added. To add one, press 'new' on the top right.
+	</li>
+
+<% }else{ %>
+
+<%for(var i = 0; i < this.length ; i++){ %>
     <li>
 		<a class="hcpAnchor" href="hcpdetails.htm?id=<%=this[i].id%>"><%=this[i].FullName()%></a>
     </li>
-<%}%>
+<%}}%>

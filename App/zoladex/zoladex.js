@@ -140,6 +140,11 @@ steal(
             if ($(e.target).filter('#PracticeListPage').length > 0) {
                 $('#PracticeListList').zoladex_practice_list();
                 return;
+            }  
+        
+            if ($('#PracticeDeleteConfirmDialog').length > 0) {
+                $('#PracticeDeleteConfirmDialog').zoladex_practice_delete();
+                return;
             }
 
             if ($(e.target).filter('#PracticeDetailsPage').length > 0) {
@@ -158,23 +163,19 @@ steal(
                 $('#EditPracticeForm').validate();
             }
 
-            if ($('#PracticeDeleteConfirmDialog').length > 0) {
-                $('#PracticeDeleteConfirmDialog').zoladex_practice_delete();
-                return;
-            }
+          
 
-            //Appointment controllers
-            
-            //this if needs to be highest up
-            if ($('#AppointmentDeleteConfirmDialog').length > 0) {
-                $('#AppointmentDeleteConfirmDialog').zoladex_patient_appointment_delete();
-                return;
-            }
-        
+            //Appointment controllers        
             if ($(e.target).filter('#calendarPage').length > 0) {
                 $('#AppointmentsList').zoladex_patient_appointment_list();
                 return;
-            }        
+            }    
+            
+            //this if needs to here 
+            if ($('#AppointmentDeleteConfirmDialog').length > 0) {
+                $('#AppointmentDeleteConfirmDialog').zoladex_patient_appointment_delete();
+                return;
+            }       
 
             if ($('#NewAppointmentForm').length > 0) {
                 $('#NewAppointmentForm').zoladex_patient_appointment_add();

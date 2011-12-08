@@ -1,6 +1,16 @@
 ﻿<%
 var currentdate = null;
+
+alert(this.length);
 %>
+
+<% if( this.length < 1 ){ %>
+	
+	<li data-role="list-divider">
+		You have no appointments added. To add one, press 'new' on the top right.
+	</li>
+
+<% }else{ %>
 
 <%for(var i = 0; i < this.length ; i++){ %>	
 <%
@@ -19,4 +29,4 @@ currentdate=this[i].StartDate
 	<% } %>
 	<p class="ui-li-aside"><strong><%= $.scroller.formatDate('D d M yy', this[i].StartDate) %> <%= this[i].StartTime %></strong>PM</p>
 </a></li>
-<%}%> 
+<%}}%> 
