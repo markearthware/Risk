@@ -45,6 +45,14 @@ steal('jquery/controller',
                     //go back to edit appointment
                     $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + params.id, 'flip', false, true);
                 }
+                else if (params.onsubmit == 2) {
+                    //go back to new hcp
+                    $.mobile.changePage('../hcp/hcpnew.htm', 'flip', false, true);
+                }
+                else if (params.onsubmit == 3) {
+                    //go back to edit hcp
+                    $.mobile.changePage('../hcp/hcpedit.htm?id='+params.id , 'flip', false, true);
+                }
             }
             else { //standard procedure
                 $.mobile.changePage('practicelist.htm', 'pop', false, true);

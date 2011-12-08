@@ -3,6 +3,7 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/hcp.js',
+    '../models/practice.js',
     '../lib/WebSQL/db.js',
     '../views/hcp_addedit/init.ejs')
     .then(function ($) {
@@ -11,20 +12,28 @@ steal('jquery/controller',
     {
         init: function () {
 
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { id: "",
-                Title: "",
-                FirstName: "",
-                Surname: "",
-                PracticeName: "",
-                Number: "",
-                Email: "",
-                Street: "",
-                Town: "",
-                County: "",
-                Postcode: ""
+            var locsdef = Zoladex.Models.Practice.findAll();
+
+            $.when(locsdef).done(function(locsres) {
+                // process view
+                var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { id: "",
+                    Title: "",
+                    FirstName: "",
+                    Surname: "",
+                    PracticeName: "",
+                    Number: "",
+                    Email: "",
+                    Street: "",
+                    Town: "",
+                    County: "",
+                    Postcode: "",
+                    Locs: locsres,
+                    LocsId: -1
+                });
+                $('#NewHcpForm').html(view).trigger('create');
             });
 
-            $('#NewHcpForm').html(view);
+            
         },
         submit: function (el, ev) {
 
@@ -42,7 +51,7 @@ steal('jquery/controller',
             return false;
         },
         onInsertSuccess: function () {
-
+            
             var params = Zoladex.QSUtils.getParams();
 
             if (params.onsubmit) {
@@ -58,6 +67,11 @@ steal('jquery/controller',
             }
             else { //standard procedure
                 $.mobile.changePage('hcplist.htm', 'pop', false, true);
+            }
+        },
+        '#PracticeName change': function () {
+            if ($("#PracticeName option:selected").val() == 0) {
+                $.mobile.changePage('practicenew.htm?onsubmit=2', 'flip', false, true);
             }
         },
         onInsertFail: function () {

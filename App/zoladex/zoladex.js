@@ -73,6 +73,12 @@ steal(
                 return;
             }
 
+            if ($('#NewPracticeForm').length > 0) {
+                $('#NewPracticeForm').zoladex_practice_add();
+                $('#NewPracticeForm').validate();
+                return;
+            }
+
         });
 
         $(document).bind('pagehide', function (e, args) {
@@ -111,6 +117,7 @@ steal(
                 $('#EditPracticeForm').zoladex_practice_edit('loadData');
                 return;
             }
+     
             if ($(args.nextPage).filter('#SymptomEditPage').length > 0) {
                 $('#EditSymptomForm').zoladex_symptom_edit();
                 return;
@@ -173,9 +180,7 @@ steal(
                 $('#EditPracticeForm').zoladex_practice_edit();
                 $('#EditPracticeForm').validate();
             }
-
-          
-
+        
             //Appointment controllers        
             if ($(e.target).filter('#calendarPage').length > 0) {
                 $('#AppointmentsList').zoladex_patient_appointment_list();

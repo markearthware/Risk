@@ -50,7 +50,7 @@ var localStorageDB = (function () {
                     logError(error, sql);
                     deferred.reject(error);
                 }
-        );
+            );
         });
         if (success) deferred.then(success);
         if (error) deferred.fail(error);
@@ -139,13 +139,13 @@ var localStorageDB = (function () {
 
         checkTableExists("Practices", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id unique, Name)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Practices (id, Name) VALUES (?,?)', [createId(), 'QE2']);
+                tx.executeSql('INSERT INTO Practices (id, Name) VALUES (?,?)', [1, 'QE2']);
             });
         });
 
         checkTableExists("HealthcareProfessionals", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', 'Techno House Surgery', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
+                tx.executeSql('INSERT INTO HealthcareProfessionals (id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', '1', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
             });
         });
 

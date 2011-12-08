@@ -1,12 +1,20 @@
 ﻿<input type="hidden" name="id" id="id" value="<%= this.id %>" />
+
+<label for="practicename">Practice/Hospital:</label>
+<select id="PracticeName" name="PracticeName">
+    <option value="-1">no location</option>
+	<option value="0">add new Hospital/Surgury</option>
+	<%for(var i = 0; i < this.Locs.length ; i++){ %>
+		<option <% if(this.LocsId === this.Locs[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+	<%}%>     
+</select>
+<input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <label for="title">Title</label>
 <input type="text" name="Title" id="Title" class="required" value="<%= this.Title %>" />
 <label for="firstname">First Name:</label>
 <input type="text" name="FirstName" id="FirstName" class="required" value ="<%= this.FirstName %>" />
 <label for="surname">Surname:</label>
 <input type="text" name="Surname" id="Surname"  class="required" value="<%= this.Surname %>" />
-<label for="practicename">Practice/Hospital:</label>
-<input type="text" name="PracticeName" id="PracticeName"  class="required" value="<%= this.PracticeName %>" />
 <label for="number">Number:</label>
 <input type="text" name="Telephone" id="Telephone" class="required" value="<%= this.Telephone %>"   />
 <label for="email">Email:</label>
@@ -19,4 +27,9 @@
 <input type="text" name="County" id="County" class="required" value="<%=this.County%>" />
 <label for="postcode">Post code:</label>
 <input type="text" name="Postcode" id="Postcode" class="required" value="<%=this.Postcode%>" />
+
+<% if (this.id) { %>
+<input type="submit" id="newhcpbutton" value="Save Changes" />
+<% }else{ %>
 <input type="submit" id="newhcpbutton" value="Add Healthcare Professional" />
+<% } %>

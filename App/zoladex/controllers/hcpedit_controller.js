@@ -27,42 +27,66 @@ steal('jquery/controller',
         },
 
         loadData: function () {
-            
+
+            //get query string params
             var params = Zoladex.QSUtils.getParams();
+            var practiceName = null;
+            var practiceres = null;
+            var hcpres = null;
+            var hcpdef = Zoladex.Models.Hcp.findOne(params.id);
 
-            var deffered = Zoladex.Models.Hcp.findOne(params.id); 
-            
-            var editLink = $('#ButtonDeleteHcp').attr('href') + params.id;
-            $('#ButtonDeleteHcp').attr('href', editLink);
+            $.when(hcpdef).done(function (hcpres) {
 
-            deffered.done(this.callback('insertData'));
+                var practicedef = Zoladex.Models.Practice.findOne(hcpres.PracticeName);
+                var practicesdef = Zoladex.Models.Practice.findAll();
+                $.when(practicedef, practicesdef).done(function (practiceres, practicesres) {
+                    practiceName = practiceres.Name;
+
+                    var view = $.View('//zoladex/views/hcp_addedit/init.ejs', {
+                        id: hcpres.id,
+                        Title: hcpres.Title,
+                        FirstName: hcpres.FirstName,
+                        Surname: hcpres.Surname,
+                        PracticeName: practiceName,
+                        Telephone: hcpres.Telephone,
+                        Email: hcpres.Email,
+                        Street: hcpres.Street,
+                        Town: hcpres.Town,
+                        County: hcpres.County,
+                        Postcode: hcpres.Postcode,
+                        Locs: practicesres,
+                        LocsId: practiceres.id
+                    });
+
+                    var form = $('#EditHcpForm');
+
+                    form.html(view);
+
+                    form.trigger('create');
+
+                    $.mobile.hidePageLoadingMsg();
+                });
+            });
         },
 
         onUpdateSuccess: function () {
             
             steal.dev.log('edit worked');
-            $.mobile.changePage('hcpdetails.htm?id=' + this.currentId);
+            $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
+        },
+
+        '#PracticeName change': function () {
+            if ($("#PracticeName option:selected").val() == 0) {
+                var params = Zoladex.QSUtils.getParams();
+                $.mobile.changePage('../hcp/practicenew.htm?onsubmit=3&' + 'id=' + params.id, 'flip', false, true);
+            }
         },
 
         onUpdateFail: function () {
             
             steal.dev.log('edit no worked');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
-        },
-
-        insertData: function (data) {
-            
-            this.currentId = data.id;
-
-            var view = $.View('//zoladex/views/hcp_addedit/init.ejs', data);
-
-            var form = $('#EditHcpForm');
-
-            form.html(view);
-
-            form.trigger('create');
-
-            $.mobile.hidePageLoadingMsg();
         }
+        
     });
-    });
+});
