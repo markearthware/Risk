@@ -40,6 +40,7 @@ steal(
         './controllers/symptomadd_controller',
         './controllers/symptomedit_controller',
         './controllers/symptomdelete_controller',
+        './controllers/questionadd_controller.js',
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
@@ -120,6 +121,12 @@ steal(
      
             if ($(args.nextPage).filter('#SymptomEditPage').length > 0) {
                 $('#EditSymptomForm').zoladex_symptom_edit();
+                return;
+            }
+
+            // question controllers
+            if ($(args.nextPage).filter('#SelectQuestionPage').length > 0) {
+                $('#SelectQuestionPage').zoladex_question_add();
                 return;
             }
         });
@@ -212,6 +219,8 @@ steal(
                 $('#SupportGroupListPage').zoladex_support_group_list();
                 return;
             }
+
+         
 
             // progress cotnrollers
 

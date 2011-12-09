@@ -186,6 +186,26 @@ var localStorageDB = (function () {
             });
         });
 
+        checkTableExists("Questions", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id unique, Question, CategoryId INTEGER)', [], function (tx, result) {
+                // populate
+                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (1, "Why is the sky blue?", 0)');
+                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (2, "How big is the moon?", 1)');
+            });
+        });
+        
+        checkTableExists("Categories", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Categories (Category , CategoryId INTEGER)', [], function (tx, result) {
+                // populate
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Oncologist", 0)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Surgeon", 1)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("GP", 2)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Hospital Nurse", 3)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Practice Nurse", 4)');
+            });
+        });
     }
 
     // checks if a table exists in the database and if not calls the callback

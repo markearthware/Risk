@@ -2,7 +2,7 @@ steal('jquery/model', function () {
 
   Zoladex.Models.WebSqlModel('Zoladex.Models.Hcp',
   {
-      findAll: function (params) {
+      findAll: function () {
           return localStorageDB.getRows('SELECT * FROM HealthcareProfessionals', this);
       },
 
