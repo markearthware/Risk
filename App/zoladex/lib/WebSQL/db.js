@@ -191,7 +191,14 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id unique, Question, CategoryId INTEGER)', [], function (tx, result) {
                 // populate
                 tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (1, "Why is the sky blue?", 0)');
-                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (2, "How big is the moon?", 1)');
+                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (2, "Why is the sky pink?", 0)');
+                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (3, "How big is the moon?", 1)');
+            });
+        });
+
+        checkTableExists("MyQuestions", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id unique, Question, HcpId INTEGER)', [], function (tx, result) {
             });
         });
         

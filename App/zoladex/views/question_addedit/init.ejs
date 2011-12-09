@@ -1,7 +1,7 @@
-﻿<% steal.dev.log(this); %>
+﻿
 <% for(var i = 0; i < this.questionList.length; i++){ %>
 	<li>
-		<div style="padding: 10px; text-align: center"><%=this.questionList[i].Question%></div>
+		<div id="Question<%= i %>" style="padding: 10px; text-align: center"><%=this.questionList[i].Question%></div>
 		<select id="QuestionDdl" name="QuestionDdl">
 			<option value="-1">Do not add</option>
 			<% for(var j = 0; j < this.hcpList.length; j++){ %>
@@ -11,4 +11,5 @@
 	</li>	
 <%}%>
 
+<input type="submit" id="addquestionsbutton" value="Add Questions" />
 

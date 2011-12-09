@@ -41,6 +41,7 @@ steal(
         './controllers/symptomedit_controller',
         './controllers/symptomdelete_controller',
         './controllers/questionadd_controller.js',
+        './controllers/questionlist_controller.js',
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
@@ -80,6 +81,11 @@ steal(
                 return;
             }
 
+            if ($(e.target).filter('#MyQuestionListPage').length > 0) {
+                $('#MyQuestionListPage').zoladex_my_questions_list();
+                return;
+            } 
+
         });
 
         $(document).bind('pagehide', function (e, args) {
@@ -118,7 +124,7 @@ steal(
                 $('#EditPracticeForm').zoladex_practice_edit('loadData');
                 return;
             }
-     
+
             if ($(args.nextPage).filter('#SymptomEditPage').length > 0) {
                 $('#EditSymptomForm').zoladex_symptom_edit();
                 return;
@@ -129,12 +135,15 @@ steal(
                 $('#SelectQuestionPage').zoladex_question_add();
                 return;
             }
+
+         
+            
         });
     }
 
     function bindPageControllers(e) {
             if ($(e.target).filter('#indexPage').length > 0) return '';
-
+        
             // hcp controllers
             if ($(e.target).filter('#HcpListPage').length > 0) {
                 $('#HcpListList').zoladex_hcp_list();
@@ -219,6 +228,8 @@ steal(
                 $('#SupportGroupListPage').zoladex_support_group_list();
                 return;
             }
+
+    
 
          
 

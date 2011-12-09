@@ -12,8 +12,8 @@ var currentdate = null;
 
 <%for(var i = 0; i < this.length ; i++){ %>	
 <%
-if(currentdate!=this[i].StartDate){
-currentdate=this[i].StartDate
+if(currentdate!==this[i].StartDate.getTime()){
+currentdate=this[i].StartDate.getTime();
 %>
 <li data-role="list-divider"><%= $.scroller.formatDate('D d M yy', this[i].StartDate) %></li>
 <% } %>
