@@ -7,20 +7,24 @@ steal('jquery/controller',
     '../views/patientappointment_list/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentList', {
-        },
+    },
     {
         init: function () {
             // show loading screen
             $.mobile.showPageLoadingMsg();
+            Zoladex.Models.AppointmentListItem.findAll().done(this.callback('onDataLoaded'));
+        },
+        onDataLoaded: function (result) {
+            //sort by date
+            var sortedResult = result.sort(this.sortByDate);
 
-            Zoladex.Models.AppointmentListItem.findAll().done(function (result) {
-
-                $('#AppointmentsList').html($.View('//zoladex/views/patientappointment_list/init.ejs', result));
-                $('#AppointmentsList').listview('refresh');
-                // hide loading message
-                $.mobile.hidePageLoadingMsg();
-
-            });
+            $('#AppointmentsList').html($.View('//zoladex/views/patientappointment_list/init.ejs', sortedResult));
+            $('#AppointmentsList').listview('refresh');
+            // hide loading message
+            $.mobile.hidePageLoadingMsg();
+        },
+        sortByDate: function (a, b) {
+            return (parseInt(a.StartDate.getTime()) - parseInt(b.StartDate.getTime()));
         }
     });
-    });
+});

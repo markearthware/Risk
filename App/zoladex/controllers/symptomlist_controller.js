@@ -7,7 +7,7 @@ steal('jquery/controller',
      '../views/symptom_list/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomList', {
-        },
+    },
     {
         init: function () {
 
@@ -15,16 +15,16 @@ steal('jquery/controller',
             this.list = $('#SymptomListContainer');
         },
         loadData: function () {
-
-            var view = new $.View('//zoladex/views/symptom_list/init.ejs', Zoladex.Models.PatientSymptomListItem.findAll(this), null, this.callback(this.refreshList));
-
-            this.element.append(view);
+            Zoladex.Models.PatientSymptomListItem.findAll(this).done(this.callback('onDataLoaded'));
         },
-        refreshList: function () {
-
+        onDataLoaded: function (result) {
+            var sortedResult = result.sort(this.sortByDate);
+            $('#SymptomListContainer').html($.View('//zoladex/views/symptom_list/init.ejs', sortedResult));
             $.mobile.hidePageLoadingMsg();
-
             this.list.listview();
+        },
+        sortByDate: function (a, b) {
+            return (parseInt(a.Date.getTime()) - parseInt(b.Date.getTime()));
         }
     });
 });
