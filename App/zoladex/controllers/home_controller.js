@@ -17,11 +17,10 @@ steal('jquery/controller',
                 steal.dev.log(alertres);
 
                 if (alertres.length > 0) {
-                    alert("hello");
-
-                    $.mobile.changePage('../pages/hcp/dialog/alertdialog.htm?id=' + alertres[0].id);
+                    $.mobile.changePage("../hcp/dialog/alertdialog.htm");
                 }
             });
+
         }
     });
 });

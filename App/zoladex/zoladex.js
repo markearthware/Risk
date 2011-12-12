@@ -42,6 +42,7 @@ steal(
         './controllers/symptomdelete_controller',
         './controllers/questionadd_controller.js',
         './controllers/questionlist_controller.js',
+        './controllers/home_controller.js',
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
@@ -83,6 +84,11 @@ steal(
 
             if ($(e.target).filter('#MyQuestionListPage').length > 0) {
                 $('#MyQuestionListPage').zoladex_my_questions_list();
+                return;
+            }
+
+            if ($(e.target).filter('#HomePage').length > 0) {
+                $('#HomePage').zoladex_home();
                 return;
             } 
 
