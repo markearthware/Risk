@@ -12,6 +12,8 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.QuestionAdd', {
     },
     {
+        num: 0,
+
         init: function () {
             var params = Zoladex.QSUtils.getParams();
             var categoryId = params.category;
@@ -34,24 +36,37 @@ steal('jquery/controller',
         submit: function (el, ev) {
             //loop through select elements in form and add selected question text and hcp id to myquestions table
             var ctx = this;
+            this.num = this.count();
             $('form select option:selected').each(function (index) {
                 if ($(this).val() !== '-1') {
-                    alert($(this).val());
                     var questionText = $('#Question' + index).text();
                     //add question text and hcpID to myquestions db table
                     var questionObj = { Question: questionText, HcpId: $(this).val() };
                     new Zoladex.Models.MyQuestion(questionObj).save(ctx.callback('onInsertSuccess'), ctx.callback('onInsertFail'));
                 }
-            });  
+            });
             return false;
         },
 
         onInsertSuccess: function () {
-            $.mobile.changePage('myquestions.htm');
+            this.num--;
+            if (this.num === 0) {
+                $.mobile.changePage('myquestions.htm');
+            }
         },
 
         onInsertFail: function () {
-            alert("FAIL!");
+            $.mobile.changePage("../pages/hcp/dialog/error.htm");
+        },
+
+        count: function () {
+            var count = 0;
+            $('form select option:selected').each(function (index) {
+                if ($(this).val() !== '-1') {
+                    count++;
+                }
+            });
+            return count;
         }
     });
 });
