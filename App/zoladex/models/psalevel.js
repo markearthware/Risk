@@ -3,7 +3,7 @@
     Zoladex.Models.WebSqlModel('Zoladex.Models.Psalevel',
   {
       findAll: function () {
-          return localStorageDB.getRows('SELECT ap.StartDate, ap.StartTime, ap.TypeId hcp.Title, hcp.FirstName, hcp.Surname, hcl.Name FROM Appointments as ap inner join HealthcareProfessionals as ap.hcp on HcpId=hcp.id inner join Practices as hcl on ap.LocationId = hcl.id', this);
+          return localStorageDB.getRows('SELECT * FROM PsaLevels', this);
       },
 
       findOne: function (id) {

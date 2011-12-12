@@ -9,7 +9,6 @@
     '../views/level_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.LevelAdd', {
-            listensTo: ["change"]
         },
     {
         init: function () {
@@ -54,13 +53,16 @@
             }
             return false;
         },
+        
         onInsertSuccess: function () {
 
             $.mobile.changePage('levels.htm', 'pop', false, true);
         },
+        
         onInsertFail: function () {
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         },
+        
         calculateAge: function (birthDate) {
 
             if (birthDate === undefined || birthDate < 1) {
