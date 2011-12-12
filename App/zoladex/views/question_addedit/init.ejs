@@ -1,15 +1,24 @@
 ﻿
+<% if(this.hcpList.length < 1) { %>
+
+<ul data-role="listview">
+<li data-role="list-divider">Sorry, you have not added any HCPs yet. You can't ask a question to noone!</li>
+</ul>
+<%} else { %>
+
+
 <% for(var i = 0; i < this.questionList.length; i++){ %>
 	<li>
 		<div id="Question<%= i %>" style="padding: 10px; text-align: center"><%=this.questionList[i].Question%></div>
 		<select id="QuestionDdl" name="QuestionDdl">
 			<option value="-1">Do not add</option>
 			<% for(var j = 0; j < this.hcpList.length; j++){ %>
-				<option value="<%= this.hcpList[j].id %>"><%= this.hcpList[j].FirstName %></option>
+				<option value="<%= this.hcpList[j].id %>"><%= this.hcpList[j].Title %> <%= this.hcpList[j].FirstName %> <%= this.hcpList[j].Surname %></option>
 			<%}%>     
 		</select>
 	</li>	
 <%}%>
 
 <input type="submit" id="addquestionsbutton" value="Add Questions" />
-
+ </form>
+<% } %>

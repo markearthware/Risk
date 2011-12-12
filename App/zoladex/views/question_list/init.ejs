@@ -1,2 +1,30 @@
-﻿<%='hello world'%>
+﻿<% lastId = 0; %>
+
+<% if(this.length < 1){ %>
+	<li data-role="list-divider">You have not added any questions yet. To do so, press 'New' on the top right. </li>
+<%}else{ %>
+
+	<% for(var i=0; i < this.length; i++){ %>
+
+		<% if(this[i].HcpId !== lastId){ %>
+
+			<li data-role="list-divider">
+			Questions for <%=this[i].Title%> <%=this[i].FirstName%> <%=this[i].Surname%>
+			
+			</li>
+
+		<%}%>
+
+		<li>
+			<a>
+				<h3><%= this[i].Question %></h3>
+			</a>
+			<a class="deleteButton" id="<%=this[i].id %>" >Delete</a>
+		</li>
+	
+		<% lastId = this[i].HcpId; %>
+
+	<% } %>
+
+<% } %>
 
