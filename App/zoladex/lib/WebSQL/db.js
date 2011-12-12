@@ -94,12 +94,17 @@ var localStorageDB = (function () {
                 function (tx1, result) {
                     steal.dev.log('select succeeded');
                     steal.dev.log(result);
-                    if (context && context.model) {
-                        // create REAL models from the data
-                        deferred.resolve(context.model(result.rows.item(0)));
+                    if (result.rows.length > 0) {
+                        if (context && context.model) {
+                            // create REAL models from the data
+                            deferred.resolve(context.model(result.rows.item(0)));
+                        }
+                        else {
+                            deferred.resolve(result.rows.item(0));
+                        }
                     }
                     else {
-                        deferred.resolve(result.rows.item(0));
+                        deferred.resolve();
                     }
 
                 },
@@ -201,7 +206,7 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id unique, Question, HcpId INTEGER)', [], function (tx, result) {
             });
         });
-        
+
         checkTableExists("Categories", function (tx) {
             // create table
             tx.executeSql('CREATE TABLE IF NOT EXISTS Categories (Category , CategoryId INTEGER)', [], function (tx, result) {
