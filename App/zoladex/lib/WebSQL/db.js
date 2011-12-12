@@ -26,7 +26,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms'];
+        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels'];
         db.transaction(function (tx) {
             $.each(tables, function (index, value) {
                 steal.dev.log('DROP TABLE ' + tables[index]);
@@ -201,7 +201,7 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id unique, Question, HcpId INTEGER)', [], function (tx, result) {
             });
         });
-        
+
         checkTableExists("Categories", function (tx) {
             // create table
             tx.executeSql('CREATE TABLE IF NOT EXISTS Categories (Category , CategoryId INTEGER)', [], function (tx, result) {
@@ -212,6 +212,10 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Hospital Nurse", 3)');
                 tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Practice Nurse", 4)');
             });
+        });
+
+        checkTableExists('PsaLevels', function(tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PsaLevels (id unique, Date INTEGER, PsaLevel DOUBLE)');
         });
     }
 

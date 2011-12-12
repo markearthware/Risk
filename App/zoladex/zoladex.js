@@ -42,6 +42,8 @@ steal(
         './controllers/symptomdelete_controller',
         './controllers/questionadd_controller.js',
         './controllers/questionlist_controller.js',
+         './controllers/leveladd_controller.js',
+        './controllers/levelchart_controller.js',
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
@@ -84,6 +86,11 @@ steal(
             if ($(e.target).filter('#MyQuestionListPage').length > 0) {
                 $('#MyQuestionListPage').zoladex_my_questions_list();
                 return;
+            }
+
+            if ($(e.target).filter('#LevelsPage').length > 0) {
+                $('#LevelsPage').zoladex_level_chart();
+                return;
             } 
 
         });
@@ -120,6 +127,7 @@ steal(
                 $('#PracticeDetailsPage').zoladex_practice_details('loadData');
                 return;
             }
+            
             if ($(args.nextPage).filter('#PracticeEditPage').length > 0) {
                 $('#EditPracticeForm').zoladex_practice_edit('loadData');
                 return;
@@ -134,10 +142,7 @@ steal(
             if ($(args.nextPage).filter('#SelectQuestionPage').length > 0) {
                 $('#SelectQuestionPage').zoladex_question_add();
                 return;
-            }
-
-         
-            
+            }  
         });
     }
 
@@ -160,11 +165,13 @@ steal(
                 $('#NewHcpForm').validate();
                 return;
             }
+        
             if ($('#EditHcpForm').length > 0) {
                 $('#EditHcpForm').zoladex_hcp_edit();
                 $('#EditHcpForm').validate();
                 return;
             }
+        
             if ($('#HCPDeleteConfirmDialog').length > 0) {
                 $('#HCPDeleteConfirmDialog').zoladex_hcp_delete();
                 return;
@@ -229,10 +236,6 @@ steal(
                 return;
             }
 
-    
-
-         
-
             // progress cotnrollers
 
             if ($(e.target).filter('#SymptomsListPage').length > 0) {
@@ -248,7 +251,13 @@ steal(
             if ($('#SymptomDeleteConfirmDialog').length > 0) {
                 $('#SymptomDeleteConfirmDialog').zoladex_symptom_delete();
                 return;
-            }        
+            }
+
+            if ($('#AddLevelForm').length > 0) {
+                $('#AddLevelForm').zoladex_level_add();
+                // $('#NewPracticeForm').validate();
+                return;
+            }
         }
 
         function bindTabBar(e) {
