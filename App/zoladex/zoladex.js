@@ -42,6 +42,7 @@ steal(
         './controllers/symptomdelete_controller',
         './controllers/questionadd_controller.js',
         './controllers/questionlist_controller.js',
+         './controllers/leveladd_controller.js',
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
@@ -248,7 +249,13 @@ steal(
             if ($('#SymptomDeleteConfirmDialog').length > 0) {
                 $('#SymptomDeleteConfirmDialog').zoladex_symptom_delete();
                 return;
-            }        
+            }
+
+            if ($('#AddLevelForm').length > 0) {
+                $('#AddLevelForm').zoladex_level_add();
+                // $('#NewPracticeForm').validate();
+                return;
+            }
         }
 
         function bindTabBar(e) {
