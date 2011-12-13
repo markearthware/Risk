@@ -27,12 +27,13 @@ steal('jquery/controller',
             locsdef = Zoladex.Models.Practice.findAll(),
             hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true }),
             appdef = Zoladex.Models.Appointment.findOne(params.id);
-            
+
             // wait for all deferreds to be completed
             $.when(typesdef, locsdef, hcpdef, appdef).done(function (typesres, locsres, hcpres, appres) {
                 // process view
                 var locsid = params.locid ? params.locid : appres.HealthcareLocationId;
-                var hcpid = params.hcpid ? params.hcpid : hcpres.HcpId;
+                var hcpid = params.hcpid ? params.hcpid : appres.HcpId;
+               
                 var view = $.View('//zoladex/views/patientappointment_addedit/init.ejs',
                 {
                     id: appres.id,
@@ -85,7 +86,7 @@ steal('jquery/controller',
         '#HcpId change': function () {
             if ($("#HcpId option:selected").val() == 0) {
                 var params = Zoladex.QSUtils.getParams();
-                $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=1&'+'id='+params.id , 'flip', false, true);
+                $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=1&' + 'id=' + params.id, 'flip', false, true);
             }
         },
         '#HealthcareLocationId change': function () {
