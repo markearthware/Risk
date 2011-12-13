@@ -16,8 +16,8 @@ steal('jquery/controller',
 
                 steal.dev.log(alertres);
 
-                if (alertres.length > 0) {
-                    $.mobile.changePage("../hcp/dialog/alertdialog.htm");
+                if (alertres.length > 0 && alertHasBeenShown == false) {
+                    $.mobile.changePage("../home/dialog/alertdialog.htm");
                 }
             });
 

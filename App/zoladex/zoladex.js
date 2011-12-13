@@ -1,4 +1,5 @@
 var baseurl;
+var alertHasBeenShown = false;
 steal(
         'jquery',
         'jquery/view/ejs',
@@ -72,12 +73,20 @@ steal(
             if ($(e.target).filter('#HomePage').length > 0) {
                 $('#HomePage').zoladex_home();
                 return;
+            }
+            
+            if ($(e.target).filter('#AlertDialog').length > 0) {
+                $('#AlertDialog').zoladex_alerts();
+                return;
             } 
+          
 
         });
 
         $(document).bind('pagehide', function (e, args) {
-
+            
+           
+            
             if ($(args.nextPage).filter('#HcpDetailsPage').length > 0) {
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;

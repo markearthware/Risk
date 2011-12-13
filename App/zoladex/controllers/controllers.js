@@ -23,4 +23,5 @@
         './questionlist_controller.js',
          './leveladd_controller.js',
         './levelchart_controller.js',
-        './home_controller.js')
+        './home_controller.js',
+        './alert_controller.js')
