@@ -6,15 +6,15 @@
     <option value="-1">no HCP</option>
 	<option value="0">add new HCP</option>
 	<%for(var i = 0; i < this.Hcps.length ; i++){ %>
-		<option <% if(this.HcpId === this.Hcps[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Hcps[i].id %>"><%= this.Hcps[i].FullName() %></option>
+		<option <% if(this.HcpId == this.Hcps[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Hcps[i].id %>"><%= this.Hcps[i].FullName() %></option>
 	<%}%>     
 </select>
 <label for="HealthcareLocationId">Location:</label>
 <select class="ddl" id="HealthcareLocationId" name="HealthcareLocationId">
     <option value="-1">no location</option>
 	<option value="0">add new Hospital/Practice</option>
-	<%for(var i = 0; i < this.Locs.length ; i++){ %>
-		<option <% if(this.LocsId === this.Locs[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+	<%for(var i = 0; i < this.Locs.length ; i++){%>
+		<option <% if(this.LocsId == this.Locs[i].id){ %> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>     
 </select>
 <label for="TypeId">Type:</label>

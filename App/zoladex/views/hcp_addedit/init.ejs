@@ -5,7 +5,7 @@
     <option value="-1">no location</option>
 	<option value="0">add new Hospital/Surgury</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
-		<option <% if(this.LocsId === this.Locs[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+		<option <% if(this.LocsId == this.Locs[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>     
 </select>
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />

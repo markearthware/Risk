@@ -27,16 +27,18 @@ steal('jquery/controller',
             locsdef = Zoladex.Models.Practice.findAll(),
             hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true }),
             appdef = Zoladex.Models.Appointment.findOne(params.id);
-
+            
             // wait for all deferreds to be completed
             $.when(typesdef, locsdef, hcpdef, appdef).done(function (typesres, locsres, hcpres, appres) {
                 // process view
+                var locsid = params.locid ? params.locid : appres.HealthcareLocationId;
+                var hcpid = params.hcpid ? params.hcpid : hcpres.HcpId;
                 var view = $.View('//zoladex/views/patientappointment_addedit/init.ejs',
                 {
                     id: appres.id,
-                    HcpId: appres.HcpId,
+                    HcpId: hcpid,
                     TypeId: appres.TypeId,
-                    LocsId: appres.HealthcareLocationId,
+                    LocsId: locsid,
                     StartDate: appres.StartDate,
                     StartTime: appres.StartTime,
                     AlertsEnabled: appres.AlertsEnabled,

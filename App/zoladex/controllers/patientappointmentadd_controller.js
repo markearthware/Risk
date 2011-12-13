@@ -24,16 +24,20 @@ steal('jquery/controller',
             locsdef = Zoladex.Models.Practice.findAll(),
             hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true });
 
+            var params = Zoladex.QSUtils.getParams();
+            var locsid = params.locid ? params.locid : -1;
+            var hcpid = params.hcpid ? params.hcpid : -1;
 
             // wait for all deferreds to be completed
             $.when(typesdef, locsdef, hcpdef).done(function (typesres, locsres, hcpres) {
                 // process view
-                var view = $.View('//zoladex/views/patientappointment_addedit/init.ejs', { Id: "", HcpId: 0,
+                var view = $.View('//zoladex/views/patientappointment_addedit/init.ejs', { Id: "", HcpId: hcpid,
                     AppointmentLocationId: 0,
                     AppointmentTypeId: 0,
                     Hcps: hcpres,
                     Locs: locsres,
-                    Types: typesres
+                    Types: typesres,
+                    LocsId: locsid
                 });
                 // insert html into form and call jquerymobile create on form
                 $('#NewAppointmentForm').html(view).trigger('create');
@@ -47,6 +51,7 @@ steal('jquery/controller',
                 $.mobile.hidePageLoadingMsg();
             });
         },
+
         submit: function (el, ev) {
 
             ev.preventDefault();

@@ -36,11 +36,11 @@ steal('jquery/controller',
             var hcpdef = Zoladex.Models.Hcp.findOne(params.id);
 
             $.when(hcpdef).done(function (hcpres) {
-
+ 
                 var practicedef = Zoladex.Models.Practice.findOne(hcpres.PracticeName);
                 var practicesdef = Zoladex.Models.Practice.findAll();
                 $.when(practicedef, practicesdef).done(function (practiceres, practicesres) {
-                   
+                    var locsid = params.locid ? params.locid : practiceres.id;
                     var view = $.View('//zoladex/views/hcp_addedit/init.ejs', {
                         id: hcpres.id,
                         Title: hcpres.Title,
@@ -53,7 +53,7 @@ steal('jquery/controller',
                         County: hcpres.County,
                         Postcode: hcpres.Postcode,
                         Locs: practicesres,
-                        LocsId: practiceres ? practiceres.id : -1
+                        LocsId: locsid ? locsid : -1
                     });
 
                     var form = $('#EditHcpForm');

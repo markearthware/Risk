@@ -32,26 +32,27 @@ steal('jquery/controller',
 
             return false;
         },
-        onInsertSuccess: function () {
+        onInsertSuccess: function (obj,newid) {
+
             var params = Zoladex.QSUtils.getParams();
 
             if (params.onsubmit) {
 
                 if (params.onsubmit == 0) {
                     //go back to add new appointment
-                    $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
+                    $.mobile.changePage('../calendar/patientappointmentnew.htm?locid='+newid, 'flip', false, true);
                 }
                 else if (params.onsubmit == 1) {
                     //go back to edit appointment
-                    $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + params.id, 'flip', false, true);
+                    $.mobile.changePage('../calendar/patientappointmentedit.htm?locid='+newid+'&id=' + params.id, 'flip', false, true);
                 }
                 else if (params.onsubmit == 2) {
                     //go back to new hcp
-                    $.mobile.changePage('../hcp/hcpnew.htm', 'flip', false, true);
+                    $.mobile.changePage('../hcp/hcpnew.htm?locid='+newid, 'flip', false, true);
                 }
                 else if (params.onsubmit == 3) {
                     //go back to edit hcp
-                    $.mobile.changePage('../hcp/hcpedit.htm?id='+params.id , 'flip', false, true);
+                    $.mobile.changePage('../hcp/hcpedit.htm?locid=' + newid + '&id=' + params.id, 'flip', false, true);
                 }
             }
             else { //standard procedure
