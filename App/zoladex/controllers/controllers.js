@@ -1,5 +1,5 @@
 ﻿steal(  
-'./tabbar_controller',
+        './tabbar_controller',
         './hcplist_controller',
         './hcpdetails_controller',
         './hcpadd_controller',
@@ -23,4 +23,5 @@
         './questionlist_controller.js',
          './leveladd_controller.js',
         './levelchart_controller.js',
-        './home_controller.js')
+        './home_controller.js'
+    )

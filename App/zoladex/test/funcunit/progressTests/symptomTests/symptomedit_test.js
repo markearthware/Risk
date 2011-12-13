@@ -13,6 +13,9 @@
                 S('#SymptomListContainer a').exists().click();
 
                 S('#SymptomEditPage').exists();
+
+                S('#EditSymptomForm').exists();
+                S('#Date').exists();
             });
         }
     });
@@ -27,7 +30,15 @@
         ok(S('#Date').exists(), "form inserted");
     });
 
-    test("Can successfully edit a symptom", function () {
-        ok(false, 'this errors badly, todo urgently');
+    test("Can edit a symptom", function () {
+        S('#EditSymptomForm').exists();
+        S('#Date').exists();
+        S('#SymptomId')[0].options.selectedIndex = 2;
+        S('#Date').type("1");
+        S("#dw_set").exists().click();
+        S('#Time').type("1");
+        S("#dw_set").exists().click();
+        S('#submitsymptombutton').exists().click();
+        ok(S("#SymptomsListPage").exists(), "appointment edited sucessfully");
     });
 })
