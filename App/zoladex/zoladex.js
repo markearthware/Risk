@@ -42,12 +42,9 @@ steal(
         './controllers/symptomdelete_controller',
         './controllers/questionadd_controller.js',
         './controllers/questionlist_controller.js',
-<<<<<<< HEAD
          './controllers/leveladd_controller.js',
         './controllers/levelchart_controller.js',
-=======
         './controllers/home_controller.js',
->>>>>>> 702ec9441a924948f624f5d86c8d8ea4fe22a96d
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
