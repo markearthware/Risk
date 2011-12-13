@@ -58,11 +58,11 @@ steal('jquery/controller',
 
                 if (params.onsubmit == 0) {
                     //go back to add new appointment
-                    $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
+                    $.mobile.changePage('../calendar/patientappointmentnew.htm?selectLast=true', 'flip', false, true);
                 }
                 else if (params.onsubmit == 1) {
                     //go back to edit appointment
-                    $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + params.id, 'flip', false, true);
+                    $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + params.id+'&selectLast=true', 'flip', false, true);
                 }
             }
             else { //standard procedure
