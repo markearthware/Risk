@@ -19,32 +19,8 @@ steal(
 // load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
         './models/models.js', // steals all your models
+        './controllers/controllers.js', // steals all controllers
         './lib/jQueryValidation/jquery.validate.js',
-        './controllers/tabbar_controller',
-        './controllers/hcplist_controller',
-        './controllers/hcpdetails_controller',
-        './controllers/hcpadd_controller',
-        './controllers/hcpedit_controller',
-        './controllers/hcpdelete_controller',
-        './controllers/practicelist_controller',
-        './controllers/practicedetails_controller',
-        './controllers/practiceadd_controller',
-        './controllers/practiceedit_controller',
-        './controllers/practicedelete_controller',
-        './controllers/supportgrouplist_controller',
-        './controllers/patientappointmentadd_controller',
-        './controllers/patientappointmentedit_controller',
-        './controllers/patientappointmentlist_controller',
-        './controllers/patientappointmentdelete_controller',
-        './controllers/symptomlist_controller',
-        './controllers/symptomadd_controller',
-        './controllers/symptomedit_controller',
-        './controllers/symptomdelete_controller',
-        './controllers/questionadd_controller.js',
-        './controllers/questionlist_controller.js',
-         './controllers/leveladd_controller.js',
-        './controllers/levelchart_controller.js',
-        './controllers/home_controller.js',
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
