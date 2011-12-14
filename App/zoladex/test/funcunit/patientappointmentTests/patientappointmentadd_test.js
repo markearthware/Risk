@@ -16,7 +16,7 @@
     });
 
     test("Form validation working", function () {
-        S('#newaapointmentbutton').exists().click();
+        S('#newappointmentbutton').exists().click();
         // check validation prompts are shown
         ok(S('label.error').size(3), "all three fields failed validation");
 
@@ -29,7 +29,7 @@
             S("#dw_set").exists().click();
             S("#StartTime").type("1");
             S("#dw_set").exists().click();
-            S('#newaapointmentbutton').exists().click();
+            S('#newappointmentbutton').exists().click();
             //check success prompt show
             ok(S("#SuccessDialog").exists(), "appointment created sucessfully");
         });
