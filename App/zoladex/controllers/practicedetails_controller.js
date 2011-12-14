@@ -5,12 +5,15 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/practice.js',
     '../lib/WebSQL/db.js',
+    '../lib/Geolocation/geolocation.js',
     '../views/practice_details/init.ejs'
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PracticeDetails', {
-        },
+    },
     {
+        postcode: null,
+        
         init: function () {
             $.mobile.showPageLoadingMsg();
         },
@@ -27,6 +30,8 @@ steal('jquery/controller',
 
         insertData: function (data) {
 
+            this.postcode = data.Postcode;
+
             $('#PracticeDetailsPage h1').html(data.Name);
 
             var editLink = $('#EditPracticeButton').attr('href') + data.id;
@@ -42,6 +47,11 @@ steal('jquery/controller',
             $('#DeletePracticeButton').attr("href", "dialog/practiceconfirmdialog.htm?id=" + data.id);
 
             $.mobile.hidePageLoadingMsg();
-        }   
+        },
+
+        '#MapButton click': function () {
+            var url = 'http://maps.google.com/maps?q=' + this.postcode;
+            window.location = url;
+        }
     });
-    });
+});

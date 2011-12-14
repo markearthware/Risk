@@ -1,6 +1,6 @@
 var localStorageDB = (function () {
 
-    var dropTables = false; //todo remove before production
+    var dropTables = true; //todo remove before production
     var db = null,
     loadedCallback = null;
 
@@ -47,7 +47,7 @@ var localStorageDB = (function () {
                     try {
                         id = result.insertId;
                     }
-                    catch(err) {
+                    catch (err) {
                         //ignore
                     }
 
@@ -144,14 +144,15 @@ var localStorageDB = (function () {
     }
 
     function logError(error, sql) {
+        alert(error);
         steal.dev.log('Transaction with the device database failed - ' + error.message + '\nOffending SQL:\n"' + sql + "'");
     }
 
     function initTables() {
 
         checkTableExists("Practices", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Practices (Name) VALUES (?)', ['QE2']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO Practices (Name, Postcode) VALUES (?,?)', ['QE2', 'AL8 7QX']);
             });
         });
 
