@@ -12,7 +12,7 @@ steal('jquery/controller',
     '../views/patientappointment_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentAdd', {
-    },
+        },
     {
         init: function () {
             // show loading screen
@@ -27,6 +27,7 @@ steal('jquery/controller',
             var params = Zoladex.QSUtils.getParams();
             var locsid = params.locid ? params.locid : -1;
             var hcpid = params.hcpid ? params.hcpid : -1;
+            var self = this;
 
             // wait for all deferreds to be completed
             $.when(typesdef, locsdef, hcpdef).done(function (typesres, locsres, hcpres) {
@@ -42,13 +43,30 @@ steal('jquery/controller',
                 // insert html into form and call jquerymobile create on form
                 $('#NewAppointmentForm').html(view).trigger('create');
 
-                // add date control enhancements
-                var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
-                $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
-                $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
+                self.setupDateTimeControls();
 
                 // hide loading message
                 $.mobile.hidePageLoadingMsg();
+            });
+        },
+
+        setupDateTimeControls: function () {
+            // add date control enhancements
+            var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
+            $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
+            $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
+
+
+            // add change handlers so date and time fields to update hidden backing field
+            $("#StartDate,#StartTime").change(function () {
+                // get current start date and start time values and combine
+                var combined = $.scroller.parseDate('dd M yy', $("#StartDate").val());
+                var newtime = $.scroller.parseDate('H:i', $("#StartTime").val());
+                combined.setHours(newtime.getHours());
+                combined.setMinutes(newtime.getMinutes());
+
+                // set hidden field to combined ticks
+                $("#StartDateTime").val(combined.getTime());
             });
         },
 
@@ -81,4 +99,4 @@ steal('jquery/controller',
             }
         }
     });
-});
+    });

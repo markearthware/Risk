@@ -26,10 +26,10 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'Questions', 'sqlite_sequence'];
-        
+        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
+
         $.each(tables, function (index, value) {
-            db.transaction(function (tx) {                
+            db.transaction(function (tx) {
                 steal.dev.log('DROP TABLE ' + tables[index]);
                 tx.executeSql('DROP TABLE ' + tables[index]);
             });
@@ -49,7 +49,7 @@ var localStorageDB = (function () {
                     try {
                         id = result.insertId;
                     }
-                    catch(err) {
+                    catch (err) {
                         //ignore
                     }
 
@@ -165,7 +165,7 @@ var localStorageDB = (function () {
 
         checkTableExists("Appointments", function (tx) {
             // create table for storing Practices/Hospitals
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, StartDate INTEGER, StartTime, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, StartDateTime INTEGER, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
         });
 
         checkTableExists("AppointmentTypes", function (tx) {
