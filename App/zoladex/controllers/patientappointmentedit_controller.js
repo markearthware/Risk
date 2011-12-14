@@ -33,7 +33,7 @@ steal('jquery/controller',
                 // process view
                 var locsid = params.locid ? params.locid : appres.HealthcareLocationId;
                 var hcpid = params.hcpid ? params.hcpid : appres.HcpId;
-               
+
                 var view = $.View('//zoladex/views/patientappointment_addedit/init.ejs',
                 {
                     id: appres.id,
@@ -67,9 +67,13 @@ steal('jquery/controller',
 
             ev.preventDefault();
 
-            if ($('#EditAppointmentForm').valid()) {
+            if ($('#EditAppointmentForm').valid() && $('#TypeId option:selected').val() != -1) {
                 steal.dev.log('insert appointment form is valid, attempting to save to database...');
                 new Zoladex.Models.Appointment(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+            }
+            else if ($('#TypeId option:selected').val() == -1) {
+                $('#CustomErrorMsg').remove();
+                $('#TypeId').closest('div').after('<label class="error" id="CustomErrorMsg">This field is required.</label> ');
             }
 
             return false;

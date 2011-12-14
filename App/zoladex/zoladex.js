@@ -49,7 +49,6 @@ steal(
                 return;
             }
             
-
             if ($(e.target).filter('#SymptomsListPage').length > 0) {
                 $('#SymptomListContainer').zoladex_symptom_list('loadData');
                 return;
@@ -84,47 +83,67 @@ steal(
         });
 
         $(document).bind('pagehide', function (e, args) {
-            
-           
-            
+
+
+
             if ($(args.nextPage).filter('#HcpDetailsPage').length > 0) {
+
+                if ($('#HcpDetailsPage').controllers().length < 1) {
+                    $('#HcpDetailsPage').zoladex_hcp_details();
+                }
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
                 return;
             }
 
             if ($(args.nextPage).filter('#HcpEditPage').length > 0) {
 
+                if ($('#EditHcpForm').controllers().length < 1) {
+                    $('#EditHcpForm').zoladex_hcp_edit();
+                }
+                
                 $('#EditHcpForm').zoladex_hcp_edit('loadData');
                 return;
             }
 
             if ($(args.nextPage).filter('#AddHcpPage').length > 0) {
 
+                if ($('#NewHcpForm').controllers().length < 1) {
+                    $('#NewHcpForm').zoladex_hcp_add();
+                }   
                 $('#NewHcpForm').zoladex_hcp_add('loadData');
                 return;
             }
-            
+
             if ($(args.nextPage).filter('#EditAppointmentPage').length > 0) {
                 //controller might not already be bound, if so, bind
-                if ($('#EditAppointmentForm').controllers().length < 1) {
+                if ($('#EditAppointmentForm').controllers().length < 1) {   
                     $('#EditAppointmentForm').zoladex_patient_appointment_edit();
-                }
+                }   
                 $('#EditAppointmentForm').zoladex_patient_appointment_edit('loadData');
                 return;
             }
 
             if ($('#NewAppointmentForm').length > 0) {
+                  
                 $('#NewAppointmentForm').zoladex_patient_appointment_add();
-                $('#NewAppointmentForm').validate();
+                
                 return;
             }
 
             if ($(args.nextPage).filter('#PracticeDetailsPage').length > 0) {
+                if ($('#PracticeDetailsPage').controllers().length == 0) {
+                    $('#PracticeDetailsPage').zoladex_practice_details();
+                }
                 $('#PracticeDetailsPage').zoladex_practice_details('loadData');
                 return;
             }
-            
+
             if ($(args.nextPage).filter('#PracticeEditPage').length > 0) {
+
+                if ($('#EditPracticeForm').controllers().length == 0) {
+                    $('#EditPracticeForm').zoladex_practice_edit();
+                }
+                
                 $('#EditPracticeForm').zoladex_practice_edit('loadData');
                 return;
             }
@@ -138,7 +157,7 @@ steal(
             if ($(args.nextPage).filter('#SelectQuestionPage').length > 0) {
                 $('#SelectQuestionPage').zoladex_question_add();
                 return;
-            }  
+            }
         });
     }
 

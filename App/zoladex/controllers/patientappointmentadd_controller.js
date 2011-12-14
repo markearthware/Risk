@@ -27,6 +27,7 @@ steal('jquery/controller',
             var params = Zoladex.QSUtils.getParams();
             var locsid = params.locid ? params.locid : -1;
             var hcpid = params.hcpid ? params.hcpid : -1;
+            //this.element.validate({ submitHandler: this.callback('onSubmit') });
 
             // wait for all deferreds to be completed
             $.when(typesdef, locsdef, hcpdef).done(function (typesres, locsres, hcpres) {
@@ -42,26 +43,31 @@ steal('jquery/controller',
                 // insert html into form and call jquerymobile create on form
                 $('#NewAppointmentForm').html(view).trigger('create');
 
+
+                
+                // hide loading message
+                $.mobile.hidePageLoadingMsg();
+
+
+
                 // add date control enhancements
                 var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
                 $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
                 $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
-
-                // hide loading message
-                $.mobile.hidePageLoadingMsg();
+                                
             });
         },
 
-        submit: function (el, ev) {
-
-            ev.preventDefault();
-
-            if ($('#NewAppointmentForm').valid()) {
+        onSubmit: function (form) {
+            //if ($('#NewAppointmentForm').valid()) {
                 steal.dev.log('insert appointment form is valid, attempting to save to database...');
-                new Zoladex.Models.Appointment(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
-            }
-
-            return false;
+                new Zoladex.Models.Appointment($(form).formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+            //}
+            //            else if ($('#TypeId option:selected').val() == -1) {
+            //                $('#CustomErrorMsg').remove();
+            //                $('#TypeId').closest('div').after('<label class="error" id="CustomErrorMsg">This field is required.</label> ');
+            //            }
+            //return false;
         },
         onInsertSuccess: function () {
             $.mobile.changePage('dialog/success.htm', 'pop', false, true);
