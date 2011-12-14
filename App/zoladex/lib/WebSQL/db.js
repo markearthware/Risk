@@ -182,7 +182,7 @@ var localStorageDB = (function () {
 
         checkTableExists("PatientSymptoms", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Date INTEGER, Time, SymptomId INTEGER)');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, DateTime INTEGER, SymptomId INTEGER)');
 
         });
 

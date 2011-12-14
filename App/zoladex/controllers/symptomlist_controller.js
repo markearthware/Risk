@@ -22,9 +22,6 @@ steal('jquery/controller',
             $('#SymptomListContainer').html($.View('//zoladex/views/symptom_list/init.ejs', sortedResult));
             $.mobile.hidePageLoadingMsg();
             this.list.listview();
-        },
-        sortByDate: function (a, b) {
-            return (parseInt(a.Date.getTime()) - parseInt(b.Date.getTime()));
         }
     });
 });

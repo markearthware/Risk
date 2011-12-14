@@ -6,11 +6,12 @@ steal('jquery/controller',
     '../views/symptom_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomEdit', {
-        },
+    },
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
 
+            var self = this;
             var params = Zoladex.QSUtils.getParams();
 
             var recordedSymptomDef = Zoladex.Models.PatientSymptom.findOne(params.id);
@@ -25,11 +26,14 @@ steal('jquery/controller',
 
                 $('#EditSymptomForm').html(view).trigger('create');
 
+                
+
                 var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
                 $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
                 $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
-
+                self.setupDateTimeControls();
+                
                 $.mobile.hidePageLoadingMsg();
 
             });
@@ -46,6 +50,24 @@ steal('jquery/controller',
             return false;
         },
 
+        setupDateTimeControls: function () {
+            // add date control enhancements
+            var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
+            $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
+            $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
+
+            // add change handlers so date and time fields to update hidden backing field
+            $("#Date,#Time").change(function () {
+                // get current start date and start time values and combine
+                var combined = $.scroller.parseDate('dd M yy', $("#Date").val());
+                var newtime = $.scroller.parseDate('H:i', $("#Time").val());
+                combined.setHours(newtime.getHours());
+                combined.setMinutes(newtime.getMinutes());
+                // set hidden field to combined ticks
+                $("#DateTime").val(combined.getTime());
+            });
+        },
+
         onUpdateSuccess: function () {
             $.mobile.changePage("symptomslist.htm");
         },
@@ -54,4 +76,4 @@ steal('jquery/controller',
             // todo: dialog
         }
     });
-    });
+});

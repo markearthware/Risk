@@ -10,7 +10,7 @@
 	<li>
 		<a href="./symptomedit.htm?id=<%=this[i].id %>">
 			<div>
-				<%=$.scroller.formatDate('D d M yy', this[i].Date) %>, <%=this[i].Time %>
+				<%=$.scroller.formatDate('D d M yy HH:ii A', this[i].DateTime) %>
 			</div>
 			<div>
 				<h2><%=this[i].Description%><h3>
