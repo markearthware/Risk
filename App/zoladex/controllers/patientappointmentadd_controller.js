@@ -28,7 +28,7 @@ steal('jquery/controller',
                     var locsid = params.locid ? params.locid : -1;
                     var hcpid = params.hcpid ? params.hcpid : -1;
 
-                    //this.element.validate({ submitHandler: this.callback('onSubmit') });
+                    this.element.validate({ submitHandler: this.callback('onSubmit') });
 
                     var self = this;
 
@@ -47,25 +47,16 @@ steal('jquery/controller',
                         // insert html into form and call jquerymobile create on form
                         $('#NewAppointmentForm').html(view).trigger('create');
 
+                        self.setupDateTimeControls();
 
                         // hide loading message
                         $.mobile.hidePageLoadingMsg();
-
-
-
-                        // add date control enhancements
-                        var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
-                        $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
-                        $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
-
                     });
                 },
 
                 onSubmit: function(form) {
-                    //if ($('#NewAppointmentForm').valid()) {
-                    self.setupDateTimeControls();
-                    // hide loading message
-                    $.mobile.hidePageLoadingMsg();
+                    steal.dev.log('insert appointment form is valid, attempting to save to database...');
+                    new Zoladex.Models.Appointment($(form).formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },
 
                 setupDateTimeControls: function() {

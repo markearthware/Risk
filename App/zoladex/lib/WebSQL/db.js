@@ -145,7 +145,6 @@ var localStorageDB = (function () {
     }
 
     function logError(error, sql) {
-        alert(error);
         steal.dev.log('Transaction with the device database failed - ' + error.message + '\nOffending SQL:\n"' + sql + "'");
     }
 
