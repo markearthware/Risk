@@ -26,13 +26,15 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels'];
-        db.transaction(function (tx) {
-            $.each(tables, function (index, value) {
+        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'Questions', 'sqlite_sequence'];
+        
+        $.each(tables, function (index, value) {
+            db.transaction(function (tx) {                
                 steal.dev.log('DROP TABLE ' + tables[index]);
                 tx.executeSql('DROP TABLE ' + tables[index]);
             });
         });
+
     }
 
     function executeSql(sql, params, success, error) {
