@@ -19,48 +19,33 @@ steal('jquery/controller',
         onDataLoad: function (data) {
             steal.dev.log(data);
 
-            var series = this.formatData(data);
-
-            var chart1 = new Highcharts.Chart({
-                chart: {
-                    renderTo: 'PsaChartContainer',
-                    type: 'line'
-                },
-                title: {
-                    text: ''
-                },
-
-                plotOptions: {
-                    line: {
-                        dataLabels: {
-                            enabled: true
-                        },
-                        enableMouseTracking: false
-                    }
-                },
-                xAxis: {
-                    type: 'datetime'
-                },
-                yAxis: {
-                    title: {
-                        text: 'ng/ml'
-                    }
-                },
-                series: [{
-                    name: 'PSA Level',
-                    data: series
-                }]
-            });
-        },
-
-        formatData: function (data) {
             var series = new Array();
+            var labels = new Array();
 
             $.each(data, function (index, element) {
-                series.push([element.Date, element.PsaLevel]);
+                series.push(element.PsaLevel);
+                labels.push(element.Date);
             });
-
-            return series;
+            
+            zingchart.render({
+                id : 'PsaChartContainer',
+                output : 'canvas',
+                width : 320,
+                height : 320,
+                data : {
+                    "graphset": [
+                      {
+                          "type" : "line",
+                          "scale-x" : {
+                              "values" : labels
+                          }, 
+                          "series" : [
+                         {
+                             "values": series
+                         }]
+                      }]
+                }
+            });
         }
     });
-    });
+});

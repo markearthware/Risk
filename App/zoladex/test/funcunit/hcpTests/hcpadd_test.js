@@ -12,10 +12,6 @@
 
                 S('#HcpListPage').exists();
 
-//                S('#HcpListList li.ui-li').size(function (size) {
-//                    return size > 0;
-//                });
-
                 S('#ButtonNewHcp').exists().click();
 
                 S('#AddHcpPage').exists();
@@ -30,9 +26,7 @@
 
     test("Add HCP form has been inserted", function () {
 
-        ok(S(S('#NewHcpForm').children()).size(function (size) {
-            return size > 2;
-        }));
+        ok(S('#Postcode').exists(), "form element exists");
     });
 
     test("Can successfully add a new HCP", function () {

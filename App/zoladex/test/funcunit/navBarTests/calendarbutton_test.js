@@ -6,9 +6,7 @@
 
             S('#btnContinue').click();
 
-            S('#homePage').exists();
-
-            S('.calendarTab').click();
+            S('.calendarTab').exists().click();
 
             S('#calendarPage').exists();
         }

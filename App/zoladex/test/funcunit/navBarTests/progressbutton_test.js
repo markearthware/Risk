@@ -6,9 +6,7 @@
 
             S('#btnContinue').click();
 
-            S('#homePage').exists();
-
-            S('.progressTab').click();
+            S('.progressTab').exists().click();
 
             S('#progressPage').exists();
         }

@@ -6,9 +6,7 @@
 
             S('#btnContinue').click();
 
-            S('#homePage').exists();
-
-            S('.hcpTab').click();
+            S('.hcpTab').exists().click();
 
             S('#HcpPage').exists();
         }
