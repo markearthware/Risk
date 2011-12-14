@@ -24,11 +24,12 @@
     <option <% if(this.TypeId === this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
     <%}%> 
 </select>
+<input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime ? this.StartDateTime.getTime() : '' %>" />
 <label for="StartDate">Date:</label>
-<input type="text" id="StartDate" placeholder="Click to select date" class="required" name="StartDate" value="<%= $.scroller.formatDate('dd M yy', this.StartDate) %>"/>
+<input type="text" id="StartDate" placeholder="Click to select date" class="required" value="<%= $.scroller.formatDate('dd M yy', this.StartDateTime) %>"/>
 
 <label for="StartTime">Time:</label>
-<input type="text" id="StartTime" placeholder="Click to select time" class="required" name="StartTime" value="<%= this.StartTime %>"/>
+<input type="text" id="StartTime" placeholder="Click to select time" class="required" value="<%= $.scroller.formatDate('H:i', this.StartDateTime) %>"/>
 
 <label for="AlertsEnabled">Alerts:</label>
 <select class="switch" id="AlertsEnabled" data-role="slider" name="AlertsEnabled">
