@@ -18,13 +18,13 @@
 	<%}%>     
 </select>
 <label for="TypeId">Type:</label>
-<select class="ddl" id="TypeId" class="required" name="TypeId">
+<select class="ddl required" id="TypeId" name="TypeId">
     <option value="">select appointment type</option>
     <%for(var i = 0; i < this.Types.length ; i++){ %>	
     <option <% if(this.TypeId === this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
     <%}%> 
 </select>
-<input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime.getTime() %>" />
+<input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime ? this.StartDateTime.getTime() : '' %>" />
 <label for="StartDate">Date:</label>
 <input type="text" id="StartDate" placeholder="Click to select date" class="required" value="<%= $.scroller.formatDate('dd M yy', this.StartDateTime) %>"/>
 
