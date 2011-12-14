@@ -6,29 +6,30 @@
     <option value="-1">no HCP</option>
 	<option value="0">add new HCP</option>
 	<%for(var i = 0; i < this.Hcps.length ; i++){ %>
-		<option <% if(this.HcpId === this.Hcps[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Hcps[i].id %>"><%= this.Hcps[i].FullName() %></option>
+		<option <% if(this.HcpId == this.Hcps[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Hcps[i].id %>"><%= this.Hcps[i].FullName() %></option>
 	<%}%>     
 </select>
 <label for="HealthcareLocationId">Location:</label>
 <select class="ddl" id="HealthcareLocationId" name="HealthcareLocationId">
     <option value="-1">no location</option>
 	<option value="0">add new Hospital/Practice</option>
-	<%for(var i = 0; i < this.Locs.length ; i++){ %>
-		<option <% if(this.LocsId === this.Locs[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+	<%for(var i = 0; i < this.Locs.length ; i++){%>
+		<option <% if(this.LocsId == this.Locs[i].id){ %> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>     
 </select>
 <label for="TypeId">Type:</label>
-<select class="ddl" id="TypeId" class="required" name="TypeId">
+<select class="ddl required" id="TypeId" name="TypeId">
     <option value="">select appointment type</option>
     <%for(var i = 0; i < this.Types.length ; i++){ %>	
     <option <% if(this.TypeId === this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
     <%}%> 
 </select>
+<input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime ? this.StartDateTime.getTime() : '' %>" />
 <label for="StartDate">Date:</label>
-<input type="text" id="StartDate" placeholder="Click to select date" class="required" name="StartDate" value="<%= $.scroller.formatDate('dd M yy', this.StartDate) %>"/>
+<input type="text" name="_StartDate" id="StartDate" placeholder="Click to select date" class="required" value="<%= $.scroller.formatDate('dd M yy', this.StartDateTime) %>"/>
 
 <label for="StartTime">Time:</label>
-<input type="text" id="StartTime" placeholder="Click to select time" class="required" name="StartTime" value="<%= this.StartTime %>"/>
+<input type="text" name="_StartTime" id="StartTime" placeholder="Click to select time" class="required" value="<%= $.scroller.formatDate('H:i', this.StartDateTime) %>"/>
 
 <label for="AlertsEnabled">Alerts:</label>
 <select class="switch" id="AlertsEnabled" data-role="slider" name="AlertsEnabled">

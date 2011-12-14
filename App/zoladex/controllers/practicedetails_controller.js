@@ -9,9 +9,12 @@ steal('jquery/controller',
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PracticeDetails', {
-        },
+    },
     {
+        postcode: null,
+
         init: function () {
+            steal.dev.log("test1");
             $.mobile.showPageLoadingMsg();
         },
 
@@ -22,10 +25,12 @@ steal('jquery/controller',
 
             var deffered = Zoladex.Models.Practice.findOne(params.id);
 
-            deffered.done(this.callback('insertData'));
+            $.when(deffered).done(this.callback('insertData'));
         },
 
         insertData: function (data) {
+            steal.dev.log("test2");
+            this.postcode = data.Postcode;
 
             $('#PracticeDetailsPage h1').html(data.Name);
 
@@ -40,8 +45,13 @@ steal('jquery/controller',
             $('#PracticeDetailsList').listview('refresh');
 
             $('#DeletePracticeButton').attr("href", "dialog/practiceconfirmdialog.htm?id=" + data.id);
-
+            steal.dev.log("test3");
             $.mobile.hidePageLoadingMsg();
-        }   
+        },
+
+        '#AddressLink click': function () {
+            var url = 'http://maps.google.com/maps?q=' + this.postcode + ', UK';
+            window.location = url;
+        }
     });
-    });
+});

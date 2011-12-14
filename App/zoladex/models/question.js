@@ -1,4 +1,4 @@
-﻿steal('jquery/model', function () {
+steal('jquery/model', function () {
 
     Zoladex.Models.WebSqlModel('Zoladex.Models.Question',
   {

@@ -11,6 +11,8 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.HcpDetails', {
     },
     {
+        postcode: null,
+
         init: function () {
 
             $.mobile.showPageLoadingMsg();
@@ -25,6 +27,7 @@ steal('jquery/controller',
             var practiceres = null;
             var hcpres = null;
             var hcpdef = Zoladex.Models.Hcp.findOne(params.id);
+            var self = this;
 
             $.when(hcpdef).done(function (hcpres) {
 
@@ -35,6 +38,8 @@ steal('jquery/controller',
                     var editLink = $('#EditHcpButton').attr('href') + hcpres.id;
 
                     $('#EditHcpButton').attr('href', editLink);
+
+                    self.postcode = hcpres.Postcode;
 
                     var view = $.View('//zoladex/views/hcp_details/init.ejs', {
                         id: hcpres.id,
@@ -62,6 +67,11 @@ steal('jquery/controller',
                 });
             });
 
+        },
+        '#AddressLink click': function () {
+            var url = 'http://maps.google.com/maps?q=' + this.postcode + ', UK';
+
+            window.location = url;
         }
     });
 });

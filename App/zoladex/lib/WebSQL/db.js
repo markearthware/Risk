@@ -26,9 +26,10 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels'];
-        db.transaction(function (tx) {
-            $.each(tables, function (index, value) {
+        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
+
+        $.each(tables, function (index, value) {
+            db.transaction(function (tx) {
                 steal.dev.log('DROP TABLE ' + tables[index]);
                 tx.executeSql('DROP TABLE ' + tables[index]);
             });
@@ -43,8 +44,20 @@ var localStorageDB = (function () {
                 function (tx1, result) {
                     steal.dev.log('sql: ' + sql + ' succeeded');
                     steal.dev.log(result);
+                    var id = 0;
+                    try {
+                        id = result.insertId;
+                    }
+                    catch (err) {
+                        //ignore
+                    }
 
-                    deferred.resolve();
+                    if (result && id > 0) {
+                        deferred.resolve(result.insertId);
+                    }
+                    else {
+                        deferred.resolve();
+                    }
                 },
                 function (tx1, error) {
                     logError(error, sql);
@@ -131,11 +144,6 @@ var localStorageDB = (function () {
         return res;
     }
 
-    function createId() {
-        var date = new Date();
-        return date.getTime();
-    }
-
     function logError(error, sql) {
         steal.dev.log('Transaction with the device database failed - ' + error.message + '\nOffending SQL:\n"' + sql + "'");
     }
@@ -143,25 +151,25 @@ var localStorageDB = (function () {
     function initTables() {
 
         checkTableExists("Practices", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id unique, Name)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Practices (id, Name) VALUES (?,?)', [1, 'QE2']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO Practices (Name, Postcode) VALUES (?,?)', ['QE2', 'AL8 7QX']);
             });
         });
 
         checkTableExists("HealthcareProfessionals", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id unique, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (id, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?,?)', [createId(), 'Dr', 'Mark', 'Short', '1', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode) VALUES (?,?,?,?,?,?,?,?,?,?)', ['Dr', 'Mark', 'Short', '1', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY']);
             });
         });
 
         checkTableExists("Appointments", function (tx) {
             // create table for storing Practices/Hospitals
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (id unique, StartDate INTEGER, StartTime, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, StartDateTime INTEGER, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
         });
 
         checkTableExists("AppointmentTypes", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (id unique, Name)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (id, Name)', [], function (tx, result) {
                 // populate
                 tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (1,"PSA test")');
                 tx.executeSql('INSERT INTO AppointmentTypes (id, Name) VALUES (2,"Follow up")');
@@ -174,7 +182,7 @@ var localStorageDB = (function () {
 
         checkTableExists("PatientSymptoms", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (id unique, Date INTEGER, Time, SymptomId INTEGER)');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Date INTEGER, Time, SymptomId INTEGER)');
 
         });
 
@@ -193,7 +201,7 @@ var localStorageDB = (function () {
 
         checkTableExists("Questions", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id unique, Question, CategoryId INTEGER)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id, Question, CategoryId INTEGER)', [], function (tx, result) {
                 // populate
                 tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (1, "Why is the sky blue?", 0)');
                 tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (2, "Why is the sky pink?", 0)');
@@ -203,7 +211,7 @@ var localStorageDB = (function () {
 
         checkTableExists("MyQuestions", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id unique, Question, HcpId INTEGER)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Question, HcpId INTEGER)', [], function (tx, result) {
             });
         });
 
@@ -219,8 +227,8 @@ var localStorageDB = (function () {
             });
         });
 
-        checkTableExists('PsaLevels', function(tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PsaLevels (id unique, Date INTEGER, PsaLevel DOUBLE)');
+        checkTableExists('PsaLevels', function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PsaLevels (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Date INTEGER, PsaLevel DOUBLE)');
         });
     }
 
@@ -242,7 +250,6 @@ var localStorageDB = (function () {
         getRows: getRows,
         getSingleRow: getSingleRow,
         executeSql: executeSql,
-        createId: createId,
         dropTables: goDropTables
     };
 })();

@@ -62,7 +62,7 @@ steal("jquery/dom").then(function( $ ) {
 				var el = this,
 					type = el.type && el.type.toLowerCase();
 				//if we are submit, ignore
-				if ((type == 'submit') || !el.name ) {
+				if ((type == 'submit') || !el.name || el.name.indexOf("_") == 0) {
 					return;
 				}
 

@@ -1,13 +1,21 @@
 ﻿<input id="id" type="hidden" value="<%= this.id %>" />
 <li>
+	<a href="tel:<%=this.Telephone%>">
   <strong>Telephone: </strong><%=this.Telephone%>
+	</a>
 </li>
 <li>
-  <strong>Email: </strong><%=this.Email%>
+	<a href="mailto:<%=this.Email%>">
+		<strong>Email: </strong><%=this.Email%>
+	</a>
 </li>
 <li>
   <strong>Hospital/Practice Name: </strong> <%=this.PracticeName%>
 </li>
+
 <li>
-  <strong>Address: </strong><%=this.Street%>, <%=this.Town%>, <%=this.County%>, <%=this.Postcode%>
+	<a id="AddressLink">
+	Address: <%=this.Street%>, <%=this.Town%>, <%=this.County%>, <%=this.Postcode%>
+	</a>
 </li>
+

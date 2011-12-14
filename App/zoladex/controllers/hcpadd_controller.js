@@ -12,10 +12,15 @@ steal('jquery/controller',
     {
         init: function () {
 
-            var locsdef = Zoladex.Models.Practice.findAll();
 
+        },
+        
+        loadData: function () {
+            var locsdef = Zoladex.Models.Practice.findAll();
+            var params = Zoladex.QSUtils.getParams();
             $.when(locsdef).done(function(locsres) {
                 // process view
+                var locsid = params.locid ? params.locid : -1;
                 var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { id: "",
                     Title: "",
                     FirstName: "",
@@ -28,13 +33,12 @@ steal('jquery/controller',
                     County: "",
                     Postcode: "",
                     Locs: locsres,
-                    LocsId: -1
+                    LocsId: locsid
                 });
                 $('#NewHcpForm').html(view).trigger('create');
-            });
-
-            
+            });  
         },
+        
         submit: function (el, ev) {
 
             ev.preventDefault();
@@ -50,7 +54,7 @@ steal('jquery/controller',
             }
             return false;
         },
-        onInsertSuccess: function () {
+        onInsertSuccess: function (obj,newid) {
             
             var params = Zoladex.QSUtils.getParams();
 
@@ -58,11 +62,11 @@ steal('jquery/controller',
 
                 if (params.onsubmit == 0) {
                     //go back to add new appointment
-                    $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
+                    $.mobile.changePage('../calendar/patientappointmentnew.htm?hcpid='+newid, 'flip', false, true);
                 }
                 else if (params.onsubmit == 1) {
                     //go back to edit appointment
-                    $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + params.id, 'flip', false, true);
+                    $.mobile.changePage('../calendar/patientappointmentedit.htm?hcpid='+newid+'&id=' + params.id, 'flip', false, true);
                 }
             }
             else { //standard procedure

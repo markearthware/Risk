@@ -7,15 +7,15 @@ steal('jquery/controller',
     '../views/hcp_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpEdit', {
-        },
+    },
     {
         init: function () {
-            
+
             $.mobile.showPageLoadingMsg();
 
         },
         submit: function (el, ev) {
-            
+
             ev.preventDefault();
 
             if ($('#EditHcpForm').valid()) {
@@ -40,7 +40,8 @@ steal('jquery/controller',
                 var practicedef = Zoladex.Models.Practice.findOne(hcpres.PracticeName);
                 var practicesdef = Zoladex.Models.Practice.findAll();
                 $.when(practicedef, practicesdef).done(function (practiceres, practicesres) {
-                   
+                    var locsid = params.locid ? params.locid : practiceres.id;
+                    console.log(locsid);
                     var view = $.View('//zoladex/views/hcp_addedit/init.ejs', {
                         id: hcpres.id,
                         Title: hcpres.Title,
@@ -53,7 +54,7 @@ steal('jquery/controller',
                         County: hcpres.County,
                         Postcode: hcpres.Postcode,
                         Locs: practicesres,
-                        LocsId: practiceres ? practiceres.id : -1
+                        LocsId: locsid ? locsid : -1
                     });
 
                     var form = $('#EditHcpForm');
@@ -68,7 +69,7 @@ steal('jquery/controller',
         },
 
         onUpdateSuccess: function () {
-            
+
             steal.dev.log('edit worked');
             $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
         },
@@ -81,10 +82,10 @@ steal('jquery/controller',
         },
 
         onUpdateFail: function () {
-            
+
             steal.dev.log('edit no worked');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         }
-        
+
     });
 });

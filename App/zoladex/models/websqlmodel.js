@@ -6,31 +6,28 @@ steal('jquery/model', function () {
             // check model has a table name set
             this.checkTableName(error);
 
-            newobj.id = localStorageDB.createId();
-
             // build sql string from object
             var sql = "INSERT into " + this.tableName + " (";
             var placeholders = "";
             var values = [];
 
             // loop object getting property names
-            var keys = Object.keys(newobj);
+            var keys = $.grep(Object.keys(newobj), function (n, i) {
+                return n != "id" && n != "insertId" && n != "rows" && n != "rowsAffected";
+            });
             $.each(keys, function (index, value) {
-                // dont want to include members previously returned by the websql stuff
-                if (value != "insertId" && value != "rows" && value != "rowsAffected") {
-                    sql += value;
-                    if (index < keys.length - 1) sql += ", ";
+                sql += value;
+                if (index < keys.length - 1) sql += ", ";
 
-                    // check for dates and convert to milliseconds
-                    if (newobj[value] instanceof Date) {
-                        newobj[value] = newobj[value].getTime();
-                    }
-                    
-                    values.push(newobj[value]);
-
-                    placeholders += "?";
-                    if (index < keys.length - 1) placeholders += ", ";
+                // check for dates and convert to milliseconds
+                if (newobj[value] instanceof Date) {
+                    newobj[value] = newobj[value].getTime();
                 }
+                    
+                values.push(newobj[value]);
+
+                placeholders += "?";
+                if (index < keys.length - 1) placeholders += ", ";
             });
 
             sql += ") VALUES(" + placeholders + ")";

@@ -1,0 +1,25 @@
+﻿
+<%for(var i = 0; i < this.length ; i++){ %>	
+<h3><%= this[i].TypeName %> </h3>
+
+<p>
+	<strong>Date:</strong> <%=  $.scroller.formatDate('D d M yy', this[i].StartDate) %> <strong>Time:</strong> <%= this[i].StartTime %>
+</p>
+
+<% if(this[i].LocationName && this[i].LocationName.length>0){ %>
+    <p><strong>Location:</strong> <%= this[i].LocationName %></p>
+<% } %> 
+
+<% if(this[i].HcpTitle && this[i].HcpTitle.length>0){ %>
+	<p><strong>To see:</strong>
+    <%= this[i].HcpTitle %> <%= this[i].HcpFirstName %> <%= this[i].HcpSurname %>
+	</p>
+<% } %>
+
+<%if(i !== this.length-1){%>
+	<hr/>
+<%}%>
+
+<%}%> 
+
+<a id="OK" data-role="button" href="../../home/home.htm">OK</a>
