@@ -3,7 +3,8 @@ steal(
         'jquery',
         'jquery/view/ejs',
         './zoladex.css', // application CSS file
-        './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
+        './lib/jQueryMobile/AZBaseTemplate.css',
+        './lib/jQueryMobile/jquery.mobile.structure-1.0.css', //steal jquery mobile css
         function () { // configure your application
 
             steal.dev.log('jmvc is initilasing...');
@@ -16,11 +17,12 @@ steal(
         './lib/jQueryMobile/jquery.mobile-1.0.js',
         './models/websqlmodel.js'
     ).then(
-// load controllers and libraries for other pages and init db
+        // load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
         './models/models.js', // steals all your models
         './controllers/controllers.js', // steals all controllers
         './lib/jQueryValidation/jquery.validate.js',
+        "./lib/zingChart/zingchartsteal.js",
         './classes/qsutils.js',
          function () {
              localStorageDB.init();
