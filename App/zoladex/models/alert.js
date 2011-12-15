@@ -7,7 +7,7 @@ steal('jquery/model', function () {
           var tomorrow = new Date();
           tomorrow.setDate(today.getDate() + 1);
           //var sql = 'SELECT ap.StartDate, ap.StartTime, ap.TypeId, hcp.Title, hcp.FirstName, hcp.Surname, hcl.Name FROM Appointments as ap inner join HealthcareProfessionals as hcp on ap.HcpId=hcp.id inner join Practices as hcl on ap.HealthcareLocationId = hcl.id WHERE ap.StartDate < ' + tomorrow.getTime() + ' AND ap.StartDate > ' + today.getTime() + ' AND ap.AlertsEnabled = 1';
-           var sql = 'SELECT ap.id, ap.StartDate, ap.StartTime, ap.TypeId, apt.Name as TypeName, hcp.Title as HcpTitle, hcp.FirstName as HcpFirstName, hcp.Surname as HcpSurname, hcl.Name as LocationName FROM Appointments as ap inner join AppointmentTypes as apt on ap.TypeId = apt.id left join HealthcareProfessionals as hcp on ap.HcpId=hcp.id left join Practices as hcl on ap.HealthcareLocationId = hcl.id WHERE ap.StartDate < ' + tomorrow.getTime() + ' AND ap.StartDate > ' + today.getTime() + ' AND ap.AlertsEnabled = 1';
+           var sql = 'SELECT ap.id, ap.StartDateTime, ap.TypeId, apt.Name as TypeName, hcp.Title as HcpTitle, hcp.FirstName as HcpFirstName, hcp.Surname as HcpSurname, hcl.Name as LocationName FROM Appointments as ap inner join AppointmentTypes as apt on ap.TypeId = apt.id left join HealthcareProfessionals as hcp on ap.HcpId=hcp.id left join Practices as hcl on ap.HealthcareLocationId = hcl.id WHERE ap.StartDateTime < ' + tomorrow.getTime() + ' AND ap.StartDateTime > ' + today.getTime() + ' AND ap.AlertsEnabled = 1';
           console.log(sql);
           return localStorageDB.getRows(sql, this);
       },
