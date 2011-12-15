@@ -85,13 +85,9 @@ steal('jquery/controller',
 
             ev.preventDefault();
 
-            if ($('#EditAppointmentForm').valid() && $('#TypeId option:selected').val() != -1) {
+            if ($('#EditAppointmentForm').valid()) {
                 steal.dev.log('insert appointment form is valid, attempting to save to database...');
                 new Zoladex.Models.Appointment(el.formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
-            }
-            else if ($('#TypeId option:selected').val() == -1) {
-                $('#CustomErrorMsg').remove();
-                $('#TypeId').closest('div').after('<label class="error" id="CustomErrorMsg">This field is required.</label> ');
             }
 
             return false;
