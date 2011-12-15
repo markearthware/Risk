@@ -36,7 +36,7 @@
     });
 
     test("Edit HCP form has been inserted", function () {
-        S('#EditHcpForm').exists();
+
         ok(S('#Title').exists(), "title loaded");
     });
 

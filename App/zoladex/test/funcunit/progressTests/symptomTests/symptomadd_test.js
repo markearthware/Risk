@@ -27,13 +27,16 @@
         ok(S('#Date').exists(), "form inserted");
     });
 
-    test("Can successfully add a new HCP", function () {
+    test("Can successfully add a new Symptom", function () {
 
-        S("#Date").type("1");
-        S("#dw_set").exists().click();
-        S("#Time").type("1");
-        S("#dw_set").exists().click();
-        S('#submitsymptombutton').exists().click();
-        ok(S('#SymptomsListPage').exists());
+        S('#SymptomId').exists(function() {
+            S('#SymptomId')[0].options.selectedIndex = 2;
+            S("#Date").exists().type("1");
+            S("#dw_set").exists().click();
+            S("#Time").type("1");
+            S("#dw_set").exists().click();
+            S('#submitsymptombutton').exists().click();
+            ok(S('#SymptomsListPage').exists());
+        });
     });
 })
