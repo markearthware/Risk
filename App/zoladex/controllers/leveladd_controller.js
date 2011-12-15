@@ -42,8 +42,6 @@ steal('jquery/controller',
             $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
 
             $("#Dob").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
-
-
         },
 
         submit: function (el, ev) {
