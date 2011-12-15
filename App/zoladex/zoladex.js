@@ -23,7 +23,6 @@ steal(
         './models/models.js', // steals all your models
         './controllers/controllers.js', // steals all controllers
         './lib/jQueryValidation/jquery.validate.js',
-        "./lib/zingChart/zingchartsteal.js",
         './classes/qsutils.js',
          function () {
              localStorageDB.init();

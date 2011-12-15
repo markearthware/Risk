@@ -25,4 +25,4 @@ steal(
         './levelchart_controller.js',
         './home_controller.js',
         './alert_controller.js'
-    )
+        )
