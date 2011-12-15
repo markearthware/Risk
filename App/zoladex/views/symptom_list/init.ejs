@@ -1,23 +1,27 @@
-﻿<% if( this.length < 1 ){ %>
+﻿<%
+var currentdate = null;
+%>
+
+<% if( this.length < 1 ){ %>
 	
-	<li>
+	<li data-role="list-divider">
 		You have reported no symptoms. To add one, press 'new' on the top right.
 	</li>
 
 <% }else{ %>
 
-<%for(var i = 0; i < this.length ; i++){ %>
-	<li>
-		<a href="./symptomedit.htm?id=<%=this[i].id %>">
-			<div>
-				<%=$.scroller.formatDate('D d M yy HH:ii A', this[i].DateTime) %>
-			</div>
-			<div>
-				<h2><%=this[i].Description%><h3>
-			</div>
-			<div>
-				Warning Sign?  <%if(this[i].WarningSign === 1){%> <%='Yes'%> <%}else{%> <%='No'%> <%}%>
-			</div>
-		</a>
-	</li>
-<%}}%>
+<%for(var i = 0; i < this.length ; i++){ %>	
+<%
+if(currentdate!==this[i].DateTime.getTime()){
+currentdate=this[i].DateTime.getTime();
+%>
+<li data-role="list-divider"><%= $.scroller.formatDate('D d M yy', this[i].DateTime) %></li>
+<% } %>
+<li>
+	<a href="symptomedit.htm?id=<%= this[i].id %>">
+		<h3><%= this[i].Description %></h3>
+		<p>Warning Sign?  <%if(this[i].WarningSign === 1){%> <%='Yes'%> <%}else{%> <%='No'%> <%}%></p>
+		<p class="ui-li-aside"><strong><%= $.scroller.formatDate('D d M yy h:ii A', this[i].DateTime) %></strong></p>
+	</a>
+</li>
+<%}}%> 

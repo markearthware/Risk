@@ -1,5 +1,4 @@
-
-﻿steal(  
+steal(  
         './tabbar_controller',
         './hcplist_controller',
         './hcpdetails_controller',

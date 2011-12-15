@@ -25,6 +25,6 @@ currentdate=this[i].StartDateTime.getTime();
 	<% if(this[i].HcpTitle && this[i].HcpTitle.length>0){ %>
     <p><%= this[i].HcpTitle %> <%= this[i].HcpFirstName %> <%= this[i].HcpSurname %></p>
 	<% } %>
-	<p class="ui-li-aside"><strong><%= $.scroller.formatDate('D d M yy H:i A', this[i].StartDateTime) %></strong></p>
+	<p class="ui-li-aside"><strong><%= $.scroller.formatDate('D d M yy h:ii A', this[i].StartDateTime) %></strong></p>
 </a></li>
 <%}}%> 

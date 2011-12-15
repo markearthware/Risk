@@ -9,32 +9,41 @@ steal('jquery/controller',
     '../views/level_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.LevelAdd', {
-        },
+    },
     {
         init: function () {
 
-            $('#AddLevelForm').html(this.view("level_addedit/init"));
-
-            if (localStorage.dateOfBirth !== undefined) {
-
-                $("#Age").val(this.calculateAge);
-            }
-
-            $("#Age").change(this.callback('onBirthDateChange'));
+            var date = new Date();
 
             var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
 
+            var dob;
+            if (localStorage.dateOfBirth !== undefined) {
+
+                dob = new Date(localStorage.dateOfBirth);
+            }
+            else {
+                var averageCancerAge = new Date();
+                averageCancerAge.setYear(1955);
+                averageCancerAge.setMonth(0);
+                averageCancerAge.setDate(1);
+                dob = averageCancerAge;
+            }
+
+            var view = $.View("//zoladex/views/level_addedit/init.ejs",
+                {
+                    date: date,
+                    dateOfBirth: dob
+                }
+            );
+
+            $('#AddLevelForm').html(view);
+
             $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
 
-            $("#Age").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
-        },
+            $("#Dob").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
 
-        onBirthDateChange: function () {
-            // stash the value in hidden field
-            $("#BirthDate").val($("#Age").val());
 
-            //change the (visible) age field to show the age rather than the date
-            $("#Age").val(this.calculateAge($("#Age").val()));
         },
 
         submit: function (el, ev) {
@@ -46,7 +55,7 @@ steal('jquery/controller',
                 var formParams = el.formParams();
 
                 if (formParams.birthdate !== "") {
-                    localStorage.dateOfBirth = $.scroller.parseDate('dd M yy', formParams.birthdate);
+                    localStorage.dateOfBirth = $.scroller.parseDate('dd M yy', formParams.Dob);
                 }
 
                 var params = { Date: formParams.date, PsaLevel: formParams.psacount };
@@ -77,4 +86,4 @@ steal('jquery/controller',
             return new Date().getFullYear() - birthDate.getFullYear();
         }
     });
-    });
+});
