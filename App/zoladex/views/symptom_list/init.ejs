@@ -12,8 +12,15 @@ var currentdate = null;
 
 <%for(var i = 0; i < this.length ; i++){ %>	
 <%
-if(currentdate!==this[i].DateTime.getTime()){
-currentdate=this[i].DateTime.getTime();
+var compare = new Date(this[i].DateTime);
+
+compare.setHours(0);
+compare.setSeconds(0);
+compare.setMinutes(0);
+compare.setMilliseconds(0);
+
+if(currentdate!==compare.getTime()){
+currentdate=compare.getTime();
 %>
 <li data-role="list-divider"><%= $.scroller.formatDate('D d M yy', this[i].DateTime) %></li>
 <% } %>

@@ -16,15 +16,10 @@ steal('jquery/controller',
         },
         onDataLoaded: function (result) {
             //sort by date
-            var sortedResult = result.sort(this.sortByDate);
-
-            $('#AppointmentsList').html($.View('//zoladex/views/patientappointment_list/init.ejs', sortedResult));
+            $('#AppointmentsList').html($.View('//zoladex/views/patientappointment_list/init.ejs', result));
             $('#AppointmentsList').listview('refresh');
             // hide loading message
             $.mobile.hidePageLoadingMsg();
-        },
-        sortByDate: function (a, b) {
-            return (parseInt(a.StartDate.getTime()) - parseInt(b.StartDate.getTime()));
         }
     });
 });
