@@ -18,8 +18,7 @@ steal('jquery/controller',
             Zoladex.Models.PatientSymptomListItem.findAll(this).done(this.callback('onDataLoaded'));
         },
         onDataLoaded: function (result) {
-            var sortedResult = result.sort(this.sortByDate);
-            $('#SymptomListContainer').html($.View('//zoladex/views/symptom_list/init.ejs', sortedResult));
+            $('#SymptomListContainer').html($.View('//zoladex/views/symptom_list/init.ejs', result));
             $.mobile.hidePageLoadingMsg();
             this.list.listview();
         }

@@ -12,8 +12,14 @@ var currentdate = null;
 
 <%for(var i = 0; i < this.length ; i++){ %>	
 <%
-if(currentdate!==this[i].StartDateTime.getTime()){
-currentdate=this[i].StartDateTime.getTime();
+var compare = new Date(this[i].StartDateTime);
+compare.setHours(0);
+compare.setSeconds(0);
+compare.setMinutes(0);
+compare.setMilliseconds(0);
+
+if(currentdate!==compare.getTime()){
+currentdate=compare.getTime();
 %>
 <li data-role="list-divider"><%= $.scroller.formatDate('D d M yy', this[i].StartDateTime) %></li>
 <% } %>
@@ -25,6 +31,6 @@ currentdate=this[i].StartDateTime.getTime();
 	<% if(this[i].HcpTitle && this[i].HcpTitle.length>0){ %>
     <p><%= this[i].HcpTitle %> <%= this[i].HcpFirstName %> <%= this[i].HcpSurname %></p>
 	<% } %>
-	<p class="ui-li-aside"><strong><%= $.scroller.formatDate('D d M yy H:i A', this[i].StartDateTime) %></strong></p>
+	<p class="ui-li-aside"><strong><%= $.scroller.formatDate('D d M yy h:ii A', this[i].StartDateTime) %></strong></p>
 </a></li>
 <%}}%> 

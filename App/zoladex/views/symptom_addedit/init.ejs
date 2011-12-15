@@ -11,7 +11,7 @@
 <label for="Date">Date:</label>
 <input type="text" id="Date" placeholder="Click to select date" class="required" name="_Date" value="<%= $.scroller.formatDate('dd M yy', this.DateTime) %>" />
 <label for="Time">Time:</label>
-<input type="text" id="Time" placeholder="Click to select time" class="required" name="_Time" value="<%= $.scroller.formatDate('H:ii', this.DateTime) %>"" />
+<input type="text" id="Time" placeholder="Click to select time" class="required" name="_Time" value="<%= $.scroller.formatDate('HH:ii', this.DateTime) %>"" />
 <input type="submit" id="submitsymptombutton" value="Record Symptom" />
 
 <input type="hidden" name="DateTime" id="DateTime" value="<%= this.DateTime ? this.DateTime.getTime() : '' %>" />

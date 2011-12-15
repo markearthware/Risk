@@ -17,22 +17,19 @@ steal('jquery/controller',
                 init: function() {
                     // show loading screen
                     $.mobile.showPageLoadingMsg();
-
-
+        
+                    var params = Zoladex.QSUtils.getParams();
+                    var locsid = params.locid ? params.locid : -1;
+                    var hcpid = params.hcpid ? params.hcpid : -1;
+                    this.element.validate({ submitHandler: this.callback('onSubmit') });
+                    var self = this;
+                    
                     // load drop down values
                     var typesdef = Zoladex.Models.AppointmentType.findAll(),
                         locsdef = Zoladex.Models.Practice.findAll(),
                         hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true });
 
-                    var params = Zoladex.QSUtils.getParams();
-                    var locsid = params.locid ? params.locid : -1;
-                    var hcpid = params.hcpid ? params.hcpid : -1;
-
-                    this.element.validate({ submitHandler: this.callback('onSubmit') });
-
-                    var self = this;
-
-
+                    
                     // wait for all deferreds to be completed
                     $.when(typesdef, locsdef, hcpdef).done(function(typesres, locsres, hcpres) {
                         // process view
