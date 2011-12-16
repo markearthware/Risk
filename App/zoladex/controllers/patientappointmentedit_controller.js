@@ -79,6 +79,20 @@ steal('jquery/controller',
                 // set hidden field to combined ticks
                 $("#StartDateTime").val(combined.getTime());
             });
+
+            //////add custom validation rule
+            jQuery.validator.addMethod("mustBeInFuture", function (value, element) {
+
+                var now = new Date().getTime();
+                var ticks = $("#StartDateTime").val();
+
+                return now < ticks;
+            }, "* Appointment date/time must be in the future");
+
+            jQuery.validator.addClassRules({
+                mustBeInFuture: { mustBeInFuture: true }
+            });
+            ////end custom validation rule
         },
 
         submit: function (el, ev) {

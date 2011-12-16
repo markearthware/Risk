@@ -3,7 +3,7 @@
 <h3><%= this[i].TypeName %> </h3>
 
 <p>
-	<strong>Date:</strong> <%=  $.scroller.formatDate('D d M yy', this[i].StartDate) %> <strong>Time:</strong> <%= this[i].StartTime %>
+	<strong>Date:</strong> <%=  $.scroller.formatDate('D d M yy', new Date(this[i].StartDateTime)) %> <strong>Time:</strong> <%= $.scroller.formatDate('h:ii A', new Date(this[i].StartDateTime)) %>
 </p>
 
 <% if(this[i].LocationName && this[i].LocationName.length>0){ %>

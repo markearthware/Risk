@@ -14,15 +14,11 @@ steal('jquery/controller',
             Zoladex.Models.Alert.findAll().done(this.callback('onDataLoaded'));
         },
         onDataLoaded: function (result) {
-            var sortedResult = result.sort(this.sortByDate);
-
-            $('#dialog').html($.View('//zoladex/views/alerts/init.ejs', sortedResult));
+            $('#dialog').html($.View('//zoladex/views/alerts/init.ejs', result));
+            
             $('#dialog').trigger('create');
             // hide loading message
             $.mobile.hidePageLoadingMsg();
-        },
-        sortByDate: function (a, b) {
-            return (parseInt(a.StartDate.getTime()) - parseInt(b.StartDate.getTime()));
         },
         '#OK click': function () {
             alertHasBeenShown = true;
