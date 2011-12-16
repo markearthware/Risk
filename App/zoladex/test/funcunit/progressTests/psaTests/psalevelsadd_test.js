@@ -22,6 +22,6 @@
     });
     
     test("Form inserted", function () {
-        ok(S('#Age').exists(), "form inserted");     
+        ok(S('#Dob').exists(), "form inserted");     
     });
 })

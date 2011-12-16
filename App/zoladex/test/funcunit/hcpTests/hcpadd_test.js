@@ -31,9 +31,9 @@
 
     test("Can successfully add a new HCP", function () {
 
-        S('#Postcode').type("blah");
+        S('#Postcode').exists().type("blah");
         S('#County').type("blah");
-        S('#Email').type("blah");
+        S('#Email').type("blah@gmail.com");
         S('#Title').type("blah");
         S('#FirstName').type("blah");
         S('#Surname').type("blah");

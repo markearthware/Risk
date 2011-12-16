@@ -15,7 +15,7 @@
                 S('#SymptomEditPage').exists();
 
                 S('#EditSymptomForm').exists();
-                S('#Date').exists();
+
             });
         }
     });
@@ -31,14 +31,15 @@
     });
 
     test("Can edit a symptom", function () {
-        S('#EditSymptomForm').exists();
-        S('#Date').exists();
-        S('#SymptomId')[0].options.selectedIndex = 2;
-        S('#Date').type("1");
-        S("#dw_set").exists().click();
-        S('#Time').type("1");
-        S("#dw_set").exists().click();
-        S('#submitsymptombutton').exists().click();
-        ok(S("#SymptomsListPage").exists(), "appointment edited sucessfully");
+        S('#SymptomId').exists(function () {
+            S('#SymptomId')[0].options.selectedIndex = 2;
+            S('#Date').type("1");
+            S("#dw_set").exists().click();
+            S('#Time').type("1");
+            S("#dw_set").exists().click();
+            S('#submitsymptombutton').exists().click();
+            ok(S("#SymptomsListPage").exists(), "appointment edited sucessfully");
+        });
+
     });
 })

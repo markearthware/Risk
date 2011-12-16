@@ -22,7 +22,7 @@
             S("#dw_set").exists().click();
             S("#StartTime").type("1");
             S("#dw_set").exists().click();
-            S('#newaapointmentbutton').exists().click();
+            S('#newappointmentbutton').exists().click();
             //check success prompt show
             ok(S("#calendarPage").exists(), "appointment edited sucessfully");
         });

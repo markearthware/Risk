@@ -18,8 +18,9 @@ steal("funcunit")
             "./hcpTests/practiceadd_test.js",
     
             "./progressTests/symptomTests/symptomlist_test.js",
-            "./progressTests/symptomTests/symptomadd_test.js",
+
             "./progressTests/symptomTests/symptomedit_test.js",
+      "./progressTests/symptomTests/symptomadd_test.js",
 
             "./progressTests/psaTests/psalevels_test.js",
             "./progressTests/psaTests/psalevelsadd_test.js",
