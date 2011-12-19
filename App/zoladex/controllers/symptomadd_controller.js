@@ -17,14 +17,28 @@ steal('jquery/controller',
                     $(element).attr({ "title": error.text() });
                 },
                 highlight: function (element) {
+                    if ($(element).is('select')) {
+                        element = $(element).parent().get(0);
+                        $(element).removeClass("textinput");
+                        $(element).addClass("errorHighlight");
+                    }
+                    else {
+                        $(element).removeClass("textinput");
+                        $(element).addClass("errorHighlight");
+                    }
 
-                    $(element).removeClass("textinput");
-                    $(element).addClass("errorHighlight");
                 },
                 unhighlight: function (element) {
 
-                    $(element).removeClass("errorHighlight");
-                    $(element).addClass("textinput");
+                    if ($(element).is('select')) {
+                        element = $(element).parent().get(0);
+                        $(element).removeClass("errorHighlight");
+                        $(element).addClass("textinput");
+                    }
+                    else {
+                        $(element).removeClass("errorHighlight");
+                        $(element).addClass("textinput");
+                    }
                 }
             });
 
