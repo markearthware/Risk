@@ -23,7 +23,7 @@ steal('jquery/controller',
                             $(element).attr({ "title": error.text() });
                         },
                         highlight: function (element) {
-                            if($(element).is('select')) {
+                            if ($(element).is('select')) {
                                 element = $(element).parent().get(0);
                                 $(element).removeClass("textinput");
                                 $(element).addClass("errorHighlight");
@@ -32,14 +32,14 @@ steal('jquery/controller',
                                 $(element).removeClass("textinput");
                                 $(element).addClass("errorHighlight");
                             }
-                       
+
                         },
                         unhighlight: function (element) {
 
                             if ($(element).is('select')) {
                                 element = $(element).parent().get(0);
-                                 $(element).removeClass("errorHighlight");
-                                 $(element).addClass("textinput");
+                                $(element).removeClass("errorHighlight");
+                                $(element).addClass("textinput");
                             }
                             else {
                                 $(element).removeClass("errorHighlight");
@@ -87,13 +87,18 @@ steal('jquery/controller',
                     new Zoladex.Models.Appointment($(form).formParams()).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },
 
+                '#StartDate focus': function () {
+                    var tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    $('#StartDate').scroller('setDate', tomorrow, true);
+                },
+                
                 setupDateTimeControls: function () {
                     // add date control enhancements 
 
                     var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
                     $("#StartDate").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
                     $('#StartTime').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
-
 
                     // add change handlers so date and time fields to update hidden backing field
                     $("#StartDate,#StartTime").change(function () {

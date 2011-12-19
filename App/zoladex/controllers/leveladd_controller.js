@@ -11,6 +11,8 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.LevelAdd', {
     },
     {
+        averageCancerAge: null,
+
         init: function () {
 
             $.validator.setDefaults({
@@ -31,20 +33,19 @@ steal('jquery/controller',
 
             var date = new Date();
 
-            var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
-
             var dob;
             if (localStorage.dateOfBirth !== undefined) {
 
                 dob = new Date(localStorage.dateOfBirth);
             }
             else {
-                var averageCancerAge = new Date();
+                averageCancerAge = new Date();
                 averageCancerAge.setYear(1955);
                 averageCancerAge.setMonth(0);
                 averageCancerAge.setDate(1);
-                dob = averageCancerAge;
             }
+
+            var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
 
             var view = $.View("//zoladex/views/level_addedit/init.ejs",
                 {
@@ -56,8 +57,13 @@ steal('jquery/controller',
             $('#AddLevelForm').html(view);
 
             $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
+            $("#Dob").scroller({ preset: 'date', theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
+        },
 
-            $("#Dob").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
+        '#Dob focus': function () {
+            if (averageCancerAge) {
+                $("#Dob").scroller('setDate', averageCancerAge, true);
+            }
         },
 
         submit: function (el, ev) {
