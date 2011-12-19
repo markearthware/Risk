@@ -18,7 +18,7 @@
 	<%}%>     
 </select>
 <label for="TypeId">Type:</label>
-<select class="ddl required" id="TypeId" name="TypeId">
+<select class="ddl textinput required" id="TypeId" name="TypeId">
     <option value="">select appointment type</option>
     <%for(var i = 0; i < this.Types.length ; i++){ %>	
     <option <% if(this.TypeId === this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
@@ -26,10 +26,10 @@
 </select>
 <input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime ? this.StartDateTime.getTime() : '' %>" />
 <label for="StartDate">Date:</label>
-<input type="text" name="_StartDate" id="StartDate" placeholder="Click to select date" class="mustBeInFuture required" value="<%= $.scroller.formatDate('dd M yy', this.StartDateTime) %>"/>
+<input type="text" name="_StartDate" id="StartDate" placeholder="Click to select date" class="mustBeInFuture textinput required" value="<%= $.scroller.formatDate('dd M yy', this.StartDateTime) %>"/>
 
 <label for="StartTime">Time:</label>
-<input type="text" name="_StartTime" id="StartTime" placeholder="Click to select time" class="mustBeInFuture required" value="<%= $.scroller.formatDate('HH:ii', this.StartDateTime) %>"/>
+<input type="text" name="_StartTime" id="StartTime" placeholder="Click to select time" class="mustBeInFuture textinput required" value="<%= $.scroller.formatDate('HH:ii', this.StartDateTime) %>"/>
 
 <label for="AlertsEnabled">Alerts:</label>
 <select class="switch" id="AlertsEnabled" data-role="slider" name="AlertsEnabled">

@@ -10,23 +10,23 @@
 </select>
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <label for="title">Title</label>
-<input type="text" name="Title" id="Title" class="required" value="<%= this.Title %>" />
+<input type="text" name="Title" id="Title" class="textinput required" value="<%= this.Title %>" />
 <label for="firstname">First Name:</label>
-<input type="text" name="FirstName" id="FirstName" class="required" value ="<%= this.FirstName %>" />
+<input type="text" name="FirstName" id="FirstName" class="textinput required" value ="<%= this.FirstName %>" />
 <label for="surname">Surname:</label>
-<input type="text" name="Surname" id="Surname"  class="required" value="<%= this.Surname %>" />
+<input type="text" name="Surname" id="Surname"  class="textinput required" value="<%= this.Surname %>" />
 <label for="number">Number:</label>
-<input type="tel" name="Telephone" id="Telephone" class="required" value="<%= this.Telephone %>"   />
+<input type="tel" name="Telephone" id="Telephone" class="textinput required" value="<%= this.Telephone %>"   />
 <label for="email">Email:</label>
-<input type="email" name="Email" id="Email" class="required" value="<%= this.Email %>"   />
+<input type="email" name="Email" id="Email" class="textinput required email" value="<%= this.Email %>"   />
 <label for="street">Street:</label>
-<input type="text" name="Street" id="Street" class="required" value="<%=this.Street%>"  />
+<input type="text" name="Street" id="Street" class="textinput required" value="<%=this.Street%>"  />
 <label for="town">Town:</label>
-<input type="text" name="Town" id="Town" class="required" value="<%=this.Town%>" />
+<input type="text" name="Town" id="Town" class="textinput required" value="<%=this.Town%>" />
 <label for="county">County:</label>
-<input type="text" name="County" id="County" class="required" value="<%=this.County%>" />
+<input type="text" name="County" id="County" class="textinput required" value="<%=this.County%>" />
 <label for="postcode">Post code:</label>
-<input type="text" name="Postcode" id="Postcode" class="required" value="<%=this.Postcode%>" />
+<input type="text" name="Postcode" id="Postcode" class="textinput required" value="<%=this.Postcode%>" />
 
 <% if (this.id) { %>
 <input type="submit" id="newhcpbutton" value="Save Changes" />

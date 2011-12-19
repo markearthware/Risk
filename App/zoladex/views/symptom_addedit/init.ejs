@@ -2,16 +2,16 @@
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <% } %>
 <label for="SymptomId">Symptom:</label>
-<select class="required" id="SymptomId" name="SymptomId">
+<select class="required textinput" id="SymptomId" name="SymptomId">
 	<option value="">Select a symptom</option>
 	<%for(var i = 0; i < this.Symptoms.length ; i++){ %>
 		<option <% if(this.SymptomId === this.Symptoms[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Symptoms[i].id %>"><%= this.Symptoms[i].Description %></option>
 	<%}%>     
 </select>
 <label for="Date">Date:</label>
-<input type="text" id="Date" placeholder="Click to select date" class="required" name="_Date" value="<%= $.scroller.formatDate('dd M yy', this.DateTime) %>" />
+<input type="text" id="Date" placeholder="Click to select date" class="textinput required" name="_Date" value="<%= $.scroller.formatDate('dd M yy', this.DateTime) %>" />
 <label for="Time">Time:</label>
-<input type="text" id="Time" placeholder="Click to select time" class="required" name="_Time" value="<%= $.scroller.formatDate('HH:ii', this.DateTime) %>"" />
+<input type="text" id="Time" placeholder="Click to select time" class="textinput required" name="_Time" value="<%= $.scroller.formatDate('HH:ii', this.DateTime) %>"" />
 <input type="submit" id="submitsymptombutton" value="Record Symptom" />
 
 <input type="hidden" name="DateTime" id="DateTime" value="<%= this.DateTime ? this.DateTime.getTime() : '' %>" />

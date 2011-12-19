@@ -12,6 +12,21 @@ steal('jquery/controller',
     {
         init: function () {
 
+            $.validator.setDefaults({
+                errorPlacement: function (error, element) {
+                    $(element).attr({ "title": error.text() });
+                },
+                highlight: function (element) {
+                    
+                    $(element).removeClass("textinput");
+                    $(element).addClass("errorHighlight");
+                },
+                unhighlight: function (element) {
+                   
+                    $(element).removeClass("errorHighlight");
+                    $(element).addClass("textinput");
+                }
+            });
 
         },
         

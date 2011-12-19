@@ -1,1 +1,5 @@
 label.error, #commentForm input.submit { background-color: red;color: #ccc;padding: 10px; }
+
+.errorHighlight { border: 2px solid #CC0000; } .textinput {border: 1px silver solid;}
+
+.ui-btn select.errorHighlight{ border: 2px solid #CC0000;  }

@@ -18,6 +18,36 @@ steal('jquery/controller',
                     // show loading screen
                     $.mobile.showPageLoadingMsg();
 
+                    $.validator.setDefaults({
+                        errorPlacement: function (error, element) {
+                            $(element).attr({ "title": error.text() });
+                        },
+                        highlight: function (element) {
+                            if($(element).is('select')) {
+                                element = $(element).parent().get(0);
+                                $(element).removeClass("textinput");
+                                $(element).addClass("errorHighlight");
+                            }
+                            else {
+                                $(element).removeClass("textinput");
+                                $(element).addClass("errorHighlight");
+                            }
+                       
+                        },
+                        unhighlight: function (element) {
+
+                            if ($(element).is('select')) {
+                                element = $(element).parent().get(0);
+                                 $(element).removeClass("errorHighlight");
+                                 $(element).addClass("textinput");
+                            }
+                            else {
+                                $(element).removeClass("errorHighlight");
+                                $(element).addClass("textinput");
+                            }
+                        }
+                    });
+
                     var params = Zoladex.QSUtils.getParams();
                     var locsid = params.locid ? params.locid : -1;
                     var hcpid = params.hcpid ? params.hcpid : -1;
