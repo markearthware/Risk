@@ -1144,3 +1144,8 @@ img.ui-li-thumb {
     margin-left: 20px;
     margin-top: 15px;
 }
+
+/* override to fill in search boxes */
+.ui-input-search {
+    background-color: white;
+}

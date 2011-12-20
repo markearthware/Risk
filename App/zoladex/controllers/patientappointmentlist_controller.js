@@ -15,7 +15,7 @@ steal('jquery/controller',
             Zoladex.Models.AppointmentListItem.findAll().done(this.callback('onDataLoaded'));
         },
         onDataLoaded: function (result) {
-            //sort by date
+            // sort by date
             $('#AppointmentsList').html($.View('//zoladex/views/patientappointment_list/init.ejs', result));
             $('#AppointmentsList').listview('refresh');
             // hide loading message
