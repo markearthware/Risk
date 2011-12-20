@@ -3,7 +3,6 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/psalevel.js',
-    "../lib/zingChart/zingchartsteal.js",
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.LevelChart', {
