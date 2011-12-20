@@ -5,7 +5,7 @@ var alertHasBeenShown = false;
 steal(
         'jquery',
         'jquery/view/ejs',
-        './zoladex.css', // application CSS file
+        './lib/jQueryMobile/Overrides.css', // application CSS file
         './lib/jQueryMobile/AZBaseTemplate.css',
         './lib/jQueryMobile/jquery.mobile.structure-1.0.css', //steal jquery mobile css
         function () { // configure your application
