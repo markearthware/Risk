@@ -69,6 +69,7 @@ steal('jquery/controller',
                         Town: hcpres.Town,
                         County: hcpres.County,
                         Postcode: hcpres.Postcode,
+                        Notes: hcpres.Notes,
                         Locs: practicesres,
                         LocsId: locsid ? locsid : -1
                     });

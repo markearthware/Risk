@@ -52,7 +52,8 @@ steal('jquery/controller',
                         Street: hcpres.Street,
                         Town: hcpres.Town,
                         County: hcpres.County,
-                        Postcode: hcpres.Postcode
+                        Postcode: hcpres.Postcode, 
+                        Notes: hcpres.Notes
                     });
 
                     //$('#HcpDetailsList', this.element).append(view);

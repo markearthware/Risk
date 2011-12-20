@@ -69,13 +69,14 @@ steal('jquery/controller',
                             Hcps: hcpres,
                             Locs: locsres,
                             Types: typesres,
+                            TypeId: localStorage.typeid ? localStorage.typeid : "",
                             LocsId: locsid
                         });
+                        localStorage.typeid = null;
                         // insert html into form and call jquerymobile create on form
                         $('#NewAppointmentForm').html(view).trigger('create');
 
                         self.setupDateTimeControls();
-
 
                         // hide loading message
                         $.mobile.hidePageLoadingMsg();
@@ -92,7 +93,7 @@ steal('jquery/controller',
                     tomorrow.setDate(tomorrow.getDate() + 1);
                     $('#StartDate').scroller('setDate', tomorrow, true);
                 },
-                
+
                 setupDateTimeControls: function () {
                     // add date control enhancements 
 
@@ -139,6 +140,15 @@ steal('jquery/controller',
                         $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=0', 'flip', false, true);
                     }
                 },
+
+                '#TypeId change': function () {
+                    if ($("#TypeId option:selected").val() == -1) {
+                        $.mobile.changePage('../calendar/dialog/typenew.htm', 'flip', false, true);
+                        localStorage.onsubmit = 0;
+                    }
+                },
+
+
                 '#HealthcareLocationId change': function () {
                     if ($("#HealthcareLocationId option:selected").val() == 0) {
                         $.mobile.changePage('../hcp/practicenew.htm?onsubmit=0', 'flip', false, true);

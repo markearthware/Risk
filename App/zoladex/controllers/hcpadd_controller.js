@@ -47,6 +47,7 @@ steal('jquery/controller',
                     Town: "",
                     County: "",
                     Postcode: "",
+                    Notes: "",
                     Locs: locsres,
                     LocsId: locsid
                 });
@@ -63,7 +64,7 @@ steal('jquery/controller',
 
                 var params = el.formParams();
 
-                var hcpDataStructure = { Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, PracticeName: params.PracticeName, Telephone: params.Telephone, Email: params.Email, Street: params.Street, Town: params.Town, County: params.County, Postcode: params.Postcode };
+                var hcpDataStructure = { Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, PracticeName: params.PracticeName, Telephone: params.Telephone, Email: params.Email, Street: params.Street, Town: params.Town, County: params.County, Postcode: params.Postcode, Notes: params.Notes };
 
                 new Zoladex.Models.Hcp(hcpDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }

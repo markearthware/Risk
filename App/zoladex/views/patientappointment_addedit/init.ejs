@@ -21,8 +21,9 @@
 <select class="ddl textinput required" id="TypeId" name="TypeId">
     <option value="">select appointment type</option>
     <%for(var i = 0; i < this.Types.length ; i++){ %>	
-    <option <% if(this.TypeId === this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
-    <%}%> 
+    <option <% if(this.TypeId == this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
+    <%}%>
+	<option id="OtherAppointmentType" value="-1">Other</option>
 </select>
 <input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime ? this.StartDateTime.getTime() : '' %>" />
 <label for="StartDate">Date:</label>

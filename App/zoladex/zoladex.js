@@ -244,6 +244,13 @@ steal(
 
             return;
         }
+
+        if ($('#AppointmentTypeAddDialog').length > 0) {
+
+            $('#AppointmentTypeAddDialog').zoladex_appointment_type_add();
+
+            return;
+        }
     }
 
     function bindPracticeControllers(e) {
