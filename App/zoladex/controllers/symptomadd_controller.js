@@ -3,6 +3,7 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/patientsymptom.js',
+    '../models/symptom.js',
     '../lib/WebSQL/db.js',
     '../views/symptom_addedit/init.ejs')
     .then(function ($) {
@@ -46,7 +47,7 @@ steal('jquery/controller',
 
             var view = $.View('//zoladex/views/symptom_addedit/init.ejs', { DateTime: date, Symptoms: Zoladex.Models.Symptom.findAll(), SymptomId: localStorage.stid });
             localStorage.stid = null;
-            
+
             $('#RecordSymptomForm').html(view);
 
             view.done(this.callback(this.refreshForm));
@@ -88,8 +89,19 @@ steal('jquery/controller',
             }
         },
 
-        onInsertSuccess: function () {
-            $.mobile.changePage('symptomslist.htm', 'pop', false, true);
+        onInsertSuccess: function (justAdded) {
+            var symptomId = justAdded.SymptomId;
+
+            var deffered = Zoladex.Models.Symptom.findOne(symptomId);
+
+            $.when(deffered).done(function (result) {
+                if (result[0].WarningSign == 1) {
+                    $.mobile.changePage('../dialog/patientwarningdialog.htm', 'pop', false, true);
+                }
+                else {
+                    $.mobile.changePage('symptomslist.htm', 'pop', false, true);
+                }
+            });
         },
 
         onInsertFail: function () {
