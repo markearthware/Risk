@@ -201,11 +201,11 @@ var localStorageDB = (function () {
 
         checkTableExists("Questions", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id, Question, CategoryId INTEGER)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Question, CategoryId INTEGER)', [], function (tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (1, "Why is the sky blue?", 0)');
-                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (2, "Why is the sky pink?", 0)');
-                tx.executeSql('INSERT INTO Questions (id, Question, CategoryId) VALUES (3, "How big is the moon?", 1)');
+                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("Why is the sky blue?", 0)');
+                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("Why is the sky pink?", 0)');
+                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("How big is the moon?", 1)');
             });
         });
 
@@ -219,11 +219,11 @@ var localStorageDB = (function () {
             // create table
             tx.executeSql('CREATE TABLE IF NOT EXISTS Categories (Category , CategoryId INTEGER)', [], function (tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Oncologist", 0)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Surgeon", 1)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("GP", 2)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Hospital Nurse", 3)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Practice Nurse", 4)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 1", 0)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 2", 1)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 3", 2)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 4", 3)');
+                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 5", 4)');
             });
         });
 

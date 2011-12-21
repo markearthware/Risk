@@ -6,12 +6,13 @@
 </ul>
 <%} else { %>
 
+<input type="hidden" id="catId" value="<%=this.questionList[0].CategoryId%>"/>
 
 <% for(var i = 0; i < this.questionList.length; i++){ %>
 	<li>
 		<div id="Question<%= i %>" style="padding: 10px; text-align: center"><%=this.questionList[i].Question%></div>
 		<select id="QuestionDdl" name="QuestionDdl">
-			<option value="-1">Do not add</option>
+			<option value="-1">Select an HCP</option>
 			<% for(var j = 0; j < this.hcpList.length; j++){ %>
 				<option value="<%= this.hcpList[j].id %>"><%= this.hcpList[j].Title %> <%= this.hcpList[j].FirstName %> <%= this.hcpList[j].Surname %></option>
 			<%}%>     
@@ -19,6 +20,14 @@
 	</li>	
 <%}%>
 
+<div style="padding: 10px; text-align: center"><input placeholder="Type your own question" type="text" id="CustomQuestionText"/></div>
+<select id="CustomQuestionDdl" name="CustomQuestionDdl">
+	<option value="-1">Select an HCP</option>
+	<% for(var k = 0; k < this.hcpList.length; k++){ %>
+		<option value="<%= this.hcpList[k].id %>"><%= this.hcpList[k].Title %> <%= this.hcpList[k].FirstName %> <%= this.hcpList[k].Surname %></option>
+	<%}%>     
+</select>
+	
 <input type="submit" id="addquestionsbutton" value="Add Questions" />
  </form>
 <% } %>
