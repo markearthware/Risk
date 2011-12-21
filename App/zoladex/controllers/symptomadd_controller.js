@@ -44,8 +44,9 @@ steal('jquery/controller',
 
             var date = new Date();
 
-            var view = $.View('//zoladex/views/symptom_addedit/init.ejs', { DateTime: date, Symptoms: Zoladex.Models.Symptom.findAll() });
-
+            var view = $.View('//zoladex/views/symptom_addedit/init.ejs', { DateTime: date, Symptoms: Zoladex.Models.Symptom.findAll(), SymptomId: localStorage.stid });
+            localStorage.stid = null;
+            
             $('#RecordSymptomForm').html(view);
 
             view.done(this.callback(this.refreshForm));
@@ -78,6 +79,13 @@ steal('jquery/controller',
                 // set hidden field to combined ticks
                 $("#DateTime").val(combined.getTime());
             });
+        },
+
+        '#SymptomId change': function () {
+            if ($("#SymptomId option:selected").val() == -1) {
+                $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
+                localStorage.onsubmit = 0;
+            }
         },
 
         onInsertSuccess: function () {

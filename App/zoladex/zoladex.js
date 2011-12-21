@@ -251,6 +251,13 @@ steal(
 
             return;
         }
+
+        if ($('#SymptomTypeAddDialog').length > 0) {
+
+            $('#SymptomTypeAddDialog').zoladex_symptom_type_add();
+
+            return;
+        }
     }
 
     function bindPracticeControllers(e) {

@@ -19,17 +19,18 @@ steal('jquery/controller',
             $('.ui-dialog').dialog('close');
         },
         onInsertSuccess: function (obj, typeid) {
-
-            if (localStorage.onsubmit) {
-
-                if (localStorage.onsubmit == 0) {
-                    //go back to add new appointment
-                    localStorage.typeid = typeid;
-                    $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
-                }
+            
+            if (localStorage.onsubmit == 0) {
+                //go back to add new appointment
+                localStorage.typeid = typeid;
+                $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
             }
-            else { //standard procedure
-                $.mobile.changePage('hcplist.htm', 'pop', false, true);
+            else if (localStorage.onsubmit == 1) {
+                //go back to add new appointment
+                localStorage.typeid = typeid;
+                var id = localStorage.appId;
+                localStorage.appId = null;
+                $.mobile.changePage('../calendar/patientappointmentedit.htm?id=' + id, 'flip', false, true);
             }
         },
         onInsertFail: function () {

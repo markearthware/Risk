@@ -40,7 +40,7 @@ steal('jquery/controller',
             }
             else {
                 averageCancerAge = new Date();
-                averageCancerAge.setYear(1955);
+                averageCancerAge.setYear(1940);
                 averageCancerAge.setMonth(0);
                 averageCancerAge.setDate(1);
             }

@@ -10,7 +10,7 @@ steal('jquery/controller',
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
-            
+
             $.validator.setDefaults({
                 errorPlacement: function (error, element) {
                     $(element).attr({ "title": error.text() });
@@ -51,21 +51,25 @@ steal('jquery/controller',
             var allSymptomsDef = Zoladex.Models.Symptom.findAll();
 
             $.when(recordedSymptomDef, allSymptomsDef).done(function (rec, all) {
+
                 rec.Symptoms = all;
+
+                if (localStorage.stid !== "null") {
+                    rec.SymptomId = localStorage.stid;
+                }
+                localStorage.stid = null;
+
                 var view = $.View('//zoladex/views/symptom_addedit/init.ejs', rec);
 
                 $('#EditSymptomForm').html(view).trigger('create');
-
-                
 
                 var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
                 $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
                 $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
                 self.setupDateTimeControls();
-                
-                $.mobile.hidePageLoadingMsg();
 
+                $.mobile.hidePageLoadingMsg();
             });
         },
         submit: function (el, ev) {
@@ -96,6 +100,15 @@ steal('jquery/controller',
                 // set hidden field to combined ticks
                 $("#DateTime").val(combined.getTime());
             });
+        },
+
+        '#SymptomId change': function () {
+            if ($("#SymptomId option:selected").val() == -1) {
+                var params = Zoladex.QSUtils.getParams();
+                localStorage.symptomId = params.id;
+                localStorage.onsubmit = 1;
+                $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
+            }
         },
 
         onUpdateSuccess: function () {

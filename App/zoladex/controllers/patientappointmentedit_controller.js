@@ -13,7 +13,7 @@ steal('jquery/controller',
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentEdit', {
-        },
+    },
     {
         init: function () {
             // show loading screen
@@ -69,7 +69,7 @@ steal('jquery/controller',
                 {
                     id: appres.id,
                     HcpId: hcpid,
-                    TypeId: appres.TypeId,
+                    TypeId: localStorage.typeid ? localStorage.typeid : appres.TypeId,
                     LocsId: locsid,
                     StartDateTime: appres.StartDateTime,
                     AlertsEnabled: appres.AlertsEnabled,
@@ -79,6 +79,7 @@ steal('jquery/controller',
                     Locs: locsres,
                     Types: typesres
                 });
+                localStorage.typeId = null;
                 // insert html into form and call jquerymobile create on form
                 $('#EditAppointmentForm').html(view).trigger('create');
 
@@ -151,6 +152,14 @@ steal('jquery/controller',
                 $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=1&' + 'id=' + params.id, 'flip', false, true);
             }
         },
+        '#TypeId change': function () {
+            if ($("#TypeId option:selected").val() == -1) {
+                var params = Zoladex.QSUtils.getParams();
+                localStorage.onsubmit = 1;
+                localStorage.appId = params.id;
+                $.mobile.changePage('../calendar/dialog/typenew.htm', 'flip', false, true);
+            }
+        },
         '#HealthcareLocationId change': function () {
             if ($("#HealthcareLocationId option:selected").val() == 0) {
                 var params = Zoladex.QSUtils.getParams();
@@ -158,4 +167,4 @@ steal('jquery/controller',
             }
         }
     });
-    });
+});

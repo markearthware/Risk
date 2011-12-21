@@ -158,7 +158,7 @@ var localStorageDB = (function () {
 
         checkTableExists("HealthcareProfessionals", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode, Notes)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode, Notes) VALUES (?,?,?,?,?,?,?,?,?,?,?)', ['Dr', 'Mark', 'Short', '1', '09123 674738', 'SarahWestiminster@nhs.co.uk', 'Windy Lane', 'Letchworth', 'Herts', 'AL8 7UY', 'Use the back door!']);
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode, Notes) VALUES (?,?,?,?,?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '1', '09123 674738', 'SarahWestminster@nhs.co.uk', 'Oak Lane', 'Letchworth', 'Herts', 'AL8 7UY', 'On call hours: 6am - 11pm everyday']);
             });
         });
 
@@ -188,13 +188,13 @@ var localStorageDB = (function () {
 
         checkTableExists("Symptoms", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (id unique, Description, WarningSign INTEGER)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Description, WarningSign INTEGER)', [], function (tx, result) {
 
                 // populate
-                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (1, "Pain in lower Back", 1)');
-                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (2, "Vomiting", 1)');
-                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (3, "Tiredness", 0)');
-                tx.executeSql('INSERT INTO Symptoms (id, Description, WarningSign) VALUES (4, "Dizziness", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain in lower Back", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Vomiting", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Tiredness", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Dizziness", 1)');
 
             });
         });
