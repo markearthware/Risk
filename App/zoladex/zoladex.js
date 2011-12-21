@@ -201,6 +201,13 @@ steal(
                 
                 return;
             }
+
+            if ($('#QuestionDialog').length > 0) {
+
+                $('#QuestionDialog').zoladex_question_dialog();
+
+                return;
+            }
         });
     }
 

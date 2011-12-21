@@ -34,6 +34,11 @@ steal('jquery/controller',
             $.when(deletedef).done(function () {
                 ctx.init();
             });
+        },
+        '.questionText click': function (el) {
+            var questionText = $(el).children(':first').text(); 
+            localStorage.questionText = questionText;
+            $.mobile.changePage("dialog/questiondialog.htm");
         }
     });
 });

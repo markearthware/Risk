@@ -36,15 +36,18 @@ steal('jquery/controller',
         submit: function (el, ev) {
             //loop through select elements in form and add selected question text and hcp id to myquestions table
             var ctx = this;
-            
+
+            this.num = this.count();
+
             if ($('#CustomQuestionText').val() && $('#CustomQuestionDdl option:selected').val() !== '-1') {
                 var questionObj = { Question: $('#CustomQuestionText').val(), HcpId: $('#CustomQuestionDdl option:selected').val() };
                 var questionObj2 = { Question: $('#CustomQuestionText').val(), CategoryId: $('#catId').val() };
-                new Zoladex.Models.Question(questionObj2).save();
+
+                new Zoladex.Models.Question(questionObj2).save(ctx.callback('onInsertSuccess'), ctx.callback('onInsertFail'));
                 new Zoladex.Models.MyQuestion(questionObj).save(ctx.callback('onInsertSuccess'), ctx.callback('onInsertFail'));
+                this.num += 2;
             }
-            
-            this.num = this.count();
+
             $('form #QuestionDdl option:selected').each(function (index) {
                 if ($(this).val() !== '-1') {
                     var questionText = $('#Question' + index).text();
@@ -58,13 +61,12 @@ steal('jquery/controller',
         },
 
         onInsertSuccess: function () {
+            steal.dev.log(this.num);
             this.num--;
 
-            if (this.num == 1) {
+            if (this.num == 0) {
                 $.mobile.changePage('myquestions.htm');
             }
-
-            //$.mobile.changePage('myquestions.htm');
         },
 
         onInsertFail: function () {
@@ -73,7 +75,7 @@ steal('jquery/controller',
 
         count: function () {
             var count = 0;
-            $('form select option:selected').each(function (index) {
+            $('form #QuestionDdl option:selected').each(function (index) {
                 if ($(this).val() !== '-1') {
                     count++;
                 }
