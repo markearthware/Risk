@@ -2,7 +2,7 @@ steal('jquery/controller',
     'jquery/view/ejs',
     'jquery/dom/form_params',
     'jquery/controller/view',
-    '../models/practice.js',
+    '../models/practiceB.js',
     '../lib/WebSQL/db.js',
     '../views/practice_addedit/init.ejs')
     .then(function ($) {
@@ -43,7 +43,7 @@ steal('jquery/controller',
 
                 var practiceDataStructure = { Name: params.Name };
 
-                new Zoladex.Models.Practice(practiceDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+                new Zoladex.Models.PracticeB(practiceDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }
 
             return false;

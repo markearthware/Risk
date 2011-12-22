@@ -26,7 +26,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
+        var tables = ['HcpPractices','HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {
@@ -157,8 +157,8 @@ var localStorageDB = (function () {
         });
 
         checkTableExists("HealthcareProfessionals", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode, Notes)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, PracticeName, Telephone, Email, Street, Town, County, Postcode, Notes) VALUES (?,?,?,?,?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '1', '09123 674738', 'SarahWestminster@nhs.co.uk', 'Oak Lane', 'Letchworth', 'Herts', 'AL8 7UY', 'On call hours: 6am - 11pm everyday']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, Telephone, Email, Street, Town, County, Postcode, Notes)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, Telephone, Email, Street, Town, County, Postcode, Notes) VALUES (?,?,?,?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk', 'Oak Lane', 'Letchworth', 'Herts', 'AL8 7UY', 'On call hours: 6am - 11pm everyday']);
             });
         });
 
@@ -229,6 +229,11 @@ var localStorageDB = (function () {
 
         checkTableExists('PsaLevels', function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS PsaLevels (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Date INTEGER, PsaLevel DOUBLE)');
+        });
+
+        checkTableExists("HcpPractices", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HcpPractices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, HcpId INTEGER, PracticeId INTEGER)');
         });
     }
 

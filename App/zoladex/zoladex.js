@@ -36,6 +36,14 @@ steal(
 
         //bind controllers to page before create, default bind time.
         $(document).bind('pagebeforecreate', function (e) {
+            
+            //non native multi select lists insert page into dom which causes this function
+            //to be called an additional time so we need to catch this with the following if
+            if ($(e.target).attr('data-role') === "dialog" && typeof $(e.target).attr('id') === 'undefined') {
+                return '';
+            }
+            
+            steal.dev.log("JQM: page before create");
 
             bindTabBar(e);
 

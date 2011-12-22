@@ -18,6 +18,20 @@ steal('jquery/controller',
             $.mobile.showPageLoadingMsg();
         },
 
+        getCommaSeparatedString: function (list) {
+            if (list.length == 0) {
+                return '';
+            }
+
+            var str = list[0].Name;
+
+            for (var i = 1; i < list.length; i++) {
+                str += ", " + list[i].Name;
+            }
+
+            return str;
+        },
+
         loadData: function () {
 
             //get query string params
@@ -27,47 +41,44 @@ steal('jquery/controller',
             var practiceres = null;
             var hcpres = null;
             var hcpdef = Zoladex.Models.Hcp.findOne(params.id);
+            var practicesdef = Zoladex.Models.Practice.findAll({ hcpid: params.id });
             var self = this;
 
-            $.when(hcpdef).done(function (hcpres) {
+            $.when(hcpdef, practicesdef).done(function (hcpres, practicesres) {
 
-                var practicedef = Zoladex.Models.Practice.findOne(hcpres.PracticeName);
-                $.when(practicedef).done(function (practiceres) {
-                    $('#HcpDetailsPage h1').html(hcpres.FullName());
+                $('#HcpDetailsPage h1').html(hcpres.FullName());
 
-                    var editLink = $('#EditHcpButton').attr('href') + hcpres.id;
+                var editLink = $('#EditHcpButton').attr('href') + hcpres.id;
 
-                    $('#EditHcpButton').attr('href', editLink);
+                $('#EditHcpButton').attr('href', editLink);
 
-                    self.postcode = hcpres.Postcode;
+                self.postcode = hcpres.Postcode;
 
-                    var view = $.View('//zoladex/views/hcp_details/init.ejs', {
-                        id: hcpres.id,
-                        Title: hcpres.Title,
-                        FirstName: hcpres.FirstName,
-                        Surname: hcpres.Surname,
-                        PracticeName: practiceres ? practiceres.Name : 'None',
-                        Telephone: hcpres.Telephone,
-                        Email: hcpres.Email,
-                        Street: hcpres.Street,
-                        Town: hcpres.Town,
-                        County: hcpres.County,
-                        Postcode: hcpres.Postcode, 
-                        Notes: hcpres.Notes
-                    });
-
-                    //$('#HcpDetailsList', this.element).append(view);
-
-                    $('#HcpDetailsList').html(view).trigger('create');
-
-                    $('#HcpDetailsList').listview('refresh');
-
-                    $('#DeleteHcpButton').attr("href", "dialog/hcpconfirmdialog.htm?id=" + params.id);
-
-                    $.mobile.hidePageLoadingMsg();
+                var view = $.View('//zoladex/views/hcp_details/init.ejs', {
+                    id: hcpres.id,
+                    Title: hcpres.Title,
+                    FirstName: hcpres.FirstName,
+                    Surname: hcpres.Surname,
+                    PracticeName: self.getCommaSeparatedString(practicesres) ? self.getCommaSeparatedString(practicesres) : 'None',
+                    Telephone: hcpres.Telephone,
+                    Email: hcpres.Email,
+                    Street: hcpres.Street,
+                    Town: hcpres.Town,
+                    County: hcpres.County,
+                    Postcode: hcpres.Postcode,
+                    Notes: hcpres.Notes
                 });
-            });
 
+                //$('#HcpDetailsList', this.element).append(view);
+
+                $('#HcpDetailsList').html(view).trigger('create');
+
+                $('#HcpDetailsList').listview('refresh');
+
+                $('#DeleteHcpButton').attr("href", "dialog/hcpconfirmdialog.htm?id=" + params.id);
+
+                $.mobile.hidePageLoadingMsg();
+            });
         },
         '#AddressLink click': function () {
             var url = 'http://maps.google.com/maps?q=' + this.postcode + ', UK';

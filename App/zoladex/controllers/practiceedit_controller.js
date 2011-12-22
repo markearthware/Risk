@@ -2,7 +2,7 @@ steal('jquery/controller',
     'jquery/view/ejs',
     'jquery/dom/form_params',
     'jquery/controller/view',
-    '../models/practice.js',
+    '../models/practiceB.js',
     '../lib/WebSQL/db.js',
     '../views/practice_addedit/init.ejs')
     .then(function ($) {
@@ -35,7 +35,7 @@ steal('jquery/controller',
 
             if ($('#EditPracticeForm').valid()) {
                 steal.dev.log('insert practice form is valid, attempting to save to database...');
-                new Zoladex.Models.Practice(el.formParams()).save(this.callback(this.onUpdateSuccess), this.callback('onUpdateFail'));
+                new Zoladex.Models.PracticeB(el.formParams()).save(this.callback(this.onUpdateSuccess), this.callback('onUpdateFail'));
             }
 
             return false;
@@ -44,7 +44,7 @@ steal('jquery/controller',
         loadData: function () {
             var params = Zoladex.QSUtils.getParams();
 
-            var deffered = Zoladex.Models.Practice.findOne(params.id); 
+            var deffered = Zoladex.Models.PracticeB.findOne(params.id); 
             
             var editLink = $('#ButtonDeletePractice').attr('href') + params.id;
             $('#ButtonDeletePractice').attr('href', editLink);
