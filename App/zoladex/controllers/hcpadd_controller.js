@@ -41,7 +41,6 @@ steal('jquery/controller',
                     }
                 }
             });
-
         },
 
         loadData: function () {
@@ -73,8 +72,8 @@ steal('jquery/controller',
                     Locs: locsres,
                     LocsId: locsid
                 });
+                
                 $('#NewHcpForm').html(view).trigger('create');
-
             });
         },
 
@@ -126,10 +125,8 @@ steal('jquery/controller',
                 $.mobile.changePage('hcplist.htm', 'pop', false, true);
             }
         },
-        '#PracticeName change': function () {
-            if ($("#PracticeName #new:selected").val() == 0) {
-                $.mobile.changePage('practicenew.htm?onsubmit=2', 'flip', false, true);
-            }
+        '#PracticeNew click': function (e, a) {
+            $.mobile.changePage(baseurl + '/zoladex/pages/hcp/practicenew.htm?onsubmit=2', 'flip', false, true);
         },
         onInsertFail: function () {
 

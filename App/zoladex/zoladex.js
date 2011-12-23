@@ -122,91 +122,100 @@ steal(
             if ($(args.nextPage).filter('#HcpDetailsPage').length > 0) {
 
                 if ($('#HcpDetailsPage').controllers().length < 1) {
-                    
+
                     $('#HcpDetailsPage').zoladex_hcp_details();
                 }
 
                 $('#HcpDetailsPage').zoladex_hcp_details('loadData');
-                
+
                 return;
             }
 
             if ($(args.nextPage).filter('#HcpEditPage').length > 0) {
 
                 if ($('#EditHcpForm').controllers().length < 1) {
-                    
+
                     $('#EditHcpForm').zoladex_hcp_edit();
                 }
 
+                if ($(e.target).attr('data-role') === "dialog") {
+                    return '';
+                }
+
                 $('#EditHcpForm').zoladex_hcp_edit('loadData');
-                
+
                 return;
             }
 
             if ($(args.nextPage).filter('#AddHcpPage').length > 0) {
 
                 if ($('#NewHcpForm').controllers().length < 1) {
-                    
+
                     $('#NewHcpForm').zoladex_hcp_add();
-                }   
+                }
+
+                if ($(e.target).attr('data-role') === "dialog") {
+                    return '';
+                }
+
                 $('#NewHcpForm').zoladex_hcp_add('loadData');
                 return;
             }
 
             if ($(args.nextPage).filter('#EditAppointmentPage').length > 0) {
 
-                if ($('#EditAppointmentForm').controllers().length < 1) {   
-                    
+                if ($('#EditAppointmentForm').controllers().length < 1) {
+
                     $('#EditAppointmentForm').zoladex_patient_appointment_edit();
                 }
 
                 $('#EditAppointmentForm').zoladex_patient_appointment_edit('loadData');
-                
+
                 return;
             }
 
             if ($('#NewAppointmentForm').length > 0) {
-                  
+
                 $('#NewAppointmentForm').zoladex_patient_appointment_add();
-                
+
                 return;
             }
 
             if ($(args.nextPage).filter('#PracticeDetailsPage').length > 0) {
 
                 if ($('#PracticeDetailsPage').controllers().length == 0) {
-                    
+
                     $('#PracticeDetailsPage').zoladex_practice_details();
                 }
 
                 $('#PracticeDetailsPage').zoladex_practice_details('loadData');
-                
+
                 return;
             }
 
             if ($(args.nextPage).filter('#PracticeEditPage').length > 0) {
 
                 if ($('#EditPracticeForm').controllers().length == 0) {
-                    
+
                     $('#EditPracticeForm').zoladex_practice_edit();
                 }
 
                 $('#EditPracticeForm').zoladex_practice_edit('loadData');
-                
+
                 return;
             }
 
             if ($(args.nextPage).filter('#SymptomEditPage').length > 0) {
 
                 $('#EditSymptomForm').zoladex_symptom_edit();
-                
+
                 return;
             }
-            
+
             if ($(args.nextPage).filter('#SelectQuestionPage').length > 0) {
 
                 $('#SelectQuestionPage').zoladex_question_add();
-                
+
                 return;
             }
 

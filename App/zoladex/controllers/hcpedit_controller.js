@@ -137,11 +137,8 @@ steal('jquery/controller',
             $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
         },
 
-        '#PracticeName change': function () {
-            if ($("#PracticeName #new:selected").val() == 0) {
-                var params = Zoladex.QSUtils.getParams();
-                $.mobile.changePage('../hcp/practicenew.htm?onsubmit=3&' + 'id=' + params.id, 'flip', false, true);
-            }
+        '#PracticeNew click': function (e, a) {
+            $.mobile.changePage(baseurl + '/zoladex/pages/hcp/practicenew.htm?onsubmit=3&id=' + $('#id').val(), 'flip', false, true);
         },
 
         onUpdateFail: function () {
