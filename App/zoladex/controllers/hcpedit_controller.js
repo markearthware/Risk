@@ -4,7 +4,8 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/hcp.js',
     '../lib/WebSQL/db.js',
-    '../views/hcp_addedit/init.ejs')
+    '../views/hcp_addedit/init.ejs',
+    '../lib/livequery/jquery.livequery.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpEdit', {
     },
@@ -109,6 +110,13 @@ steal('jquery/controller',
             });
         },
 
+        '#PracticeName-button click': function () {
+            $('.ui-selectmenu').livequery(function () {
+                $('#AddButton').remove();
+                $('.ui-header').append('<a href=' + baseurl + '/zoladex/pages/hcp/practicenew.htm?onsubmit=3&id=' + $('#id').val() + ' id="AddButton" class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-c" data-iconpos="notext" data-icon="plus" title="New Hospital/Practice" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">New</span><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>');
+            });
+        },
+
         addPractices: function (hcpId) {
             var form = $('form');
             var params = form.formParams();
@@ -135,10 +143,6 @@ steal('jquery/controller',
         onUpdateSuccess2: function () {
             steal.dev.log('edit worked');
             $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
-        },
-
-        '#PracticeNew click': function (e, a) {
-            $.mobile.changePage(baseurl + '/zoladex/pages/hcp/practicenew.htm?onsubmit=3&id=' + $('#id').val(), 'flip', false, true);
         },
 
         onUpdateFail: function () {
