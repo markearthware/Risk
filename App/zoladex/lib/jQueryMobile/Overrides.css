@@ -3,6 +3,27 @@
     margin-top: 15px;
 }
 
+.warningText
+{
+    color: #830051;
+    font-weight: bold;
+}
+
+.questionContainer
+{
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+.symptomsContainer {
+    height: 80%;
+    margin-bottom: 20px;
+    margin: 0;
+}
+
+
 /* override to fill in search boxes */
 
 .ui-input-search {

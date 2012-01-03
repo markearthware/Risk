@@ -20,7 +20,7 @@ steal('jquery/controller',
         onDataLoaded: function (result) {
             $('#SymptomListContainer').html($.View('//zoladex/views/symptom_list/init.ejs', result));
             $.mobile.hidePageLoadingMsg();
-            this.list.listview();
+            this.list.listview('refresh');
         }
     });
 });
