@@ -51,13 +51,18 @@ steal(
 
             bindPracticeControllers(e);
 
-            bindGroupControllers(e);
-
             bindSymptomControllers(e);
 
             bindAppointmentControllers(e);
 
             if ($(e.target).filter('#indexPage').length > 0) return '';
+
+            if ($(e.target).filter('#SupportGroupListPage').length > 0) {
+
+                $('#SupportGroupListPage').zoladex_support_group_list();
+
+                return true;
+            }
 
             if ($('#AddLevelForm').length > 0) {
 
@@ -77,11 +82,6 @@ steal(
 
             if ($(e.target).filter('#PracticeListPage').length > 0) {
                 $('#PracticeListList').zoladex_practice_list('loadData');
-                return;
-            }
-
-            if ($(e.target).filter('#GroupListPage').length > 0) {
-                $('#GroupListList').zoladex_group_list('loadData');
                 return;
             }
             
@@ -193,18 +193,6 @@ steal(
                 return;
             }
 
-            if ($(args.nextPage).filter('#GroupDetailsPage').length > 0) {
-
-                if ($('#GroupDetailsPage').controllers().length == 0) {
-
-                    $('#GroupDetailsPage').zoladex_group_details();
-                }
-
-                $('#GroupDetailsPage').zoladex_group_details('loadData');
-
-                return;
-            }
-
             if ($(args.nextPage).filter('#PracticeEditPage').length > 0) {
 
                 if ($('#EditPracticeForm').controllers().length == 0) {
@@ -213,18 +201,6 @@ steal(
                 }
 
                 $('#EditPracticeForm').zoladex_practice_edit('loadData');
-
-                return;
-            }
-
-            if ($(args.nextPage).filter('#GroupEditPage').length > 0) {
-
-                if ($('#EditGroupForm').controllers().length == 0) {
-
-                    $('#EditGroupForm').zoladex_group_edit();
-                }
-
-                $('#EditGroupForm').zoladex_group_edit('loadData');
 
                 return;
             }
@@ -345,46 +321,6 @@ steal(
             $('#EditPracticeForm').zoladex_practice_edit();
 
             $('#EditPracticeForm').validate();
-        }
-    }
-
-    function bindGroupControllers(e) {
-
-        if ($(e.target).filter('#GroupListPage').length > 0) {
-
-            $('#GroupListList').zoladex_group_list();
-
-            return;
-        }
-
-        if ($('#GroupDeleteConfirmDialog').length > 0) {
-
-            $('#GroupDeleteConfirmDialog').zoladex_group_delete();
-
-            return;
-        }
-
-        if ($(e.target).filter('#GroupDetailsPage').length > 0) {
-
-            $('#GroupDetailsPage').zoladex_group_details();
-
-            return;
-        }
-
-        if ($('#NewGroupForm').length > 0) {
-
-            $('#NewGroupForm').zoladex_group_add();
-
-            $('#NewGroupForm').validate();
-
-            return;
-        }
-
-        if ($('#EditGroupForm').length > 0) {
-
-            $('#EditGroupForm').zoladex_group_edit();
-
-            $('#EditGroupForm').validate();
         }
     }
     

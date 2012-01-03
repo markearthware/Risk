@@ -5,7 +5,8 @@ steal('jquery/controller',
     '../models/hcp.js',
     '../models/hcppractice.js',
     '../lib/WebSQL/db.js',
-    '../views/hcp_addedit/init.ejs')
+    '../views/hcp_addedit/init.ejs',
+    '../lib/livequery/jquery.livequery.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpAdd', {
     },
@@ -18,7 +19,7 @@ steal('jquery/controller',
                 },
                 highlight: function (element) {
                     if ($(element).is('select')) {
-                        element = $(element).parent().get(0);
+                        element = $(element).prev().children(":first");
                         $(element).removeClass("textinput");
                         $(element).addClass("errorHighlight");
                     }
@@ -26,12 +27,11 @@ steal('jquery/controller',
                         $(element).removeClass("textinput");
                         $(element).addClass("errorHighlight");
                     }
-
                 },
                 unhighlight: function (element) {
 
                     if ($(element).is('select')) {
-                        element = $(element).parent().get(0);
+                        element = $(element).prev().children(":first");
                         $(element).removeClass("errorHighlight");
                         $(element).addClass("textinput");
                     }
@@ -42,6 +42,14 @@ steal('jquery/controller',
                 }
             });
         },
+
+        '#PracticeName-button click': function () {
+            $('.ui-selectmenu').livequery(function () {
+                $('#AddButton').remove();
+                $('.ui-header').append('<a href='+baseurl+ '/zoladex/pages/hcp/practicenew.htm?onsubmit=2 id="AddButton" class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-c" data-iconpos="notext" data-icon="plus" title="New Hospital/Practice" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">New</span><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>');
+            });
+        },
+        
 
         loadData: function () {
             var locsdef = Zoladex.Models.Practice.findAll();
@@ -72,7 +80,7 @@ steal('jquery/controller',
                     Locs: locsres,
                     LocsId: locsid
                 });
-                
+
                 $('#NewHcpForm').html(view).trigger('create');
             });
         },
@@ -125,9 +133,7 @@ steal('jquery/controller',
                 $.mobile.changePage('hcplist.htm', 'pop', false, true);
             }
         },
-        '#PracticeNew click': function (e, a) {
-            $.mobile.changePage(baseurl + '/zoladex/pages/hcp/practicenew.htm?onsubmit=2', 'flip', false, true);
-        },
+       
         onInsertFail: function () {
 
             steal.dev.log('professional has not been added');

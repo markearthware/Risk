@@ -298,8 +298,8 @@
             hours = (ampm == -1) ? hours : ((ampm && hours < 12) ? (hours + 12) : (!ampm && hours == 12 ? 0 : hours));
             //if (ampm && hours < 12) hours += 12;
             var date = new Date(year, month - 1, day, hours, minutes, seconds);
-            if (date.getFullYear() != year || date.getMonth() + 1 != month || date.getDate() != day)
-                throw 'Invalid date'; // E.g. 31/02/*
+            //if (date.getFullYear() != year || date.getMonth() + 1 != month || date.getDate() != day)
+            //throw 'Invalid date'; // E.g. 31/02/* THIS CODE IS A MOBISCROLL BUG
             return date;
         }
 

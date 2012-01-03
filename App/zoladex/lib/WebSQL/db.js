@@ -26,7 +26,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['HcpPractices','HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
+        var tables = ['Groups','HcpPractices','HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {
@@ -153,6 +153,12 @@ var localStorageDB = (function () {
         checkTableExists("Practices", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode)', [], function (tx, result) {
                 tx.executeSql('INSERT INTO Practices (Name, Postcode) VALUES (?,?)', ['QE2', 'AL8 7QX']);
+            });
+        });
+
+        checkTableExists("Groups", function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO Groups (Name) VALUES (?)', ['A Group']);
             });
         });
 

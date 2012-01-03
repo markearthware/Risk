@@ -13,20 +13,12 @@ function isInLocsId(list, id){
 
 <label for="PracticeName">Hospital:</label>
 
-<fieldset class="ui-grid-a">
-<div class="ui-block-a">
 <select id="PracticeName" name="PracticeName" class='practiceSelect textinput required' multiple="multiple" data-native-menu="false">
     <option value="">Select</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
 		<option <% if(isInLocsId(this.LocsId,this.Locs[i].id)){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>  
 </select>
-</div>
-<div class="ui-block-b">
-<a id="PracticeNew" class="buttonNew" data-icon="plus" data-role="button">New</a>
-</div>
-
-</fieldset>
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <label data-inline="true" for="title">Title</label>

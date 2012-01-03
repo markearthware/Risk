@@ -1,0 +1,9 @@
+﻿<input type="hidden" name="id" id="id" value="<%= this.id %>" />
+<label for="title">Name: </label>
+<input type="text" name="Name" id="name" class="textinput required" value="<%= this.Name %>" />
+
+<% if (this.id) { %>
+<input type="submit" id="newgroupbutton" value="Save Changes" />
+<% }else{ %>
+<input type="submit" id="newgroupbutton" value="Add Local Support Group" />
+<% } %>

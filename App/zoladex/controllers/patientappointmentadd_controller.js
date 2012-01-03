@@ -113,7 +113,7 @@ steal('jquery/controller',
                         $("#StartDateTime").val(combined.getTime());
                     });
 
-                    //////add custom validation rule
+                    //////start custom validation rule
                     jQuery.validator.addMethod("mustBeInFuture", function (value, element) {
 
                         var now = new Date().getTime();
