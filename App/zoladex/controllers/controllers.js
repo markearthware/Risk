@@ -31,5 +31,6 @@ steal(
         './alert_controller.js',
         './appointmenttypeadd_controller.js',
         './symptomtypeadd_controller.js',
-        './questiondialog_controller.js'
+        './questiondialog_controller.js',
+        './jobroleadd_controller.js'
         )

@@ -3,6 +3,7 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/hcp.js',
+    '../models/jobrole.js',
     '../lib/WebSQL/db.js',
     '../views/hcp_addedit/init.ejs',
     '../lib/livequery/jquery.livequery.js')
@@ -14,13 +15,14 @@ steal('jquery/controller',
 
             $.mobile.showPageLoadingMsg();
 
+
             $.validator.setDefaults({
                 errorPlacement: function (error, element) {
                     $(element).attr({ "title": error.text() });
                 },
                 highlight: function (element) {
                     if ($(element).is('select')) {
-                        element = $(element).parent().get(0);
+                        element = $(element).prev().parent().children(":first");
                         $(element).removeClass("textinput");
                         $(element).addClass("errorHighlight");
                     }
@@ -28,12 +30,11 @@ steal('jquery/controller',
                         $(element).removeClass("textinput");
                         $(element).addClass("errorHighlight");
                     }
-
                 },
                 unhighlight: function (element) {
 
                     if ($(element).is('select')) {
-                        element = $(element).parent().get(0);
+                        element = $(element).prev().parent().children(":first");
                         $(element).removeClass("errorHighlight");
                         $(element).addClass("textinput");
                     }
@@ -44,6 +45,8 @@ steal('jquery/controller',
                 }
             });
 
+            this.loadData();
+
         },
         submit: function (el, ev) {
 
@@ -51,7 +54,7 @@ steal('jquery/controller',
 
             var params = el.formParams();
 
-            var structure = { id: params.id, Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Street: params.Street, Town: params.Town, County: params.County, Postcode: params.Postcode, Notes: params.Notes };
+            var structure = { JobRole: params.JobRole, id: params.id, Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Notes: params.Notes };
 
             if ($('#EditHcpForm').valid()) {
                 steal.dev.log('insert hcp form is valid, attempting to save to database...');
@@ -68,17 +71,19 @@ steal('jquery/controller',
             var practiceName = null;
             var practiceres = null;
             var hcpres = null;
-            var hcpdef = Zoladex.Models.Hcp.findOne(params.id);
+            var rolesdef = Zoladex.Models.JobRole.findAll();
+            var hcpdef = Zoladex.Models.Hcp.findOne(localStorage.hcpId ? localStorage.hcpId : params.id);
             var selectedpracticesdef = Zoladex.Models.Practice.findAll({ hcpid: params.id });
             var practicesdef = Zoladex.Models.Practice.findAll({ id: params.id });
             var self = this;
+            localStorage.hcpId = "";
 
-            $.when(hcpdef, selectedpracticesdef, practicesdef).done(function (hcpres, selectedpracticesres, practicesres) {
+            $.when(hcpdef, selectedpracticesdef, practicesdef, rolesdef).done(function (hcpres, selectedpracticesres, practicesres, rolesres) {
 
                 var locsids = [];
 
-                if (params.locid) {
-                    locsids.push({ id: params.locid });
+                if (localStorage.locid) {
+                    locsids.push({ id: localStorage.locid });
                 }
                 else {
                     locsids = selectedpracticesres;
@@ -91,14 +96,15 @@ steal('jquery/controller',
                     Surname: hcpres.Surname,
                     Telephone: hcpres.Telephone,
                     Email: hcpres.Email,
-                    Street: hcpres.Street,
-                    Town: hcpres.Town,
-                    County: hcpres.County,
-                    Postcode: hcpres.Postcode,
                     Notes: hcpres.Notes,
                     Locs: practicesres,
-                    LocsId: locsids ? locsids : -1
+                    LocsId: locsids ? locsids : -1,
+                    Roles: rolesres,
+                    RoleId: localStorage.jrid ? localStorage.jrid : hcpres.JobRole
                 });
+
+                localStorage.locid = "";
+                localStorage.jrid = "";
 
                 var form = $('#EditHcpForm');
 
@@ -121,14 +127,19 @@ steal('jquery/controller',
             var form = $('form');
             var params = form.formParams();
 
-            for (var i = 0; i < params.PracticeName.length; i++) {
-                var structure = { HcpId: parseInt(hcpId), PracticeId: parseInt(params.PracticeName[i]) };
-                if (i != params.PracticeName.length - 1) {
-                    new Zoladex.Models.HcpPractice(structure).save();
+            if (params.PracticeName) {
+                for (var i = 0; i < params.PracticeName.length; i++) {
+                    var structure = { HcpId: parseInt(hcpId), PracticeId: parseInt(params.PracticeName[i]) };
+                    if (i != params.PracticeName.length - 1) {
+                        new Zoladex.Models.HcpPractice(structure).save();
+                    }
+                    else {
+                        new Zoladex.Models.HcpPractice(structure).save(this.callback(this.onUpdateSuccess2));
+                    }
                 }
-                else {
-                    new Zoladex.Models.HcpPractice(structure).save(this.callback(this.onUpdateSuccess2));
-                }
+            }
+            else {
+                $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
             }
         },
 
@@ -149,6 +160,14 @@ steal('jquery/controller',
 
             steal.dev.log('edit no worked');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
+        },
+
+        '#JobRole change': function () {
+            if ($("#JobRole option:selected").val() == -1) {
+                $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
+                localStorage.onsubmit = 1;
+                localStorage.hcpId = $('#id').val();
+            }
         }
 
     });

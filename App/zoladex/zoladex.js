@@ -113,7 +113,13 @@ steal(
             if ($(e.target).filter('#AlertDialog').length > 0) {
                 $('#AlertDialog').zoladex_alerts();
                 return;
-            } 
+            }
+
+            if ($('#JobRoleAddDialog').length > 0) {
+
+                $('#JobRoleAddDialog').zoladex_job_role_add();
+                return;
+            }
         });
 
         // bind contollers to pagehide, typically forms that may require access to a query string.
@@ -142,8 +148,6 @@ steal(
                     return '';
                 }
 
-                $('#EditHcpForm').zoladex_hcp_edit('loadData');
-
                 return;
             }
 
@@ -157,8 +161,6 @@ steal(
                 if ($(e.target).attr('data-role') === "dialog") {
                     return '';
                 }
-
-                $('#NewHcpForm').zoladex_hcp_add('loadData');
                 return;
             }
 
@@ -249,6 +251,7 @@ steal(
 
                 return;
             }
+
         });
     }
 
@@ -306,6 +309,7 @@ steal(
 
             return;
         }
+
     }
 
     function bindPracticeControllers(e) {

@@ -1,4 +1,17 @@
 <input id="id" type="hidden" value="<%= this.id %>" />
+
+<li>
+	<a href="#">
+		<strong>Name: </strong><%=this.Title%> <%=this.FirstName%> <%=this.Surname%>
+	</a>
+</li>
+
+<li>
+	<a href="#">
+		<strong>Job Role: </strong><%=this.JobRole%>
+	</a>
+</li>
+
 <li>
 	<a href="tel:<%=this.Telephone%>">
   <strong>Telephone: </strong><%=this.Telephone%>
@@ -9,17 +22,26 @@
 		<strong>Email: </strong><%=this.Email%>
 	</a>
 </li>
+
+<% for(var i = 0; i < this.Practices.length; i++){ %>
 <li>
-	<a>
-		<strong>Hospital/Practice Name: </strong> <%=this.PracticeName%>
+	<a href=<%="../hcp/practicedetails.htm?id="+this.Practices[i].id %> >
+		<strong>Hospital/Practice <%=i+1%>: </strong> <%=this.Practices[i].Name%>
+	</a>
+</li>
+<% var link = "http://maps.google.com/maps?q=" + this.Practices[i].Postcode + ", UK"; %>
+
+<% if(this.Practices[i].Postcode){ %>
+
+<li>
+	<a target="_blank" href= "<%=link%>" >
+	Touch for directions to <%=this.Practices[i].Name%>
 	</a>
 </li>
 
-<li>
-	<a id="AddressLink">
-	Address: <%=this.Street%>, <%=this.Town%>, <%=this.County%>, <%=this.Postcode%>
-	</a>
-</li>
+<% } %>
+
+<% } %>
 
 <li>
 	<a>

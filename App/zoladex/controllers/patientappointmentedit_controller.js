@@ -62,7 +62,7 @@ steal('jquery/controller',
             // wait for all deferreds to be completed
             $.when(typesdef, locsdef, hcpdef, appdef).done(function (typesres, locsres, hcpres, appres) {
                 // process view
-                var locsid = params.locid ? params.locid : appres.HealthcareLocationId;
+                var locsid = localStorage.locid ? localStorage.locid : appres.HealthcareLocationId;
                 var hcpid = params.hcpid ? params.hcpid : appres.HcpId;
 
                 var view = $.View('//zoladex/views/patientappointment_addedit/init.ejs',
@@ -79,7 +79,8 @@ steal('jquery/controller',
                     Locs: locsres,
                     Types: typesres
                 });
-                localStorage.typeId = null;
+                localStorage.typeid = "";
+                localStorage.locid = "";
                 // insert html into form and call jquerymobile create on form
                 $('#EditAppointmentForm').html(view).trigger('create');
 

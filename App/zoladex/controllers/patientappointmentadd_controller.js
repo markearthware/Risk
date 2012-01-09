@@ -48,9 +48,10 @@ steal('jquery/controller',
                         }
                     });
 
-                    var params = Zoladex.QSUtils.getParams();
-                    var locsid = params.locid ? params.locid : -1;
-                    var hcpid = params.hcpid ? params.hcpid : -1;
+                    var locsid = localStorage.locid ? localStorage.locid : -1;
+                    var hcpid = localStorage.hcpId ? localStorage.hcpId : -1;
+                    localStorage.hcpId = "";
+                    localStorage.locid = "";
                     this.element.validate({ submitHandler: this.callback('onSubmit') });
                     var self = this;
 

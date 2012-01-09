@@ -142,7 +142,7 @@ steal(
                     return '';
                 }
 
-                $('#EditHcpForm').zoladex_hcp_edit('loadData');
+                //$('#EditHcpForm').zoladex_hcp_edit('loadData');
 
                 return;
             }

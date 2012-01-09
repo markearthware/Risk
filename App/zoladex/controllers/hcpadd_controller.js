@@ -4,6 +4,7 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/hcp.js',
     '../models/hcppractice.js',
+    '../models/jobrole.js',
     '../lib/WebSQL/db.js',
     '../views/hcp_addedit/init.ejs',
     '../lib/livequery/jquery.livequery.js')
@@ -19,7 +20,7 @@ steal('jquery/controller',
                 },
                 highlight: function (element) {
                     if ($(element).is('select')) {
-                        element = $(element).prev().children(":first");
+                        element = $(element).prev().parent().children(":first");
                         $(element).removeClass("textinput");
                         $(element).addClass("errorHighlight");
                     }
@@ -31,7 +32,7 @@ steal('jquery/controller',
                 unhighlight: function (element) {
 
                     if ($(element).is('select')) {
-                        element = $(element).prev().children(":first");
+                        element = $(element).prev().parent().children(":first");
                         $(element).removeClass("errorHighlight");
                         $(element).addClass("textinput");
                     }
@@ -41,45 +42,52 @@ steal('jquery/controller',
                     }
                 }
             });
+
+            this.loadData();
         },
 
         '#PracticeName-button click': function () {
             $('.ui-selectmenu').livequery(function () {
                 $('#AddButton').remove();
-                $('.ui-header').append('<a href='+baseurl+ '/zoladex/pages/hcp/practicenew.htm?onsubmit=2 id="AddButton" class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-c" data-iconpos="notext" data-icon="plus" title="New Hospital/Practice" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">New</span><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>');
+                $('.ui-header').append('<a href=' + baseurl + '/zoladex/pages/hcp/practicenew.htm?onsubmit=2 id="AddButton" class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-c" data-iconpos="notext" data-icon="plus" title="New Hospital/Practice" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">New</span><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>');
             });
         },
-        
+
 
         loadData: function () {
             var locsdef = Zoladex.Models.Practice.findAll();
+            var rolesdef = Zoladex.Models.JobRole.findAll();
             var params = Zoladex.QSUtils.getParams();
-            $.when(locsdef).done(function (locsres) {
+
+            $.when(locsdef, rolesdef).done(function (locsres, rolesres) {
                 // process view
                 var locsid = [];
 
-                if (params.locid) {
-                    locsid.push({ id: params.locid });
+                if (localStorage.locid) {
+                    locsid.push({ id: localStorage.locid });
                 }
                 else {
                     locsid = -1;
                 }
 
-                var view = $.View('//zoladex/views/hcp_addedit/init.ejs', { id: "",
+                var view = $.View('//zoladex/views/hcp_addedit/init.ejs',
+                { id: "",
                     Title: "",
                     FirstName: "",
                     Surname: "",
+                    JobRole: "",
                     PracticeName: "",
                     Number: "",
                     Email: "",
-                    Street: "",
-                    Town: "",
-                    County: "",
-                    Postcode: "",
                     Notes: "",
                     Locs: locsres,
-                    LocsId: locsid
+                    LocsId: locsid,
+                    Roles: rolesres,
+                    RoleId: localStorage.jrid ? localStorage.jrid : -1
                 });
+
+                localStorage.locid = "";
+                localStorage.jrid = "";
 
                 $('#NewHcpForm').html(view).trigger('create');
             });
@@ -94,7 +102,7 @@ steal('jquery/controller',
 
                 var params = el.formParams();
 
-                var hcpDataStructure = { Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Street: params.Street, Town: params.Town, County: params.County, Postcode: params.Postcode, Notes: params.Notes };
+                var hcpDataStructure = { JobRole: params.JobRole, Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Notes: params.Notes };
 
                 new Zoladex.Models.Hcp(hcpDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
 
@@ -106,10 +114,14 @@ steal('jquery/controller',
             var form = $('form');
             var params = form.formParams();
 
-            for (var i = 0; i < params.PracticeName.length; i++) {
-                var structure = { HcpId: parseInt(hcpId), PracticeId: parseInt(params.PracticeName[i]) };
-                new Zoladex.Models.HcpPractice(structure).save();
+            if (params.PracticeName) {
+
+                for (var i = 0; i < params.PracticeName.length; i++) {
+                    var structure = { HcpId: parseInt(hcpId), PracticeId: parseInt(params.PracticeName[i]) };
+                    new Zoladex.Models.HcpPractice(structure).save();
+                }
             }
+
         },
 
         onInsertSuccess: function (obj, newid) {
@@ -122,7 +134,8 @@ steal('jquery/controller',
 
                 if (params.onsubmit == 0) {
                     //go back to add new appointment
-                    $.mobile.changePage('../calendar/patientappointmentnew.htm?hcpid=' + newid, 'flip', false, true);
+                    localStorage.hcpId = newid;
+                    $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
                 }
                 else if (params.onsubmit == 1) {
                     //go back to edit appointment
@@ -133,11 +146,18 @@ steal('jquery/controller',
                 $.mobile.changePage('hcplist.htm', 'pop', false, true);
             }
         },
-       
+
         onInsertFail: function () {
 
             steal.dev.log('professional has not been added');
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
+        },
+
+        '#JobRole change': function () {
+            if ($("#JobRole option:selected").val() == -1) {
+                $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
+                localStorage.onsubmit = 0;
+            }
         }
     });
 });

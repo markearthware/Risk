@@ -151,8 +151,8 @@ var localStorageDB = (function () {
     function initTables() {
 
         checkTableExists("Practices", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Practices (Name, Postcode) VALUES (?,?)', ['QE2', 'AL8 7QX']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO Practices (Name, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?)', ['QE2', 'AL8 7QX','107 oakdale','welwyn','herts','0101010101','sdfsd@werwe.com']);
             });
         });
 
@@ -163,8 +163,8 @@ var localStorageDB = (function () {
         });
 
         checkTableExists("HealthcareProfessionals", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, Telephone, Email, Street, Town, County, Postcode, Notes)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, Telephone, Email, Street, Town, County, Postcode, Notes) VALUES (?,?,?,?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk', 'Oak Lane', 'Letchworth', 'Herts', 'AL8 7UY', 'On call hours: 6am - 11pm everyday']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, Telephone, Email, JobRole INTEGER, Notes)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, Telephone, Email, JobRole, Notes) VALUES (?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk',1, 'On call hours: 6am - 11pm everyday']);
             });
         });
 
@@ -183,6 +183,25 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Surgery")');
                 tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Chemotherapy")');
                 tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Radiotherapy")');
+            });
+        });
+
+        checkTableExists("JobRoles", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS JobRoles (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
+                // populate
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("GP")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Practice Nurse")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Urologist")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Urology Secretary")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Clinical Nurse Specialist")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Oncologist")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Oncology Secretary")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Radiotherapist")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Chemotherapy Nurse")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Key Worker")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("District Nurse")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Continence Advisor")');
             });
         });
 

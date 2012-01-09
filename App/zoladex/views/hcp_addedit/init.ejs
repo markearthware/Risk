@@ -13,32 +13,43 @@ function isInLocsId(list, id){
 
 <label for="PracticeName">Hospital:</label>
 
-<select id="PracticeName" name="PracticeName" class='practiceSelect textinput required' multiple="multiple" data-native-menu="false">
-    <option value="">Select</option>
+<select id="PracticeName" name="PracticeName" class='practiceSelect' multiple="multiple" data-native-menu="false">
+    <option value="">Select Hospital</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
 		<option <% if(isInLocsId(this.LocsId,this.Locs[i].id)){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>  
 </select>
 
+<label for="JobRole">Job Role:</label>
+<select id="JobRole" name="JobRole">
+    <option value="">Select Job Role</option>
+	<%for(var i = 0; i < this.Roles.length; i++){ %>
+		<option <% if(this.RoleId == this.Roles[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Roles[i].id %>"><%= this.Roles[i].Name %></option>
+	<%}%> 
+	<option value = "-1">Add new</option> 
+</select>
+
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
-<label data-inline="true" for="title">Title</label>
-<input type="text" name="Title" id="Title" class="textinput required" value="<%= this.Title %>" />
+
+<label data-inline="true" for="title">Title:</label>
+<select id="Title" name="Title" class='textinput required'>
+    <option value="">Select Title</option>
+	<option value="Dr" <% if(this.Title == "Dr"){ %> selected="selected" <% } %> >Dr</option>
+	<option value="Mr" <% if(this.Title == "Mr"){ %> selected="selected" <% } %> >Mr</option>
+	<option value="Mrs" <% if(this.Title == "Mrs"){ %> selected="selected" <% } %> >Mrs</option>  
+	<option value="Miss" <% if(this.Title == "Miss"){ %> selected="selected" <% } %> >Miss</option>    
+	<option value="Ms" <% if(this.Title == "Ms"){ %> selected="selected" <% } %> >Ms</option>
+	<option value="Professor" <% if(this.Title == "Professor"){ %> selected="selected" <% } %> >Professor</option>    
+</select>
+
 <label data-inline="true" for="firstname">First Name:</label>
-<input type="text" name="FirstName" id="FirstName" class="textinput required" value ="<%= this.FirstName %>" />
+<input type="text" name="FirstName" id="FirstName" value ="<%= this.FirstName %>" />
 <label data-inline="true" for="surname">Surname:</label>
 <input type="text" name="Surname" id="Surname"  class="textinput required" value="<%= this.Surname %>" />
 <label data-inline="true" for="number">Number:</label>
-<input type="tel" name="Telephone" id="Telephone" class="textinput required" value="<%= this.Telephone %>"   />
+<input type="tel" name="Telephone" id="Telephone" value="<%= this.Telephone %>"   />
 <label data-inline="true" for="email">Email:</label>
-<input type="email" name="Email" id="Email" class="textinput required email" value="<%= this.Email %>"   />
-<label data-inline="true" for="street">Street:</label>
-<input type="text" name="Street" id="Street" class="textinput required" value="<%=this.Street%>"  />
-<label data-inline="true" for="town">Town:</label>
-<input type="text" name="Town" id="Town" class="textinput required" value="<%=this.Town%>" />
-<label data-inline="true" for="county">County:</label>
-<input type="text" name="County" id="County" class="textinput required" value="<%=this.County%>" />
-<label data-inline="true" for="postcode">Post code:</label>
-<input type="text" name="Postcode" id="Postcode" class="textinput required" value="<%=this.Postcode%>" />
+<input type="email" name="Email" id="Email" class="email" value="<%= this.Email %>"   />
 <label data-inline="true" for="notes">Notes:</label>
 <input type="text" name="Notes" id="Notes" value="<%=this.Notes%>" />
 
