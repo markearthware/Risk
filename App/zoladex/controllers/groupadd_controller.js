@@ -27,9 +27,7 @@ steal('jquery/controller',
                 }
             });
             
-            var view = $.View('//zoladex/views/group_addedit/init.ejs', { id: "",
-                Name: ""
-            });
+            var view = $.View('//zoladex/views/group_addedit/init.ejs', {});
 
             $('#NewGroupForm').html(view);
         },
@@ -41,7 +39,17 @@ steal('jquery/controller',
 
                 var params = el.formParams();
 
-                var structure = { Name: params.Name };
+                var structure =
+                {   
+                    ContactName : params.ContactName,
+                    County: params.County,
+                    Email: params.Email,
+                    Postcode: params.Postcode,
+                    Name: params.Name,
+                    Street: params.Street,
+                    Telephone: params.Telephone,
+                    Town: params.Town
+                };
 
                 new Zoladex.Models.Group(structure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }

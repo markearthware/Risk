@@ -26,7 +26,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['Groups','HcpPractices','HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
+        var tables = ['Groups', 'HcpPractices', 'HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {
@@ -152,19 +152,20 @@ var localStorageDB = (function () {
 
         checkTableExists("Practices", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Practices (Name, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?)', ['QE2', 'AL8 7QX','107 oakdale','welwyn','herts','0101010101','sdfsd@werwe.com']);
+                tx.executeSql('INSERT INTO Practices (Name, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?)', ['QE2', 'AL8 7QX', '107 oakdale', 'welwyn', 'herts', '0101010101', 'sdfsd@werwe.com']);
             });
         });
 
+
         checkTableExists("Groups", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Groups (Name) VALUES (?)', ['A Group']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, ContactName, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO Groups (Name, ContactName, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?,?)', ['Cancer Crew', 'John Smith', 'AL8 7QX', '107 oakdale', 'welwyn', 'herts', '0101010101', 'sdfsd@werwe.com']);
             });
         });
 
         checkTableExists("HealthcareProfessionals", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, Telephone, Email, JobRole INTEGER, Notes)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, Telephone, Email, JobRole, Notes) VALUES (?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk',1, 'On call hours: 6am - 11pm everyday']);
+                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, Telephone, Email, JobRole, Notes) VALUES (?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk', 1, 'On call hours: 6am - 11pm everyday']);
             });
         });
 
@@ -177,12 +178,19 @@ var localStorageDB = (function () {
             // create table
             tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("PSA test")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Follow up")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Zoladex injection")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Surgery")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Chemotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Blood test")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Hormone injection")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Out-patients")');
                 tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Radiotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Chemotherapy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("GP")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Practice Nurse")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("CT scan")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("MRI scan")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Ultrasound scan")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Flexible Cystoscopy")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Bone scan")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Trans Rectal Ultrasound (TRUS)")');
             });
         });
 
@@ -216,10 +224,26 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Description, WarningSign INTEGER)', [], function (tx, result) {
 
                 // populate
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain in lower Back", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Vomiting", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Bone Pain", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain in your loins, hips or lower back", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Blood in urine", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Blood in semen", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Unable to pass water", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain in legs and thighs (Sciatica)", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Loss of feeling or movement in your legs", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Weight loss", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Tiredness", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Dizziness", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Problems getting an erection (impotence)", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Loss of sex drive", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Sweating", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Hot flushes", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Difficulty or pain when peeing", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Having to rush to the toilet to pass water", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Frequent visits to toilet especially at night", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Starting, stopping or dribbling when peeing", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Leaking urine (incontinence)", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("A feeling of not having emptied bladder properly", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain when you ejaculate", 0)');
 
             });
         });

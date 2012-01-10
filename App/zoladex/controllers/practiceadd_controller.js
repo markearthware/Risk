@@ -41,7 +41,15 @@ steal('jquery/controller',
 
                 var params = el.formParams();
 
-                var practiceDataStructure = { Name: params.Name };
+                var practiceDataStructure = {
+                    County: params.County,
+                    Email: params.Email,
+                    Postcode: params.Postcode,
+                    Name: params.Name,
+                    Street: params.Street,
+                    Telephone: params.Telephone,
+                    Town: params.Town
+                };
 
                 new Zoladex.Models.PracticeB(practiceDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }
@@ -53,7 +61,7 @@ steal('jquery/controller',
             var params = Zoladex.QSUtils.getParams();
 
             if (params.onsubmit) {
-                
+
                 localStorage.locid = newid;
                 if (params.onsubmit == 0) {
                     //go back to add new appointment

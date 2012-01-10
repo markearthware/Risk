@@ -1,14 +1,36 @@
 ﻿<input id="id" type="hidden" value="<%= this.id %>" />
 <li data-theme="d">
+	<a href="#">
   <strong>Name: </strong><%=this.Name%>
-</li>
-<li  data-theme="d">
-	<strong>Address: </strong><%=this.Street%> <%=this.Town%> <%=this.County%> <%=this.Postcode%>
+  </a>
 </li>
 <li data-theme="d">
+<a href="tel:<%=this.Telephone%>">
   <strong>Telephone: </strong><%=this.Telephone%>
+  </a>
+</li>
+<li data-theme="d">
+	<% if(this.Email){ %>
+	<a href="mailto:<%=this.Email%>">
+	<strong>Email: </strong><%=this.Email%>
+	</a> 
+	<% } else { %>
+	<a href="#">
+	<strong>Email: </strong>
+	</a>
+	<% } %>
 </li>
 <li  data-theme="d">
-	<strong>Email: </strong><%=this.Email%>
+	<a href="#">
+	<strong>Address: </strong>
+	<%=this.Street%> <%=this.Town%> <%=this.County%> <%=this.Postcode%>
+	</a>
 </li>
+<% if(this.Postcode){ %>
+	<li data-theme="d">
+		<a target="_blank" href="http://maps.google.com/maps?q=" + <%=this.Postcode%> + ", UK">
+			Touch for directions to <%=this.Name%> 
+		</a>
+	</li>
+<%}%>
 

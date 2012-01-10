@@ -11,10 +11,7 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.PracticeDetails', {
     },
     {
-        postcode: null,
-
         init: function () {
-            steal.dev.log("test1");
             $.mobile.showPageLoadingMsg();
         },
 
@@ -38,7 +35,16 @@ steal('jquery/controller',
 
             $('#EditPracticeButton').attr('href', editLink);
 
-            var view = this.view('//zoladex/views/practice_details/init.ejs', data);
+            var view = this.view('//zoladex/views/practice_details/init.ejs', {
+                County : data.County,
+                Email : data.Email,
+                Postcode: data.Postcode,
+                Name: data.Name,
+                Street: data.Street,
+                Telephone: data.Telephone,
+                Town: data.Town,
+                id: data.id
+            });
 
             $('#PracticeDetailsList', this.element).append(view);
 
@@ -47,11 +53,6 @@ steal('jquery/controller',
             $('#DeletePracticeButton').attr("href", "dialog/practiceconfirmdialog.htm?id=" + data.id);
             steal.dev.log("test3");
             $.mobile.hidePageLoadingMsg();
-        },
-
-        '#AddressLink click': function () {
-            var url = 'http://maps.google.com/maps?q=' + this.postcode + ', UK';
-            window.location = url;
         }
     });
 });

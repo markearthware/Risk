@@ -66,7 +66,16 @@ steal('jquery/controller',
 
             this.currentId = data.id;
 
-            var view = $.View('//zoladex/views/practice_addedit/init.ejs', data);
+            var view = $.View('//zoladex/views/practice_addedit/init.ejs', {
+                County : data.County,
+                Email : data.Email,
+                Postcode: data.Postcode,
+                Name: data.Name,
+                Street: data.Street,
+                Telephone: data.Telephone,
+                Town: data.Town,
+                id: data.id
+            });
 
             var form = $('#EditPracticeForm');
 
