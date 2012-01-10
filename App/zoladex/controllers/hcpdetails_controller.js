@@ -12,7 +12,6 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.HcpDetails', {
     },
     {
-        postcode: null,
 
         init: function () {
 
@@ -40,33 +39,26 @@ steal('jquery/controller',
 
                 $('#EditHcpButton').attr('href', editLink);
 
-                    var view = $.View('//zoladex/views/hcp_details/init.ejs', {
-                        id: hcpres.id,
-                        Title: hcpres.Title,
-                        FirstName: hcpres.FirstName,
-                        Surname: hcpres.Surname,
-                        Practices: practicesres ? practicesres : 'None',
-                        Telephone: hcpres.Telephone,
-                        Email: hcpres.Email,
-                        JobRole: hcpres.Name,
-                        Notes: hcpres.Notes
-                    });
-
-                    //$('#HcpDetailsList', this.element).append(view);
-
-                    $('#HcpDetailsList').html(view).trigger('create');
-
-                    $('#HcpDetailsList').listview('refresh');
-
-                    $('#DeleteHcpButton').attr("href", "dialog/hcpconfirmdialog.htm?id=" + params.id);
-
-                    $.mobile.hidePageLoadingMsg();
+                var view = $.View('//zoladex/views/hcp_details/init.ejs', {
+                    id: hcpres.id,
+                    Title: hcpres.Title,
+                    FirstName: hcpres.FirstName,
+                    Surname: hcpres.Surname,
+                    Practices: practicesres ? practicesres : 'None',
+                    Telephone: hcpres.Telephone,
+                    Email: hcpres.Email,
+                    JobRole: hcpres.Name,
+                    Notes: hcpres.Notes
                 });
-        }
-        //        '#AddressLink click': function () {
-        //            var url = 'http://maps.google.com/maps?q=' + this.postcode + ', UK';
 
-        //            window.location = url;
-        //        }
+                $('#HcpDetailsList', this.element).append(view);
+
+                $('#HcpDetailsList').listview('refresh');
+
+                $('#DeleteHcpButton').attr("href", "dialog/hcpconfirmdialog.htm?id=" + params.id);
+
+                $.mobile.hidePageLoadingMsg();
+            });
+        }
     });
 });

@@ -1,6 +1,6 @@
 var localStorageDB = (function () {
 
-    var dropTables = false; //todo remove before production
+    var dropTables = true; //todo remove before production
     var db = null,
     loadedCallback = null;
 
@@ -26,7 +26,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['Groups', 'HcpPractices', 'HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
+        var tables = ['JobRoles','Groups', 'HcpPractices', 'HealthcareProfessionals', 'Appointments', 'HealthcareLocations', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'Categories', 'MyQuestions', 'Questions', 'sqlite_sequence'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {

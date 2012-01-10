@@ -5,8 +5,7 @@ steal('jquery/controller',
     '../models/hcp.js',
     '../models/jobrole.js',
     '../lib/WebSQL/db.js',
-    '../views/hcp_addedit/init.ejs',
-    '../lib/livequery/jquery.livequery.js')
+    '../views/hcp_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpEdit', {
     },
@@ -113,13 +112,6 @@ steal('jquery/controller',
                 form.trigger('create');
 
                 $.mobile.hidePageLoadingMsg();
-            });
-        },
-
-        '#PracticeName-button click': function () {
-            $('.ui-selectmenu').livequery(function () {
-                $('#AddButton').remove();
-                $('.ui-header').append('<a href=' + baseurl + '/zoladex/pages/hcp/practicenew.htm?onsubmit=3&id=' + $('#id').val() + ' id="AddButton" class="ui-btn-right ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-c" data-iconpos="notext" data-icon="plus" title="New Hospital/Practice" data-theme="c"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">New</span><span class="ui-icon ui-icon-plus ui-icon-shadow"></span></span></a>');
             });
         },
 
