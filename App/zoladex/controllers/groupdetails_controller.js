@@ -11,8 +11,7 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.GroupDetails', {
     },
     {
-        postcode: null,
-
+ 
         init: function () {
             steal.dev.log("test1");
             $.mobile.showPageLoadingMsg();
@@ -47,11 +46,8 @@ steal('jquery/controller',
             $('#DeleteGroupButton').attr("href", "dialog/groupconfirmdialog.htm?id=" + data.id);
             steal.dev.log("test3");
             $.mobile.hidePageLoadingMsg();
-        },
-
-        '#AddressLink click': function () {
-            var url = 'http://maps.google.com/maps?q=' + this.postcode + ', UK';
-            window.location = url;
         }
+
+     
     });
 });

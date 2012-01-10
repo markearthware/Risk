@@ -3,27 +3,27 @@
 <% } %>
 <label for="HcpId">HCP</label>
 <select class="ddl" id="HcpId" name="HcpId">
-    <option value="-1">no HCP</option>
-	<option value="0">add new HCP</option>
+    <option value="-1">Select HCP</option>
 	<%for(var i = 0; i < this.Hcps.length ; i++){ %>
 		<option <% if(this.HcpId == this.Hcps[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Hcps[i].id %>"><%= this.Hcps[i].FullName() %></option>
-	<%}%>     
+	<%}%>
+	<option value="0">Add new</option>>     
 </select>
 <label for="HealthcareLocationId">Location:</label>
 <select class="ddl" id="HealthcareLocationId" name="HealthcareLocationId">
-    <option value="-1">no location</option>
-	<option value="0">add new Hospital/Practice</option>
+    <option value="-1">Select Hospital/Surgery</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){%>
 		<option <% if(this.LocsId == this.Locs[i].id){ %> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
-	<%}%>     
+	<%}%>   
+	<option value="0">Add new</option>  
 </select>
 <label for="TypeId">Type:</label>
 <select class="ddl textinput required" id="TypeId" name="TypeId">
-    <option value="">select appointment type</option>
+    <option value="">Select Appointment Type</option>
     <%for(var i = 0; i < this.Types.length ; i++){ %>	
     <option <% if(this.TypeId == this.Types[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Types[i].id %>"><%= this.Types[i].Name %></option>
     <%}%>
-	<option id="OtherAppointmentType" value="-1">Other</option>
+	<option id="OtherAppointmentType" value="-1">Add new</option>
 </select>
 <input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime ? this.StartDateTime.getTime() : '' %>" />
 <label for="StartDate">Date:</label>
