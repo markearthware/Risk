@@ -3,10 +3,9 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/psalevel.js',
-    '../lib/WebSQL/db.js'
-//    '../lib/zingChart/license.js',
-//    '../lib/zingChart/md5-min.js',
-//    '../lib/zingChart/zingchart-html5beta-min.js'
+    '../lib/WebSQL/db.js',
+    '../lib/jqPlot/jqplot.js'
+    
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.LevelChart', {
@@ -20,34 +19,16 @@ steal('jquery/controller',
             new Zoladex.Models.Psalevel.findAll().done(this.callback('onDataLoad'));
         },
         onDataLoad: function (data) {
-            steal.dev.log(data);
 
             var series = new Array();
-            var labels = new Array();
 
-            $.each(data, function (index, element) {
-                series.push(element.PsaLevel);
-                labels.push(element.Date);
+            $.each(data, function () {
+                series.push([this.Date, this.PsaLevel]);
             });
             
-            zingchart.render({
-                id : 'PsaChartContainer',
-                output : 'canvas',
-                width : 320,
-                height : 320,
-                data : {
-                    "graphset": [
-                      {
-                          "type" : "line",
-                          "scale-x" : {
-                              "values" : labels
-                          }, 
-                          "series" : [
-                         {
-                             "values": series
-                         }]
-                      }]
-                }
+            $.jqplot('PsaChartContainer', [series], {
+                axes: { xaxis: { renderer: $.jqplot.DateAxisRenderer} },
+                series: [{ lineWidth: 4, markerOptions: { style: 'square'}}]
             });
         }
     });
