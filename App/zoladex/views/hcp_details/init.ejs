@@ -1,13 +1,13 @@
 <input id="id" type="hidden" value="<%= this.id %>" />
 
-<li>
+<li data-icon="false">
 	<a href="#">
 		<strong>Name: </strong><%=this.Title%> <%=this.FirstName%> <%=this.Surname%>
 	</a>
 </li>
 
-<li>
-	<a href="#">
+<li data-icon="false">
+	<a href="#" >
 		<strong>Job Role: </strong><%=this.JobRole%>
 	</a>
 </li>
@@ -43,9 +43,9 @@
 
 <% } %>
 
-<li>
-	<a>
-	Notes: <%=this.Notes%>
+<li data-icon="false">
+	<a >
+	<div class="notruncate">Notes: <%=this.Notes%></div>
 	</a>
 </li>
 

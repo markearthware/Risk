@@ -71,6 +71,7 @@ steal('jquery/controller',
             var practiceres = null;
             var hcpres = null;
             var rolesdef = Zoladex.Models.JobRole.findAll();
+            console.log("hellloooooooooo: " + localStorage.hcpId);
             var hcpdef = Zoladex.Models.Hcp.findOne(localStorage.hcpId ? localStorage.hcpId : params.id);
             var selectedpracticesdef = Zoladex.Models.Practice.findAll({ hcpid: params.id });
             var practicesdef = Zoladex.Models.Practice.findAll({ id: params.id });
@@ -133,6 +134,12 @@ steal('jquery/controller',
             else {
                 $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
             }
+        },
+
+        '#newpracticebutton click': function () {
+
+            localStorage.hcpId = $('#id').val();
+            $.mobile.changePage('practicenew.htm?onsubmit=3');
         },
 
         onUpdateSuccess: function (obj) {

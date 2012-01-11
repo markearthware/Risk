@@ -85,6 +85,12 @@ steal('jquery/controller',
             });
         },
 
+        '#newpracticebutton click': function () {
+
+            $.mobile.changePage('practicenew.htm?onsubmit=2');
+
+        },
+        
         submit: function (el, ev) {
 
             ev.preventDefault();

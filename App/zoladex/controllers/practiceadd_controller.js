@@ -73,7 +73,6 @@ steal('jquery/controller',
                 }
                 else if (params.onsubmit == 2) {
                     //go back to new hcp
-                    localStorage.locid = newid;
                     $.mobile.changePage('../hcp/hcpnew.htm', 'flip', false, true);
                 }
                 else if (params.onsubmit == 3) {

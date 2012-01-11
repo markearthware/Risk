@@ -9488,16 +9488,16 @@
         },
         
         'fr': {
-            monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
-            monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'],
+            monthNames: ['Janvier','F�vrier','Mars','Avril','Mai','Juin','Juillet','Ao�t','Septembre','Octobre','Novembre','D�cembre'],
+            monthNamesShort: ['Jan','F�v','Mar','Avr','Mai','Jun','Jul','Ao�','Sep','Oct','Nov','D�c'],
             dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
             dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
             formatString: '%Y-%m-%d %H:%M:%S'
         },
         
         'de': {
-            monthNames: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
-            monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
+            monthNames: ['Januar','Februar','M�rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+            monthNamesShort: ['Jan','Feb','M�r','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
             dayNames: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
             dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
             formatString: '%Y-%m-%d %H:%M:%S'
@@ -9512,18 +9512,18 @@
         },
         
         'ru': {
-            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-            monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
-            dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-            dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+            monthNames: ['??????','???????','????','??????','???','????','????','??????','????????','???????','??????','???????'],
+            monthNamesShort: ['???','???','???','???','???','???','???','???','???','???','???','???'],
+            dayNames: ['???????????','???????????','???????','?????','???????','???????','???????'],
+            dayNamesShort: ['???','???','???','???','???','???','???'],
             formatString: '%Y-%m-%d %H:%M:%S'
         },
         
         'ar': {
-            monthNames: ['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'آذار', 'حزيران','تموز', 'آب', 'أيلول',   'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
+            monthNames: ['????? ??????', '????', '????', '?????', '????', '??????','????', '??', '?????',   '????? ?????', '????? ??????', '????? ?????'],
             monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-            dayNames: ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'],
-            dayNamesShort: ['سبت', 'أحد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة'],
+            dayNames: ['?????', '?????', '???????', '????????', '????????', '??????', '??????'],
+            dayNamesShort: ['???', '???', '?????', '??????', '??????', '????', '????'],
             formatString: '%Y-%m-%d %H:%M:%S'
         },
         
