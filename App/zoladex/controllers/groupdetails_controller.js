@@ -28,8 +28,6 @@ steal('jquery/controller',
         },
 
         insertData: function (data) {
-            steal.dev.log("test2");
-            this.postcode = data.Postcode;
 
             $('#GroupDetailsPage h1').html(data.Name);
 
@@ -44,7 +42,7 @@ steal('jquery/controller',
             $('#GroupDetailsList').listview('refresh');
 
             $('#DeleteGroupButton').attr("href", "dialog/groupconfirmdialog.htm?id=" + data.id);
-            steal.dev.log("test3");
+            
             $.mobile.hidePageLoadingMsg();
         }
 

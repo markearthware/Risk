@@ -1,1 +1,1 @@
-﻿steal('./jquery.jqplot.js', './jquery.jqplot.css').then('./plugins/jqplot.dateAxisRenderer.js')
+steal('./jquery.jqplot.js', './jquery.jqplot.css').then('./plugins/jqplot.dateAxisRenderer.js')
