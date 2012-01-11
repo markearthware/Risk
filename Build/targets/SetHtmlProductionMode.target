@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Switches the script reference in a JavascriptMVC project's HTML page to use steal.production.js instead of steal.js -->
+  <Target Name="SetHtmlProductionMode"
+          DependsOnTargets="CopyStaticFilesToOutputFolder">
+
+    <FileUpdate Files="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\index.html" 
+             Regex="steal/steal\.js\?$(AppName)" 
+             ReplacementText="steal/steal.production.js?$(AppName)" />
+  </Target>
+
+</Project>

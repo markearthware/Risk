@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Zips up the deployable files for each map being built -->
+  <Target Name="DeployLocally"
+          DependsOnTargets="CopyStaticFilesToOutputFolder;
+                            SetHtmlProductionMode">
+
+    <ItemGroup>
+      <DeleteFiles Include="$(LocalDeploymentPath)\**\*.*" 
+                   Exclude="$(LocalDeploymentPath\.git\**\*.*"/>
+      <DeployFiles Include="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\**\*.*" />
+    </ItemGroup>
+
+    <MakeDir Directories="$(LocalDeploymentPath)"
+             ContinueOnError="true" />
+
+    <!-- Delete existing files (removing files individually as folder may be locked by IIS -->
+    <Delete Files="@DeleteFiles"
+            TreatErrorsAsWarnings="True"/>
+
+    <Copy SourceFiles="@(DeployFiles)"
+          DestinationFolder="$(LocalDeploymentPath)\%(RecursiveDir)" />
+
+  </Target>
+
+</Project>

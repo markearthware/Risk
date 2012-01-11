@@ -1,13 +1,22 @@
-<?xml version="1.0" encoding="Windows-1252"?>
-<Project DefaultTargets="CI"
-         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <SolutionRoot>$(MSBuildProjectDirectory)\..</SolutionRoot>
-    <TestDeploymentPath>C:\inetpub\wwwroot\zoladex</TestDeploymentPath>
     <TargetsPath>$(MSBuildProjectDirectory)\targets</TargetsPath>
+    <PropertiesPath>$(MSBuildProjectDirectory)\properties</PropertiesPath>
+    <MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\MSBuildCommunityTasks</MSBuildCommunityTasksPath>
   </PropertyGroup>
 
-  <Import Project="$(TargetsPath)\DeployForTest.target" />
+  <Import Project="$(PropertiesPath)\VersionNumber.proj" />
+  <Import Project="$(PropertiesPath)\Paths.proj" />
 
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
+
+  <Import Project="$(TargetsPath)\Clean.target" />
+  <Import Project="$(TargetsPath)\BuildStaticContent.target" />
+  <Import Project="$(TargetsPath)\CopyStaticFilesToOutputFolder.target" />
+  <Import Project="$(TargetsPath)\SetHtmlProductionMode.target" />
+  <Import Project="$(TargetsPath)\PackageStaticContent.target" />
+  <Import Project="$(TargetsPath)\DeployLocally.target" />
+  <Import Project="$(TargetsPath)\PhoneGapBuild.target" />
 </Project>

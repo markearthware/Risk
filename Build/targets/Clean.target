@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="Clean">
+
+    <RemoveDir Directories="$(DropsPath)"
+               ContinueOnError="true" />
+
+    <MakeDir Directories="$(DropsPath)"
+             ContinueOnError="false" />
+    
+  </Target>
+
+</Project>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Copies the files required to deploy a JavascriptMVC application to the drops folder -->
+  <Target Name="CopyStaticFilesToOutputFolder">
+    <!--DependsOnTargets="BuildStaticContent"-->
+
+    <MakeDir Directories="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\"></MakeDir>
+    <MakeDir Directories="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\steal\"></MakeDir>
+    <MakeDir Directories="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\$(AppName)\"></MakeDir>
+    <MakeDir Directories="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\$(AppName)\pages\"></MakeDir>
+
+    <!-- Copy main app homepage -->
+    <Copy SourceFiles="$(SitePath)\index.html"
+          DestinationFolder="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\" />
+
+    <!-- Copy packaged js and css -->
+    <Copy SourceFiles="$(SitePath)\$(AppName)\production.js;
+                       $(SitePath)\$(AppName)\production.css"
+          DestinationFolder="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\$(AppName)" />
+
+    <!-- Copy steal -->
+    <Copy SourceFiles="$(StealPath)\steal.production.js"
+          DestinationFolder="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\steal\" />
+
+    <ItemGroup>
+      <Images Include="$(SitePath)\$(AppName)\lib\jQueryMobile\images\**\*.*">
+        <DestinationFolder>$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\$(AppName)\lib\jQueryMobile\images\</DestinationFolder>
+      </Images>
+      <Pages Include="$(SitePath)\$(AppName)\pages\**\*.*">
+        <DestinationFolder>$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\$(AppName)\pages\</DestinationFolder>
+      </Pages>
+    </ItemGroup>
+
+    <Copy SourceFiles="@(Images)"
+          DestinationFolder="%(DestinationFolder)\%(RecursiveDir)" />
+
+    <Copy SourceFiles="@(Pages)"
+          DestinationFolder="%(DestinationFolder)\%(RecursiveDir)" />
+  </Target>
+
+</Project>

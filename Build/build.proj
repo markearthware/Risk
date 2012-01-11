@@ -4,8 +4,20 @@
 
   <Import Project="$(MSBuildProjectDirectory)\GlobalImports.proj" />
 
+  <!-- Builds and packages static content. Parameters need to be passed to include the specific JMVC apps (see Properties/StaticContentPaths, the parameters
+       are used to conditionally add ItemGroups containing StaticProjects elements. -->
   <Target Name="CI">
-    <CallTarget Targets="DeployForTest" />
+    <CallTarget Targets="Clean;
+                         BuildStaticContent;
+                         CopyStaticFilesToOutputFolder;
+                         SetHtmlProductionMode;
+                         PackageStaticContent;
+                         DeployLocally" />
+  </Target>
+
+  <Target Name="PhoneGap">
+    <CallTarget Targets="CI;
+                         PhoneGapBuild" />
   </Target>
 
 </Project>

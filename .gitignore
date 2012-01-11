@@ -15,3 +15,6 @@ _ReSharper.*
 *.dbproj.user
 *.dbmdl
 error-*.xml
+drops
+production.js
+production.css

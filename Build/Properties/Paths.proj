@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Framework properties -->
+  <PropertyGroup>
+    <SolutionRoot>$(MSBuildProjectDirectory)\..</SolutionRoot>
+    <DropsPath>$(SolutionRoot)\drops</DropsPath>
+    <SitePath>$(SolutionRoot)\App</SitePath>
+    <JsPath>$(SitePath)\js</JsPath>
+    <StealPath>$(SitePath)\steal</StealPath>
+    <AppName>zoladex</AppName>
+    <LocalDeploymentPath>C:\inetpub\wwwroot\$(AppName)</LocalDeploymentPath>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Uses the JavascriptMVC build command to combine and minify JS and CSS for a map. -->
+  <Target Name="BuildStaticContent"
+          DependsOnTargets="Clean">
+
+    <Exec Command="$(JsPath) $(AppName)/scripts/build.js" 
+          ContinueOnError="false" 
+          CustomErrorRegularExpression="Error|Exception|ERROR"
+          WorkingDirectory="$(SitePath)" />
+    
+  </Target>
+  
+</Project>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Zips up the deployable files for each map being built -->
+  <Target Name="PackageStaticContent"
+          DependsOnTargets="CopyStaticFilesToOutputFolder;
+                            SetHtmlProductionMode">
+
+    <ItemGroup>
+      <PackageFiles Include="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\**\*.*">
+        <WorkingFolder>$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)</WorkingFolder>
+        <ZipFileName>$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber).zip</ZipFileName>
+      </PackageFiles>
+    </ItemGroup>
+
+    <Zip ZipFileName="%(PackageFiles.ZipFileName)"
+         Files="@(PackageFiles)"
+         WorkingDirectory="%(PackageFiles.WorkingFolder)"
+         Flatten="False" />
+
+    <Message Text="##teamcity[publishArtifacts '%(PackageFiles.ZipFileName)']"  />
+
+  </Target>
+
+</Project>
