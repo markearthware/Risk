@@ -95,3 +95,8 @@ div.ui-block-b-z .ui-btn {
 #FaqListPage div {
     word-wrap:break-word;
 }
+
+.notruncate {
+    white-space: normal;
+    word-wrap:break-word;
+}
