@@ -63,3 +63,35 @@ img.ui-li-thumb {
     display: inline-block;
     width: 56%;
 }
+
+
+.ui-block-a-z
+{
+    display: inline-block;
+    width: 90% !important;
+}
+
+div.ui-block-b-z
+{
+    display: inline-block;
+    width: 6% !important;
+    padding: -10px;
+
+}
+
+div.ui-block-b-z .ui-btn {
+        margin-bottom: -7px;
+        margin-left: -5px;
+}
+
+#FaqListPage h3 div {
+    white-space: normal;
+} 
+
+#FaqListPage h2 div {
+    white-space: normal;
+}
+
+#FaqListPage div {
+    word-wrap:break-word;
+}
