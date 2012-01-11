@@ -11,6 +11,11 @@ steal('jquery/controller',
 
         '#confirmYes click': function (el) {
 
+            if ($('#Name').val().length < 1) {
+                $('.ui-dialog').dialog('close');
+                return;
+            }
+
             var structure = { Name: $('#Name').val() };
 
             new Zoladex.Models.JobRole(structure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));

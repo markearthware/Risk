@@ -6,8 +6,8 @@ steal('jquery/controller',
     .then('../views/tab_bar/init.ejs', function ($) {
         $.Controller('Zoladex.Controllers.TabBar', {
             init: function () {
-                
-                
+
+
                 this.element.html(this.view());
 
                 switch (this.options.page) {
@@ -24,10 +24,9 @@ steal('jquery/controller',
                         this.selectSupport();
                         break;
                     default:
-                        //select nothing
+                        steal.dev.log("nothing selected");
                 }
             },
-
             generateRelativeUrl: function (currentUrl) {
                 return str;
             },

@@ -11,6 +11,11 @@ steal('jquery/controller',
 
         '#confirmYes click': function (el) {
 
+            if ($('#Name').val().length < 1) {
+                $('.ui-dialog').dialog('close');
+                return;
+            }
+
             var structure = { Name: $('#Name').val() };
 
             new Zoladex.Models.AppointmentType(structure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
@@ -19,7 +24,7 @@ steal('jquery/controller',
             $('.ui-dialog').dialog('close');
         },
         onInsertSuccess: function (obj, typeid) {
-            
+
             if (localStorage.onsubmit == 0) {
                 //go back to add new appointment
                 localStorage.typeid = typeid;

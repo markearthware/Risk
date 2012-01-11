@@ -456,7 +456,9 @@ steal(
         // dont bother for the homepage or for the simple dialogs
         if (pageClass != "index") {
 
-            $('.tabBarContainer').zoladex_tab_bar('destroy');
+            if ($('.tabBarContainer').controllers().length > 0) {
+                $('.tabBarContainer').zoladex_tab_bar('destroy');                
+            }
                 
             $('.tabBarContainer').zoladex_tab_bar({ page: pageClass });
         }

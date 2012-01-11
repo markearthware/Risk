@@ -95,13 +95,9 @@ div.ui-block-b-z .ui-btn {
 .overflow
 {
     white-space: normal;
+     word-wrap:break-word;
 }
 
 #FaqListPage div {
-    word-wrap:break-word;
-}
-
-.notruncate {
-    white-space: normal;
     word-wrap:break-word;
 }

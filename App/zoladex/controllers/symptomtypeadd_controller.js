@@ -11,7 +11,12 @@ steal('jquery/controller',
 
         '#confirmYes click': function (el) {
 
-            var structure = { Description : $('#Name').val(), WarningSign: -1 };
+            if ($('#Name').val().length < 1) {
+                $('.ui-dialog').dialog('close');
+                return;
+            }
+
+            var structure = { Description: $('#Name').val(), WarningSign: -1 };
 
             new Zoladex.Models.Symptom(structure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
         },
@@ -20,19 +25,19 @@ steal('jquery/controller',
         },
         onInsertSuccess: function (obj, stid) {
 
-                if (localStorage.onsubmit == 0) {
-                    //go back to add new appointment
-                    localStorage.stid = stid;
-                    $.mobile.changePage('../symptoms/symptomrecord.htm', 'flip', false, true);
-                } 
-                else if (localStorage.onsubmit == 1) {
-                    //go back to add new appointment
-                    localStorage.stid = stid;
-                    var id = localStorage.symptomId;
-                    localStorage.symptomId = null;
-                    $.mobile.changePage('../symptoms/symptomedit.htm?id=' + id, 'flip', false, true);
-                }
-          
+            if (localStorage.onsubmit == 0) {
+                //go back to add new appointment
+                localStorage.stid = stid;
+                $.mobile.changePage('../symptoms/symptomrecord.htm', 'flip', false, true);
+            }
+            else if (localStorage.onsubmit == 1) {
+                //go back to add new appointment
+                localStorage.stid = stid;
+                var id = localStorage.symptomId;
+                localStorage.symptomId = null;
+                $.mobile.changePage('../symptoms/symptomedit.htm?id=' + id, 'flip', false, true);
+            }
+
         },
         onInsertFail: function () {
             alert("fail");
