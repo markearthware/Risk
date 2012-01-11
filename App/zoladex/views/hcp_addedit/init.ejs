@@ -10,15 +10,24 @@ function isInLocsId(list, id){
 %>
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
+<label for="PracticeName">Hospital/Surgery:</label>
 
-<label for="PracticeName">Hospital:</label>
+<div class="ui-grid-a">
+		<div class="ui-block-a-z">
+			<select id="PracticeName" name="PracticeName" class='practiceSelect' multiple="multiple" data-native-menu="false">
+				<option value="">Select Hospital</option>
+				<%for(var i = 0; i < this.Locs.length ; i++){ %>
+					<option <% if(isInLocsId(this.LocsId,this.Locs[i].id)){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+				<%}%>  
+			</select>
+		</div>
 
-<select id="PracticeName" name="PracticeName" class='practiceSelect' multiple="multiple" data-native-menu="false">
-    <option value="">Select Hospital</option>
-	<%for(var i = 0; i < this.Locs.length ; i++){ %>
-		<option <% if(isInLocsId(this.LocsId,this.Locs[i].id)){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
-	<%}%>  
-</select>
+		<div class="ui-block-b-z">
+			<div>
+				<a data-icon="plus" data-iconpos="notext" data-role="button" href="practicenew.htm?onsubmit=2"></a>
+			</div>
+		</div>  
+</div>
 
 <label for="JobRole">Job Role:</label>
 <select id="JobRole" name="JobRole">
