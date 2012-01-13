@@ -1,6 +1,6 @@
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
-<label for="PracticeName">Primary Location:</label>	
+<label class="bigLabel" for="PracticeName">Primary Location:</label>	
 <select id="PracticeName" name="PracticeName" class='practiceSelect'>
 	<option value="">Select Hospital</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
@@ -10,7 +10,7 @@
 </select>
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
-<label for="PracticeName2">Secondary Location:</label>	
+<label class="bigLabel" for="PracticeName2">Secondary Location:</label>	
 <select id="PracticeName2" name="PracticeName2" class='practiceSelect'>
 	<option value="">Select Hospital</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>

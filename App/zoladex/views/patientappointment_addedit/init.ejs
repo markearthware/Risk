@@ -1,7 +1,7 @@
 <% if (this.id) { %>
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <% } %>
-<label for="HcpId">HCP</label>
+<label class="bigLabel" for="HcpId">Healthcare Professional:</label>
 <select class="ddl" id="HcpId" name="HcpId">
     <option value="-1">Select HCP</option>
 	<%for(var i = 0; i < this.Hcps.length ; i++){ %>

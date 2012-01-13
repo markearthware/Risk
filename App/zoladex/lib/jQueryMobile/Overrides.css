@@ -59,6 +59,13 @@ img.ui-li-thumb {
     width: 37%;
 }
 
+.bigLabel
+{
+    font-size: 14px;
+    display: inline-block;
+    width: 100% !important;
+}
+
 #AddLevelsPage .ui-slider
 {
      display: inline-block;
