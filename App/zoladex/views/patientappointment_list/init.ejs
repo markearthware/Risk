@@ -24,7 +24,7 @@ currentdate=compare.getTime();
 <li data-role="list-divider"><%= $.scroller.formatDate('D d M yy', this[i].StartDateTime) %></li>
 <% } %>
 <li><a class="app-link" href="patientappointmentedit.htm?id=<%= this[i].id %>">
-    <h3><%= this[i].TypeName %></h3>
+    <h3><div class="overflow"><%= this[i].TypeName %></div></h3>
 	<% if(this[i].LocationName && this[i].LocationName.length>0){ %>
     <p><%= this[i].LocationName %></p>
     <% } %>
