@@ -1,34 +1,24 @@
-<%
-function isInLocsId(list, id){
-	
-	for(var i=0; i < list.length; i++){
-		if(id == list[i].id){
-		return true;
-		}
-	}
-}
-%>
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
-<label for="PracticeName">Hospital/Surgery:</label>
+<label for="PracticeName">Primary Hospital/Surgery:</label>	
+<select id="PracticeName" name="PracticeName" class='practiceSelect'>
+	<option value="">Select Hospital</option>
+	<%for(var i = 0; i < this.Locs.length ; i++){ %>
+		<option <%if(this.PLocId == this.Locs[i].id){%> <%= selected ='selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+	<%}%>  
+	<option value = "-1">Add new</option> 
+</select>
 
-<div class="ui-grid-a">
-		<div class="ui-block-a-z">
-			<select id="PracticeName" name="PracticeName" class='practiceSelect' multiple="multiple" data-native-menu="false">
-				<option value="">Select Hospital</option>
-				<%for(var i = 0; i < this.Locs.length ; i++){ %>
-					<option <% if(isInLocsId(this.LocsId,this.Locs[i].id)){%> <%= selected = 'selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
-				<%}%>  
-			</select>
-		</div>
-
-		<div class="ui-block-b-z">
-			<div>
-				<a data-icon="plus" data-iconpos="notext" data-role="button" id="newpracticebutton"></a>
-			</div>
-		</div>  
-</div>
-
+<input type="hidden" name="id" id="id" value="<%= this.id %>" />
+<label for="PracticeName2">Secondary Hospital/Surgery:</label>	
+<select id="PracticeName2" name="PracticeName2" class='practiceSelect'>
+	<option value="">Select Hospital</option>
+	<%for(var i = 0; i < this.Locs.length ; i++){ %>
+		<option <%if(this.SLocId == this.Locs[i].id){%> <%= selected ='selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
+	<%}%>  
+	<option value = "-1">Add new</option> 
+</select>
+	
 <label for="JobRole">Job Role:</label>
 <select id="JobRole" name="JobRole">
     <option value="">Select Job Role</option>

@@ -14,7 +14,6 @@ steal('jquery/controller',
 
             $.mobile.showPageLoadingMsg();
 
-
             $.validator.setDefaults({
                 errorPlacement: function (error, element) {
                     $(element).attr({ "title": error.text() });
@@ -53,7 +52,7 @@ steal('jquery/controller',
 
             var params = el.formParams();
 
-            var structure = { JobRole: params.JobRole, id: params.id, Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Notes: params.Notes };
+            var structure = { SecondaryPracticeId: params.PracticeName2, PrimaryPracticeId: params.PracticeName, JobRole: params.JobRole, id: params.id, Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Notes: params.Notes };
 
             if ($('#EditHcpForm').valid()) {
                 steal.dev.log('insert hcp form is valid, attempting to save to database...');
@@ -71,22 +70,45 @@ steal('jquery/controller',
             var practiceres = null;
             var hcpres = null;
             var rolesdef = Zoladex.Models.JobRole.findAll();
-            console.log("hellloooooooooo: " + localStorage.hcpId);
             var hcpdef = Zoladex.Models.Hcp.findOne(localStorage.hcpId ? localStorage.hcpId : params.id);
-            var selectedpracticesdef = Zoladex.Models.Practice.findAll({ hcpid: params.id });
             var practicesdef = Zoladex.Models.Practice.findAll({ id: params.id });
             var self = this;
             localStorage.hcpId = "";
 
-            $.when(hcpdef, selectedpracticesdef, practicesdef, rolesdef).done(function (hcpres, selectedpracticesres, practicesres, rolesres) {
+            $.when(hcpdef, practicesdef, rolesdef).done(function (hcpres, practicesres, rolesres) {
 
-                var locsids = [];
+
+                var locid, locid2;
 
                 if (localStorage.locid) {
-                    locsids.push({ id: localStorage.locid });
+                    locid = localStorage.locid;
                 }
                 else {
-                    locsids = selectedpracticesres;
+                    locid = "";
+                }
+
+                if (localStorage.locid2) {
+                    locid2 = localStorage.locid2;
+                }
+                else {
+                    locid2 = "";
+                }
+
+
+                if (localStorage.PracticeNameId) {
+                    locid = localStorage.PracticeNameId;
+                    localStorage.PracticeNameId = "";
+                }
+                else if (!locid) {
+                    locid = hcpres.PrimaryPracticeId;
+                }
+
+                if (localStorage.PracticeNameId2) {
+                    locid2 = localStorage.PracticeNameId2;
+                    localStorage.PracticeNameId2 = "";
+                }
+                else if (!locid2) {
+                    locid2 = hcpres.SecondaryPracticeId;
                 }
 
                 var view = $.View('//zoladex/views/hcp_addedit/init.ejs', {
@@ -98,12 +120,14 @@ steal('jquery/controller',
                     Email: hcpres.Email,
                     Notes: hcpres.Notes,
                     Locs: practicesres,
-                    LocsId: locsids ? locsids : -1,
+                    PLocId: locid,
+                    SLocId: locid2,
                     Roles: rolesres,
                     RoleId: localStorage.jrid ? localStorage.jrid : hcpres.JobRole
                 });
 
                 localStorage.locid = "";
+                localStorage.locid2 = "";
                 localStorage.jrid = "";
 
                 var form = $('#EditHcpForm');
@@ -116,41 +140,7 @@ steal('jquery/controller',
             });
         },
 
-        addPractices: function (hcpId) {
-            var form = $('form');
-            var params = form.formParams();
-
-            if (params.PracticeName) {
-                for (var i = 0; i < params.PracticeName.length; i++) {
-                    var structure = { HcpId: parseInt(hcpId), PracticeId: parseInt(params.PracticeName[i]) };
-                    if (i != params.PracticeName.length - 1) {
-                        new Zoladex.Models.HcpPractice(structure).save();
-                    }
-                    else {
-                        new Zoladex.Models.HcpPractice(structure).save(this.callback(this.onUpdateSuccess2));
-                    }
-                }
-            }
-            else {
-                $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
-            }
-        },
-
-        '#newpracticebutton click': function () {
-
-            localStorage.hcpId = $('#id').val();
-            $.mobile.changePage('practicenew.htm?onsubmit=3');
-        },
-
-        onUpdateSuccess: function (obj) {
-            var self = this;
-            //destroy all HcpPractice records where HcpId = obj.id
-            Zoladex.Models.HcpPractice.destroyByHcpId(obj.id).done(function () {
-                self.addPractices(obj.id);
-            });
-        },
-
-        onUpdateSuccess2: function () {
+        onUpdateSuccess: function () {
             steal.dev.log('edit worked');
             $.mobile.changePage('hcpdetails.htm?id=' + $('#id').val());
         },
@@ -163,9 +153,35 @@ steal('jquery/controller',
 
         '#JobRole change': function () {
             if ($("#JobRole option:selected").val() == -1) {
-                $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
                 localStorage.onsubmit = 1;
                 localStorage.hcpId = $('#id').val();
+
+                //save user input from above fields
+                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+                localStorage.PracticeNameId2 = $("#PracticeName2 option:selected").val();
+
+                $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
+
+            }
+        },
+
+        '#PracticeName change': function () {
+            if ($("#PracticeName option:selected").val() == -1) {
+                localStorage.hcpId = $('#id').val();
+                localStorage.onsubmit = 3;
+                $.mobile.changePage('practicenew.htm', 'flip', false, true);
+            }
+        },
+
+        '#PracticeName2 change': function () {
+            if ($("#PracticeName2 option:selected").val() == -1) {
+                localStorage.hcpId = $('#id').val();
+                localStorage.onsubmit = 5;
+
+                //save user input from above fields
+                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+
+                $.mobile.changePage('practicenew.htm', 'flip', false, true);
             }
         }
 

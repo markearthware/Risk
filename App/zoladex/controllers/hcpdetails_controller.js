@@ -28,10 +28,9 @@ steal('jquery/controller',
             var practiceres = null;
             var hcpres = null;
             var hcpdef = Zoladex.Models.Hcp2.findOne(params.id);
-            var practicesdef = Zoladex.Models.Practice.findAll({ hcpid: params.id });
             var self = this;
 
-            $.when(hcpdef, practicesdef).done(function (hcpres, practicesres) {
+            $.when(hcpdef).done(function (hcpres) {
 
                 $('#HcpDetailsPage h1').html(hcpres.FullName());
 
@@ -44,12 +43,20 @@ steal('jquery/controller',
                     Title: hcpres.Title,
                     FirstName: hcpres.FirstName,
                     Surname: hcpres.Surname,
-                    Practices: practicesres ? practicesres : 'None',
                     Telephone: hcpres.Telephone,
                     Email: hcpres.Email,
                     JobRole: hcpres.Name,
-                    Notes: hcpres.Notes
+                    Notes: hcpres.Notes,
+                    PrimaryPracticeId : hcpres.PrimaryPracticeId,
+                    PrimaryPracticeName: hcpres.PrimaryPracticeName,
+                    PrimaryPracticePostcode: hcpres.PrimaryPracticePostcode,
+                    SecondaryPracticeId : hcpres.SecondaryPracticeId,
+                    SecondaryPracticeName: hcpres.SecondaryPracticeName,
+                    SecondaryPracticePostcode: hcpres.SecondaryPracticePostcode
                 });
+
+                steal.dev.log("hcpres: ");
+                steal.dev.log(hcpres);
 
                 $('#HcpDetailsList', this.element).append(view);
 

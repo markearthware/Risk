@@ -53,14 +53,32 @@ steal('jquery/controller',
 
             $.when(locsdef, rolesdef).done(function (locsres, rolesres) {
                 // process view
-                var locsid = [];
+                var locid, locid2;
 
                 if (localStorage.locid) {
-                    locsid.push({ id: localStorage.locid });
+                    locid = localStorage.locid;
                 }
                 else {
-                    locsid = -1;
+                    locid = -1;
                 }
+
+                if (localStorage.locid2) {
+                    locid2 = localStorage.locid2;
+                }
+                else {
+                    locid2 = -1;
+                }
+
+                if (localStorage.PracticeNameId) {
+                    locid = localStorage.PracticeNameId;
+                    localStorage.PracticeNameId = "";
+                }
+               
+                if (localStorage.PracticeNameId2) {
+                    locid2 = localStorage.PracticeNameId2;
+                    localStorage.PracticeNameId2 = "";
+                }
+              
 
                 var view = $.View('//zoladex/views/hcp_addedit/init.ejs',
                 { id: "",
@@ -68,29 +86,24 @@ steal('jquery/controller',
                     FirstName: "",
                     Surname: "",
                     JobRole: "",
-                    PracticeName: "",
                     Number: "",
                     Email: "",
                     Notes: "",
                     Locs: locsres,
-                    LocsId: locsid,
+                    PLocId: locid,
+                    SLocId: locid2,
                     Roles: rolesres,
                     RoleId: localStorage.jrid ? localStorage.jrid : -1
                 });
 
                 localStorage.locid = "";
+                localStorage.locid2 = "";
                 localStorage.jrid = "";
 
                 $('#NewHcpForm').html(view).trigger('create');
             });
         },
 
-        '#newpracticebutton click': function () {
-
-            $.mobile.changePage('practicenew.htm?onsubmit=2');
-
-        },
-        
         submit: function (el, ev) {
 
             ev.preventDefault();
@@ -100,7 +113,7 @@ steal('jquery/controller',
 
                 var params = el.formParams();
 
-                var hcpDataStructure = { JobRole: params.JobRole, Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Notes: params.Notes };
+                var hcpDataStructure = { SecondaryPracticeId: params.PracticeName2, PrimaryPracticeId: params.PracticeName, JobRole: params.JobRole, Title: params.Title, FirstName: params.FirstName, Surname: params.Surname, Telephone: params.Telephone, Email: params.Email, Notes: params.Notes };
 
                 new Zoladex.Models.Hcp(hcpDataStructure).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
 
@@ -108,23 +121,8 @@ steal('jquery/controller',
             return false;
         },
 
-        addPractices: function (hcpId) {
-            var form = $('form');
-            var params = form.formParams();
-
-            if (params.PracticeName) {
-
-                for (var i = 0; i < params.PracticeName.length; i++) {
-                    var structure = { HcpId: parseInt(hcpId), PracticeId: parseInt(params.PracticeName[i]) };
-                    new Zoladex.Models.HcpPractice(structure).save();
-                }
-            }
-
-        },
 
         onInsertSuccess: function (obj, newid) {
-
-            this.addPractices(newid);
 
             var params = Zoladex.QSUtils.getParams();
 
@@ -153,9 +151,30 @@ steal('jquery/controller',
 
         '#JobRole change': function () {
             if ($("#JobRole option:selected").val() == -1) {
-                $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
+
+                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+                localStorage.PracticeNameId2 = $("#PracticeName2 option:selected").val();
                 localStorage.onsubmit = 0;
+                
+                $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
+                
+            }
+        },
+
+        '#PracticeName change': function () {
+            if ($("#PracticeName option:selected").val() == -1) {
+                $.mobile.changePage('practicenew.htm', 'flip', false, true);
+                localStorage.onsubmit = 2;
+            }
+        },
+
+        '#PracticeName2 change': function () {
+            if ($("#PracticeName2 option:selected").val() == -1) {
+                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+                localStorage.onsubmit = 4;
+                $.mobile.changePage('practicenew.htm', 'flip', false, true);
             }
         }
+
     });
 });

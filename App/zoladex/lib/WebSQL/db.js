@@ -164,8 +164,8 @@ var localStorageDB = (function () {
         });
 
         checkTableExists("HealthcareProfessionals", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Title, FirstName, Surname, Telephone, Email, JobRole INTEGER, Notes)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (Title, FirstName, Surname, Telephone, Email, JobRole, Notes) VALUES (?,?,?,?,?,?,?)', ['Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk', 1, 'On call hours: 6am - 11pm everyday']);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,PrimaryPracticeId, SecondaryPracticeId, Title, FirstName, Surname, Telephone, Email, JobRole INTEGER, Notes)', [], function (tx, result) {
+                tx.executeSql('INSERT INTO HealthcareProfessionals (PrimaryPracticeId, SecondaryPracticeId, Title, FirstName, Surname, Telephone, Email, JobRole, Notes) VALUES (?,?,?,?,?,?,?,?,?)', [0,0,'Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk', 1, 'On call hours: 6am - 11pm everyday']);
             });
         });
 
@@ -278,11 +278,6 @@ var localStorageDB = (function () {
 
         checkTableExists('PsaLevels', function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS PsaLevels (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Date INTEGER, PsaLevel DOUBLE)');
-        });
-
-        checkTableExists("HcpPractices", function (tx) {
-            // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HcpPractices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, HcpId INTEGER, PracticeId INTEGER)');
         });
     }
 

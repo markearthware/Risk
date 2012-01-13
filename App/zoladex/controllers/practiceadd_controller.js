@@ -58,25 +58,36 @@ steal('jquery/controller',
         },
         onInsertSuccess: function (obj, newid) {
 
-            var params = Zoladex.QSUtils.getParams();
 
-            if (params.onsubmit) {
+            if (localStorage.onsubmit) {
 
                 localStorage.locid = newid;
-                if (params.onsubmit == 0) {
+                if (localStorage.onsubmit == 0) {
                     //go back to add new appointment
                     $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
                 }
-                else if (params.onsubmit == 1) {
+                else if (localStorage.onsubmit == 1) {
                     //go back to edit appointment
                     $.mobile.changePage('../calendar/patientappointmentedit.htm', 'flip', false, true);
                 }
-                else if (params.onsubmit == 2) {
+                else if (localStorage.onsubmit == 2) {
                     //go back to new hcp
                     $.mobile.changePage('../hcp/hcpnew.htm', 'flip', false, true);
                 }
-                else if (params.onsubmit == 3) {
+                else if (localStorage.onsubmit == 3) {
                     //go back to edit hcp
+                    $.mobile.changePage('../hcp/hcpedit.htm', 'flip', false, true);
+                }
+                else if (localStorage.onsubmit == 4) {
+                    //go back to edit hcp
+                    localStorage.locid2 = newid;
+                    localStorage.locid = "";
+                    $.mobile.changePage('../hcp/hcpnew.htm', 'flip', false, true);
+                }
+                else if (localStorage.onsubmit == 5) {
+                    //go back to edit hcp
+                    localStorage.locid2 = newid;
+                    localStorage.locid = "";
                     $.mobile.changePage('../hcp/hcpedit.htm', 'flip', false, true);
                 }
             }

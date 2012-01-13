@@ -31,28 +31,42 @@
 	</a>
 </li>
 
-<% for(var i = 0; i < this.Practices.length; i++){ %>
 <li>
-	<a href=<%="../hcp/practicedetails.htm?id="+this.Practices[i].id %> >
+	<a href=<%="../hcp/practicedetails.htm?id="+this.PrimaryPracticeId %> >
 		<div class="overflow">
-		<strong>Hospital/Practice <%=i+1%>: </strong> <%=this.Practices[i].Name%>
+		<strong>Primary Hospital/Surgery: </strong> <%=this.PrimaryPracticeName%>
 		</div>
 	</a>
 </li>
-<% var link = "http://maps.google.com/maps?q=" + this.Practices[i].Postcode + ", UK"; %>
 
-<% if(this.Practices[i].Postcode){ %>
-
+<% if(this.PrimaryPracticePostcode){ %>
+<% var link = "http://maps.google.com/maps?q=" + this.PrimaryPracticePostcode + ", UK"; %>
 <li>
 	<a target="_blank" href= "<%=link%>" >
 	<div class="overflow">
-	Touch for directions to <%=this.Practices[i].Name%>
+	Touch for directions to <%=this.PrimaryPracticeName%>
 	</div>
 	</a>
 </li>
-
 <% } %>
 
+<li>
+	<a href=<%="../hcp/practicedetails.htm?id="+this.SecondaryPracticeId %> >
+		<div class="overflow">
+		<strong>Secondary Hospital/Surgery: </strong> <%=this.SecondaryPracticeName%>
+		</div>
+	</a>
+</li>
+
+<% if(this.SecondaryPracticePostcode){ %>
+<% var link = "http://maps.google.com/maps?q=" + this.SecondaryPracticePostcode + ", UK"; %>
+<li>
+	<a target="_blank" href= "<%=link%>" >
+	<div class="overflow">
+	Touch for directions to <%=this.SecondaryPracticeName%>
+	</div>
+	</a>
+</li>
 <% } %>
 
 <li data-icon="false">
