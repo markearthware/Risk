@@ -60,6 +60,15 @@ steal('jquery/controller',
                         locsdef = Zoladex.Models.Practice.findAll(),
                         hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true });
 
+                    if (localStorage.appLocation) {
+                        locsid = localStorage.appLocation;
+                        localStorage.appLocation = "";
+                    }
+
+                    if (localStorage.appHcp) {
+                        hcpid = localStorage.appHcp;
+                        localStorage.appHcp = "";
+                    }
 
                     // wait for all deferreds to be completed
                     $.when(typesdef, locsdef, hcpdef).done(function (typesres, locsres, hcpres) {
@@ -144,14 +153,18 @@ steal('jquery/controller',
 
                 '#TypeId change': function () {
                     if ($("#TypeId option:selected").val() == -1) {
-                        $.mobile.changePage('../calendar/dialog/typenew.htm', 'flip', false, true);
+                        localStorage.appHcp = $("#HcpId option:selected").val();
+                        localStorage.appLocation = $("#HealthcareLocationId option:selected").val();
                         localStorage.onsubmit = 0;
+                        $.mobile.changePage('../calendar/dialog/typenew.htm', 'flip', false, true);
+
                     }
                 },
 
 
                 '#HealthcareLocationId change': function () {
                     if ($("#HealthcareLocationId option:selected").val() == 0) {
+                        localStorage.appHcp = $("#HcpId option:selected").val();
                         $.mobile.changePage('../hcp/practicenew.htm?onsubmit=0', 'flip', false, true);
                     }
                 }

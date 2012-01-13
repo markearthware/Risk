@@ -9,8 +9,7 @@ steal('jquery/controller',
     '../lib/WebSQL/db.js',
     '../lib/mobiscroll/css/mobiscroll-1.5.2.css',
     '../lib/mobiscroll/js/mobiscroll-1.5.2.js',
-    '../views/patientappointment_addedit/init.ejs'
-    )
+    '../views/patientappointment_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.PatientAppointmentEdit', {
     },
@@ -51,12 +50,16 @@ steal('jquery/controller',
         },
 
         loadData: function () {
-            var params = Zoladex.QSUtils.getParams();
             // load drop down values
+            var params = Zoladex.QSUtils.getParams();
+            
             var typesdef = Zoladex.Models.AppointmentType.findAll(),
             locsdef = Zoladex.Models.Practice.findAll(),
             hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true }),
-            appdef = Zoladex.Models.Appointment.findOne(params.id);
+            appdef = Zoladex.Models.Appointment.findOne(localStorage.appointmentId ? localStorage.appointmentId : params.id);
+
+            localStorage.appointmentId = "";
+
             var self = this;
 
             // wait for all deferreds to be completed
@@ -64,6 +67,16 @@ steal('jquery/controller',
                 // process view
                 var locsid = localStorage.locid ? localStorage.locid : appres.HealthcareLocationId;
                 var hcpid = params.hcpid ? params.hcpid : appres.HcpId;
+
+                if (localStorage.appLocation) {
+                    locsid = localStorage.appLocation;
+                    localStorage.appLocation = "";
+                }
+
+                if (localStorage.appHcp) {
+                    hcpid = localStorage.appHcp;
+                    localStorage.appHcp = "";
+                }
 
                 var view = $.View('//zoladex/views/patientappointment_addedit/init.ejs',
                 {
@@ -158,13 +171,16 @@ steal('jquery/controller',
                 var params = Zoladex.QSUtils.getParams();
                 localStorage.onsubmit = 1;
                 localStorage.appId = params.id;
+                localStorage.appHcp = $("#HcpId option:selected").val();
+                localStorage.appLocation = $("#HealthcareLocationId option:selected").val();
                 $.mobile.changePage('../calendar/dialog/typenew.htm', 'flip', false, true);
             }
         },
         '#HealthcareLocationId change': function () {
             if ($("#HealthcareLocationId option:selected").val() == 0) {
-                var params = Zoladex.QSUtils.getParams();
-                $.mobile.changePage('../hcp/practicenew.htm?onsubmit=1&' + 'id=' + params.id, 'flip', false, true);
+                localStorage.appointmentId = $("#id").val();
+                localStorage.appHcp = $("#HcpId option:selected").val();
+                $.mobile.changePage('../hcp/practicenew.htm', 'flip', false, true);
             }
         }
     });
