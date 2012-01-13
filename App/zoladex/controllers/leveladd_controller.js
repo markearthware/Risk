@@ -66,22 +66,30 @@ steal('jquery/controller',
             }
         },
 
+        '#PsaCount change': function () {
+            var num = $('#PsaCount').val();
+
+            var num2 = num / 10;
+
+            $('#PsaCount').val(num2);
+        },
+
         submit: function (el, ev) {
 
             ev.preventDefault();
 
-            if ($('#AddLevelForm').valid()) {
+            //if ($('#AddLevelForm').valid()) {
 
-                var formParams = el.formParams();
+            var formParams = el.formParams();
 
-                if (formParams.birthdate !== "") {
-                    localStorage.dateOfBirth = $.scroller.parseDate('dd M yy', formParams.Dob);
-                }
-
-                var params = { Date: formParams.date, PsaLevel: formParams.psacount };
-
-                new Zoladex.Models.Psalevel(params).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+            if (formParams.birthdate !== "") {
+                localStorage.dateOfBirth = $.scroller.parseDate('dd M yy', formParams.Dob);
             }
+
+            var params = { Date: formParams.date, PsaLevel: formParams.psacount };
+
+            new Zoladex.Models.Psalevel(params).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+            // }
             return false;
         },
 

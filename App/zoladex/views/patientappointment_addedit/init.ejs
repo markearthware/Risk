@@ -27,10 +27,10 @@
 </select>
 <input type="hidden" name="StartDateTime" id="StartDateTime" value="<%= this.StartDateTime ? this.StartDateTime.getTime() : '' %>" />
 <label for="StartDate">Date:</label>
-<input type="text" name="_StartDate" id="StartDate" placeholder="Click to select date" class="mustBeInFuture textinput required" value="<%= $.scroller.formatDate('dd M yy', this.StartDateTime) %>"/>
+<input type="date" name="_StartDate" id="StartDate" placeholder="Click to select date" class="mustBeInFuture textinput required" value="<%= $.scroller.formatDate('dd M yy', this.StartDateTime) %>"/>
 
 <label for="StartTime">Time:</label>
-<input type="text" name="_StartTime" id="StartTime" placeholder="Click to select time" class="mustBeInFuture textinput required" value="<%= $.scroller.formatDate('HH:ii', this.StartDateTime) %>"/>
+<input type="time" name="_StartTime" id="StartTime" placeholder="Click to select time" class="mustBeInFuture textinput required" value="<%= $.scroller.formatDate('HH:ii', this.StartDateTime) %>"/>
 
 <label for="AlertsEnabled">Alerts:</label>
 <select class="switch" id="AlertsEnabled" data-role="slider" name="AlertsEnabled">

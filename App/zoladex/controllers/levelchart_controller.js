@@ -9,7 +9,7 @@ steal('jquery/controller',
     )
     .then(function ($) {
         $.Controller('Zoladex.Controllers.LevelChart', {
-        },
+    },
     {
         init: function () {
 
@@ -20,10 +20,10 @@ steal('jquery/controller',
         },
         onDataLoad: function (data) {
 
-            if (data.length > 0) {
+            if (data.length > 1) {
                 var series = new Array();
 
-                $.each(data, function() {
+                $.each(data, function () {
                     series.push([this.Date, this.PsaLevel]);
                 });
 
@@ -32,14 +32,17 @@ steal('jquery/controller',
                         xaxis: {
                             label: 'Date',
                             renderer: $.jqplot.DateAxisRenderer
-                         },
+                        },
                         yaxis: {
                             label: 'PSA Level (ng/ml)'
                         }
-                },
-                    series: [{ lineWidth: 4, markerOptions: { style: 'square' } }]
+                    },
+                    series: [{ lineWidth: 4, markerOptions: { style: 'square'}}]
                 });
+            }
+            else {
+                $('#PsaChartContainer').append("The graph will be presented when you have recorded your PSA level more than once, click new to record your latest PSA level");
             }
         }
     });
-    });
+});
