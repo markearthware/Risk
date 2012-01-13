@@ -75,10 +75,21 @@ img.ui-li-thumb {
 
 .overflow
 {
+    
     white-space: normal;
      word-wrap:break-word;
 }
 
 #FaqListPage div {
     word-wrap:break-word;
+}
+
+#HomePage .overflow {
+   font-size: 12px;
+    font-weight: normal;
+}
+
+#supportPage .overflow {
+     font-size: 12px;
+    font-weight: normal;
 }

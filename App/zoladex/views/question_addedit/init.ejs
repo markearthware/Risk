@@ -1,37 +1,12 @@
 
-<% if(this.hcpList.length < 1) { %>
-
-<ul data-role="listview" data-divider-theme="c">
-	<li data-role="list-divider">Sorry, you have not added any HCPs yet. You can't ask a question to noone!</li>
-</ul>
-<%} else { %>
-
 <input type="hidden" id="catId" value="<%=this.questionList[0].CategoryId%>"/>
 
 <% for(var i = 0; i < this.questionList.length; i++){ %>
 	<li>
-		<div class="questionContainer">
-		<div id="Question<%= i %>" style="padding: 10px; text-align: center"><%=this.questionList[i].Question%></div>
-		<select id="QuestionDdl" name="QuestionDdl">
-			<option value="-1">Select an HCP</option>
-			<% for(var j = 0; j < this.hcpList.length; j++){ %>
-				<option value="<%= this.hcpList[j].id %>"><%= this.hcpList[j].Title %> <%= this.hcpList[j].FirstName %> <%= this.hcpList[j].Surname %></option>
-			<%}%>     
-		</select>
-		</div>
+		<a href="#">
+			<h3>
+				<div class="question overflow"><%= this.questionList[i].Question %></div>
+			</h3>
+		</a>	
 	</li>	
 <%}%>
-
-<div class="questionContainer">
-<div style="padding: 10px; text-align: center"><input placeholder="Type your own question" type="text" id="CustomQuestionText"/></div>
-<select id="CustomQuestionDdl" name="CustomQuestionDdl">
-	<option value="-1">Select an HCP</option>
-	<% for(var k = 0; k < this.hcpList.length; k++){ %>
-		<option value="<%= this.hcpList[k].id %>"><%= this.hcpList[k].Title %> <%= this.hcpList[k].FirstName %> <%= this.hcpList[k].Surname %></option>
-	<%}%>     
-</select>
-</div>
-	
-<input type="submit" id="addquestionsbutton" value="Add Questions" />
- </form>
-<% } %>

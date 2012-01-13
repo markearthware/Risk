@@ -245,6 +245,13 @@ steal(
                 return;
             }
 
+            if ($(args.nextPage).filter('#SelectHcpPage').length > 0) {
+
+                $('#SelectHcpPage').zoladex_question_hcp_add();
+
+                return;
+            }
+
             if ($('#QuestionDialog').length > 0) {
 
                 $('#QuestionDialog').zoladex_question_dialog();

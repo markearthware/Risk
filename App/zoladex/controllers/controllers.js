@@ -24,6 +24,7 @@ steal(
         './symptomedit_controller',
         './symptomdelete_controller',
         './questionadd_controller.js',
+        './questionhcpadd_controller.js',
         './questionlist_controller.js',
          './leveladd_controller.js',
         './levelchart_controller.js',
