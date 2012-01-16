@@ -78,7 +78,7 @@ steal('jquery/controller',
 
             ev.preventDefault();
 
-            //if ($('#AddLevelForm').valid()) {
+            if ($('#AddLevelForm').valid()) {
 
             var formParams = el.formParams();
 
@@ -89,7 +89,7 @@ steal('jquery/controller',
             var params = { Date: formParams.date, PsaLevel: formParams.psacount };
 
             new Zoladex.Models.Psalevel(params).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
-            // }
+            }
             return false;
         },
 

@@ -62,7 +62,7 @@ steal(
             if ($('#AddLevelForm').length > 0) {
 
                 $('#AddLevelForm').zoladex_level_add();
-
+                $('#AddLevelForm').validate();
                 return true;
             }
         });
