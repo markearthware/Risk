@@ -16,7 +16,7 @@ steal('jquery/controller',
             var hcpdef = Zoladex.Models.Hcp.findAll();
 
             $.when(hcpdef).done(function (hcpres) {
-                $("h1.ui-title").append(localStorage.questionText);
+                $("h1.ui-title").append(localStorage.customQuestion ? localStorage.customQuestion : localStorage.questionText);
 
                 var view = $.View('//zoladex/views/questionhcp_add/init.ejs', {
                     hcpList: hcpres
@@ -28,9 +28,10 @@ steal('jquery/controller',
             });
         },
         '.hcp click': function (el) {
-            var hcpId =$(el).attr("id");
-            var question = localStorage.questionText;
+            var hcpId = $(el).attr("id");
+            var question = localStorage.customQuestion ? localStorage.customQuestion : localStorage.questionText;
             localStorage.questionText = "";
+            localStorage.customQuestion = "";
             var model = { Question: question, HcpId: hcpId };
             new Zoladex.Models.MyQuestion(model).save(function () { $.mobile.changePage('myquestions.htm', 'flip', false, true); });
         }

@@ -101,6 +101,12 @@ steal(
                 return;
             }
 
+            if ($(e.target).filter('#CustomQuestionPage').length > 0) {
+                $('#CustomQuestionPage').zoladex_custom_question_add();
+                $('#CustomQuestionForm').validate();
+                return;
+            }
+
             if ($(e.target).filter('#LevelsPage').length > 0) {
                 $('#LevelsPage').zoladex_level_chart();
             }
