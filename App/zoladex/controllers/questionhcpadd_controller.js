@@ -17,6 +17,7 @@ steal('jquery/controller',
 
             $.when(hcpdef).done(function (hcpres) {
                 $("h1.ui-title").append(localStorage.customQuestion ? localStorage.customQuestion : localStorage.questionText);
+                $('#questionPlaceholder').text(localStorage.customQuestion ? localStorage.customQuestion : localStorage.questionText);
 
                 var view = $.View('//zoladex/views/questionhcp_add/init.ejs', {
                     hcpList: hcpres
@@ -24,7 +25,6 @@ steal('jquery/controller',
 
                 $('#Hcps').html(view).trigger('create');
                 $('#Hcps').listview('refresh');
-
             });
         },
         '.hcp click': function (el) {

@@ -1,17 +1,18 @@
 
 <% if(this.hcpList.length < 1) { %>
 
-<ul data-role="listview" data-divider-theme="c">
-	<li data-role="list-divider">Sorry, you have not added any HCPs yet. You can't ask a question to noone!</li>
-</ul>
+<%
+$("#questionContainer").remove();
+%>
+	<li data-divider-theme="c" data-role="list-divider">Sorry, you have not added any Healthcare Professionals yet. You can't ask a question to noone.</li>
 <%} else { %>
 
 
 <% for(var i = 0; i < this.hcpList.length; i++){ %>
-	<li >
+	<li class="hcp" id="<%=this.hcpList[i].id%>">
 		<a href="#">
 			<h3>
-				<div id="<%=this.hcpList[i].id%>" class="hcp overflow"><%= this.hcpList[i].FullName() %></div>
+				<div class="overflow"><%= this.hcpList[i].FullName() %></div>
 			</h3>
 		</a>	
 	</li>	

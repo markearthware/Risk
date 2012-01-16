@@ -2,10 +2,10 @@
 <input type="hidden" id="catId" value="<%=this.questionList[0].CategoryId%>"/>
 
 <% for(var i = 0; i < this.questionList.length; i++){ %>
-	<li>
+	<li class="question">
 		<a href="#">
 			<h3>
-				<div class="question overflow"><%= this.questionList[i].Question %></div>
+				<div class="overflow"><%= this.questionList[i].Question %></div>
 			</h3>
 		</a>	
 	</li>	
