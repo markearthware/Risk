@@ -82,7 +82,7 @@ steal('jquery/controller',
                             TypeId: localStorage.typeid ? localStorage.typeid : "",
                             LocsId: locsid
                         });
-                        localStorage.typeid = null;
+                        localStorage.typeid = "";
                         // insert html into form and call jquerymobile create on form
                         $('#NewAppointmentForm').html(view).trigger('create');
 

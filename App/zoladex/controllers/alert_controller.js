@@ -23,6 +23,11 @@ steal('jquery/controller',
         '#OK click': function () {
             alertHasBeenShown = true;
             //dialog automatically closes
+        },
+        'a click': function () {
+            alertHasBeenShown = true; 
         }
+        
+       
     });
 });
