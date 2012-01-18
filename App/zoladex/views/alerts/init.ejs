@@ -1,6 +1,6 @@
 
 <%for(var i = 0; i < this.length ; i++){ %>	
-<h3><div class="overflow"><%= this[i].TypeName %></div> </h3>
+<h3><div class="overflow"><%= this[i].HcpTitle %> <%= this[i].HcpFirstName %> <%= this[i].HcpSurname %></div> </h3>
 
 <p>
 <div class="overflow">
@@ -12,11 +12,11 @@
     <p><div class="overflow"><strong>Location:</strong> <%= this[i].LocationName %></div></p>
 <% } %> 
 
-<% if(this[i].HcpTitle && this[i].HcpTitle.length>0){ %>
+<% if(this[i].TypeName && this[i].TypeName.length>0){ %>
 	<p>
 	<div class="overflow">
-	<strong>To see:</strong>
-    <%= this[i].HcpTitle %> <%= this[i].HcpFirstName %> <%= this[i].HcpSurname %>
+	<strong>Appointment type:</strong>
+    <%= this[i].TypeName %>
 	</div>
 	</p>
 <% } %>

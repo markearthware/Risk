@@ -159,7 +159,7 @@ steal('jquery/controller',
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         },
         '#HcpId change': function () {
-            if ($("#HcpId option:selected").val() == 0) {
+            if ($("#HcpId option:selected").val() == -1) {
                 var params = Zoladex.QSUtils.getParams();
                 $.mobile.changePage('../hcp/hcpnew.htm?onsubmit=1&' + 'id=' + params.id, 'flip', false, true);
             }
@@ -175,7 +175,7 @@ steal('jquery/controller',
             }
         },
         '#HealthcareLocationId change': function () {
-            if ($("#HealthcareLocationId option:selected").val() == 0) {
+            if ($("#HealthcareLocationId option:selected").val() == -1) {
                 localStorage.appointmentId = $("#id").val();
                 localStorage.appHcp = $("#HcpId option:selected").val();
                 $.mobile.changePage('../hcp/practicenew.htm', 'flip', false, true);

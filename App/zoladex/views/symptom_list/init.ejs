@@ -26,9 +26,9 @@ currentdate=compare.getTime();
 <% } %>
 <li>
 	<a href="symptomedit.htm?id=<%= this[i].id %>">
-		<h3><div class="overflow"> <%= this[i].Description %></div></h3>
+		<h3><div class="overflow"> <%= this[i].Description %></div></h3>	
+		<p class="ui-li-aside"><strong><div class="overflow"><%= $.scroller.formatDate('D d M yy h:ii A', this[i].DateTime) %></div></strong></p>
 		<p><%if(this[i].WarningSign === 1){%> <span><div class="overflow warningText">Potential Warning Sign, contact your doctor.</div></span><%}%></p>
-		<p class="ui-li-aside"><strong><%= $.scroller.formatDate('D d M yy h:ii A', this[i].DateTime) %></strong></p>
 	</a>
 </li>
 <%}}%> 

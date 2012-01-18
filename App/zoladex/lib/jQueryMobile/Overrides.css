@@ -91,7 +91,6 @@ img.ui-li-thumb {
 
 .overflow
 {
-    
     white-space: normal;
      word-wrap:break-word;
 }
@@ -109,4 +108,11 @@ img.ui-li-thumb {
      font-size: 12px;
     font-weight: normal;
 }
+
+.padding-top
+{
+    padding-top: 12px;
+}
+
+
 
