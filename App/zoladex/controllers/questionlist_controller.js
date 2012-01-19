@@ -30,13 +30,12 @@ steal('jquery/controller',
         '.deleteButton click': function (el) {
             var ctx = this;
             var questionId = $(el).attr("id");
-            var deletedef = Zoladex.Models.MyQuestionList.destroy(questionId);
-            $.when(deletedef).done(function () {
-                ctx.init();
-            });
+
+            localStorage.questionId = questionId;
+            $.mobile.changePage("dialog/questiondeleteconfirmdialog.htm");
         },
         '.questionText click': function (el) {
-            var questionText = $(el).children(':first').text(); 
+            var questionText = $(el).children(':first').text();
             localStorage.questionText = questionText;
             $.mobile.changePage("dialog/questiondialog.htm");
         }

@@ -115,6 +115,14 @@ steal(
                 $('#LevelsListPage').zoladex_levels_list();
             }
 
+            if ($(e.target).filter('#LevelDeleteConfirmDialog').length > 0) {
+                $('#LevelDeleteConfirmDialog').zoladex_level_delete();
+            }
+
+            if ($(e.target).filter('#QuestionDeleteConfirmDialog').length > 0) {
+                $('#QuestionDeleteConfirmDialog').zoladex_question_delete();
+            }
+
             if ($(e.target).filter('#HomePage').length > 0) {
                 $('#HomePage').zoladex_home();
                 return;

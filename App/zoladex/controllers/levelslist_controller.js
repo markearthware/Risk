@@ -23,17 +23,15 @@ steal('jquery/controller',
         '.deleteButton click': function (el) {
             var ctx = this;
             var levelId = $(el).attr("id");
-            var deletedef = Zoladex.Models.Psalevel.destroy(levelId);
-            $.when(deletedef).done(function () {
-                ctx.init();
-            });
+            localStorage.levelId = levelId;
+            $.mobile.changePage("../dialog/leveldeleteconfirmdialog.htm");
         },
         '#LevelsGraph click': function () {
             var levels = Zoladex.Models.Psalevel.findAll().done(this.callback('onDataLoad'));
             $.when(levels).done(function (result) {
                 if (result.length > 1) {
                     $.mobile.changePage("levels.htm");
-                }else {
+                } else {
                     $.mobile.changePage("../dialog/levelsdialog.htm");
                 }
 

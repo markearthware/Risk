@@ -35,5 +35,7 @@ steal(
         './questiondialog_controller.js',
         './jobroleadd_controller.js',
         './customquestionadd_controller.js',
-        './levelslist_controller.js'
+        './levelslist_controller.js',
+        './leveldelete_controller.js',
+        './questiondelete_controller.js'
         )
