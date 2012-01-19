@@ -111,6 +111,10 @@ steal(
                 $('#LevelsPage').zoladex_level_chart();
             }
 
+            if ($(e.target).filter('#LevelsListPage').length > 0) {
+                $('#LevelsListPage').zoladex_levels_list();
+            }
+
             if ($(e.target).filter('#HomePage').length > 0) {
                 $('#HomePage').zoladex_home();
                 return;

@@ -1,0 +1,34 @@
+<%
+var currentdate = null;
+%>
+
+<% if( this.length < 1 ){ %>
+	
+	<li data-role="list-divider">
+		You have not recorded any PSA Levels yet
+	</li>
+
+<% }else{ %>
+
+<%for(var i = 0; i < this.length ; i++){ %>	
+<%
+var compare = new Date(this[i].Date);
+
+compare.setHours(0);
+compare.setSeconds(0);
+compare.setMinutes(0);
+compare.setMilliseconds(0);
+
+if(currentdate!==compare.getTime()){
+currentdate=compare.getTime();
+%>
+<li data-role="list-divider"><%= $.scroller.formatDate('D d M yy', new Date(this[i].Date)) %></li>
+<% } %>
+<li data-icon="false">
+	<a href="#">
+		<h3><div class="overflow"> <%= this[i].PsaLevel %>ng/ml</div></h3>	
+		<p class="ui-li-aside"><strong><div class="overflow"><%= $.scroller.formatDate('D d M yy h:ii A', new Date(this[i].Date)) %></div></strong></p>
+	</a>
+	<a class="deleteButton" id="<%=this[i].id %>" >Delete</a>
+</li>
+<%}}%> 

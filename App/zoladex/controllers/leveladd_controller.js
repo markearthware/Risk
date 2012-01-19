@@ -95,7 +95,7 @@ steal('jquery/controller',
 
         onInsertSuccess: function () {
 
-            $.mobile.changePage('levels.htm', 'pop', false, true);
+            $.mobile.changePage('levelslist.htm', 'pop', false, true);
         },
 
         onInsertFail: function () {
