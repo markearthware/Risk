@@ -2,6 +2,7 @@
 <label for="birthdate">Date of birth:</label>
 <input type="text" placeholder="Enter your date of birth" name="Dob" id="Dob" class="date textinput required" value="<%= $.scroller.formatDate('dd M yy', this.dateOfBirth) %>" />
 <label for="psacount">PSA (ng/ml):</label>
+<input id="PsaLevel" type="text" disabled="disabled"/>
 <input type="range" value="0" min="0.0" max="200.0" name="psacount" id="PsaCount" class="range textinput required" />
 <label for="date">Date:</label>
 <input type="text" name="date" id="Date" class="date textinput required" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />

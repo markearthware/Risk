@@ -83,7 +83,7 @@ img.ui-li-thumb {
     margin-bottom: 10px;
 }
 
-#AddLevelsPage input.date, #NewGroupForm input, #EditGroupForm input, #NewHcpForm input,#NewPracticeForm input,#EditPracticeForm input,#NewAppointmentForm input,#EditHcpForm input,#EditAppointmentForm input,#RecordSymptomForm input,#EditSymptomForm input
+#AddLevelsPage input#PsaLevel, #AddLevelsPage input.date, #NewGroupForm input, #EditGroupForm input, #NewHcpForm input,#NewPracticeForm input,#EditPracticeForm input,#NewAppointmentForm input,#EditHcpForm input,#EditAppointmentForm input,#RecordSymptomForm input,#EditSymptomForm input
 {
     display: inline-block;
     width: 56%;
@@ -124,4 +124,5 @@ img.ui-li-thumb {
 }
 
 
+#PsaCount { display: none; }
 
