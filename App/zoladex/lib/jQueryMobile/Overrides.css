@@ -24,6 +24,15 @@ img.ui-li-thumb {
     margin: 0;
 }
 
+.background-image
+{
+    background-image: url('../../couple.jpg');
+    background-repeat: no-repeat;
+}
+
+.spacer {
+    height: 160px;
+}
 
 /* override to fill in search boxes */
 
