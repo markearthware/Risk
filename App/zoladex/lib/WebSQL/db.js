@@ -159,7 +159,7 @@ var localStorageDB = (function () {
 
         checkTableExists("Groups", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, ContactName, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Groups (Name, ContactName, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?,?)', ['Cancer Crew', 'John Smith', 'AL8 7QX', '107 oakdale', 'welwyn', 'herts', '0101010101', 'sdfsd@werwe.com']);
+                tx.executeSql('INSERT INTO Groups (Name, ContactName, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?,?)', ['Cancer Research', 'John Smith', 'AL8 7QX', '107 oakdale', 'welwyn', 'herts', '01732 657432', 'cancer@research.com']);
             });
         });
 
@@ -253,7 +253,7 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Question, CategoryId INTEGER)', [], function (tx, result) {
                 // populate
                 tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("Why is the sky blue?", 0)');
-                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("Why is the sky pink?", 0)');
+                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("Why is the sky grey?", 0)');
                 tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("How big is the moon?", 1)');
             });
         });
