@@ -30,8 +30,9 @@ steal('jquery/controller',
                 $.jqplot('PsaChartContainer', [series], {
                     axes: {
                         xaxis: {
-                            label: 'Date',
-                            renderer: $.jqplot.DateAxisRenderer
+                            label: 'Date (month / year)',
+                            renderer: $.jqplot.DateAxisRenderer,
+                            tickOptions: { formatString: '%m/%y'}
                         },
                         yaxis: {
                             label: 'PSA Level (ng/ml)'
