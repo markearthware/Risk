@@ -165,7 +165,8 @@ steal('jquery/controller',
                 '#HealthcareLocationId change': function () {
                     if ($("#HealthcareLocationId option:selected").val() == -1) {
                         localStorage.appHcp = $("#HcpId option:selected").val();
-                        $.mobile.changePage('../hcp/practicenew.htm?onsubmit=0', 'flip', false, true);
+                        localStorage.onsubmit = 0;
+                        $.mobile.changePage('../hcp/practicenew.htm', 'flip', false, true);
                     }
                 }
             });

@@ -33,9 +33,8 @@ steal('jquery/controller',
             else if (localStorage.onsubmit == 1) {
                 //go back to add new appointment
                 localStorage.typeid = typeid;
-                var id = localStorage.appId;
                 localStorage.appId = null;
-                $.mobile.changePage('../patientappointmentedit.htm?id=' + id, 'flip', false, true);
+                $.mobile.changePage('../patientappointmentedit.htm', 'flip', false, true);
             }
         },
         onInsertFail: function () {

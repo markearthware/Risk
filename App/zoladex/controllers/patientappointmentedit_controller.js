@@ -50,7 +50,7 @@ steal('jquery/controller',
         loadData: function () {
             // load drop down values
             var params = Zoladex.QSUtils.getParams();
-            
+
             var typesdef = Zoladex.Models.AppointmentType.findAll(),
             locsdef = Zoladex.Models.Practice.findAll(),
             hcpdef = Zoladex.Models.Hcp.findAll({ basicdetails: true }),
@@ -168,7 +168,7 @@ steal('jquery/controller',
             if ($("#TypeId option:selected").val() == -1) {
                 var params = Zoladex.QSUtils.getParams();
                 localStorage.onsubmit = 1;
-                localStorage.appId = params.id;
+                localStorage.appointmentId = $("#id").val();
                 localStorage.appHcp = $("#HcpId option:selected").val();
                 localStorage.appLocation = $("#HealthcareLocationId option:selected").val();
                 $.mobile.changePage('../calendar/dialog/typenew.htm', 'flip', false, true);
@@ -178,6 +178,7 @@ steal('jquery/controller',
             if ($("#HealthcareLocationId option:selected").val() == -1) {
                 localStorage.appointmentId = $("#id").val();
                 localStorage.appHcp = $("#HcpId option:selected").val();
+                localStorage.onsubmit = 1;
                 $.mobile.changePage('../hcp/practicenew.htm', 'flip', false, true);
             }
         }
