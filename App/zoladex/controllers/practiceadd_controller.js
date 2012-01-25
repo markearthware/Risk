@@ -64,34 +64,41 @@ steal('jquery/controller',
                 localStorage.locid = newid;
                 if (localStorage.onsubmit == 0) {
                     //go back to add new appointment
+                    localStorage.onsubmit = "";
                     $.mobile.changePage('../calendar/patientappointmentnew.htm', 'flip', false, true);
                 }
                 else if (localStorage.onsubmit == 1) {
                     //go back to edit appointment
+                    localStorage.onsubmit = "";
                     $.mobile.changePage('../calendar/patientappointmentedit.htm', 'flip', false, true);
                 }
                 else if (localStorage.onsubmit == 2) {
                     //go back to new hcp
+                    localStorage.onsubmit = "";
                     $.mobile.changePage('../hcp/hcpnew.htm', 'flip', false, true);
                 }
                 else if (localStorage.onsubmit == 3) {
                     //go back to edit hcp
+                    localStorage.onsubmit = "";
                     $.mobile.changePage('../hcp/hcpedit.htm', 'flip', false, true);
                 }
                 else if (localStorage.onsubmit == 4) {
                     //go back to edit hcp
                     localStorage.locid2 = newid;
                     localStorage.locid = "";
+                    localStorage.onsubmit = "";
                     $.mobile.changePage('../hcp/hcpnew.htm', 'flip', false, true);
                 }
                 else if (localStorage.onsubmit == 5) {
                     //go back to edit hcp
                     localStorage.locid2 = newid;
                     localStorage.locid = "";
+                    localStorage.onsubmit = "";
                     $.mobile.changePage('../hcp/hcpedit.htm', 'flip', false, true);
                 }
             }
             else { //standard procedure
+                localStorage.onsubmit = "";
                 $.mobile.changePage('practicelist.htm', 'pop', false, true);
             }
         },

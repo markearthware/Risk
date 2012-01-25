@@ -83,11 +83,12 @@ steal('jquery/controller',
                             LocsId: locsid
                         });
                         localStorage.typeid = "";
+                        localStorage.locid = '';
                         // insert html into form and call jquerymobile create on form
                         $('#NewAppointmentForm').html(view).trigger('create');
 
                         self.setupDateTimeControls();
-
+                        
                         // hide loading message
                         $.mobile.hidePageLoadingMsg();
                     });
