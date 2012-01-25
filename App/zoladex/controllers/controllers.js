@@ -23,19 +23,14 @@ steal(
         './symptomadd_controller',
         './symptomedit_controller',
         './symptomdelete_controller',
-        './questionadd_controller.js',
-        './questionhcpadd_controller.js',
-        './questionlist_controller.js',
          './leveladd_controller.js',
         './levelchart_controller.js',
         './home_controller.js',
         './alert_controller.js',
         './appointmenttypeadd_controller.js',
         './symptomtypeadd_controller.js',
-        './questiondialog_controller.js',
         './jobroleadd_controller.js',
         './customquestionadd_controller.js',
         './levelslist_controller.js',
-        './leveldelete_controller.js',
-        './questiondelete_controller.js'
+        './leveldelete_controller.js'
         )

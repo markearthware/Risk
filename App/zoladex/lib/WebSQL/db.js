@@ -152,20 +152,17 @@ var localStorageDB = (function () {
 
         checkTableExists("Practices", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Practices (Name, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?)', ['QE2', 'AL8 7QX', '107 oakdale', 'welwyn', 'herts', '0101010101', 'sdfsd@werwe.com']);
             });
         });
 
 
         checkTableExists("Groups", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, ContactName, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO Groups (Name, ContactName, Postcode,Street,Town,County,Telephone,Email) VALUES (?,?,?,?,?,?,?,?)', ['Cancer Research', 'John Smith', 'AL8 7QX', '107 oakdale', 'welwyn', 'herts', '01732 657432', 'cancer@research.com']);
             });
         });
 
         checkTableExists("HealthcareProfessionals", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,PrimaryPracticeId, SecondaryPracticeId, Title, FirstName, Surname, Telephone, Email, JobRole INTEGER, Notes)', [], function (tx, result) {
-                tx.executeSql('INSERT INTO HealthcareProfessionals (PrimaryPracticeId, SecondaryPracticeId, Title, FirstName, Surname, Telephone, Email, JobRole, Notes) VALUES (?,?,?,?,?,?,?,?,?)', [0,0,'Dr', 'Sarah', 'Westminster', '09123 674738', 'SarahWestminster@nhs.co.uk', 1, 'On call hours: 6am - 11pm everyday']);
             });
         });
 
@@ -245,34 +242,6 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("A feeling of not having emptied bladder properly", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain when you ejaculate", 0)');
 
-            });
-        });
-
-        checkTableExists("Questions", function (tx) {
-            // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Questions (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Question, CategoryId INTEGER)', [], function (tx, result) {
-                // populate
-                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("Why is the sky blue?", 0)');
-                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("Why is the sky grey?", 0)');
-                tx.executeSql('INSERT INTO Questions (Question, CategoryId) VALUES ("How big is the moon?", 1)');
-            });
-        });
-
-        checkTableExists("MyQuestions", function (tx) {
-            // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Question, HcpId INTEGER)', [], function (tx, result) {
-            });
-        });
-
-        checkTableExists("Categories", function (tx) {
-            // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Categories (Category , CategoryId INTEGER)', [], function (tx, result) {
-                // populate
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 1", 0)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 2", 1)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 3", 2)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 4", 3)');
-                tx.executeSql('INSERT INTO Categories (Category, CategoryId) VALUES ("Cat 5", 4)');
             });
         });
 
