@@ -70,7 +70,7 @@ steal(
 
         // bind controllers to pagecreate, typically pages containing widgets that have their data loaded dynamically
         $(document).bind('pagecreate', function (e) {
-            
+
             if ($(e.target).filter('#HcpListPage').length > 0) {
                 $('#HcpListList').zoladex_hcp_list('loadData');
                 return;
@@ -137,6 +137,11 @@ steal(
             if ($('#JobRoleAddDialog').length > 0) {
 
                 $('#JobRoleAddDialog').zoladex_job_role_add();
+                return;
+            }
+
+            if ($(e.target).filter('#orgDetails').length > 0) {
+                $('#orgDetails').zoladex_useful_orgs();
                 return;
             }
         });
