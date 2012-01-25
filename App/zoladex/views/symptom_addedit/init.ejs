@@ -13,6 +13,6 @@
 <input type="text" id="Date" placeholder="Click to select date" class="textinput required" name="_Date" value="<%= $.scroller.formatDate('dd M yy', this.DateTime) %>" />
 <label for="Time">Time:</label>
 <input type="text" id="Time" placeholder="Click to select time" class="textinput required" name="_Time" value="<%= $.scroller.formatDate('HH:ii', this.DateTime) %>"" />
-<input type="submit" id="submitsymptombutton" value="Record Symptom" data-theme="g" />
+<input type="submit" id="submitsymptombutton" value="Record Symptom" data-icon="check" data-theme="g" />
 
 <input type="hidden" name="DateTime" id="DateTime" value="<%= this.DateTime ? this.DateTime.getTime() : '' %>" data-theme="g" />

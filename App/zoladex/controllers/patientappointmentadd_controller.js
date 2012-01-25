@@ -140,7 +140,7 @@ steal('jquery/controller',
                 },
 
                 onInsertSuccess: function () {
-                    $.mobile.changePage('dialog/success.htm', 'pop', false, true);
+                    $.mobile.changePage('calendar.htm', 'pop', false, true);
                 },
                 onInsertFail: function () {
                     steal.dev.log('appointment has not been added');
