@@ -186,3 +186,22 @@ img.ui-li-thumb {
 #HcpPage .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
     padding-left: 85px;
 }
+
+#nav .ui-icon {
+    width: 26px;
+    height: 26px;
+}
+
+
+#nav .ui-btn-inner
+{
+    padding-top: 32px;
+    display: block;
+    height: 13px;
+}
+
+#nav .ui-btn-icon-top .ui-icon,#nav .ui-btn-icon-bottom .ui-icon
+{
+    margin-left: -13px !important;
+}
+
