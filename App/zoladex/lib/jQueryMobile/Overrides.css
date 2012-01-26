@@ -109,17 +109,37 @@ img.ui-li-thumb {
 #SideEffectsPage h2 div
 {
     white-space: normal;
+    word-wrap:break-word;
 }
 
 #SideEffectsPage h3 div
 {
     white-space: normal;
+    word-wrap:break-word;
+}
+
+#DiscussingPage h2 div
+{
+    white-space: normal;
+    word-wrap:break-word;
+}
+
+#DiscussingPage h3 div
+{
+    white-space: normal;
+    word-wrap:break-word;
+}
+
+#weblink
+{
+    white-space: normal;
+    word-wrap:break-word;
 }
 
 .overflow
 {
     white-space: normal;
-     word-wrap:break-word;
+    word-wrap:break-word;
 }
 
 #FaqListPage div {

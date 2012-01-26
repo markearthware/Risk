@@ -149,6 +149,11 @@ steal(
                 $('#SideEffectsPage').zoladex_side_effects();
                 return;
             }
+
+            if ($(e.target).filter('#DiscussingPage').length > 0) {
+                $('#DiscussingPage').zoladex_side_effects();
+                return;
+            }
         });
 
         // bind contollers to pagehide, typically forms that may require access to a query string.
