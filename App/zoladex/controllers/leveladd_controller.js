@@ -33,40 +33,20 @@ steal('jquery/controller',
 
             var date = new Date();
 
-            var dob;
-            if (localStorage.dateOfBirth !== undefined) {
-
-                dob = new Date(localStorage.dateOfBirth);
-            }
-            else {
-                averageCancerAge = new Date();
-                averageCancerAge.setYear(1940);
-                averageCancerAge.setMonth(0);
-                averageCancerAge.setDate(1);
-            }
-
             var pickertheme = navigator.userAgent.indexOf('Android') > 0 ? 'android' : 'ios';
 
             var view = $.View("//zoladex/views/level_addedit/init.ejs",
                 {
-                    date: date,
-                    dateOfBirth: dob
+                    date: date
                 }
             );
 
             $('#AddLevelForm').html(view);
 
             $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
-            $("#Dob").scroller({ preset: 'date', theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
 
             $('#PsaLevel').val("0");
 
-        },
-
-        '#Dob focus': function () {
-            if (averageCancerAge) {
-                $("#Dob").scroller('setDate', averageCancerAge, true);
-            }
         },
 
         '#PsaCount change': function () {
@@ -85,10 +65,6 @@ steal('jquery/controller',
 
                 var formParams = el.formParams();
 
-                if (formParams.birthdate !== "") {
-                    localStorage.dateOfBirth = $.scroller.parseDate('dd M yy', formParams.Dob);
-                }
-
                 var params = { Date: formParams.date, PsaLevel: formParams.psacount };
 
                 new Zoladex.Models.Psalevel(params).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
@@ -103,18 +79,6 @@ steal('jquery/controller',
 
         onInsertFail: function () {
             $.mobile.changePage('dialog/error.htm', 'pop', false, true);
-        },
-
-        calculateAge: function (birthDate) {
-
-            if (birthDate === undefined || birthDate < 1) {
-                birthDate = new Date(localStorage.dateOfBirth);
-            }
-            else {
-                birthDate = new Date(birthDate);
-            }
-
-            return new Date().getFullYear() - birthDate.getFullYear();
         }
     });
 });
