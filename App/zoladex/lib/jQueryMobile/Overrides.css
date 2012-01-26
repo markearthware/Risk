@@ -97,6 +97,11 @@ img.ui-li-thumb {
     width: 56%;
 }
 
+#PsaLevel {
+    background-color: White;
+    opacity: 1;
+}
+
 
 #FaqListPage h3 div {
     white-space: normal;
@@ -185,3 +190,7 @@ img.ui-li-thumb {
     padding: 5px;
 }
 
+
+#HcpPage .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
+    padding-left: 85px;
+}
