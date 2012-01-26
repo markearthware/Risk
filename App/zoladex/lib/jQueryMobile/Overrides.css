@@ -134,3 +134,18 @@ img.ui-li-thumb {
 
 #PsaCount { display: none; }
 
+.dietTable, td , th
+{
+    border: 1px solid #ccc;
+    border-collapse:collapse;
+}
+
+.dietTable th 
+{
+    text-align: left;
+    font-weight: bold;
+}
+.dietTable td, .dietTable th {
+    padding: 5px;
+}
+
