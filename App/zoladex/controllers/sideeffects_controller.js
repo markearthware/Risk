@@ -3,7 +3,7 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view')
     .then(function ($) {
-        $.Controller('Zoladex.Controllers.UsefulOrgs', {
+        $.Controller('Zoladex.Controllers.SideEffects', {
     },
     {
         init: function () {
@@ -11,10 +11,12 @@ steal('jquery/controller',
                 var networkState = navigator.network.connection.type;
                 if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
                     //Clear href attr and remove link icon
-                    $('#weblink').attr('href', 'dialog/notconnected.htm');
-                    $('#weblink').parent().attr('data-icon', 'false');
+                    var text = $('#weblink').text();
+                    $('#weblink').after(text);
+                    $('#weblink').remove();
                 }
             }
+
         }
     });
 });

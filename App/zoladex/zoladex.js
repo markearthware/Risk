@@ -144,6 +144,11 @@ steal(
                 $('#orgDetails').zoladex_useful_orgs();
                 return;
             }
+
+            if ($(e.target).filter('#SideEffectsPage').length > 0) {
+                $('#SideEffectsPage').zoladex_side_effects();
+                return;
+            }
         });
 
         // bind contollers to pagehide, typically forms that may require access to a query string.
