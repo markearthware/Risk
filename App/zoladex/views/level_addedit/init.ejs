@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="Windows-1252"?>
-<h4>Use the slider below to set PSA level</h4>
-<input type="range" value="0" step="1" min="0" max="200" name="psacount" id="PsaCount" class="range textinput required" />
-<label for="psacount">PSA (ng/ml):</label>
-<input id="PsaLevel" type="text" disabled="disabled"/>
+<h4>Use the picker below to set PSA level</h4>
+<label for="PsaLevel">PSA (ng/ml):</label>
+<select name="PsaLevel" id="PsaLevel">
+  <% for(var i = 0; i < 200; i++) {%>
+  <option value="<%=i/10%>">
+    <%= i/10 %> ng/ml
+  </option>
+  <%}%>
+ </select>
 <label for="date">Date:</label>
 <input type="text" name="date" id="Date" class="date textinput required" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />
 <input type="submit" id="newpsalevelbutton" value="Record PSA Level" data-icon="check" data-theme="g" />

@@ -97,12 +97,6 @@ img.ui-li-thumb {
     width: 56%;
 }
 
-#PsaLevel {
-    background-color: White;
-    opacity: 1;
-}
-
-
 #FaqListPage h3 div {
     white-space: normal;
 } 
@@ -172,8 +166,6 @@ img.ui-li-thumb {
     padding-top: 12px;
 }
 
-
-#PsaCount { display: none; }
 
 .dietTable, td , th
 {

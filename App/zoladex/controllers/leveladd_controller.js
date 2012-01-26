@@ -45,16 +45,6 @@ steal('jquery/controller',
 
             $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
 
-            $('#PsaLevel').val("0");
-
-        },
-
-        '#PsaCount change': function () {
-
-            var num = $('#PsaCount').val();
-            var num2 = num / 10;
-            $('#PsaLevel').val(num2);
-            $('#PsaCount').val(num2);
         },
 
         submit: function (el, ev) {
@@ -65,7 +55,7 @@ steal('jquery/controller',
 
                 var formParams = el.formParams();
 
-                var params = { Date: formParams.date, PsaLevel: formParams.psacount };
+                var params = { Date: formParams.date, PsaLevel: formParams.PsaLevel };
 
                 new Zoladex.Models.Psalevel(params).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }
