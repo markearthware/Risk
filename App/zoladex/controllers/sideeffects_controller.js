@@ -9,6 +9,7 @@ steal('jquery/controller',
         init: function () {
             if (navigator.network) {
                 var networkState = navigator.network.connection.type;
+                alert(networkState);
                 if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
                     //Clear href attr and remove link icon
                     var text = $('#weblink').text();
