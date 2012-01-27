@@ -18,6 +18,12 @@ img.ui-li-thumb {
     margin: 10px;
 }
 
+.grey
+{
+    color: Gray;
+    font-size: 10px;
+}
+
 .symptomsContainer {
     height: 80%;
     margin-bottom: 20px;
