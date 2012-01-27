@@ -10,7 +10,7 @@ steal('jquery/controller',
     },
     {
         init: function () {
-
+            
             $.validator.setDefaults({
                 errorPlacement: function (error, element) {
                     $(element).attr({ "title": error.text() });

@@ -30,7 +30,6 @@ steal(
         './appointmenttypeadd_controller.js',
         './symptomtypeadd_controller.js',
         './jobroleadd_controller.js',
-        './customquestionadd_controller.js',
         './levelslist_controller.js',
         './leveldelete_controller.js',
         './usefulorgs_controller.js',
