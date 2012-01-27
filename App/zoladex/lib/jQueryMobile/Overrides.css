@@ -205,3 +205,19 @@ img.ui-li-thumb {
     margin-left: -13px !important;
 }
 
+.ios .dww li {
+    font-family: Helvetica, Arial, sans-serif; 
+}
+.dwl {
+    font-family: Helvetica, Arial, sans-serif 
+}
+.ios .dwb {
+    font-family: Helvetica, Arial, sans-serif 
+}
+.ios .dwbc {
+    border-radius: 5px;
+}
+.ui-mobile-viewport .dw .ios {
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px #000000;
+}
