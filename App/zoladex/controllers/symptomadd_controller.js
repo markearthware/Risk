@@ -82,11 +82,9 @@ steal('jquery/controller',
             });
         },
 
-        '#SymptomId change': function () {
-            if ($("#SymptomId option:selected").val() == -1) {
-                $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
-                localStorage.onsubmit = 0;
-            }
+        '#new click': function () {
+            $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
+            localStorage.onsubmit = 0;
         },
 
         onInsertSuccess: function (justAdded) {

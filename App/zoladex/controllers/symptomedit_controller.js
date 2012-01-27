@@ -78,7 +78,6 @@ steal('jquery/controller',
 
             if ($('#EditSymptomForm').valid()) {
                 new Zoladex.Models.PatientSymptom(el.formParams()).save(this.callback('onUpdateSuccess'), this.callback('onUpdateFail'));
-                var params = el.formParams();
             }
 
             return false;
@@ -102,13 +101,11 @@ steal('jquery/controller',
             });
         },
 
-        '#SymptomId change': function () {
-            if ($("#SymptomId option:selected").val() == -1) {
+        '#new click': function () {
                 var params = Zoladex.QSUtils.getParams();
                 localStorage.symptomId = params.id;
                 localStorage.onsubmit = 1;
                 $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
-            }
         },
 
         onUpdateSuccess: function () {

@@ -66,6 +66,33 @@ img.ui-li-thumb {
 	background: url("images/Support18.png")  no-repeat rgba(77, 77, 77, 1) !important;
 }
 
+#HomePage .ui-title .fs-sixteen
+{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#SymptomEditPage .lbl100, #SymptomRecordPage .lbl100 {
+
+    width: 100%;
+    
+}
+
+#SymptomEditPage .ui-field-contain, #SymptomRecordPage .ui-field-contain
+{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#HomePage .ui-title
+{
+    margin: .6em 0px .8em !important;
+}
+
+#indexPage .ui-title
+{
+    margin: .6em 0px .8em !important;
+}
 
 /* more input overrides */
 
@@ -145,6 +172,12 @@ img.ui-li-thumb {
 {
     white-space: normal;
     word-wrap:break-word;
+}
+
+.nowrap
+{
+    white-space: normal;
+    word-wrap: normal;
 }
 
 #FaqListPage div {
