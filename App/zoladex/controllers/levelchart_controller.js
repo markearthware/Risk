@@ -28,14 +28,30 @@ steal('jquery/controller',
                 });
 
                 $.jqplot('PsaChartContainer', [series], {
+                    axesDefaults: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            angle: -45,
+                            fontSize: '10pt'
+                        }
+                    },
                     axes: {
                         xaxis: {
-                            label: 'Date (month / year)',
+                            label: 'Date (day / month / year)',
                             renderer: $.jqplot.DateAxisRenderer,
-                            tickOptions: { formatString: '%m/%y'}
+                            tickOptions: {
+                                formatString: '%#d/%m/%y'
+                            }
                         },
                         yaxis: {
-                            label: 'PSA Level (ng/ml)'
+                            label: 'PSA Level (ng/ml)',
+                            tickOptions: {
+                                angle: 0
+                            },
+                            labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                            labelOptions : {
+                                angle: -90
+                            }
                         }
                     },
                     series: [{ lineWidth: 4, markerOptions: { style: 'square'}}]
