@@ -27,13 +27,13 @@ steal('jquery/controller',
                     $('#leaveAppDialog').remove();
                 }
 
-                var dialog = $.View(baseurl + '/zoladex/views/alerts/leaveAppDialog', {
+                 this.element.parent().append('//zoladex/views/alerts/leaveAppDialog', {
 
                     toLink: el.attr('href'),
                     fromLink: document.location.href
                 });
 
-                this.element.parent().append(dialog);
+                //this.element.parent().append(dialog);
 
                 $('#leaveAppDialog').page();
 
