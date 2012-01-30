@@ -45,18 +45,7 @@
 </li>
 <%}%>
 
-<% if(this.PrimaryPracticePostcode){ %>
-<% var link = "http://maps.google.com/maps?q=" + this.PrimaryPracticePostcode + ", UK"; %>
-<li>
-	<a target="_blank" href= "<%=link%>" >
-	<div class="overflow">
-	Touch for directions to <%=this.PrimaryPracticeName%>
-	</div>
-	</a>
-</li>
-<% } %>
-
-<% if(this.PrimaryPracticePostcode){ %>
+<% if(this.SecondaryPracticeId){ %>
 <li>
 	<a href=<%="../hcp/practicedetails.htm?id="+this.SecondaryPracticeId %> >
 		<div class="overflow">
@@ -66,16 +55,6 @@
 </li>
 <% } %>
 
-<% if(this.SecondaryPracticePostcode){ %>
-<% var link = "http://maps.google.com/maps?q=" + this.SecondaryPracticePostcode + ", UK"; %>
-<li>
-	<a target="_blank" href= "<%=link%>" >
-	<div class="overflow">
-	Touch for directions to <%=this.SecondaryPracticeName%>
-	</div>
-	</a>
-</li>
-<% } %>
 
 <% if(this.Notes){ %>
 <li data-icon="false">
