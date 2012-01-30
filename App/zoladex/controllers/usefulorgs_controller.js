@@ -17,13 +17,17 @@ steal('jquery/controller',
                 }
             }
         },
-        '#weblink click': function (el, ev) {
+        '.weblink click': function (el, ev) {
 
             ev.preventDefault();
 
+            if ($('#leaveAppDialog')) {
+                $('#leaveAppDialog').remove();
+            }
+
             var dialog = $.View('../../../views/alerts/leaveAppDialog', {
-                
-                toLink: el.attr('href'), 
+
+                toLink: el.attr('href'),
                 fromLink: document.location.href
             });
 
