@@ -187,7 +187,7 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Ultrasound scan")');
                 tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Flexible Cystoscopy")');
                 tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Bone scan")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Trans Rectal Ultrasound (TRUS)")');
+                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("T.R.U.S")');
             });
         });
 
@@ -199,7 +199,7 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Practice Nurse")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Urologist")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Urology Secretary")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Clinical Nurse Specialist")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Clinical Nurse")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Oncologist")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Oncology Secretary")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Radiotherapist")');

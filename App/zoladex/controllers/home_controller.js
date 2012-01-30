@@ -10,10 +10,14 @@ steal('jquery/controller',
     {
         init: function () {
 
+            $.mobile.showPageLoadingMsg();
+            
             var alertsdef = Zoladex.Models.Alert.findAll();
 
             $.when(alertsdef).done(function (alertres) {
 
+                $.mobile.hidePageLoadingMsg();
+                
                 steal.dev.log(alertres);
 
                 if (alertres.length > 0 && alertHasBeenShown == false) {

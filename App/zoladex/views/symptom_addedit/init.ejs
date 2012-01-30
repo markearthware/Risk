@@ -1,14 +1,21 @@
 <% if (this.id) { %>
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <% } %>
-<label for="SymptomId">Symptom:</label>
-<select class="required textinput" id="SymptomId" name="SymptomId">
-	<option value="">Select a symptom</option>
-	<%for(var i = 0; i < this.Symptoms.length ; i++){ %>
-		<option <% if(this.SymptomId == this.Symptoms[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Symptoms[i].id %>"><%= this.Symptoms[i].Description %></option>
-	<%}%>
-	<option value="-1">Add new</option>     
-</select>
+
+<div data-role="fieldcontain">
+    <fieldset data-role="controlgroup" class="required textinput" name="SymptomId" id="SymptomId">
+	<legend>Symptom:</legend>
+		<%for(var i = 0; i < this.Symptoms.length ; i++){ %>
+		<input type="radio" name="SymptomId" id="<%=this.Symptoms[i].id%>" value="<%=this.Symptoms[i].id%>" <% if(this.SymptomId == this.Symptoms[i].id){%> <%= checked = 'checked' %> <%}%> />
+        <label class="lbl100" for="<%=this.Symptoms[i].id%>"><%= this.Symptoms[i].Description %></label>
+		<%}%>
+		<div id="new">
+		<input type="radio" name="SymptomId" id="radio-choice-a" value="choice-1" />
+        <label class="lbl100" for="radio-choice-a">Add new</label>
+		</div>
+	</fieldset>
+</div>
+
 <label for="Date">Date:</label>
 <input type="text" id="Date" placeholder="Click to select date" class="textinput required" name="_Date" value="<%= $.scroller.formatDate('dd M yy', this.DateTime) %>" />
 <label for="Time">Time:</label>
