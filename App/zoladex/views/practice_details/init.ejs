@@ -13,8 +13,9 @@
   </div>
   </a>
 </li>
-<li>
 	<% if(this.Email){ %>
+<li>
+
 	<a href="mailto:<%=this.Email%>">
 	<div class="overflow">
 	<strong>Email: </strong><%=this.Email%>
@@ -24,23 +25,14 @@
 	<a href="#">
 	<strong>Email: </strong>
 	</a>
-	<% } %>
+
 </li>
-<li data-icon="false">
-	<a href="#">
+	<% } %>
+<li>
+	<a target="_blank" href="http://maps.google.com/maps?q=<%=this.Postcode%>, UK">
 	<div class="overflow">
 	<strong>Address: </strong>
 	<%=this.Street%> <%=this.Town%> <%=this.County%> <%=this.Postcode%>
 	</div>
 	</a>
 </li>
-<% if(this.Postcode){ %>
-	<li>
-		<a target="_blank" href="http://maps.google.com/maps?q=" + <%=this.Postcode%> + ", UK">
-		<div class="overflow">
-			Touch for directions to <%=this.Name%> 
-			</div>
-		</a>
-	</li>
-<%}%>
-

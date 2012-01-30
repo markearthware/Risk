@@ -15,7 +15,7 @@
 		</div>
 	</a>
 </li>
-
+<% if(this.Telephone){ %>
 <li>
 	<a href="tel:<%=this.Telephone%>">
 	<div class="overflow">
@@ -23,6 +23,8 @@
   </div>
 	</a>
 </li>
+<%}%>
+<% if(this.Email){ %>
 <li>
 	<a href="mailto:<%=this.Email%>">
 		<div class="overflow">
@@ -30,6 +32,7 @@
 		</div>
 	</a>
 </li>
+<%}%>
 
 <li>
 	<a href=<%="../hcp/practicedetails.htm?id="+this.PrimaryPracticeId %> >
