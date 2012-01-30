@@ -17,6 +17,11 @@ steal('jquery/controller',
         loadData: function () {
             Zoladex.Models.PatientSymptomListItem.findAll(this).done(this.callback('onDataLoaded'));
         },
+        '.deleteButton click': function (el) {
+            var symptomId = $(el).attr("id");
+            localStorage.symptomId = symptomId;
+            $.mobile.changePage("../dialog/symptomconfirmdialog.htm");
+        },
         onDataLoaded: function (result) {
             $('#SymptomListContainer').html($.View('//zoladex/views/symptom_list/init.ejs', result));
             $.mobile.hidePageLoadingMsg();

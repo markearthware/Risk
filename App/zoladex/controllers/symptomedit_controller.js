@@ -54,10 +54,10 @@ steal('jquery/controller',
 
                 rec.Symptoms = all;
 
-                if (localStorage.stid !== "null") {
+                if (localStorage.stid !== '') {
                     rec.SymptomId = localStorage.stid;
                 }
-                localStorage.stid = null;
+                localStorage.stid = '';
 
                 var view = $.View('//zoladex/views/symptom_addedit/init.ejs', rec);
 
@@ -67,6 +67,11 @@ steal('jquery/controller',
                 $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
                 $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
+                $('.ui-radio:last-of-type input').change(function (evt) {
+                    localStorage.onsubmit = 0;
+                    $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
+                });
+                
                 self.setupDateTimeControls();
 
                 $.mobile.hidePageLoadingMsg();
@@ -99,13 +104,6 @@ steal('jquery/controller',
                 // set hidden field to combined ticks
                 $("#DateTime").val(combined.getTime());
             });
-        },
-
-        '#new click': function () {
-                var params = Zoladex.QSUtils.getParams();
-                localStorage.symptomId = params.id;
-                localStorage.onsubmit = 1;
-                $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
         },
 
         onUpdateSuccess: function () {

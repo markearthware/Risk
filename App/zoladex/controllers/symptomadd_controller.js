@@ -45,12 +45,14 @@ steal('jquery/controller',
 
             var date = new Date();
 
-            var view = $.View('//zoladex/views/symptom_addedit/init.ejs', { DateTime: date, Symptoms: Zoladex.Models.Symptom.findAll(), SymptomId: localStorage.stid });
-            localStorage.stid = null;
+            var view = $.View('//zoladex/views/symptom_addedit/init.ejs', { DateTime: date, Symptoms: Zoladex.Models.Symptom.findAll(), SymptomId: localStorage.stid ? localStorage.stid : 1 });
+            localStorage.stid = '';
 
             $('#RecordSymptomForm').html(view);
 
             view.done(this.callback(this.refreshForm));
+
+
         },
 
         submit: function (el, ev) {
@@ -82,11 +84,6 @@ steal('jquery/controller',
             });
         },
 
-        '#new click': function () {
-            $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
-            localStorage.onsubmit = 0;
-        },
-
         onInsertSuccess: function (justAdded) {
             var symptomId = justAdded.SymptomId;
 
@@ -111,6 +108,11 @@ steal('jquery/controller',
         refreshForm: function () {
 
             $('#RecordSymptomForm').trigger('create');
+
+            $('.ui-radio:last-of-type input').change(function (evt) {
+                localStorage.onsubmit = 0;
+                $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
+            });
 
             this.setupDateTimeControls();
 

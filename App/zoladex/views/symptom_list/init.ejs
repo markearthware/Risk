@@ -30,5 +30,6 @@ currentdate=compare.getTime();
 		<h3><div class="overflow"> <%= this[i].Description %></div></h3>	
 		<p><%if(this[i].WarningSign === 1){%> <span><div class="overflow warningText">Potential warning sign, contact your doctor.</div></span><%}%></p>
 	</a>
+	<a class="deleteButton" id="<%=this[i].id %>" >Delete</a>
 </li>
 <%}}%> 

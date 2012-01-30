@@ -4,7 +4,7 @@ steal('jquery/controller',
     '../models/symptom.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SymptomDelete', {
-        },
+    },
     {
         init: function () {
 
@@ -12,11 +12,13 @@ steal('jquery/controller',
         },
 
         '#confirmYes click': function (el) {
-            var params = Zoladex.QSUtils.getParams();
-            Zoladex.Models.PatientSymptom.destroy(params.id);
+            var def = Zoladex.Models.PatientSymptom.destroy(localStorage.symptomId);
+            $.when(def).done(function () {
+                $.mobile.changePage("../symptoms/symptomslist.htm");
+            });
         },
         '#confirmNo click': function (el) {
             $('.ui-dialog').dialog('close');
         }
     });
-    });
+});
