@@ -7,7 +7,7 @@
 		</div>
 	</a>
 </li>
-
+<% if(this.JobRole){ %>
 <li data-icon="false">
 	<a href="#" >
 	<div class="overflow">
@@ -15,6 +15,7 @@
 		</div>
 	</a>
 </li>
+<%}%>
 <% if(this.Telephone){ %>
 <li>
 	<a href="tel:<%=this.Telephone%>">
@@ -34,6 +35,7 @@
 </li>
 <%}%>
 
+<% if(this.PrimaryPracticeId){ %>
 <li>
 	<a href=<%="../hcp/practicedetails.htm?id="+this.PrimaryPracticeId %> >
 		<div class="overflow">
@@ -41,6 +43,7 @@
 		</div>
 	</a>
 </li>
+<%}%>
 
 <% if(this.PrimaryPracticePostcode){ %>
 <% var link = "http://maps.google.com/maps?q=" + this.PrimaryPracticePostcode + ", UK"; %>
@@ -53,6 +56,7 @@
 </li>
 <% } %>
 
+<% if(this.PrimaryPracticePostcode){ %>
 <li>
 	<a href=<%="../hcp/practicedetails.htm?id="+this.SecondaryPracticeId %> >
 		<div class="overflow">
@@ -60,6 +64,7 @@
 		</div>
 	</a>
 </li>
+<% } %>
 
 <% if(this.SecondaryPracticePostcode){ %>
 <% var link = "http://maps.google.com/maps?q=" + this.SecondaryPracticePostcode + ", UK"; %>
@@ -72,9 +77,11 @@
 </li>
 <% } %>
 
+<% if(this.Notes){ %>
 <li data-icon="false">
 	<a >
 	<div class="overflow">Notes: <%=this.Notes%></div>
 	</a>
 </li>
+<% } %>
 

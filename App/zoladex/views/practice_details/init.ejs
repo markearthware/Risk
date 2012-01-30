@@ -6,6 +6,8 @@
   </div>
   </a>
 </li>
+
+<% if(this.Telephone){ %>
 <li>
 <a href="tel:<%=this.Telephone%>">
 <div class="overflow">
@@ -13,6 +15,8 @@
   </div>
   </a>
 </li>
+<% } %>
+
 	<% if(this.Email){ %>
 <li>
 
@@ -21,18 +25,26 @@
 	<strong>Email: </strong><%=this.Email%>
 	</div>
 	</a> 
-	<% } else { %>
-	<a href="#">
-	<strong>Email: </strong>
-	</a>
-
 </li>
 	<% } %>
-<li>
-	<a target="_blank" href="http://maps.google.com/maps?q=<%=this.Postcode%>, UK">
+
+	<%	var link; 
+		var dataIcon =''; 
+		if(this.Postcode){
+			link = 'http://maps.google.com/maps?q=' + this.Postcode + ', UK';
+		}else{
+			link = '#';
+			dataIcon = 'false';
+		}
+	 %>
+
+<%if(this.Street || this.Town || this.County || this.Postcode){%>
+<li data-icon="<%=dataIcon%>" >
+	<a target="_blank" href="<%=link%>">
 	<div class="overflow">
 	<strong>Address: </strong>
 	<%=this.Street%> <%=this.Town%> <%=this.County%> <%=this.Postcode%>
 	</div>
 	</a>
 </li>
+<% } %>
