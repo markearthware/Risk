@@ -1,7 +1,8 @@
 steal('jquery/controller',
     'jquery/view/ejs',
     'jquery/dom/form_params',
-    'jquery/controller/view')
+    'jquery/controller/view',
+'../views/alerts/leaveAppDialog.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.UsefulOrgs', {
         },
@@ -25,8 +26,6 @@ steal('jquery/controller',
                 if ($('#leaveAppDialog')) {
                     $('#leaveAppDialog').remove();
                 }
-
-                alert(baseurl + '/zoladex/views/alerts/leaveAppDialog');
 
                 var dialog = $.View(baseurl + '/zoladex/views/alerts/leaveAppDialog', {
 
