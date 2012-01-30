@@ -101,15 +101,13 @@ steal('jquery/controller',
 
         onInsertFail: function () {
             //todo: handle erorrs
-            //            steal.dev.log('professional has not been added');
-            //            $.mobile.changePage('dialog/error.htm', 'pop', false, true);
         },
 
         refreshForm: function () {
 
             $('#RecordSymptomForm').trigger('create');
 
-            $('.ui-radio:last-of-type input').change(function (evt) {
+            $('.ui-radio:last-of-type input').bind('change', function (evt) {
                 localStorage.onsubmit = 0;
                 $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
             });
@@ -117,6 +115,11 @@ steal('jquery/controller',
             this.setupDateTimeControls();
 
             $.mobile.hidePageLoadingMsg();
+        },
+
+        destroy: function () {
+            $('.ui-radio:last-of-type input').unbind();
+            this._super();
         }
     });
 });

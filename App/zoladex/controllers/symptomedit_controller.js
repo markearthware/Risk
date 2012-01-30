@@ -67,7 +67,7 @@ steal('jquery/controller',
                 $("#Date").scroller({ theme: pickertheme, dateFormat: 'dd M yy', dateOrder: 'ddMMyy' });
                 $('#Time').scroller({ preset: 'time', theme: pickertheme, timeFormat: 'HH:ii' });
 
-                $('.ui-radio:last-of-type input').change(function (evt) {
+                $('.ui-radio:last-of-type input').bind('change',function (evt) {
                     localStorage.onsubmit = 0;
                     $.mobile.changePage('../dialog/typenew.htm', 'flip', false, true);
                 });
@@ -106,12 +106,29 @@ steal('jquery/controller',
             });
         },
 
-        onUpdateSuccess: function () {
-            $.mobile.changePage("symptomslist.htm");
+        onUpdateSuccess: function (justAdded) {
+
+            var symptomId = justAdded.SymptomId;
+
+            var deffered = Zoladex.Models.Symptom.findOne(symptomId);
+
+            $.when(deffered).done(function (result) {
+                if (result[0].WarningSign == 1) {
+                    $.mobile.changePage('../dialog/patientwarningdialog.htm', 'pop', false, true);
+                }
+                else {
+                    $.mobile.changePage('symptomslist.htm', 'pop', false, true);
+                }
+            });
         },
 
         onUpdateFail: function () {
             // todo: dialog
+        },
+        
+        destroy: function () {
+            $('.ui-radio:last-of-type input').unbind();
+            this._super();
         }
     });
 });
