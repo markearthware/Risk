@@ -19,16 +19,14 @@ steal('jquery/controller',
             },
 
             '.weblink click': function (el, ev) {
-
-                alert('clicky');
-                
+            
                 ev.preventDefault();
 
                 if ($('#leaveAppDialog')) {
                     $('#leaveAppDialog').remove();
                 }
 
-                var dialog = $.View('../../../views/alerts/leaveAppDialog', {
+                var dialog = $.View(baseurl +  '/zoladex/views/alerts/leaveAppDialog', {
 
                     toLink: el.attr('href'),
                     fromLink: document.location.href
