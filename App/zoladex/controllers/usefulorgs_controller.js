@@ -33,8 +33,6 @@ steal('jquery/controller',
                     fromLink: document.location.href
                 });
 
-                //this.element.parent().append(dialog);
-
                 $('#leaveAppDialog').page();
 
                 $.mobile.changePage($('#leaveAppDialog'));
