@@ -9,7 +9,7 @@ steal('jquery/controller',
     '../views/hcp_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpAdd', {
-    },
+        },
     {
         init: function () {
 
@@ -49,56 +49,38 @@ steal('jquery/controller',
         loadData: function () {
             var locsdef = Zoladex.Models.Practice.findAll();
             var rolesdef = Zoladex.Models.JobRole.findAll();
-            var params = Zoladex.QSUtils.getParams();
-
+           
             $.when(locsdef, rolesdef).done(function (locsres, rolesres) {
                 // process view
-                var locid, locid2;
-
-                if (localStorage.locid) {
-                    locid = localStorage.locid;
-                }
-                else {
-                    locid = -1;
-                }
-
-                if (localStorage.locid2) {
-                    locid2 = localStorage.locid2;
-                }
-                else {
-                    locid2 = -1;
-                }
-
-                if (localStorage.PracticeNameId) {
-                    locid = localStorage.PracticeNameId;
-                    localStorage.PracticeNameId = "";
-                }
-               
-                if (localStorage.PracticeNameId2) {
-                    locid2 = localStorage.PracticeNameId2;
-                    localStorage.PracticeNameId2 = "";
-                }
-              
-
                 var view = $.View('//zoladex/views/hcp_addedit/init.ejs',
-                { id: "",
-                    Title: "",
-                    FirstName: "",
-                    Surname: "",
-                    JobRole: "",
-                    Number: "",
-                    Email: "",
-                    Notes: "",
+                { 
+                    id: "",
+                    Title: localStorage.Title ? localStorage.Title : "",
+                    FirstName: localStorage.FirstName ? localStorage.FirstName : "",
+                    Surname: localStorage.Surname ? localStorage.Surname : "",
+                    Telephone: localStorage.Telephone ? localStorage.Telephone : "",
+                    Email: localStorage.Email ? localStorage.Email : "",
+                    Notes: localStorage.Notes ? localStorage.Notes :"",
                     Locs: locsres,
-                    PLocId: locid,
-                    SLocId: locid2,
+                    PLocId: localStorage.locid ? localStorage.locid : (localStorage.PracticeNameId ? localStorage.PracticeNameId : -1),
+                    SLocId: localStorage.locid2 ? localStorage.locid2 : (localStorage.PracticeNameId2 ? localStorage.PracticeNameId2 : -1),
                     Roles: rolesres,
-                    RoleId: localStorage.jrid ? localStorage.jrid : -1
+                    RoleId: localStorage.jrid ? localStorage.jrid : (localStorage.JobRole ? localStorage.JobRole : -1)
                 });
 
+                //clear local storage variable which have been used
                 localStorage.locid = "";
                 localStorage.locid2 = "";
                 localStorage.jrid = "";
+                localStorage.Title = "";
+                localStorage.Surname = "";
+                localStorage.FirstName = "";
+                localStorage.JobRole = "";
+                localStorage.Telephone = "";
+                localStorage.Email = "";
+                localStorage.Notes = "";
+                localStorage.PracticeNameId = "";
+                localStorage.PracticeNameId2 = "";
 
                 $('#NewHcpForm').html(view).trigger('create');
             });
@@ -151,30 +133,39 @@ steal('jquery/controller',
 
         '#JobRole change': function () {
             if ($("#JobRole option:selected").val() == -1) {
-
-                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
-                localStorage.PracticeNameId2 = $("#PracticeName2 option:selected").val();
                 localStorage.onsubmit = 0;
-                
+                this.SaveCurrentFormState();
                 $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
-                
             }
         },
 
         '#PracticeName change': function () {
             if ($("#PracticeName option:selected").val() == -1) {
-                $.mobile.changePage('practicenew.htm', 'flip', false, true);
+                this.SaveCurrentFormState();
                 localStorage.onsubmit = 2;
+                $.mobile.changePage('practicenew.htm', 'flip', false, true);
             }
         },
 
         '#PracticeName2 change': function () {
             if ($("#PracticeName2 option:selected").val() == -1) {
-                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+                this.SaveCurrentFormState();
                 localStorage.onsubmit = 4;
                 $.mobile.changePage('practicenew.htm', 'flip', false, true);
             }
+        },
+
+        SaveCurrentFormState: function () {
+            localStorage.Title = $("#Title option:selected").val();
+            localStorage.Surname = $("#Surname").val();
+            localStorage.FirstName = $('#FirstName').val();
+            localStorage.JobRole = $("#JobRole option:selected").val();
+            localStorage.Telephone = $('#Telephone').val();
+            localStorage.Email = $('#Email').val();
+            localStorage.Notes = $('#Notes').val();
+            localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+            localStorage.PracticeNameId2 = $("#PracticeName2 option:selected").val();
         }
 
     });
-});
+    });
