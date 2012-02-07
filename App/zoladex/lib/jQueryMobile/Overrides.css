@@ -186,6 +186,12 @@ img.ui-li-thumb {
     word-wrap:break-word;
 }
 
+.weblink2
+{
+    white-space: normal;
+    word-wrap:break-word;
+}
+
 .overflow
 {
     white-space: normal;

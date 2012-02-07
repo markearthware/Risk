@@ -12,9 +12,7 @@ steal('jquery/controller',
                 
                 if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
                     //Clear href attr and remove link icon
-                    var text = $('.weblink').text();
-                    $('.weblink').after("<span class='weblink2'>"+text+"</span>");
-                    $('.weblink').remove();
+                    $('.weblink').removeAttr("href");
                 }
             }
 
