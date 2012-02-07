@@ -13,8 +13,9 @@ steal('jquery/controller',
 
                     if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
                         //Clear href attr and remove link icon
-                        $('#weblink').attr('href', 'dialog/notconnected.htm');
-                        $('#weblink').parent().attr('data-icon', 'false');
+                        $('.weblink').attr('class', 'weblink2');
+                        $('.weblink2').attr('href', 'dialog/notconnected.htm');
+                        $('.weblink2').parent().attr('data-icon', 'false');
                     }
                 }
             },
