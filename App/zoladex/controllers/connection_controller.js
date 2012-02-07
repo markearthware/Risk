@@ -15,7 +15,6 @@ steal('jquery/controller',
                     $('.weblink').attr("href", "../pages/support/usefulorgs/dialog/notconnected.htm");
                 }
             }
-            $('.weblink').attr("href", "../support/usefulorgs/dialog/notconnected.htm");
         }
     });
     });
