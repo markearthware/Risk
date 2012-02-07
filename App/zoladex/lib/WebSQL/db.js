@@ -157,7 +157,7 @@ var localStorageDB = (function () {
 
 
         checkTableExists("Groups", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, ContactName, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, ContactName, Postcode, Street, Town, County, Telephone, Email, Website)', [], function (tx, result) {
             });
         });
 
@@ -198,10 +198,9 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("GP")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Practice Nurse")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Urologist")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Urology Secretary")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Clinical Nurse")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Pharmacist")');
+                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Specialist Nurse")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Oncologist")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Oncology Secretary")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Radiotherapist")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Chemotherapy Nurse")');
                 tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Key Worker")');
@@ -234,10 +233,10 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Loss of sex drive", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Sweating", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Hot flushes", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Difficulty or pain when peeing", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Difficulty or pain when weeing", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Having to rush to the toilet to pass water", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Frequent visits to toilet especially at night", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Starting, stopping or dribbling when peeing", 0)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Starting, stopping or dribbling when weeing", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Leaking urine (incontinence)", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("A feeling of not having emptied bladder properly", 0)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain when you ejaculate", 0)');

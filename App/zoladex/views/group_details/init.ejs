@@ -6,6 +6,8 @@
   </div>
   </a>
 </li>
+
+<% if(this.ContactName){ %>
 <li data-icon="false">
 	<a>
 	<div class="overflow">
@@ -13,6 +15,9 @@
   </div>
   </a>
 </li>
+<% } %>
+
+<% if(this.Telephone){ %>
 <li>
 <a href="tel:<%=this.Telephone%>">
 <div class="overflow">
@@ -20,19 +25,29 @@
   </div>
   </a>
 </li>
-<li data-theme="d">
-	<% if(this.Email){ %>
+<% } %>
+
+<% if(this.Email){ %>
+<li>
 	<a href="mailto:<%=this.Email%>">
-	<div class="overflow">
-	<strong>Email: </strong><%=this.Email%>
-	</div>
-	</a> 
-	<% } else { %>
-	<a href="#">
-	<strong>Email: </strong>
+		<div class="overflow">
+		<strong>Email: </strong><%=this.Email%>
+		</div>
 	</a>
-	<% } %>
 </li>
+<%}%>
+
+<% if(this.Website){ %>
+<li>
+	<a target="_blank" href="http://<%=this.Website%>">
+		<div class="overflow">
+		<strong>Website: </strong><%= this.Website %>
+		</div>
+	</a>
+</li>
+<%}%>
+
+<% if(this.Postcode){ %>
 <li>
 	<a target="_blank" href="http://maps.google.com/maps?q=<%=this.Postcode%>, UK">
 		<div class="overflow">
@@ -41,4 +56,5 @@
 		</div>
 	</a>
 </li>
+<%}%>
 

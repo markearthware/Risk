@@ -1,8 +1,8 @@
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
-<label class="bigLabel" for="PracticeName">Primary Location:</label>	
+<label class="bigLabel" for="PracticeName">Main Workplace:</label>	
 <select id="PracticeName" name="PracticeName" class='practiceSelect'>
-	<option value="">Select Hospital</option>
+	<option value="">Select Hospital/GP Surgery</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
 		<option <%if(this.PLocId == this.Locs[i].id){%> <%= selected ='selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>  
@@ -10,9 +10,9 @@
 </select>
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
-<label class="bigLabel" for="PracticeName2">Secondary Location:</label>	
+<label class="bigLabel" for="PracticeName2">Alternative Workplace:</label>	
 <select id="PracticeName2" name="PracticeName2" class='practiceSelect'>
-	<option value="">Select Hospital</option>
+	<option value="">Select Hospital/GP Surgery</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
 		<option <%if(this.SLocId == this.Locs[i].id){%> <%= selected ='selected' %> <%}%> value="<%= this.Locs[i].id %>"><%= this.Locs[i].Name %></option>
 	<%}%>  

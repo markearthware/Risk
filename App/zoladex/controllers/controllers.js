@@ -36,5 +36,7 @@ steal(
         './customquestionadd_controller.js',
         './customquestionedit_controller.js',
         './questiondelete_controller.js',
-        './questionlist_controller.js'
+        './questionlist_controller.js',
+        './sideeffects_controller.js',
+        './connection_controller.js'
         )

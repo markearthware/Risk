@@ -3,7 +3,7 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view')
     .then(function ($) {
-        $.Controller('Zoladex.Controllers.SideEffects', {
+        $.Controller('Zoladex.Controllers.Connection', {
     },
     {
         init: function () {
@@ -18,24 +18,6 @@ steal('jquery/controller',
                 }
             }
 
-        },
-        '.weblink click': function (el, ev) {
-
-            ev.preventDefault();
-
-            if ($('#leaveAppDialog')) {
-                $('#leaveAppDialog').remove();
-            }
-
-            this.element.parent().append('//zoladex/views/alerts/leaveAppDialog', {
-
-                toLink: el.attr('href'),
-                fromLink: document.location.href
-            });
-
-            $('#leaveAppDialog').page();
-
-            $.mobile.changePage($('#leaveAppDialog'));
         }
     });
 });
