@@ -1,5 +1,40 @@
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
+
+<label data-inline="true" for="title">Title:</label>
+<select id="Title" name="Title" class='textinput required'>
+    <option value="">Select Title</option>
+	<option value="Dr" <% if(this.Title == "Dr"){ %> selected="selected" <% } %> >Dr</option>
+	<option value="Mr" <% if(this.Title == "Mr"){ %> selected="selected" <% } %> >Mr</option>
+	<option value="Mrs" <% if(this.Title == "Mrs"){ %> selected="selected" <% } %> >Mrs</option>  
+	<option value="Miss" <% if(this.Title == "Miss"){ %> selected="selected" <% } %> >Miss</option>    
+	<option value="Ms" <% if(this.Title == "Ms"){ %> selected="selected" <% } %> >Ms</option>
+	<option value="Professor" <% if(this.Title == "Professor"){ %> selected="selected" <% } %> >Professor</option>    
+</select>
+<label data-inline="true" for="Surname">Surname:</label>
+<input type="text" name="Surname" id="Surname"  class="textinput required" value="<%= this.Surname %>" />
+
+<label data-inline="true" for="firstname">First Name:</label>
+<input type="text" name="FirstName" id="FirstName" value ="<%= this.FirstName %>" />
+	
+<label for="JobRole">Job Role:</label>
+<select id="JobRole" name="JobRole">
+    <option value="">Select Job Role</option>
+	<%for(var i = 0; i < this.Roles.length; i++){ %>
+		<option <% if(this.RoleId == this.Roles[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Roles[i].id %>"><%= this.Roles[i].Name %></option>
+	<%}%> 
+	<option value = "-1">Add new</option> 
+</select>
+
+<label data-inline="true" for="number">Telephone:</label>
+<input type="tel" name="Telephone" id="Telephone" value="<%= this.Telephone %>"   />
+
+<label data-inline="true" for="email">Email:</label>
+<input type="email" name="Email" id="Email" class="email" value="<%= this.Email %>"   />
+
+<label data-inline="true" for="notes">Notes:</label>
+<input type="text" name="Notes" id="Notes" value="<%=this.Notes%>" />
+
 <label class="bigLabel" for="PracticeName">Main Workplace:</label>	
 <select id="PracticeName" name="PracticeName" class='practiceSelect'>
 	<option value="">Select Hospital/GP Surgery</option>
@@ -18,39 +53,6 @@
 	<%}%>  
 	<option value = "-1">Add new</option> 
 </select>
-	
-<label for="JobRole">Job Role:</label>
-<select id="JobRole" name="JobRole">
-    <option value="">Select Job Role</option>
-	<%for(var i = 0; i < this.Roles.length; i++){ %>
-		<option <% if(this.RoleId == this.Roles[i].id){%> <%= selected = 'selected' %> <%}%> value="<%= this.Roles[i].id %>"><%= this.Roles[i].Name %></option>
-	<%}%> 
-	<option value = "-1">Add new</option> 
-</select>
-
-<input type="hidden" name="id" id="id" value="<%= this.id %>" />
-
-<label data-inline="true" for="title">Title:</label>
-<select id="Title" name="Title" class='textinput required'>
-    <option value="">Select Title</option>
-	<option value="Dr" <% if(this.Title == "Dr"){ %> selected="selected" <% } %> >Dr</option>
-	<option value="Mr" <% if(this.Title == "Mr"){ %> selected="selected" <% } %> >Mr</option>
-	<option value="Mrs" <% if(this.Title == "Mrs"){ %> selected="selected" <% } %> >Mrs</option>  
-	<option value="Miss" <% if(this.Title == "Miss"){ %> selected="selected" <% } %> >Miss</option>    
-	<option value="Ms" <% if(this.Title == "Ms"){ %> selected="selected" <% } %> >Ms</option>
-	<option value="Professor" <% if(this.Title == "Professor"){ %> selected="selected" <% } %> >Professor</option>    
-</select>
-
-<label data-inline="true" for="firstname">First Name:</label>
-<input type="text" name="FirstName" id="FirstName" value ="<%= this.FirstName %>" />
-<label data-inline="true" for="surname">Surname:</label>
-<input type="text" name="Surname" id="Surname"  class="textinput required" value="<%= this.Surname %>" />
-<label data-inline="true" for="number">Telephone:</label>
-<input type="tel" name="Telephone" id="Telephone" value="<%= this.Telephone %>"   />
-<label data-inline="true" for="email">Email:</label>
-<input type="email" name="Email" id="Email" class="email" value="<%= this.Email %>"   />
-<label data-inline="true" for="notes">Notes:</label>
-<input type="text" name="Notes" id="Notes" value="<%=this.Notes%>" />
 
 <% if (this.id) { %>
 <input type="submit" id="newhcpbutton" data-icon="check" value="Save Changes" data-theme="g"/>

@@ -8,7 +8,7 @@ steal('jquery/controller',
     '../views/hcp_addedit/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpEdit', {
-    },
+        },
     {
         init: function () {
 
@@ -76,59 +76,35 @@ steal('jquery/controller',
             localStorage.hcpId = "";
 
             $.when(hcpdef, practicesdef, rolesdef).done(function (hcpres, practicesres, rolesres) {
-
-
-                var locid, locid2;
-
-                if (localStorage.locid) {
-                    locid = localStorage.locid;
-                }
-                else {
-                    locid = "";
-                }
-
-                if (localStorage.locid2) {
-                    locid2 = localStorage.locid2;
-                }
-                else {
-                    locid2 = "";
-                }
-
-
-                if (localStorage.PracticeNameId) {
-                    locid = localStorage.PracticeNameId;
-                    localStorage.PracticeNameId = "";
-                }
-                else if (!locid) {
-                    locid = hcpres.PrimaryPracticeId;
-                }
-
-                if (localStorage.PracticeNameId2) {
-                    locid2 = localStorage.PracticeNameId2;
-                    localStorage.PracticeNameId2 = "";
-                }
-                else if (!locid2) {
-                    locid2 = hcpres.SecondaryPracticeId;
-                }
-
+             
                 var view = $.View('//zoladex/views/hcp_addedit/init.ejs', {
                     id: hcpres.id,
-                    Title: hcpres.Title,
-                    FirstName: hcpres.FirstName,
-                    Surname: hcpres.Surname,
-                    Telephone: hcpres.Telephone,
-                    Email: hcpres.Email,
-                    Notes: hcpres.Notes,
+                    Title: localStorage.Title ? localStorage.Title : hcpres.Title,
+                    FirstName: localStorage.FirstName ? localStorage.FirstName : hcpres.FirstName,
+                    Surname: localStorage.Surname ? localStorage.Surname : hcpres.Surname,
+                    Telephone: localStorage.Telephone ? localStorage.Telephone : hcpres.Telephone,
+                    Email: localStorage.Email ? localStorage.Email : hcpres.Email,
+                    Notes: localStorage.Notes ? localStorage.Notes : hcpres.Notes,
                     Locs: practicesres,
-                    PLocId: locid,
-                    SLocId: locid2,
+                    PLocId: localStorage.locid ? localStorage.locid : (localStorage.PracticeNameId ? localStorage.PracticeNameId : hcpres.PrimaryPracticeId),
+                    SLocId: localStorage.locid2 ? localStorage.locid2: (localStorage.PracticeNameId2 ? localStorage.PracticeNameId2 : hcpres.SecondaryPracticeId),
                     Roles: rolesres,
-                    RoleId: localStorage.jrid ? localStorage.jrid : hcpres.JobRole
+                    RoleId: localStorage.jrid ? localStorage.jrid : (localStorage.JobRole ? localStorage.JobRole : hcpres.JobRole)
                 });
 
+                //clear local storage variable which have been used
                 localStorage.locid = "";
                 localStorage.locid2 = "";
                 localStorage.jrid = "";
+                localStorage.Title = "";
+                localStorage.Surname = "";
+                localStorage.FirstName = "";
+                localStorage.JobRole = "";
+                localStorage.Telephone = "";
+                localStorage.Email = "";
+                localStorage.Notes = "";
+                localStorage.PracticeNameId = "";
+                localStorage.PracticeNameId2 = "";
 
                 var form = $('#EditHcpForm');
 
@@ -157,8 +133,7 @@ steal('jquery/controller',
                 localStorage.hcpId = $('#id').val();
 
                 //save user input from above fields
-                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
-                localStorage.PracticeNameId2 = $("#PracticeName2 option:selected").val();
+                this.SaveCurrentFormState();
 
                 $.mobile.changePage('dialog/jobrolenew.htm', 'flip', false, true);
 
@@ -169,6 +144,9 @@ steal('jquery/controller',
             if ($("#PracticeName option:selected").val() == -1) {
                 localStorage.hcpId = $('#id').val();
                 localStorage.onsubmit = 3;
+
+                this.SaveCurrentFormState();
+                
                 $.mobile.changePage('practicenew.htm', 'flip', false, true);
             }
         },
@@ -177,13 +155,24 @@ steal('jquery/controller',
             if ($("#PracticeName2 option:selected").val() == -1) {
                 localStorage.hcpId = $('#id').val();
                 localStorage.onsubmit = 5;
-
                 //save user input from above fields
-                localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+                this.SaveCurrentFormState();
 
                 $.mobile.changePage('practicenew.htm', 'flip', false, true);
             }
+        },
+
+        SaveCurrentFormState: function () {
+            localStorage.Title = $("#Title option:selected").val();
+            localStorage.Surname = $("#Surname").val();
+            localStorage.FirstName = $('#FirstName').val();
+            localStorage.JobRole = $("#JobRole option:selected").val();
+            localStorage.Telephone = $('#Telephone').val();
+            localStorage.Email = $('#Email').val();
+            localStorage.Notes = $('#Notes').val();
+            localStorage.PracticeNameId = $("#PracticeName option:selected").val();
+            localStorage.PracticeNameId2 = $("#PracticeName2 option:selected").val();
         }
 
     });
-});
+    });
