@@ -12,9 +12,9 @@ steal('jquery/controller',
 
                 if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
                     //Clear href attr and remove link icon
-                    $('.weblink').attr("href", "../pages/support/usefulorgs/dialog/notconnected.htm");
+                    $('.weblink').attr("href", "../../pages/support/usefulorgs/dialog/notconnected.htm");
                 }
-            }
+            } 
         }
     });
     });
