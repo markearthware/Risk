@@ -1,7 +1,7 @@
 steal('jquery/controller',
     'jquery/lang/string/deparam/deparam.js',
     'jquery/controller/view',
-    '../models/psalevel.js')
+    '../models/myquestionlist.js')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.QuestionDelete', {
     },
