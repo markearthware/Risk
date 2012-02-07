@@ -7,7 +7,7 @@ steal('jquery/controller',
     '../views/question_list/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.MyQuestionsList', {
-    },
+        },
     {
 
         init: function () {
@@ -35,10 +35,10 @@ steal('jquery/controller',
             $.mobile.changePage("dialog/questiondeleteconfirmdialog.htm");
         },
         '.questionText click': function (el) {
-            var questionText = $(el).children(':first').text();
-            localStorage.questionText = questionText;
-            $.mobile.changePage("dialog/questiondialog.htm");
+            var id = $(el).attr("id");
+            localStorage.questionId = id;
+            $.mobile.changePage("editcustomquestion.htm");
         }
     });
-});
+    });
 

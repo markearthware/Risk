@@ -7,7 +7,7 @@ steal('jquery/controller',
     '../views/question_addedit/init.ejs'
 )
     .then(function ($) {
-        $.Controller('Zoladex.Controllers.CustomQuestionAdd', {
+        $.Controller('Zoladex.Controllers.CustomQuestionEdit', {
         },
     {
         init: function () {
@@ -27,22 +27,28 @@ steal('jquery/controller',
                 }
             });
 
-            var view = $.View('//zoladex/views/question_addedit/init.ejs',
-                {   id: "",
-                    Question: "",
-                    Answer: ""
-                });
+            var params = Zoladex.QSUtils.getParams();
+            var questionDef = Zoladex.Models.MyQuestion.findOne(localStorage.questionId);
 
-            $('#CustomQuestionForm').html(view).trigger('create');
+            $.when(questionDef).done(function(questionRes) {
+
+                var view = $.View('//zoladex/views/question_addedit/init.ejs',
+                    {   id: questionRes.id,
+                        Question: questionRes.Question,
+                        Answer: questionRes.Answer
+                    });
+
+                $('#EditCustomQuestionForm').html(view).trigger('create');
+            });
         },
         submit: function (el, ev) {
             ev.preventDefault();
 
-            if ($('#CustomQuestionForm').valid()) {
+            if ($('#EditCustomQuestionForm').valid()) {
 
                 var params = el.formParams();
 
-                var model = { Question: params.Question, Answer: params.Answer };
+                var model = { id: params.id, Question: params.Question, Answer: params.Answer };
                 new Zoladex.Models.MyQuestion(model).save(
                     function () {
                         $.mobile.changePage('myquestions.htm', 'flip', false, true);

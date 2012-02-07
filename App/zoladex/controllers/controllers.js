@@ -33,5 +33,8 @@ steal(
         './levelslist_controller.js',
         './leveldelete_controller.js',
         './usefulorgs_controller.js',
-        './sideeffects_controller.js'
+        './customquestionadd_controller.js',
+        './customquestionedit_controller.js',
+        './questiondelete_controller.js',
+        './questionlist_controller.js'
         )

@@ -108,6 +108,13 @@ steal(
                 return;
             }
 
+
+            if ($(e.target).filter('#EditCustomQuestionPage').length > 0) {
+                $('#EditCustomQuestionPage').zoladex_custom_question_edit();
+                $('#EditCustomQuestionForm').validate();
+                return;
+            }
+
             if ($(e.target).filter('#LevelsPage').length > 0) {
                 $('#LevelsPage').zoladex_level_chart();
             }

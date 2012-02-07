@@ -3,7 +3,7 @@ steal('jquery/model', function () {
     Zoladex.Models.WebSqlModel('Zoladex.Models.MyQuestionList',
   {
       findAll: function (params) {
-          var sql = 'SELECT mq.id,  mq.Question, mq.HcpId, hcp.Title, hcp.FirstName, hcp.Surname FROM MyQuestions as mq inner join HealthcareProfessionals as hcp on mq.HcpId=hcp.id ORDER BY mq.HcpId ASC';
+          var sql = 'SELECT * from MyQuestions ORDER BY Answer';
           return localStorageDB.getRows(sql, this);
       },
 

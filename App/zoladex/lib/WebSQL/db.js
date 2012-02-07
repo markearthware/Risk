@@ -26,7 +26,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['JobRoles','Groups','HealthcareProfessionals', 'Appointments', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'sqlite_sequence'];
+        var tables = ['JobRoles','Groups','HealthcareProfessionals', 'Appointments', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'MyQuestions', 'sqlite_sequence'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {
@@ -247,6 +247,10 @@ var localStorageDB = (function () {
 
         checkTableExists('PsaLevels', function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS PsaLevels (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Date INTEGER, PsaLevel DOUBLE)');
+        });
+
+        checkTableExists('MyQuestions', function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Question, Answer)');
         });
     }
 
