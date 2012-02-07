@@ -26,8 +26,7 @@ steal('jquery/controller',
                     $(element).addClass("textinput");
                 }
             });
-
-            var params = Zoladex.QSUtils.getParams();
+            
             var questionDef = Zoladex.Models.MyQuestion.findOne(localStorage.questionId);
 
             $.when(questionDef).done(function(questionRes) {
