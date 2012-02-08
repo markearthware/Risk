@@ -4,20 +4,17 @@ steal('jquery/controller',
     'jquery/controller/view')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.SideEffects', {
-    },
+        },
     {
         init: function () {
             if (navigator.network) {
                 var networkState = navigator.network.connection.type;
-                
+
                 if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
-                    //Clear href attr and remove link icon
-                    var text = $('.weblink').text();
-                    $('.weblink').after("<span class='weblink2'>"+text+"</span>");
-                    $('.weblink').remove();
+                    $('.weblink').attr('class', 'weblink2');
+                    $('.weblink2').attr('href', '../usefulorgs/dialog/notconnected.htm');
                 }
             }
-
         },
         '.weblink click': function (el, ev) {
 
@@ -38,4 +35,4 @@ steal('jquery/controller',
             $.mobile.changePage($('#leaveAppDialog'));
         }
     });
-});
+    });
