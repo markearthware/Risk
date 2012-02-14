@@ -1,0 +1,58 @@
+<label for="nhsnumber">NHS Number:</label>
+<input type="number" name="nhsnumber" id="nhsnumber" value="<%=localStorage.treatmentNhsNumber%>"/>
+
+<label for="hospitalnumber">Main Hospital Number:</label>
+<input type="number"
+       name="hospitalnumber"
+       id="hospitalnumber"
+       value="<%=localStorage.treatmentHospitalNumber%>"/>
+
+<label class="bigLabel" for="PsaLevel">PSA level(ng/ml) at diagnosis:</label>
+<select name="PsaLevel" id="PsaLevel">
+  <% for(var i = 0; i < 201; i++) {%>
+  <option value="<%= i %>" <% if(localStorage.treatmentPsaLevel == i){%> selected='selected' <%}%> > 
+  <%= i/10 %> ng/ml
+  </option>
+  <%}%>
+ </select>
+
+<label for="biopsy">Number of biopsy samples (cores) taken:</label>
+<input value="<%=localStorage.treatmentBiopsy%>" type="number" name="biopsy" id="biopsy"/>
+
+<label for="cores">Number of cores affected:</label>
+<input type="number"
+       name="cores"
+       id="cores"
+       value="<%=localStorage.treatmentCores%>"/>
+
+<label for="gleason">Gleason score:</label>
+<select name="gleason" id="gleason">
+  <% for(var i = 1; i < 6; i++) {%>
+  <option value="<%=i%>" <% if(localStorage.treatmentGleason == i){%> selected='selected' <%}%> >
+    <%=i%>
+  </option>
+  <%}%>
+</select>
+
+ <a data-icon="info" data-theme="g" data-role="button" href="../../support/questions/test.htm">What is a Gleason score?</a>
+
+<label class="bigLabel" for="tstage">T stage at diagnosis:</label>
+<select name="tstage"
+        id="tstage">
+  <% for(var i = 0; i < 5; i++) {%>
+  <option value="<%=i%>" <% if(localStorage.treatmentTStage == i){%> selected='selected' <%}%> >
+    T-<%= i %>
+  </option>
+  <%}%>
+  </select>
+
+<label for="treatment">Treatment:</label>
+<input type="text"
+       name="treatment"
+       id="treatment"
+        value="<%=localStorage.treatmentTreatment%>"/>
+
+<label for="date">Date treatment started:</label>
+<input type="text" name="date" id="Date" class="date" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />
+
+<input type="submit" id="newpsalevelbutton" value="Record Treatment" data-icon="check" data-theme="g" />

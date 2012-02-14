@@ -63,7 +63,6 @@ steal(
 
                 $('#AddLevelForm').zoladex_level_add();
                 $('#AddLevelForm').validate();
-
                 return true;
             }
         });
@@ -115,6 +114,10 @@ steal(
                 return;
             }
 
+            if ($(e.target).filter('#TreatmentPage').length > 0) {
+                $('#TreatmentPage').zoladex_treatment();
+            }
+            
             if ($(e.target).filter('#LevelsPage').length > 0) {
                 $('#LevelsPage').zoladex_level_chart();
             }

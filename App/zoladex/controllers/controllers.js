@@ -38,5 +38,6 @@ steal(
         './questiondelete_controller.js',
         './questionlist_controller.js',
         './sideeffects_controller.js',
-        './connection_controller.js'
+        './connection_controller.js',
+        './treatment_controller.js'
         )
