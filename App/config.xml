@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+        xmlns:gap	= "http://phonegap.com/ns/1.0"
+        id = "com.zoladex.mobile"
+        version = "1.0.0.0">
+
+  <name>Prostate Assistant</name>
+
+  <description>
+    Prostate Assistant
+  </description>
+
+  <author href="http://www.thetechnologystudio.co.uk/"
+          email="info@thetechnologystudio.co.uk">
+    The Technology Studio
+  </author>
+
+  <gap:platforms>
+    <gap:platform name="ios" />
+    <gap:platform name="android"
+                  minVersion="2.1" />
+  </gap:platforms>
+
+  <gap:splash src="assets/ipad.png"
+              width="768"
+              height="1004" />
+  <gap:splash src="assets/ipadlandscape.jpg"
+              width="1004"
+              height="768" />
+  <gap:splash src="assets/iphone.png"
+              width="320"
+              height="480" />
+  <gap:splash src="assets/iphoneRetina.jpg"
+              width="640"
+              height="960" />
+
+  <icon src="assets/Icon.png"
+        width="57"
+        height="57"
+         />
+
+  <icon src="assets/Icon@2x.png"
+        width="114"
+        height="114"
+         />
+  
+  <icon src="assets/Icon-72.png"
+        width="72"
+        height="72"
+         />
+
+  <icon src="iTunesArtwork.png"
+        width="512"
+        height="512"
+         />
+
+  <icon src="Android_hdpi.png"
+        width="72"
+        height="72"
+         />
+
+  <icon src="Android_ldpi.png"
+        width="36"
+        height="36"
+         />
+
+  <icon src="Android_mdpi.png"
+        width="48"
+        height="48"
+         />
+
+  <icon src="Android_store_image.png"
+        width="512"
+        height="512"
+         />
+
+  <icon src="Android_xhdpi.png"
+        width="96"
+        height="96"
+         />
+  
+  <feature name="http://api.phonegap.com/1.0/geolocation"/>
+  <feature name="http://api.phonegap.com/1.0/network"/>
+  <feature name="http://api.phonegap.com/1.0/notification"/>
+
+</widget>
