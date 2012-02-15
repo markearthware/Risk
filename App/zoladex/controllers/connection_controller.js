@@ -10,7 +10,7 @@ steal('jquery/controller',
             if (navigator.network) {
                 var networkState = navigator.network.connection.type;
 
-                if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
+                if (networkState == Connection.NONE) {
                     //Clear href attr and remove link icon
                     $('.weblink').attr("href", "../../pages/support/usefulorgs/dialog/notconnected.htm");
                 }

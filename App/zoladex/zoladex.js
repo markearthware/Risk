@@ -134,6 +134,10 @@ steal(
                 $('#LevelDeleteConfirmDialog').zoladex_level_delete();
             }
 
+            if ($(e.target).filter('#NotConnectedDialog').length > 0) {
+                $('#NotConnectedDialog').zoladex_not_connected();
+            }
+
             if ($(e.target).filter('#QuestionDeleteConfirmDialog').length > 0) {
                 $('#QuestionDeleteConfirmDialog').zoladex_question_delete();
             }

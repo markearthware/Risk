@@ -6,11 +6,11 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.SideEffects', {
         },
     {
-        init: function () {
+        init: function () {     
             if (navigator.network) {
                 var networkState = navigator.network.connection.type;
 
-                if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
+                if (networkState == Connection.NONE) {
                     $('.weblink').attr('class', 'weblink2');
                     $('.weblink2').attr('href', '../usefulorgs/dialog/notconnected.htm');
                 }

@@ -15,7 +15,7 @@ steal('jquery/controller',
 
             $.mobile.showPageLoadingMsg();
 
-            var date2;
+            var date2 = new Date();
             
             if (localStorage.treatmentDate) {
                 date2 = new Date(localStorage.treatmentDate);     
