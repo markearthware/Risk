@@ -10,7 +10,7 @@ steal('jquery/controller',
             if (navigator.network) {
                 var networkState = navigator.network.connection.type;
 
-                if (networkState == Connection.NONE) {
+                if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
                     $('.weblink').attr('class', 'weblink2');
                     $('.weblink2').attr('href', '../usefulorgs/dialog/notconnected.htm');
                 }
