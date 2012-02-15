@@ -46,7 +46,6 @@ steal('jquery/controller',
                         yaxis: {
                             label: 'PSA Level (ng/ml)',
                             min: 0,
-                            max: 25,
                             tickOptions: {
                                 angle: 0
                             },

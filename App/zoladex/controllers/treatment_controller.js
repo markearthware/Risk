@@ -48,7 +48,7 @@ steal('jquery/controller',
             localStorage.treatmentTreatment = formParams.treatment;
             localStorage.treatmentDate = $.scroller.parseDate('dd M yy', formParams.date);
 
-            $.mobile.changePage('../progress.htm', 'flip', false, true);
+            $.mobile.changePage('treatmentdetails.htm', 'flip', false, true);
 
             return false;
         }

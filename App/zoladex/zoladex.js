@@ -117,6 +117,10 @@ steal(
             if ($(e.target).filter('#TreatmentPage').length > 0) {
                 $('#TreatmentPage').zoladex_treatment();
             }
+
+            if ($(e.target).filter('#TreatmentDetailsPage').length > 0) {
+                $('#TreatmentDetailsPage').zoladex_treatment_details();
+            }
             
             if ($(e.target).filter('#LevelsPage').length > 0) {
                 $('#LevelsPage').zoladex_level_chart();

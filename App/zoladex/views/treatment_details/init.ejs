@@ -1,0 +1,78 @@
+
+    
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>Nhs Number: </strong><% if(localStorage.treatmentNhsNumber){%>  <%=localStorage.treatmentNhsNumber%> <%}%>
+		</div>
+	</a>
+</li>
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>Hospital Number: </strong><% if(localStorage.treatmentHospitalNumber){%>  <%=localStorage.treatmentHospitalNumber%> <%}%>
+		</div>
+	</a>
+</li>
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>PSA level(ng/ml) at diagnosis: </strong><% if(localStorage.treatmentPsaLevel){%>  <%=(parseInt(localStorage.treatmentPsaLevel) / 10)%> <%}%>
+		</div>
+	</a>
+</li>
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>Number of biopsy samples (cores) taken: </strong><% if(localStorage.treatmentBiopsy){%>  <%=localStorage.treatmentBiopsy%> <%}%>
+		</div>
+	</a>
+</li>
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>Number of cores affected: </strong><% if(localStorage.treatmentCores){%>  <%=localStorage.treatmentCores%> <%}%>
+		</div>
+	</a>
+</li>
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>Gleason score: </strong><% if(localStorage.treatmentGleason){%>  <%=localStorage.treatmentGleason%> <%}%>
+		</div>
+	</a>
+</li>
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>T stage at diagnosis: </strong><% if(localStorage.treatmentTStage){%>  T-<%=localStorage.treatmentTStage%> <%}%>
+		</div>
+	</a>
+</li>
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>Treatment: </strong><% if(localStorage.treatmentTreatment){%>  <%=localStorage.treatmentTreatment%> <%}%>
+		</div>
+	</a>
+</li>
+
+
+<li data-icon="false">
+	<a href="#">
+		<div class="overflow">
+			<strong>Date treatment started: </strong><% if(localStorage.treatmentDate){%>  <%=this.date%> <%}%>
+		</div>
+	</a>
+</li>
+
+
+
