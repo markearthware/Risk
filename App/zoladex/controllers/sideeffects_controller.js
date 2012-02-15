@@ -6,7 +6,7 @@ steal('jquery/controller',
         $.Controller('Zoladex.Controllers.SideEffects', {
         },
     {
-        init: function () {     
+        init: function () {
             if (navigator.network) {
                 var networkState = navigator.network.connection.type;
 
