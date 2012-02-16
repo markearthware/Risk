@@ -33,10 +33,9 @@ steal('jquery/controller',
 
         submit: function (el, ev) {
 
+            $.mobile.showPageLoadingMsg();
             ev.preventDefault();
-
             var formParams = el.formParams();
-
             //localstorage save - would only be one record in db so no point having a table.
             localStorage.treatmentNhsNumber = formParams.nhsnumber;
             localStorage.treatmentHospitalNumber = formParams.hospitalnumber;
@@ -47,7 +46,7 @@ steal('jquery/controller',
             localStorage.treatmentTStage = formParams.tstage;
             localStorage.treatmentTreatment = formParams.treatment;
             localStorage.treatmentDate = $.scroller.parseDate('dd M yy', formParams.date);
-
+            $.mobile.hidePageLoadingMsg();
             $.mobile.changePage('treatmentdetails.htm', 'flip', false, true);
 
             return false;
