@@ -1,78 +1,100 @@
-
-    
-
+<% if(localStorage.treatmentNhsNumber || localStorage.treatmentHospitalNumber || localStorage.treatmentPsaLevel || localStorage.treatmentBiopsy || localStorage.treatmentCores || localStorage.treatmentGleason || localStorage.treatmentTStage || localStorage.treatmentTreatment || localStorage.treatmentDate){ %>
+  
+<% if(localStorage.treatmentNhsNumber){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>Nhs Number: </strong><% if(localStorage.treatmentNhsNumber){%>  <%=localStorage.treatmentNhsNumber%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>Nhs Number: </strong> <%=localStorage.treatmentNhsNumber%>
+    </div>
+  </a>
 </li>
-
+<%}%>
+  
+  <% if(localStorage.treatmentHospitalNumber){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>Hospital Number: </strong><% if(localStorage.treatmentHospitalNumber){%>  <%=localStorage.treatmentHospitalNumber%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>Hospital Number: </strong>  <%=localStorage.treatmentHospitalNumber%>
+    </div>
+  </a>
 </li>
-
+<%}%>
+  
+  <% if(localStorage.treatmentPsaLevel){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>PSA level(ng/ml) at diagnosis: </strong><% if(localStorage.treatmentPsaLevel){%>  <%=(parseInt(localStorage.treatmentPsaLevel) / 10)%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>PSA level(ng/ml) at diagnosis: </strong> <%=(parseInt(localStorage.treatmentPsaLevel) / 10)%>
+    </div>
+  </a>
 </li>
-
+<%}%>
+  
+  <% if(localStorage.treatmentBiopsy){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>Number of biopsy samples (cores) taken: </strong><% if(localStorage.treatmentBiopsy){%>  <%=localStorage.treatmentBiopsy%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>Number of biopsy samples (cores) taken: </strong>  <%=localStorage.treatmentBiopsy%>
+    </div>
+  </a>
 </li>
-
+<%}%>
+  
+  <% if(localStorage.treatmentCores){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>Number of cores affected: </strong><% if(localStorage.treatmentCores){%>  <%=localStorage.treatmentCores%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>Number of cores affected: </strong>  <%=localStorage.treatmentCores%>
+    </div>
+  </a>
 </li>
-
+<%}%>
+  
+  <% if(localStorage.treatmentGleason){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>Gleason score: </strong><% if(localStorage.treatmentGleason){%>  <%=localStorage.treatmentGleason%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>Gleason score: </strong> <%=localStorage.treatmentGleason%>
+    </div>
+  </a>
 </li>
-
+<%}%>
+  
+  <% if(localStorage.treatmentTStage){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>T stage at diagnosis: </strong><% if(localStorage.treatmentTStage){%>  T-<%=localStorage.treatmentTStage%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>T stage at diagnosis: </strong>  T-<%=localStorage.treatmentTStage%>
+    </div>
+  </a>
 </li>
-
+<%}%>
+  
+  <% if(localStorage.treatmentTreatment){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>Treatment: </strong><% if(localStorage.treatmentTreatment){%>  <%=localStorage.treatmentTreatment%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>Treatment: </strong> <%=localStorage.treatmentTreatment%>
+    </div>
+  </a>
 </li>
-
-
+<%}%>
+ 
+  <% if(localStorage.treatmentDate){%>
 <li data-icon="false">
-	<a href="#">
-		<div class="overflow">
-			<strong>Date treatment started: </strong><% if(localStorage.treatmentDate){%>  <%=this.date%> <%}%>
-		</div>
-	</a>
+  <a href="#">
+    <div class="overflow">
+      <strong>Date treatment started: </strong>  <%=this.date%>
+    </div>
+  </a>
 </li>
-
+ <%}%>
+  
+  <%}else{%>
+    <li data-icon="false">
+      <a>
+        <div class="overflow">You have not added any treatment history yet.</div></a>
+    </li>
+<%}%>
 
 
