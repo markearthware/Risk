@@ -27,7 +27,7 @@
 
 <label for="gleason">Gleason score:</label>
 <select name="gleason" id="gleason">
-  <% for(var i = 1; i < 6; i++) {%>
+  <% for(var i = 2; i < 11; i++) {%>
   <option value="<%=i%>" <% if(localStorage.treatmentGleason == i){%> selected='selected' <%}%> >
     <%=i%>
   </option>
