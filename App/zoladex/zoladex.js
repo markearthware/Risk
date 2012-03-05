@@ -70,6 +70,11 @@ steal(
         // bind controllers to pagecreate, typically pages containing widgets that have their data loaded dynamically
         $(document).bind('pagecreate', function (e) {
 
+            if ($(e.target).filter('#indexPage').length > 0) {
+                $('#indexPage').zoladex_index();
+                return;
+            }
+
             if ($(e.target).filter('#HcpListPage').length > 0) {
                 $('#HcpListList').zoladex_hcp_list('loadData');
                 return;
