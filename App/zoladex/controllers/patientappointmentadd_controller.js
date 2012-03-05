@@ -47,12 +47,13 @@ steal('jquery/controller',
                             }
                         }
                     });
-
+                    
+                    this.element.validate({ submitHandler: this.callback('onSubmit') });
                     var locsid = localStorage.locid ? localStorage.locid : -1;
                     var hcpid = localStorage.hcpId ? localStorage.hcpId : -1;
                     localStorage.hcpId = "";
                     localStorage.locid = "";
-                    this.element.validate({ submitHandler: this.callback('onSubmit') });
+                   
                     var self = this;
 
                     // load drop down values
