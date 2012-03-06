@@ -1,7 +1,8 @@
 steal('jquery/controller',
     'jquery/view/ejs',
     'jquery/dom/form_params',
-    'jquery/controller/view')
+    'jquery/controller/view',
+    '../views/index/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.Index', {
         },
