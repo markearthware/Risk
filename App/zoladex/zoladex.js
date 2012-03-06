@@ -11,24 +11,25 @@ steal(
         function () { // configure your application
 
             steal.dev.log('jmvc is initialising...');
-            
+
             //getting base url
             baseurl = window.location.href.replace(/\/$|\/index\.html/i, '');
-            
+
             configureJqueryMobile();
         }
     ).then( //steal jquery mobile js
         './lib/jQueryMobile/jquery.mobile-1.0.js',
         './models/websqlmodel.js'
     ).then(
-        // load controllers and libraries for other pages and init db
+// load controllers and libraries for other pages and init db
         './lib/jQueryValidation/validation.css',
         './models/models.js', // steals all your models
         './controllers/controllers.js', // steals all controllers
         './lib/jQueryValidation/jquery.validate.js',
         './classes/qsutils.js',
          function () {
-             localStorageDB.init();
+             //localStorageDB.init();
+             $("#loading").hide();
          }
     );  
 
@@ -67,14 +68,16 @@ steal(
             }
         });
 
-        // bind controllers to pagecreate, typically pages containing widgets that have their data loaded dynamically
-        $(document).bind('pagecreate', function (e) {
-
+        $(document).bind('pagebeforecreate', function(e) {
             if ($(e.target).filter('#indexPage').length > 0) {
                 $('#indexPage').zoladex_index();
                 return;
             }
+        });
 
+        // bind controllers to pagecreate, typically pages containing widgets that have their data loaded dynamically
+        $(document).bind('pagecreate', function (e) {
+            
             if ($(e.target).filter('#HcpListPage').length > 0) {
                 $('#HcpListList').zoladex_hcp_list('loadData');
                 return;

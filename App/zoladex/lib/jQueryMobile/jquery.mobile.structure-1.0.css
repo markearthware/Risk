@@ -62,7 +62,9 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-loader .ui-icon { position: static; display: block; opacity: .9; margin: 0 auto; width: 35px; height: 35px; background-color: transparent; }
 
 /*fouc*/
-.ui-mobile-rendering > * { visibility: hidden; }
+.ui-mobile-rendering > BODY { margin: 0; } 
+.ui-mobile-rendering > BODY > * { visibility: hidden;}
+.ui-mobile-rendering > BODY > #loading { visibility: visible;width: 100%;height: 100%;background-color: red; }
 
 /*headers, content panels*/
 .ui-bar, .ui-body { position: relative; padding: .4em 15px;  overflow: hidden; display: block;  clear:both;  }
