@@ -8,8 +8,16 @@ steal('jquery/controller',
     {
         init: function () {
             if (localStorage.expandAccordion != "") {
+
                 //expand the correct div
                 $('#gleasonExpander').attr("data-collapsed", "false");
+
+                $('#TestsPage').bind('pageshow', function (e) {
+                    //scroll down to it
+                    var position = $("#gleasonExpander").position().top;
+                    $.mobile.silentScroll(parseInt(position));
+                });
+
                 localStorage.expandAccordion = "";
             }
         }
