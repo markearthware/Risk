@@ -41,5 +41,6 @@ steal(
         './connection_controller.js',
         './treatment_controller.js',
         './treatmentdetails_controller.js',
-        './index_controller.js'
+        './index_controller.js',
+        './tests_controller.js'
         )

@@ -73,13 +73,18 @@ steal(
                 $('#indexPage').zoladex_index();
                 return;
             }
-        });
+        });  
 
         // bind controllers to pagecreate, typically pages containing widgets that have their data loaded dynamically
         $(document).bind('pagecreate', function (e) {
             
             if ($(e.target).filter('#HcpListPage').length > 0) {
                 $('#HcpListList').zoladex_hcp_list('loadData');
+                return;
+            }
+
+            if ($(e.target).filter('#TestsPage').length > 0) {
+                $('#TestsPage').zoladex_tests();
                 return;
             }
 

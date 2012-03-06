@@ -56,14 +56,14 @@ steal('jquery/controller',
             $('#TreatmentForm').html(view);
 
             this.setupDateTimeControls();
-         
+
         },
 
         submit: function () {
 
             if ($('#TreatmentForm').valid()) {
                 var formParams = $('#TreatmentForm').formParams();
-                $.mobile.showPageLoadingMsg();    
+                $.mobile.showPageLoadingMsg();
                 //localstorage save - would only be one record in db so no point having a table.
                 localStorage.treatmentNhsNumber = formParams.nhsnumber;
                 localStorage.treatmentHospitalNumber = formParams.hospitalnumber;
@@ -108,6 +108,13 @@ steal('jquery/controller',
                 mustBeInPast: { mustBeInPast: true }
             });
             this.element.validate({ submitHandler: this.callback('submit') });
+        },
+
+        '.furtherDetails click': function () {
+
+            localStorage.expandAccordion = "true";
+            $.mobile.changePage('../../support/questions/test.htm', 'flip', false, true);
         }
+
     });
     });
