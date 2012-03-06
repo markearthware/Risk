@@ -28,8 +28,7 @@ steal(
         './lib/jQueryValidation/jquery.validate.js',
         './classes/qsutils.js',
          function () {
-             //localStorageDB.init();
-             $("#loading").hide();
+             localStorageDB.init();
          }
     );  
 
