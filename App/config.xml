@@ -25,9 +25,9 @@
   <icon src="assets/iphone.png"
         width="57"
         height="57"
-         />
-
-  <icon src="assets/Icon-72.png"
+         />  
+		 
+ <icon src="assets/Icon-72.png"
         width="72"
         height="72"
          />
@@ -37,25 +37,25 @@
         width="114"
         height="114"
          />
-
-  <icon src="Android_ldpi.png"
+  
+  <icon src="assets/Android_ldpi.png"
         width="36"
         height="36"
          />
 
-  <icon src="Android_mdpi.png"
+  <icon src="assets/Android_mdpi.png"
         width="48"
         height="48"
          />
-
-  <icon src="Android_hdpi.png"
-        width="72"
-        height="72"
+		 
+   <icon src="assets/Android_hdpi.png"
+		width="72"
+		height="72"
 		 />
-
-  <icon src="Android_xdpi.png"
-        width="96"
-        height="96"
+		 
+	<icon src="assets/Android_xdpi.png"
+	width="96"
+	height="96"
 	 />
 
 
@@ -71,7 +71,7 @@
   <gap:splash src="assets/iphoneretinasplash.png"
               width="640"
               height="960" />
-
+  
   <feature name="http://api.phonegap.com/1.0/geolocation"/>
   <feature name="http://api.phonegap.com/1.0/network"/>
   <feature name="http://api.phonegap.com/1.0/notification"/>
