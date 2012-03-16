@@ -10,7 +10,8 @@
 
 img.ui-li-thumb {
     margin-left: 20px;
-    margin-top: 15px;
+	top:50%;
+	margin-top:-25px;
 }
 
 .warningText
