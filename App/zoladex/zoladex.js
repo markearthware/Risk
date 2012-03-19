@@ -93,7 +93,7 @@ steal(
             }
 
             if ($(e.target).filter('#GroupListPage').length > 0) {
-                $('#GroupListList').zoladex_group_list('loadData');
+                $('#GroupContent').zoladex_group_list('loadData');
                 return;
             }
             
@@ -412,7 +412,7 @@ steal(
 
         if ($(e.target).filter('#GroupListPage').length > 0) {
 
-            $('#GroupListList').zoladex_group_list();
+            $('#GroupContent').zoladex_group_list();
 
             return;
         }
