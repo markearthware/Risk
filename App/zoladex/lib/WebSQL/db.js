@@ -1,16 +1,18 @@
 var localStorageDB = (function () {
-
-    var dropTables =false; //todo remove before production
     var db = null,
     loadedCallback = null;
 
     function initDb(callback) {
         loadedCallback = callback;
+
+        // check query string for drop db
+        var params = Zoladex.QSUtils.getParams();
+
         try {
             if (window.openDatabase) {
                 db = openDb();
                 // check if first run and we need to initialise tables
-                if (dropTables) {
+                if (params.dropdb) {
                     goDropTables();
                 }
                 else {
@@ -26,7 +28,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['JobRoles','Groups','HealthcareProfessionals', 'Appointments', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'MyQuestions', 'sqlite_sequence'];
+        var tables = ['JobRoles', 'Groups', 'HealthcareProfessionals', 'Appointments', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'MyQuestions', 'sqlite_sequence'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {
@@ -149,7 +151,7 @@ var localStorageDB = (function () {
     }
 
     function initTables() {
-
+        steal.dev.log("creating tables");
         checkTableExists("Practices", function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
             });

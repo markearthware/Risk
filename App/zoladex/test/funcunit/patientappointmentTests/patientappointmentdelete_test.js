@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.calendarTab').exists().click();
+                S('#appointmentsrow').exists().click();
 
                 S('.app-link').exists().first().click();
 

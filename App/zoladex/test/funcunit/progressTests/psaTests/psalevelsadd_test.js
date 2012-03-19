@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.progressTab').exists().click();
+                S('#progressrow').exists().click();
 
                 S('#PsaLevels').exists().click();
 
@@ -22,6 +22,6 @@
     });
     
     test("Form inserted", function () {
-        ok(S('#Dob').exists(), "form inserted");     
+        ok(S('#Date').exists(), "form inserted");     
     });
 })

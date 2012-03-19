@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.calendarTab').exists().click();
+                S('#appointmentsrow').exists().click();
 
                 S('#ButtonNewAppointment').exists().click();
 
@@ -18,12 +18,13 @@
     test("Form validation working", function () {
         S('#newappointmentbutton').exists().click();
         // check validation prompts are shown
-        ok(S('label.error').size(3), "all three fields failed validation");
+        ok(S('.errorHighlight').size(3), "all three fields failed validation");
 
     });
 
     test("Appointment created successfully", function () {
         S("#TypeId").exists(function () {
+            S("#HcpId")[0].options.selectedIndex = 1;
             S("#TypeId")[0].options.selectedIndex = 3;
             S("#StartDate").type("1");
             S("#dw_set").exists().click();
@@ -31,7 +32,7 @@
             S("#dw_set").exists().click();
             S('#newappointmentbutton').exists().click();
             //check success prompt show
-            ok(S("#SuccessDialog").exists(), "appointment created sucessfully");
+            ok(S("#AppointmentsList li").exists(), "appointment created sucessfully");
         });
 
     });

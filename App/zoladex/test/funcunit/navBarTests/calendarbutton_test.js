@@ -6,7 +6,7 @@
 
             S('#btnContinue').click();
 
-            S('.calendarTab').exists().click();
+            S('#appointmentsrow').exists().click();
 
             S('#calendarPage').exists();
         }
@@ -14,7 +14,7 @@
 
     test("Calendar page header", function () {
 
-        equal(S('#calendarPage h1').text(), 'Appointments', "header text is Appointments");
+        equal(S('#calendarPage h1').text(), 'My Appointments', "header text is Appointments");
     });
 
     test("current nav bar selected", function () {

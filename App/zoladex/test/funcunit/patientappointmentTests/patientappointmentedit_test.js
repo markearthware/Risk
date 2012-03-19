@@ -6,9 +6,9 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.calendarTab').exists().click();
+                S('#appointmentsrow').exists().click();
 
-                S('.app-link').exists().first().click();
+                S('#ButtonNewAppointment').exists().click();
 
                 S('#EditAppointmentPage').exists().visible();
             });
@@ -17,7 +17,8 @@
 
     test("Appointment created successfully", function () {
         S("#TypeId").exists(function () {
-            S("#TypeId")[0].options.selectedIndex = 3;
+            S("#HcpId")[0].options.selectedIndex = 1;
+            S("#TypeId")[0].options.selectedIndex = 1;
             S("#StartDate").type("1");
             S("#dw_set").exists().click();
             S("#StartTime").type("1");

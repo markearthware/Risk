@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.progressTab').exists().click();
+                S('#progressrow').exists().click();
 
                 S('#SymptomsList').exists().click();
 
@@ -17,13 +17,6 @@
 
     test("Symptom list header header", function () {
 
-        equal(S('#SymptomsListPage h1').text(), "Symptom History", "header is Symptom History");
-    });
-
-    test("Contact HCP button clicked", function () {
-
-        S('#ContactHcpButton').exists().click();
-
-        ok(S('#HcpListPage').exists(), 'have moved to HCP page');
+        equal(S('#SymptomsListPage h1').text(), "My Symptoms", "header is Symptom History");
     });
 })

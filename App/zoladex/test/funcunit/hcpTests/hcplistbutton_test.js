@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.hcpTab').exists().click();
+                S('#hcprow').exists().click();
 
                 S('#Hcps').exists().click();
 
@@ -17,6 +17,6 @@
 
     test("List of HCPs header", function () {
 
-        equal(S('#HcpListPage h1').text(), "HCP's", "header text is HCP's");
+        equal(S('#HcpListPage h1').text(), "HCPs", "header text is HCP's");
     });
 })

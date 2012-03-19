@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.hcpTab').exists().click();
+                S('#hcprow').exists().click();
 
                 S('#Hcps').exists().click();
 
@@ -26,21 +26,21 @@
 
     test("Add HCP form has been inserted", function () {
 
-        ok(S('#Postcode').exists(), "form element exists");
+        ok(S('#Telephone').exists(), "form element exists");
     });
 
     test("Can successfully add a new HCP", function () {
-
-        S('#Postcode').exists().type("blah");
-        S('#County').type("blah");
+        S('#Title option[value="Dr"]').click();
+        S('#Title').click();
+        S('#JobRole option[value="1"]').click();
+        S('#JobRole').click();
         S('#Email').type("blah@gmail.com");
         S('#Title').type("blah");
         S('#FirstName').type("blah");
         S('#Surname').type("blah");
         S('#Telephone').type("234234");
-        S('#Street').type("blah");
-        S('#Town').type("blah");
-        S('#PracticeName').type("blah");
+        S('#Notes').type("blah");
+
         S('#newhcpbutton').exists().click();
         ok(S('#HcpListPage').exists());
     });
