@@ -306,3 +306,8 @@ img.ui-li-thumb {
 #recordLevel{
 	margin-top:30px;
 }
+
+#symptoms-radio-list .ui-radio .ui-icon 
+{
+    top: 50%;
+}

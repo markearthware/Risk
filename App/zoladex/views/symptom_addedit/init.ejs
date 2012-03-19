@@ -7,7 +7,7 @@
 <label>Time:</label>
 <input type="text" id="Time" placeholder="Click to select time" class="textinput required" name="_Time" value="<%= $.scroller.formatDate('HH:ii', this.DateTime) %>"" />
 
-<div data-role="fieldcontain">
+<div id="symptoms-radio-list" data-role="fieldcontain">
     <fieldset data-role="controlgroup" class="required textinput" name="SymptomId" id="SymptomId">
 		<legend>Select a symptom from the list below:</legend>
 		<%for(var i = 0; i < this.Symptoms.length ; i++){ %>
