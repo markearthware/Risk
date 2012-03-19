@@ -220,7 +220,7 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Description, WarningSign INTEGER)', [], function (tx, result) {
 
                 // populate
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Bone Pain", 1)');
+                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Bone pain", 1)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain in your loins, hips or lower back", 1)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Blood in urine", 1)');
                 tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Blood in semen", 1)');
