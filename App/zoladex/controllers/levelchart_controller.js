@@ -48,7 +48,7 @@ steal('jquery/controller',
                             min: 0,
                             tickOptions: {
                                 angle: 0,
-                                formatString:'%.2f'
+                                formatString:'%.1f'
                             },
                             labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
                             labelOptions : {
