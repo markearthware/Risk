@@ -12,7 +12,7 @@
 
                 S('#PracticeListPage').exists();
 
-                S('#PracticeListList li.ui-li').size(function (size) {
+                S('#PracticeList li.ui-li').size(function (size) {
                     return size > 0;
                 });
 

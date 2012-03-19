@@ -12,11 +12,7 @@
 
                 S('#HcpListPage').exists();
 
-//                S('#HcpListList li.ui-li').size(function(size) {
-//                    return size > 0;
-//                });
-
-                S('#HcpListList li :first a').exists().click();
+                S('#HcpList li :first a').exists().click();
 
                 S('#HcpDetailsPage').exists();
             });

@@ -15,8 +15,7 @@
         S('#Hcps').exists().click();
 
         S('#HcpListPage').exists(function() {
-            ok(S('#HcpListList li a').exists().text("You have no HCPs added."));  
-
+            ok(S('#HcpList li').text("You have not added any Healthcare Professionals yet."));  
         });
 
         

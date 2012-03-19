@@ -12,7 +12,7 @@
 
                 S('#PracticeListPage').exists();
 
-                S('#PracticeListList li :first a').exists().click();
+                S('#PracticeList li :first a').exists().click();
 
                 S('#PracticeDetailsPage').exists();
             });

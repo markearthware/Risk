@@ -12,11 +12,11 @@
 
                 S('#PracticeListPage').exists();
 
-                S('#PracticeListList li.ui-li').size(function(size) {
+                S('#PracticeList li.ui-li').size(function(size) {
                     return size > 0;
                 });
 
-                S('#PracticeListList li :first a').exists().click();
+                S('#PracticeList li :first a').exists().click();
 
                 S('#PracticeDetailsPage').exists();
             });
