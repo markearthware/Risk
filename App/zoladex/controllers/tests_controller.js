@@ -20,6 +20,10 @@ steal('jquery/controller',
 
                 localStorage.expandAccordion = "";
             }
+        },
+        '.ui-collapsible click': function (el) {
+            var position = $(':first', el).position().top;
+            $.mobile.silentScroll(parseInt(position));
         }
     });
     });

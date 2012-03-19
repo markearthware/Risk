@@ -176,18 +176,23 @@ steal(
                 return;
             }
 
-            if ($(e.target).filter('#AboutPage').length > 0) {
-                $('#AboutPage').zoladex_connection();
-                return;
-            }
-
             if ($(e.target).filter('#DiscussingPage').length > 0) {
                 $('#DiscussingPage').zoladex_side_effects();
                 return;
             }
 
+            if ($(e.target).filter('#DietPage').length > 0) {
+                $('#DietPage').zoladex_side_effects();
+                return;
+            }
+
             if ($(e.target).filter('#AboutPage').length > 0) {
                 $('#AboutPage').zoladex_side_effects();
+                return;
+            }
+
+            if ($(e.target).filter('#AboutPage').length > 0) {
+                $('#AboutPage').zoladex_connection();
                 return;
             }
         });

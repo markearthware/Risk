@@ -25,7 +25,6 @@ steal('jquery/controller',
             }
 
             this.element.parent().append('//zoladex/views/alerts/leaveAppDialog', {
-
                 toLink: el.attr('href'),
                 fromLink: document.location.href
             });
@@ -33,6 +32,11 @@ steal('jquery/controller',
             $('#leaveAppDialog').page();
 
             $.mobile.changePage($('#leaveAppDialog'));
+        },
+
+        '.ui-collapsible click': function (el) {
+            var position = $(':first',el).position().top;
+            $.mobile.silentScroll(parseInt(position));
         }
     });
     });
