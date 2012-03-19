@@ -88,7 +88,7 @@ steal(
             }
 
             if ($(e.target).filter('#PracticeListPage').length > 0) {
-                $('#PracticeListList').zoladex_practice_list('loadData');
+                $('#PracticeContent').zoladex_practice_list('loadData');
                 return;
             }
 
@@ -372,7 +372,7 @@ steal(
         
         if ($(e.target).filter('#PracticeListPage').length > 0) {
 
-            $('#PracticeListList').zoladex_practice_list();
+            $('#PracticeContent').zoladex_practice_list();
 
             return;
         }

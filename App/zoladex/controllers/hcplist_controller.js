@@ -11,7 +11,6 @@ steal('jquery/controller',
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
-            this.content = $('#HcpContent');
         },
 
         loadData: function () {
