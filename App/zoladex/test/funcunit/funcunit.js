@@ -16,7 +16,7 @@ steal("funcunit").then(
 ).then(
 
 // all the add tests have to have run first for edit / delete to work
-            "./patientappointmentTests/patientappointmentdelete_test.js",
+            
             "./patientappointmentTests/patientappointmentedit_test.js",
              "./navBarTests/hcpbutton_test.js",
             "./navBarTests/calendarbutton_test.js",
@@ -28,9 +28,10 @@ steal("funcunit").then(
 //hcp tests
             "./hcpTests/practicelistbutton_test.js",
 //"./hcpTests/practicelocalstorage_test.js",
-            "./hcpTests/practicedelete_test.js",
-            "./hcpTests/practicedetailspage_test.js",
             "./hcpTests/practiceedit_test.js",
+            
+            "./hcpTests/practicedetailspage_test.js",
+            
 
 
             "./progressTests/symptomTests/symptomlist_test.js",
@@ -42,8 +43,12 @@ steal("funcunit").then(
 
 
             "./hcpTests/hcplistbutton_test.js",
-            "./hcpTests/hcpdelete_test.js",
+            
             "./hcpTests/hcpdetailspage_test.js",
 
             "./hcpTests/hcpedit_test.js"
+).then(          
+            "./hcpTests/practicedelete_test.js",
+            "./patientappointmentTests/patientappointmentdelete_test.js",
+            "./hcpTests/hcpdelete_test.js"
 );

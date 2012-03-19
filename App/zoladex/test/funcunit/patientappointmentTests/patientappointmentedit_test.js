@@ -8,7 +8,7 @@
 
                 S('#appointmentsrow').exists().click();
 
-                S('#ButtonNewAppointment').exists().click();
+                S('#AppointmentsList li a').exists().click();
 
                 S('#EditAppointmentPage').exists().visible();
             });

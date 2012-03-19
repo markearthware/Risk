@@ -10,7 +10,6 @@
 
                 S('.app-link').exists().first().click();
 
-                S('#EditAppointmentPage').exists().visible();
             });
         }
     });
