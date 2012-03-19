@@ -78,7 +78,7 @@ steal(
         $(document).bind('pagecreate', function (e) {
             
             if ($(e.target).filter('#HcpListPage').length > 0) {
-                $('#HcpListList').zoladex_hcp_list('loadData');
+                $('#HcpContent').zoladex_hcp_list('loadData');
                 return;
             }
 
@@ -315,7 +315,7 @@ steal(
         
         if ($(e.target).filter('#HcpListPage').length > 0) {
 
-            $('#HcpListList').zoladex_hcp_list();
+            $('#HcpContent').zoladex_hcp_list();
 
             return;
         }
