@@ -37,7 +37,7 @@ steal('jquery/controller',
                     },
                     axes: {
                         xaxis: {
-                            label: 'Date (day / month / year)',
+                            label: 'Date (day/month/year)',
                             renderer: $.jqplot.DateAxisRenderer,
                             tickOptions: {
                                 formatString: '%#d/%m/%y'
