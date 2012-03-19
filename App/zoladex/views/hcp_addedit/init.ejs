@@ -1,7 +1,7 @@
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 
-<label data-inline="true" for="title">Title:</label>
+<label data-inline="true">Title:</label>
 <select id="Title" name="Title" class='textinput required'>
     <option value="">Select Title</option>
 	<option value="Dr" <% if(this.Title == "Dr"){ %> selected="selected" <% } %> >Dr</option>
@@ -11,13 +11,13 @@
 	<option value="Ms" <% if(this.Title == "Ms"){ %> selected="selected" <% } %> >Ms</option>
 	<option value="Professor" <% if(this.Title == "Professor"){ %> selected="selected" <% } %> >Professor</option>    
 </select>
-<label data-inline="true" for="Surname">Surname:</label>
+<label data-inline="true">Surname:</label>
 <input type="text" name="Surname" id="Surname"  class="textinput required" value="<%= this.Surname %>" />
 
-<label data-inline="true" for="firstname">First Name:</label>
+<label data-inline="true">First Name:</label>
 <input type="text" name="FirstName" id="FirstName" value ="<%= this.FirstName %>" />
 	
-<label for="JobRole">Job Role:</label>
+<label>Job Role:</label>
 <select id="JobRole" name="JobRole">
     <option value="">Select Job Role</option>
 	<%for(var i = 0; i < this.Roles.length; i++){ %>
@@ -26,16 +26,16 @@
 	<option value = "-1">Add new</option> 
 </select>
 
-<label data-inline="true" for="number">Telephone:</label>
+<label data-inline="true">Telephone:</label>
 <input type="tel" name="Telephone" id="Telephone" value="<%= this.Telephone %>"   />
 
-<label data-inline="true" for="email">Email:</label>
+<label data-inline="true">Email:</label>
 <input type="email" name="Email" id="Email" class="email" value="<%= this.Email %>"   />
 
-<label data-inline="true" class="notes-label" for="notes">Notes: <div class="notes-sub">(e.g. secretary)</div></label>
+<label data-inline="true" class="notes-label">Notes: <div class="notes-sub">(e.g. secretary)</div></label>
 <input type="text" name="Notes" id="Notes" value="<%=this.Notes%>" />
 
-<label class="bigLabel" for="PracticeName">Main Workplace:</label>	
+<label class="bigLabel">Main Workplace:</label>	
 <select id="PracticeName" name="PracticeName" class='practiceSelect'>
 	<option value="">Select Hospital/GP Surgery</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>
@@ -45,7 +45,7 @@
 </select>
 
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
-<label class="bigLabel" for="PracticeName2">Alternative Workplace:</label>	
+<label class="bigLabel">Alternative Workplace:</label>	
 <select id="PracticeName2" name="PracticeName2" class='practiceSelect'>
 	<option value="">Select Hospital/GP Surgery</option>
 	<%for(var i = 0; i < this.Locs.length ; i++){ %>

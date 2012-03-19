@@ -1,25 +1,25 @@
-<label for="nhsnumber">NHS Number:</label>
+<label>NHS Number:</label>
 <input type="text" name="nhsnumber" id="nhsnumber" value="<%=localStorage.treatmentNhsNumber%>"/>
 
-<label for="hospitalnumber">Main Hospital Number:</label>
+<label>Main Hospital Number:</label>
 <input type="number"
        name="hospitalnumber"
        id="hospitalnumber"
        value="<%=localStorage.treatmentHospitalNumber%>"/>
 
-<label for="PsaLevel">PSA level(ng/ml) at diagnosis:</label>
+<label>PSA level(ng/ml) at diagnosis:</label>
 <input type="number" name="PsaLevel" id="PsaLevel" value="<%=localStorage.treatmentPsaLevel%>"/>
 
-<label for="biopsy">Number of biopsy samples (cores) taken:</label>
+<label>Number of biopsy samples (cores) taken:</label>
 <input value="<%=localStorage.treatmentBiopsy%>" type="number" name="biopsy" id="biopsy"/>
 
-<label for="cores">Number of cores affected:</label>
+<label>Number of cores affected:</label>
 <input type="number"
        name="cores"
        id="cores"
        value="<%=localStorage.treatmentCores%>"/>
 
-<label for="gleason">Gleason score:</label>
+<label>Gleason score:</label>
 <select name="gleason" id="gleason">
   <% for(var i = 2; i < 11; i++) {%>
   <option value="<%=i%>" <% if(localStorage.treatmentGleason == i){%> selected='selected' <%}%> >
@@ -30,7 +30,7 @@
 
  <a data-icon="info" data-theme="g" data-role="button" class="furtherDetails">What is a Gleason score?</a>
 
-<label class="bigLabel" for="tstage">T stage at diagnosis:</label>
+<label class="bigLabel">T stage at diagnosis:</label>
 <select name="tstage"
         id="tstage">
   <% for(var i = 1; i < 5; i++) {%>
@@ -42,13 +42,13 @@
 
   <a data-icon="info" data-theme="g" data-role="button" class="furtherDetails">What is prostate staging?</a>
 
-<label for="treatment">Treatment:</label>
+<label>Treatment:</label>
 <input type="text"
        name="treatment"
        id="treatment"
         value="<%=localStorage.treatmentTreatment%>"/>
 
-<label for="date">Date treatment started:</label>
+<label>Date treatment started:</label>
 <input type="text" name="date" id="Date" class="date mustBeInPast textinput required" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />
 
 <input type="submit" id="newpsalevelbutton" value="Record Treatment" data-icon="check" data-theme="g" />

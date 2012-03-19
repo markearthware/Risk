@@ -2,9 +2,9 @@
 <input type="hidden" name="id" id="id" value="<%= this.id %>" />
 <% } %>
 
-<label for="Date">Date:</label>
+<label>Date:</label>
 <input type="text" id="Date" placeholder="Click to select date" class="textinput required" name="_Date" value="<%= $.scroller.formatDate('dd M yy', this.DateTime) %>" />
-<label for="Time">Time:</label>
+<label>Time:</label>
 <input type="text" id="Time" placeholder="Click to select time" class="textinput required" name="_Time" value="<%= $.scroller.formatDate('HH:ii', this.DateTime) %>"" />
 
 <div data-role="fieldcontain">
