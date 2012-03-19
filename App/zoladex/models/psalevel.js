@@ -3,7 +3,7 @@ steal('jquery/model', function () {
     Zoladex.Models.WebSqlModel('Zoladex.Models.Psalevel',
   {
       findAll: function () {
-          return localStorageDB.getRows('SELECT * FROM PsaLevels', this);
+          return localStorageDB.getRows('SELECT * FROM PsaLevels ORDER BY Date DESC', this);
       },
 
       findOne: function (id) {
