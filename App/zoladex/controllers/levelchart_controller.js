@@ -47,7 +47,8 @@ steal('jquery/controller',
                             label: 'PSA Level (ng/ml)',
                             min: 0,
                             tickOptions: {
-                                angle: 0
+                                angle: 0,
+                                formatString:'%.2f'
                             },
                             labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
                             labelOptions : {
