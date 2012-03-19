@@ -5,7 +5,7 @@
             S.open("../index.html", function() {
                 S('#btnContinue').exists().click();
 
-                S('.hcpTab').exists().click();
+                S('#hcprow').exists().click();
 
                 S('#Hcps').exists().click();
 

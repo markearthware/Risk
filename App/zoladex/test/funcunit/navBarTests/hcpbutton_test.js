@@ -6,7 +6,7 @@
 
             S('#btnContinue').click();
 
-            S('.hcpTab').exists().click();
+            S('#hcprow').exists().click();
 
             S('#HcpPage').exists();
         }
@@ -14,7 +14,7 @@
 
     test("HCP page header", function () {
 
-        equal(S('#HcpPage h1').text(), 'My HCP', "header text is My HCP");
+        equal(S('#HcpPage h1').text(), 'My Contacts', "header text is My HCP");
     });
 
     test("current nav bar selected", function () {

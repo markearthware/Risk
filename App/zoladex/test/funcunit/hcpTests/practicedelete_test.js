@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.hcpTab').exists().click();
+                S('#hcprow').exists().click();
 
                 S('#Practices').exists().click();
 

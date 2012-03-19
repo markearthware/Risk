@@ -6,7 +6,7 @@
 
             S('#btnContinue').click();
 
-            S('.supportTab').exists().click();
+            S('#supportrow').exists().click();
 
             S('#supportPage').exists();
         }

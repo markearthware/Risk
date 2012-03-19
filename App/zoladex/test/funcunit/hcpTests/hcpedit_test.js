@@ -6,15 +6,12 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.hcpTab').exists().click();
+                S('#hcprow').exists().click();
 
                 S('#Hcps').exists().click();
 
                 S('#HcpListPage').exists();
 
-//                S('#HcpListList li.ui-li').size(function (size) {
-//                    return size > 0;
-//                });
 
                 S('.hcpAnchor').first().exists().click();
 
@@ -41,12 +38,16 @@
     });
 
     test("Can successfully edit a new HCP", function () {
-        S('#Title').exists().type("\b\b\b\b\b\b" + "Dr");
-        S('#FirstName').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b" + "Jim");
-        S('#Surname').exists().type("\b\b\b\b\b\b\b\b\b\b\b\b\b" + "Bob");
-        S('#Email').exists().type("Dr");
-        S('#County').exists().type("Jim");
-        S('#Postcode').exists().type("Bob");
+        S('#Title option[value="Dr"]').click();
+        S('#Title').click();
+        S('#JobRole option[value="1"]').click();
+        S('#JobRole').click();
+        S('#Email').type("[ctrl]a[ctrl-up]\bblah@gmail.com");
+        S('#Title').type("[ctrl]a[ctrl-up]\bblah");
+        S('#FirstName').type("[ctrl]a[ctrl-up]\Jim");
+        S('#Surname').type("[ctrl]a[ctrl-up]\Bob");
+        S('#Telephone').type("[ctrl]a[ctrl-up]\b234234");
+        S('#Notes').type("[ctrl]a[ctrl-up]\bblah");
         S('#newhcpbutton').exists().click();
         S('#HcpDetailsPage').exists();
         ok(S('#HcpDetailsPage h1').text("Dr Jim Bob"));

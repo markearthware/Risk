@@ -6,17 +6,17 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.progressTab').exists().click();
+                S('#progressrow').exists().click();
 
                 S('#PsaLevels').exists().click();
 
-                S('#LevelsPage').exists();
+                S('#LevelsListPage').exists();
             });
         }
     });
 
     test("PSA Levels header", function () {
 
-        equal(S('#LevelsPage h1').text(), "PSA Levels", "header text is correct");
+        equal(S('#LevelsListPage h1').text(), "My PSA Levels", "header text is correct");
     });
 })

@@ -6,7 +6,7 @@
 
                 S('#btnContinue').exists().click();
 
-                S('.progressTab').exists().click();
+                S('#progressrow').exists().click();
 
                 S('#SymptomsList').exists().click();
 
@@ -30,12 +30,14 @@
     test("Can successfully add a new Symptom", function () {
 
         S('#SymptomId').exists(function() {
-            S('#SymptomId')[0].options.selectedIndex = 2;
+            S('#1').click();
             S("#Date").exists().type("1");
             S("#dw_set").exists().click();
             S("#Time").type("1");
             S("#dw_set").exists().click();
             S('#submitsymptombutton').exists().click();
+            S('#confirmNo').exists().click();
+            S('#confirmNo').exists().click(); // twice as it seems to re-open when done really fast in test
             ok(S('#SymptomsListPage').exists());
         });
     });
