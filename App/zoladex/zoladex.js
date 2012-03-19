@@ -78,7 +78,7 @@ steal(
         $(document).bind('pagecreate', function (e) {
             
             if ($(e.target).filter('#HcpListPage').length > 0) {
-                $('#HcpListList').zoladex_hcp_list('loadData');
+                $('#HcpContent').zoladex_hcp_list('loadData');
                 return;
             }
 
@@ -88,12 +88,12 @@ steal(
             }
 
             if ($(e.target).filter('#PracticeListPage').length > 0) {
-                $('#PracticeListList').zoladex_practice_list('loadData');
+                $('#PracticeContent').zoladex_practice_list('loadData');
                 return;
             }
 
             if ($(e.target).filter('#GroupListPage').length > 0) {
-                $('#GroupListList').zoladex_group_list('loadData');
+                $('#GroupContent').zoladex_group_list('loadData');
                 return;
             }
             
@@ -315,7 +315,7 @@ steal(
         
         if ($(e.target).filter('#HcpListPage').length > 0) {
 
-            $('#HcpListList').zoladex_hcp_list();
+            $('#HcpContent').zoladex_hcp_list();
 
             return;
         }
@@ -372,7 +372,7 @@ steal(
         
         if ($(e.target).filter('#PracticeListPage').length > 0) {
 
-            $('#PracticeListList').zoladex_practice_list();
+            $('#PracticeContent').zoladex_practice_list();
 
             return;
         }
@@ -412,7 +412,7 @@ steal(
 
         if ($(e.target).filter('#GroupListPage').length > 0) {
 
-            $('#GroupListList').zoladex_group_list();
+            $('#GroupContent').zoladex_group_list();
 
             return;
         }

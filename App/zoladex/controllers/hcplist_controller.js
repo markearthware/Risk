@@ -7,21 +7,31 @@ steal('jquery/controller',
     '../views/hcp_list/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpList', {
-    },
+        },
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
-            this.list = $('#HcpListList');
         },
+
         loadData: function () {
 
-            $.View('//zoladex/views/hcp_list/init.ejs', Zoladex.Models.Hcp.findAll(), null, this.callback(this.refreshList));
-        },
-        refreshList: function (html) {
+            var listDef = Zoladex.Models.Hcp.findAll();
+            var view;
 
-            $.mobile.hidePageLoadingMsg();
-            this.element.html(html);
-            this.list.listview('refresh');
+            $.when(listDef).done(function (listRes) {
+                if (listRes.length > 0) {
+                    view = $.View('//zoladex/views/hcp_list/init.ejs', listRes);
+                }
+                else {
+                    view = $.View('//zoladex/views/hcp_list_empty/init.ejs');
+                }
+                
+                $('#HcpContent').html(view);
+                
+                $('#HcpList').listview();    
+                
+                $.mobile.hidePageLoadingMsg();
+            });
         }
     });
-});
+    });

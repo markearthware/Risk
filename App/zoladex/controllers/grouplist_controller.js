@@ -12,16 +12,29 @@ steal('jquery/controller',
         init: function () {
 
             $.mobile.showPageLoadingMsg();
-            this.list = $('#GroupListList');
         },
         loadData: function () {
-            $.View('//zoladex/views/group_list/init.ejs', Zoladex.Models.Group.findAll(), null, this.callback(this.refreshList));
-        },
-        refreshList: function (html) {
-            $.mobile.hidePageLoadingMsg();
-            this.element.html(html);
-            this.list.listview('refresh');
+
+            var listDef = Zoladex.Models.Group.findAll();
+            var view;
+
+            $.when(listDef).done(function (listRes) {
+                if (listRes.length > 0) {
+                    view = $.View('//zoladex/views/group_list/init.ejs', listRes);
+                }
+                else {
+                    view = $.View('//zoladex/views/group_list_empty/init.ejs');
+                }
+
+                $('#GroupContent').html(view);
+
+                $('#GroupList').listview();
+
+                $.mobile.hidePageLoadingMsg();
+            });
+           
         }
+      
     });
 });
 
