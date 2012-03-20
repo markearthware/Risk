@@ -13,7 +13,11 @@
     <!-- Copy main app homepage -->
     <Copy SourceFiles="$(SitePath)\index.html"
           DestinationFolder="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\" />
-
+		  
+	   <!-- Copy config.xml file -->
+    <Copy SourceFiles="$(SitePath)\config.xml"
+          DestinationFolder="$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\" />
+		  
     <!-- Copy packaged js and css -->
     <Copy SourceFiles="$(SitePath)\$(AppName)\production.js;
                        $(SitePath)\$(AppName)\production.css"
@@ -30,6 +34,9 @@
       <Pages Include="$(SitePath)\$(AppName)\pages\**\*.*">
         <DestinationFolder>$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\$(AppName)\pages\</DestinationFolder>
       </Pages>
+	  <Assets Include="$(SitePath)\assets\**\*.*">
+        <DestinationFolder>$(DropsPath)\$(AppName)-$(GlobalBuildVersionNumber)\assets\</DestinationFolder>
+      </Assets>
     </ItemGroup>
 
     <Copy SourceFiles="@(Images)"
@@ -37,6 +44,9 @@
 
     <Copy SourceFiles="@(Pages)"
           DestinationFolder="%(DestinationFolder)\%(RecursiveDir)" />
+		  
+    <Copy SourceFiles="@(Assets)"
+	      DestinationFolder="%(DestinationFolder)\%(RecursiveDir)" />
   </Target>
 
 </Project>
