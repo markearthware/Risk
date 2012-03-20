@@ -4,7 +4,8 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/group.js',
     '../lib/WebSQL/db.js',
-    '../views/group_list/init.ejs')
+    '../views/group_list/init.ejs',
+    '../views/group_list_empty/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.GroupList', {
     },

@@ -4,7 +4,8 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../models/hcp.js',
     '../lib/WebSQL/db.js',
-    '../views/hcp_list/init.ejs')
+    '../views/hcp_list/init.ejs',
+    '../views/hcp_list_empty/init.ejs')
     .then(function ($) {
         $.Controller('Zoladex.Controllers.HcpList', {
         },
