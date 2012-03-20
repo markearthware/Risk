@@ -51,7 +51,7 @@
         value="<%=localStorage.treatmentTreatment%>"/>
 
 <label>Date treatment started:</label>
-<input type="text" name="date" id="Date" class="date mustBeInPast textinput" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />
+<input placeholder="Click to select date" type="text" name="date" id="Date" class="date mustBeInPast textinput" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />
 
 <input type="submit" id="newpsalevelbutton" value="Record Treatment" data-icon="check" data-theme="g" />
 
