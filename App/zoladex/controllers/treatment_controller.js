@@ -41,7 +41,7 @@ steal('jquery/controller',
                 }
             });
 
-            var date = new Date();
+            var date = "";
 
             if (localStorage.treatmentDate) {
                 date = new Date(localStorage.treatmentDate);
@@ -73,7 +73,7 @@ steal('jquery/controller',
                 localStorage.treatmentGleason = formParams.gleason;
                 localStorage.treatmentTStage = formParams.tstage;
                 localStorage.treatmentTreatment = formParams.treatment;
-                localStorage.treatmentDate = $.scroller.parseDate('dd M yy', formParams.date);
+                localStorage.treatmentDate = formParams.date ? $.scroller.parseDate('dd M yy', formParams.date) : "";
                 $.mobile.hidePageLoadingMsg();
                 $.mobile.changePage('treatmentdetails.htm', 'flip', false, true);
             }

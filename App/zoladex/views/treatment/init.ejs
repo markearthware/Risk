@@ -21,6 +21,7 @@
 
 <label>Gleason score:</label>
 <select name="gleason" id="gleason">
+  <option value="">Select a Gleason score</option>
   <% for(var i = 2; i < 11; i++) {%>
   <option value="<%=i%>" <% if(localStorage.treatmentGleason == i){%> selected='selected' <%}%> >
     <%=i%>
@@ -33,6 +34,7 @@
 <label class="bigLabel">T stage at diagnosis:</label>
 <select name="tstage"
         id="tstage">
+  <option value="">Select a T stage</option>
   <% for(var i = 1; i < 5; i++) {%>
   <option value="<%=i%>" <% if(localStorage.treatmentTStage == i){%> selected='selected' <%}%> >
     T-<%= i %>
@@ -49,7 +51,7 @@
         value="<%=localStorage.treatmentTreatment%>"/>
 
 <label>Date treatment started:</label>
-<input type="text" name="date" id="Date" class="date mustBeInPast textinput required" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />
+<input type="text" name="date" id="Date" class="date mustBeInPast textinput" value="<%= $.scroller.formatDate('dd M yy', this.date) %>" />
 
 <input type="submit" id="newpsalevelbutton" value="Record Treatment" data-icon="check" data-theme="g" />
 

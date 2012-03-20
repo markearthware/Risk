@@ -29,6 +29,8 @@ steal('jquery/controller',
                 view = $.View('//zoladex/views/treatment_details/init.ejs', {
                     date: (date2.getDate() + "-" + (parseInt(date2.getMonth()) + 1) + "-" + date2.getFullYear())
                 });
+
+                $('#TreatmentHistoryBtn').text("Edit Treatment History");
             }
             else {
                 view = $.View('//zoladex/views/treatment_details_none/init.ejs');
