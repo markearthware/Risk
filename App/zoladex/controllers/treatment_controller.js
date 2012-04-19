@@ -20,10 +20,13 @@ steal('jquery/controller',
                         element = $(element).parent().get(0);
                         $(element).removeClass("textinput");
                         $(element).addClass("errorHighlight");
+
                     }
                     else {
                         $(element).removeClass("textinput");
                         $(element).addClass("errorHighlight");
+                        $('#date-error').remove();
+                        $('#date-label').after("<span id='date-error'>*Date must be in the past</span>");
                     }
 
                 },

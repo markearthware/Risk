@@ -26,6 +26,17 @@ img.ui-li-thumb {
     color: #830051;
 }
 
+#date-error
+{
+    color: red;
+    font-size: 10px;
+}
+
+#date-label
+{
+    width: 160px !important;
+}
+
 .questionContainer
 {
     border-radius: 10px;
@@ -157,6 +168,18 @@ img.ui-li-thumb {
 
 #FaqListPage h2 div {
     white-space: normal;
+}
+
+#DietPage h2 div
+{
+    white-space: normal;
+    word-wrap:break-word;
+}
+
+#DietPage h3 div
+{
+    white-space: normal;
+    word-wrap:break-word;
 }
 
 #SideEffectsPage h2 div
