@@ -5,19 +5,12 @@ var localStorageDB = (function () {
     function initDb(callback) {
         loadedCallback = callback;
 
-        // check query string for drop db
-        var params = Zoladex.QSUtils.getParams();
-
         try {
             if (window.openDatabase) {
                 db = openDb();
                 // check if first run and we need to initialise tables
-                if (params.dropdb) {
-                    goDropTables();
-                }
-                else {
-                    initTables();
-                }
+                initTables();
+                
             } else {
                 steal.dev.log('Web Databases not supported');
             }
@@ -28,7 +21,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['JobRoles', 'Groups', 'HealthcareProfessionals', 'Appointments', 'AppointmentTypes', 'PatientSymptoms', 'Practices', 'Symptoms', 'PsaLevels', 'MyQuestions', 'sqlite_sequence'];
+        var tables = ['sqlite_sequence','Hazards','Whos','Hows','Assessments','AssessmentWhos','AssessmentsHows','Tasks'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {
@@ -135,7 +128,7 @@ var localStorageDB = (function () {
     }
 
     function openDb() {
-        return openDatabase("zoladexDB", "1.0", "Zoladex Mobile App", 200000);
+        return openDatabase("riskDB", "1.0", "Risk Assessment App", 200000);
     }
 
     function ArrayFromSQLResultSet(rs) {
@@ -152,106 +145,56 @@ var localStorageDB = (function () {
 
     function initTables() {
         steal.dev.log("creating tables");
-        checkTableExists("Practices", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Practices (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Postcode, Street, Town, County, Telephone, Email)', [], function (tx, result) {
-            });
-        });
 
-
-        checkTableExists("Groups", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Groups (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, ContactName, Postcode, Street, Town, County, Telephone, Email, Website)', [], function (tx, result) {
-            });
-        });
-
-        checkTableExists("HealthcareProfessionals", function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS HealthcareProfessionals (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,PrimaryPracticeId, SecondaryPracticeId, Title, FirstName, Surname, Telephone, Email, JobRole INTEGER, Notes)', [], function (tx, result) {
-            });
-        });
-
-        checkTableExists("Appointments", function (tx) {
-            // create table for storing Practices/Hospitals
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Appointments (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, StartDateTime INTEGER, TypeId INTEGER, HcpId INTEGER, HealthcareLocationId INTEGER, AlertsEnabled INTEGER)'); //TODO add lots more fields later
-        });
-
-        checkTableExists("AppointmentTypes", function (tx) {
+        checkTableExists("Hazards", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS AppointmentTypes (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Hazards (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Blood test")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Hormone injection")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Out-patients")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Radiotherapy")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Chemotherapy")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("GP")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Practice Nurse")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("CT scan")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("MRI scan")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Ultrasound scan")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Flexible Cystoscopy")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("Bone scan")');
-                tx.executeSql('INSERT INTO AppointmentTypes (Name) VALUES ("T.R.U.S")');
+                tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Slip/Trip/Fall")');
+                tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Falling Object")');
             });
         });
 
-        checkTableExists("JobRoles", function (tx) {
+        checkTableExists("Whos", function(tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS JobRoles (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function (tx, result) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Whos (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function(tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("GP")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Practice Nurse")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Urologist")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Pharmacist")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Specialist Nurse")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Oncologist")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Radiotherapist")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Chemotherapy Nurse")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Key Worker")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("District Nurse")');
-                tx.executeSql('INSERT INTO JobRoles (Name) VALUES ("Continence Advisor")');
+                tx.executeSql('INSERT INTO Whos (Name) VALUES ("All")');
+                tx.executeSql('INSERT INTO Whos (Name) VALUES ("Working Party")');
+                tx.executeSql('INSERT INTO Whos (Name) VALUES ("Others affected by hazard")');
+                tx.executeSql('INSERT INTO Whos (Name) VALUES ("Lone worker")');
             });
         });
 
-        checkTableExists("PatientSymptoms", function (tx) {
+        checkTableExists("Hows", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PatientSymptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, DateTime INTEGER, SymptomId INTEGER)');
-
-        });
-
-        checkTableExists("Symptoms", function (tx) {
-            // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Symptoms (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Description, WarningSign INTEGER)', [], function (tx, result) {
-
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Hows (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, HazardId)', [], function (tx, result) {
                 // populate
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Bone pain", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain in your loins, hips or lower back", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Blood in urine", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Blood in semen", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Unable to pass water", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain in legs and thighs (Sciatica)", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Loss of feeling or movement in your legs", 1)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Weight loss", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Tiredness", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Problems getting an erection (impotence)", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Loss of sex drive", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Sweating", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Hot flushes", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Difficulty or pain when weeing", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Having to rush to the toilet to pass water", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Frequent visits to toilet especially at night", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Starting, stopping or dribbling when weeing", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Leaking urine (incontinence)", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("A feeling of not having emptied bladder properly", 0)');
-                tx.executeSql('INSERT INTO Symptoms (Description, WarningSign) VALUES ("Pain when you ejaculate", 0)');
-
+                tx.executeSql('INSERT INTO Hows (Name,HazardId) VALUES ("Tripping over debris on walkways",1)');
+                tx.executeSql('INSERT INTO Hows (Name,HazardId) VALUES ("Tripping over fixed installations",1)');
+                tx.executeSql('INSERT INTO Hows (Name,HazardId) VALUES ("Dropping of items of equipment being removed",2)');
+                tx.executeSql('INSERT INTO Hows (Name,HazardId) VALUES ("Falling objects creating additional hazards",2)');
             });
         });
 
-        checkTableExists('PsaLevels', function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS PsaLevels (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Date INTEGER, PsaLevel DOUBLE)');
+        checkTableExists("Assessments", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Assessments (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, TaskId INTEGER, )');
         });
 
-        checkTableExists('MyQuestions', function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS MyQuestions (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Question, Answer)');
+        checkTableExists("AssessmentHows", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS AssessmentHows (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, AssessmentId INTEGER, HowId INTEGER, )');
+        });
+
+        checkTableExists("AssessmentWhos", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS AssessmentWhos (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, AssessmentId INTEGER, WhoId INTEGER, )');
+        });
+
+        checkTableExists("Tasks", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Tasks (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Sent BIT, DateStarted INTEGER, DateFinished INTEGER)');
         });
     }
 
