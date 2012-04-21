@@ -1,9 +1,0 @@
-steal(
-    './jquery.jqplot.js',
-    './jquery.jqplot.css')
-    .then(
-        './plugins/jqplot.dateAxisRenderer.js',
-        './plugins/jqplot.canvasTextRenderer.js',
-        './plugins/jqplot.canvasAxisLabelRenderer.js',
-        './plugins/jqplot.canvasAxisTickRenderer.js'
-    )
