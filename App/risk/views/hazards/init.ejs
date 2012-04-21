@@ -1,0 +1,9 @@
+<ul id="HazardsList" data-role="listview">
+  <%for(var i = 0; i < this.length; i++){ %>
+  <li>
+    <a class="hazard-item" id="<%=this[i].id%>">
+      <%=this[i].Name%>
+    </a>
+  </li>
+  <%}%>
+  </ul>

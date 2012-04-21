@@ -41,10 +41,21 @@ steal(
                 $('#indexPage').risk_index();
                 return;
             }
+
+            if ($(e.target).filter('#AddTaskPage').length > 0) {
+                $('#NewTaskForm').risk_task();
+                return;
+            }
+
+   
         });  
 
         $(document).bind('pagecreate', function (e) {
-            
+
+            if ($(e.target).filter('#HazardsPage').length > 0) {
+                $('#HazardsContent').risk_hazards();
+                return;
+            }
             
         });
 
