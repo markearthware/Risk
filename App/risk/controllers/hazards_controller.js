@@ -21,8 +21,9 @@ steal('jquery/controller',
                 $('#HazardsList').listview();
             });
         },
-        '.hazard-item click': function () {
-            alert("sucess");
+        '.hazard-item click': function (el) {
+            localStorage.hazardId = $(el).attr('id');
+            $.mobile.changePage("whos.htm");
         }
     });
-});
+    });

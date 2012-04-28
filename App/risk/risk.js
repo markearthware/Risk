@@ -56,6 +56,11 @@ steal(
                 $('#HazardsContent').risk_hazards();
                 return;
             }
+
+            if ($(e.target).filter('#WhosPage').length > 0) {
+                $('#WhosContent').risk_whos();
+                return;
+            }
             
         });
 

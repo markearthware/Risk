@@ -1,0 +1,70 @@
+<div data-role="fieldcontain">
+  <label for="WhosList" class="select"><strong>Who</strong> is at risk?</label>
+  <select name="WhosList" id="WhosList" multiple="multiple" data-native-menu="false">
+    <option>Choose options</option>
+    <%for(var i = "0"; i < this.whos.length; i++){ %>
+    <option value="<%=this.whos[i].id%>">
+        <%=this.whos[i].Name%>
+    </option>
+    <%}%>
+  </select>
+
+  <label for="HowsList" class="select"><strong>How</strong> are they at risk?</label>
+  <select name="HowsList" id="HowsList" multiple="multiple" data-native-menu="false">
+    <option>Choose options</option>
+    <%for(var i = "0"; i < this.hows.length; i++){ %>
+      <option value="<%=this.hows[i].id%>">
+        <%=this.hows[i].Name%>
+      </option>
+    <%}%>
+  </select>
+
+  <label for="SeverityList" class="select">
+    <strong>Severity</strong> Rating
+  </label>
+  <select name="SeverityList" id="SeverityList" data-native-menu="false">
+    <option>Choose Rating</option>
+    <option value="1">
+      1 - Not severe
+    </option>
+    <option value="2">
+      2
+    </option>
+    <option value="3">
+      3
+    </option>
+    <option value="4">
+      4
+    </option>
+    <option value="5">
+      5 - Extremely severe
+    </option>
+  </select>
+
+  <label for="LikelihoodList" class="select">
+    <strong>Likelihood</strong> Rating
+  </label>
+  <select name="LikelihoodList" id="LikelihoodList" data-native-menu="false">
+    <option>Choose Rating</option>
+    <option value="1">
+      1 - Not likely
+    </option>
+    <option value="2">
+      2
+    </option>
+    <option value="3">
+      3
+    </option>
+    <option value="4">
+      4
+    </option>
+    <option value="5">
+      5 - Extremely likely
+    </option>
+  </select>
+  <div data-role="fieldcontain">
+    <p>
+      <a data-role="button" data-icon="check" id="submit" style="display:none"></a>
+    </p>
+  </div>
+</div>
