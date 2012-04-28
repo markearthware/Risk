@@ -5,6 +5,9 @@ steal('jquery/controller',
     '../models/hazards.js',
     '../models/whos.js',
     '../models/hows.js',
+    '../models/assessments.js',
+    '../models/assessmenthows.js',
+    '../models/assessmentwhos.js',
     '../lib/WebSQL/db.js',
     '../views/whos/init.ejs')
     .then(function ($) {
@@ -34,10 +37,6 @@ steal('jquery/controller',
                         $('#LikelihoodList').selectmenu();
                     });
                 },
-                '#submit click': function () {
-                    $.mobile.changePage(this.nextStepHref);
-                },
-
                 '#WhosList change': function () {
                     this.validation();
                 },
@@ -83,6 +82,42 @@ steal('jquery/controller',
                             $('#WhosPage #submit').fadeIn().button('refresh');
                         }
                     }
+                },
+                '#submit click': function () {
+
+                    var assessment = { TaskId: localStorage.taskId };
+
+                    new Risk.Models.Assessments(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
+
+                },
+                onInsertSuccess: function (obj, newid) {
+
+                    localStorage.assessmentId = newid;
+
+                    var self = this;
+
+                    var whos = $.makeArray($('#WhosList').val());
+
+                    $(whos).each(function () {
+                        var assessmentwhos = { AssessmentId: newid, WhoId: this.toString() };
+                        new Risk.Models.AssessmentWhos(assessmentwhos).save();
+                    });
+
+                    var hows = $.makeArray($('#HowsList').val());
+                    
+                    $(hows).each(function (index) {
+                        var assessmenthows = { AssessmentId: newid, HowId: this.toString() };
+                        new Risk.Models.AssessmentHows(assessmenthows).save(function () {
+
+                            if (index == $('#HowsList').val().length - 1) {
+                                $.mobile.changePage(self.nextStepHref);
+                            }
+
+                        }, function () {});
+                    });
+                },
+                onInsertFail: function () {
+                    //todo popup
                 }
             });
     });
