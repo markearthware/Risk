@@ -85,7 +85,7 @@ steal('jquery/controller',
                 },
                 '#submit click': function () {
 
-                    var assessment = { TaskId: localStorage.taskId };
+                    var assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId };
 
                     new Risk.Models.Assessments(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
 
@@ -98,23 +98,28 @@ steal('jquery/controller',
 
                     var whos = $.makeArray($('#WhosList').val());
 
-                    $(whos).each(function () {
+                    $(whos).each(function(i) {
                         var assessmentwhos = { AssessmentId: newid, WhoId: this.toString() };
-                        new Risk.Models.AssessmentWhos(assessmentwhos).save();
-                    });
+                        new Risk.Models.AssessmentWhos(assessmentwhos).save(function() {
 
-                    var hows = $.makeArray($('#HowsList').val());
-                    
-                    $(hows).each(function (index) {
-                        var assessmenthows = { AssessmentId: newid, HowId: this.toString() };
-                        new Risk.Models.AssessmentHows(assessmenthows).save(function () {
+                            if (i == $('#WhosList').val().length - 1) {
+                                var hows = $.makeArray($('#HowsList').val());
 
-                            if (index == $('#HowsList').val().length - 1) {
-                                $.mobile.changePage(self.nextStepHref);
+                                $(hows).each(function(index) {
+                                    var assessmenthows = { AssessmentId: newid, HowId: this.toString() };
+                                    new Risk.Models.AssessmentHows(assessmenthows).save(function() {
+
+                                        if (index == $('#HowsList').val().length - 1) {
+                                            $.mobile.changePage(self.nextStepHref);
+                                        }
+
+                                    }, function() { });
+                                });
                             }
+                        });
 
-                        }, function () {});
                     });
+
                 },
                 onInsertFail: function () {
                     //todo popup

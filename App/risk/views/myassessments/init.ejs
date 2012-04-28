@@ -1,0 +1,20 @@
+<ul id="MyAssessmentsList" data-filter="true" data-split-icon="delete" data-filter-placeholder="Search for an assessment" data-role="listview">
+  <%for(var i = 0; i < this.length; i++){ %>
+  <li>
+    <a class="assessment-item" id="<%=this[i].id%>">
+      <h3>
+        <%=this[i].Hazard%>
+      </h3>
+      <p>
+        Whos: 
+      </p>
+      <p>
+        Hows: 
+      </p> 
+    </a>
+    <a href="" class="delete">
+      
+    </a>
+  </li>
+  <%}%>
+</ul>

@@ -61,6 +61,11 @@ steal(
                 $('#WhosContent').risk_whos();
                 return;
             }
+
+            if ($(e.target).filter('#MyAssessmentsPage').length > 0) {
+                $('#MyAssessmentsContent').risk_my_assessments();
+                return;
+            }
             
         });
 
