@@ -47,8 +47,16 @@ steal(
                 return;
             }
 
-   
-        });  
+
+        });
+
+        $(document).bind('pageshow', function (e) {
+
+            if ($(e.target).filter('#MyAssessmentsPage').length > 0) {
+                $('#MyAssessmentsPage').risk_my_assessments();
+                return;
+            }
+        });
 
         $(document).bind('pagecreate', function (e) {
 
@@ -59,11 +67,6 @@ steal(
 
             if ($(e.target).filter('#WhosPage').length > 0) {
                 $('#WhosContent').risk_whos();
-                return;
-            }
-
-            if ($(e.target).filter('#MyAssessmentsPage').length > 0) {
-                $('#MyAssessmentsContent').risk_my_assessments();
                 return;
             }
             
