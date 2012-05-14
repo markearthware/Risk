@@ -5,14 +5,14 @@ steal('jquery/controller',
     '../models/hazards.js',
     '../models/whos.js',
     '../models/hows.js',
-    '../models/assessments.js',
+    '../models/assessmentsB.js',
     '../models/assessmenthows.js',
     '../models/assessmentwhos.js',
     '../lib/WebSQL/db.js',
     '../views/whos/init.ejs')
     .then(function ($) {
         $.Controller('Risk.Controllers.Whos', {
-        },
+    },
             {
                 init: function () {
                     this.loadData();
@@ -54,7 +54,6 @@ steal('jquery/controller',
                 },
                 passesValidation: function () {
                     if ($('#WhosList').val() != null && $('#HowsList').val() != null && $('#SeverityList').val() != 'Choose Rating' && $('#LikelihoodList').val() != 'Choose Rating') {
-                        alert("true");
                         return true;
                     }
                     return false;
@@ -84,11 +83,8 @@ steal('jquery/controller',
                     }
                 },
                 '#submit click': function () {
-
                     var assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId };
-
-                    new Risk.Models.Assessments(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
-
+                    new Risk.Models.AssessmentsB(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },
                 onInsertSuccess: function (obj, newid) {
 
@@ -98,22 +94,22 @@ steal('jquery/controller',
 
                     var whos = $.makeArray($('#WhosList').val());
 
-                    $(whos).each(function(i) {
+                    $(whos).each(function (i) {
                         var assessmentwhos = { AssessmentId: newid, WhoId: this.toString() };
-                        new Risk.Models.AssessmentWhos(assessmentwhos).save(function() {
+                        new Risk.Models.AssessmentWhos(assessmentwhos).save(function () {
 
                             if (i == $('#WhosList').val().length - 1) {
                                 var hows = $.makeArray($('#HowsList').val());
 
-                                $(hows).each(function(index) {
+                                $(hows).each(function (index) {
                                     var assessmenthows = { AssessmentId: newid, HowId: this.toString() };
-                                    new Risk.Models.AssessmentHows(assessmenthows).save(function() {
+                                    new Risk.Models.AssessmentHows(assessmenthows).save(function () {
 
                                         if (index == $('#HowsList').val().length - 1) {
                                             $.mobile.changePage(self.nextStepHref);
                                         }
 
-                                    }, function() { });
+                                    }, function () { });
                                 });
                             }
                         });
@@ -125,4 +121,4 @@ steal('jquery/controller',
                     //todo popup
                 }
             });
-    });
+});

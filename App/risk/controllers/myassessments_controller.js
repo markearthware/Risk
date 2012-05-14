@@ -22,7 +22,7 @@ steal('jquery/controller',
                 view = $.View('//risk/views/myassessments/init.ejs', assessmentsRes);
                 $('#MyAssessmentsContent').html(view);
                 $('#MyAssessmentsList').listview();
-                $('#header').text(taskRes.Name);
+                $('#header').append("'"+taskRes.Name+"'");
                 $('#MyAssessmentsPage').trigger("create");
             });
         },
