@@ -1,4 +1,11 @@
 <ul id="MyAssessmentsList" data-filter="true" data-split-icon="delete" data-filter-placeholder="Search for an assessment" data-role="listview">
+  <%if(this.length < 1){ %>
+  
+  <li data-role="list-divider">
+    There are currently no risk assessments recorded for this task.
+  </li>
+    
+  <%}else{ %>
   <%for(var i = 0; i < this.length; i++){ %>
   <li>
     <a class="assessment-item" id="<%=this[i].id%>">
@@ -12,11 +19,10 @@
         Hows: 
       </p> 
     </a>
-    <a href="" class="delete">
-      
+    <a href="" id="<%=this[i].id%>" class="delete"> 
     </a>
   </li>
-  <%}%>
+  <%}}%>
 </ul>
 <br/>
 <p>

@@ -83,6 +83,7 @@ steal('jquery/controller',
                     }
                 },
                 '#submit click': function () {
+                    $.mobile.showPageLoadingMsg();
                     var assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId };
                     new Risk.Models.AssessmentsB(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },

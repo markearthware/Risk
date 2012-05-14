@@ -29,6 +29,14 @@ steal('jquery/controller',
         },
         '.assessment-item click': function (el) {
             //todo
+        },
+        '.delete click': function (el) {
+            var self = this;
+            var id = $(el).attr("id");
+            var assessmentsDef = Risk.Models.Assessments.deleteOne(id);
+            $.when(assessmentsDef).done(function (assessmentsRes) {
+                self.init();
+            });
         }
     });
 });
