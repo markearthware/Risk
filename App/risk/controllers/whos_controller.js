@@ -72,7 +72,7 @@ steal('jquery/controller',
                         var score = this.calculateScore();
                         if (score < 13) {
                             this.nextStepHref = "myassessments.htm";
-                            $('#WhosPage #submit').text("Save assessment");
+                            $('#WhosPage #submit').text("Finish assessment");
                             $('#WhosPage #submit').fadeIn().button('refresh');
                         }
                         else {
@@ -84,6 +84,8 @@ steal('jquery/controller',
                 },
                 '#submit click': function () {
                     $.mobile.showPageLoadingMsg();
+                    localStorage.severityRating = $('#SeverityList').val();
+                    localStorage.likelihoodRating = $('#LikelihoodList').val();
                     var assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId };
                     new Risk.Models.AssessmentsB(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },

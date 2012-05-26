@@ -3,5 +3,7 @@ steal(
         './taskadd_controller.js',
         './hazards_controller.js',
         './whos_controller.js',
-        './myassessments_controller.js'
+        './myassessments_controller.js',
+        './delete_controller.js',
+        './controls_controller.js'
      )

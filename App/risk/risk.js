@@ -47,13 +47,17 @@ steal(
                 return;
             }
 
-
         });
 
         $(document).bind('pageshow', function (e) {
 
             if ($(e.target).filter('#MyAssessmentsPage').length > 0) {
                 $('#MyAssessmentsPage').risk_my_assessments();
+                return;
+            }
+
+            if ($(e.target).filter('#ControlsPage').length > 0) {
+                $('#ControlsContent').risk_controls();
                 return;
             }
         });
@@ -69,6 +73,13 @@ steal(
                 $('#WhosContent').risk_whos();
                 return;
             }
+
+            if ($(e.target).filter('#DeleteConfirmPage').length > 0) {
+                $('#DeleteConfirmPage').risk_delete();
+                return;
+            }
+
+         
             
         });
 
