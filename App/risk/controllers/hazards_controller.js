@@ -3,6 +3,7 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/hazards.js',
+    '../models/task.js',
     '../lib/WebSQL/db.js',
     '../views/hazards/init.ejs')
     .then(function ($) {
@@ -24,6 +25,16 @@ steal('jquery/controller',
         '.hazard-item click': function (el) {
             localStorage.hazardId = $(el).attr('id');
             $.mobile.changePage("whos.htm");
+        },
+        '#backToTaskAdd click': function () {
+            if (localStorage.addToExisting == "true") {
+                localStorage.addToExisting = "";
+                $.mobile.changePage("myassessments.htm",{reverse: true});
+            }
+            else {
+                var taskDef = Risk.Models.Task.deleteOne(localStorage.taskId);
+                $.mobile.changePage("taskadd.htm", { reverse: true });
+            }
         }
     });
     });

@@ -6,6 +6,10 @@
   </li>
     
   <%}else{ %>
+
+  <li id="divider" data-role="list-divider">
+  </li> 
+    
   <%for(var i = 0; i < this.length; i++){ %>
   <li>
     <a class="assessment-item" id="<%=this[i].id%>">
@@ -29,7 +33,7 @@
 </ul>
 <br/>
 <p>
-  <a data-role="button" href="hazards.htm">Add another assessment</a>
-  <a data-role="button" href="emailreport.htm">Email PDF report</a>
+  <a data-role="button" data-icon="plus" href="hazards.htm">Add another assessment</a>
+  <a data-role="button" data-icon="forward" href="emailreport.htm">Email PDF report</a>
 </p> 
  

@@ -57,7 +57,12 @@ steal(
             }
 
             if ($(e.target).filter('#ControlsPage').length > 0) {
-                $('#ControlsContent').risk_controls();
+                $('#ControlsPage').risk_controls();
+                return;
+            }
+            
+            if ($(e.target).filter('#WhosPage').length > 0) {
+                $('#WhosContent').risk_whos();
                 return;
             }
         });
@@ -65,22 +70,14 @@ steal(
         $(document).bind('pagecreate', function (e) {
 
             if ($(e.target).filter('#HazardsPage').length > 0) {
-                $('#HazardsContent').risk_hazards();
-                return;
-            }
-
-            if ($(e.target).filter('#WhosPage').length > 0) {
-                $('#WhosContent').risk_whos();
+                $('#HazardsPage').risk_hazards();
                 return;
             }
 
             if ($(e.target).filter('#DeleteConfirmPage').length > 0) {
                 $('#DeleteConfirmPage').risk_delete();
                 return;
-            }
-
-         
-            
+            }            
         });
 
         $(document).bind('pagehide', function (e, args) {

@@ -9,7 +9,7 @@ steal('jquery/controller',
     '../views/myassessments/init.ejs')
     .then(function ($) {
         $.Controller('Risk.Controllers.MyAssessments', {
-    },
+        },
     {
         init: function () {
             this.loadData();
@@ -22,8 +22,8 @@ steal('jquery/controller',
                 view = $.View('//risk/views/myassessments/init.ejs', assessmentsRes);
                 $('#MyAssessmentsContent').html(view);
                 $('#MyAssessmentsList').listview();
-                var header = $('#header');
-                header.text("Risks assessments for '" + taskRes.Name + "'");
+                var divider = $('#divider');
+                divider.text("Risks assessments for task: " + taskRes.Name);
                 $('#MyAssessmentsPage').trigger("create");
             });
         },
@@ -34,6 +34,9 @@ steal('jquery/controller',
             var self = this;
             var id = $(el).attr("id");
             localStorage.deleteAssessmentId = id;
+        },
+        '#addToExisting click': function () {
+            localStorage.addToExisting = "true";
         }
     });
-});
+    });

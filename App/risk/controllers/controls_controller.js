@@ -5,6 +5,7 @@ steal('jquery/controller',
     '../models/controls.js',
     '../models/hazards.js',
     '../models/assessmentcontrols.js',
+    '../models/assessments.js',
     '../lib/WebSQL/db.js',
     '../views/controls/init.ejs')
     .then(function ($) {
@@ -89,6 +90,11 @@ steal('jquery/controller',
                             }
                         });
                     });
+                },
+                
+                '#backToWhos click': function () {
+                    var assessmentDef = Risk.Models.Assessments.deleteOne(localStorage.assessmentId);
                 }
+                
             });
 });
