@@ -10,7 +10,7 @@ steal('jquery/controller',
     '../views/controls/init.ejs')
     .then(function ($) {
         $.Controller('Risk.Controllers.Controls', {
-    },
+        },
             {
                 init: function () {
                     this.loadData();
@@ -80,6 +80,11 @@ steal('jquery/controller',
                     //add assessment controls here
                     var self = this;
 
+                    var assessmentDef = Risk.Models.Assessments.findOne(localStorage.assessmentId);
+                    $.when(assessmentDef).done(function (assessmentRes) {
+                        new Risk.Models.Assessments({id:assessmentRes.id, TaskId: assessmentRes.TaskId, HazardId: assessmentRes.HazardId, Likelihood:$('#LikelihoodList').val(), Severity: $('#SeverityList').val()}).save();
+                    });
+
                     var controls = $.makeArray($('#ControlsList').val());
 
                     $(controls).each(function (i) {
@@ -91,10 +96,10 @@ steal('jquery/controller',
                         });
                     });
                 },
-                
+
                 '#backToWhos click': function () {
                     var assessmentDef = Risk.Models.Assessments.deleteOne(localStorage.assessmentId);
                 }
-                
+
             });
-});
+    });

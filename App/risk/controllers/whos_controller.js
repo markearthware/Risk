@@ -12,7 +12,7 @@ steal('jquery/controller',
     '../views/whos/init.ejs')
     .then(function ($) {
         $.Controller('Risk.Controllers.Whos', {
-    },
+        },
             {
                 init: function () {
                     this.loadData();
@@ -35,6 +35,14 @@ steal('jquery/controller',
                         $('#HowsList').selectmenu();
                         $('#SeverityList').selectmenu();
                         $('#LikelihoodList').selectmenu();
+
+                        if (localStorage.editAssessmentId) {
+
+                            //get assessment severity likelihood whos and hows back from db
+                            var whosDef = Risk.Models.AssessmentWhos.findAllById(id);
+                            var howsDef = Risk.Models.AssessmentHows.findAllById(id);
+                            localStorage.editAssessmentId = "";
+                        }
                     });
                 },
                 '#WhosList change': function () {
@@ -86,7 +94,7 @@ steal('jquery/controller',
                     $.mobile.showPageLoadingMsg();
                     localStorage.severityRating = $('#SeverityList').val();
                     localStorage.likelihoodRating = $('#LikelihoodList').val();
-                    var assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId };
+                    var assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating};
                     new Risk.Models.AssessmentsB(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },
                 onInsertSuccess: function (obj, newid) {
@@ -124,4 +132,4 @@ steal('jquery/controller',
                     //todo popup
                 }
             });
-});
+    });

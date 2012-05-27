@@ -12,6 +12,12 @@ steal('jquery/model', function () {
           steal.dev.log(result);
           return result;
       },
+      findAllById: function (id) {
+          var result = localStorageDB.getSingleRow('SELECT * FROM AssessmentWhos WHERE AssessmentId =' + id, this);
+          steal.dev.log("result is:");
+          steal.dev.log(result);
+          return result;
+      },
       tableName: "AssessmentWhos"
    },
   {
