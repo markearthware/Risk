@@ -43,7 +43,7 @@ steal('jquery/controller',
             var id = $(el).attr("id");
             localStorage.deleteAssessmentId = id;
         },
-        '#addToExisting click': function () {
+        '.addToExisting click': function () {
             localStorage.addToExisting = "true";
         }
     });
