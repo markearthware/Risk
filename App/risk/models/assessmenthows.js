@@ -14,9 +14,13 @@ steal('jquery/model', function () {
       },
 
       findAllById: function (id) {
-          var result = localStorageDB.getSingleRow('SELECT * FROM AssessmentHows WHERE AssessmentId =' + id, this);
+          var result = localStorageDB.getRows('SELECT * FROM AssessmentHows WHERE AssessmentId =' + id, this);
           steal.dev.log("result is:");
           steal.dev.log(result);
+          return result;
+      },
+      deleteMany: function (id) {
+          var result = localStorageDB.getRows('DELETE FROM AssessmentHows WHERE AssessmentId =' + id, this);
           return result;
       },
       

@@ -31,10 +31,12 @@ steal('jquery/controller',
         },
         '.assessment-item click': function (el) {
             var id = $(el).attr("id");
-
-            localStorage.editAssessmentId = id;
-
-            $.mobile.changePage("whos.htm");
+            var assessmentDef = Risk.Models.Assessments.findOne(id);
+            $.when(assessmentDef).done(function (assessmentRes) {
+                localStorage.hazardId = assessmentRes.HazardId;
+                localStorage.editAssessmentId = id;
+                $.mobile.changePage("whos.htm");
+            });
         },
         '.delete click': function (el) {
             var self = this;

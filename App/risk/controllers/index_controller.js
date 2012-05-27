@@ -9,6 +9,16 @@ steal('jquery/controller',
     {
         init: function () {
             $.mobile.showPageLoadingMsg();
+
+            localStorage.editAssessmentId = "";
+            localStorage.deleteAssessmentId = "";
+            localStorage.assessmentId = "";
+            localStorage.hazardId = "";
+            localStorage.addToExisting = "";
+            localStorage.likelihoodRating = "";
+            localStorage.severityRating = "";
+            localStorage.taskId = "";
+
             var view = $.View("//risk/views/index/init.ejs");
             $('#indexContent').html(view);
             $('#header').html("Risk Assessment App");

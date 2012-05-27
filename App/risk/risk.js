@@ -62,7 +62,7 @@ steal(
             }
             
             if ($(e.target).filter('#WhosPage').length > 0) {
-                $('#WhosContent').risk_whos();
+                $('#WhosPage').risk_whos();
                 return;
             }
         });
