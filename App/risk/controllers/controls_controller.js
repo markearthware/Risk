@@ -6,6 +6,7 @@ steal('jquery/controller',
     '../models/hazards.js',
     '../models/assessmentcontrols.js',
     '../models/assessments.js',
+    '../models/assessmentsB.js',
     '../lib/WebSQL/db.js',
     '../views/controls/init.ejs')
     .then(function ($) {
@@ -35,6 +36,25 @@ steal('jquery/controller',
                         $('#LikelihoodList').selectmenu();
                         $('#ControlsList').selectmenu();
                         $('#button-container').hide();
+
+                        if (localStorage.editAssessmentId) {
+                            //get assessment severity likelihood and controls back from db
+                            var asControlsDef = Risk.Models.AssessmentControls.findAllById(localStorage.editAssessmentId);
+                            var asDef = Risk.Models.Assessments.findOne(localStorage.editAssessmentId);
+
+                            $.when(asDef, asControlsDef).done(function (asRes, asControlsRes) {
+                                var controlsValArray = [];
+                                $(asControlsRes).each(function (i) {
+                                    controlsValArray.push(this.ControlId.toString());
+                                });
+                                $('#ControlsList').val(controlsValArray);
+                                $('#SeverityList').val(asRes.Severity);
+                                $('#LikelihoodList').val(asRes.Likelihood);
+                                $('#ControlsList').selectmenu('refresh');
+                                $('#SeverityList').selectmenu('refresh');
+                                $('#LikelihoodList').selectmenu('refresh');
+                            });
+                        }
                     });
                 },
                 '#ControlsList change': function () {
@@ -76,23 +96,23 @@ steal('jquery/controller',
                 },
                 '#submit click': function () {
                     $.mobile.showPageLoadingMsg();
-
-                    //add assessment controls here
                     var self = this;
 
                     var assessmentDef = Risk.Models.Assessments.findOne(localStorage.assessmentId);
                     $.when(assessmentDef).done(function (assessmentRes) {
-                        new Risk.Models.Assessments({id:assessmentRes.id, TaskId: assessmentRes.TaskId, HazardId: assessmentRes.HazardId, Likelihood:$('#LikelihoodList').val(), Severity: $('#SeverityList').val()}).save();
+                        new Risk.Models.AssessmentsB({ id: assessmentRes.id, TaskId: assessmentRes.TaskId, HazardId: assessmentRes.HazardId, Likelihood: $('#LikelihoodList').val(), Severity: $('#SeverityList').val() }).save();
                     });
 
-                    var controls = $.makeArray($('#ControlsList').val());
-
-                    $(controls).each(function (i) {
-                        var assessmentcontrols = { AssessmentId: localStorage.assessmentId, ControlId: this.toString() };
-                        new Risk.Models.AssessmentControls(assessmentcontrols).save(function () {
-                            if (i == $('#ControlsList').val().length - 1) {
-                                $.mobile.changePage(self.nextStepHref);
-                            }
+                    var asControlsDef = Risk.Models.AssessmentControls.deleteMany(localStorage.assessmentId);
+                    $.when(asControlsDef).done(function () {
+                        var controls = $.makeArray($('#ControlsList').val());
+                        $(controls).each(function (i) {
+                            var assessmentcontrols = { AssessmentId: localStorage.assessmentId, ControlId: this.toString() };
+                            new Risk.Models.AssessmentControls(assessmentcontrols).save(function () {
+                                if (i == $('#ControlsList').val().length - 1) {
+                                    $.mobile.changePage(self.nextStepHref);
+                                }
+                            });
                         });
                     });
                 },

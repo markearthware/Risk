@@ -12,6 +12,17 @@ steal('jquery/model', function () {
           steal.dev.log(result);
           return result;
       },
+      deleteMany: function (id) {
+          var result = localStorageDB.getRows('DELETE FROM AssessmentControls WHERE AssessmentId =' + id, this);
+          return result;
+      },
+      findAllById: function (id) {
+          var result = localStorageDB.getRows('SELECT * FROM AssessmentControls WHERE AssessmentId =' + id, this);
+          steal.dev.log("result is:");
+          steal.dev.log(result);
+          return result;
+      },
+      
       tableName: "AssessmentControls"
    },
   {
