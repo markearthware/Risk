@@ -39,9 +39,9 @@ steal('jquery/controller',
                         if (localStorage.editAssessmentId) {
 
                             //get assessment severity likelihood whos and hows back from db
-                            var asWhosDef = Risk.Models.AssessmentWhos.findAllById(localStorage.editAssessmentId);
-                            var asHowsDef = Risk.Models.AssessmentHows.findAllById(localStorage.editAssessmentId);
-                            var asDef = Risk.Models.Assessments.findOne(localStorage.editAssessmentId);
+                            var asWhosDef = new Risk.Models.AssessmentWhos.findAllById(localStorage.editAssessmentId);
+                            var asHowsDef = new Risk.Models.AssessmentHows.findAllById(localStorage.editAssessmentId);
+                            var asDef = new Risk.Models.Assessments.findOne(localStorage.editAssessmentId);
 
                             $.when(asDef, asWhosDef, asHowsDef).done(function (asRes, asWhosRes, asHowsRes) {
 

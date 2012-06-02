@@ -65,6 +65,11 @@ steal(
                 $('#WhosPage').risk_whos();
                 return;
             }
+            
+            if ($(e.target).filter('#DetailsPage').length > 0) {
+                $('#DetailsPage').risk_details();
+                return;
+            }
         });
 
         $(document).bind('pagecreate', function (e) {

@@ -1,0 +1,52 @@
+<ul id="DetailsList" data-role="listview">
+
+  <% if(this.whos.length > 0){ %>
+  
+  <li data-role="list-divider">
+    'Whos' identified for hazard: <%= this.hazardName %>
+  </li>
+
+  <%for(var i = 0; i < this.whos.length; i++){ %>
+
+  <li><%= this.whos[i].Name %></li>
+    
+  <%}}%>
+    
+   <% if(this.hows.length > 0){ %>
+    
+  <li data-role="list-divider">
+    'Hows' identified for hazard: <%= this.hazardName %>
+  </li>
+
+  <%for(var j = 0; j < this.hows.length; j++){ %>
+
+  <li>
+    <%= this.hows[j].Name %>
+  </li>
+
+  <%}}%>
+    
+  <% if(this.controls.length > 0){ %>
+    
+  <li data-role="list-divider">
+    'Further Controls' identified for hazard: <%= this.hazardName %>
+  </li>
+
+  <%for(var k = 0; k < this.controls.length; k++){ %>
+
+  <li>
+    <%= this.controls[k].Name %>
+  </li>
+
+  <%}}%>
+    
+    <li data-role="list-divider">
+      Severity: <%= this.severityRating %> Likelihood: <%= this.likelihoodRating %> Overall Rating: <%= this.assessmentRating %>
+    </li>
+
+  </ul>
+<br/>
+<p>
+  <a data-role="button" data-icon="grid" href="myassessments.htm">Back to my assessments</a>
+</p> 
+ 

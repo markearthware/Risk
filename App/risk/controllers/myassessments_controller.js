@@ -35,7 +35,7 @@ steal('jquery/controller',
             $.when(assessmentDef).done(function (assessmentRes) {
                 localStorage.hazardId = assessmentRes.HazardId;
                 localStorage.editAssessmentId = id;
-                $.mobile.changePage("whos.htm");
+                $.mobile.changePage("dialog/choose.htm");
             });
         },
         '.delete click': function (el) {
@@ -45,6 +45,7 @@ steal('jquery/controller',
         },
         '.addToExisting click': function () {
             localStorage.addToExisting = "true";
+            localStorage.editAssessmentId = "";
         }
     });
     });
