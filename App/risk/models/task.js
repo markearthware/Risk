@@ -2,8 +2,12 @@ steal('jquery/model', function () {
 
   Risk.Models.WebSqlModel('Risk.Models.Task',
   {
-      findAll: function () {
-          return localStorageDB.getRows('SELECT * FROM Tasks', this);
+      findAllInProgress: function () {
+          return localStorageDB.getRows('SELECT * FROM Tasks WHERE Sent = 0', this);
+      },
+
+      findAllFinished: function () {
+          return localStorageDB.getRows('SELECT * FROM Tasks WHERE Sent = 1', this);
       },
 
       findOne: function (id) {
@@ -15,6 +19,7 @@ steal('jquery/model', function () {
 
       deleteOne: function (id) {
           var result = localStorageDB.getSingleRow('DELETE FROM Tasks WHERE id =' + id, this);
+           //todo delete assessments, assessmenthows/whos/controls
           return result;
       },
       

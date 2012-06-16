@@ -1,0 +1,29 @@
+<ul id="InProgressList" data-filter="true" data-split-icon="delete" data-filter-placeholder="Search for a task" data-role="listview">
+  <%if(this.length < 1){ %>
+  
+  <li data-role="list-divider">
+    You currently have no tasks in progress
+  </li>
+    
+  <%}else{ %>
+
+  <%for(var i = 0; i < this.length; i++){ %>
+  <li>
+    <a class="task-item" id="<%=this[i].id%>">
+      <h3>
+        <%=this[i].Name%>
+      </h3>
+      <p>
+        <i class="small">Touch for more options</i>
+      </p>
+    </a>
+    <a href="dialog/deleteTaskConfirm.htm" data-rel="dialog" id="<%=this[i].id%>" class="delete"> 
+    </a>
+  </li>
+  <%}}%>
+</ul>
+<br/>
+<p>
+  <a data-role="button" data-icon="plus" href="newtask.htm">Start new task</a>
+</p> 
+ 

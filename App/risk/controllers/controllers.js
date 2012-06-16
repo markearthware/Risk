@@ -5,6 +5,8 @@ steal(
         './whos_controller.js',
         './myassessments_controller.js',
         './delete_controller.js',
+        './deletetask_controller.js',
         './controls_controller.js',
-        './details_controller.js'
+        './details_controller.js',
+        './inprogress_controller.js'
      )

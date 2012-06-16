@@ -74,6 +74,11 @@ steal(
 
         $(document).bind('pagecreate', function (e) {
 
+            if ($(e.target).filter('#InProgressPage').length > 0) {
+                $('#InProgressPage').risk_in_progress();
+                return;
+            }
+            
             if ($(e.target).filter('#HazardsPage').length > 0) {
                 $('#HazardsPage').risk_hazards();
                 return;
@@ -82,7 +87,12 @@ steal(
             if ($(e.target).filter('#DeleteConfirmPage').length > 0) {
                 $('#DeleteConfirmPage').risk_delete();
                 return;
-            }            
+            }
+
+            if ($(e.target).filter('#DeleteTaskConfirmPage').length > 0) {
+                $('#DeleteTaskConfirmPage').risk_delete_task();
+                return;
+            }    
         });
 
         $(document).bind('pagehide', function (e, args) {

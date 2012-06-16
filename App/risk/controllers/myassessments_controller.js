@@ -41,7 +41,6 @@ steal('jquery/controller',
             });
         },
         '.delete click': function (el) {
-            var self = this;
             var id = $(el).attr("id");
             localStorage.deleteAssessmentId = id;
         },
