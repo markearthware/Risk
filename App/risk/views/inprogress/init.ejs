@@ -9,12 +9,12 @@
 
   <%for(var i = 0; i < this.length; i++){ %>
   <li>
-    <a class="task-item" id="<%=this[i].id%>">
+    <a class="task-item" href="myassessments.htm" id="<%=this[i].id%>">
       <h3>
         <%=this[i].Name%>
       </h3>
       <p>
-        <i class="small">Touch for more options</i>
+        <i class="small">Touch to see details</i>
       </p>
     </a>
     <a href="dialog/deleteTaskConfirm.htm" data-rel="dialog" id="<%=this[i].id%>" class="delete"> 

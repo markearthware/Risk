@@ -2,7 +2,7 @@
   <%if(this.length < 1){ %>
   
   <li data-role="list-divider">
-    There are currently no risk assessments recorded for <span id="task"></span>
+    There are currently no risk assessments recorded for <span class="task"></span>
   </li>
     
   <%}else{ %>
@@ -28,6 +28,6 @@
 <br/>
 <p>
   <a data-role="button" data-icon="plus" class="addToExisting" href="hazards.htm">Add another assessment</a>
-  <a data-role="button" data-icon="forward" href="emailreport.htm">Generate PDF report from list</a>
+  <a data-role="button" data-icon="forward" href="emailreport.htm">Email report for <span class="task"></span></a>
 </p> 
  

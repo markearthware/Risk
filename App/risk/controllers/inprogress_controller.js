@@ -23,7 +23,8 @@ steal('jquery/controller',
             });
         },
         '.task-item click': function (el) {
-           
+            var id = $(el).attr("id");
+            localStorage.taskId = id;
         },
         '.delete click': function (el) {
             var id = $(el).attr("id");

@@ -28,11 +28,9 @@ steal('jquery/controller',
                     Risk.Models.AssessmentWhos.deleteMany(this.id);
                     var def = Risk.Models.AssessmentHows.deleteMany(this.id);
                     Risk.Models.AssessmentControls.deleteMany(this.id); 
-                    $.when(def).done(function () {
-                        $.mobile.changePage("../inprogress.htm", { transition: "none" });
-                    }); 
                 });
             });
+            $.mobile.changePage("../inprogress.htm", { transition: "none" }); 
         }
     });
     });

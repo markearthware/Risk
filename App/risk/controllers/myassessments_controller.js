@@ -26,7 +26,7 @@ steal('jquery/controller',
                 $('#MyAssessmentsList').listview();
                 var divider = $('#divider');
                 divider.text("Risks assessments for task: " + taskRes.Name);
-                $('#task').text("'"+taskRes.Name+"'");
+                $('.task').text("'"+taskRes.Name+"'");
 
                 $('#MyAssessmentsPage').trigger("create");
             });
