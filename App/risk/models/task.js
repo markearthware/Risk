@@ -16,10 +16,9 @@ steal('jquery/model', function () {
           steal.dev.log(result);
           return result;
       },
-
+      
       deleteOne: function (id) {
           var result = localStorageDB.getSingleRow('DELETE FROM Tasks WHERE id =' + id, this);
-           //todo delete assessments, assessmenthows/whos/controls
           return result;
       },
       

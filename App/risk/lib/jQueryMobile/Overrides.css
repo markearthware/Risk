@@ -20,3 +20,7 @@ i.small{ font-size: 10px;}
 {
     white-space: normal !important;
 }
+
+.ui-btn-inner {
+    white-space: normal !important;
+}
