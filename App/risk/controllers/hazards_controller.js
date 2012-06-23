@@ -29,6 +29,10 @@ steal('jquery/controller',
         '#newHazard click': function () {
             $.mobile.changePage("dialog/newhazard.htm");
         },
+        '.delete click': function (el) {
+            var id = $(el).attr("id");
+            localStorage.deleteHazardId = id;
+        },
         '#backToTaskAdd click': function () {
             if (localStorage.addToExisting == "true") {
                 localStorage.addToExisting = "";

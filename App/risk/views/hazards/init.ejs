@@ -1,8 +1,10 @@
-<ul id="HazardsList" data-filter="true" data-filter-placeholder="Search for a hazard" data-role="listview">
+<ul id="HazardsList" data-filter="true" data-split-icon="delete" data-filter-placeholder="Search for a hazard" data-role="listview">
   <%for(var i = 0; i < this.length; i++){ %>
   <li>
     <a class="hazard-item" id="<%=this[i].id%>">
       <%=this[i].Name%>
+    </a>
+    <a href="dialog/deleteHazardConfirm.htm" data-rel="dialog" id="<%=this[i].id%>" class="delete">
     </a>
   </li>
   <%}%>

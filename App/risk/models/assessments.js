@@ -10,6 +10,10 @@ steal('jquery/model', function () {
       findAllIds: function (taskId) {
           return localStorageDB.getRows('SELECT ass.id FROM Assessments as ass WHERE ass.TaskId = ' + taskId, this);
       },
+      
+      findAllHazardIds: function (hazardId) {
+          return localStorageDB.getRows('SELECT ass.id FROM Assessments as ass WHERE ass.HazardId = ' + hazardId, this);
+      },
 
       findOne: function (id) {
           var result = localStorageDB.getSingleRow('SELECT * FROM Assessments WHERE id =' + id, this);
@@ -20,6 +24,11 @@ steal('jquery/model', function () {
 
       deleteOne: function (id) {
           var result = localStorageDB.getSingleRow('DELETE FROM Assessments WHERE id =' + id, this);
+          return result;
+      },
+
+      deleteManyByHazardId: function (id) {
+          var result = localStorageDB.getRows('DELETE FROM Assessments WHERE HazardId =' + id, this);
           return result;
       },
 

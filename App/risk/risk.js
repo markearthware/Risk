@@ -97,7 +97,12 @@ steal(
             if ($(e.target).filter('#DeleteTaskConfirmPage').length > 0) {
                 $('#DeleteTaskConfirmPage').risk_delete_task();
                 return;
-            }    
+            }
+
+            if ($(e.target).filter('#DeleteHazardConfirmPage').length > 0) {
+                $('#DeleteHazardConfirmPage').risk_delete_hazard();
+                return;
+            }     
         });
 
         $(document).bind('pagehide', function (e, args) {

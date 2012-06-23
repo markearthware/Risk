@@ -19,9 +19,10 @@ steal('jquery/controller',
             $.mobile.changePage("../inprogress.htm", { transition: "none" });
         },
         '.yes click': function (el) {
-            var id = localStorage.deleteTaskId;
-            var assIdsDef = Risk.Models.Assessments.findAllIds(id); 
+            var id = localStorage.deleteTaskId; 
             Risk.Models.Task.deleteOne(id);
+           
+            var assIdsDef = Risk.Models.Assessments.findAllIds(id); 
             $.when(assIdsDef).done(function (assIdsRes) {
                 $(assIdsRes).each(function () {
                     Risk.Models.Assessments.deleteOne(this.id);

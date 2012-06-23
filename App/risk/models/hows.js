@@ -12,6 +12,12 @@ steal('jquery/model', function () {
           steal.dev.log(result);
           return result;
       },
+
+      deleteMany: function (id) {
+          var result = localStorageDB.getRows('DELETE FROM Hows WHERE HazardId =' + id, this);
+          return result;
+      },
+
       tableName: "Hows"
    },
   {
