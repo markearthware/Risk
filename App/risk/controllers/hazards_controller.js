@@ -8,7 +8,7 @@ steal('jquery/controller',
     '../views/hazards/init.ejs')
     .then(function ($) {
         $.Controller('Risk.Controllers.Hazards', {
-        },
+    },
     {
         init: function () {
             this.loadData();
@@ -26,10 +26,13 @@ steal('jquery/controller',
             localStorage.hazardId = $(el).attr('id');
             $.mobile.changePage("whos.htm");
         },
+        '#newHazard click': function () {
+            $.mobile.changePage("dialog/newhazard.htm");
+        },
         '#backToTaskAdd click': function () {
             if (localStorage.addToExisting == "true") {
                 localStorage.addToExisting = "";
-                $.mobile.changePage("myassessments.htm",{reverse: true});
+                $.mobile.changePage("myassessments.htm", { reverse: true });
             }
             else {
                 var taskDef = Risk.Models.Task.deleteOne(localStorage.taskId);
@@ -37,4 +40,4 @@ steal('jquery/controller',
             }
         }
     });
-    });
+});

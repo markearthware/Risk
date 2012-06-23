@@ -8,5 +8,6 @@ steal(
         './deletetask_controller.js',
         './controls_controller.js',
         './details_controller.js',
-        './inprogress_controller.js'
+        './inprogress_controller.js',
+        './newhazard_controller.js'
      )

@@ -47,6 +47,11 @@ steal(
                 return;
             }
 
+
+            if ($(e.target).filter('#NewHazardPage').length > 0) {
+                $('#NewHazardForm').risk_hazard();
+                return;
+            } 
         });
 
         $(document).bind('pageshow', function (e) {
