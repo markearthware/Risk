@@ -6,9 +6,17 @@
   </li>
     
   <%}else{ %>
-
+  
+  <% var dateStr = ""; %>  
   <%for(var i = 0; i < this.length; i++){ %>
-  <li>
+  
+  <%if(dateStr !=  this[i].DateStarted.toDateString()){%>
+    <li data-role="list-divider">
+      <%= this[i].DateStarted.toDateString() %>
+    </li>
+  <%} dateStr = this[i].DateStarted.toDateString(); %>
+
+    <li>
     <a class="task-item" href="myassessments.htm" id="<%=this[i].id%>">
       <h3>
         <%=this[i].Name%>

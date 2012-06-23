@@ -3,7 +3,7 @@ steal('jquery/model', function () {
   Risk.Models.WebSqlModel('Risk.Models.Task',
   {
       findAllInProgress: function () {
-          return localStorageDB.getRows('SELECT * FROM Tasks WHERE Sent = 0', this);
+          return localStorageDB.getRows('SELECT * FROM Tasks WHERE Sent = 0 ORDER BY DateStarted DESC', this);
       },
 
       findAllFinished: function () {
