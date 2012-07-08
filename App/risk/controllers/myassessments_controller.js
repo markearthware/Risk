@@ -26,7 +26,7 @@ steal('jquery/controller',
                 $('#MyAssessmentsList').listview();
                 var divider = $('#divider');
                 divider.text("Risks assessments for task: " + taskRes.Name);
-                $('.task').text("'"+taskRes.Name+"'");
+                $('.task').text("'" + taskRes.Name + "'");
 
                 $('#MyAssessmentsPage').trigger("create");
             });
@@ -47,6 +47,29 @@ steal('jquery/controller',
         '.addToExisting click': function () {
             localStorage.addToExisting = "true";
             localStorage.editAssessmentId = "";
+        },
+        '.emailReport click': function () {
+            if (this.hasInternetConnection()) {
+                $.mobile.changePage("emailReport.htm");
+            }
+            else {
+                $.mobile.changePage("dialog/notconnected.htm");
+            }
+        },
+        hasInternetConnection: function () {
+            if (navigator.network) {
+                var networkState = navigator.network.connection.type;
+
+                if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            else {
+                return true;
+            }
         }
     });
     });

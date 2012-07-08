@@ -101,7 +101,14 @@ steal('jquery/controller',
                     if (this.passesValidation()) {
                         $('#WhosPage #submit').button();
                         var score = this.calculateScore();
+                        $('#trafficLight div').removeClass("on");
                         if (score < 13) {
+                            if (score < 6) {
+                                 $('#trafficLight #green').addClass("on");
+                             }
+                            else {
+                                $('#trafficLight #amber').addClass("on");
+                            }
                             this.nextStepHref = "myassessments.htm";
                             $('#WhosPage #submit').text(localStorage.editAssessmentId ? "Save assessment" : "Finish assessment");
                             $('#WhosPage #submit').fadeIn().button('refresh');
@@ -110,6 +117,7 @@ steal('jquery/controller',
                             this.nextStepHref = "controls.htm";
                             $('#WhosPage #submit').text("Add further controls");
                             $('#WhosPage #submit').fadeIn().button('refresh');
+                            $('#trafficLight #red').addClass("on");
                         }
                     }
                 },
@@ -127,7 +135,7 @@ steal('jquery/controller',
                     }
                     new Risk.Models.AssessmentsB(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },
-                onInsertSuccess: function (obj,newid) {
+                onInsertSuccess: function (obj, newid) {
                     localStorage.assessmentId = newid ? newid : obj.id;
                     var asWhosDef = Risk.Models.AssessmentWhos.deleteMany(localStorage.assessmentId);
                     var asHowsDef = Risk.Models.AssessmentHows.deleteMany(localStorage.assessmentId);

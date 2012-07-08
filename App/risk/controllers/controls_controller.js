@@ -21,6 +21,7 @@ steal('jquery/controller',
                 likelihood: 0,
                 risk: 0,
                 loadData: function () {
+                    var self = this;
                     var controlsDef = Risk.Models.Controls.findAll(localStorage.hazardId);
                     var hazardDef = Risk.Models.Hazards.findOne(localStorage.hazardId);
                     var view;
@@ -35,7 +36,8 @@ steal('jquery/controller',
                         $('#SeverityList').selectmenu();
                         $('#LikelihoodList').selectmenu();
                         $('#ControlsList').selectmenu();
-                        $('#button-container').hide();
+                        $('#button-container').hide(); 
+                        $('#trafficLight #red').addClass("on");
 
                         if (localStorage.editAssessmentId) {
                             //get assessment severity likelihood and controls back from db
@@ -84,13 +86,21 @@ steal('jquery/controller',
                 validation: function () {
                     if (this.passesValidation()) {
                         var score = this.calculateScore();
+                        $('#trafficLight div').removeClass("on");
                         if (score < 13) {
+                            if (score < 6) {
+                                $('#trafficLight #green').addClass("on");
+                            }
+                            else {
+                                $('#trafficLight #amber').addClass("on");
+                            }
                             this.nextStepHref = "myassessments.htm";
                             $('#button-container').show();
                             $('#submit').button();
                         }
                         else {
                             $('#button-container').hide();
+                            $('#trafficLight #red').addClass("on");
                         }
                     }
                 },

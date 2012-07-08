@@ -10,5 +10,6 @@ steal(
         './details_controller.js',
         './inprogress_controller.js',
         './newhazard_controller.js',
-        './deletehazard_controller.js'
+        './deletehazard_controller.js',
+        './emailreport_controller.js'
      )

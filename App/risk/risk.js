@@ -47,6 +47,10 @@ steal(
                 return;
             }
 
+            if ($(e.target).filter('#EmailReportPage').length > 0) {
+                $('#EmailReportForm').risk_email_report();
+                return;
+            }
 
             if ($(e.target).filter('#NewHazardPage').length > 0) {
                 $('#NewHazardForm').risk_hazard();
