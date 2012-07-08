@@ -51,6 +51,6 @@ steal('jquery/controller',
                 });
             }
             return false;
-        },
+        }
     });
 });
