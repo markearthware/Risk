@@ -1,8 +1,8 @@
-//js zoladex/scripts/doc.js
+//js risk/scripts/doc.js
 
 load('steal/rhino/rhino.js');
 steal("documentjs").then(function(){
-	DocumentJS('zoladex/zoladex.html', {
-		markdown : ['zoladex']
+    DocumentJS('risk/risk.html', {
+        markdown: ['risk']
 	});
 });

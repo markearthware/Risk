@@ -4,7 +4,6 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../lib/WebSQL/db.js',
     '../models/task.js',
-    '../models/email.js',
     '../views/email/init.ejs')
     .then(function ($) {
         $.Controller('Risk.Controllers.EmailReport', {

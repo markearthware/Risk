@@ -1,8 +1,6 @@
-//steal/js zoladex/scripts/compress.js
-
 load("steal/rhino/rhino.js");
 steal('steal/clean',function(){
-	steal.clean('zoladex/zoladex.html',{
+	steal.clean('risk/risk.html',{
 		indent_size: 1, 
 		indent_char: '\t', 
 		jslint : false,

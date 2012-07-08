@@ -1,1 +1,1 @@
-js zoladex/scripts/build.js
+js risk/scripts/build.js

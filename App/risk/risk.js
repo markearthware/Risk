@@ -24,7 +24,6 @@ steal(
         './models/models.js', // steals all your models
         './controllers/controllers.js', // steals all controllers
         './lib/jQueryValidation/jquery.validate.js',
-        './classes/qsutils.js',
          function () {
              localStorageDB.init();
          }
@@ -32,6 +31,12 @@ steal(
 
     function configureJqueryMobile() {
 
+        $(document).bind("mobileinit", function () {
+            //apply overrides here
+            $.mobile.defaultPageTransition = "none";
+            $.mobile.defaultDialogTransition = "none";
+        });
+        
         $(document).bind('pagebeforecreate', function (e) {
 
         });
@@ -107,11 +112,6 @@ steal(
                 $('#DeleteHazardConfirmPage').risk_delete_hazard();
                 return;
             }     
-        });
-
-        $(document).bind('pagehide', function (e, args) {
-
-
         });
     }
 

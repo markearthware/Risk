@@ -1,7 +1,7 @@
 steal("funcunit/qunit", function(){
-	module("zoladex");
+	module("risk");
 	
-	test("zoladex testing works", function(){
+	test("risk testing works", function(){
 		ok(true,"an assert is run");
 	});
 })

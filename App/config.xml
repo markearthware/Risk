@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns	= "http://www.w3.org/ns/widgets"
         xmlns:gap	= "http://phonegap.com/ns/1.0"
-        id = "com.zoladex.mobile"
+        id = "com.risk.mobile"
         version = "1.0.0.0">
 
-  <name>Prostate Assistant</name>
+  <name>Risk Assessment App</name>
 
   <description>
-    Prostate Assistant
+    Risk Assessment App
   </description>
 
-  <author href="http://www.thetechnologystudio.co.uk/"
-          email="info@thetechnologystudio.co.uk">
-    The Technology Studio
+  <author href=""
+          email="">
+    Shortech Studio
   </author>
 
   <gap:platforms>

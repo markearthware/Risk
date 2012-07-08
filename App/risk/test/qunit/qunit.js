@@ -1,1 +1,1 @@
-steal("funcunit/qunit", "./zoladex_test.js");
+steal("funcunit/qunit", "./risk_test.js");
