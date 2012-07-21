@@ -5,7 +5,7 @@ steal(
         'jquery/view/ejs',
         './lib/jQueryMobile/Overrides.css', // application CSS file
         './lib/jQueryMobile/jquery.mobile.structure-1.0.css',
-        './lib/jQueryMobile/jquery.mobile-1.0.min.css', //steal jquery mobile css
+        './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
         function () { // configure your application
 
             steal.dev.log('jmvc is initialising...');
