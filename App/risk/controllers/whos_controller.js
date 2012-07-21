@@ -35,28 +35,18 @@ steal('jquery/controller',
                         $('#HowsList').selectmenu();
                         $('#SeverityList').selectmenu();
                         $('#LikelihoodList').selectmenu();
+                        $('#FurtherDetails').textinput();
 
                         if (localStorage.editAssessmentId) {
 
                             //get assessment severity likelihood whos and hows back from db
-                            var asWhosDef = new Risk.Models.AssessmentWhos.findAllById(localStorage.editAssessmentId);
-                            var asHowsDef = new Risk.Models.AssessmentHows.findAllById(localStorage.editAssessmentId);
                             var asDef = new Risk.Models.Assessments.findOne(localStorage.editAssessmentId);
 
-                            $.when(asDef, asWhosDef, asHowsDef).done(function (asRes, asWhosRes, asHowsRes) {
+                            $.when(asDef).done(function (asRes) {
 
-                                var whosValArray = [];
-                                $(asWhosRes).each(function (i) {
-                                    whosValArray.push(this.WhoId.toString());
-                                });
-
-                                var howsValArray = [];
-                                $(asHowsRes).each(function (i) {
-                                    howsValArray.push(this.HowId.toString());
-                                });
-
-                                $('#WhosList').val(whosValArray);
-                                $('#HowsList').val(howsValArray);
+                                $('#WhosList').val(asRes.WhoId);
+                                $('#HowsList').val(asRes.HowId);
+                                $('#FurtherDetails').val(asRes.FurtherDetails);
                                 $('#SeverityList').val(asRes.Severity);
                                 $('#LikelihoodList').val(asRes.Likelihood);
 
@@ -64,6 +54,7 @@ steal('jquery/controller',
                                 $('#HowsList').selectmenu('refresh');
                                 $('#SeverityList').selectmenu('refresh');
                                 $('#LikelihoodList').selectmenu('refresh');
+                                $('#FurtherDetails').textinput('refresh');
                             });
                         }
                     });
@@ -104,8 +95,8 @@ steal('jquery/controller',
                         $('#trafficLight div').removeClass("on");
                         if (score < 13) {
                             if (score < 6) {
-                                 $('#trafficLight #green').addClass("on");
-                             }
+                                $('#trafficLight #green').addClass("on");
+                            }
                             else {
                                 $('#trafficLight #amber').addClass("on");
                             }
@@ -128,14 +119,20 @@ steal('jquery/controller',
 
                     var assessment;
                     if (localStorage.editAssessmentId) {
-                        assessment = { id: localStorage.editAssessmentId, TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating, HowId: $('#HowsList').val(), WhoId: $('#WhosList').val()};
+                        assessment = { id: localStorage.editAssessmentId, TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating, HowId: $('#HowsList').val(), WhoId: $('#WhosList').val(), FurtherDetails: $('#FurtherDetails').val() };
                     }
                     else {
-                        assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating, HowId: $('#HowsList').val(), WhoId: $('#WhosList').val()};
+                        assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating, HowId: $('#HowsList').val(), WhoId: $('#WhosList').val(), FurtherDetails: $('#FurtherDetails').val() };
                     }
                     new Risk.Models.AssessmentsB(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },
                 onInsertSuccess: function (obj, newid) {
+                    if (localStorage.editAssessmentId) {
+                        localStorage.assessmentId = obj.id;
+                    }
+                    else {
+                        localStorage.assessmentId = newid;
+                    }
                     $.mobile.changePage(this.nextStepHref);
                 },
                 onInsertFail: function () {

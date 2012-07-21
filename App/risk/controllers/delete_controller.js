@@ -21,9 +21,7 @@ steal('jquery/controller',
             var self = this;
             var id = localStorage.deleteAssessmentId;
             var assessmentsDef = Risk.Models.Assessments.deleteOne(id);
-            new Risk.Models.AssessmentWhos.deleteMany(id);
             new Risk.Models.AssessmentControls.deleteMany(id);
-            new Risk.Models.AssessmentHows.deleteMany(id);
             $.when(assessmentsDef).done(function (assessmentsRes) {
                 $.mobile.changePage("../myassessments.htm",{ transition: "none"});
             });

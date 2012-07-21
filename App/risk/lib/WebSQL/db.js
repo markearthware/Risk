@@ -153,7 +153,7 @@ var localStorageDB = (function () {
         
         checkTableExists("Assessments", function (tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Assessments (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, TaskId INTEGER, HazardId INTEGER, Likelihood INTEGER, Severity INTEGER, HowId INTEGER, WhoId INTEGER)');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Assessments (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, TaskId INTEGER, HazardId INTEGER, Likelihood INTEGER, Severity INTEGER, HowId INTEGER, WhoId INTEGER, FurtherDetails)');
         });
         
             checkTableExists("AssessmentControls", function (tx) {

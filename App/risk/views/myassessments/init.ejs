@@ -18,7 +18,14 @@
         <%=this[i].Hazard%>
       </h3>
       <p>
-        <i class="small">Touch for more options</i>
+        <strong>Who:</strong> <%= this[i].Who %>
+      </p>
+      <p>
+        <strong>How:</strong> <%= this[i].How %> - <%= this[i].FurtherDetails %>
+      </p>
+      </p>
+      <p>
+        <i class="small">Touch to view further controls</i>
       </p>
     </a>
     <a href="dialog/deleteConfirm.htm" data-rel="dialog" id="<%=this[i].id%>" class="delete"> 

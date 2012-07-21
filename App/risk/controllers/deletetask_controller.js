@@ -26,8 +26,6 @@ steal('jquery/controller',
             $.when(assIdsDef).done(function (assIdsRes) {
                 $(assIdsRes).each(function () {
                     Risk.Models.Assessments.deleteOne(this.id);
-                    Risk.Models.AssessmentWhos.deleteMany(this.id);
-                    var def = Risk.Models.AssessmentHows.deleteMany(this.id);
                     Risk.Models.AssessmentControls.deleteMany(this.id); 
                 });
             });

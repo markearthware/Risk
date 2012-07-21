@@ -37,7 +37,8 @@ steal('jquery/controller',
             $.when(assessmentDef).done(function (assessmentRes) {
                 localStorage.hazardId = assessmentRes.HazardId;
                 localStorage.editAssessmentId = id;
-                $.mobile.changePage("dialog/choose.htm");
+                localStorage.assessmentId = id;
+                $.mobile.changePage("details.htm");
             });
         },
         '.delete click': function (el) {
