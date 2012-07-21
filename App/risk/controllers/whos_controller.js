@@ -128,39 +128,15 @@ steal('jquery/controller',
 
                     var assessment;
                     if (localStorage.editAssessmentId) {
-                        assessment = { id: localStorage.editAssessmentId, TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating };
+                        assessment = { id: localStorage.editAssessmentId, TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating, HowId: $('#HowsList').val(), WhoId: $('#WhosList').val()};
                     }
                     else {
-                        assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating };
+                        assessment = { TaskId: localStorage.taskId, HazardId: localStorage.hazardId, Likelihood: localStorage.likelihoodRating, Severity: localStorage.severityRating, HowId: $('#HowsList').val(), WhoId: $('#WhosList').val()};
                     }
                     new Risk.Models.AssessmentsB(assessment).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
                 },
                 onInsertSuccess: function (obj, newid) {
-                    localStorage.assessmentId = newid ? newid : obj.id;
-                    var asWhosDef = Risk.Models.AssessmentWhos.deleteMany(localStorage.assessmentId);
-                    var asHowsDef = Risk.Models.AssessmentHows.deleteMany(localStorage.assessmentId);
-                    var self = this;
-                    $.when(asWhosDef, asHowsDef).done(function () {
-                        var whos = $.makeArray($('#WhosList').val());
-                        $(whos).each(function (i) {
-                            var assessmentwhos = { AssessmentId: localStorage.assessmentId, WhoId: this.toString() };
-                            new Risk.Models.AssessmentWhos(assessmentwhos).save(function () {
-                                if (i == $('#WhosList').val().length - 1) {
-                                    var hows = $.makeArray($('#HowsList').val());
-                                    $(hows).each(function (index) {
-                                        var assessmenthows = { AssessmentId: localStorage.assessmentId, HowId: this.toString() };
-                                        new Risk.Models.AssessmentHows(assessmenthows).save(function () {
-
-                                            if (index == $('#HowsList').val().length - 1) {
-                                                $.mobile.changePage(self.nextStepHref);
-                                            }
-
-                                        }, function () { });
-                                    });
-                                }
-                            });
-                        });
-                    });
+                    $.mobile.changePage(this.nextStepHref);
                 },
                 onInsertFail: function () {
                     //todo popup

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <div data-role="fieldcontain">
   <label for="WhosList" class="select"><strong>Who</strong> is at risk?</label>
-  <select name="WhosList" id="WhosList" multiple="multiple" data-native-menu="false">
+  <select name="WhosList" id="WhosList" data-native-menu="false">
     <option>Choose options</option>
     <%for(var i = "0"; i < this.whos.length; i++){ %>
     <option value="<%=this.whos[i].id%>">
@@ -11,7 +11,7 @@
   </select>
 
   <label for="HowsList" class="select"><strong>How</strong> are they at risk?</label>
-  <select name="HowsList" id="HowsList" multiple="multiple" data-native-menu="false">
+  <select name="HowsList" id="HowsList" data-native-menu="false">
     <option>Choose options</option>
     <%for(var i = "0"; i < this.hows.length; i++){ %>
       <option value="<%=this.hows[i].id%>">
