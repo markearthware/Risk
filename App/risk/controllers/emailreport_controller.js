@@ -40,27 +40,28 @@ steal('jquery/controller',
                 localStorage.emailDetailsMfn = emailDetails.ManagerFirstName;
                 localStorage.emailDetailsMln = emailDetails.ManagerLastName;
                 localStorage.emailDetailsMemail = emailDetails.ManagerEmailAddress;
-                //todo
+                var task = {
+                    id: self.task.id,
+                    Name: self.task.Name,
+                    DateStarted: new Date(self.task.DateStarted).toISOString(),
+                    DateFinished: new Date().toISOString(),
+                    Sent: 1,
+                    AssessorName: params.FirstName + " " + params.LastName,
+                    AssessorEmail: params.EmailAddress,
+                    ManagerName: params.ManagerFirstName + " " + params.ManagerLastName,
+                    ManagerEmail: params.ManagerEmailAddress
+                };
+                var serialisedTask = $.param({ task: task });
                 $.ajax({
-                    url: 'http://twitter.com/status/user_timeline/padraicb.json?count=10',
+                    url: 'http://localhost:52068/api/Email/Send?' + serialisedTask,
                     dataType: 'jsonp',
                     success: function (data) {
-                        var sentTask = {
-                            id: self.task.id,
-                            Name: self.task.Name,
-                            DateStarted: self.task.DateStarted,
-                            DateFinished: new Date().getTime(),
-                            Sent: 1,
-                            AssessorName: params.FirstName + " " + params.LastName,
-                            AssessorEmail: params.EmailAddress,
-                            ManagerName: params.ManagerFirstName + " " + params.ManagerLastName,
-                            ManagerEmail: params.ManagerEmailAddress
-                        };
-                        new Risk.Models.Task(sentTask).save(function () {
+                        new Risk.Models.Task(task).save(function () {
                             $.mobile.changePage("dialog/emailSent.htm");
                         });
                     },
-                    error: function () {
+                    error: function (err) {
+                        console.log(err);
                         $.mobile.changePage("dialog/emailNotSent.htm");
                     }
                 });
