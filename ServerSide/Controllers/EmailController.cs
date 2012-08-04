@@ -14,7 +14,7 @@ namespace ServerSide.Controllers
     public class EmailController : ApiController
     {
         [HttpGet]
-        public string Send([FromUri]Task task)
+        public string Send([FromUri]Task task, [FromUri]dynamic assessments )
         {
             string appPath = "C:\\git\\Risk\\ServerSide\\App_Data\\Emails\\";
             string filePath = appPath + "test.txt";

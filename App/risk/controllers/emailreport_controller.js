@@ -4,6 +4,7 @@ steal('jquery/controller',
     'jquery/controller/view',
     '../lib/WebSQL/db.js',
     '../models/task.js',
+    '../models/assessments.js',
     '../views/email/init.ejs')
     .then(function ($) {
         $.Controller('Risk.Controllers.EmailReport', {
@@ -40,6 +41,7 @@ steal('jquery/controller',
                 localStorage.emailDetailsMfn = emailDetails.ManagerFirstName;
                 localStorage.emailDetailsMln = emailDetails.ManagerLastName;
                 localStorage.emailDetailsMemail = emailDetails.ManagerEmailAddress;
+
                 var task = {
                     id: self.task.id,
                     Name: self.task.Name,
@@ -51,19 +53,25 @@ steal('jquery/controller',
                     ManagerName: params.ManagerFirstName + " " + params.ManagerLastName,
                     ManagerEmail: params.ManagerEmailAddress
                 };
-                var serialisedTask = $.param({ task: task });
-                $.ajax({
-                    url: 'http://localhost:52068/api/Email/Send?' + serialisedTask,
-                    dataType: 'jsonp',
-                    success: function (data) {
-                        new Risk.Models.Task(task).save(function () {
-                            $.mobile.changePage("dialog/emailSent.htm");
-                        });
-                    },
-                    error: function (err) {
-                        console.log(err);
-                        $.mobile.changePage("dialog/emailNotSent.htm");
-                    }
+
+                var assessments;
+                var assessmentsDef = Risk.Models.Assessments.findAll(self.task.id);
+                $.when(assessmentsDef).done(function (assessmentsRes) {
+                    assessments = assessmentsRes;
+                    var serialisedTask = $.param({ task: task, assessments: assessments });
+                    $.ajax({
+                        url: 'http://localhost:52068/api/Email/Send?' + serialisedTask,
+                        dataType: 'jsonp',
+                        success: function (data) {
+                            new Risk.Models.Task(task).save(function () {
+                                $.mobile.changePage("dialog/emailSent.htm");
+                            });
+                        },
+                        error: function (err) {
+                            console.log(err);
+                            $.mobile.changePage("dialog/emailNotSent.htm");
+                        }
+                    });
                 });
             }
             return false;
