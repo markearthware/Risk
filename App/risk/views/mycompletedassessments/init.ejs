@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ul id="MyCompletedAssessmentsList" data-filter="true" data-filter-placeholder="Search for an assessment" data-role="listview">
+  <%if(this.length < 1){ %>
+  
+  <li data-role="list-divider">
+    There are currently no risk assessments recorded for <span class="task"></span>
+  </li>
+    
+  <%}else{ %>
+
+  <li id="divider" data-role="list-divider">
+  </li> 
+    
+  <%for(var i = 0; i < this.length; i++){ %>
+  <li data-icon="false">
+    <a class="assessment-item" id="<%=this[i].id%>">
+      <h3>
+        <%=this[i].Hazard%>
+      </h3>
+      <p>
+        <strong>Who:</strong> <%= this[i].Who %>
+      </p>
+      <p>
+        <strong>How:</strong> <%= this[i].How %> - <%= this[i].FurtherDetails %>
+      </p>
+      </p>
+      <p>
+        <i class="small">Touch to view further controls</i>
+      </p>
+    </a>
+  </li>
+  <%}}%>
+</ul>
+

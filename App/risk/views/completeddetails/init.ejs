@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ul id="CompletedDetailsList" data-role="listview">
+  
+  <li data-role="list-divider">
+    Who is at risk from : '<%= this.hazardName %>'
+  </li>
+  <li><%= this.who %></li>
+
+    
+  <li data-role="list-divider">
+    How are they at risk from : '<%= this.hazardName %>'
+  </li>
+
+  <li>
+    <%= this.how %> <%= " - " + this.furtherDetails %>
+  </li>
+
+  <% if(this.controls.length > 0){ %>
+    
+  <li data-role="list-divider">
+    Compulsory controls required before starting work task
+  </li>
+
+  <%for(var k = 0; k < this.controls.length; k++){ %>
+
+  <li>
+    <%= this.controls[k].Name %>
+  </li>
+
+  <%}}%>
+    
+    <li data-role="list-divider">
+      Severity: <%= this.severityRating %> Likelihood: <%= this.likelihoodRating %> Overall Rating: <%= this.assessmentRating %>
+    </li>
+
+  </ul>
+<br/>
+<p>
+  <a data-role="button" data-icon="grid" href="mycompletedassessments.htm">Back to my completed assessments</a>
+</p> 
+ 

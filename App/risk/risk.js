@@ -70,6 +70,11 @@ steal(
                 return;
             }
 
+            if ($(e.target).filter('#MyCompletedAssessmentsPage').length > 0) {
+                $('#MyCompletedAssessmentsPage').risk_my_completed_assessments();
+                return;
+            }
+
             if ($(e.target).filter('#ControlsPage').length > 0) {
                 $('#ControlsPage').risk_controls();
                 return;
@@ -82,6 +87,11 @@ steal(
             
             if ($(e.target).filter('#DetailsPage').length > 0) {
                 $('#DetailsPage').risk_details();
+                return;
+            }
+
+            if ($(e.target).filter('#CompletedDetailsPage').length > 0) {
+                $('#CompletedDetailsPage').risk_completed_details();
                 return;
             }
         });
@@ -110,6 +120,11 @@ steal(
 
             if ($(e.target).filter('#DeleteTaskConfirmPage').length > 0) {
                 $('#DeleteTaskConfirmPage').risk_delete_task();
+                return;
+            }
+
+            if ($(e.target).filter('#DeleteCompletedTaskConfirmPage').length > 0) {
+                $('#DeleteCompletedTaskConfirmPage').risk_delete_completed_task();
                 return;
             }
 
