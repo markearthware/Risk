@@ -58,7 +58,7 @@ steal('jquery/controller',
                 var assessmentsDef = Risk.Models.Assessments.findAll(self.task.id);
                 $.when(assessmentsDef).done(function (assessmentsRes) {
                     assessments = assessmentsRes;
-                    var serialisedTask = $.param({ task: task, assessments: assessments });
+                    var serialisedTask = $.param({ task: task, assessments: JSON.stringify(assessments) });
                     $.ajax({
                         url: 'http://localhost:52068/api/Email/Send?' + serialisedTask,
                         dataType: 'jsonp',
