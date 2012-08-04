@@ -40,7 +40,7 @@ steal('jquery/controller',
             }
             else {
                 var taskDef = Risk.Models.Task.deleteOne(localStorage.taskId);
-                $.mobile.changePage("taskadd.htm", { reverse: true });
+                $.mobile.changePage("newtask.htm", { reverse: true });
             }
         }
     });

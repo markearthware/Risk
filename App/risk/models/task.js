@@ -7,7 +7,7 @@ steal('jquery/model', function () {
       },
 
       findAllFinished: function () {
-          return localStorageDB.getRows('SELECT * FROM Tasks WHERE Sent = 1', this);
+          return localStorageDB.getRows('SELECT * FROM Tasks WHERE Sent = 1 ORDER BY DateStarted DESC', this);
       },
 
       findOne: function (id) {

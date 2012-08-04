@@ -81,3 +81,8 @@ i.small{ font-size: 10px;}
     height: 50px;
     margin: auto;
 }
+
+p.ui-li-desc
+{
+    white-space: normal !important;
+}

@@ -92,6 +92,11 @@ steal(
                 $('#InProgressPage').risk_in_progress();
                 return;
             }
+
+            if ($(e.target).filter('#CompletedPage').length > 0) {
+                $('#CompletedPage').risk_completed();
+                return;
+            }
             
             if ($(e.target).filter('#HazardsPage').length > 0) {
                 $('#HazardsPage').risk_hazards();
