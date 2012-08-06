@@ -18,5 +18,7 @@ namespace ServerSide.Models
         public string Who { get; set; }
 
         public string FurtherDetails { get; set; }
+
+        public string Controls { get; set; }
     }
 }

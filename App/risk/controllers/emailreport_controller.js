@@ -65,7 +65,8 @@ steal('jquery/controller',
                                 severity: assessmentsRes[index].Severity,
                                 how: assessmentsRes[index].How,
                                 who: assessmentsRes[index].Who,
-                                furtherDetails: assessmentsRes[index].FurtherDetails
+                                furtherDetails: assessmentsRes[index].FurtherDetails,
+                                controls: assessmentsRes[index].Controls
                             });
                     }
 
