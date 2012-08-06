@@ -21,11 +21,18 @@
         <strong>Who:</strong> <%= this[i].Who %>
       </p>
       <p>
-        <strong>How:</strong> <%= this[i].How %> - <%= this[i].FurtherDetails %>
+        <strong>How:</strong> <%= this[i].How %> <%if(this[i].FurtherDetails){%> - <%= this[i].FurtherDetails %><%}%>
       </p>
-      </p>
-      <p>
-        <i class="small">Touch to view further controls</i>
+      <% if(this[i].Controls){ %>
+        <p>
+          <STRONG>Controls:</STRONG>
+           <%for(var j = 0; j < this[i].Controls.split("|").length; j++){%>
+             <br/>
+             <span><%=j+1%>)</span>
+             <%=this[i].Controls.split("|")[j]%>
+           <%}%>
+        </p>  
+      <%}%>
       </p>
     </a>
     <a href="dialog/deleteConfirm.htm" data-rel="dialog" id="<%=this[i].id%>" class="delete"> 

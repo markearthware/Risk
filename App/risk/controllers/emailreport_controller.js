@@ -57,11 +57,28 @@ steal('jquery/controller',
                 var assessments;
                 var assessmentsDef = Risk.Models.Assessments.findAll(self.task.id);
                 $.when(assessmentsDef).done(function (assessmentsRes) {
-                    assessments = assessmentsRes;
-                    var serialisedTask = $.param({ task: task, assessments: JSON.stringify(assessments) });
+                    var assessments = [];
+                    for (var index = 0; index < assessmentsRes.length; index++) {
+                        assessments.push({
+                                hazard: assessmentsRes[index].Hazard,
+                                likelihood: assessmentsRes[index].Likelihood,
+                                severity: assessmentsRes[index].Severity,
+                                how: assessmentsRes[index].How,
+                                who: assessmentsRes[index].Who,
+                                furtherDetails: assessmentsRes[index].FurtherDetails
+                            });
+                    }
+
+                    //var serialisedTask = $.param(JSON.stringify({ task: task, assessments: assessments }));
+                    // var serialisedTask = $.param({ task: task, assessments: JSON.stringify(assessments) });
                     $.ajax({
-                        url: 'http://localhost:52068/api/Email/Send?' + serialisedTask,
+                        // url: 'http://localhost:52068/api/Email/Send?' + serialisedTask,
+                        url: 'http://localhost:52068/api/Email/Send',
                         dataType: 'jsonp',
+                        data: {
+                            task: task,
+                            assessments: assessments
+                        },
                         success: function (data) {
                             new Risk.Models.Task(task).save(function () {
                                 $.mobile.changePage("dialog/emailSent.htm");
