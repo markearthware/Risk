@@ -20,5 +20,7 @@ namespace ServerSide.Models
         public string FurtherDetails { get; set; }
 
         public string Controls { get; set; }
+
+        public string ExistingControls { get; set; }
     }
 }
