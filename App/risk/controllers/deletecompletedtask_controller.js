@@ -7,6 +7,7 @@ steal('jquery/controller',
     '../models/assessmentwhos.js',
     '../models/assessmenthows.js',
     '../models/assessmentcontrols.js',
+    '../models/assessmentexistingcontrols.js',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Risk.Controllers.DeleteCompletedTask', {
@@ -26,7 +27,8 @@ steal('jquery/controller',
             $.when(assIdsDef).done(function (assIdsRes) {
                 $(assIdsRes).each(function () {
                     Risk.Models.Assessments.deleteOne(this.id);
-                    Risk.Models.AssessmentControls.deleteMany(this.id); 
+                    Risk.Models.AssessmentControls.deleteMany(this.id);
+                    Risk.Models.AssessmentExistingControls.deleteMany(this.id); 
                 });
             });
             $.mobile.changePage("../completed.htm", { transition: "none" }); 

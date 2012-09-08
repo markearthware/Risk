@@ -8,6 +8,7 @@ steal('jquery/controller',
     '../models/assessmenthows.js',
     '../models/assessmentwhos.js',
     '../models/assessmentcontrols.js',
+    '../models/assessmentexistingcontrols.js',
     '../models/assessments.js',
     '../lib/WebSQL/db.js')
     .then(function ($) {
@@ -34,6 +35,7 @@ steal('jquery/controller',
                         Risk.Models.AssessmentWhos.deleteMany(this.id);
                         Risk.Models.AssessmentHows.deleteMany(this.id);
                         Risk.Models.AssessmentControls.deleteMany(this.id);
+                        Risk.Models.AssessmentExistingControls.deleteMany(this.id); 
                     });
                     $.mobile.changePage("../hazards.htm", { transition: "none" });
                 });
