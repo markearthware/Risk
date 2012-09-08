@@ -90,6 +90,9 @@ steal('jquery/controller',
                 '#LikelihoodList change': function () {
                     this.validation();
                 },
+                '#ExistingControlsList change': function () {
+                    this.validation();
+                },
                 passesValidation: function () {
                     if ($('#WhosList').val() != null &&
                         $('#HowsList').val() != null &&

@@ -65,7 +65,8 @@ steal('jquery/controller',
                                 how: assessmentsRes[index].How,
                                 who: assessmentsRes[index].Who,
                                 furtherDetails: assessmentsRes[index].FurtherDetails,
-                                controls: assessmentsRes[index].Controls
+                                controls: assessmentsRes[index].Controls,
+                                existingControls: assessmentsRes[index].ExistingControls
                             });
                     }
                     $.ajax({
