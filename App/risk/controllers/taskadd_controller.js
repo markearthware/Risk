@@ -27,7 +27,7 @@ steal('jquery/controller',
 
                 var params = el.formParams();
 
-                var task = { Name: params.Name, DateStarted: new Date().getTime(), DateFinished: "", Sent: 0 };
+                var task = { Name: params.Name, Site: params.Site, DateStarted: new Date().getTime(), DateFinished: "", Sent: 0 };
 
                 new Risk.Models.Task(task).save(this.callback('onInsertSuccess'), this.callback('onInsertFail'));
             }

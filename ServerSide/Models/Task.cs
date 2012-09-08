@@ -11,6 +11,8 @@
 
         public string Name { get; set; }
 
+        public string Site { get; set; }
+
         public DateTime DateStarted { get; set; }
 
         public DateTime DateFinished { get; set; }
