@@ -21,7 +21,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['sqlite_sequence', 'Hazards', 'Whos', 'Hows', 'Assessments', 'AssessmentWhos', 'AssessmentHows', 'Tasks', 'AssessmentControls', 'Controls'];
+        var tables = ['sqlite_sequence', 'Hazards', 'Whos', 'Hows', 'Assessments', 'AssessmentWhos', 'AssessmentHows', 'Tasks', 'AssessmentControls', 'AssessmentExistingControls', 'Controls'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {
@@ -161,6 +161,11 @@ var localStorageDB = (function () {
             tx.executeSql('CREATE TABLE IF NOT EXISTS AssessmentControls (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, AssessmentId INTEGER, ControlId INTEGER)');
         });
 
+        checkTableExists("AssessmentExistingControls", function (tx) {
+            // create table
+            tx.executeSql('CREATE TABLE IF NOT EXISTS AssessmentExistingControls (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, AssessmentId INTEGER, ExistingControlId INTEGER)');
+        });
+        
         checkTableExists("Whos", function(tx) {
             // create table
             tx.executeSql('CREATE TABLE IF NOT EXISTS Whos (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name)', [], function(tx, result) {

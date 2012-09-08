@@ -6,6 +6,7 @@ steal('jquery/controller',
     '../models/assessmentwhos.js',
     '../models/assessmenthows.js',
     '../models/assessmentcontrols.js',
+    '../models/assessmentexistingcontrols.js',
     '../lib/WebSQL/db.js')
     .then(function ($) {
         $.Controller('Risk.Controllers.Delete', {
@@ -22,6 +23,7 @@ steal('jquery/controller',
             var id = localStorage.deleteAssessmentId;
             var assessmentsDef = Risk.Models.Assessments.deleteOne(id);
             new Risk.Models.AssessmentControls.deleteMany(id);
+            new Risk.Models.AssessmentExistingControls.deleteMany(id);
             $.when(assessmentsDef).done(function (assessmentsRes) {
                 $.mobile.changePage("../myassessments.htm",{ transition: "none"});
             });

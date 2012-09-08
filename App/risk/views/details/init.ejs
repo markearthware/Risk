@@ -15,10 +15,24 @@
     <%= this.how %> <%= " - " + this.furtherDetails %>
   </li>
 
+  <% if(this.existingControls.length > 0){ %>
+
+  <li data-role="list-divider" class="green-divider">
+    Existing controls already in place
+  </li>
+
+  <%for(var k = 0; k < this.existingControls.length; k++){ %>
+
+  <li>
+    <%= this.existingControls[k].Name %>
+  </li>
+
+  <%}}%>
+
   <% if(this.controls.length > 0){ %>
     
-  <li data-role="list-divider">
-    Compulsory controls required before starting work task
+  <li data-role="list-divider" class="red-divider">
+    Further controls required
   </li>
 
   <%for(var k = 0; k < this.controls.length; k++){ %>
@@ -29,8 +43,18 @@
 
   <%}}%>
     
-    <li data-role="list-divider">
-      Severity: <%= this.severityRating %> Likelihood: <%= this.likelihoodRating %> Overall Rating: <%= this.assessmentRating %>
+    <li data-role="list-divider" class="<%=this.className%>">
+      <div class="fifty">
+        <span class="fleft">
+          Severity: <%= this.severityRating %>
+        </span>
+        <span class="fright">
+          Likelihood: <%= this.likelihoodRating %>
+        </span>
+      </div>
+      <div class="center">
+          Risk Rating: <%= this.assessmentRating %>/25
+      </div>
     </li>
 
   </ul>

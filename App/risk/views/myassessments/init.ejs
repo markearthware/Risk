@@ -25,11 +25,11 @@
       </p>
       <% if(this[i].Controls){ %>
         <p>
-          <STRONG>Controls:</STRONG>
-           <%for(var j = 0; j < this[i].Controls.split("|").length; j++){%>
+          <STRONG>Further Controls:</STRONG>
+           <%for(var k = 0; k < this[i].Controls.split("|").length; k++){%>
              <br/>
-             <span><%=j+1%>)</span>
-             <%=this[i].Controls.split("|")[j]%>
+             <span>&bull;</span>
+             <%=this[i].Controls.split("|")[k]%>
            <%}%>
         </p>  
       <%}%>
