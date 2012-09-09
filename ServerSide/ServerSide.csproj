@@ -222,6 +222,7 @@
     <Content Include="Views\Home\MakePdf.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="api\Email\" />
     <Folder Include="Content\Documents\Pdfs\" />
   </ItemGroup>
   <PropertyGroup>

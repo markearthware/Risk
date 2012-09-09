@@ -18,13 +18,15 @@ namespace ServerSide.Controllers
             return this.View();
         }
 
-        public ActionResult MakePdf(string g)
+        public FileResult MakePdf(string g)
         {
-            var pdfManager = new PdfManager();
-            var file = pdfManager.GetPdf(g);
+            var certificateManager = new PdfManager();
+            var certificate = certificateManager.GetCertificate(g);
+
             Response.AddHeader("Content-Type", "binary/octet-stream");
-            Response.AddHeader("Content-Disposition", "inline; filename=MirenaCertificate.pdf; size=" + file.Length);
-            return File(file, "application/pdf");
+            Response.AddHeader("Content-Disposition", "inline; filename=MirenaCertificate.pdf; size=" + certificate.Length);
+
+            return File(certificate, "application/pdf");
         }
     }
 }
