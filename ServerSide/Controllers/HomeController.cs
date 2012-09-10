@@ -18,15 +18,9 @@ namespace ServerSide.Controllers
             return this.View();
         }
 
-        public FileResult MakePdf(string g)
+        public ActionResult MakePdf(string g)
         {
-            var certificateManager = new PdfManager();
-            var certificate = certificateManager.GetCertificate(g);
-
-            Response.AddHeader("Content-Type", "binary/octet-stream");
-            Response.AddHeader("Content-Disposition", "inline; filename=MirenaCertificate.pdf; size=" + certificate.Length);
-
-            return File(certificate, "application/pdf");
+            return this.View();
         }
     }
 }
