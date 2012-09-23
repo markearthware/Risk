@@ -4,8 +4,8 @@ steal(
         'jquery',
         'jquery/view/ejs',
         './lib/jQueryMobile/Overrides.css', // application CSS file
-        './lib/jQueryMobile/jquery.mobile.structure-1.0.css',
-        './lib/jQueryMobile/jquery.mobile-1.0.css', //steal jquery mobile css
+        './lib/jQueryMobile/jquery.mobile.structure-1.1.1.css',
+        './lib/jQueryMobile/jquery.mobile-1.1.1.css', //steal jquery mobile css
         function () { // configure your application
 
             steal.dev.log('jmvc is initialising...');
@@ -16,7 +16,7 @@ steal(
             configureJqueryMobile();
         }
     ).then( //steal jquery mobile js
-        './lib/jQueryMobile/jquery.mobile-1.0.js',
+        './lib/jQueryMobile/jquery.mobile-1.1.0.js',
         './models/websqlmodel.js'
     ).then(
         './lib/WebSQL/db.js',

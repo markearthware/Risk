@@ -23,6 +23,7 @@ steal('jquery/controller',
                 likelihood: 0,
                 risk: 0,
                 nextStepHref: "",
+                controls: null,
                 loadData: function () {
                     var hazardsDef = Risk.Models.Hazards.findOne(localStorage.hazardId);
                     var whosDef = Risk.Models.Whos.findAll();
@@ -47,6 +48,9 @@ steal('jquery/controller',
                         $('#SeverityList').selectmenu();
                         $('#LikelihoodList').selectmenu();
                         $('#FurtherDetails').textinput();
+                        $('#submit').button();
+                        $('#furtherControls').button();
+                        $('.hidden').hide();
 
                         if (localStorage.editAssessmentId) {
                             //get assessment severity likelihood whos and hows back from db
@@ -69,7 +73,7 @@ steal('jquery/controller',
                                 $('#ExistingControlsList').selectmenu('refresh');
                                 $('#SeverityList').selectmenu('refresh');
                                 $('#LikelihoodList').selectmenu('refresh');
-                                $('#FurtherDetails').textinput('refresh');
+                                $('#FurtherDetails').textinput();
                             });
                         }
 
@@ -122,19 +126,19 @@ steal('jquery/controller',
                             else {
                                 $('#trafficLight #amber').addClass("on");
                             }
-                            this.nextStepHref = "myassessments.htm";
-                            $('#WhosPage #submit').text(localStorage.editAssessmentId ? "Save assessment" : "Finish assessment");
-                            $('#WhosPage #submit').fadeIn().button('refresh');
+                            $('#WhosPage #furtherControls').hide();
+                            $('#WhosPage #submit').fadeIn();
                         }
                         else {
-                            this.nextStepHref = "controls.htm";
-                            $('#WhosPage #submit').text("Add further controls");
-                            $('#WhosPage #submit').fadeIn().button('refresh');
+                            $('#WhosPage #submit').hide();
+                            $('#WhosPage #furtherControls').fadeIn();
                             $('#trafficLight #red').addClass("on");
                         }
                     }
                 },
-                '#submit click': function () {
+                '#submit,#furtherControls click': function (el, ev) {
+                    this.nextStepHref = el.attr("data-href");
+                    this.controls = $.makeArray($('#ExistingControlsList').val());
                     $.mobile.showPageLoadingMsg();
                     localStorage.severityRating = $('#SeverityList').val();
                     localStorage.likelihoodRating = $('#LikelihoodList').val();
@@ -168,8 +172,7 @@ steal('jquery/controller',
                 },
 
                 saveExistingControls: function () {
-                    var controls = $.makeArray($('#ExistingControlsList').val());
-                    $(controls).each(function (i) {
+                    $(this.controls).each(function (i) {
                         var assessmentcontrols = { AssessmentId: localStorage.assessmentId, ExistingControlId: this.toString() };
                         new Risk.Models.AssessmentExistingControls(assessmentcontrols).save();
                     });

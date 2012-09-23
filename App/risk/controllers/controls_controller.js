@@ -94,7 +94,7 @@ steal('jquery/controller',
                             else {
                                 $('#trafficLight #amber').addClass("on");
                             }
-                            this.nextStepHref = "myassessments.htm";
+
                             $('#button-container').show();
                             $('#submit').button();
                         }
@@ -120,7 +120,7 @@ steal('jquery/controller',
                             var assessmentcontrols = { AssessmentId: localStorage.assessmentId, ControlId: this.toString() };
                             new Risk.Models.AssessmentControls(assessmentcontrols).save(function () {
                                 if (i == $('#ControlsList').val().length - 1) {
-                                    $.mobile.changePage(self.nextStepHref);
+                                    $.mobile.changePage("myassessments.htm");
                                 }
                             });
                         });

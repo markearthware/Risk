@@ -41,7 +41,7 @@
     <strong>Severity</strong> Rating
   </label>
   <select name="SeverityList" id="SeverityList" data-native-menu="false">
-    <option>Choose Rating</option>
+    <option data-placeholder="true">Choose Rating</option>
     <option value="1">
       1 - Not severe
     </option>
@@ -63,7 +63,7 @@
     <strong>Likelihood</strong> Rating
   </label>
   <select name="LikelihoodList" id="LikelihoodList" data-native-menu="false">
-    <option>Choose Rating</option>
+    <option data-placeholder="true">Choose Rating</option>
     <option value="1">
       1 - Not likely
     </option>
@@ -93,7 +93,8 @@
     </div>
   <div data-role="fieldcontain">
     <p>
-      <a data-role="button" data-icon="check" id="submit"></a>
+      <a data-role="button" data-icon="check" data-href="myassessments.htm" class="hidden" id="submit">Save Assessment</a>
+      <a data-role="button" data-icon="check" data-href="controls.htm" class="hidden" id="furtherControls">Add Further Controls</a>
     </p>
   </div>
     
