@@ -164,3 +164,8 @@ p.ui-li-desc
 {
     white-space: normal !important;
 }
+
+.inline
+{
+    display: inline-block !important;
+}

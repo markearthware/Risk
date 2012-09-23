@@ -131,7 +131,13 @@ steal(
             if ($(e.target).filter('#DeleteHazardConfirmPage').length > 0) {
                 $('#DeleteHazardConfirmPage').risk_delete_hazard();
                 return;
-            }     
+            }
+
+            if ($(e.target).filter('#HowAddDialog').length > 0) {
+                $('#HowAddDialog').risk_add_how();
+                return;
+            }
+            
         });
     }
 

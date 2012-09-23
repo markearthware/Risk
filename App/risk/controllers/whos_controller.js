@@ -25,6 +25,7 @@ steal('jquery/controller',
                 nextStepHref: "",
                 controls: null,
                 loadData: function () {
+                    var self = this;
                     var hazardsDef = Risk.Models.Hazards.findOne(localStorage.hazardId);
                     var whosDef = Risk.Models.Whos.findAll();
                     var howsDef = Risk.Models.Hows.findAll(localStorage.hazardId);
@@ -38,7 +39,7 @@ steal('jquery/controller',
 
                         view = $.View('//risk/views/whos/init.ejs', viewModel);
 
-                        //Stuff in the view
+                        //Stuff in the view markup
                         $('#WhosContent').html(view);
 
                         //Init the controls now they have data in them
@@ -50,35 +51,67 @@ steal('jquery/controller',
                         $('#FurtherDetails').textinput();
                         $('#submit').button();
                         $('#furtherControls').button();
+                        $('#NewHow').button();
+                        $('#NewControl').button();
                         $('.hidden').hide();
 
                         if (localStorage.editAssessmentId) {
                             //get assessment severity likelihood whos and hows back from db
                             var asControlsDef = Risk.Models.AssessmentExistingControls.findAllById(localStorage.editAssessmentId);
                             var asDef = new Risk.Models.Assessments.findOne(localStorage.editAssessmentId);
+
                             $.when(asDef, asControlsDef).done(function (asRes, asControlsRes) {
                                 var controlsValArray = [];
                                 $(asControlsRes).each(function (i) {
                                     controlsValArray.push(this.ExistingControlId.toString());
                                 });
-                                $('#ExistingControlsList').val(controlsValArray);
+
                                 $('#WhosList').val(asRes.WhoId);
                                 $('#HowsList').val(asRes.HowId);
                                 $('#FurtherDetails').val(asRes.FurtherDetails);
                                 $('#SeverityList').val(asRes.Severity);
                                 $('#LikelihoodList').val(asRes.Likelihood);
+                                $('#ExistingControlsList').val(controlsValArray);
 
-                                $('#WhosList').selectmenu('refresh');
-                                $('#HowsList').selectmenu('refresh');
-                                $('#ExistingControlsList').selectmenu('refresh');
-                                $('#SeverityList').selectmenu('refresh');
-                                $('#LikelihoodList').selectmenu('refresh');
-                                $('#FurtherDetails').textinput();
+                                self.refreshControls();
                             });
                         }
 
+                        if (localStorage.tempHowId) {
+                            // reload form state
+                            $('#HowsList').val(localStorage.tempHowId);
+                            $('#WhosList').val(localStorage.tempWhoId);
+                            $('#FurtherDetails').val(localStorage.tempFurtherDetails);
+                            $('#SeverityList').val(localStorage.tempSeverity);
+                            $('#LikelihoodList').val(localStorage.tempLikelihood);
+                            $('#ExistingControlsList').val(localStorage.tempExistingControls.split(","));
+
+                            self.resetTempLocalStorage();
+                            self.refreshControls();
+                        }
+                        self.validation();
                     });
                 },
+
+                resetTempLocalStorage: function () {
+                    localStorage.tempHowId = "";
+                    localStorage.tempWhoId = "";
+                    localStorage.tempHowId = "";
+                    localStorage.tempFurtherDetails = "";
+                    localStorage.tempSeverity = "";
+                    localStorage.tempLikelihood = "";
+                    localStorage.tempExistingControls = "";
+                },
+
+                refreshControls: function () {
+                    $('#WhosList').selectmenu('refresh');
+                    $('#HowsList').selectmenu('refresh');
+                    $('#ExistingControlsList').selectmenu('refresh');
+                    $('#SeverityList').selectmenu('refresh');
+                    $('#LikelihoodList').selectmenu('refresh');
+                    $('#FurtherDetails').textinput();
+                },
+
                 '#WhosList change': function () {
                     this.validation();
                 },
@@ -87,6 +120,9 @@ steal('jquery/controller',
                     this.validation();
                 },
 
+                '#NewHow click': function () {
+                    this.saveFormState();
+                },
                 '#SeverityList change': function () {
                     this.validation();
                 },
@@ -96,6 +132,14 @@ steal('jquery/controller',
                 },
                 '#ExistingControlsList change': function () {
                     this.validation();
+                },
+                saveFormState: function () {
+                    localStorage.tempWhoId = $('#WhosList').val();
+                    localStorage.tempHowId = $('#HowsList').val();
+                    localStorage.tempFurtherDetails = $('#FurtherDetails').val();
+                    localStorage.tempSeverity = $('#SeverityList').val();
+                    localStorage.tempLikelihood = $('#LikelihoodList').val();
+                    localStorage.tempExistingControls = $('#ExistingControlsList').val();
                 },
                 passesValidation: function () {
                     if ($('#WhosList').val() != null &&

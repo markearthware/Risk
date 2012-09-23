@@ -15,5 +15,6 @@ steal(
         './completed_controller.js',
         './mycompletedassessments_controller.js',
         './completeddetails_controller.js',
-        './deletecompletedtask_controller.js'
+        './deletecompletedtask_controller.js',
+        './addhow_controller.js'
      )
