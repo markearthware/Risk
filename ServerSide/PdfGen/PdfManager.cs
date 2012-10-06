@@ -12,11 +12,14 @@ namespace ServerSide.PdfGen
 
     public class PdfManager
     {
+        public string CertificatePath { get; set; }
+
          public Stream GetCertificate(string userId, Task task, List<Assessment> assessments)
         {            
             var certificateFileName = this.GetCertificateFileName(userId);
             var certificateDirectory = HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["CertificateCacheDirectory"]);
-            var certificatePath = Path.Combine(certificateDirectory, certificateFileName);
+            var certificatePath = Path.Combine(certificateDirectory, certificateFileName); 
+            this.CertificatePath = certificatePath;
 
             if (!File.Exists(certificatePath))
             {

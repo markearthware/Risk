@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ServerSide.Mailers;
 
 namespace ServerSide.Controllers
 {
@@ -18,12 +19,20 @@ namespace ServerSide.Controllers
 
     public class EmailController : ApiController
     {
+        private IUserMailer _userMailer = new UserMailer();
+        public IUserMailer UserMailer
+        {
+            get { return _userMailer; }
+            set { _userMailer = value; }
+        }
+
         [System.Web.Http.HttpGet]
         public HttpResponseMessage Send([FromUri]Task task, [FromUri]List<Assessment> assessments )
         {
-            var guid = Guid.NewGuid().ToString();
+            var reportId = Guid.NewGuid().ToString();
             var pdfManager = new PdfManager();
-            pdfManager.GetCertificate(guid, task, assessments);
+            pdfManager.GetCertificate(reportId, task, assessments);
+            UserMailer.Report(pdfManager.CertificatePath).Send();
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
