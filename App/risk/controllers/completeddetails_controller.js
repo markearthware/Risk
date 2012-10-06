@@ -22,7 +22,7 @@ steal('jquery/controller',
             var view;
 
             $.when(assessmentDef, assessmentDetailControlsDef, assessmentDetailExistingControlsDef).done(function (assessmentRes, assessmentControlsRes, assessmentExistingControlsRes) {
-                var assessmentRating = assessmentRes.Severity * assessmentRes.Likelihood;
+                var assessmentRating = parseInt(assessmentRes.SeverityB * assessmentRes.LikelihoodB);
                 var className = "";
                 if (assessmentRating < 6) {
                     className = "green-divider";
@@ -30,7 +30,7 @@ steal('jquery/controller',
                 else {
                     className = "orange-divider";
                 }
-                view = $.View('//risk/views/completeddetails/init.ejs', { furtherDetails: assessmentRes.FurtherDetails, assessmentRating: assessmentRating, severityRating: assessmentRes.Severity, likelihoodRating: assessmentRes.Likelihood, hazardName: assessmentRes.Hazard, who: assessmentRes.Who, how: assessmentRes.How, controls: assessmentControlsRes, existingControls: assessmentExistingControlsRes, className: className });
+                view = $.View('//risk/views/completeddetails/init.ejs', { furtherDetails: assessmentRes.FurtherDetails, assessmentRating: assessmentRating, severityRating: assessmentRes.SeverityB, likelihoodRating: assessmentRes.LikelihoodB, hazardName: assessmentRes.Hazard, who: assessmentRes.Who, how: assessmentRes.How, controls: assessmentControlsRes, existingControls: assessmentExistingControlsRes, className: className });
                 $('#CompletedDetailsContent').html(view);
                 $('#CompletedDetailsList').listview();
                 $('#CompletedDetailsPage').trigger("create");

@@ -110,7 +110,7 @@ steal('jquery/controller',
 
                     var assessmentDef = Risk.Models.Assessments.findOne(localStorage.assessmentId);
                     $.when(assessmentDef).done(function (assessmentRes) {
-                        new Risk.Models.AssessmentsB({ id: assessmentRes.id, TaskId: assessmentRes.TaskId, WhoId: assessmentRes.WhoId, HowId: assessmentRes.HowId, FurtherDetails: assessmentRes.FurtherDetails, HazardId: assessmentRes.HazardId, Likelihood: $('#LikelihoodList').val(), Severity: $('#SeverityList').val() }).save();
+                        new Risk.Models.AssessmentsB({ id: assessmentRes.id, TaskId: assessmentRes.TaskId, WhoId: assessmentRes.WhoId, HowId: assessmentRes.HowId, FurtherDetails: assessmentRes.FurtherDetails, HazardId: assessmentRes.HazardId, Likelihood: assessmentRes.Likelihood, Severity: assessmentRes.Severity , LikelihoodB: $('#LikelihoodList').val(), SeverityB: $('#SeverityList').val() }).save();
                     });
 
                     var asControlsDef = Risk.Models.AssessmentControls.deleteMany(localStorage.assessmentId);

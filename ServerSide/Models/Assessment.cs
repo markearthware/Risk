@@ -14,6 +14,10 @@ namespace ServerSide.Models
 
         public int Severity { get; set; }
 
+        public int LikelihoodB { get; set; }
+
+        public int SeverityB { get; set; }
+
         public string How { get; set; }
 
         public string Who { get; set; }
