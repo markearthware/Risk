@@ -5,6 +5,7 @@ using System.Web;
 
 namespace ServerSide.Models
 {
+    [Serializable()]    
     public class Assessment
     {
         public string Hazard { get; set; }

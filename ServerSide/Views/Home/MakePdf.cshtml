@@ -1,17 +1,85 @@
 ﻿@{
     Layout = null;
 }
-
+@model ServerSide.ViewModels.MakePdfViewModel 
 <!DOCTYPE html>
-
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Risk Assessments Table</title>
-</head>
-<body>
-    <div>
-        HELLO WORLD
-    </div>
-</body>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Risk Assessments Table</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Risk Assessment App Report</h1>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <td>Task: </td>
+                        <td>@Model.Task.Name</td>
+                    </tr>
+                    <tr>
+                        <td>Assessment Number:</td>
+                        <td>@Model.AssessmentNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Site:</td>
+                        <td>@Model.Task.Site</td>
+                        <td>Assessor:</td>
+                        <td>@Model.Task.AssessorName</td>
+                        <td>Created Date:</td>
+                        <td>@Model.Task.DateStarted.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Hazard</td>
+                        <td>Who might be harmed</td>
+                        <td>How might they be harmed</td>
+                        <td>Existing Controls</td>
+                        <td>Risk Rating (L * S)</td>
+                        <td>Further Controls/Actions</td>
+                        <td>New Risk Rating</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Likelihood Severity Risk Rating</td>
+                        <td></td>
+                        <td>Likelihood Severity New Risk Rating</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var assessment in Model.Assessments)
+                    {
+                        <tr>
+                            <td>@assessment.Hazard</td>
+                            <td>@assessment.Who</td>
+                            <td>@assessment.How @(assessment.FurtherDetails ?? "-" + assessment.FurtherDetails)</td>
+                            <td>
+                                <ul>
+                                    @foreach(var existingControl in assessment.ExistingControls.Split('|'))
+                                    {
+                                        <li>@existingControl</li>
+                                    }
+                                </ul>
+                            </td>
+                            <td>@assessment.Likelihood , @assessment.Severity, @(assessment.Likelihood * assessment.Severity)</td>
+                            <td>
+                                <ul>
+                                    @foreach(var furtherControl in assessment.Controls.Split('|'))
+                                    {
+                                        <li>@furtherControl</li>
+                                    }
+                                </ul>
+                            </td>
+                            <td>@assessment.Likelihood , @assessment.Severity, @(assessment.Likelihood * assessment.Severity)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>     
+        </div>
+    </body>
 </html>

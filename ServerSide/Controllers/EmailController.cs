@@ -19,12 +19,12 @@ namespace ServerSide.Controllers
     public class EmailController : ApiController
     {
         [System.Web.Http.HttpGet]
-        public string Send([FromUri]Task task, [FromUri]List<Assessment> assessments )
+        public HttpResponseMessage Send([FromUri]Task task, [FromUri]List<Assessment> assessments )
         {
             var guid = Guid.NewGuid().ToString();
             var pdfManager = new PdfManager();
-            pdfManager.GetCertificate(guid);
-            return "Success";
+            pdfManager.GetCertificate(guid, task, assessments);
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Web;
 
+    [Serializable()]    
     public class Task
     {
         public int Id { get; set; }

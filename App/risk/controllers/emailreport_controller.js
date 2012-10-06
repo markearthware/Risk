@@ -76,14 +76,16 @@ steal('jquery/controller',
                             task: task,
                             assessments: assessments
                         },
-                        success: function (data) {
-                            new Risk.Models.Task(task).save(function () {
-                                $.mobile.changePage("dialog/emailSent.htm");
-                            });
-                        },
-                        error: function (err) {
-                            console.log(err);
-                            $.mobile.changePage("dialog/emailNotSent.htm");
+                        success: function () {},
+                        error: function (a) {
+                            if (a.status == 200) {
+                                new Risk.Models.Task(task).save(function () {
+                                    $.mobile.changePage("dialog/emailSent.htm");
+                                });
+                            }
+                            else {
+                                $.mobile.changePage("dialog/emailNotSent.htm");
+                            }
                         }
                     });
                 });

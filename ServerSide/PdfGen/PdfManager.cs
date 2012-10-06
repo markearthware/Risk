@@ -1,14 +1,18 @@
-﻿namespace ServerSide.PdfGen
+﻿using System.Collections.Generic;
+using ServerSide.Models;
+
+namespace ServerSide.PdfGen
 {
     using System;
     using System.Configuration;
     using System.IO;
     using System.Web;
     using Winnovative.WnvHtmlConvert;
+    using System.Web.Script.Serialization;
 
     public class PdfManager
     {
-         public Stream GetCertificate(string userId)
+         public Stream GetCertificate(string userId, Task task, List<Assessment> assessments)
         {            
             var certificateFileName = this.GetCertificateFileName(userId);
             var certificateDirectory = HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["CertificateCacheDirectory"]);
@@ -31,7 +35,12 @@
                 pdfConverter.PageHeight = 790;
                 pdfConverter.PdfDocumentOptions.SinglePage = true;
                 var currenthost = ConfigurationManager.AppSettings["WebsiteDomain"] + "/";
-                var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g=" + userId;
+
+                var serializer = new JavaScriptSerializer();
+                var taskString = serializer.Serialize(task);
+                var assessmentsString = serializer.Serialize(assessments);
+
+                var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g=" + userId + "&task=" + taskString + "&assessments=" +assessmentsString;
                 var generateCertificateUrl = currenthost + generateCertificateUrlPath;
                 pdfConverter.SavePdfFromUrlToFile(generateCertificateUrl, certificatePath);
             }
@@ -41,7 +50,7 @@
 
         private string GetCertificateFileName(string userId)
         {            
-            return string.Format("MirenaCertified-{0}.pdf", userId.ToString());
+            return string.Format("RiskAssessmentReport-{0}.pdf", userId.ToString());
         }
     }
 }
