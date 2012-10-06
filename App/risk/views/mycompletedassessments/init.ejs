@@ -21,12 +21,18 @@
         <strong>Who:</strong> <%= this[i].Who %>
       </p>
       <p>
-        <strong>How:</strong> <%= this[i].How %> - <%= this[i].FurtherDetails %>
+        <strong>How:</strong> <%= this[i].How %> <%if(this[i].FurtherDetails){%> - <%= this[i].FurtherDetails %> <%}%>
       </p>
+      <% if(this[i].Controls){ %>
+        <p>
+        <STRONG>Further Controls:</STRONG>
+        <%for(var k = 0; k < this[i].Controls.split("|").length; k++){%>
+             <br/>
+        <span>&bull;</span>
+        <%=this[i].Controls.split("|")[k]%>
+        <%}%>
       </p>
-      <p>
-        <i class="small">Touch to view further controls</i>
-      </p>
+      <%}%>
     </a>
   </li>
   <%}}%>
