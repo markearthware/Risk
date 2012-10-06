@@ -1,0 +1,11 @@
+Introduce new likelihood and severity fields in local database
+style the email and attachment pdf
+deploy jsonp service to live server
+style the app
+logo and splash screens
+deploy app to ios and android devices - bug fixing
+user trial
+get feedback and bug fixing
+develop lite app and release
+go to H&S exibition
+monetise app - develop enterprise application
