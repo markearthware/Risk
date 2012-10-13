@@ -36,7 +36,8 @@ steal('jquery/controller',
                         $('#SeverityList').selectmenu();
                         $('#LikelihoodList').selectmenu();
                         $('#ControlsList').selectmenu();
-                        $('#button-container').hide(); 
+                        $('#button-container').hide();
+                        $('#NewControl').button();
                         $('#trafficLight #red').addClass("on");
 
                         if (localStorage.editAssessmentId) {
@@ -57,8 +58,34 @@ steal('jquery/controller',
                                 $('#LikelihoodList').selectmenu('refresh');
                             });
                         }
+                        
+                        if (localStorage.tempFurtherControls) {
+                            // reload form state
+                            $('#SeverityList').val(localStorage.tempSeverity);
+                            $('#LikelihoodList').val(localStorage.tempLikelihood);
+                            $('#ControlsList').val(localStorage.tempFurtherControls.split(","));
+                            self.refreshControls();
+                            self.resetTempLocalStorage();
+                        }
                     });
                 },
+                
+                resetTempLocalStorage: function () {
+                    localStorage.tempSeverity = "";
+                    localStorage.tempLikelihood = "";
+                    localStorage.tempFurtherControls = "";
+                },
+
+                refreshControls: function () {
+                    $('#ControlsList').selectmenu('refresh');
+                    $('#SeverityList').selectmenu('refresh');
+                    $('#LikelihoodList').selectmenu('refresh');
+                },
+
+                '#NewControl click': function () {
+                    this.saveFormState();
+                },
+
                 '#ControlsList change': function () {
                     this.validation();
                 },
@@ -104,6 +131,13 @@ steal('jquery/controller',
                         }
                     }
                 },
+                
+                saveFormState: function () {
+                    localStorage.tempSeverity = $('#SeverityList').val();
+                    localStorage.tempLikelihood = $('#LikelihoodList').val();
+                    localStorage.tempFurtherControls = $('#ControlsList').val();
+                },
+
                 '#submit click': function () {
                     $.mobile.showPageLoadingMsg();
                     var self = this;

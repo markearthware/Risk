@@ -77,7 +77,7 @@ steal('jquery/controller',
                             });
                         }
 
-                        if (localStorage.tempHowId) {
+                        if (localStorage.tempHowId || localStorage.tempExistingControls) {
                             // reload form state
                             $('#HowsList').val(localStorage.tempHowId);
                             $('#WhosList').val(localStorage.tempWhoId);
@@ -85,16 +85,14 @@ steal('jquery/controller',
                             $('#SeverityList').val(localStorage.tempSeverity);
                             $('#LikelihoodList').val(localStorage.tempLikelihood);
                             $('#ExistingControlsList').val(localStorage.tempExistingControls.split(","));
-
-                            self.resetTempLocalStorage();
                             self.refreshControls();
+                            self.resetTempLocalStorage();
                         }
                         self.validation();
                     });
                 },
 
                 resetTempLocalStorage: function () {
-                    localStorage.tempHowId = "";
                     localStorage.tempWhoId = "";
                     localStorage.tempHowId = "";
                     localStorage.tempFurtherDetails = "";
@@ -119,14 +117,15 @@ steal('jquery/controller',
                 '#HowsList change': function () {
                     this.validation();
                 },
-
                 '#NewHow click': function () {
+                    this.saveFormState();
+                },                
+                '#NewControl click': function () {
                     this.saveFormState();
                 },
                 '#SeverityList change': function () {
                     this.validation();
                 },
-
                 '#LikelihoodList change': function () {
                     this.validation();
                 },

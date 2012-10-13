@@ -138,6 +138,16 @@ steal(
                 return;
             }
             
+            if ($(e.target).filter('#ControlAddDialog').length > 0) {
+                $('#ControlAddDialog').risk_add_control();
+                return;
+            }
+            
+            if ($(e.target).filter('#FurtherControlAddDialog').length > 0) {
+                $('#FurtherControlAddDialog').risk_add_further_control();
+                return;
+            }
+            
         });
     }
 
