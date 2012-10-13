@@ -6,49 +6,126 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width" />
-        <title>Risk Assessments Table</title>
-        <style>
-        </style>
+        <title>Risk Assessments Table</title>       
     </head>
     <body>
+         <style type="text/css">
+            body {
+                font-family: Arial;
+                font-size: 12px;
+            }
+
+            thead {
+                font-size: 14px;
+            }
+
+            table, td
+            {
+                border-color: #600;
+                border-style: solid;
+            }
+
+            table
+            {
+                border-width: 0 0 1px 1px;
+                border-spacing: 0;
+                border-collapse: collapse;
+            }
+
+            td
+            {
+                margin: 0;
+                padding: 4px;
+                border-width: 1px 1px 0 0;
+                background-color: #FFC;
+            }
+
+            thead tr td.blue{
+                background: #99CCFF;
+            }
+
+            thead tr td {
+                text-align: center;
+            }
+
+            .riskrating div {
+                width: 33%;
+                float: left;
+                text-align: center;
+            }
+
+            .riskratingdata div {
+                width: 33%;
+                float: left;
+                text-align: center;
+            }
+
+            .riskrating {
+                border-top-color: #99CCFF;
+            }
+
+            td ul {
+                margin: 0;
+                padding: 0;
+                padding-left: 20px;
+            }
+
+            td ul li {
+                padding-left: 0px;
+            }
+            td ul li span { position: relative; left: -5px; }
+
+            .doublecell {
+                border-top: 0px;
+            }
+
+        </style>
         <div id="wrapper">
             <h1>Risk Assessment App Report</h1>
         
-            <table>
+            <table cellspacing="0">
                 <thead>
                     <tr>
-                        <td>Task: </td>
-                        <td>@Model.Task.Name</td>
+                        <td class="blue" colspan="2">Task: </td>
+                        <td colspan="2">@Model.Task.Name</td>
                     </tr>
                     <tr>
-                        <td>Assessment Number:</td>
-                        <td>@Model.AssessmentNumber</td>
+                        <td class="blue" colspan="2">Assessment Number:</td>
+                        <td colspan="2">@Model.AssessmentNumber</td>
                     </tr>
                     <tr>
-                        <td>Site:</td>
-                        <td>@Model.Task.Site</td>
-                        <td>Assessor:</td>
-                        <td>@Model.Task.AssessorName</td>
-                        <td>Created Date:</td>
-                        <td>@Model.Task.DateStarted.ToShortDateString()</td>
+                        <td class="blue" colspan="1">Site:</td>
+                        <td colspan="2">@Model.Task.Site</td>
+                        <td class="blue" colspan="1">Assessor:</td>
+                        <td colspan="1">@Model.Task.AssessorName</td>
+                        <td class="blue" colspan="1">Created Date:</td>
+                        <td colspan="1">@Model.Task.DateStarted.ToShortDateString()</td>
                     </tr>
                     <tr>
-                        <td>Hazard</td>
-                        <td>Who might be harmed</td>
-                        <td>How might they be harmed</td>
-                        <td>Existing Controls</td>
-                        <td>Risk Rating (L * S)</td>
-                        <td>Further Controls/Actions</td>
-                        <td>New Risk Rating</td>
+                        <td class="blue"></td>
+                        <td class="blue"></td>
+                        <td class="blue"></td>
+                        <td class="blue"></td>
+                        <td class="blue">Risk Rating<br/>(L * S)</td>
+                        <td class="blue"></td>
+                        <td class="blue">New Risk Rating</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Likelihood Severity Risk Rating</td>
-                        <td></td>
-                        <td>Likelihood Severity New Risk Rating</td>
+                        <td class="blue doublecell">Hazard</td>
+                        <td class="blue doublecell">Who might be harmed</td>
+                        <td class="blue doublecell">How might they be harmed</td>
+                        <td class="blue doublecell">Existing Controls</td>
+                        <td class="blue riskrating">
+                            <div>L</div>
+                            <div>S</div>
+                            <div>R</div>
+                        </td>
+                        <td class="blue doublecell">Further Controls/Actions</td>
+                        <td class="blue riskrating">
+                            <div>L</div>
+                            <div>S</div>
+                            <div>R</div>
+                        </td>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,11 +139,15 @@
                                 <ul>
                                     @foreach(var existingControl in assessment.ExistingControls.Split('|'))
                                     {
-                                        <li>@existingControl</li>
+                                        <li><span>@existingControl</span></li>
                                     }
                                 </ul>
                             </td>
-                            <td>@assessment.Likelihood , @assessment.Severity, @(assessment.Likelihood * assessment.Severity)</td>
+                            <td class="riskratingdata">
+                                <div>@assessment.Likelihood</div>
+                                <div>@assessment.Severity</div>
+                                <div>@(assessment.Likelihood * assessment.Severity)</div>
+                            </td>
                             <td>
                                 <ul>
                                     @foreach(var furtherControl in assessment.Controls.Split('|'))
@@ -75,7 +156,11 @@
                                     }
                                 </ul>
                             </td>
-                            <td>@assessment.LikelihoodB , @assessment.SeverityB, @(assessment.LikelihoodB * assessment.SeverityB)</td>
+                            <td class="riskratingdata">
+                                <div>@assessment.LikelihoodB</div>
+                                <div>@assessment.SeverityB</div>
+                                <div>@(assessment.LikelihoodB * assessment.SeverityB)</div>
+                            </td>
                         </tr>
                     }
                 </tbody>

@@ -28,8 +28,8 @@ namespace ServerSide.Controllers
             var assessmentsObj = deserializer.Deserialize<List<Assessment>>(assessments);
 
 
-            var viewModel = new MakePdfViewModel{Task = taskObj, Assessments = assessmentsObj, AssessmentNumber = g};
-            
+            var viewModel = new MakePdfViewModel { Task = taskObj, Assessments = assessmentsObj, AssessmentNumber = g };
+
             return this.View(viewModel);
         }
     }
