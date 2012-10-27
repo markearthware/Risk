@@ -29,7 +29,7 @@ namespace ServerSide.Controllers
         [System.Web.Http.HttpGet]
         public HttpResponseMessage Send([FromUri]Task task, [FromUri]List<Assessment> assessments )
         {
-            var reportId = Guid.NewGuid().ToString();
+            var reportId = Guid.NewGuid().ToString().Replace("-",string.Empty).Substring(0,8);
             var pdfManager = new PdfManager();
 
             foreach (var assessment in assessments)

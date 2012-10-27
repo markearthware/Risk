@@ -14,9 +14,9 @@ namespace ServerSide.PdfGen
     {
         public string CertificatePath { get; set; }
 
-         public Stream GetCertificate(string userId, Task task, List<Assessment> assessments)
+         public Stream GetCertificate(string reportId, Task task, List<Assessment> assessments)
         {            
-            var certificateFileName = this.GetCertificateFileName(userId);
+            var certificateFileName = this.GetCertificateFileName(reportId);
             var certificateDirectory = HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["CertificateCacheDirectory"]);
             var certificatePath = Path.Combine(certificateDirectory, certificateFileName); 
             this.CertificatePath = certificatePath;
@@ -43,7 +43,7 @@ namespace ServerSide.PdfGen
                 var taskString = serializer.Serialize(task);
                 var assessmentsString = serializer.Serialize(assessments);
 
-                var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g=" + userId + "&task=" + taskString + "&assessments=" +assessmentsString;
+                var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g=" + reportId + "&task=" + taskString + "&assessments=" +assessmentsString;
                 var generateCertificateUrl = currenthost + generateCertificateUrlPath;
                 pdfConverter.SavePdfFromUrlToFile(generateCertificateUrl, certificatePath);
             }
@@ -51,9 +51,9 @@ namespace ServerSide.PdfGen
             return new FileStream(certificatePath, FileMode.Open, FileAccess.Read);
         }
 
-        private string GetCertificateFileName(string userId)
+        private string GetCertificateFileName(string reportId)
         {            
-            return string.Format("RiskAssessmentReport-{0}.pdf", userId.ToString());
+            return string.Format("RiskAssessmentReport-{0}.pdf", reportId.ToString());
         }
     }
 }
