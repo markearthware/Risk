@@ -134,12 +134,14 @@
                         <tr>
                             <td>@assessment.Hazard</td>
                             <td>@assessment.Who</td>
-                            <td>@assessment.How @(assessment.FurtherDetails ?? "-" + assessment.FurtherDetails)</td>
+                            <td>@assessment.How @(!string.IsNullOrEmpty(assessment.FurtherDetails) ? "-" + assessment.FurtherDetails : string.Empty)</td>
                             <td>
                                 <ul>
-                                    @foreach(var existingControl in assessment.ExistingControls.Split('|'))
-                                    {
-                                        <li><span>@existingControl</span></li>
+                                    @if(assessment.ExistingControls != null){
+                                        foreach(var existingControl in assessment.ExistingControls.Split('|'))
+                                        {
+                                            <li><span>@existingControl</span></li>
+                                        }
                                     }
                                 </ul>
                             </td>
@@ -150,9 +152,11 @@
                             </td>
                             <td>
                                 <ul>
-                                    @foreach(var furtherControl in assessment.Controls.Split('|'))
-                                    {
-                                        <li>@furtherControl</li>
+                                    @if(assessment.Controls != null){
+                                        foreach(var furtherControl in assessment.Controls.Split('|'))
+                                        {
+                                            <li>@furtherControl</li>
+                                        }
                                     }
                                 </ul>
                             </td>

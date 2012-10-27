@@ -31,6 +31,16 @@ namespace ServerSide.Controllers
         {
             var reportId = Guid.NewGuid().ToString();
             var pdfManager = new PdfManager();
+
+            foreach (var assessment in assessments)
+            {
+                if (assessment.ExistingControls == "null")
+                    assessment.ExistingControls = null;
+
+                if (assessment.Controls == "null")
+                    assessment.Controls = null;
+            }
+
             pdfManager.GetCertificate(reportId, task, assessments);
             UserMailer.Report(pdfManager.CertificatePath).Send();
             return new HttpResponseMessage(HttpStatusCode.OK);
