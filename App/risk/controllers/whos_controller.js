@@ -141,8 +141,8 @@ steal('jquery/controller',
                     localStorage.tempExistingControls = $('#ExistingControlsList').val();
                 },
                 passesValidation: function () {
-                    if ($('#WhosList').val() != null &&
-                        $('#HowsList').val() != null &&
+                    if ($('#WhosList').val() != "Choose option" &&
+                        $('#HowsList').val() != "Choose option" &&
                         $('#SeverityList').val() != 'Choose Rating' &&
                         $('#LikelihoodList').val() != 'Choose Rating') {
                         return true;
@@ -162,7 +162,7 @@ steal('jquery/controller',
                         $('#WhosPage #submit').button();
                         var score = this.calculateScore();
                         $('#trafficLight div').removeClass("on");
-                        if (score < 13) {
+                        if (score < 12) {
                             if (score < 6) {
                                 $('#trafficLight #green').addClass("on");
                             }

@@ -97,7 +97,7 @@ steal('jquery/controller',
                     this.validation();
                 },
                 passesValidation: function () {
-                    if ($('#ControlsList').val() != null) {
+                    if ($('#ControlsList').val() != "Choose Options (optional)") {
                         return true;
                     }
                     return false;
@@ -114,7 +114,7 @@ steal('jquery/controller',
                     if (this.passesValidation()) {
                         var score = this.calculateScore();
                         $('#trafficLight div').removeClass("on");
-                        if (score < 13) {
+                        if (score < 12) {
                             if (score < 6) {
                                 $('#trafficLight #green').addClass("on");
                             }
