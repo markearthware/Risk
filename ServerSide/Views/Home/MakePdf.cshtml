@@ -11,7 +11,7 @@
     <body>
          <style type="text/css">
             body {
-                font-family: Arial;
+                font-family: Verdana;
                 font-size: 12px;
             }
 
@@ -21,7 +21,7 @@
 
             table, td
             {
-                border-color: #600;
+                border-color: #b9b9b9;
                 border-style: solid;
             }
 
@@ -37,12 +37,16 @@
                 margin: 0;
                 padding: 4px;
                 border-width: 1px 1px 0 0;
-                background-color: #FFC;
+                background-color: #ffffef;
             }
 
             thead tr td.blue{
-                background: #99CCFF;
+                background: #F0F8FF;
             }
+
+             tr.bluerow td {
+                 background: #F0F8FF;
+             }
 
             thead tr td {
                 text-align: center;
@@ -78,6 +82,25 @@
             .doublecell {
                 border-top: 0px;
             }
+
+             
+            table tr td.amber {
+                background-color: #FFFF00;
+            }
+
+            table tr td.green {
+                background-color: #00FF00;
+            }
+
+            table tr td.red {
+                background-color: #FF0000;
+            }
+
+             .key {
+                 text-align:center;
+                 font-weight:bold;
+                 font-size: 16px;
+             }
 
         </style>
         <div id="wrapper">
@@ -143,10 +166,10 @@
                                     }
                                 </ul>
                             </td>
-                            <td class="riskratingdata">
+                            <td class="riskratingdata @(Model.GetCssClass(assessment.LikelihoodB,assessment.SeverityB))">
                                 <div>@assessment.Likelihood</div>
                                 <div>@assessment.Severity</div>
-                                <div>@(assessment.Likelihood * assessment.Severity)</div>
+                                <div><strong>@(assessment.Likelihood * assessment.Severity)</strong></div>
                             </td>
                             <td>
                                 <ul>
@@ -158,13 +181,39 @@
                                     }
                                 </ul>
                             </td>
-                            <td class="riskratingdata">
+                            <td class="@(Model.GetCssClass(assessment.LikelihoodB,assessment.SeverityB)) riskratingdata">
                                 <div>@assessment.LikelihoodB</div>
                                 <div>@assessment.SeverityB</div>
-                                <div>@(assessment.LikelihoodB * assessment.SeverityB)</div>
+                                <div><strong>@(assessment.LikelihoodB * assessment.SeverityB)</strong></div>
                             </td>
                         </tr>
                     }
+                    <tr class="bluerow">
+                        <td rowspan="3" class="key">
+                            Key:
+                        </td>
+                        <td colspan="3">
+                            <strong>Likelihood</strong> 1 = Highly unlikely, 2 = Unlikely, 3 = Possible, 4 = Likely, 5 = Certain
+                        </td>
+                        <td rowspan="3">
+                            Risk Rating = L X S (Likelihood X Severity)
+                        </td>
+                        <td class="green" colspan="2">
+                            Low = 1 to 4
+                        </td>
+                    </tr>
+                    <tr class="bluerow">
+                        <td colspan="3">
+                            <strong>Severity</strong> 1 = No injury, 2 = Minor injury, 3 = Medical treatment, 4 = Reportable, 5 = Major injury/Fatal
+                        </td>
+                        <td class="amber" colspan="2">
+                            Medium = 5 to 11
+                        </td>
+                    </tr>
+                    <tr class="bluerow">
+                        <td colspan="3"></td>
+                        <td class="red" colspan="2">High = 12 to 25</td>
+                    </tr>
                 </tbody>
             </table>     
         </div>
