@@ -51,7 +51,7 @@ steal('jquery/controller',
         },
         '.emailReport click': function () {
             if (this.hasInternetConnection()) {
-                $.mobile.changePage("emailReport.htm");
+                $.mobile.changePage("emailreport.htm");
             }
             else {
                 $.mobile.changePage("dialog/notconnected.htm");
