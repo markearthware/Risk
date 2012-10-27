@@ -24,7 +24,7 @@ steal('jquery/controller',
             $.when(assessmentDef, assessmentDetailControlsDef, assessmentDetailExistingControlsDef).done(function (assessmentRes, assessmentControlsRes, assessmentExistingControlsRes) {
                 var assessmentRating = parseInt(assessmentRes.SeverityB * assessmentRes.LikelihoodB);
                 var className = "";
-                if (assessmentRating < 6) {
+                if (assessmentRating < 5) {
                     className = "green-divider";
                 }
                 else {

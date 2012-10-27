@@ -115,7 +115,7 @@ steal('jquery/controller',
                         var score = this.calculateScore();
                         $('#trafficLight div').removeClass("on");
                         if (score < 12) {
-                            if (score < 6) {
+                            if (score < 5) {
                                 $('#trafficLight #green').addClass("on");
                             }
                             else {
