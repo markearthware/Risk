@@ -1,3 +1,4 @@
+build app
 deploy jsonp service to live server
 style the app
 logo and splash screens
