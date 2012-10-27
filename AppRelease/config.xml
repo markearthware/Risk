@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+        xmlns:gap	= "http://phonegap.com/ns/1.0"
+        id = "com.shortechstudios.riskassessmentapp"
+        version = "1.1.0.0">
+
+  <name>Risk Assessment App</name>
+
+  <description>
+    Risk Assessment App
+  </description>
+
+  <author href=""
+          email="">
+	Shortech Studios
+  </author>
+
+  <gap:platforms>
+    <gap:platform name="ios" />
+    <gap:platform name="android"
+                  minVersion="2.1" />
+  </gap:platforms>
+
+  <icon src="icon.png" /> 
+  
+  <icon src="assets/icon.png"
+        width="57"
+        height="57"
+         />  
+		 
+ <icon src="assets/Icon-72.png"
+        width="72"
+        height="72"
+gap:platform="ios"
+         />
+
+
+  <icon src="assets/iphoneretina.png"
+        width="114"
+        height="114"
+         />
+  
+  <icon src="assets/Android_ldpi.png"
+        width="36"
+        height="36"
+         />
+
+  <icon src="assets/Android_mdpi.png"
+        width="48"
+        height="48"
+         />
+		 
+   <icon src="assets/Android_hdpi.png"
+		width="72"
+		height="72"
+		 />
+		 
+	<icon src="assets/Android_xdpi.png"
+	width="96"
+	height="96"
+	 />
+			  
+  <gap:splash gap:platform="ios" src="assets/ipadportrait.png"
+              width="768"
+              height="1024" />
+  <gap:splash gap:platform="ios" src="assets/ipadlandscape.png"
+              width="1024"
+              height="768" />
+  <gap:splash gap:platform="ios" src="assets/iphonesplash.png"
+              width="320"
+              height="480" />
+<gap:splash gap:platform="ios" src="assets/iphoneretinasplash.png"
+              width="640"
+              height="960" />
+
+  <gap:splash src="assets/ldpi.png" width="240" height="320" gap:platform="android" gap:density="ldpi" />
+  <gap:splash src="assets/iphonesplash.png" width="320" height="480" gap:platform="android" gap:density="mdpi" />
+  <gap:splash src="assets/hdpi.png" width="480" height="800" gap:platform="android" gap:density="hdpi" />
+  
+  <feature name="http://api.phonegap.com/1.0/geolocation"/>
+  <feature name="http://api.phonegap.com/1.0/network"/>
+  <feature name="http://api.phonegap.com/1.0/notification"/>
+</widget>
