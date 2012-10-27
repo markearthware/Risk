@@ -1,25 +1,33 @@
 using System.Net.Mail;
 using Mvc.Mailer;
+using ServerSide.Models;
+using System;
 
 namespace ServerSide.Mailers
 { 
     public class UserMailer : MailerBase, IUserMailer 	
 	{
-		public UserMailer()
-		{
-			MasterName="_Layout";
-		}
-		
-		public virtual MvcMailMessage Report(string attachmentPath)
-		{
-			//ViewBag.Data = someObject;
-			return Populate(x =>
-			{
-				x.Subject = "Welcome";
-				x.ViewName = "Welcome";
-				x.To.Add("some-email@example.com");
+        public UserMailer()
+        {
+            MasterName = "_Layout";
+        }
+
+        public virtual MvcMailMessage Report(string attachmentPath, Task task)
+        {
+            ViewData["TaskName"] = task.Name;
+            ViewData["Name"] = task.AssessorName;
+            ViewData["Site"] = task.Site;
+            var date = DateTime.Now.ToShortDateString();
+            ViewData["Date"] = date;
+
+            return Populate(x =>
+            {
+                x.Subject = string.Format("Risk Aware - Risk assessment report for '{0}' at '{1}' - {2}", task.Name, task.Site, date);
+                x.ViewName = "ForUser";
+                x.To.Add(task.AssessorEmail);
                 x.Attachments.Add(new Attachment(attachmentPath));
-			});
-		}
+                x.CC.Add(task.ManagerEmail);
+            });
+        }
  	}
 }

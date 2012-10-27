@@ -238,7 +238,10 @@
     <Content Include="Views\UserMailer\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\UserMailer\Welcome.cshtml" />
+    <Content Include="Views\UserMailer\ForUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserMailer\ForUser.text.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

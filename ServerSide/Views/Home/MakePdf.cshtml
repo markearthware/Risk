@@ -166,7 +166,7 @@
                                     }
                                 </ul>
                             </td>
-                            <td class="riskratingdata @(Model.GetCssClass(assessment.LikelihoodB,assessment.SeverityB))">
+                            <td class="riskratingdata @(Model.GetCssClass(assessment.Likelihood,assessment.Severity))">
                                 <div>@assessment.Likelihood</div>
                                 <div>@assessment.Severity</div>
                                 <div><strong>@(assessment.Likelihood * assessment.Severity)</strong></div>

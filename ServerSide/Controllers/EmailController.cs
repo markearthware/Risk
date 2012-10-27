@@ -42,7 +42,7 @@ namespace ServerSide.Controllers
             }
 
             pdfManager.GetCertificate(reportId, task, assessments);
-            UserMailer.Report(pdfManager.CertificatePath).Send();
+            UserMailer.Report(pdfManager.CertificatePath, task).Send();
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }

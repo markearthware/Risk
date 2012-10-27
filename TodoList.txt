@@ -1,5 +1,3 @@
-Add risk rating key and style for pdf attachment 
-Complete html email
 deploy jsonp service to live server
 style the app
 logo and splash screens
