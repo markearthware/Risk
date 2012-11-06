@@ -1,7 +1,7 @@
 build app
 deploy jsonp service to live server
 style the app
-logo and splash screens
+logo and splash screens - andy
 testing
 deploy app to ios and android devices - bug fixing
 user trial
