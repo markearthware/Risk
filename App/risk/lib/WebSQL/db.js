@@ -148,7 +148,7 @@ var localStorageDB = (function () {
 
         checkTableExists("Tasks", function(tx) {
             // create table
-            tx.executeSql('CREATE TABLE IF NOT EXISTS Tasks (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Site, Sent BIT, DateStarted INTEGER, DateFinished INTEGER, AssessorName, AssessorEmail, ManagerName, ManagerEmail)');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS Tasks (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Name, Site, Sent BIT, DateStarted INTEGER, DateFinished INTEGER, AssessorName, AssessorEmail, ManagerEmail)');
         });
 
         checkTableExists("Assessments", function(tx) {

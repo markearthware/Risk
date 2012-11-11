@@ -20,8 +20,11 @@ steal('jquery/controller',
             var assessmentsDef = Risk.Models.Assessments.findAll(localStorage.taskId);
             var taskDef = Risk.Models.Task.findOne(localStorage.taskId);
             var view;
+			var self = this;
             $.when(assessmentsDef, taskDef).done(function (assessmentsRes, taskRes) {
-                view = $.View('//risk/views/mycompletedassessments/init.ejs', assessmentsRes);
+				var amberList = self.getAmberList(assessmentsRes);
+				var greenList = self.getGreenList(assessmentsRes);
+                view = $.View('//risk/views/mycompletedassessments/init.ejs', {ambers: amberList, greens: greenList});
                 $('#MyCompletedAssessmentsContent').html(view);
                 $('#MyCompletedAssessmentsList').listview();
                 var divider = $('#divider');
@@ -48,6 +51,28 @@ steal('jquery/controller',
         '.addToExisting click': function () {
             localStorage.addToExisting = "true";
             localStorage.editAssessmentId = "";
-        }
+        },
+				getAmberList: function(assessments) {
+			var list = [];
+			for(var i = 0; i < assessments.length; i++)
+			{
+				if(assessments[i].LikelihoodB * assessments[i].SeverityB > 4)
+				{
+					list.push(assessments[i]);
+				}
+			}
+			return list;
+		},
+		getGreenList: function(assessments) {
+			var list = [];
+			for(var i = 0; i < assessments.length; i++)
+			{
+				if(assessments[i].LikelihoodB * assessments[i].SeverityB < 5)
+				{
+					list.push(assessments[i]);
+				}
+			}
+			return list;
+		},
     });
     });

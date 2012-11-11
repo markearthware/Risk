@@ -97,7 +97,7 @@ steal('jquery/controller',
                     this.validation();
                 },
                 passesValidation: function () {
-                    if ($('#ControlsList').val() != "Choose Options (optional)") {
+                    if (($('#ControlsList').val() != "Choose options") && $('#ControlsList').val() != null) {
                         return true;
                     }
                     return false;

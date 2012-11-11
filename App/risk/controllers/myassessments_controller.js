@@ -17,11 +17,14 @@ steal('jquery/controller',
             this.loadData();
         },
         loadData: function () {
+			var self = this;
             var assessmentsDef = Risk.Models.Assessments.findAll(localStorage.taskId);
             var taskDef = Risk.Models.Task.findOne(localStorage.taskId);
             var view;
             $.when(assessmentsDef, taskDef).done(function (assessmentsRes, taskRes) {
-                view = $.View('//risk/views/myassessments/init.ejs', assessmentsRes);
+				var amberList = self.getAmberList(assessmentsRes);
+				var greenList = self.getGreenList(assessmentsRes);
+                view = $.View('//risk/views/myassessments/init.ejs', {ambers: amberList, greens: greenList});
                 $('#MyAssessmentsContent').html(view);
                 $('#MyAssessmentsList').listview();
                 var divider = $('#divider');
@@ -57,6 +60,31 @@ steal('jquery/controller',
                 $.mobile.changePage("dialog/notconnected.htm");
             }
         },
+		
+		getAmberList: function(assessments) {
+			var list = [];
+			for(var i = 0; i < assessments.length; i++)
+			{
+				if(assessments[i].LikelihoodB * assessments[i].SeverityB > 4)
+				{
+					list.push(assessments[i]);
+				}
+			}
+			return list;
+		},
+		
+		getGreenList: function(assessments) {
+			var list = [];
+			for(var i = 0; i < assessments.length; i++)
+			{
+				if(assessments[i].LikelihoodB * assessments[i].SeverityB < 5)
+				{
+					list.push(assessments[i]);
+				}
+			}
+			return list;
+		},
+		
         hasInternetConnection: function () {
             if (navigator.network) {
                 var networkState = navigator.network.connection.type;

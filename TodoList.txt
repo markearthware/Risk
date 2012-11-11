@@ -1,8 +1,8 @@
-build app
-deploy jsonp service to live server
 style the app
 logo and splash screens - andy
-testing
+deploy jsonp service to live server
+testing and bug fixing
+remove 'require GPS' setting
 deploy app to ios and android devices - bug fixing
 user trial
 get feedback and bug fixing

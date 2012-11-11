@@ -1,4 +1,5 @@
-label.error, #commentForm input.submit { background-color: red;color: #ccc;padding: 10px; }
+label.error { display: none !important;}
+input.error{background-color: #edd5d4; text-shadow: none;}
 
 .errorHighlight { border: 2px solid #CC0000; } .textinput {border: 1px silver solid;}
 
