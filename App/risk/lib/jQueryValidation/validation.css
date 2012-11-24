@@ -1,6 +1,16 @@
 label.error { display: none !important;}
-input.error{background-color: #edd5d4; text-shadow: none;}
+input.error{background-color: #ff8080; text-shadow: none;}
 
 .errorHighlight { border: 2px solid #CC0000; } .textinput {border: 1px silver solid;}
 
 .ui-btn select.errorHighlight{ border: 2px solid #CC0000;  }
+
+input::-webkit-input-placeholder {
+    color:    #797979;
+}
+input:-moz-placeholder {
+    color:    #797979;
+}
+input:-ms-input-placeholder {
+    color:    #797979;
+}

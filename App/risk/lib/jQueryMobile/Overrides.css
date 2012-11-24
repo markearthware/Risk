@@ -1,4 +1,6 @@
 
+.main-header .ui-title{min-height: 1.1em; text-align: center; font-size: 32px !important; display: block; margin: .2em 30% .2em !important; padding: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; outline: 0 !important; }
+
 #WhosList-menu  .ui-link-inherit
 {
     white-space: normal !important;
@@ -43,12 +45,12 @@ i.small{ font-size: 10px;}
 	color: 					#fff /*{b-bar-color}*/;
 	font-weight: bold;
 	text-shadow: 0 /*{b-bar-shadow-x}*/ -1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #b30000 /*{b-bar-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #ff3333 /*{b-bar-background-start}*/), to( #e60000 /*{b-bar-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(#ff3333 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient(#ff3333 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient(#ff3333 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient(#ff3333 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient(#ff3333 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #ff0000 /*{b-bar-background-start}*/), to( #e60000 /*{b-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#ff0000 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#ff0000 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#ff0000 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient(#ff0000 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient(#ff0000 /*{b-bar-background-start}*/, #e60000 /*{b-bar-background-end}*/);
 }
 
 .ui-bar-b.green-divider
@@ -58,28 +60,28 @@ i.small{ font-size: 10px;}
 	color: 					#fff /*{b-bar-color}*/;
 	font-weight: bold;
 	text-shadow: 0 /*{b-bar-shadow-x}*/ -1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #006700 /*{b-bar-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #00cc01 /*{b-bar-background-start}*/), to( #009a00 /*{b-bar-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(#00cc01 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient(#00cc01 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient(#00cc01 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient(#00cc01 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient(#00cc01 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #008100/*{b-bar-background-start}*/), to( #009a00 /*{b-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#008100 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#008100 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#008100 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient(#008100 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient(#008100 /*{b-bar-background-start}*/, #009a00 /*{b-bar-background-end}*/);
     
 }
 
 .ui-bar-b.orange-divider
 {
-    border: 1px solid 		#cba703 /*{b-bar-border}*/;
-	background: 			#e4bb03 /*{b-bar-background-color}*/;
-	color: 					#fff /*{b-bar-color}*/;
-	font-weight: bold;
-	text-shadow: 0 /*{b-bar-shadow-x}*/ -1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #cba703 /*{b-bar-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #fcd837 /*{b-bar-background-start}*/), to( #e4bb03 /*{b-bar-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient(#fcd837 /*{b-bar-background-start}*/, #e4bb03 /*{b-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient(#fcd837 /*{b-bar-background-start}*/, #e4bb03 /*{b-bar-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient(#fcd837 /*{b-bar-background-start}*/, #e4bb03 /*{b-bar-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient(#fcd837 /*{b-bar-background-start}*/, #e4bb03 /*{b-bar-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient(#fcd837 /*{b-bar-background-start}*/, #e4bb03 /*{b-bar-background-end}*/);
+    border: 1px solid #919191;
+    background: #f59900;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #595959;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #f59900 ),to( #db8b06 ));
+    background-image: -webkit-linear-gradient( #f59900,#db8b06 );
+    background-image: -moz-linear-gradient( #f59900,#db8b06 );
+    background-image: -ms-linear-gradient( #f59900,#db8b06 );
+    background-image: -o-linear-gradient( #f59900,#db8b06 );
+    background-image: linear-gradient( #f59900,#db8b06 );
 }
 
 .fleft {
@@ -104,6 +106,11 @@ i.small{ font-size: 10px;}
     margin: auto;
 }
 
+#erisk{
+    margin-top: 15px;
+    text-align: center;
+}
+
 #trafficLight > div {
     width: 33%;
     height: 100%;
@@ -117,7 +124,7 @@ i.small{ font-size: 10px;}
 
 #trafficLight #red 
 {
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 0px 15px 15px 0px;
     background-color: #540204;
     color: #540204;
 }
@@ -145,7 +152,7 @@ i.small{ font-size: 10px;}
 #trafficLight #green {
     background-color: #275700;
     color: #275700;
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 15px 0px 0px 15px;
 }
 
 #trafficLight #green.on {

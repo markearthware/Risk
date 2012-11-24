@@ -1,5 +1,4 @@
-style the app
-logo and splash screens - andy
+logo and splash screens - andy - in progress
 deploy jsonp service to live server
 testing and bug fixing
 remove 'require GPS' setting

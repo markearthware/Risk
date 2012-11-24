@@ -2,7 +2,7 @@
 <ul id="CompletedDetailsList" data-role="listview">
 
   <li data-role="list-divider">
-    Who is at risk from : '<%= this.hazardName %>'
+    Who is at risk from '<%= this.hazardName %>':
   </li>
   <li>
     <%= this.who %>
@@ -10,7 +10,7 @@
 
 
   <li data-role="list-divider">
-    How are they at risk from : '<%= this.hazardName %>'
+    How are they at risk from '<%= this.hazardName %>':
   </li>
 
   <li>
@@ -20,7 +20,7 @@
   <% if(this.existingControls.length > 0){ %>
 
   <li data-role="list-divider" class="green-divider">
-    Existing controls already in place
+    Existing controls already in place:
   </li>
 
   <%for(var k = 0; k < this.existingControls.length; k++){ %>
@@ -32,7 +32,7 @@
   <%}}%><% if(this.controls.length > 0){ %>
 
   <li data-role="list-divider" class="red-divider">
-    Further controls required
+    Further controls required:
   </li>
 
   <%for(var k = 0; k < this.controls.length; k++){ %>
