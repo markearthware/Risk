@@ -22,7 +22,7 @@ namespace ServerSide.Mailers
 
             return Populate(x =>
             {
-                x.Subject = string.Format("Risk Aware - Risk assessment report for '{0}' at '{1}' - {2}", task.Name, task.Site, date);
+                x.Subject = string.Format("eRisk - Risk assessment report for '{0}' at '{1}' - {2}", task.Name, task.Site, date);
                 x.ViewName = "ForUser";
                 x.To.Add(task.AssessorEmail);
                 x.Attachments.Add(new Attachment(attachmentPath));

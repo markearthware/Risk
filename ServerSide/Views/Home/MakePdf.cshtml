@@ -11,7 +11,7 @@
     <body>
          <style type="text/css">
             body {
-                font-family: Verdana;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
                 font-size: 12px;
             }
 
@@ -37,15 +37,19 @@
                 margin: 0;
                 padding: 4px;
                 border-width: 1px 1px 0 0;
-                background-color: #ffffef;
+                background-color: #E8EDFF;
             }
 
             thead tr td.blue{
-                background: #F0F8FF;
+                background: #B9C9FE;
             }
 
+             thead tr td.blue2 {
+                 background: #d2dcfe;
+             }
+
              tr.bluerow td {
-                 background: #F0F8FF;
+                 background: #B9C9FE;
              }
 
             thead tr td {
@@ -65,7 +69,7 @@
             }
 
             .riskrating {
-                border-top-color: #99CCFF;
+                border-top-color: #B9C9FE;
             }
 
             td ul {
@@ -85,15 +89,15 @@
 
              
             table tr td.amber {
-                background-color: #FFFF00;
+                background-color: #d2ff4d;
             }
 
             table tr td.green {
-                background-color: #00FF00;
+                background-color: #8cff67;
             }
 
             table tr td.red {
-                background-color: #FF0000;
+                background-color: #ff3333;
             }
 
              .key {
@@ -107,42 +111,42 @@
             <table cellspacing="0">
                 <thead>
                     <tr>
-                        <td class="blue" colspan="2">Task: </td>
+                        <td class="blue" colspan="2"><strong>Task: </strong></td>
                         <td colspan="2">@Model.Task.Name</td>
                     </tr>
                     <tr>
-                        <td class="blue" colspan="2">Report Identifier:</td>
+                        <td class="blue" colspan="2"><strong>Report Identifier:</strong></td>
                         <td colspan="2">@Model.AssessmentNumber</td>
                     </tr>
                     <tr>
-                        <td class="blue" colspan="1">Site:</td>
+                        <td class="blue" colspan="1"><strong>Site:</strong></td>
                         <td colspan="2">@Model.Task.Site</td>
-                        <td class="blue" colspan="1">Assessor:</td>
+                        <td class="blue" colspan="1"><strong>Assessor:</strong></td>
                         <td colspan="1">@Model.Task.AssessorName</td>
-                        <td class="blue" colspan="1">Created Date:</td>
+                        <td class="blue" colspan="1"><strong>Created Date:</strong></td>
                         <td colspan="1">@Model.Task.DateStarted.ToShortDateString()</td>
                     </tr>
                     <tr>
-                        <td class="blue"></td>
-                        <td class="blue"></td>
-                        <td class="blue"></td>
-                        <td class="blue"></td>
-                        <td class="blue">Risk Rating<br/>(L * S)</td>
-                        <td class="blue"></td>
-                        <td class="blue">New Risk Rating</td>
+                        <td class="blue2"></td>
+                        <td class="blue2"></td>
+                        <td class="blue2"></td>
+                        <td class="blue2"></td>
+                        <td class="blue2"><strong>Risk Rating<br/>(L * S)</strong></td>
+                        <td class="blue2"></td>
+                        <td class="blue2"><strong>New Risk Rating</strong></td>
                     </tr>
                     <tr>
-                        <td class="blue doublecell">Hazard</td>
-                        <td class="blue doublecell">Who might be harmed</td>
-                        <td class="blue doublecell">How might they be harmed</td>
-                        <td class="blue doublecell">Existing Controls</td>
-                        <td class="blue riskrating">
+                        <td class="blue2 doublecell"><strong>Hazard</strong></td>
+                        <td class="blue2 doublecell"><strong>Who might be harmed</strong></td>
+                        <td class="blue2 doublecell"><strong>How might they be harmed</strong></td>
+                        <td class="blue2 doublecell"><strong>Existing Controls</strong></td>
+                        <td class="blue2 riskrating">
                             <div>L</div>
                             <div>S</div>
                             <div>R</div>
                         </td>
-                        <td class="blue doublecell">Further Controls/Actions</td>
-                        <td class="blue riskrating">
+                        <td class="blue2 doublecell"><strong>Further Controls/Actions</strong></td>
+                        <td class="blue2 riskrating">
                             <div>L</div>
                             <div>S</div>
                             <div>R</div>
@@ -166,7 +170,7 @@
                                     }
                                 </ul>
                             </td>
-                            <td class="riskratingdata @(Model.GetCssClass(assessment.Likelihood,assessment.Severity))">
+                            <td class="riskratingdata">
                                 <div>@assessment.Likelihood</div>
                                 <div>@assessment.Severity</div>
                                 <div><strong>@(assessment.Likelihood * assessment.Severity)</strong></div>
@@ -181,7 +185,7 @@
                                     }
                                 </ul>
                             </td>
-                            <td class="@(Model.GetCssClass(assessment.LikelihoodB,assessment.SeverityB)) riskratingdata">
+                            <td class="riskratingdata">
                                 <div>@assessment.LikelihoodB</div>
                                 <div>@assessment.SeverityB</div>
                                 <div><strong>@(assessment.LikelihoodB * assessment.SeverityB)</strong></div>

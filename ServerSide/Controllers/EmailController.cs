@@ -14,7 +14,7 @@ namespace ServerSide.Controllers
     using System.Web.Mvc;
     using PdfGen;
     using ServerSide.Models;
-
+    using System.Web.Script.Serialization;
     using Winnovative.WnvHtmlConvert;
 
     public class EmailController : ApiController
@@ -31,7 +31,6 @@ namespace ServerSide.Controllers
         {
             var reportId = Guid.NewGuid().ToString().Replace("-",string.Empty).Substring(0,8);
             var pdfManager = new PdfManager();
-
             foreach (var assessment in assessments)
             {
                 if (assessment.ExistingControls == "null")
@@ -40,10 +39,29 @@ namespace ServerSide.Controllers
                 if (assessment.Controls == "null")
                     assessment.Controls = null;
             }
-
-            pdfManager.GetCertificate(reportId, task, assessments);
+            CreateTextFile(reportId, task, assessments);
+            pdfManager.GetCertificate(reportId);
             UserMailer.Report(pdfManager.CertificatePath, task).Send();
             return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        public static void CreateTextFile(string reportId, Task task, List<Assessment> assessments)
+        {
+            var serializer = new JavaScriptSerializer();
+            var taskString = serializer.Serialize(task);
+            var assessmentsString = serializer.Serialize(assessments);
+
+            string path = string.Format(@"c:\temp\reports\{0}.txt",reportId);
+            if (!File.Exists(path))
+            {
+                // Create a file to write to. 
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.Write(taskString);
+                    sw.Write("~");
+                    sw.Write(assessmentsString);
+                }
+            }
         }
     }
 }

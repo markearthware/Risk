@@ -68,29 +68,25 @@ steal('jquery/controller',
 								existingControls: assessmentsRes[index].ExistingControls
 							});
 					}
-					// uncomment when live
-					//$.ajax({
-					//	url: 'http://localhost:52068/api/Email/Send',
-					//	dataType: 'jsonp',
-					//	data: {
-					//		task: task,
-					//		assessments: assessments
-					//	},
-					//	success: function () {},
-					//	error: function (a) {
-					//		if (a.status == 200) {
-					//			new Risk.Models.Task(task).save(function () {
-					//				$.mobile.changePage("dialog/emailSent.htm");
-					//			});
-					//		}
-					//		else {
-					//			$.mobile.changePage("dialog/emailNotSent.htm");
-					//		}
-					//	}
-					//});
-							new Risk.Models.Task(task).save(function () {
+					$.ajax({
+						url: 'http://localhost:52068/api/Email/Send',
+						dataType: 'jsonp',
+						data: {
+							task: task,
+							assessments: assessments
+						},
+						success: function () {},
+						error: function (a) {
+							if (a.status == 200) {
+								new Risk.Models.Task(task).save(function () {
 									$.mobile.changePage("dialog/emailSent.htm");
-							});
+								});
+							}
+							else {
+								$.mobile.changePage("dialog/emailNotSent.htm");
+							}
+						}
+					});
 				});
 			}
 			return false;
