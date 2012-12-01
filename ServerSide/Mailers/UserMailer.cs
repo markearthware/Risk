@@ -26,7 +26,10 @@ namespace ServerSide.Mailers
                 x.ViewName = "ForUser";
                 x.To.Add(task.AssessorEmail);
                 x.Attachments.Add(new Attachment(attachmentPath));
-                x.CC.Add(task.ManagerEmail);
+                if (task.ManagerEmail != null)
+                {
+                    x.CC.Add(task.ManagerEmail);
+                }
             });
         }
  	}

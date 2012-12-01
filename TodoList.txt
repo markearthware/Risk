@@ -1,5 +1,4 @@
-logo and splash screens - andy - in progress
-deploy jsonp service to live server
+config.xml logo and splash screens - andy - in progress
 testing and bug fixing
 remove 'require GPS' setting
 deploy app to ios and android devices - bug fixing
