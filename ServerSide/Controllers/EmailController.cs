@@ -51,7 +51,12 @@ namespace ServerSide.Controllers
             var taskString = serializer.Serialize(task);
             var assessmentsString = serializer.Serialize(assessments);
 
-            string path = string.Format(@"c:\{0}.txt",reportId);
+            if(!Directory.Exists(@"c:\temp"))
+            {
+                Directory.CreateDirectory(@"c:\temp");
+            }
+
+            string path = string.Format(@"c:\temp\{0}.txt",reportId);
             if (!File.Exists(path))
             {
                 // Create a file to write to. 

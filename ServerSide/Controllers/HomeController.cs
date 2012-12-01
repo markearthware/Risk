@@ -42,7 +42,12 @@ namespace ServerSide.Controllers
         {
             try
             {
-                using (StreamReader sr = new StreamReader(string.Format(@"c:\{0}.txt", g)))
+                if (!Directory.Exists(@"c:\temp"))
+                {
+                    Directory.CreateDirectory(@"c:\temp");
+                }
+
+                using (StreamReader sr = new StreamReader(string.Format(@"c:\temp\{0}.txt", g)))
                 {
                     return sr.ReadToEnd();
                 }
