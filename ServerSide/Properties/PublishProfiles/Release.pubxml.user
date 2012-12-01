@@ -26,7 +26,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2012 20:55:41</publishTime>
     </File>
     <File Include="bin/ServerSide.dll">
-      <publishTime>12/01/2012 16:14:30</publishTime>
+      <publishTime>12/01/2012 17:57:48</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
@@ -287,7 +287,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
     <File Include="Views/UserMailer/ForUser.cshtml">
-      <publishTime>01/12/2012 16:27:31</publishTime>
+      <publishTime>12/01/2012 16:27:31</publishTime>
     </File>
     <File Include="Views/UserMailer/ForUser.text.cshtml">
       <publishTime>11/22/2012 20:55:40</publishTime>
@@ -302,7 +302,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/01/2012 17:02:58</publishTime>
+      <publishTime>12/01/2012 17:57:49</publishTime>
     </File>
   </ItemGroup>
 </Project>

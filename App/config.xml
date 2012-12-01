@@ -4,15 +4,15 @@
         id = "com.shortechstudios.riskassessmentapp"
         version = "1.1.0.0">
 
-  <name>Risk Assessment App</name>
+  <name>eRisk</name>
 
   <description>
-    Risk Assessment App
+    Comprehensive Risk Assessment App
   </description>
 
   <author href=""
           email="">
-	Shortech Studios
+    Shortec Ltd
   </author>
 
   <gap:platforms>
@@ -46,8 +46,8 @@
      height="100"
      gap:platform="ios"
          />
-  
-  <icon src="assets/iOS/Icons/Icon.png"  
+
+  <icon src="assets/iOS/Icons/Icon.png"
         width="57"
         height="57"
         gap:platform="ios"
@@ -58,11 +58,11 @@
      height="114"
      gap:platform="ios"
          />
-		 
- <icon src="assets/iOS/Icons/Icon-72.png"
-        width="72"
-        height="72"
-        gap:platform="ios"
+
+  <icon src="assets/iOS/Icons/Icon-72.png"
+         width="72"
+         height="72"
+         gap:platform="ios"
          />
 
   <icon src="assets/iOS/Icons/Icon-72@2x.png"
@@ -71,32 +71,32 @@
       gap:platform="ios"
          />
 
-  
+
   <icon src="assets/Android/Icons/ldpi.png"
         width="36"
         height="36"
-        gap:platform="android" 
+        gap:platform="android"
         gap:density="ldpi"
          />
 
   <icon src="assets/Android/Icons/mdpi.png"
         width="48"
         height="48"
-        gap:platform="android" 
+        gap:platform="android"
         gap:density="mdpi"
          />
-		 
-   <icon src="assets/Android/Icons/hdpi.png"
-		    width="72"
-		    height="72"
-        gap:platform="android" 
-        gap:density="hdpi"
+
+  <icon src="assets/Android/Icons/hdpi.png"
+       width="72"
+       height="72"
+       gap:platform="android"
+       gap:density="hdpi"
 		 />
-		 
-	<icon src="assets/Android/Icons/xhdpi.png"
+
+  <icon src="assets/Android/Icons/xhdpi.png"
 	      width="96"
 	      height="96"
-        gap:platform="android" 
+        gap:platform="android"
         gap:density="xhdpi"
 	 />
 
@@ -106,13 +106,14 @@
         gap:platform="android"
         gap:density="xxhdpi"
 	 />
-  
-  <gap:splash src="splash.png" /> <!-- NEED TO ADD THIS -->
-  
+
+  <gap:splash src="splash.png" />
+  <!-- NEED TO ADD THIS -->
+
   <gap:splash gap:platform="ios" src="assets/iPad-portrait.png"
               width="768"
               height="1024" />
-  
+
   <gap:splash gap:platform="ios" src="assets/iPad-landscape.png"
               width="1024"
               height="768" />
@@ -124,22 +125,23 @@
   <gap:splash gap:platform="ios" src="assets/iOS/Splashes/iPad-Retina-portrait.png"
               width="1496"
               height="2048" />
-  
+
   <gap:splash gap:platform="ios" src="assets/iOS/Splashes/iPhone-splash.png"
               width="320"
               height="480" />
-  
+
   <gap:splash gap:platform="ios" src="assets/iPhone-Retina.png"
               width="640"
               height="960" />
-  
-  <gap:splash src="assets/iOS/Splashes/iPhone5.png" 
-              width="640" 
+
+  <gap:splash src="assets/iOS/Splashes/iPhone5.png"
+              width="640"
               height="1136" />
 
   <gap:splash src="assets/ldpi.png" width="240" height="320" gap:platform="android" gap:density="ldpi" />
   <gap:splash src="assets/iphonesplash.png" width="320" height="480" gap:platform="android" gap:density="mdpi" />
   <gap:splash src="assets/hdpi.png" width="480" height="800" gap:platform="android" gap:density="hdpi" />
+
   <feature name="http://api.phonegap.com/1.0/network"/>
   <feature name="http://api.phonegap.com/1.0/notification"/>
 </widget>
