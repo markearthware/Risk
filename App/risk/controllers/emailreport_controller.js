@@ -69,7 +69,7 @@ steal('jquery/controller',
 							});
 					}
 					$.ajax({
-					    url: 'http://eriskservice.apphb.com/api/Email/Send',
+					    url: 'http://localhost:52068/api/Email/Send',
 						dataType: 'jsonp',
 						data: {
 							task: task,
