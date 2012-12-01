@@ -42,7 +42,7 @@ namespace ServerSide.Controllers
         {
             try
             {
-                using (StreamReader sr = new StreamReader(string.Format(@"c:\temp\reports\{0}.txt", g)))
+                using (StreamReader sr = new StreamReader(string.Format(@"c:\{0}.txt", g)))
                 {
                     return sr.ReadToEnd();
                 }
