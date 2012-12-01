@@ -21,7 +21,7 @@ var localStorageDB = (function () {
 
     function goDropTables() {
         steal.dev.log("dropping tables");
-        var tables = ['sqlite_sequence', 'Hazards', 'Whos', 'Hows', 'Assessments', 'AssessmentWhos', 'AssessmentHows', 'Tasks', 'AssessmentControls', 'AssessmentExistingControls', 'Controls'];
+        var tables = ['sqlite_sequence', 'Hazards', 'Whos', 'Hows', 'Assessments', 'Tasks', 'AssessmentControls', 'AssessmentExistingControls', 'Controls'];
 
         $.each(tables, function (index, value) {
             db.transaction(function (tx) {

@@ -3,8 +3,6 @@ steal('jquery/controller',
     'jquery/dom/form_params',
     'jquery/controller/view',
     '../models/assessments.js',
-    '../models/assessmentwhos.js',
-    '../models/assessmenthows.js',
     '../models/assessmentcontrols.js',
     '../models/assessmentexistingcontrols.js',
     '../lib/WebSQL/db.js')

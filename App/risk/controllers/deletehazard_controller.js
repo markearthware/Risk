@@ -5,8 +5,6 @@ steal('jquery/controller',
     '../models/hazards.js',
     '../models/controls.js',
     '../models/hows.js',
-    '../models/assessmenthows.js',
-    '../models/assessmentwhos.js',
     '../models/assessmentcontrols.js',
     '../models/assessmentexistingcontrols.js',
     '../models/assessments.js',
@@ -32,8 +30,6 @@ steal('jquery/controller',
                 $.when(assIdsDef).done(function (assIdsRes) {
                     $(assIdsRes).each(function () {
                         Risk.Models.Assessments.deleteManyByHazardId(id);
-                        Risk.Models.AssessmentWhos.deleteMany(this.id);
-                        Risk.Models.AssessmentHows.deleteMany(this.id);
                         Risk.Models.AssessmentControls.deleteMany(this.id);
                         Risk.Models.AssessmentExistingControls.deleteMany(this.id); 
                     });

@@ -5,8 +5,6 @@ steal('jquery/controller',
     '../models/task.js',
     '../models/hazards.js',
     '../models/assessments.js',
-    '../models/assessmentwhos.js',
-    '../models/assessmenthows.js',
     '../lib/WebSQL/db.js',
     '../views/myassessments/init.ejs')
     .then(function ($) {

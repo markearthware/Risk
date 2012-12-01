@@ -6,6 +6,10 @@ steal('jquery/model', function () {
           return localStorageDB.getRows('SELECT * FROM AssessmentControls', this);
       },
 
+      findAllById: function (id) {
+          return localStorageDB.getRows('SELECT Controls.id as id FROM AssessmentControls inner join Controls ON AssessmentControls.ControlId = Controls.id WHERE AssessmentControls.AssessmentId = ' + id, this);
+      },
+
       findOne: function (id) {
           var result = localStorageDB.getSingleRow('SELECT * FROM AssessmentControls WHERE id =' + id, this);
           steal.dev.log("result is:");
