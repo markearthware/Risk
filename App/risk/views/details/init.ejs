@@ -12,7 +12,7 @@
   </li>
 
   <li>
-    <%= this.how %> <%= " - " + this.furtherDetails %>
+    <%= this.how %> <% if(this.furtherDetails){%> <%= " - " + this.furtherDetails %> <%}%>
   </li>
 
   <% if(this.existingControls.length > 0){ %>
