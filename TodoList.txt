@@ -1,5 +1,5 @@
 config.xml logo and splash screens - andy - in progress
-edit task button
+add custom hows and controls bug when redoing an assessment
 auto complete textboxes if easy
 testing and bug fixing
 remove 'require GPS' setting
