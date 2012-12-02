@@ -1,5 +1,4 @@
 config.xml logo and splash screens - andy - in progress
-Add new hazards to top of the list
 edit task button
 auto complete textboxes if easy
 testing and bug fixing
