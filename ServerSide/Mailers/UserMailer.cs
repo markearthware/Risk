@@ -4,20 +4,15 @@ using System;
 
 namespace ServerSide.Mailers
 {
+    using System.IO;
+
     using ActionMailer.Net.Standalone;
 
-    public class UserMailer : RazorMailerBase, IUserMailer 	
+    public class UserMailer : RazorMailerBase
 	{
-        private string masterName;
-
-        public UserMailer()
-        {
-            this.masterName = "_Layout";
-        }
-
         public virtual RazorEmailResult Report(string attachmentPath, Task task)
         {
-            var email = Email("ForUser.cshtml", task, this.masterName, true);
+            var email = Email("ForUser.cshtml", task, null, true);
             email.Mail.Attachments.Add(new Attachment(attachmentPath));
             email.Mail.To.Add(task.AssessorEmail);
             if (task.ManagerEmail != null)
@@ -33,7 +28,7 @@ namespace ServerSide.Mailers
         {
             get
             {
-                return "UserMailer";
+                return Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase), @"\..\Views\UserMailer");
             }
         }
 	}

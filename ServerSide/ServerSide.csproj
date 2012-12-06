@@ -235,9 +235,6 @@
     <Folder Include="Content\Documents\Pdfs\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\UserMailer\_Layout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\UserMailer\ForUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
