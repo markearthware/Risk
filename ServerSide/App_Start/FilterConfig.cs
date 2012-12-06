@@ -1,13 +1,14 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿[assembly: WebActivator.PreApplicationStartMethod(typeof(ServerSide.App_Start.FilterConfig), "RegisterGlobalFilters")]
 
-namespace ServerSide
+namespace ServerSide.App_Start
 {
+    using System.Web.Mvc;
+
     public class FilterConfig
     {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        public static void RegisterGlobalFilters()
         {
-            filters.Add(new HandleErrorAttribute());
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());
         }
     }
 }

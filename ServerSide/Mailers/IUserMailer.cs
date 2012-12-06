@@ -1,10 +1,11 @@
-using Mvc.Mailer;
 using ServerSide.Models;
 
 namespace ServerSide.Mailers
-{ 
+{
+    using ActionMailer.Net.Standalone;
+
     public interface IUserMailer
     {
-        MvcMailMessage Report(string attachmentPath, Task task);
+        RazorEmailResult Report(string attachmentPath, Task task);
 	}
 }

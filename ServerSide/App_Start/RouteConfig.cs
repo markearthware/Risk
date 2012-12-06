@@ -1,30 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Routing;
+﻿[assembly: WebActivator.PreApplicationStartMethod(typeof(ServerSide.App_Start.RouteConfig), "RegisterRoutes")]
 
-namespace ServerSide
+namespace ServerSide.App_Start
 {
+    using System.Web.Http;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+
     public class RouteConfig
     {
-        public static void RegisterRoutes(RouteCollection routes)
+        public static void RegisterRoutes()
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            RouteTable.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapHttpRoute(
+            RouteTable.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                defaults: new { id = RouteParameter.Optional });
 
-            routes.MapRoute(
+            RouteTable.Routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}",
-                defaults: new { controller   = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
     }
 }

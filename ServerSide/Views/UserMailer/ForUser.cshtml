@@ -1,11 +1,13 @@
-<p>Hi @ViewData["Name"], </p>
+@model ServerSide.Models.Task
+
+<p>Hi @Model.AssessorName,</p>
 
 <p>
    Please find the following risk assessment report attached to this email:<br />
-   Task name: @ViewData["TaskName"] <br />
-   Site: @ViewData["Site"] <br />
-   Assessor Name: @ViewData["Name"] <br />
-   Date Completed: @ViewData["Date"]
+   Task name: @Model.Name <br />
+   Site: @Model.Site <br />
+   Assessor Name: @Model.AssessorName <br />
+   Date Completed: @DateTime.Now.ToShortDateString()
 </p>
 
 <p>

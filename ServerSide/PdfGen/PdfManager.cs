@@ -1,31 +1,27 @@
-﻿using System.Collections.Generic;
-using ServerSide.Models;
-
-namespace ServerSide.PdfGen
+﻿namespace ServerSide.PdfGen
 {
-    using System;
     using System.Configuration;
     using System.IO;
-    using System.Web;
+
     using Winnovative.WnvHtmlConvert;
-    using System.Web.Script.Serialization;
 
     public class PdfManager
     {
+        private const string CertificateDirectory = @"C:\temp";
+
         public string CertificatePath { get; set; }
 
-         public Stream GetCertificate(string reportId)
-        {            
+        public Stream GetCertificate(string reportId)
+        {
             var certificateFileName = this.GetCertificateFileName(reportId);
-            var certificateDirectory = HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["CertificateCacheDirectory"]);
-            var certificatePath = Path.Combine(certificateDirectory, certificateFileName); 
+            var certificatePath = Path.Combine(CertificateDirectory, certificateFileName);
             this.CertificatePath = certificatePath;
 
             if (!File.Exists(certificatePath))
             {
-                if (!Directory.Exists(certificateDirectory))
+                if (!Directory.Exists(CertificateDirectory))
                 {
-                    Directory.CreateDirectory(certificateDirectory);
+                    Directory.CreateDirectory(CertificateDirectory);
                 }
 
                 // Generate PDF Certificate
@@ -39,7 +35,8 @@ namespace ServerSide.PdfGen
                 pdfConverter.PdfDocumentOptions.SinglePage = true;
                 var currenthost = ConfigurationManager.AppSettings["WebsiteDomain"] + "/";
 
-                var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g=" + reportId;
+                var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g="
+                                                 + reportId;
                 var generateCertificateUrl = currenthost + generateCertificateUrlPath;
                 pdfConverter.SavePdfFromUrlToFile(generateCertificateUrl, certificatePath);
             }
@@ -48,8 +45,8 @@ namespace ServerSide.PdfGen
         }
 
         private string GetCertificateFileName(string reportId)
-        {            
-            return string.Format("RiskAssessmentReport-{0}.pdf", reportId.ToString());
+        {
+            return string.Format("RiskAssessmentReport-{0}.pdf", reportId);
         }
     }
 }

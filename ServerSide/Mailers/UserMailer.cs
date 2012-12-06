@@ -1,36 +1,40 @@
 using System.Net.Mail;
-using Mvc.Mailer;
 using ServerSide.Models;
 using System;
 
 namespace ServerSide.Mailers
-{ 
-    public class UserMailer : MailerBase, IUserMailer 	
+{
+    using ActionMailer.Net.Standalone;
+
+    public class UserMailer : RazorMailerBase, IUserMailer 	
 	{
+        private string masterName;
+
         public UserMailer()
         {
-            MasterName = "_Layout";
+            this.masterName = "_Layout";
         }
 
-        public virtual MvcMailMessage Report(string attachmentPath, Task task)
+        public virtual RazorEmailResult Report(string attachmentPath, Task task)
         {
-            ViewData["TaskName"] = task.Name;
-            ViewData["Name"] = task.AssessorName;
-            ViewData["Site"] = task.Site;
-            var date = DateTime.Now.ToShortDateString();
-            ViewData["Date"] = date;
-
-            return Populate(x =>
+            var email = Email("ForUser.cshtml", task, this.masterName, true);
+            email.Mail.Attachments.Add(new Attachment(attachmentPath));
+            email.Mail.To.Add(task.AssessorEmail);
+            if (task.ManagerEmail != null)
             {
-                x.Subject = string.Format("eRisk - Risk assessment report for '{0}' at '{1}' - {2}", task.Name, task.Site, date);
-                x.ViewName = "ForUser";
-                x.To.Add(task.AssessorEmail);
-                x.Attachments.Add(new Attachment(attachmentPath));
-                if (task.ManagerEmail != null)
-                {
-                    x.CC.Add(task.ManagerEmail);
-                }
-            });
+                email.Mail.CC.Add(task.ManagerEmail);
+            }
+            email.Mail.Subject = string.Format("eRisk - Risk assessment report for '{0}' at '{1}' - {2}", task.Name, task.Site, DateTime.Now.ToShortDateString());
+
+            return email;
         }
- 	}
+
+        public override string ViewPath
+        {
+            get
+            {
+                return "UserMailer";
+            }
+        }
+	}
 }
