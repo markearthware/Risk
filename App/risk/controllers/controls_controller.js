@@ -50,15 +50,12 @@ steal('jquery/controller',
                                 $(asControlsRes).each(function (i) {
                                     controlsValArray.push(this.ControlId.toString());
                                 });
-                                $('#ControlsList').val(localStorage.tempFurtherControls.split(",") ? localStorage.tempFurtherControls.split(",") : controlsValArray);
-                                $('#SeverityList').val(localStorage.tempSeverity ? localStorage.tempSeverity : asRes.Severity);
-                                $('#LikelihoodList').val(localStorage.tempLikelihood ? localStorage.tempLikelihood : asRes.Likelihood);
+                                $('#ControlsList').val(controlsValArray);
+                                $('#SeverityList').val(asRes.Severity);
+                                $('#LikelihoodList').val(asRes.Likelihood);
                                 $('#ControlsList').selectmenu('refresh');
                                 $('#SeverityList').selectmenu('refresh');
                                 $('#LikelihoodList').selectmenu('refresh');
-
-                                self.refreshControls();
-                                self.resetTempLocalStorage();
                             });
                         }
                         
@@ -68,9 +65,8 @@ steal('jquery/controller',
                             $('#LikelihoodList').val(localStorage.tempLikelihood);
                             $('#ControlsList').val(localStorage.tempFurtherControls.split(","));
                             self.refreshControls();
-                            self.validation();
+                            self.resetTempLocalStorage();
                         }
-                 
                     });
                 },
                 

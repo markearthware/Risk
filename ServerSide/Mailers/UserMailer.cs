@@ -12,7 +12,7 @@ namespace ServerSide.Mailers
 	{
         public virtual RazorEmailResult Report(string attachmentPath, Task task)
         {
-            var email = Email("ForUser.cshtml", task, null, true);
+            var email = Email("ForUser", task, null, true);
             email.Mail.Attachments.Add(new Attachment(attachmentPath));
             email.Mail.To.Add(task.AssessorEmail);
             if (task.ManagerEmail != null)
@@ -28,7 +28,7 @@ namespace ServerSide.Mailers
         {
             get
             {
-                return Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase), @"\..\Views\UserMailer");
+                return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Views\\UserMailer");
             }
         }
 	}

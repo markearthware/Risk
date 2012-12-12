@@ -6,7 +6,7 @@ steal('jquery/controller',
     '../lib/WebSQL/db.js',
     '../views/task_add/init.ejs')
     .then(function ($) {
-        $.Controller('Risk.Controllers.TaskAdd', {
+        $.Controller('Risk.Controllers.Task', {
         },
     {
         init: function () {

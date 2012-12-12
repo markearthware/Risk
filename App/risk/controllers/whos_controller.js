@@ -64,15 +64,14 @@ steal('jquery/controller',
                                     controlsValArray.push(this.ExistingControlId.toString());
                                 });
 
-                                $('#WhosList').val(localStorage.tempWhoId ? localStorage.tempWhoId :asRes.WhoId);
-                                $('#HowsList').val(localStorage.tempHowId ? localStorage.tempHowId : asRes.HowId);
-                                $('#FurtherDetails').val(localStorage.tempFurtherDetails ? localStorage.tempFurtherDetails : asRes.FurtherDetails);
-                                $('#SeverityList').val(localStorage.tempSeverity ? localStorage.tempSeverity : asRes.Severity);
-                                $('#LikelihoodList').val(localStorage.tempLikelihood ? localStorage.tempLikelihood : asRes.Likelihood);
-                                $('#ExistingControlsList').val(localStorage.tempExistingControls.split(",") ? localStorage.tempExistingControls.split(",") : controlsValArray);
+                                $('#WhosList').val(asRes.WhoId);
+                                $('#HowsList').val(asRes.HowId);
+                                $('#FurtherDetails').val(asRes.FurtherDetails);
+                                $('#SeverityList').val(asRes.Severity);
+                                $('#LikelihoodList').val(asRes.Likelihood);
+                                $('#ExistingControlsList').val(controlsValArray);
 
                                 self.refreshControls();
-                                self.resetTempLocalStorage();
                             });
                         }
 
@@ -85,6 +84,7 @@ steal('jquery/controller',
                             $('#LikelihoodList').val(localStorage.tempLikelihood);
                             $('#ExistingControlsList').val(localStorage.tempExistingControls.split(","));
                             self.refreshControls();
+                            self.resetTempLocalStorage();
                         }
                         self.validation();
                     });

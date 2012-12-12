@@ -3,7 +3,7 @@ steal('jquery/model', function () {
   Risk.Models.WebSqlModel('Risk.Models.Hazards',
   {
       findAll: function () {
-          return localStorageDB.getRows('SELECT * FROM Hazards ORDER BY Name', this);
+          return localStorageDB.getRows('SELECT * FROM Hazards', this);
       },
 
       findOne: function (id) {

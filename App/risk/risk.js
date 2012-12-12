@@ -34,8 +34,8 @@ steal(
 
         $(document).bind("mobileinit", function () {
             //apply overrides here
-            $.mobile.defaultPageTransition = "fade";
-            $.mobile.defaultDialogTransition = "pop";
+            $.mobile.defaultPageTransition = "none";
+            $.mobile.defaultDialogTransition = "none";
         });
         
         $(document).bind('pagebeforecreate', function (e) {
@@ -49,12 +49,7 @@ steal(
             }
 
             if ($(e.target).filter('#AddTaskPage').length > 0) {
-                $('#NewTaskForm').risk_task_add();
-                return;
-            }
-
-            if ($(e.target).filter('#EditTaskPage').length > 0) {
-                $('#EditTaskForm').risk_task_edit();
+                $('#NewTaskForm').risk_task();
                 return;
             }
 
