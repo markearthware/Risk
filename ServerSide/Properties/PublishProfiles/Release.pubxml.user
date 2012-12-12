@@ -13,11 +13,32 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="App_Data/Emails/test.txt">
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
+    <File Include="bin/ActionMailer.Net.dll">
+      <publishTime>12/12/2012 20:32:53</publishTime>
+    </File>
+    <File Include="bin/ActionMailer.Net.Standalone.dll">
+      <publishTime>12/12/2012 20:32:53</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
     </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>12/12/2012 20:37:35</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>12/12/2012 20:37:36</publishTime>
+    </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.WindowsAzure.Configuration.dll">
+      <publishTime>12/12/2012 20:37:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.WindowsAzure.Storage.dll">
+      <publishTime>12/12/2012 20:37:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.WindowsAzure.StorageClient.dll">
+      <publishTime>12/12/2012 20:40:05</publishTime>
     </File>
     <File Include="bin/Mvc.Mailer.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
@@ -25,8 +46,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
     </File>
+    <File Include="bin/RazorEngine.dll">
+      <publishTime>12/12/2012 20:32:53</publishTime>
+    </File>
     <File Include="bin/ServerSide.dll">
-      <publishTime>12/01/2012 17:57:48</publishTime>
+      <publishTime>12/12/2012 22:17:17</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
@@ -36,6 +60,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/System.Net.Http.WebRequest.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>12/12/2012 20:37:36</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>11/22/2012 20:55:40</publishTime>
@@ -56,7 +83,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>11/22/2012 20:55:40</publishTime>
+      <publishTime>12/12/2012 20:32:53</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
       <publishTime>11/22/2012 20:55:40</publishTime>
@@ -66,6 +93,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
       <publishTime>11/22/2012 20:55:40</publishTime>
+    </File>
+    <File Include="bin/WebActivator.dll">
+      <publishTime>12/12/2012 20:32:53</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>11/22/2012 20:55:41</publishTime>
@@ -224,7 +254,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/22/2012 20:55:40</publishTime>
+      <publishTime>12/12/2012 20:40:05</publishTime>
     </File>
     <File Include="Scripts/jquery-1.6.2-vsdoc.js">
       <publishTime>11/22/2012 20:55:40</publishTime>
@@ -289,6 +319,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/UserMailer/ForUser.cshtml">
       <publishTime>12/01/2012 16:27:31</publishTime>
     </File>
+    <File Include="Views/UserMailer/ForUser.html.cshtml">
+      <publishTime>12/12/2012 20:32:53</publishTime>
+    </File>
     <File Include="Views/UserMailer/ForUser.text.cshtml">
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
@@ -302,7 +335,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/01/2012 17:57:49</publishTime>
+      <publishTime>12/12/2012 22:21:12</publishTime>
     </File>
   </ItemGroup>
 </Project>
