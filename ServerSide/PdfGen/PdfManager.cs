@@ -30,6 +30,7 @@
                 pdfConverter.LicenseKey = ConfigurationManager.AppSettings["WinnovativeLicenseKey"];
                 pdfConverter.PdfDocumentOptions.BottomMargin = 0;
                 pdfConverter.PdfDocumentOptions.RightMargin = 0;
+                pdfConverter.PdfDocumentOptions.GenerateSelectablePdf = true;
                 pdfConverter.PageWidth = 1050;
                 pdfConverter.PageHeight = 790;
                 pdfConverter.PdfDocumentOptions.SinglePage = true;
