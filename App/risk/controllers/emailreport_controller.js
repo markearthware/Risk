@@ -70,7 +70,7 @@ steal('jquery/controller',
                     }
                     try {
                         $.ajax({
-                            url: 'http://localhost:52068/api/Email/Send',
+                            url: 'http://eriskservice.apphb.com/api/Email/Send',
                             dataType: 'jsonp',
                             data: {
                                 task: task,

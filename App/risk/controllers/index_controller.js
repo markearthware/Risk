@@ -21,8 +21,14 @@ steal('jquery/controller',
 
             var view = $.View("//risk/views/index/init.ejs");
             $('#indexContent').html(view);
-            $('#header').html("Risk Assessment App");
+            $('h1').text("eRisk");
             $.mobile.hidePageLoadingMsg();
+
+            if (navigator != undefined) {
+                if (navigator.splashscreen != undefined) {
+                    setTimeout(function () { navigator.splashscreen.hide(); }, 1000);
+                }
+            }
         }
     });
     });

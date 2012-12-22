@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns	= "http://www.w3.org/ns/widgets"
         xmlns:gap	= "http://phonegap.com/ns/1.0"
-        id = "com.shortechstudios.riskassessmentapp"
-        version = "1.1.0.0">
+        id = "com.shortec.erisk"
+        version = "1.0.0.0">
 
   <name>eRisk</name>
 
@@ -107,8 +107,10 @@
         gap:density="xxhdpi"
 	 />
 
-  <gap:splash src="splash.png" />
-  <!-- NEED TO ADD THIS -->
+  <gap:splash src="assets/Android/Splashes/ldpi.png" gap:platform="android" gap:density="ldpi" />
+  <gap:splash src="assets/Android/Splashes/mdpi.png" gap:platform="android" gap:density="mdpi" />
+  <gap:splash src="assets/Android/Splashes/hdpi.png" gap:platform="android" gap:density="hdpi" />
+  <gap:splash src="assets/Android/Splashes/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
   <gap:splash gap:platform="ios" src="assets/iPad-portrait.png"
               width="768"
@@ -138,10 +140,10 @@
               width="640"
               height="1136" />
 
-  <gap:splash src="assets/ldpi.png" width="240" height="320" gap:platform="android" gap:density="ldpi" />
-  <gap:splash src="assets/iphonesplash.png" width="320" height="480" gap:platform="android" gap:density="mdpi" />
-  <gap:splash src="assets/hdpi.png" width="480" height="800" gap:platform="android" gap:density="hdpi" />
+  <gap:splash src="assets/Android/Splashes/ldpi.png" width="240" height="320" gap:platform="android" gap:density="ldpi" />
+  <gap:splash src="assets/Android/Splashes/mdpi.png" width="320" height="480" gap:platform="android" gap:density="mdpi" />
+  <gap:splash src="assets/Android/Splashes/hdpi.png" width="480" height="800" gap:platform="android" gap:density="hdpi" />
+  <gap:splash src="assets/Android/Splashes/xhdpi.png" width="720" height="1280" gap:platform="android" gap:density="xhdpi" />
 
   <feature name="http://api.phonegap.com/1.0/network"/>
-  <feature name="http://api.phonegap.com/1.0/notification"/>
 </widget>
