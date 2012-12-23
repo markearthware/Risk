@@ -50,14 +50,6 @@ steal('jquery/controller',
             localStorage.addToExisting = "true";
             localStorage.editAssessmentId = "";
         },
-        '.emailReport click': function () {
-            if (this.hasInternetConnection()) {
-                $.mobile.changePage("emailreport.htm");
-            }
-            else {
-                $.mobile.changePage("dialog/notconnected.htm");
-            }
-        },
 		
 		getAmberList: function(assessments) {
 			var list = [];
@@ -81,22 +73,6 @@ steal('jquery/controller',
 				}
 			}
 			return list;
-		},
-		
-        hasInternetConnection: function () {
-            if (navigator.network) {
-                var networkState = navigator.network.connection.type;
-
-                if (networkState == Connection.NONE || networkState == Connection.UNKNOWN) {
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
-            else {
-                return true;
-            }
-        }
+		}
     });
     });
