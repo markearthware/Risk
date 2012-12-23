@@ -1,14 +1,11 @@
-config.xml logo and splash screens - andy - in progress
-add custom hows and controls bug when redoing an assessment
-auto complete textboxes if easy
+add custom hows and controls bug when redoing an assessment - BUG
+edit task details finish
 testing and bug fixing
+lite app
 remove 'require GPS' setting
 deploy app to ios and android devices - bug fixing
 user trial
 get feedback and bug fixing
-start fork for lite app and release
 release paid for app
 go to H&S exibition
 Enterprise app if going well?
-
-http://localhost:52068/Home/MakePdf?g=e89daefa&task={%22Id%22:2,%22Name%22:%22asdasd%22,%22Site%22:%22asd%22,%22DateStarted%22:%22\/Date(1351335280682)\/%22,%22DateFinished%22:%22\/Date(1351335291732)\/%22,%22AssessorName%22:%22Mark%20Short%22,%22AssessorEmail%22:%22mark.ross.short@gmail.com%22,%22ManagerName%22:%22Neil%20Osmond%22,%22ManagerEmail%22:%22blah@blah.com%22}&assessments=[{%22Hazard%22:%22Falling%20Object%22,%22Likelihood%22:1,%22Severity%22:2,%22LikelihoodB%22:1,%22SeverityB%22:2,%22How%22:%22Objects%20falling%20from%20above%20Working%20Party%22,%22Who%22:%22Working%20Party%22,%22FurtherDetails%22:null,%22Controls%22:null,%22ExistingControls%22:%22Lifting%20plan%20in%20place%22}]
