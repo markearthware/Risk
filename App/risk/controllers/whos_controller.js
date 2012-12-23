@@ -64,30 +64,42 @@ steal('jquery/controller',
                                     controlsValArray.push(this.ExistingControlId.toString());
                                 });
 
-                                $('#WhosList').val(asRes.WhoId);
-                                $('#HowsList').val(asRes.HowId);
-                                $('#FurtherDetails').val(asRes.FurtherDetails);
-                                $('#SeverityList').val(asRes.Severity);
-                                $('#LikelihoodList').val(asRes.Likelihood);
-                                $('#ExistingControlsList').val(controlsValArray);
-
-                                self.refreshControls();
+                                self.populate(asRes, controlsValArray);
+                                if (localStorage.tempHowId || localStorage.tempExistingControls) {
+                                    self.repopulate();
+                                }
+                                self.validation();
                             });
                         }
-
-                        if (localStorage.tempHowId || localStorage.tempExistingControls) {
-                            // reload form state
-                            $('#HowsList').val(localStorage.tempHowId);
-                            $('#WhosList').val(localStorage.tempWhoId);
-                            $('#FurtherDetails').val(localStorage.tempFurtherDetails);
-                            $('#SeverityList').val(localStorage.tempSeverity);
-                            $('#LikelihoodList').val(localStorage.tempLikelihood);
-                            $('#ExistingControlsList').val(localStorage.tempExistingControls.split(","));
-                            self.refreshControls();
-                            self.resetTempLocalStorage();
+                        else {
+                            self.repopulate();
+                            self.validation();
                         }
-                        self.validation();
                     });
+                },
+
+                populate: function (asRes, controlsValArray) {
+                    $('#WhosList').val(asRes.WhoId);
+                    $('#HowsList').val(asRes.HowId);
+                    $('#FurtherDetails').val(asRes.FurtherDetails);
+                    $('#SeverityList').val(asRes.Severity);
+                    $('#LikelihoodList').val(asRes.Likelihood);
+                    $('#ExistingControlsList').val(controlsValArray);
+                    this.refreshControls();
+                },
+
+                repopulate: function () {
+                    if (localStorage.tempHowId || localStorage.tempExistingControls) {
+                        // reload form state
+                        $('#HowsList').val(localStorage.tempHowId);
+                        $('#WhosList').val(localStorage.tempWhoId);
+                        $('#FurtherDetails').val(localStorage.tempFurtherDetails);
+                        $('#SeverityList').val(localStorage.tempSeverity);
+                        $('#LikelihoodList').val(localStorage.tempLikelihood);
+                        $('#ExistingControlsList').val(localStorage.tempExistingControls.split(","));
+                        this.resetTempLocalStorage();
+                    }
+                    this.refreshControls();
                 },
 
                 resetTempLocalStorage: function () {
@@ -117,7 +129,7 @@ steal('jquery/controller',
                 },
                 '#NewHow click': function () {
                     this.saveFormState();
-                },                
+                },
                 '#NewControl click': function () {
                     this.saveFormState();
                 },

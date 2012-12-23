@@ -1,4 +1,5 @@
 add custom hows and controls bug when redoing an assessment - BUG
+existing controls not loading in properly when you redo assessment - BUG
 edit task details finish
 testing and bug fixing
 lite app
