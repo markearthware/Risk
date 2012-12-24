@@ -89,16 +89,13 @@ steal('jquery/controller',
                 },
 
                 repopulate: function () {
-                    if (localStorage.tempHowId || localStorage.tempExistingControls) {
-                        // reload form state
-                        $('#HowsList').val(localStorage.tempHowId);
-                        $('#WhosList').val(localStorage.tempWhoId);
-                        $('#FurtherDetails').val(localStorage.tempFurtherDetails);
-                        $('#SeverityList').val(localStorage.tempSeverity);
-                        $('#LikelihoodList').val(localStorage.tempLikelihood);
-                        $('#ExistingControlsList').val(localStorage.tempExistingControls.split(","));
-                        this.resetTempLocalStorage();
-                    }
+                    $('#HowsList').val(localStorage.tempHowId);
+                    $('#WhosList').val(localStorage.tempWhoId);
+                    $('#FurtherDetails').val(localStorage.tempFurtherDetails);
+                    $('#SeverityList').val(localStorage.tempSeverity);
+                    $('#LikelihoodList').val(localStorage.tempLikelihood);
+                    $('#ExistingControlsList').val(localStorage.tempExistingControls.split(","));
+                    this.resetTempLocalStorage();
                     this.refreshControls();
                 },
 

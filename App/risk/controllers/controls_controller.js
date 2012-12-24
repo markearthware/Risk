@@ -50,26 +50,40 @@ steal('jquery/controller',
                                 $(asControlsRes).each(function (i) {
                                     controlsValArray.push(this.ControlId.toString());
                                 });
-                                $('#ControlsList').val(controlsValArray);
-                                $('#SeverityList').val(asRes.Severity);
-                                $('#LikelihoodList').val(asRes.Likelihood);
-                                $('#ControlsList').selectmenu('refresh');
-                                $('#SeverityList').selectmenu('refresh');
-                                $('#LikelihoodList').selectmenu('refresh');
+
+                                self.populate(controlsValArray, asRes);
+                                if (localStorage.tempFurtherControls) {
+                                    self.repopulate();
+                                }
+                                self.validation();
                             });
                         }
-                        
-                        if (localStorage.tempFurtherControls) {
-                            // reload form state
-                            $('#SeverityList').val(localStorage.tempSeverity);
-                            $('#LikelihoodList').val(localStorage.tempLikelihood);
-                            $('#ControlsList').val(localStorage.tempFurtherControls.split(","));
-                            self.refreshControls();
-                            self.resetTempLocalStorage();
+                        else {
+                            self.repopulate();
+                            self.validation();
                         }
                     });
                 },
-                
+
+                repopulate: function () {
+                    if (localStorage.tempFurtherControls) {
+                        // reload form state
+                        $('#SeverityList').val(localStorage.tempSeverity);
+                        $('#LikelihoodList').val(localStorage.tempLikelihood);
+                        $('#ControlsList').val(localStorage.tempFurtherControls.split(","));
+                  
+                        this.resetTempLocalStorage();
+                    }      
+                    this.refreshControls();
+                },
+
+                populate: function (controlsValArray, asRes) {
+                    $('#ControlsList').val(controlsValArray);
+                    $('#SeverityList').val(asRes.Severity);
+                    $('#LikelihoodList').val(asRes.Likelihood);
+                    this.refreshControls();
+                },
+
                 resetTempLocalStorage: function () {
                     localStorage.tempSeverity = "";
                     localStorage.tempLikelihood = "";
@@ -131,7 +145,7 @@ steal('jquery/controller',
                         }
                     }
                 },
-                
+
                 saveFormState: function () {
                     localStorage.tempSeverity = $('#SeverityList').val();
                     localStorage.tempLikelihood = $('#LikelihoodList').val();
@@ -144,7 +158,7 @@ steal('jquery/controller',
 
                     var assessmentDef = Risk.Models.Assessments.findOne(localStorage.assessmentId);
                     $.when(assessmentDef).done(function (assessmentRes) {
-                        new Risk.Models.AssessmentsB({ id: assessmentRes.id, TaskId: assessmentRes.TaskId, WhoId: assessmentRes.WhoId, HowId: assessmentRes.HowId, FurtherDetails: assessmentRes.FurtherDetails, HazardId: assessmentRes.HazardId, Likelihood: assessmentRes.Likelihood, Severity: assessmentRes.Severity , LikelihoodB: $('#LikelihoodList').val(), SeverityB: $('#SeverityList').val() }).save();
+                        new Risk.Models.AssessmentsB({ id: assessmentRes.id, TaskId: assessmentRes.TaskId, WhoId: assessmentRes.WhoId, HowId: assessmentRes.HowId, FurtherDetails: assessmentRes.FurtherDetails, HazardId: assessmentRes.HazardId, Likelihood: assessmentRes.Likelihood, Severity: assessmentRes.Severity, LikelihoodB: $('#LikelihoodList').val(), SeverityB: $('#SeverityList').val() }).save();
                     });
 
                     var asControlsDef = Risk.Models.AssessmentControls.deleteMany(localStorage.assessmentId);
