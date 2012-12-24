@@ -26,7 +26,7 @@ steal('jquery/controller',
 
 			setTimeout(
 				function(){
-				alert(cordova); cordova.exec(null, null, "SplashScreen", "hide", []);
+				navigator.splashscreen.hide();
 			},3000);
         }
     });
