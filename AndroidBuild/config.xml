@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+        xmlns:gap	= "http://phonegap.com/ns/1.0"
+        id = "com.shortec.erisk"
+        version = "1.0.0.0">
+
+  <name>eRisk</name>
+
+  <description>
+    The Comprehensive Risk Assessment App
+  </description>
+
+  <author href=""
+          email="">
+    Shortec Ltd
+  </author>
+
+  <gap:platforms>
+    <gap:platform name="ios" />
+    <gap:platform name="android"
+                  minVersion="2.1" />
+  </gap:platforms>
+
+  <icon src="Icon.png" />
+
+  <icon src="assets/Android/Icons/ldpi.png"
+        width="36"
+        height="36"
+        gap:platform="android"
+        gap:density="ldpi"
+         />
+
+  <icon src="assets/Android/Icons/mdpi.png"
+        width="48"
+        height="48"
+        gap:platform="android"
+        gap:density="mdpi"
+         />
+
+  <icon src="assets/Android/Icons/hdpi.png"
+       width="72"
+       height="72"
+       gap:platform="android"
+       gap:density="hdpi"
+		 />
+
+  <icon src="assets/Android/Icons/xhdpi.png"
+	      width="96"
+	      height="96"
+        gap:platform="android"
+        gap:density="xhdpi"
+	 />
+
+  <icon src="assets/Android/Icons/xxhdpi.png"
+	      width="144"
+	      height="144"
+        gap:platform="android"
+        gap:density="xxhdpi"
+	 />
+
+  <gap:splash src="assets/Android/Splashes/ldpi.png" width="240" height="320" gap:platform="android" gap:density="ldpi" />
+  <gap:splash src="assets/Android/Splashes/mdpi.png" width="320" height="480" gap:platform="android" gap:density="mdpi" />
+  <gap:splash src="assets/Android/Splashes/hdpi.png" width="480" height="800" gap:platform="android" gap:density="hdpi" />
+  <gap:splash src="assets/Android/Splashes/xhdpi.png" width="720" height="1280" gap:platform="android" gap:density="xhdpi" />
+
+  <feature name="http://api.phonegap.com/1.0/network"/>
+</widget>
