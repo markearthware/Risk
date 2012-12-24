@@ -24,7 +24,10 @@ steal('jquery/controller',
             $('h1').text("eRisk");
             $.mobile.hidePageLoadingMsg();
 
-            setTimeout(function(){navigator.splashscreen.hide();},3000);
+            document.addEventListener("deviceready", function(){
+				alert("device ready");
+				setTimeout(function(){alert(cordova); cordova.exec(null, null, "SplashScreen", "hide", []);},3000);
+			}, false);
         }
     });
     });
