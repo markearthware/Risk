@@ -16,5 +16,3 @@ _ReSharper.*
 *.dbmdl
 error-*.xml
 drops
-production.js
-production.css
