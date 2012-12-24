@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+        xmlns:gap	= "http://phonegap.com/ns/1.0"
+        id = "com.shortec.erisklite"
+        version = "1.0.0.0">
+
+  <name>eRisk Lite</name>
+
+  <description>
+    The Comprehensive Risk Assessment App
+  </description>
+
+  <author href=""
+          email="">
+    Shortec Ltd
+  </author>
+
+  <gap:platforms>
+    <gap:platform name="ios" />
+    <gap:platform name="android"
+                  minVersion="2.1" />
+  </gap:platforms>
+
+  <icon src="Icon.png" />
+
+  <icon src="assets/iOS/Icons/Icon-Small.png"
+     width="29"
+     height="29"
+     gap:platform="ios"
+         />
+
+  <icon src="assets/iOS/Icon-Small@2x.png"
+     width="58"
+     height="58"
+     gap:platform="ios"
+         />
+
+  <icon src="assets/iOS/Icons/Icon-Small-50.png"
+       width="50"
+       height="50"
+       gap:platform="ios"
+         />
+
+  <icon src="assets/iOS/Icons/Icon-Small-50@2x.png"
+     width="100"
+     height="100"
+     gap:platform="ios"
+         />
+
+  <icon src="assets/iOS/Icons/Icon.png"
+        width="57"
+        height="57"
+        gap:platform="ios"
+         />
+
+  <icon src="assets/iOS/Icons/Icon@2x.png"
+     width="114"
+     height="114"
+     gap:platform="ios"
+         />
+
+  <icon src="assets/iOS/Icons/Icon-72.png"
+         width="72"
+         height="72"
+         gap:platform="ios"
+         />
+
+  <icon src="assets/iOS/Icons/Icon-72@2x.png"
+      width="144"
+      height="144"
+      gap:platform="ios"
+         />
+
+<gap:splash gap:platform="ios" src="assets/iPad-portrait.png"
+              width="768"
+              height="1024" />
+
+  <gap:splash gap:platform="ios" src="assets/iPad-landscape.png"
+              width="1024"
+              height="768" />
+
+  <gap:splash gap:platform="ios" src="assets/iOS/Splashes/iPad-Retina-landscape.png"
+            width="2048"
+            height="1496" />
+
+  <gap:splash gap:platform="ios" src="assets/iOS/Splashes/iPad-Retina-portrait.png"
+              width="1496"
+              height="2048" />
+
+  <gap:splash gap:platform="ios" src="assets/iOS/Splashes/iPhone-splash.png"
+              width="320"
+              height="480" />
+
+  <gap:splash gap:platform="ios" src="assets/iPhone-Retina.png"
+              width="640"
+              height="960" />
+
+  <gap:splash src="assets/iOS/Splashes/iPhone5.png"
+              width="640"
+              height="1136" />
+  
+</widget>
