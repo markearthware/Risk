@@ -15,6 +15,7 @@
     Shortec Ltd
   </author>
 
+  <plugin name="SplashScreen" value="CDVSplashScreen" />
   <gap:platforms>
     <gap:platform name="ios" />
     <gap:platform name="android"
