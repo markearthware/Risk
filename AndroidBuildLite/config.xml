@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns	= "http://www.w3.org/ns/widgets"
         xmlns:gap	= "http://phonegap.com/ns/1.0"
-        id = "com.shortec.erisk"
+        id = "com.shortec.erisklite"
         version = "1.0.0.0">
 
-  <name>eRisk</name>
+  <name>eRisk Lite</name>
 
   <description>
     The Comprehensive Risk Assessment App
@@ -62,6 +62,4 @@
   <gap:splash src="assets/Android/Splashes/mdpi.png" width="320" height="480" gap:platform="android" gap:density="mdpi" />
   <gap:splash src="assets/Android/Splashes/hdpi.png" width="480" height="800" gap:platform="android" gap:density="hdpi" />
   <gap:splash src="assets/Android/Splashes/xhdpi.png" width="720" height="1280" gap:platform="android" gap:density="xhdpi" />
-
-  <feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
