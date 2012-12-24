@@ -114,6 +114,6 @@ steal('jquery/controller',
 				}
 			}
 			return list;
-		},
+		}
     });
     });
