@@ -27,7 +27,7 @@ steal('jquery/controller',
 			setTimeout(
 				function(){
 				navigator.splashscreen.hide();
-			},3000);
+			},1500);
         }
     });
     });
