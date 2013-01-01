@@ -50,7 +50,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/ServerSide.dll">
-      <publishTime>12/15/2012 19:19:17</publishTime>
+      <publishTime>01/01/2013 20:34:41</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -104,7 +104,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>12/15/2012 15:24:59</publishTime>
+      <publishTime>12/15/2012 20:35:55</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>12/15/2012 15:24:59</publishTime>
@@ -305,7 +305,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2012 20:55:40</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>12/15/2012 15:24:59</publishTime>
+      <publishTime>01/01/2013 20:23:15</publishTime>
     </File>
     <File Include="Views/Home/MakePdf.cshtml">
       <publishTime>12/15/2012 15:24:59</publishTime>
@@ -320,10 +320,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2012 16:27:31</publishTime>
     </File>
     <File Include="Views/UserMailer/ForUser.html.cshtml">
-      <publishTime>12/15/2012 15:24:59</publishTime>
+      <publishTime>01/01/2013 20:40:45</publishTime>
     </File>
     <File Include="Views/UserMailer/ForUser.text.cshtml">
       <publishTime>12/15/2012 15:24:59</publishTime>
+    </File>
+    <File Include="Views/UserMailer/ForUser.txt.cshtml">
+      <publishTime>01/01/2013 20:37:49</publishTime>
     </File>
     <File Include="Views/UserMailer/_Layout.cshtml">
       <publishTime>11/22/2012 20:55:40</publishTime>
@@ -335,7 +338,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/15/2012 15:24:59</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/15/2012 19:19:18</publishTime>
+      <publishTime>01/01/2013 20:41:45</publishTime>
     </File>
   </ItemGroup>
 </Project>
