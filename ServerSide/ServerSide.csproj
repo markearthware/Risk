@@ -260,7 +260,7 @@
     <Content Include="Views\UserMailer\ForUser.html.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\UserMailer\ForUser.text.cshtml" />
+    <Content Include="Views\UserMailer\ForUser.txt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
