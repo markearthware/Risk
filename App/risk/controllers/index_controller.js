@@ -24,11 +24,10 @@ steal('jquery/controller',
             $('h1').text("eRisk");
             $.mobile.hidePageLoadingMsg();
 
-            if (navigator != undefined) {
-                if (navigator.splashscreen != undefined) {
-                    setTimeout(function () { navigator.splashscreen.hide(); }, 1000);
-                }
-            }
+            setTimeout(
+				function(){
+				navigator.splashscreen.hide();
+			},1500);
         }
     });
     });
