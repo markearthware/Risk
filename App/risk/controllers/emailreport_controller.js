@@ -45,7 +45,7 @@ steal('jquery/controller',
                     Name: self.task.Name,
                     Site: self.task.Site,
                     DateStarted: new Date(self.task.DateStarted).toISOString(),
-                    DateFinished: new Date().toISOString(),
+                    DateFinished: new Date().getTime(),
                     Sent: 1,
                     AssessorName: params.FirstName + " " + params.LastName,
                     AssessorEmail: params.EmailAddress,
@@ -70,7 +70,7 @@ steal('jquery/controller',
                     }
                     try {
                         $.ajax({
-                            url: 'http://localhost:52068/api/Email/Send',
+                            url: 'http://eriskservice.apphb.com/api/Email/Send',
                             dataType: 'jsonp',
                             data: {
                                 task: task,
