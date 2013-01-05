@@ -4,7 +4,7 @@
         id = "com.shortec.erisklite"
         version = "1.0.0.0">
 
-  <name>eRisk Lite</name>
+  <name>eRisk Assessment Lite</name>
 
   <description>
     The Comprehensive Risk Assessment App
@@ -51,13 +51,8 @@
         gap:density="xhdpi"
 	 />
 
-  <icon src="assets/Android/Icons/xxhdpi.png"
-	      width="144"
-	      height="144"
-        gap:platform="android"
-        gap:density="xxhdpi"
-	 />
-
+  <feature name="http://api.phonegap.com/1.0/network"/>
+	
   <gap:splash src="assets/Android/Splashes/ldpi.png" width="240" height="320" gap:platform="android" gap:density="ldpi" />
   <gap:splash src="assets/Android/Splashes/mdpi.png" width="320" height="480" gap:platform="android" gap:density="mdpi" />
   <gap:splash src="assets/Android/Splashes/hdpi.png" width="480" height="800" gap:platform="android" gap:density="hdpi" />
