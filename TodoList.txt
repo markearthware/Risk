@@ -1,12 +1,9 @@
-add custom hows and controls bug when redoing an assessment - BUG
-existing controls not loading in properly when you redo assessment - BUG
-edit task details finish
-testing and bug fixing
-lite app
-remove 'require GPS' setting
-deploy app to ios and android devices - bug fixing
-user trial
-get feedback and bug fixing
-release paid for app
+Bug fixing if needed
+Twitter setup
+Facebook page
+Youtube video
+Website
+Magazine advert
+Prepare exibition content
 go to H&S exibition
 Enterprise app if going well?
