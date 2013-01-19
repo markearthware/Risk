@@ -50,6 +50,13 @@
         gap:platform="android"
         gap:density="xhdpi"
 	 />
+	 
+   <icon src="assets/Android/Icons/xxhdpi.png"
+	      width="144"
+	      height="144"
+        gap:platform="android"
+        gap:density="xxhdpi"
+	 />
 
   <feature name="http://api.phonegap.com/1.0/network"/>
 	
