@@ -170,6 +170,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\reset.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -231,12 +232,16 @@
     <Content Include="Images\bg.png" />
     <Content Include="Images\chart %281%29.png" />
     <Content Include="Images\chart.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\cloud-v2.png" />
     <Content Include="Images\cont_devices_v2.png" />
     <Content Include="Images\cont_ipad_v2.png" />
     <Content Include="Images\cont_library_v2.png" />
     <Content Include="Images\cont_phone_v2.png" />
     <Content Include="Images\cont_tablet_v2.png" />
     <Content Include="Images\cont_trending_v2.png" />
+    <Content Include="Images\danger.png" />
+    <Content Include="Images\folder.png" />
     <Content Include="Images\icon_devices.png" />
     <Content Include="Images\icon_library.png" />
     <Content Include="Images\icon_trending.png" />
@@ -279,6 +284,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\TermsAndConditions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ContactUs.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

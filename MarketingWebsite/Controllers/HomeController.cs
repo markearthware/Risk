@@ -12,5 +12,21 @@ namespace MarketingWebsite.Controllers
         {
             return View();
         }
+
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
+        public ActionResult TermsAndConditions()
+        {
+            return View();
+        }
+
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+
     }
 }
