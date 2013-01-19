@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "App", "App", "{18726109-73BC-4FC4-8BA3-3E09616C1B5B}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "App", "App\", "{18726109-73BC-4FC4-8BA3-3E09616C1B5B}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/App"
@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build", "Build\Build.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSide", "ServerSide\ServerSide.csproj", "{6EA51EDB-7EFE-453C-B980-4C78E4351781}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingWebsite", "MarketingWebsite\MarketingWebsite.csproj", "{5C26E294-7051-443E-8E33-09C79F0710EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{6EA51EDB-7EFE-453C-B980-4C78E4351781}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA51EDB-7EFE-453C-B980-4C78E4351781}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA51EDB-7EFE-453C-B980-4C78E4351781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C26E294-7051-443E-8E33-09C79F0710EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C26E294-7051-443E-8E33-09C79F0710EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C26E294-7051-443E-8E33-09C79F0710EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C26E294-7051-443E-8E33-09C79F0710EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

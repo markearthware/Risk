@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<img src="/Images/bg.png" class="bg" alt="" />
+<div class="top">
+    <div class="inner">     
+        <div class="device phone">
+            <div class="frame">
+            </div>
+            <div class="content">
+                <img src="/Images/cont_phone_v2.png" alt="Google Currents on phone" /></div>
+        </div>
+        <div class="device tablet">
+            <div class="frame">
+            </div>
+            <div class="content">
+                <img src="/Images/cont_tablet_v2.png" alt="Library on Google Currents" /></div>
+        </div>
+        <div class="device ipad">
+            <div class="frame">
+            </div>
+            <div class="content">
+                <img src="/Images/cont_ipad_v2.png" alt="Google Currents on iPad" /></div>
+        </div>
+        <img src="/Images/logo.png" class="logo" alt="Google Currents" />
+        <span class="logo-title">currents</span>
+        <p class="lead">
+            Favorite publications, tuned<br />
+            for your tablet and smartphone.</p>
+        <div class="do-it-now downloads">
+            <button type="button" class="droid">
+                <b>Download</b> for <b>Android Devices</b>
+            </button>
+            <button type="button" class="ios">
+                <b>Download</b> for <b>iPad</b> and <b>iPhone</b>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="upper shadow">
+</div>
+<div class="mid">
+    <div class="inner clearfix">
+        <div class="library feat">
+            <img src="/Images/cont_library_v2.png" class="feat_image" alt="" />
+            <span class="lead">Add your favorite content</span>
+            <p>
+                From leading publications, to blogs you follow, you can browse, read, and share
+                favorite content, presented in a swipable magazine format.</p>
+        </div>
+        <div class="trending feat">
+            <img src="/Images/cont_trending_v2.png" class="feat_image" alt="" />
+            <span class="lead">Follow breaking news stories</span>
+            <p>
+                Google search technology identifies and delivers the hottest breaking stories in
+                categories such as world, entertainment, sports, science, and more.</p>
+        </div>
+        <div class="devices feat">
+            <img src="/Images/cont_devices_v2.png" class="feat_image" alt="" />
+            <span class="lead">Designed for all your devices</span>
+            <p>
+                Whether sitting on your couch, riding a train or plane, your Currents content is
+                ready for highspeed reading on your Android or Apple phone or tablet.</p>
+        </div>
+    </div>
+</div>
+<div class="lower shadow">
+</div>
+<div class="bottom">
+    <ul>
+        <li>&copy; Google, 2012</li>
+        <li><a href="">About Google</a></li>
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Publications</a></li>
+        <li><a href="">Publish to Google Currents</a></li></ul>
+</div>
+<div class="modal">
+    <div class="droid box">
+        <div class="inner">
+            <a href="#" class="close"></a>
+            <p class="opt">
+                <span class="title">Option 1</span><br />
+                Scan this QR code with your Android phone or tablet
+                <img src="http://chart.apis.google.com/chart?cht=qr&amp;chld=|0&amp;choe=UTF-8&amp;chs=138x138&amp;chl=https://play.google.com/store/apps/details?id%3Dcom.google.android.apps.currents"
+                    alt="" /></p>
+            <p class="opt">
+                <span class="title">Option 2</span><br />
+                Download <b>Google Currents</b> from Google Play <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.currents">
+                    <img src="http://www.android.com/images/brand/android_app_on_play_large.png" alt="" /></a></p>
+        </div>
+    </div>
+    <div class="ios box">
+        <div class="inner">
+            <a href="#" class="close"></a>
+            <p class="opt">
+                <span class="title">Option 1</span><br />
+                Scan this QR code with your iPhone or iPad
+                <img src="http://chart.apis.google.com/chart?cht=qr&amp;chld=|0&amp;choe=UTF-8&amp;chs=138x138&amp;chl=http://itunes.apple.com/us/app/google-currents/id459182288"
+                    alt="" /></p>
+            <p class="opt">
+                <span class="title">Option 2</span><br />
+                Download <b>Google Currents</b> from the App Store <a href="http://itunes.apple.com/us/app/google-currents/id459182288">
+                    <img src="/Images/appstore.png" alt="" /></a></p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('.do-it-now .droid').click(function () {
+            $('.modal').fadeIn(300, function () {
+                $('.droid.box').fadeIn('fast');
+            });
+            return false;
+        });
+        $('.do-it-now .ios').click(function () {
+            $('.modal').fadeIn(300, function () {
+                $('.ios.box').fadeIn('fast');
+            });
+            return false;
+        });
+        $('.box .close, .modal').click(function (event) {
+            if (event.target == this) {
+                $('.modal').fadeOut(300);
+                $('.droid.box').fadeOut(200);
+                $('.ios.box').fadeOut(200);
+                return false;
+            }
+        });
+    });
+</script>
