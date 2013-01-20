@@ -35,5 +35,13 @@ namespace ServerSide.Controllers
             this._pdfGenerationQueue.Enqueue(request);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
+
+        [System.Web.Http.HttpPost]
+        public HttpResponseMessage SendPost([FromBody]PostBody body)
+        {
+            var request = new PdfGenerationRequest(body.Task, body.Assessments);
+            this._pdfGenerationQueue.Enqueue(request);
+            return new HttpResponseMessage(HttpStatusCode.Created);
+        }
     }
 }

@@ -23,5 +23,11 @@ namespace ServerSide
             var config = GlobalConfiguration.Configuration;
             config.Formatters.Insert(0, new Westwind.Web.WebApi.JsonpFormatter());
         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.AddHeader(
+                        "Access-Control-Allow-Origin", "*");
+        }
     }
 }

@@ -174,6 +174,7 @@
     <Compile Include="Mailers\IUserMailer.cs" />
     <Compile Include="Mailers\UserMailer.cs" />
     <Compile Include="Models\Assessment.cs" />
+    <Compile Include="Models\PostBody.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="PdfGen\PdfManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

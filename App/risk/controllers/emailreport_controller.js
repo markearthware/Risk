@@ -69,23 +69,22 @@ steal('jquery/controller',
                         });
                     }
                     try {
+                        jQuery.support.cors = true;
                         $.ajax({
-                            url: 'http://eriskservice.apphb.com/api/Email/Send',
-                            dataType: 'jsonp',
+                            url: 'http://localhost:52068/api/Email/SendPost',
+                            dataType: 'json',
                             data: {
                                 task: task,
                                 assessments: assessments
                             },
-                            success: function () { },
+                            type: "POST",
+                            success: function () {
+                                new Risk.Models.Task(task).save(function () {
+                                    $.mobile.changePage("dialog/emailSent.htm");
+                                });
+                            },
                             error: function (a) {
-                                if (a.status == 200) {
-                                    new Risk.Models.Task(task).save(function () {
-                                        $.mobile.changePage("dialog/emailSent.htm");
-                                    });
-                                }
-                                else {
-                                    $.mobile.changePage("dialog/emailNotSent.htm");
-                                }
+                                $.mobile.changePage("dialog/emailNotSent.htm");
                             }
                         });
                     }
