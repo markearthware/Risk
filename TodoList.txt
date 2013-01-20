@@ -1,9 +1,6 @@
-Bug fixing if needed
-Twitter setup
+Build android app on phonegap build and publish apk to google play
+New iphone full version release needed with new service pointer
 Facebook page
 Youtube video
-Website
 Magazine advert
-Prepare exibition content
-go to H&S exibition
 Enterprise app if going well?
