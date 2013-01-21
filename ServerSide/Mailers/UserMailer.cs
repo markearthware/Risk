@@ -19,7 +19,7 @@ namespace ServerSide.Mailers
             {
                 email.Mail.CC.Add(task.ManagerEmail);
             }
-            email.Mail.Subject = string.Format("eRisk - Risk assessment report for '{0}' at '{1}' - {2}", task.Name, task.Site, DateTime.Now.ToShortDateString());
+            email.Mail.Subject = string.Format("eRisk - Risk assessment report for '{0}' at '{1}' - {2}", task.Name, task.Site, DateTime.Now.ToString("dd MMM yyyy"));
 
             return email;
         }
