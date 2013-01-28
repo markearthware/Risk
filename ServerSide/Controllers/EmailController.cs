@@ -18,7 +18,11 @@ namespace ServerSide.Controllers
     using ServerSide.Models;
     using System.Web.Script.Serialization;
     using Winnovative.WnvHtmlConvert;
+    using ServerSide.Filters;
+    using ServerSide.Selectors;
+    using System.Web.Http.Controllers;
 
+    [HttpControllerConfiguration(HttpActionSelector = typeof(CorsPreflightActionSelector))]
     public class EmailController : ApiController
     {
         private IPdfGenerationQueue _pdfGenerationQueue;
@@ -36,7 +40,7 @@ namespace ServerSide.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        [System.Web.Http.HttpPost, HttpOptions]
+        [EnableCors]
         public HttpResponseMessage SendPost([FromBody]PostBody body)
         {
             var request = new PdfGenerationRequest(body.Task, body.Assessments);

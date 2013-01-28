@@ -20,32 +20,7 @@ namespace ServerSide
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
-            var config = GlobalConfiguration.Configuration;
-            config.Formatters.Insert(0, new Westwind.Web.WebApi.JsonpFormatter());
-
-            GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler());
         }
 
-        //protected void Application_BeginRequest(object sender, EventArgs e)
-        //{
-        //    String corsMethod, corsHeaders;
-
-        //    corsMethod = HttpContext.Current.Request.Headers["Access-Control-Request-Method"];
-        //    corsHeaders = HttpContext.Current.Request.Headers["Access-Control-Request-Headers"];
-
-        //    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
-
-        //    if (corsMethod != null)
-        //        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-
-        //    if (corsHeaders != null)
-        //        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", corsHeaders);
-
-        //    if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
-        //    {
-        //        return;
-        //    } 
-        //}
     }
 }

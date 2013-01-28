@@ -162,7 +162,7 @@
     <Compile Include="App_Start\WorkerConfig.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Formatters\JsonpFormatter.cs" />
+    <Compile Include="Filters\EnableCorsAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,6 +179,7 @@
     <Compile Include="Models\Task.cs" />
     <Compile Include="PdfGen\PdfManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selectors\CorsPreflightActionSelector.cs" />
     <Compile Include="ViewModels\MakePdfViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +258,7 @@
     <Folder Include="api\Email\" />
     <Folder Include="App_Data\Reports\" />
     <Folder Include="Content\Documents\Pdfs\" />
+    <Folder Include="Formatters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\UserMailer\ForUser.html.cshtml" />
