@@ -26,8 +26,29 @@ namespace ServerSide
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            HttpContext.Current.Response.AddHeader(
-                        "Access-Control-Allow-Origin", "*");
+            String corsOrigin, corsMethod, corsHeaders;
+
+            corsOrigin = HttpContext.Current.Request.Headers["Origin"];
+            corsMethod = HttpContext.Current.Request.Headers["Access-Control-Request-Method"];
+            corsHeaders = HttpContext.Current.Request.Headers["Access-Control-Request-Headers"];
+
+            if (corsOrigin == null || corsOrigin == "null")
+            {
+                corsOrigin = "*";
+            }
+
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", corsOrigin);
+
+            if (corsMethod != null)
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", corsMethod);
+
+            if (corsHeaders != null)
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", corsHeaders);
+
+            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            {
+                return;
+            } 
         }
     }
 }
