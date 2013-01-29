@@ -26,25 +26,24 @@ namespace ServerSide.Handlers
             {
                 if (isPreflightRequest)
                 {
-                    return Task.Factory.StartNew<HttpResponseMessage>(() =>
+                    HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+                    response.Headers.Add(AccessControlAllowOrigin, request.Headers.GetValues(Origin).First());
+
+                    string accessControlRequestMethod = request.Headers.GetValues(AccessControlRequestMethod).FirstOrDefault();
+                    if (accessControlRequestMethod != null)
                     {
-                        HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
-                        response.Headers.Add(AccessControlAllowOrigin, request.Headers.GetValues(Origin).First());
+                        response.Headers.Add(AccessControlAllowMethods, accessControlRequestMethod);
+                    }
 
-                        string accessControlRequestMethod = request.Headers.GetValues(AccessControlRequestMethod).FirstOrDefault();
-                        if (accessControlRequestMethod != null)
-                        {
-                            response.Headers.Add(AccessControlAllowMethods, accessControlRequestMethod);
-                        }
+                    string requestedHeaders = string.Join(", ", request.Headers.GetValues(AccessControlRequestHeaders));
+                    if (!string.IsNullOrEmpty(requestedHeaders))
+                    {
+                        response.Headers.Add(AccessControlAllowHeaders, requestedHeaders);
+                    }
 
-                        string requestedHeaders = string.Join(", ", request.Headers.GetValues(AccessControlRequestHeaders));
-                        if (!string.IsNullOrEmpty(requestedHeaders))
-                        {
-                            response.Headers.Add(AccessControlAllowHeaders, requestedHeaders);
-                        }
-
-                        return response;
-                    }, cancellationToken);
+                    TaskCompletionSource<HttpResponseMessage> tcs = new TaskCompletionSource<HttpResponseMessage>();
+                    tcs.SetResult(response);
+                    return tcs.Task;
                 }
                 else
                 {
@@ -61,5 +60,5 @@ namespace ServerSide.Handlers
                 return base.SendAsync(request, cancellationToken);
             }
         }
-    }
+    } 
 }

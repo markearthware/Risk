@@ -36,7 +36,7 @@ namespace ServerSide.Controllers
             var viewModel = new MakePdfViewModel { Task = taskObj, Assessments = assessmentsObj, AssessmentNumber = g };
 
             return this.View(viewModel);
-        }
+        }   
 
         public static string GetReportString(string g)
         {

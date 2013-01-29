@@ -22,7 +22,6 @@ namespace ServerSide.Controllers
     using ServerSide.Selectors;
     using System.Web.Http.Controllers;
 
-    [HttpControllerConfiguration(HttpActionSelector = typeof(CorsPreflightActionSelector))]
     public class EmailController : ApiController
     {
         private IPdfGenerationQueue _pdfGenerationQueue;
@@ -40,12 +39,12 @@ namespace ServerSide.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        [EnableCors]
+        //[EnableCors]
         public HttpResponseMessage SendPost([FromBody]PostBody body)
         {
             var request = new PdfGenerationRequest(body.Task, body.Assessments);
             this._pdfGenerationQueue.Enqueue(request);
-            return new HttpResponseMessage(HttpStatusCode.Created);
+            return this.Request.CreateResponse<int>(HttpStatusCode.Created, 1); 
         }
     }
 }

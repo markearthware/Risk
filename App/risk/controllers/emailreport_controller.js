@@ -71,7 +71,7 @@ steal('jquery/controller',
                     try {
                         jQuery.support.cors = true;
                         $.ajax({
-                            url: 'http://localhost:52068/api/Email/SendPost',
+                            url: 'http://eriskservice.apphb.com/api/Email/SendPost',
                             dataType: 'json',
                             data: {
                                 task: task,
@@ -89,7 +89,7 @@ steal('jquery/controller',
                         });
                     }
                     catch (e) {
-                        $.mobile.changePage("dialog/emailNotSent.htm"); 
+                        $.mobile.changePage("dialog/emailNotSent.htm");
                     }
                 });
             }
