@@ -28,10 +28,6 @@ namespace ServerSide.Mailers
         {
             var email = Email("Problem", task, null, true);
             email.Mail.To.Add(task.AssessorEmail);
-            if (task.ManagerEmail != null)
-            {
-                email.Mail.CC.Add(task.ManagerEmail);
-            }
             email.Mail.Subject = string.Format("eRisk - Risk assessment report generation failed");
                 
             return email;
