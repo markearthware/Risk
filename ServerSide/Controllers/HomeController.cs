@@ -10,6 +10,9 @@ using System.IO;
 
 namespace ServerSide.Controllers
 {
+    using System.Net;
+    using System.Net.Mail;
+
     using ServerSide.PdfGen;
 
     public class HomeController : Controller

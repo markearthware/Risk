@@ -71,7 +71,7 @@ steal('jquery/controller',
                     try {
                         jQuery.support.cors = true;
                         $.ajax({
-                            url: 'http://eriskservice.apphb.com/api/Email/SendPost',
+                            url: 'http://localhost:97/api/Email/SendPost',
                             dataType: 'json',
                             data: {
                                 task: task,

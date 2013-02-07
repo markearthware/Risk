@@ -1,7 +1,10 @@
 ﻿namespace ServerSide.PdfGen
 {
+    using System;
     using System.Configuration;
     using System.IO;
+
+    using ServerSide.Infrastructure;
 
     using Winnovative.WnvHtmlConvert;
 
@@ -40,7 +43,14 @@
                 var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g="
                                                  + reportId;
                 var generateCertificateUrl = currenthost + generateCertificateUrlPath;
-                pdfConverter.SavePdfFromUrlToFile(generateCertificateUrl, certificatePath);
+                try
+                {
+                    pdfConverter.SavePdfFromUrlToFile(generateCertificateUrl, certificatePath);
+                }
+                catch (Exception e)
+                {
+                    Log.SendExceptionEmail(e);
+                }
             }
 
             return new FileStream(certificatePath, FileMode.Open, FileAccess.Read);

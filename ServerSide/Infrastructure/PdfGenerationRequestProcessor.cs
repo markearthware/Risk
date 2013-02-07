@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Net;
+    using System.Net.Mail;
     using System.Web.Script.Serialization;
 
     using ServerSide.Mailers;
@@ -20,47 +22,61 @@
 
         public static void CreateTextFile(string reportId, Task task, List<Assessment> assessments)
         {
-            var serializer = new JavaScriptSerializer();
-            var taskString = serializer.Serialize(task);
-            var assessmentsString = serializer.Serialize(assessments);
-
-            if (!Directory.Exists(@"c:\temp"))
+            try
             {
-                Directory.CreateDirectory(@"c:\temp");
-            }
+                var serializer = new JavaScriptSerializer();
+                var taskString = serializer.Serialize(task);
+                var assessmentsString = serializer.Serialize(assessments);
 
-            var path = String.Format(@"c:\temp\{0}.txt", reportId);
-            if (!File.Exists(path))
-            {
-                // Create a file to write to. 
-                using (var sw = File.CreateText(path))
+                if (!Directory.Exists(@"c:\temp"))
                 {
-                    sw.Write(taskString);
-                    sw.Write("~");
-                    sw.Write(assessmentsString);
+                    Directory.CreateDirectory(@"c:\temp");
                 }
+
+                var path = String.Format(@"c:\temp\{0}.txt", reportId);
+                if (!File.Exists(path))
+                {
+                    // Create a file to write to. 
+                    using (var sw = File.CreateText(path))
+                    {
+                        sw.Write(taskString);
+                        sw.Write("~");
+                        sw.Write(assessmentsString);
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Log.SendExceptionEmail(e);
             }
         }
 
         public void Process(PdfGenerationRequest request)
         {
-            var reportId = Guid.NewGuid().ToString().Replace("-", String.Empty).Substring(0, 8);
-            var pdfManager = new PdfManager();
-            foreach (var assessment in request.Assessments)
+            try
             {
-                if (assessment.ExistingControls == "null")
+                var reportId = Guid.NewGuid().ToString().Replace("-", String.Empty).Substring(0, 8);
+                var pdfManager = new PdfManager();
+                foreach (var assessment in request.Assessments)
                 {
-                    assessment.ExistingControls = null;
-                }
+                    if (assessment.ExistingControls == "null")
+                    {
+                        assessment.ExistingControls = null;
+                    }
 
-                if (assessment.Controls == "null")
-                {
-                    assessment.Controls = null;
+                    if (assessment.Controls == "null")
+                    {
+                        assessment.Controls = null;
+                    }
                 }
+                CreateTextFile(reportId, request.Task, request.Assessments);
+                pdfManager.GetCertificate(reportId);
+                this.userMailer.Report(pdfManager.CertificatePath, request.Task).Deliver();
             }
-            CreateTextFile(reportId, request.Task, request.Assessments);
-            pdfManager.GetCertificate(reportId);
-            this.userMailer.Report(pdfManager.CertificatePath, request.Task).Deliver();
+            catch (Exception e)
+            {
+                Log.SendExceptionEmail(e);
+            }
         }
     }
 }
