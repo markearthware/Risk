@@ -3,6 +3,7 @@
     using System;
     using System.Configuration;
     using System.IO;
+    using System.Web.Hosting;
 
     using ServerSide.Infrastructure;
 
@@ -10,7 +11,7 @@
 
     public class PdfManager
     {
-        private const string CertificateDirectory = @"C:\temp";
+        private readonly string CertificateDirectory = HostingEnvironment.MapPath("~/App_Data");
 
         public string CertificatePath { get; set; }
 
