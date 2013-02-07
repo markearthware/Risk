@@ -5,6 +5,7 @@
     using System.IO;
     using System.Net;
     using System.Net.Mail;
+    using System.Web.Hosting;
     using System.Web.Script.Serialization;
 
     using ServerSide.Mailers;
@@ -28,12 +29,7 @@
                 var taskString = serializer.Serialize(task);
                 var assessmentsString = serializer.Serialize(assessments);
 
-                if (!Directory.Exists(@"c:\temp"))
-                {
-                    Directory.CreateDirectory(@"c:\temp");
-                }
-
-                var path = String.Format(@"c:\temp\{0}.txt", reportId);
+                var path = string.Format(HostingEnvironment.MapPath("~/App_Data/{0}.txt"),reportId);
                 if (!File.Exists(path))
                 {
                     // Create a file to write to. 
