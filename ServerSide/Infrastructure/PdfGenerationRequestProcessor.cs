@@ -91,10 +91,16 @@
                     {
                         if (request.Assessments == null)
                         {
+                            request.Task.ReasonForFaliure =
+                                "No assessments created against the task. Ensure there are assessments in the assessments list before emailing";
+                            this.userMailer.Problem(request.Task).Deliver();
                             Log.SendCustomLogEmail("assessments is null");
                         }
                         if(request.Task == null)
                         {
+                            request.Task.ReasonForFaliure =
+                                "Insufficient task information - make sure all information in the task form is completed before emailing";
+                            this.userMailer.Problem(request.Task).Deliver();
                             Log.SendCustomLogEmail("task is null");
                         }
                     }
