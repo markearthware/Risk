@@ -3,8 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Net;
-    using System.Net.Mail;
+    using System.Linq;
     using System.Web.Hosting;
     using System.Web.Script.Serialization;
 
@@ -53,25 +52,63 @@
             {
                 var reportId = Guid.NewGuid().ToString().Replace("-", String.Empty).Substring(0, 8);
                 var pdfManager = new PdfManager();
-                foreach (var assessment in request.Assessments)
+                if (request != null)
                 {
-                    if (assessment.ExistingControls == "null")
+                    if(request.Assessments != null && request.Task != null)
                     {
-                        assessment.ExistingControls = null;
-                    }
+                        if (request.Assessments.Any())
+                        {
+                            foreach (var assessment in request.Assessments)
+                            {
+                                if (assessment != null)
+                                {
+                                    if (assessment.ExistingControls == "null")
+                                    {
+                                        assessment.ExistingControls = null;
+                                    }
 
-                    if (assessment.Controls == "null")
+                                    if (assessment.Controls == "null")
+                                    {
+                                        assessment.Controls = null;
+                                    }
+                                }
+
+                            }
+                            CreateTextFile(reportId, request.Task, request.Assessments);
+                            pdfManager.GetCertificate(reportId);
+                            this.userMailer.Report(pdfManager.CertificatePath, request.Task).Deliver();
+                        }
+                        else
+                        {
+                            request.Task.ReasonForFaliure =
+                                "No assessments created against the task. Ensure there are assessments in the assessments list before emailing";
+                            this.userMailer.Problem(request.Task).Deliver();
+
+                            Log.SendCustomLogEmail("No assessments created against the task");
+                        }
+                    }
+                    else
                     {
-                        assessment.Controls = null;
+                        if (request.Assessments == null)
+                        {
+                            Log.SendCustomLogEmail("assessments is null");
+                        }
+                        if(request.Task == null)
+                        {
+                            Log.SendCustomLogEmail("task is null");
+                        }
                     }
                 }
-                CreateTextFile(reportId, request.Task, request.Assessments);
-                pdfManager.GetCertificate(reportId);
-                this.userMailer.Report(pdfManager.CertificatePath, request.Task).Deliver();
+                else
+                {
+                    Log.SendCustomLogEmail("request is null");
+                }
+                
             }
             catch (Exception e)
             {
                 Log.SendExceptionEmail(e);
+                Log.SendCustomLogEmail("Process method catching exception line 108 PdfGenerationRequestProcessor");
             }
         }
     }

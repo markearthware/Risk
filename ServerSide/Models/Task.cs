@@ -22,5 +22,7 @@
         public string Name { get; set; }
 
         public string Site { get; set; }
+
+        public string ReasonForFaliure { get; set; }
     }
 }
