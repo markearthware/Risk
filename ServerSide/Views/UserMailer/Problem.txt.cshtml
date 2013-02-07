@@ -1,13 +1,15 @@
 Hi @Model.AssessorName,
 
-Please find the following risk assessment report attached to this email:
+We failed to generate a report for the following task:
 Task name: @Model.Name 
 Site: @Model.Site
-Assessor Name: @Model.AssessorName
-Date Completed: @DateTime.Now.ToShortDateString()
+Name: @Model.AssessorName
+Date Completed:@DateTime.Now.ToShortDateString()
+
+One possible reason for the faliure is: @Model.ReasonForFaliure
+If the issue persists either contact us via www.eriskapp.co.uk/ContactUs or view the following at video tutorial http://www.youtube.com/watch?v=4e5SOGWCvXY 
 
 Regards,
 The 'eRisk' team
 
 @model ServerSide.Models.Task
-
