@@ -20,6 +20,11 @@ namespace ServerSide
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            FilterConfig.RegisterGlobalFilters();
+            RouteConfig.RegisterRoutes();
+            WorkerConfig.Initialise();
+
             GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler()); 
         }
 

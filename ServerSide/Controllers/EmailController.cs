@@ -39,7 +39,6 @@ namespace ServerSide.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        //[EnableCors]
         public HttpResponseMessage SendPost([FromBody]PostBody body)
         {
             var request = new PdfGenerationRequest(body.Task, body.Assessments);

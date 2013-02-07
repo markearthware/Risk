@@ -1,5 +1,4 @@
-﻿[assembly: WebActivator.PostApplicationStartMethod(typeof(ServerSide.App_Start.WorkerConfig), "Initialise")]
-namespace ServerSide.App_Start
+﻿namespace ServerSide.App_Start
 {
     using System.Threading.Tasks;
 
