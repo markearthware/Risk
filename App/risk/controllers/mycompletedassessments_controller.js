@@ -80,11 +80,11 @@ steal('jquery/controller',
                     new Risk.Models.AssessmentsB(newAss).save(function (ob, nid) {
                         $.when(existingControlsDef, furtherControlsDef).done(function (existingControlsRes, furtherControlsRes) {
                             $(existingControlsRes).each(function (i) {
-                                var assessmentexistingcontrols = { AssessmentId: nid, ExistingControlId: this.id };
+                                var assessmentexistingcontrols = { AssessmentId: nid, ExistingControlId: this.ExistingControlId };
                                 new Risk.Models.AssessmentExistingControls(assessmentexistingcontrols).save();
                             });
-                            $(furtherControlsRes).each(function (i) {
-                                var assessmentfurthercontrols = { AssessmentId: nid, ControlId: this.id };
+                            $(furtherControlsRes).each(function (j) {
+                                var assessmentfurthercontrols = { AssessmentId: nid, ControlId: this.ControlId };
                                 new Risk.Models.AssessmentControls(assessmentfurthercontrols).save();
                             });
                         });
