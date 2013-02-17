@@ -32,13 +32,13 @@
                 var pdfConverter = new PdfConverter();
                 pdfConverter.PdfDocumentOptions.PdfPageOrientation = PDFPageOrientation.Landscape;
                 pdfConverter.LicenseKey = ConfigurationManager.AppSettings["WinnovativeLicenseKey"];
-                pdfConverter.PdfDocumentOptions.BottomMargin = 0;
+                pdfConverter.PdfDocumentOptions.BottomMargin = 10;
+                pdfConverter.PdfDocumentOptions.TopMargin = 10;
                 pdfConverter.PdfDocumentOptions.RightMargin = 0;
                 pdfConverter.PdfDocumentOptions.GenerateSelectablePdf = true;
                 pdfConverter.ActiveXEnabled = true;
                 pdfConverter.PageWidth = 1050;
-                pdfConverter.PageHeight = 790;
-                pdfConverter.PdfDocumentOptions.SinglePage = true;
+                pdfConverter.PdfDocumentOptions.SinglePage = false;
                 var currenthost = ConfigurationManager.AppSettings["WebsiteDomain"] + "/";
 
                 var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g="
