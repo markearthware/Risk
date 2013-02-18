@@ -148,10 +148,11 @@ steal('jquery/controller',
                     localStorage.tempExistingControls = $('#ExistingControlsList').val();
                 },
                 passesValidation: function () {
-                    if ($('#WhosList').val() != "Choose option" &&
-                        $('#HowsList').val() != "Choose option" &&
-                        $('#SeverityList').val() != 'Choose Rating' &&
-                        $('#LikelihoodList').val() != 'Choose Rating') {
+                    if (
+                        ($('#WhosList').val() != "Choose option" && $('#WhosList').val() != null) &&
+                        ($('#HowsList').val() != "Choose option" && $('#HowsList').val() != null) &&
+                        ($('#SeverityList').val() != 'Choose Rating' && $('#SeverityList').val() != null) &&
+                        ($('#LikelihoodList').val() != 'Choose Rating' && $('#LikelihoodList').val() != null)) {
                         return true;
                     }
                     return false;
