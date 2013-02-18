@@ -149,10 +149,10 @@ steal('jquery/controller',
                 },
                 passesValidation: function () {
                     if (
-                        ($('#WhosList').val() != "Choose option" && $('#WhosList').val() != null) &&
-                        ($('#HowsList').val() != "Choose option" && $('#HowsList').val() != null) &&
-                        ($('#SeverityList').val() != 'Choose Rating' && $('#SeverityList').val() != null) &&
-                        ($('#LikelihoodList').val() != 'Choose Rating' && $('#LikelihoodList').val() != null)) {
+                        ($('#WhosList').val() != "Choose option" && $('#WhosList').val() !== null) &&
+                        ($('#HowsList').val() != "Choose option" && $('#HowsList').val() !== null) &&
+                        ($('#SeverityList').val() != 'Choose Rating' && $('#SeverityList').val() !== null) &&
+                        ($('#LikelihoodList').val() != 'Choose Rating' && $('#LikelihoodList').val() !== null)) {
                         return true;
                     }
                     return false;

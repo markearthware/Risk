@@ -23,6 +23,8 @@
                   minVersion="2.1" />
   </gap:platforms>
 
+  <preference name="phonegap-version" value="2.2.0" />
+  
   <icon src="Icon.png" />
 
   <icon src="assets/Android/Icons/ldpi.png"
