@@ -21,7 +21,7 @@ steal('jquery/controller',
             var taskDef = Risk.Models.Task.findOne(localStorage.taskId);
             $.when(taskDef).done(function (taskRes) {
                 self.task = taskRes;
-                var emailDetails = { FirstName: localStorage.emailDetailsFn, LastName: localStorage.emailDetailsLn, EmailAddress: localStorage.emailDetailsEmail, ManagerEmailAddress: localStorage.emailDetailsMemail };
+                var emailDetails = { Company: localStorage.emailDetailsCompany, FirstName: localStorage.emailDetailsFn, LastName: localStorage.emailDetailsLn, EmailAddress: localStorage.emailDetailsEmail, ManagerEmailAddress: localStorage.emailDetailsMemail };
                 var view = $.View('//risk/views/email/init.ejs', emailDetails);
                 $('#EmailReportForm').html(view).trigger('create');
                 $('h1#EmailTitle').append(": " + taskRes.Name);
@@ -34,11 +34,12 @@ steal('jquery/controller',
                 var self = this;
                 ev.preventDefault();
                 var params = el.formParams();
-                var emailDetails = { FirstName: params.FirstName, LastName: params.LastName, EmailAddress: params.EmailAddress, ManagerEmailAddress: params.ManagerEmailAddress };
+                var emailDetails = { Company: params.Company, FirstName: params.FirstName, LastName: params.LastName, EmailAddress: params.EmailAddress, ManagerEmailAddress: params.ManagerEmailAddress };
                 localStorage.emailDetailsFn = emailDetails.FirstName;
                 localStorage.emailDetailsLn = emailDetails.LastName;
                 localStorage.emailDetailsEmail = emailDetails.EmailAddress;
                 localStorage.emailDetailsMemail = emailDetails.ManagerEmailAddress;
+                localStorage.emailDetailsCompany = emailDetails.Company;
 
                 var task = {
                     id: self.task.id,
@@ -70,6 +71,9 @@ steal('jquery/controller',
                     }
                     try {
                         jQuery.support.cors = true;
+
+                        task.Company = emailDetails.Company;
+
                         $.ajax({
                             url: 'http://localhost:52068/api/Email/SendPost',
                             dataType: 'json',
@@ -79,6 +83,7 @@ steal('jquery/controller',
                             },
                             type: "POST",
                             success: function () {
+                                delete task.Company;
                                 new Risk.Models.Task(task).save(function () {
                                     $.mobile.changePage("dialog/emailSent.htm");
                                 });
