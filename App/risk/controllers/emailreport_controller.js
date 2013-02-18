@@ -75,7 +75,7 @@ steal('jquery/controller',
                         task.Company = emailDetails.Company;
 
                         $.ajax({
-                            url: 'http://localhost:52068/api/Email/SendPost',
+                            url: 'http://eriskservice.apphb.com/api/Email/SendPost',
                             dataType: 'json',
                             data: {
                                 task: task,
