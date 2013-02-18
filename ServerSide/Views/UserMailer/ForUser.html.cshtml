@@ -6,6 +6,10 @@
    Please find the following risk assessment report attached to this email:<br />
    <strong>Task name: </strong>@Model.Name <br />
    <strong>Site: </strong>@Model.Site <br />
+   @if (!string.IsNullOrEmpty(Model.Company))
+   {
+   <strong>Company: </strong>@Model.Company <br />
+   }
    <strong>Name: </strong>@Model.AssessorName <br />
    <strong>Date Completed: </strong>@DateTime.Now.ToShortDateString()
 </p>

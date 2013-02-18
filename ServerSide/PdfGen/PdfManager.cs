@@ -35,6 +35,7 @@
                 pdfConverter.PdfDocumentOptions.BottomMargin = 10;
                 pdfConverter.PdfDocumentOptions.TopMargin = 10;
                 pdfConverter.PdfDocumentOptions.RightMargin = 0;
+                pdfConverter.PdfDocumentOptions.LeftMargin = 25;
                 pdfConverter.PdfDocumentOptions.GenerateSelectablePdf = true;
                 pdfConverter.ActiveXEnabled = true;
                 pdfConverter.PageWidth = 1050;

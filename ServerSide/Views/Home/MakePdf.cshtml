@@ -110,6 +110,10 @@
         <div id="wrapper">
             <h2>Risk Assessment Report</h2>
             <h4>Site name/Company: @Model.Task.Site</h4>
+            @if (!string.IsNullOrEmpty(Model.Task.Company))
+            {
+                <h4>Company: @Model.Task.Company</h4>
+            }
             <h4>Risk assessment by: @Model.Task.AssessorName</h4>
             <table cellspacing="0">
                 <thead>
@@ -123,7 +127,7 @@
                     </tr>
                     <tr>
                         <td class="blue" colspan="1"><strong>Site:</strong></td>
-                        <td colspan="2">@Model.Task.Site</td>
+                        <td colspan="2">@Model.Task.Site @if (!string.IsNullOrEmpty(Model.Task.Company)){<text> (</text>@Model.Task.Company<text>)</text>}</td>
                         <td class="blue" colspan="1"><strong>Assessor:</strong></td>
                         <td colspan="1">@Model.Task.AssessorName</td>
                         <td class="blue" colspan="1"><strong>Created Date:</strong></td>
@@ -157,7 +161,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var assessment in Model.Assessments)
+                    @foreach (var assessment in Model.Assessments)
                     {
                         <tr>
                             <td>@assessment.Hazard</td>
@@ -165,8 +169,9 @@
                             <td>@assessment.How @(!string.IsNullOrEmpty(assessment.FurtherDetails) ? "-" + assessment.FurtherDetails : string.Empty)</td>
                             <td>
                                 <ul>
-                                    @if(assessment.ExistingControls != null){
-                                        foreach(var existingControl in assessment.ExistingControls.Split('|'))
+                                    @if (assessment.ExistingControls != null)
+                                    {
+                                        foreach (var existingControl in assessment.ExistingControls.Split('|'))
                                         {
                                             <li><span>@existingControl</span></li>
                                         }
@@ -180,8 +185,9 @@
                             </td>
                             <td>
                                 <ul>
-                                    @if(assessment.Controls != null){
-                                        foreach(var furtherControl in assessment.Controls.Split('|'))
+                                    @if (assessment.Controls != null)
+                                    {
+                                        foreach (var furtherControl in assessment.Controls.Split('|'))
                                         {
                                             <li>@furtherControl</li>
                                         }
