@@ -75,6 +75,11 @@ steal('jquery/controller',
 
                         task.Company = emailDetails.Company;
 
+                        $.ajaxSetup({
+                            type: 'POST',
+                            headers: { "cache-control": "no-cache" }
+                        });
+
                         $.ajax({
                             url: 'http://eriskservice.apphb.com/api/Email/SendPost',
                             dataType: 'json',
