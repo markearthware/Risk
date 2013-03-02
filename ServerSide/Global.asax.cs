@@ -28,5 +28,9 @@ namespace ServerSide
             GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler()); 
         }
 
+        void Application_PreSendRequestHeaders(Object sender, EventArgs e)
+        {
+            Response.Headers.Set("Cache-Control", "no-cache");
+        }
     }
 }

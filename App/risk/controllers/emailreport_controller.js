@@ -41,6 +41,7 @@ steal('jquery/controller',
                 localStorage.emailDetailsMemail = emailDetails.ManagerEmailAddress;
                 localStorage.emailDetailsCompany = emailDetails.Company;
 
+                var ticks = new Date().getTime();
                 var task = {
                     id: self.task.id,
                     Name: self.task.Name,
@@ -79,7 +80,8 @@ steal('jquery/controller',
                             dataType: 'json',
                             data: {
                                 task: task,
-                                assessments: assessments
+                                assessments: assessments,
+                                timestamp: ticks
                             },
                             type: "POST",
                             success: function () {
