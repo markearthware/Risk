@@ -30,7 +30,7 @@ namespace ServerSide
 
         void Application_PreSendRequestHeaders(Object sender, EventArgs e)
         {
-            Response.Headers.Set("Cache-Control", "no-cache");
+            Response.Headers.Set("Cache-Control", "no-cache, no-store, must-revalidate");
         }
     }
 }
