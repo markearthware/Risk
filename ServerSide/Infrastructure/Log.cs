@@ -12,13 +12,13 @@ namespace ServerSide.Infrastructure
     {
         public static void SendExceptionEmail(Exception exception)
         {
-            MailAddress to = new MailAddress("info@eriskapp.co.uk");
+            MailAddress to = new MailAddress("info@iriskassess.co.uk");
 
-            MailAddress from = new MailAddress("info@eriskapp.co.uk");
+            MailAddress from = new MailAddress("info@iriskassess.co.uk");
 
             MailMessage mail = new MailMessage(@from, to);
 
-            mail.Subject = "eRisk Service Fail";
+            mail.Subject = "iRisk Assess Service Fail";
 
             mail.Body = "Error: " + exception.Message + "Stack trace: " + exception.StackTrace;
 
