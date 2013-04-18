@@ -21,7 +21,7 @@ steal('jquery/controller',
 
             var view = $.View("//risk/views/index/init.ejs");
             $('#indexContent').html(view);
-            $('h1').text("eRisk");
+            $('h1').text("iRisk Assess");
             $.mobile.hidePageLoadingMsg();
 
             setTimeout(
