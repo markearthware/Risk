@@ -11,8 +11,8 @@
     <body>
          <style type="text/css">
             body {
-                font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-                font-size: 12px;
+                font-family: Helvetica, "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+                font-size: 11px;
             }
 
             thead {
@@ -40,19 +40,19 @@
                 margin: 0;
                 padding: 4px;
                 border-width: 1px 1px 0 0;
-                background-color: #E8EDFF;
+                background-color: #f0f0f0;
             }
 
             thead tr td.blue{
-                background: #B9C9FE;
+                background: #cacaca;
             }
 
              thead tr td.blue2 {
-                 background: #d2dcfe;
+                 background: #e4e4e4;
              }
 
              tr.bluerow td {
-                 background: #B9C9FE;
+                 background: #e4e4e4;
              }
 
             thead tr td {
@@ -91,15 +91,15 @@
             }
 
              
-            table tr td.amber {
+            table tr div.amber {
                 background-color: #d2ff4d;
             }
 
-            table tr td.green {
+            table tr div.green {
                 background-color: #8cff67;
             }
 
-            table tr td.red {
+            table tr div.red {
                 background-color: #ff3333;
             }
 
@@ -108,16 +108,57 @@
                  font-weight:bold;
                  font-size: 16px;
              }
+             
+             h2
+             {
+                 font-size: 18px;
+                 margin-bottom: 0px;
+             }
+             
+             h4
+             {
+                 font-size: 12px;
+                 margin-top: 10px;
+                 margin-bottom: 10px;
+                 display: block;
+                 float: left;
+                 margin-right: 20px;
+             }
+             
+             h4 span
+             {
+                 font-weight: normal;
+             }
+
+             h5
+             {
+                 font-weight: normal;
+             }
+             
+             .traffic
+             {
+                 width: 15px;
+                 height: 100%;
+                 float: left;
+                 margin-right: 5px;
+             }
+
+             .clear
+             {
+                 clear: both;
+             }
 
         </style>
         <div id="wrapper">
             <h2>Risk Assessment Report</h2>
-            <h4>Site name: @Model.Task.Site</h4>
+            <hr />
+            <h4><span>Site:</span> @Model.Task.Site</h4>
             @if (!string.IsNullOrEmpty(Model.Task.Company))
             {
-                <h4>Company: @Model.Task.Company</h4>
+                <h4><span>Company:</span> @Model.Task.Company</h4>
             }
-            <h4>Risk assessment by: @Model.Task.AssessorName</h4>
+            <h4><span>Risk assessment by:</span> @Model.Task.AssessorName</h4>
+            <div class="clear"></div>
             <table cellspacing="0">
                 <thead>
                     <tr>
@@ -214,7 +255,8 @@
                         <td rowspan="3">
                             Risk Rating = L X S (Likelihood X Severity)
                         </td>
-                        <td class="green" colspan="2">
+                        <td colspan="2">
+                            <div class="traffic green">&nbsp;</div>
                             Low = 1 to 4
                         </td>
                     </tr>
@@ -222,13 +264,18 @@
                         <td colspan="3">
                             <strong>Severity</strong> 1 = No injury, 2 = Minor injury, 3 = Medical treatment, 4 = Reportable, 5 = Major injury/Fatal
                         </td>
-                        <td class="amber" colspan="2">
+                        <td colspan="2">
+                            <div class="traffic amber">&nbsp;</div>
                             Medium = 5 to 11
                         </td>
                     </tr>
                     <tr class="bluerow">
                         <td colspan="3"></td>
-                        <td class="red" colspan="2">High = 12 to 25</td>
+                        <td colspan="2">
+                            <div class="traffic red">&nbsp;</div>
+                            High = 12 to 25
+                        </td>
+
                     </tr>
                 </tbody>
             </table>  
