@@ -171,7 +171,7 @@
                         <td class="blue" colspan="2"><strong>Task: </strong></td>
                         <td colspan="2">@Model.Task.Name</td>
                         <td colspan="3" style="font-size: 10px; background-color:#fff; text-align:right; border: none">
-                            Page 1/@(Math.Ceiling((double)(Model.Assessments.Count-1)/3))
+                            Page 1/@(Math.Max(1,Math.Ceiling((double)(Model.Assessments.Count-1)/3)))
                         </td>
                     </tr>
                     <tr class="thead">
@@ -293,7 +293,7 @@
                                     <span>Risk assessment by:</span> @Model.Task.AssessorName
                                 </td>
                                 <td colspan="1" style="background-color:#fff;">
-                                    Page @(Math.Ceiling((double)index / 3)+1)/@(Math.Ceiling((double)(Model.Assessments.Count-1)/3))
+                                    Page @(Math.Ceiling((double)index / 3)+1)/@(Math.Max(1,Math.Ceiling((double)(Model.Assessments.Count-1)/3)))
                                 </td>
                             </tr>
                             <tr class="thead">
