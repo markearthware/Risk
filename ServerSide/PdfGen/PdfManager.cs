@@ -32,8 +32,8 @@
                 var pdfConverter = new PdfConverter();
                 pdfConverter.PdfDocumentOptions.PdfPageOrientation = PDFPageOrientation.Landscape;
                 pdfConverter.LicenseKey = ConfigurationManager.AppSettings["WinnovativeLicenseKey"];
-                pdfConverter.PdfDocumentOptions.BottomMargin = 10;
-                pdfConverter.PdfDocumentOptions.TopMargin = 10;
+                pdfConverter.PdfDocumentOptions.BottomMargin = 20;
+                pdfConverter.PdfDocumentOptions.TopMargin = 20;
                 pdfConverter.PdfDocumentOptions.RightMargin = 0;
                 pdfConverter.PdfDocumentOptions.LeftMargin = 25;
                 pdfConverter.PdfDocumentOptions.GenerateSelectablePdf = true;

@@ -15,7 +15,7 @@
                 font-size: 11px;
             }
 
-            thead {
+            .thead {
                 font-size: 14px;
             }
 
@@ -33,7 +33,9 @@
                 page-break-inside:auto;
             }
             
-            tr{ page-break-inside:avoid; page-break-after:always	}
+            tr{ page-break-inside:avoid; page-break-after:auto;	}
+            
+            tr.break-page{ page-break-inside:avoid; page-break-after:always;}
 
             td
             {
@@ -43,11 +45,11 @@
                 background-color: #f0f0f0;
             }
 
-            thead tr td.blue{
+            tr.thead td.blue{
                 background: #cacaca;
             }
 
-             thead tr td.blue2 {
+             tr.thead td.blue2 {
                  background: #e4e4e4;
              }
 
@@ -55,7 +57,7 @@
                  background: #e4e4e4;
              }
 
-            thead tr td {
+            tr.thead td {
                 text-align: center;
             }
 
@@ -147,7 +149,11 @@
              {
                  clear: both;
              }
-
+             
+             .new-page td
+             {
+                 background-color: #ffffff;
+             }
         </style>
         <div id="wrapper">
             <h2>Risk Assessment Report</h2>
@@ -161,23 +167,27 @@
             <div class="clear"></div>
             <table cellspacing="0">
                 <thead>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue" colspan="2"><strong>Task: </strong></td>
                         <td colspan="2">@Model.Task.Name</td>
+                        <td colspan="3" style="font-size: 10px; background-color:#fff; text-align:right; border: none">
+                            Page 1/@(Math.Ceiling((double)(Model.Assessments.Count-1)/3))
+                        </td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue" colspan="2"><strong>Report Identifier:</strong></td>
                         <td colspan="2">@Model.AssessmentNumber</td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue" colspan="1"><strong>Site:</strong></td>
-                        <td colspan="2">@Model.Task.Site @if (!string.IsNullOrEmpty(Model.Task.Company)){<text> (</text>@Model.Task.Company<text>)</text>}</td>
+                        <td colspan="2">@Model.Task.Site @if (!string.IsNullOrEmpty(Model.Task.Company))
+                                                         {<text> (</text>@Model.Task.Company<text>)</text>}</td>
                         <td class="blue" colspan="1"><strong>Assessor:</strong></td>
                         <td colspan="1">@Model.Task.AssessorName</td>
                         <td class="blue" colspan="1"><strong>Created Date:</strong></td>
                         <td colspan="1">@Model.Task.DateStarted.ToString("dd MMM yyyy")</td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue2"></td>
                         <td class="blue2"></td>
                         <td class="blue2"></td>
@@ -186,7 +196,7 @@
                         <td class="blue2"></td>
                         <td class="blue2"><strong>New Risk Rating</strong></td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue2 doublecell"><strong>Hazard</strong></td>
                         <td class="blue2 doublecell"><strong>Who might be harmed</strong></td>
                         <td class="blue2 doublecell"><strong>How might they be harmed</strong></td>
@@ -205,9 +215,31 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @{ var count = 0; var className = string.Empty; var index = 0;}
                     @foreach (var assessment in Model.Assessments)
                     {
-                        <tr>
+                        {
+                            count++;
+                            if (count == 3)
+                            {
+                                if (index != Model.Assessments.Count - 1)
+                                {
+                                    className = "break-page";
+                                }
+                                else
+                                {
+                                    className = string.Empty;
+                                }
+                                count = 0;
+                            }
+                            else
+                            {
+                                className = string.Empty;
+                            }
+                            index++;
+                        }
+                       
+                        <tr class="@className">
                             <td>@assessment.Hazard</td>
                             <td>@assessment.Who</td>
                             <td>@assessment.How @(!string.IsNullOrEmpty(assessment.FurtherDetails) ? "-" + assessment.FurtherDetails : string.Empty)</td>
@@ -244,6 +276,53 @@
                                 <div><strong>@(assessment.LikelihoodB * assessment.SeverityB)</strong></div>
                             </td>
                         </tr>
+                        
+                        if (className == "break-page")
+                        {
+                            <tr class="new-page">
+                                <td colspan="2">
+                                    <span>Site:</span> @Model.Task.Site
+                                </td>
+                                <td colspan="2">
+                                    @if (!string.IsNullOrEmpty(Model.Task.Company))
+                                    {
+                                        <span>Company:</span> @Model.Task.Company
+                                    }
+                                </td>
+                                <td colspan="2">
+                                    <span>Risk assessment by:</span> @Model.Task.AssessorName
+                                </td>
+                                <td colspan="1" style="background-color:#fff;">
+                                    Page @(Math.Ceiling((double)index / 3)+1)/@(Math.Ceiling((double)(Model.Assessments.Count-1)/3))
+                                </td>
+                            </tr>
+                            <tr class="thead">
+                                <td class="blue2"></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"><strong>Risk Rating<br/>(L * S)</strong></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"><strong>New Risk Rating</strong></td>
+                            </tr>
+                            <tr class="thead">
+                                <td class="blue2 doublecell"><strong>Hazard</strong></td>
+                                <td class="blue2 doublecell"><strong>Who might be harmed</strong></td>
+                                <td class="blue2 doublecell"><strong>How might they be harmed</strong></td>
+                                <td class="blue2 doublecell"><strong>Existing Controls</strong></td>
+                                <td class="blue2 riskrating">
+                                    <div>L</div>
+                                    <div>S</div>
+                                    <div>R</div>
+                                </td>
+                                <td class="blue2 doublecell"><strong>Further Controls/Actions</strong></td>
+                                <td class="blue2 riskrating">
+                                    <div>L</div>
+                                    <div>S</div>
+                                    <div>R</div>
+                                </td>
+                            </tr>
+                        }
                     }
                     <tr class="bluerow">
                         <td rowspan="3" class="key">
