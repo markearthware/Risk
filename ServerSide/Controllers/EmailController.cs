@@ -18,6 +18,9 @@ namespace ServerSide.Controllers
     using ServerSide.Models;
     using System.Web.Script.Serialization;
     using Winnovative.WnvHtmlConvert;
+    using ServerSide.Filters;
+    using ServerSide.Selectors;
+    using System.Web.Http.Controllers;
 
     public class EmailController : ApiController
     {
@@ -34,6 +37,13 @@ namespace ServerSide.Controllers
             var request = new PdfGenerationRequest(task, assessments);
             this._pdfGenerationQueue.Enqueue(request);
             return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        public HttpResponseMessage SendPost([FromBody]PostBody body)
+        {
+            var request = new PdfGenerationRequest(body.Task, body.Assessments);
+            this._pdfGenerationQueue.Enqueue(request);
+            return this.Request.CreateResponse<int>(HttpStatusCode.Created, 1); 
         }
     }
 }

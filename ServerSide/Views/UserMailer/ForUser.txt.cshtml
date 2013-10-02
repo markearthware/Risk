@@ -3,11 +3,15 @@ Hi @Model.AssessorName,
 Please find the following risk assessment report attached to this email:
 Task name: @Model.Name 
 Site: @Model.Site
+@if (!string.IsNullOrEmpty(Model.Company)){
+<text>Company:</text> @Model.Company 
+}
+
 Assessor Name: @Model.AssessorName
-Date Completed: @DateTime.Now.ToShortDateString()
+Date Completed: @DateTime.Now.ToString("dd MMM yyyy")
 
 Regards,
-The 'eRisk' team
+The iRisk Assess team
 
 @model ServerSide.Models.Task
 

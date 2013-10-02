@@ -1,13 +1,17 @@
 ﻿namespace ServerSide.PdfGen
 {
+    using System;
     using System.Configuration;
     using System.IO;
+    using System.Web.Hosting;
+
+    using ServerSide.Infrastructure;
 
     using Winnovative.WnvHtmlConvert;
 
     public class PdfManager
     {
-        private const string CertificateDirectory = @"C:\temp";
+        private readonly string CertificateDirectory = HostingEnvironment.MapPath("~/App_Data");
 
         public string CertificatePath { get; set; }
 
@@ -28,19 +32,27 @@
                 var pdfConverter = new PdfConverter();
                 pdfConverter.PdfDocumentOptions.PdfPageOrientation = PDFPageOrientation.Landscape;
                 pdfConverter.LicenseKey = ConfigurationManager.AppSettings["WinnovativeLicenseKey"];
-                pdfConverter.PdfDocumentOptions.BottomMargin = 0;
+                pdfConverter.PdfDocumentOptions.BottomMargin = 20;
+                pdfConverter.PdfDocumentOptions.TopMargin = 20;
                 pdfConverter.PdfDocumentOptions.RightMargin = 0;
+                pdfConverter.PdfDocumentOptions.LeftMargin = 25;
                 pdfConverter.PdfDocumentOptions.GenerateSelectablePdf = true;
                 pdfConverter.ActiveXEnabled = true;
                 pdfConverter.PageWidth = 1050;
-                pdfConverter.PageHeight = 790;
-                pdfConverter.PdfDocumentOptions.SinglePage = true;
+                pdfConverter.PdfDocumentOptions.SinglePage = false;
                 var currenthost = ConfigurationManager.AppSettings["WebsiteDomain"] + "/";
 
                 var generateCertificateUrlPath = ConfigurationManager.AppSettings["GeneratePdfUrlPath"] + "?g="
                                                  + reportId;
                 var generateCertificateUrl = currenthost + generateCertificateUrlPath;
-                pdfConverter.SavePdfFromUrlToFile(generateCertificateUrl, certificatePath);
+                try
+                {
+                    pdfConverter.SavePdfFromUrlToFile(generateCertificateUrl, certificatePath);
+                }
+                catch (Exception e)
+                {
+                    Log.SendExceptionEmail(e);
+                }
             }
 
             return new FileStream(certificatePath, FileMode.Open, FileAccess.Read);

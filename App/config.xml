@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns	= "http://www.w3.org/ns/widgets"
         xmlns:gap	= "http://phonegap.com/ns/1.0"
-        id = "com.shortec.erisk"
+        id = "com.shortec.iriskassess"
         version = "1.0.0.0">
 
-  <name>eRisk</name>
+  <name>iRisk Assess</name>
 
   <description>
     The Comprehensive Risk Assessment App

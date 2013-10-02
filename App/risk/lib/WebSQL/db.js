@@ -197,7 +197,7 @@ var localStorageDB = (function () {
                 tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Equipment")'); //id 14
                 tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Hand Tool")'); //id 15
                 tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Electricity")'); //id 16
-                tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Striking against staionary object")'); //id 17
+                tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Striking against stationary object")'); //id 17
                 tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Lifting Object")'); //id 18
                 tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Explosion")'); //id 19
                 tx.executeSql('INSERT INTO Hazards (Name) VALUES ("Weather")'); //id 20

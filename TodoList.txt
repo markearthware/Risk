@@ -1,12 +1,6 @@
-add custom hows and controls bug when redoing an assessment - BUG
-existing controls not loading in properly when you redo assessment - BUG
-edit task details finish
-testing and bug fixing
-lite app
-remove 'require GPS' setting
-deploy app to ios and android devices - bug fixing
-user trial
-get feedback and bug fixing
-release paid for app
-go to H&S exibition
+Build android app on phonegap build and publish apk to google play
+New iphone full version release needed with new service pointer
+Facebook page
+Youtube video
+Magazine advert
 Enterprise app if going well?

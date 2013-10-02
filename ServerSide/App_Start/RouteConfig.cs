@@ -1,6 +1,4 @@
-﻿[assembly: WebActivator.PreApplicationStartMethod(typeof(ServerSide.App_Start.RouteConfig), "RegisterRoutes")]
-
-namespace ServerSide.App_Start
+﻿namespace ServerSide.App_Start
 {
     using System.Web.Http;
     using System.Web.Mvc;

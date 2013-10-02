@@ -11,11 +11,11 @@
     <body>
          <style type="text/css">
             body {
-                font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-                font-size: 12px;
+                font-family: Helvetica, "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+                font-size: 11px;
             }
 
-            thead {
+            .thead {
                 font-size: 14px;
             }
 
@@ -30,29 +30,34 @@
                 border-width: 0 0 1px 1px;
                 border-spacing: 0;
                 border-collapse: collapse;
+                page-break-inside:auto;
             }
+            
+            tr{ page-break-inside:avoid; page-break-after:auto;	}
+            
+            tr.break-page{ page-break-inside:avoid; page-break-after:always;}
 
             td
             {
                 margin: 0;
                 padding: 4px;
                 border-width: 1px 1px 0 0;
-                background-color: #E8EDFF;
+                background-color: #f0f0f0;
             }
 
-            thead tr td.blue{
-                background: #B9C9FE;
+            tr.thead td.blue{
+                background: #cacaca;
             }
 
-             thead tr td.blue2 {
-                 background: #d2dcfe;
+             tr.thead td.blue2 {
+                 background: #e4e4e4;
              }
 
              tr.bluerow td {
-                 background: #B9C9FE;
+                 background: #e4e4e4;
              }
 
-            thead tr td {
+            tr.thead td {
                 text-align: center;
             }
 
@@ -88,15 +93,15 @@
             }
 
              
-            table tr td.amber {
+            table tr div.amber {
                 background-color: #d2ff4d;
             }
 
-            table tr td.green {
+            table tr div.green {
                 background-color: #8cff67;
             }
 
-            table tr td.red {
+            table tr div.red {
                 background-color: #ff3333;
             }
 
@@ -105,28 +110,84 @@
                  font-weight:bold;
                  font-size: 16px;
              }
+             
+             h2
+             {
+                 font-size: 18px;
+                 margin-bottom: 0px;
+             }
+             
+             h4
+             {
+                 font-size: 12px;
+                 margin-top: 10px;
+                 margin-bottom: 10px;
+                 display: block;
+                 float: left;
+                 margin-right: 20px;
+             }
+             
+             h4 span
+             {
+                 font-weight: normal;
+             }
 
+             h5
+             {
+                 font-weight: normal;
+             }
+             
+             .traffic
+             {
+                 width: 15px;
+                 height: 100%;
+                 float: left;
+                 margin-right: 5px;
+             }
+
+             .clear
+             {
+                 clear: both;
+             }
+             
+             .new-page td
+             {
+                 background-color: #ffffff;
+             }
         </style>
         <div id="wrapper">
+            <h2>Risk Assessment Report</h2>
+            <hr />
+            <h4><span>Site:</span> @Model.Task.Site</h4>
+            @if (!string.IsNullOrEmpty(Model.Task.Company))
+            {
+                <h4><span>Company:</span> @Model.Task.Company</h4>
+            }
+            <h4><span>Risk assessment by:</span> @Model.Task.AssessorName</h4>
+            <div class="clear"></div>
             <table cellspacing="0">
                 <thead>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue" colspan="2"><strong>Task: </strong></td>
                         <td colspan="2">@Model.Task.Name</td>
+                        <td colspan="3" style="font-size: 10px; background-color:#fff; text-align:right; border: none">
+                            Page 1/@(Math.Max(1,Math.Ceiling((double)(Model.Assessments.Count-1)/3)))
+                        </td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue" colspan="2"><strong>Report Identifier:</strong></td>
                         <td colspan="2">@Model.AssessmentNumber</td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue" colspan="1"><strong>Site:</strong></td>
-                        <td colspan="2">@Model.Task.Site</td>
+                        <td colspan="2">@Model.Task.Site @if (!string.IsNullOrEmpty(Model.Task.Company))
+                                                         {<text> (</text>@Model.Task.Company<text>)</text>}</td>
                         <td class="blue" colspan="1"><strong>Assessor:</strong></td>
                         <td colspan="1">@Model.Task.AssessorName</td>
                         <td class="blue" colspan="1"><strong>Created Date:</strong></td>
-                        <td colspan="1">@Model.Task.DateStarted.ToShortDateString()</td>
+                        <td colspan="1">@Model.Task.DateStarted.ToString("dd MMM yyyy")</td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue2"></td>
                         <td class="blue2"></td>
                         <td class="blue2"></td>
@@ -135,7 +196,7 @@
                         <td class="blue2"></td>
                         <td class="blue2"><strong>New Risk Rating</strong></td>
                     </tr>
-                    <tr>
+                    <tr class="thead">
                         <td class="blue2 doublecell"><strong>Hazard</strong></td>
                         <td class="blue2 doublecell"><strong>Who might be harmed</strong></td>
                         <td class="blue2 doublecell"><strong>How might they be harmed</strong></td>
@@ -154,16 +215,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var assessment in Model.Assessments)
+                    @{ var count = 0; var className = string.Empty; var index = 0;}
+                    @foreach (var assessment in Model.Assessments)
                     {
-                        <tr>
+                        {
+                            count++;
+                            if (count == 3)
+                            {
+                                if (index != Model.Assessments.Count - 1)
+                                {
+                                    className = "break-page";
+                                }
+                                else
+                                {
+                                    className = string.Empty;
+                                }
+                                count = 0;
+                            }
+                            else
+                            {
+                                className = string.Empty;
+                            }
+                            index++;
+                        }
+                       
+                        <tr class="@className">
                             <td>@assessment.Hazard</td>
                             <td>@assessment.Who</td>
                             <td>@assessment.How @(!string.IsNullOrEmpty(assessment.FurtherDetails) ? "-" + assessment.FurtherDetails : string.Empty)</td>
                             <td>
                                 <ul>
-                                    @if(assessment.ExistingControls != null){
-                                        foreach(var existingControl in assessment.ExistingControls.Split('|'))
+                                    @if (assessment.ExistingControls != null)
+                                    {
+                                        foreach (var existingControl in assessment.ExistingControls.Split('|'))
                                         {
                                             <li><span>@existingControl</span></li>
                                         }
@@ -177,8 +261,9 @@
                             </td>
                             <td>
                                 <ul>
-                                    @if(assessment.Controls != null){
-                                        foreach(var furtherControl in assessment.Controls.Split('|'))
+                                    @if (assessment.Controls != null)
+                                    {
+                                        foreach (var furtherControl in assessment.Controls.Split('|'))
                                         {
                                             <li>@furtherControl</li>
                                         }
@@ -191,6 +276,53 @@
                                 <div><strong>@(assessment.LikelihoodB * assessment.SeverityB)</strong></div>
                             </td>
                         </tr>
+                        
+                        if (className == "break-page")
+                        {
+                            <tr class="new-page">
+                                <td colspan="2">
+                                    <span>Site:</span> @Model.Task.Site
+                                </td>
+                                <td colspan="2">
+                                    @if (!string.IsNullOrEmpty(Model.Task.Company))
+                                    {
+                                        <span>Company:</span> @Model.Task.Company
+                                    }
+                                </td>
+                                <td colspan="2">
+                                    <span>Risk assessment by:</span> @Model.Task.AssessorName
+                                </td>
+                                <td colspan="1" style="background-color:#fff;">
+                                    Page @(Math.Ceiling((double)index / 3)+1)/@(Math.Max(1,Math.Ceiling((double)(Model.Assessments.Count-1)/3)))
+                                </td>
+                            </tr>
+                            <tr class="thead">
+                                <td class="blue2"></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"><strong>Risk Rating<br/>(L * S)</strong></td>
+                                <td class="blue2"></td>
+                                <td class="blue2"><strong>New Risk Rating</strong></td>
+                            </tr>
+                            <tr class="thead">
+                                <td class="blue2 doublecell"><strong>Hazard</strong></td>
+                                <td class="blue2 doublecell"><strong>Who might be harmed</strong></td>
+                                <td class="blue2 doublecell"><strong>How might they be harmed</strong></td>
+                                <td class="blue2 doublecell"><strong>Existing Controls</strong></td>
+                                <td class="blue2 riskrating">
+                                    <div>L</div>
+                                    <div>S</div>
+                                    <div>R</div>
+                                </td>
+                                <td class="blue2 doublecell"><strong>Further Controls/Actions</strong></td>
+                                <td class="blue2 riskrating">
+                                    <div>L</div>
+                                    <div>S</div>
+                                    <div>R</div>
+                                </td>
+                            </tr>
+                        }
                     }
                     <tr class="bluerow">
                         <td rowspan="3" class="key">
@@ -202,7 +334,8 @@
                         <td rowspan="3">
                             Risk Rating = L X S (Likelihood X Severity)
                         </td>
-                        <td class="green" colspan="2">
+                        <td colspan="2">
+                            <div class="traffic green">&nbsp;</div>
                             Low = 1 to 4
                         </td>
                     </tr>
@@ -210,16 +343,22 @@
                         <td colspan="3">
                             <strong>Severity</strong> 1 = No injury, 2 = Minor injury, 3 = Medical treatment, 4 = Reportable, 5 = Major injury/Fatal
                         </td>
-                        <td class="amber" colspan="2">
+                        <td colspan="2">
+                            <div class="traffic amber">&nbsp;</div>
                             Medium = 5 to 11
                         </td>
                     </tr>
                     <tr class="bluerow">
                         <td colspan="3"></td>
-                        <td class="red" colspan="2">High = 12 to 25</td>
+                        <td colspan="2">
+                            <div class="traffic red">&nbsp;</div>
+                            High = 12 to 25
+                        </td>
+
                     </tr>
                 </tbody>
-            </table>     
+            </table>  
+            <h5>iRisk Assess &copy;, www.iriskassess.co.uk</h5>   
         </div>
     </body>
 </html>

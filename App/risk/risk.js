@@ -36,6 +36,7 @@ steal(
             //apply overrides here
             $.mobile.defaultPageTransition = "none";
             $.mobile.defaultDialogTransition = "none";
+			$.mobile.allowCrossDomainPages = true;
         });
         
         $(document).bind('pagebeforecreate', function (e) {

@@ -1,0 +1,23 @@
+@model ServerSide.Models.Task
+
+<p>Hi @Model.AssessorName,</p>
+
+<p>
+    We failed to generate a report for the following task:<br />
+    <strong>Task name: </strong>@Model.Name <br />
+    <strong>Site: </strong>@Model.Site <br />
+    <strong>Name: </strong>@Model.AssessorName <br />
+    <strong>Date Completed: </strong>@DateTime.Now.ToShortDateString()
+</p>
+
+<p>
+    One possible reason for the faliure is: @Model.ReasonForFaliure <br/>
+    If the issue persists either <a target="_blank" href="http://www.iriskassess.co.uk/ContactUs">contact us</a> or view the following <a target="_blank" href="http://www.youtube.com/watch?v=4e5SOGWCvXY">video tutorial</a>
+</p>
+
+<p>
+    Regards,<br />
+    The iRisk Assess team
+</p>
+
+

@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
+    using System.Web.Hosting;
     using System.Web.Script.Serialization;
 
     using ServerSide.Mailers;
@@ -20,47 +22,100 @@
 
         public static void CreateTextFile(string reportId, Task task, List<Assessment> assessments)
         {
-            var serializer = new JavaScriptSerializer();
-            var taskString = serializer.Serialize(task);
-            var assessmentsString = serializer.Serialize(assessments);
-
-            if (!Directory.Exists(@"c:\temp"))
+            try
             {
-                Directory.CreateDirectory(@"c:\temp");
-            }
+                var serializer = new JavaScriptSerializer();
+                var taskString = serializer.Serialize(task);
+                var assessmentsString = serializer.Serialize(assessments);
 
-            var path = String.Format(@"c:\temp\{0}.txt", reportId);
-            if (!File.Exists(path))
-            {
-                // Create a file to write to. 
-                using (var sw = File.CreateText(path))
+                var path = string.Format(HostingEnvironment.MapPath("~/App_Data/{0}.txt"),reportId);
+                if (!File.Exists(path))
                 {
-                    sw.Write(taskString);
-                    sw.Write("~");
-                    sw.Write(assessmentsString);
+                    // Create a file to write to. 
+                    using (var sw = File.CreateText(path))
+                    {
+                        sw.Write(taskString);
+                        sw.Write("~");
+                        sw.Write(assessmentsString);
+                    }
                 }
+            }
+            catch(Exception e)
+            {
+                Log.SendExceptionEmail(e);
             }
         }
 
         public void Process(PdfGenerationRequest request)
         {
-            var reportId = Guid.NewGuid().ToString().Replace("-", String.Empty).Substring(0, 8);
-            var pdfManager = new PdfManager();
-            foreach (var assessment in request.Assessments)
+            try
             {
-                if (assessment.ExistingControls == "null")
+                var reportId = Guid.NewGuid().ToString().Replace("-", String.Empty).Substring(0, 8);
+                var pdfManager = new PdfManager();
+                if (request != null)
                 {
-                    assessment.ExistingControls = null;
-                }
+                    if(request.Assessments != null && request.Task != null)
+                    {
+                        if (request.Assessments.Any())
+                        {
+                            foreach (var assessment in request.Assessments)
+                            {
+                                if (assessment != null)
+                                {
+                                    if (assessment.ExistingControls == "null")
+                                    {
+                                        assessment.ExistingControls = null;
+                                    }
 
-                if (assessment.Controls == "null")
-                {
-                    assessment.Controls = null;
+                                    if (assessment.Controls == "null")
+                                    {
+                                        assessment.Controls = null;
+                                    }
+                                }
+
+                            }
+                            CreateTextFile(reportId, request.Task, request.Assessments);
+                            pdfManager.GetCertificate(reportId);
+                            this.userMailer.Report(pdfManager.CertificatePath, request.Task).Deliver();
+                        }
+                        else
+                        {
+                            request.Task.ReasonForFaliure =
+                                "No assessments created against the task. Ensure there are assessments in the assessments list before emailing";
+                            this.userMailer.Problem(request.Task).Deliver();
+
+                            Log.SendCustomLogEmail("No assessments created against the task");
+                        }
+                    }
+                    else
+                    {
+                        if (request.Assessments == null)
+                        {
+                            request.Task.ReasonForFaliure =
+                                "No assessments created against the task. Ensure there are assessments in the assessments list before emailing";
+                            this.userMailer.Problem(request.Task).Deliver();
+                            Log.SendCustomLogEmail("assessments is null");
+                        }
+                        if(request.Task == null)
+                        {
+                            request.Task.ReasonForFaliure =
+                                "Insufficient task information - make sure all information in the task form is completed before emailing";
+                            this.userMailer.Problem(request.Task).Deliver();
+                            Log.SendCustomLogEmail("task is null");
+                        }
+                    }
                 }
+                else
+                {
+                    Log.SendCustomLogEmail("request is null");
+                }
+                
             }
-            CreateTextFile(reportId, request.Task, request.Assessments);
-            pdfManager.GetCertificate(reportId);
-            this.userMailer.Report(pdfManager.CertificatePath, request.Task).Deliver();
+            catch (Exception e)
+            {
+                Log.SendExceptionEmail(e);
+                Log.SendCustomLogEmail("Process method catching exception line 108 PdfGenerationRequestProcessor");
+            }
         }
     }
 }
