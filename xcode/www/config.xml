@@ -22,6 +22,8 @@
                   minVersion="2.1" />
   </gap:platforms>
 
+  <access origin="http://eriskservice.apphb.com/" />  
+    
   <icon src="Icon.png" />
 
   <icon src="assets/iOS/Icons/Icon-Small.png"
