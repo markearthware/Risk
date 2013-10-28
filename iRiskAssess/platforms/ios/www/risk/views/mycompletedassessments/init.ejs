@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ul id="MyCompletedAssessmentsList" data-filter="true" data-filter-placeholder="Search for an assessment" data-role="listview">
+  <%if(this.length < 1){ %>
+  
+  <li data-role="list-divider">
+    There are currently no risk assessments recorded for <span class="task"></span>
+  </li>
+    
+  <%}else{ %>
+
+  <li id="divider" data-role="list-divider">
+  </li> 
+  
+  <%if(this.ambers.length > 0){ %>
+  <li class="orange-divider" data-role="list-divider">
+	   Amber Assessments
+  </li> 
+  <%}%>
+	
+  <%for(var i = 0; i < this.ambers.length; i++){ %>
+  <li>
+    <a class="assessment-item" id="<%=this.ambers[i].id%>">
+      <h3>
+        <%=this.ambers[i].Hazard%>
+      </h3>
+      <p>
+        <strong>Who:</strong> <%= this.ambers[i].Who %>
+      </p>
+      <p>
+        <strong>How:</strong> <%= this.ambers[i].How %> <%if(this.ambers[i].FurtherDetails){%> - <%= this.ambers[i].FurtherDetails %><%}%>
+      </p>
+      <% if(this.ambers[i].Controls){ %>
+        <p>
+          <STRONG>Further Controls:</STRONG>
+           <%for(var k = 0; k < this.ambers[i].Controls.split("|").length; k++){%>
+             <br/>
+             <span>&bull;</span>
+             <%=this.ambers[i].Controls.split("|")[k]%>
+           <%}%>
+        </p>  
+      <%}%>
+	  </a>
+  </li>
+  <%}%>
+  
+    <%if(this.greens.length > 0){ %>
+  <li class="green-divider" data-role="list-divider">
+	   Green Assessments
+  </li> 
+  <%}%>
+	
+  <%for(var i = 0; i < this.greens.length; i++){ %>
+  <li>
+    <a class="assessment-item" id="<%=this.greens[i].id%>">
+      <h3>
+        <%=this.greens[i].Hazard%>
+      </h3>
+      <p>
+        <strong>Who:</strong> <%= this.greens[i].Who %>
+      </p>
+      <p>
+        <strong>How:</strong> <%= this.greens[i].How %> <%if(this.greens[i].FurtherDetails){%> - <%= this.greens[i].FurtherDetails %><%}%>
+      </p>
+      <% if(this.greens[i].Controls){ %>
+        <p>
+          <STRONG>Further Controls:</STRONG>
+           <%for(var k = 0; k < this.greens[i].Controls.split("|").length; k++){%>
+             <br/>
+             <span>&bull;</span>
+             <%=this.greens[i].Controls.split("|")[k]%>
+           <%}%>
+        </p>  
+      <%}%>
+	  </a>
+  </li>
+  <%}}%>
+</ul>
+<br/>
+<p>
+  <a data-role="button" data-icon="refresh" id="CopyTask" href="inprogress.htm">Create copy of this task</a>
+</p>
+

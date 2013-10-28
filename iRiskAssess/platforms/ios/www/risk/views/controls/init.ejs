@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<div data-role="fieldcontain">
+
+  <label for="ControlsList" class="select inline">
+    <strong>Add further controls</strong>
+  </label>
+  <a id="NewControl" data-mini="true" href="dialog/furthercontrolnew.htm" data-iconpos="right" data-icon="plus" data-role="button" data-inline="true">Add New</a>
+  <select name="ControlsList" id="ControlsList" multiple="multiple" data-native-menu="false">
+    <option>Choose options</option>
+    <%for(var i = "0"; i < this.controls.length; i++){ %>
+    <option value="<%=this.controls[i].id%>">
+        <%=this.controls[i].Name%>
+    </option>
+    <%}%>
+  </select>
+
+  <label for="SeverityList" class="select">
+    Adjust <strong>Severity</strong> Rating
+  </label>
+  <select name="SeverityList" id="SeverityList" data-native-menu="false">
+    <option value="1">
+      1 - No injury
+    </option>
+    <option value="2">
+      2 - Minor injury
+    </option>
+    <option value="3">
+      3 - Medical treatment
+    </option>
+    <option value="4">
+      4 - Reportable
+    </option>
+    <option value="5">
+      5 - Major injury/Fatal
+    </option>
+  </select>
+  
+  <label for="LikelihoodList" class="select">
+    Adjust <strong>Likelihood</strong> Rating
+  </label>
+  <select name="LikelihoodList" id="LikelihoodList" data-native-menu="false">
+    <option value="1">
+      1 - Highly unlikely
+    </option>
+    <option value="2">
+      2 - Unlikely
+    </option>
+    <option value="3">
+      3 - Possible
+    </option>
+    <option value="4">
+      4 - Likely
+    </option>
+    <option value="5">
+      5 - Certain
+    </option>
+  </select>
+
+  <div id="trafficLight">
+    <div id="green">
+      <div class="text">Low risk level - Safe to proceed with work task</div>
+    </div>
+    <div id="amber">
+      <div class="text">Satisfactory risk level - Safe to proceed with work task</div>
+    </div>
+    <div id="red">
+      <div class="text">High risk level - Add further controls to reduce risk</div>
+    </div>
+  </div>
+  
+  <div data-role="fieldcontain">
+    <p id="button-container">
+      <input type="submit" data-role="button" data-icon="check" id="submit" value="Finish Assessment"/>
+    </p>
+  </div>
+</div>

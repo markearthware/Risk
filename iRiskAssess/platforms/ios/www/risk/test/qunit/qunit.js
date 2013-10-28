@@ -1,0 +1,1 @@
+steal("funcunit/qunit", "./risk_test.js");

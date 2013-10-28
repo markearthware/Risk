@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<label data-inline="true">Your first name:</label>
+<input type="text" name="FirstName" id="FirstName"  class="textinput required" value="<%=this.FirstName%>" placeholder="Compulsory" />
+
+<label data-inline="true">Your last name:</label>
+<input type="text" name="LastName" id="LastName"  class="textinput required" value="<%=this.LastName%>" placeholder="Compulsory" />
+
+<label data-inline="true">Your company:</label>
+<input type="text" name="Company" id="Company"  class="textinput required" value="<%=this.Company%>" placeholder="Compulsory" />
+
+<label data-inline="true">Email address:</label>
+<input type="text" name="EmailAddress" id="EmailAddress"  class="required email" value="<%=this.EmailAddress%>" placeholder="Compulsory" />
+
+<label data-inline="true">CC email address:</label>
+<input type="text"  name="ManagerEmailAddress" id="ManagerEmailAddress" class="email" value="<%=this.ManagerEmailAddress%>" placeholder="Optional"/>
+
+<input type="submit" id="sendemail" data-icon="check" value="Email report" />
