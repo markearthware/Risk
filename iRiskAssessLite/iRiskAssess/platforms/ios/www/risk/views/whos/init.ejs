@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<div data-role="fieldcontain">
+  <label for="WhosList" class="select"><strong>Who</strong> is at risk?</label>
+  <select name="WhosList" id="WhosList" data-native-menu="false">
+    <option>Choose option</option>
+    <%for(var i = "0"; i < this.whos.length; i++){ %>
+    <option value="<%=this.whos[i].id%>">
+        <%=this.whos[i].Name%>
+    </option>
+    <%}%>
+  </select>
+
+    <label for="HowsList" class="select inline">
+      <strong>How</strong> are they at risk?
+    </label>
+    <a id="NewHow" data-mini="true" href="dialog/lite.htm" data-iconpos="right" data-icon="plus" data-role="button" data-inline="true">Add New</a>
+  <select name="HowsList" id="HowsList" data-native-menu="false">
+    <option>Choose option</option>
+    <%for(var i = "0"; i < this.hows.length; i++){ %>
+      <option value="<%=this.hows[i].id%>">
+        <%=this.hows[i].Name%>
+      </option>
+    <%}%>
+  </select>
+
+  <label for="FurtherDetails">
+    Further details of how
+  </label>
+  <input data-role="textinput" type="text" id="FurtherDetails" name="FurtherDetails" placeholder="Optional"/>
+
+  <label for="ExistingControlsList" class="select inline">
+    Any <strong>existing controls</strong>?
+  </label>
+  <a id="NewControl" data-mini="true" href="dialog/lite.htm" data-iconpos="right" data-icon="plus" data-role="button" data-inline="true">Add New</a>
+  <select name="ExistingControlsList" id="ExistingControlsList" multiple="multiple" data-native-menu="false">
+    <option>Choose options (optional)</option>
+    <%for(var i = "0"; i < this.existingControls.length; i++){ %>
+      <option value="<%=this.existingControls[i].id%>" >
+        <%=this.existingControls[i].Name%>
+      </option>
+    <%}%>
+  </select>
+  
+  <label for="SeverityList" class="select">
+    <strong>Severity</strong> Rating
+  </label>
+  <select name="SeverityList" id="SeverityList" data-native-menu="false">
+    <option data-placeholder="true">Choose Rating</option>
+    <option value="1">
+      1 - No injury
+    </option>
+    <option value="2">
+      2 - Minor injury
+    </option>
+    <option value="3">
+      3 - Medical treatment
+    </option>
+    <option value="4">
+      4 - Reportable
+    </option>
+    <option value="5">
+      5 - Major injury/Fatal
+    </option>
+  </select>
+
+  <label for="LikelihoodList" class="select">
+    <strong>Likelihood</strong> Rating
+  </label>
+  <select name="LikelihoodList" id="LikelihoodList" data-native-menu="false">
+    <option data-placeholder="true">Choose Rating</option>
+    <option value="1">
+      1 - Highly unlikely
+    </option>
+    <option value="2">
+      2 - Unlikely
+    </option>
+    <option value="3">
+      3 - Possible
+    </option>
+    <option value="4">
+      4 - Likely
+    </option>
+    <option value="5">
+      5 - Certain
+    </option>
+  </select>
+    <div id="trafficLight">
+      <div id="green">
+        <div class="text">Low risk level - Safe to proceed with work task</div>
+      </div>
+      <div id="amber">
+        <div class="text">Satisfactory risk level - Safe to proceed with work task</div>
+      </div>
+      <div id="red">
+        <div class="text">High risk level - Add further controls to reduce risk</div>
+      </div>
+    </div>
+  <div data-role="fieldcontain">
+    <p>
+      <a data-role="button" data-icon="check" data-href="myassessments.htm" class="hidden" id="submit">Save Assessment</a>
+      <a data-role="button" data-icon="check" data-href="controls.htm" class="hidden" id="furtherControls">Add Further Controls</a>
+    </p>
+  </div>
+    
+</div>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+    xmlns:gap	= "http://phonegap.com/ns/1.0"
+    id = "com.shortec.erisklite"
+    version = "2.0.0.1">
+    
+    <name>iRisk Assess</name>
+    
+    <description>
+        The Comprehensive Risk Assessment App
+    </description>
+    
+    <author href=""
+        email="">
+        Shortec Ltd
+    </author>
+    
+    <icon src="Icon.png" />
+    
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+    
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+    
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    
+</widget>

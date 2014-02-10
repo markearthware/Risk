@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ul id="DetailsList" data-role="listview">
+  
+  <li data-role="list-divider">
+    Who is at risk from '<%= this.hazardName %>':
+  </li>
+  <li><%= this.who %></li>
+
+    
+  <li data-role="list-divider">
+    How are they at risk from '<%= this.hazardName %>':
+  </li>
+
+  <li>
+    <%= this.how %> <% if(this.furtherDetails){%> <%= " - " + this.furtherDetails %> <%}%>
+  </li>
+
+  <% if(this.existingControls.length > 0){ %>
+
+  <li data-role="list-divider" class="green-divider">
+    Existing controls already in place:
+  </li>
+
+  <%for(var k = 0; k < this.existingControls.length; k++){ %>
+
+  <li>
+    <%= this.existingControls[k].Name %>
+  </li>
+
+  <%}}%>
+
+  <% if(this.controls.length > 0){ %>
+    
+  <li data-role="list-divider" class="red-divider">
+    Further controls required:
+  </li>
+
+  <%for(var k = 0; k < this.controls.length; k++){ %>
+
+  <li>
+    <%= this.controls[k].Name %>
+  </li>
+
+  <%}}%>
+    
+    <li data-role="list-divider" class="<%=this.className%>">
+      <div class="fifty">
+        <span class="fleft">
+          Severity: <%= this.severityRating %>
+        </span>
+        <span class="fright">
+          Likelihood: <%= this.likelihoodRating %>
+        </span>
+      </div>
+      <div class="center">
+          Risk Rating: <%= this.assessmentRating %>/25
+      </div>
+    </li>
+
+  </ul>
+<br/>
+<p>
+  <a data-role="button" data-icon="gear" href="whos.htm">Re-do this assessment</a>
+  <a data-role="button" data-icon="grid" href="myassessments.htm">Back to my assessments</a>
+</p> 
+ 

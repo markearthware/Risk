@@ -1,0 +1,1184 @@
+TCordovaLib
+v6
+r1
+cCheck dependencies
+cCpHeader Classes/NSDictionary+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
+cCpHeader Classes/CDVInvokedUrlCommand.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+cCpHeader Classes/NSData+Base64.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
+cCpHeader Classes/CDVPluginResult.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+cCpHeader Classes/CDVPlugin.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+cCpHeader Classes/CDVDebug.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
+cCpHeader Classes/NSMutableArray+QueueAdditions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+cCpHeader Classes/CDVWhitelist.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
+cCpHeader Classes/CDVViewController.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
+cCpHeader Classes/CDVURLProtocol.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
+cCpHeader Classes/CDVCommandDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+cCpHeader Classes/CDV.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h
+cCpHeader Classes/CDVAvailability.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+cCpHeader Classes/CDVLocalStorage.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
+cCpHeader Classes/UIDevice+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
+cCpHeader Classes/NSArray+Comparisons.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
+cCpHeader Classes/CDVCommandQueue.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
+cCpHeader Classes/CDVCommandDelegateImpl.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
+cCpHeader Classes/CDVShared.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h
+cCpHeader Classes/CDVScreenOrientationDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
+cCpHeader Classes/CDVConfigParser.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.h
+cCpHeader Classes/CDVJSON.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
+cCpHeader Classes/CDVWebViewDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h
+cCpHeader Classes/CDVUserAgentUtil.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h
+cCpHeader Classes/CDVTimer.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
+cProcessPCH /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.pch CordovaLib_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a normal i386
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+c00000000525642F10000000000000176
+t1381384945
+s374
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
+c00000000526BCEBB00000000000003B5
+t1382796987
+s949
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000526BCEC600000000000001A0
+t1382796998
+s416
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDV.h
+c00000000526D82800000000000000516
+t1382908544
+s1302
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+c00000000526D82800000000000000C83
+t1382908544
+s3203
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h
+c00000000526D828000000000000008BA
+t1382908544
+s2234
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.h
+c00000000526D82800000000000000473
+t1382908544
+s1139
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m
+c00000000526D8280000000000000126E
+t1382908544
+s4718
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h
+c00000000526D82800000000000000501
+t1382908544
+s1281
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m
+c00000000526D8280000000000000158B
+t1382908544
+s5515
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.h
+c00000000526D828000000000000004CB
+t1382908544
+s1227
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m
+c00000000526D82800000000000000EB2
+t1382908544
+s3762
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVDebug.h
+c00000000526D82800000000000000401
+t1382908544
+s1025
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+c00000000526D828000000000000007E6
+t1382908544
+s2022
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m
+c00000000526D82800000000000000DDE
+t1382908544
+s3550
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+c00000000526D828000000000000003DA
+t1382908544
+s986
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m
+c00000000526D8280000000000000098E
+t1382908544
+s2446
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.h
+c00000000526D828000000000000006CF
+t1382908544
+s1743
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m
+c00000000526D82800000000000004C7E
+t1382908544
+s19582
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h
+c00000000526D82800000000000000892
+t1382908544
+s2194
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m
+c00000000526D828000000000000016AE
+t1382908544
+s5806
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+c00000000526D82800000000000000C13
+t1382908544
+s3091
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m
+c00000000526D82800000000000001B29
+t1382908544
+s6953
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h
+c00000000526D82800000000000000408
+t1382908544
+s1032
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.h
+c00000000526D828000000000000003E6
+t1382908544
+s998
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m
+c00000000526D828000000000000006B6
+t1382908544
+s1718
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.h
+c00000000526D8280000000000000038D
+t1382908544
+s909
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m
+c00000000526D82800000000000000AA2
+t1382908544
+s2722
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.h
+c00000000526D8280000000000000041C
+t1382908544
+s1052
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m
+c00000000526D82800000000000002514
+t1382908544
+s9492
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.h
+c00000000526D82800000000000000421
+t1382908544
+s1057
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m
+c00000000526D828000000000000012A2
+t1382908544
+s4770
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.h
+c00000000526D82800000000000000ACC
+t1382908544
+s2764
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m
+c00000000526D82800000000000009F3C
+t1382908544
+s40764
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.h
+c00000000526D828000000000000005A2
+t1382908544
+s1442
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m
+c00000000526D828000000000000037C6
+t1382908544
+s14278
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h
+c00000000526D828000000000000004B4
+t1382908544
+s1204
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m
+c00000000526D828000000000000027D3
+t1382908544
+s10195
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.h
+c00000000526D82800000000000000392
+t1382908544
+s914
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m
+c00000000526D828000000000000004D8
+t1382908544
+s1240
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h
+c00000000526D8280000000000000037D
+t1382908544
+s893
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m
+c00000000526D828000000000000022CC
+t1382908544
+s8908
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.h
+c00000000526D828000000000000005DA
+t1382908544
+s1498
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m
+c00000000526D82800000000000001059
+t1382908544
+s4185
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+c00000000526D828000000000000003A0
+t1382908544
+s928
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m
+c00000000526D82800000000000000584
+t1382908544
+s1412
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.h
+c00000000526D82800000000000000476
+t1382908544
+s1142
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m
+c00000000526D82800000000000000620
+t1382908544
+s1568
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/CordovaLib_Prefix.pch
+c00000000526D82800000000000000346
+t1382908544
+s838
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o
+t1382908584
+s63136
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o
+t1382908584
+s60076
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o
+t1382908584
+s27744
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o
+t1382908584
+s18704
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o
+t1382908584
+s10864
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o
+t1382908584
+s109620
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o
+t1382908584
+s59512
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o
+t1382908584
+s37224
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.o
+t1382908584
+s9388
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o
+t1382908584
+s22936
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o
+t1382908584
+s71232
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o
+t1382908584
+s52708
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o
+t1382908584
+s191832
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o
+t1382908585
+s71304
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o
+t1382908584
+s42348
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/Cordova.LinkFileList
+c00000000526D82A70000000000000C67
+t1382908583
+s3175
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o
+t1382908584
+s7468
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o
+t1382908584
+s11132
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o
+t1382908584
+s17840
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o
+t1382908584
+s6980
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o
+t1382908584
+s9600
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a
+t2
+s0
+
+N/var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.pch
+t1382908584
+s3202176
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies69e1164cba1db841^33fe294cba1db841^---0#1#1#--18"Check dependencies36"CED76B3E-CBE1-45BF-BAC2-E488510DDB81-
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.649015
+e404601384.860305
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m216"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o Classes/CDVCommandDelegateImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler0247a628ba1db841^793ddc28ba1db841^---0#0#1#-19%DVTDocumentLocation2@97"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m0000000000000000^3761"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o Classes/CDVCommandDelegateImpl.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandDelegateImpl.o36"65FF21CA-6F01-40CF-8A91-119E2C86EEC6-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.598398
+e404601384.822357
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDV.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVDebug.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m202"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o Classes/CDVCommandQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilera4519928ba1db841^c686d228ba1db841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m0000000000000000^3719"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o Classes/CDVCommandQueue.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVCommandQueue.o36"42FE3722-2631-4375-985C-AD74967E76B0-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.719333
+e404601384.761671
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m202"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o Classes/CDVConfigParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler0f46b828ba1db841^b1e0c228ba1db841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m0000000000000000^3719"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o Classes/CDVConfigParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVConfigParser.o36"094F602C-9BC6-4DA8-952A-484B9EF03E9E-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.260388
+e404601384.303710
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m212"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o Classes/CDVInvokedUrlCommand.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerdcd64228ba1db841^1ec54d28ba1db841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m0000000000000000^3749"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o Classes/CDVInvokedUrlCommand.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVInvokedUrlCommand.o36"FEC8B7D7-3A29-4944-BC97-577AE5665C02-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.762030
+e404601384.792749
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m186"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o Classes/CDVJSON.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerf834c328ba1db841^95f2ca28ba1db841^---0#0#1#-19%DVTDocumentLocation2@82"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m0000000000000000^3671"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o Classes/CDVJSON.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVJSON.o36"35FA2551-C47D-48E1-B711-D560A6E90A9E-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.374192
+e404601384.648647
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDV.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVDebug.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m202"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o Classes/CDVLocalStorage.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilereeec5f28ba1db841^b60ea628ba1db841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m0000000000000000^3719"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o Classes/CDVLocalStorage.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVLocalStorage.o36"4348FAA3-C137-470F-BD8D-F778C9AF8BC2-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.297317
+e404601384.537136
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m190"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o Classes/CDVPlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler9b3d4c28ba1db841^9d818928ba1db841^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m0000000000000000^3683"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o Classes/CDVPlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPlugin.o36"7392522B-3663-4AB8-80D9-3E8EE84AE676-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.262540
+e404601384.319261
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVDebug.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m202"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o Classes/CDVPluginResult.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerbf604328ba1db841^fcc45128ba1db841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m0000000000000000^3719"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o Classes/CDVPluginResult.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVPluginResult.o36"D8DE82D6-7ACD-41AB-8214-61FC5FF597BC-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.905389
+e404601384.938916
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m190"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.o Classes/CDVShared.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerb8e9e728ba1db841^dd5cf028ba1db841^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m0000000000000000^3683"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.o Classes/CDVShared.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVShared.o36"BDF1C56F-FA4F-4038-87A3-AB575F63BD3A-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.861837
+e404601384.905144
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m188"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o Classes/CDVTimer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler15c4dc28ba1db841^91b8e728ba1db841^---0#0#1#-19%DVTDocumentLocation2@83"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m0000000000000000^3677"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o Classes/CDVTimer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVTimer.o36"7DF0BA7C-6600-4F17-BA09-A887148B34EF-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.320341
+e404601384.568520
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m200"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o Classes/CDVURLProtocol.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilere6225228ba1db841^88129128ba1db841^---0#0#1#-19%DVTDocumentLocation2@89"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m0000000000000000^3713"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o Classes/CDVURLProtocol.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVURLProtocol.o36"455421E5-9CDB-4B7D-BD20-A10635E1288C-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.793430
+e404601384.982180
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m204"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o Classes/CDVUserAgentUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilercd3ecb28ba1db841^5471fb28ba1db841^---0#0#1#-19%DVTDocumentLocation2@91"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m0000000000000000^3725"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o Classes/CDVUserAgentUtil.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVUserAgentUtil.o36"37A3565B-CB11-40A3-AA4C-C1101122CF9E-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.330792
+e404601384.926445
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDV.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVDebug.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m206"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o Classes/CDVViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler70b55628ba1db841^3141ed28ba1db841^---0#0#1#-19%DVTDocumentLocation2@92"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m0000000000000000^3731"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o Classes/CDVViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVViewController.o36"4FB26A32-B700-45B5-A53F-D07AD907E7F6-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.823932
+e404601385.012298
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m208"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o Classes/CDVWebViewDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler800ed328ba1db841^5b260329ba1db841^---0#0#1#-19%DVTDocumentLocation2@93"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m0000000000000000^3737"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o Classes/CDVWebViewDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWebViewDelegate.o36"B922B78C-4C8D-4361-86E3-F97B71414A34-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.303968
+e404601384.373955
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m196"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o Classes/CDVWhitelist.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler19044e28ba1db841^95bb5f28ba1db841^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m0000000000000000^3701"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o Classes/CDVWhitelist.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/CDVWhitelist.o36"764EECF1-8AAA-4C54-97A7-65D34F288EB8-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.568887
+e404601384.598136
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m210"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o Classes/NSArray+Comparisons.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler68cb9128ba1db841^8e209928ba1db841^---0#0#1#-19%DVTDocumentLocation2@94"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m0000000000000000^3743"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o Classes/NSArray+Comparisons.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSArray+Comparisons.o36"C4F6A3C8-ABF7-43B5-AD07-AF73CCD70275-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.260822
+e404601384.296568
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m198"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o Classes/NSData+Base64.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerfdf54228ba1db841^8eeb4b28ba1db841^---0#0#1#-19%DVTDocumentLocation2@88"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m0000000000000000^3707"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o Classes/NSData+Base64.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSData+Base64.o36"985FAB86-BDF7-4CEE-9595-F70AE373AEBB-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.260102
+e404601384.303342
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m218"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o Classes/NSDictionary+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler29cd4228ba1db841^0a804d28ba1db841^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m0000000000000000^3767"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o Classes/NSDictionary+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSDictionary+Extensions.o36"B6631CE9-3BD6-41D5-AA10-A5794F5A7AD4-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.303615
+e404601384.330538
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m230"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o Classes/NSMutableArray+QueueAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compileradf94d28ba1db841^309f5428ba1db841^---0#0#1#-19%DVTDocumentLocation2@104"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m0000000000000000^3803"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o Classes/NSMutableArray+QueueAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/NSMutableArray+QueueAdditions.o36"DA2E5F5F-5713-46B8-8870-07365EAA5ECF-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601384.538110
+e404601384.719096
+r1
+xCompileC
+xbuild/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m210"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o Classes/UIDevice+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler76e38928ba1db841^7617b828ba1db841^---0#0#1#-19%DVTDocumentLocation2@94"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m0000000000000000^3743"CompileC build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o Classes/UIDevice+Extensions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/UIDevice+Extensions.o36"A97A167D-C108-435D-8D1D-DF769509467D-
+bDC1FF188-FD10-421A-B875-068602A45F64
+
+CCpHeader Classes/CDV.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h
+s404601420.172320
+e404601420.173700
+r1
+xCpHeader
+xClasses/CDV.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h106"CpHeader Classes/CDV.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h85422c4cba1db841^45832c4cba1db841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h003418c2ddffdf42^709"CpHeader Classes/CDV.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDV.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDV.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"C6A49457-4F15-4E0D-841E-9022053AD85B-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVAvailability.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+s404601420.172880
+e404601420.174000
+r1
+xCpHeader
+xClasses/CDVAvailability.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h130"CpHeader Classes/CDVAvailability.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.ha25e2c4cba1db841^fda22c4cba1db841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h003418c2ddffdf42^745"CpHeader Classes/CDVAvailability.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVAvailability.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"F0940B7F-D007-41FE-9E92-5BE9B6F07C1D-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVCommandDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+s404601420.171599
+e404601420.173034
+r1
+xCpHeader
+xClasses/CDVCommandDelegate.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h136"CpHeader Classes/CDVCommandDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.hfc002c4cba1db841^ac732c4cba1db841^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h003418c2ddffdf42^754"CpHeader Classes/CDVCommandDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"915DD429-152B-4454-BA14-899E535CC6DB-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVCommandDelegateImpl.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
+s404601420.176331
+e404601420.178963
+r1
+xCpHeader
+xClasses/CDVCommandDelegateImpl.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h144"CpHeader Classes/CDVCommandDelegateImpl.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.ha6642d4cba1db841^0bd12d4cba1db841^---0#0#1#-19%DVTDocumentLocation2@109"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h003418c2ddffdf42^766"CpHeader Classes/CDVCommandDelegateImpl.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandDelegateImpl.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"06E3F69F-21DF-4D81-826C-D39C4758141F-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVCommandQueue.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
+s404601420.175184
+e404601420.176443
+r1
+xCpHeader
+xClasses/CDVCommandQueue.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h130"CpHeader Classes/CDVCommandQueue.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.ha0f92c4cba1db841^4d842d4cba1db841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h003418c2ddffdf42^745"CpHeader Classes/CDVCommandQueue.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVCommandQueue.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"7825B30A-DE5B-4022-AD1E-89E78A8BB62B-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVConfigParser.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.h
+s404601420.178560
+e404601420.180003
+r1
+xCpHeader
+xClasses/CDVConfigParser.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.h130"CpHeader Classes/CDVConfigParser.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.hd3d92d4cba1db841^f0182e4cba1db841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.h003418c2ddffdf42^745"CpHeader Classes/CDVConfigParser.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVConfigParser.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVConfigParser.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"DD85E916-BB88-4047-82CC-56E493CACC6D-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVDebug.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
+s404601420.169124
+e404601420.170716
+r1
+xCpHeader
+xClasses/CDVDebug.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h116"CpHeader Classes/CDVDebug.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h6a682b4cba1db841^5bb52b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h003418c2ddffdf42^724"CpHeader Classes/CDVDebug.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVDebug.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVDebug.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"8A6D4CF0-2318-4254-B4CC-1327889E7BE0-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVInvokedUrlCommand.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+s404601420.166815
+e404601420.168619
+r1
+xCpHeader
+xClasses/CDVInvokedUrlCommand.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h140"CpHeader Classes/CDVInvokedUrlCommand.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h20d32a4cba1db841^7e392b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@107"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h003418c2ddffdf42^760"CpHeader Classes/CDVInvokedUrlCommand.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVInvokedUrlCommand.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"E7C10FDD-26CD-46EC-8235-3C3BFA03E0B5-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVJSON.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
+s404601420.179485
+e404601420.180613
+r1
+xCpHeader
+xClasses/CDVJSON.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h114"CpHeader Classes/CDVJSON.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h57092e4cba1db841^73482e4cba1db841^---0#0#1#-19%DVTDocumentLocation2@94"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h003418c2ddffdf42^721"CpHeader Classes/CDVJSON.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVJSON.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"E2E2B7CA-24F1-4EFD-AA48-BE2318EC4E0B-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVLocalStorage.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
+s404601420.173527
+e404601420.176056
+r1
+xCpHeader
+xClasses/CDVLocalStorage.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h130"CpHeader Classes/CDVLocalStorage.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.hcaa62c4cba1db841^59152d4cba1db841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h003418c2ddffdf42^745"CpHeader Classes/CDVLocalStorage.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVLocalStorage.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"7209FD99-4D87-4B24-8801-93FCD96F2758-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVPlugin.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+s404601420.168957
+e404601420.170936
+r1
+xCpHeader
+xClasses/CDVPlugin.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h118"CpHeader Classes/CDVPlugin.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h6d582b4cba1db841^adbd2b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h003418c2ddffdf42^727"CpHeader Classes/CDVPlugin.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPlugin.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"E543F53D-E831-4DD5-A5E7-E759A63EEEDA-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVPluginResult.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+s404601420.167716
+e404601420.168998
+r1
+xCpHeader
+xClasses/CDVPluginResult.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h130"CpHeader Classes/CDVPluginResult.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.hc5fe2a4cba1db841^d4632b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h003418c2ddffdf42^745"CpHeader Classes/CDVPluginResult.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVPluginResult.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"80779BB5-611F-4877-8967-6B211FD8C1F0-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVScreenOrientationDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
+s404601420.177781
+e404601420.179570
+r1
+xCpHeader
+xClasses/CDVScreenOrientationDelegate.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h156"CpHeader Classes/CDVScreenOrientationDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h0daa2d4cba1db841^01fa2d4cba1db841^---0#0#1#-19%DVTDocumentLocation2@115"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h003418c2ddffdf42^784"CpHeader Classes/CDVScreenOrientationDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVScreenOrientationDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"BF7A31C1-4880-48AB-A12B-5D07A6800689-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVShared.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h
+s404601420.176723
+e404601420.179374
+r1
+xCpHeader
+xClasses/CDVShared.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h118"CpHeader Classes/CDVShared.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h3a902d4cba1db841^08e52d4cba1db841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h003418c2ddffdf42^727"CpHeader Classes/CDVShared.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVShared.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVShared.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"E59851F9-96D7-4760-BC4F-F2EDDE200BD0-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVTimer.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
+s404601420.180582
+e404601420.181695
+r1
+xCpHeader
+xClasses/CDVTimer.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h116"CpHeader Classes/CDVTimer.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h22532e4cba1db841^3c832e4cba1db841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h003418c2ddffdf42^724"CpHeader Classes/CDVTimer.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVTimer.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVTimer.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"CCAA2380-6402-4839-A527-BA7EE5AC8E3C-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVURLProtocol.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
+s404601420.171297
+e404601420.172647
+r1
+xCpHeader
+xClasses/CDVURLProtocol.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h128"CpHeader Classes/CDVURLProtocol.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.hedf02b4cba1db841^ca322c4cba1db841^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h003418c2ddffdf42^742"CpHeader Classes/CDVURLProtocol.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVURLProtocol.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"72CA2D42-5ED7-4C4A-993F-F0F0CC766B0A-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVUserAgentUtil.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h
+s404601420.180436
+e404601420.181526
+r1
+xCpHeader
+xClasses/CDVUserAgentUtil.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h132"CpHeader Classes/CDVUserAgentUtil.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.hfd4b2e4cba1db841^8e782e4cba1db841^---0#0#1#-19%DVTDocumentLocation2@103"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h003418c2ddffdf42^748"CpHeader Classes/CDVUserAgentUtil.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVUserAgentUtil.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"894E5524-52F5-42B6-8CEF-503F9FA519CD-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVViewController.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
+s404601420.171284
+e404601420.172690
+r1
+xCpHeader
+xClasses/CDVViewController.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h134"CpHeader Classes/CDVViewController.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h0ef92b4cba1db841^986c2c4cba1db841^---0#0#1#-19%DVTDocumentLocation2@104"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h003418c2ddffdf42^751"CpHeader Classes/CDVViewController.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVViewController.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"513740DA-111C-4FA7-A883-CBF5CD881480-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVWebViewDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h
+s404601420.180021
+e404601420.181225
+r1
+xCpHeader
+xClasses/CDVWebViewDelegate.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h136"CpHeader Classes/CDVWebViewDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h72312e4cba1db841^3d642e4cba1db841^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h003418c2ddffdf42^754"CpHeader Classes/CDVWebViewDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWebViewDelegate.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"D1E0B1DC-4268-4179-8EF0-BC4560AD2D95-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/CDVWhitelist.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
+s404601420.170040
+e404601420.170880
+r1
+xCpHeader
+xClasses/CDVWhitelist.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h124"CpHeader Classes/CDVWhitelist.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h9e962b4cba1db841^42e92b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@99"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h003418c2ddffdf42^736"CpHeader Classes/CDVWhitelist.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/CDVWhitelist.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"34868852-7B21-4909-A06E-E3AE47A1F416-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/NSArray+Comparisons.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
+s404601420.174643
+e404601420.176363
+r1
+xCpHeader
+xClasses/NSArray+Comparisons.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h138"CpHeader Classes/NSArray+Comparisons.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h81ce2c4cba1db841^13442d4cba1db841^---0#0#1#-19%DVTDocumentLocation2@106"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h003418c2ddffdf42^757"CpHeader Classes/NSArray+Comparisons.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSArray+Comparisons.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"6BC8AF82-7ACF-42E5-85E3-0A30357B8297-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/NSData+Base64.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
+s404601420.166968
+e404601420.168703
+r1
+xCpHeader
+xClasses/NSData+Base64.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h126"CpHeader Classes/NSData+Base64.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h30d72a4cba1db841^05512b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@100"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h003418c2ddffdf42^739"CpHeader Classes/NSData+Base64.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSData+Base64.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"265D2F12-4091-4CB8-81E0-4F107BBFE781-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/NSDictionary+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
+s404601420.166670
+e404601420.168571
+r1
+xCpHeader
+xClasses/NSDictionary+Extensions.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h146"CpHeader Classes/NSDictionary+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h79ca2a4cba1db841^fe272b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h00603575abf2df42^769"CpHeader Classes/NSDictionary+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSDictionary+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"11DE686B-B0F3-413E-881B-5E4AC937E896-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/NSMutableArray+QueueAdditions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+s404601420.169556
+e404601420.170923
+r1
+xCpHeader
+xClasses/NSMutableArray+QueueAdditions.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h158"CpHeader Classes/NSMutableArray+QueueAdditions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h4a7f2b4cba1db841^d3db2b4cba1db841^---0#0#1#-19%DVTDocumentLocation2@116"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h003418c2ddffdf42^787"CpHeader Classes/NSMutableArray+QueueAdditions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/NSMutableArray+QueueAdditions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"B0626DB0-4C34-44EB-901B-529B13090BF8-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CCpHeader Classes/UIDevice+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
+s404601420.173991
+e404601420.176034
+r1
+xCpHeader
+xClasses/UIDevice+Extensions.h
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Copy /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h138"CpHeader Classes/UIDevice+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.hdead2c4cba1db841^ea3d2d4cba1db841^---0#0#1#-19%DVTDocumentLocation2@106"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h003418c2ddffdf42^757"CpHeader Classes/UIDevice+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/Classes/UIDevice+Extensions.h /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova36"BDED6BEF-1EDF-4565-A1A0-097B72EC73C7-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CLibtool /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a normal i386
+s404601420.185772
+e404601420.198442
+r1
+xLibtool
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a
+xnormal
+xi386
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Libtool /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a normal i38694"Libtool /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a normal i386f0a22f4cba1db841^5bcd324cba1db841^---0#0#1#--1041"Libtool /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a normal i386    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only i386 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -filelist /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Objects-normal/i386/Cordova.LinkFileList -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a36"8A695F07-4F73-4400-B6D6-2AAE0DF1D37C-
+bD1F8C16F-3FB7-4EE8-ADF7-D5CDA3F68F2F
+
+CProcessPCH /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.pch CordovaLib_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601383.935844
+e404601384.259056
+r1
+xProcessPCH
+x/var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.pch
+xCordovaLib_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/CordovaLib_Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection32"Precompile CordovaLib_Prefix.pch291"ProcessPCH /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.pch CordovaLib_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerbabaef27ba1db841^ca534228ba1db841^---0#0#1#-19%DVTDocumentLocation2@86"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/CordovaLib_Prefix.pch0000000000000000^3710"ProcessPCH /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.pch CordovaLib_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/Cordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/build/CordovaLib.build/Debug-iphonesimulator/CordovaLib.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -DDEBUG --serialize-diagnostics /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.d -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/CordovaLib/CordovaLib_Prefix.pch -o /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/CordovaLib_Prefix-bbykltdfmdqdmrfvqxdkolwgsyoa/CordovaLib_Prefix.pch.pch36"66144125-B364-4771-A822-37C8F0A49FAA-
+bDC1FF188-FD10-421A-B875-068602A45F64
+

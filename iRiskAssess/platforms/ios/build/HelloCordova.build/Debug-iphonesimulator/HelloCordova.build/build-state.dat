@@ -1,0 +1,733 @@
+THelloCordova
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Info.plist /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist
+cPhaseScriptExecution Copy\ www\ directory /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Script-304B58A110DAC018002A0835.sh
+cCpResource HelloCordova/config.xml build/emulator/HelloCordova.app/config.xml
+cCpResource HelloCordova/Resources/icons/icon-72.png build/emulator/HelloCordova.app/icon-72.png
+cCpResource HelloCordova/Resources/icons/icon.png build/emulator/HelloCordova.app/icon.png
+cCpResource HelloCordova/Resources/icons/icon@2x.png build/emulator/HelloCordova.app/icon@2x.png
+cCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/en.lproj/Localizable.strings HelloCordova/Resources/en.lproj/Localizable.strings
+cCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/es.lproj/Localizable.strings HelloCordova/Resources/es.lproj/Localizable.strings
+cCompileXIB /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.xib
+cCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/de.lproj/Localizable.strings HelloCordova/Resources/de.lproj/Localizable.strings
+cCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/se.lproj/Localizable.strings HelloCordova/Resources/se.lproj/Localizable.strings
+cCpResource HelloCordova/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/HelloCordova.app/Default-Landscape@2x~ipad.png
+cCpResource HelloCordova/Resources/splash/Default-Landscape~ipad.png build/emulator/HelloCordova.app/Default-Landscape~ipad.png
+cCpResource HelloCordova/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png
+cCpResource HelloCordova/Resources/splash/Default-Portrait~ipad.png build/emulator/HelloCordova.app/Default-Portrait~ipad.png
+cCpResource HelloCordova/Resources/splash/Default@2x~iphone.png build/emulator/HelloCordova.app/Default@2x~iphone.png
+cCpResource HelloCordova/Resources/splash/Default~iphone.png build/emulator/HelloCordova.app/Default~iphone.png
+cCpResource HelloCordova/Resources/splash/Default-568h@2x~iphone.png build/emulator/HelloCordova.app/Default-568h@2x~iphone.png
+cCpResource HelloCordova/Resources/icons/icon-72@2x.png build/emulator/HelloCordova.app/icon-72@2x.png
+cProcessPCH /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch.pch HelloCordova/HelloCordova-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova normal i386
+cGenerateDSYMFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app.dSYM /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova
+cTouch /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+c00000000525642F10000000000000176
+t1381384945
+s374
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
+c00000000526BCEBB00000000000003B5
+t1382796987
+s949
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000526BCEC600000000000001A0
+t1382796998
+s416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
+c00000000526BCEC80000000000059350
+t1382797000
+s365392
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000526BCECA0000000000445870
+t1382797002
+s4479088
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c00000000526BCECA00000000000EC820
+t1382797002
+s968736
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+c00000000526BCECE00000000001BA530
+t1382797006
+s1811760
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m
+c00000000526D828000000000000013AF
+t1382908544
+s5039
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m
+c00000000526D8280000000000000126D
+t1382908544
+s4717
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.xib
+c00000000526D82800000000000001759
+t1382908544
+s5977
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist
+c00000000526D82C70000000000000740
+t1382908615
+s1856
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Prefix.pch
+c00000000526D828000000000000003C9
+t1382908544
+s969
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m
+c00000000526D82C30000000000008500
+t1382908611
+s34048
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m
+c00000000526D829F0000000000002136
+t1382908575
+s8502
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/de.lproj/Localizable.strings
+c00000000526D828000000000000004BF
+t1382908544
+s1215
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/en.lproj/Localizable.strings
+c00000000526D828000000000000004AA
+t1382908544
+s1194
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/es.lproj/Localizable.strings
+c00000000526D828000000000000004B7
+t1382908544
+s1207
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon-72.png
+c00000000526D82800000000000001350
+t1382908544
+s4944
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon-72@2x.png
+c00000000526D82800000000000002DBA
+t1382908544
+s11706
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon.png
+c00000000526D82800000000000000F3E
+t1382908544
+s3902
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon@2x.png
+c00000000526D82800000000000001EBD
+t1382908544
+s7869
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/se.lproj/Localizable.strings
+c00000000526D828000000000000004AB
+t1382908544
+s1195
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-568h@2x~iphone.png
+c00000000526D828000000000000085B1
+t1382908544
+s34225
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Landscape@2x~ipad.png
+c00000000526D82800000000000012DF4
+t1382908544
+s77300
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Landscape~ipad.png
+c00000000526D82800000000000008877
+t1382908544
+s34935
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Portrait@2x~ipad.png
+c00000000526D82800000000000012B02
+t1382908544
+s76546
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Portrait~ipad.png
+c00000000526D828000000000000085E6
+t1382908544
+s34278
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default@2x~iphone.png
+c00000000526D82800000000000007323
+t1382908544
+s29475
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default~iphone.png
+c00000000526D8280000000000000289A
+t1382908544
+s10394
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/config.xml
+c00000000526D82C800000000000006A5
+t1382908616
+s1701
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m
+c00000000526D8280000000000000045E
+t1382908544
+s1118
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o
+t1382908620
+s77560
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o
+t1382908620
+s193308
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o
+t1382908620
+s72780
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/HelloCordova.LinkFileList
+c00000000526D82CC00000000000002E7
+t1382908620
+s743
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o
+t1382908620
+s53520
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o
+t1382908620
+s3076
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Script-304B58A110DAC018002A0835.sh
+c00000000526D82CC000000000000002D
+t1382908620
+s45
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app
+t1382908620
+s748
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app.dSYM
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-568h@2x~iphone.png
+t1382908620
+s34225
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Landscape@2x~ipad.png
+t1382908620
+s77300
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Landscape~ipad.png
+t1382908620
+s34935
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png
+t1382908620
+s76546
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Portrait~ipad.png
+t1382908620
+s34278
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default@2x~iphone.png
+t1382908620
+s29475
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default~iphone.png
+t1382908620
+s10394
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova
+t1382908620
+s396496
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Info.plist
+t1382908620
+s1077
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/MainViewController.nib
+t1382908620
+s1332
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/PkgInfo
+t2
+s0
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/config.xml
+t1382908620
+s1701
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/de.lproj/Localizable.strings
+t1382908620
+s280
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/en.lproj/Localizable.strings
+t1382908620
+s166
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/es.lproj/Localizable.strings
+t1382908620
+s334
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon-72.png
+t1382908620
+s4944
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon-72@2x.png
+t1382908620
+s11706
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon.png
+t1382908620
+s3902
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon@2x.png
+t1382908620
+s7869
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/se.lproj/Localizable.strings
+t1382908620
+s283
+
+N/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a
+c00000000526D82CC00000000000DE008
+t1382908620
+s909320
+
+N/var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch.pch
+t1382908586
+s5342556
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesb2bc334cba1db841^8864344cba1db841^---0#1#1#--18"Check dependencies36"B9044DD3-C79D-466A-8A6D-13AE8B001FD0-
+
+CCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601420.424089
+e404601420.517621
+r1
+xCompileC
+xbuild/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m211"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o HelloCordova/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilere8be6c4cba1db841^cb83844cba1db841^---0#0#1#-19%DVTDocumentLocation2@88"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m0000000000000000^3816"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o HelloCordova/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/usr/local/lib/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/UninstalledProducts/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/AppDelegate.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o36"D38D8840-E188-448D-A837-DC3F66229018-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601420.447527
+e404601420.594214
+r1
+xCompileC
+xbuild/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWebViewDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVUserAgentUtil.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m251"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler6cb2724cba1db841^ac1e984cba1db841^---0#0#1#-19%DVTDocumentLocation2@124"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m0000000000000000^3904"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/usr/local/lib/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/UninstalledProducts/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.inappbrowser/CDVInAppBrowser.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o36"0CEB4068-F923-4FE1-81FD-622B58ACA1D1-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601420.425765
+e404601420.512163
+r1
+xCompileC
+xbuild/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m251"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler5c1c6d4cba1db841^0d1d834cba1db841^---0#0#1#-19%DVTDocumentLocation2@124"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m0000000000000000^3904"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/usr/local/lib/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/UninstalledProducts/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o36"6BED7590-4714-4F00-8094-0A3DE19C65DF-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601420.424765
+e404601420.503096
+r1
+xCompileC
+xbuild/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m225"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o HelloCordova/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilere8f46c4cba1db841^26df804cba1db841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m0000000000000000^3858"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o HelloCordova/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/usr/local/lib/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/UninstalledProducts/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o36"AC2EE777-187D-409C-B95B-CE7CC69F67DE-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s404601420.423745
+e404601420.447198
+r1
+xCompileC
+xbuild/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m189"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o HelloCordova/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler4faf6c4cba1db841^79ca724cba1db841^---0#0#1#-19%DVTDocumentLocation2@73"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m0000000000000000^3758"CompileC build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o HelloCordova/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=5.0 -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-generated-files.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-own-target-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-all-target-headers.hmap -iquote /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-project-headers.hmap -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/usr/local/lib/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/UninstalledProducts/include -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources/i386 -I/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -include /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch -MMD -MT dependencies -MF /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.dia -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/main.m -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o36"78162176-D5D6-4ADC-BEE8-9FDEC82C63DF-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCompileXIB /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.xib
+s404601420.405502
+e404601420.422332
+r1
+xCompileXIB
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compiling /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.xib54"CompileXIB HelloCordova/Classes/MainViewController.xib92ea674cba1db841^ee226c4cba1db841^---0#0#1#-19%DVTDocumentLocation2@97"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.xib0000000000000000^882"CompileXIB HelloCordova/Classes/MainViewController.xib    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 5.0 --output-format human-readable-text --compile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/MainViewController.nib /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Classes/MainViewController.xib36"C159B723-0EB0-46BC-B0BF-E06A1AB326B3-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/de.lproj/Localizable.strings HelloCordova/Resources/de.lproj/Localizable.strings
+s404601420.406047
+e404601420.408967
+r1
+xCopyStringsFile
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/de.lproj/Localizable.strings
+xHelloCordova/Resources/de.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy HelloCordova/Resources/de.lproj/Localizable.strings128"CopyStringsFile build/emulator/HelloCordova.app/de.lproj/Localizable.strings HelloCordova/Resources/de.lproj/Localizable.strings0c05684cba1db841^0abb684cba1db841^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/de.lproj/Localizable.strings0000000000000000^691"CopyStringsFile build/emulator/HelloCordova.app/de.lproj/Localizable.strings HelloCordova/Resources/de.lproj/Localizable.strings    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/de.lproj -- HelloCordova/Resources/de.lproj/Localizable.strings36"A40AA6D4-A16A-4253-A3CE-5B1907877456-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/en.lproj/Localizable.strings HelloCordova/Resources/en.lproj/Localizable.strings
+s404601420.404655
+e404601420.407180
+r1
+xCopyStringsFile
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/en.lproj/Localizable.strings
+xHelloCordova/Resources/en.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy HelloCordova/Resources/en.lproj/Localizable.strings128"CopyStringsFile build/emulator/HelloCordova.app/en.lproj/Localizable.strings HelloCordova/Resources/en.lproj/Localizable.strings63b7674cba1db841^2f69684cba1db841^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/en.lproj/Localizable.strings0000000000000000^691"CopyStringsFile build/emulator/HelloCordova.app/en.lproj/Localizable.strings HelloCordova/Resources/en.lproj/Localizable.strings    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/en.lproj -- HelloCordova/Resources/en.lproj/Localizable.strings36"EE22573E-CF99-49ED-BE32-4E3E35F39DA6-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/es.lproj/Localizable.strings HelloCordova/Resources/es.lproj/Localizable.strings
+s404601420.405125
+e404601420.408655
+r1
+xCopyStringsFile
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/es.lproj/Localizable.strings
+xHelloCordova/Resources/es.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy HelloCordova/Resources/es.lproj/Localizable.strings128"CopyStringsFile build/emulator/HelloCordova.app/es.lproj/Localizable.strings HelloCordova/Resources/es.lproj/Localizable.strings8ac9674cba1db841^1991684cba1db841^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/es.lproj/Localizable.strings0000000000000000^691"CopyStringsFile build/emulator/HelloCordova.app/es.lproj/Localizable.strings HelloCordova/Resources/es.lproj/Localizable.strings    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/es.lproj -- HelloCordova/Resources/es.lproj/Localizable.strings36"03EA9AB0-B389-4F49-AA9F-B2BAD3CA9AB0-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCopyStringsFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/se.lproj/Localizable.strings HelloCordova/Resources/se.lproj/Localizable.strings
+s404601420.407378
+e404601420.410070
+r1
+xCopyStringsFile
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/se.lproj/Localizable.strings
+xHelloCordova/Resources/se.lproj/Localizable.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Copy HelloCordova/Resources/se.lproj/Localizable.strings128"CopyStringsFile build/emulator/HelloCordova.app/se.lproj/Localizable.strings HelloCordova/Resources/se.lproj/Localizable.stringsd55e684cba1db841^d6fc684cba1db841^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/se.lproj/Localizable.strings0000000000000000^691"CopyStringsFile build/emulator/HelloCordova.app/se.lproj/Localizable.strings HelloCordova/Resources/se.lproj/Localizable.strings    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/se.lproj -- HelloCordova/Resources/se.lproj/Localizable.strings36"547F95FC-22C7-49E9-AC45-68EA43365E0F-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/icons/icon-72.png build/emulator/HelloCordova.app/icon-72.png
+s404601420.403293
+e404601420.404793
+r1
+xCpResource
+xHelloCordova/Resources/icons/icon-72.png
+xbuild/emulator/HelloCordova.app/icon-72.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection48"Copy build/emulator/HelloCordova.app/icon-72.png95"CpResource HelloCordova/Resources/icons/icon-72.png build/emulator/HelloCordova.app/icon-72.pngb54f674cba1db841^fe9b674cba1db841^---0#0#1#-19%DVTDocumentLocation2@97"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon-72.png003418c2ddffdf42^704"CpResource HelloCordova/Resources/icons/icon-72.png build/emulator/HelloCordova.app/icon-72.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon-72.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"9B029BCA-A8E5-45F7-B4F5-15F9B138417F-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/icons/icon-72@2x.png build/emulator/HelloCordova.app/icon-72@2x.png
+s404601420.413924
+e404601420.414851
+r1
+xCpResource
+xHelloCordova/Resources/icons/icon-72@2x.png
+xbuild/emulator/HelloCordova.app/icon-72@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Copy build/emulator/HelloCordova.app/icon-72@2x.png101"CpResource HelloCordova/Resources/icons/icon-72@2x.png build/emulator/HelloCordova.app/icon-72@2x.png5b0c6a4cba1db841^9f3a6a4cba1db841^---0#0#1#-19%DVTDocumentLocation2@100"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon-72@2x.png003418c2ddffdf42^713"CpResource HelloCordova/Resources/icons/icon-72@2x.png build/emulator/HelloCordova.app/icon-72@2x.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon-72@2x.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"51510C1F-0BDD-4D83-B625-B767451DF9F0-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/icons/icon.png build/emulator/HelloCordova.app/icon.png
+s404601420.403408
+e404601420.404712
+r1
+xCpResource
+xHelloCordova/Resources/icons/icon.png
+xbuild/emulator/HelloCordova.app/icon.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Copy build/emulator/HelloCordova.app/icon.png89"CpResource HelloCordova/Resources/icons/icon.png build/emulator/HelloCordova.app/icon.pngd15c674cba1db841^6398674cba1db841^---0#0#1#-19%DVTDocumentLocation2@94"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon.png003418c2ddffdf42^695"CpResource HelloCordova/Resources/icons/icon.png build/emulator/HelloCordova.app/icon.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"6DF73C75-C886-4F18-AB08-2B6398215C98-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/icons/icon@2x.png build/emulator/HelloCordova.app/icon@2x.png
+s404601420.403960
+e404601420.404894
+r1
+xCpResource
+xHelloCordova/Resources/icons/icon@2x.png
+xbuild/emulator/HelloCordova.app/icon@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection48"Copy build/emulator/HelloCordova.app/icon@2x.png95"CpResource HelloCordova/Resources/icons/icon@2x.png build/emulator/HelloCordova.app/icon@2x.png357c674cba1db841^39b9674cba1db841^---0#0#1#-19%DVTDocumentLocation2@97"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/icon@2x.png003418c2ddffdf42^704"CpResource HelloCordova/Resources/icons/icon@2x.png build/emulator/HelloCordova.app/icon@2x.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/icons/icon@2x.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"A89842D3-8722-4BEC-8368-BC2B29493BD9-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/splash/Default-568h@2x~iphone.png build/emulator/HelloCordova.app/Default-568h@2x~iphone.png
+s404601420.413463
+e404601420.414725
+r1
+xCpResource
+xHelloCordova/Resources/splash/Default-568h@2x~iphone.png
+xbuild/emulator/HelloCordova.app/Default-568h@2x~iphone.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy build/emulator/HelloCordova.app/Default-568h@2x~iphone.png126"CpResource HelloCordova/Resources/splash/Default-568h@2x~iphone.png build/emulator/HelloCordova.app/Default-568h@2x~iphone.png0dfb694cba1db841^59336a4cba1db841^---0#0#1#-19%DVTDocumentLocation2@112"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-568h@2x~iphone.png003418c2ddffdf42^751"CpResource HelloCordova/Resources/splash/Default-568h@2x~iphone.png build/emulator/HelloCordova.app/Default-568h@2x~iphone.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-568h@2x~iphone.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"E7929504-1C0A-4E43-BC5D-5B19B7093712-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/HelloCordova.app/Default-Landscape@2x~ipad.png
+s404601420.409641
+e404601420.411538
+r1
+xCpResource
+xHelloCordova/Resources/splash/Default-Landscape@2x~ipad.png
+xbuild/emulator/HelloCordova.app/Default-Landscape@2x~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Copy build/emulator/HelloCordova.app/Default-Landscape@2x~ipad.png132"CpResource HelloCordova/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/HelloCordova.app/Default-Landscape@2x~ipad.pngf4f9684cba1db841^ab5b694cba1db841^---0#0#1#-19%DVTDocumentLocation2@115"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Landscape@2x~ipad.png003418c2ddffdf42^760"CpResource HelloCordova/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/HelloCordova.app/Default-Landscape@2x~ipad.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Landscape@2x~ipad.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"A1DE93A4-2B41-4249-BD19-C557A4EF23E9-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/splash/Default-Landscape~ipad.png build/emulator/HelloCordova.app/Default-Landscape~ipad.png
+s404601420.409649
+e404601420.411539
+r1
+xCpResource
+xHelloCordova/Resources/splash/Default-Landscape~ipad.png
+xbuild/emulator/HelloCordova.app/Default-Landscape~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy build/emulator/HelloCordova.app/Default-Landscape~ipad.png126"CpResource HelloCordova/Resources/splash/Default-Landscape~ipad.png build/emulator/HelloCordova.app/Default-Landscape~ipad.png83f8684cba1db841^b668694cba1db841^---0#0#1#-19%DVTDocumentLocation2@112"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Landscape~ipad.png003418c2ddffdf42^751"CpResource HelloCordova/Resources/splash/Default-Landscape~ipad.png build/emulator/HelloCordova.app/Default-Landscape~ipad.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Landscape~ipad.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"835BE69D-1E28-4B72-BC54-84C7206C46B6-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png
+s404601420.410360
+e404601420.411914
+r1
+xCpResource
+xHelloCordova/Resources/splash/Default-Portrait@2x~ipad.png
+xbuild/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Copy build/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png130"CpResource HelloCordova/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png8e3f694cba1db841^c574694cba1db841^---0#0#1#-19%DVTDocumentLocation2@114"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png003418c2ddffdf42^757"CpResource HelloCordova/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/HelloCordova.app/Default-Portrait@2x~ipad.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Portrait@2x~ipad.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"FEC2B104-853C-4725-970D-D699C188FB42-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/splash/Default-Portrait~ipad.png build/emulator/HelloCordova.app/Default-Portrait~ipad.png
+s404601420.411996
+e404601420.413177
+r1
+xCpResource
+xHelloCordova/Resources/splash/Default-Portrait~ipad.png
+xbuild/emulator/HelloCordova.app/Default-Portrait~ipad.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection62"Copy build/emulator/HelloCordova.app/Default-Portrait~ipad.png124"CpResource HelloCordova/Resources/splash/Default-Portrait~ipad.png build/emulator/HelloCordova.app/Default-Portrait~ipad.pngd68f694cba1db841^6dc6694cba1db841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default-Portrait~ipad.png003418c2ddffdf42^748"CpResource HelloCordova/Resources/splash/Default-Portrait~ipad.png build/emulator/HelloCordova.app/Default-Portrait~ipad.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default-Portrait~ipad.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"F9D8715F-863B-4DA1-8E26-F6ABF508B5BD-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/splash/Default@2x~iphone.png build/emulator/HelloCordova.app/Default@2x~iphone.png
+s404601420.412317
+e404601420.413685
+r1
+xCpResource
+xHelloCordova/Resources/splash/Default@2x~iphone.png
+xbuild/emulator/HelloCordova.app/Default@2x~iphone.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/emulator/HelloCordova.app/Default@2x~iphone.png116"CpResource HelloCordova/Resources/splash/Default@2x~iphone.png build/emulator/HelloCordova.app/Default@2x~iphone.png22a5694cba1db841^e6e8694cba1db841^---0#0#1#-19%DVTDocumentLocation2@107"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default@2x~iphone.png003418c2ddffdf42^736"CpResource HelloCordova/Resources/splash/Default@2x~iphone.png build/emulator/HelloCordova.app/Default@2x~iphone.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default@2x~iphone.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"91927712-61DA-4718-94F3-0BA0EF234C98-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/Resources/splash/Default~iphone.png build/emulator/HelloCordova.app/Default~iphone.png
+s404601420.412624
+e404601420.413844
+r1
+xCpResource
+xHelloCordova/Resources/splash/Default~iphone.png
+xbuild/emulator/HelloCordova.app/Default~iphone.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Copy build/emulator/HelloCordova.app/Default~iphone.png110"CpResource HelloCordova/Resources/splash/Default~iphone.png build/emulator/HelloCordova.app/Default~iphone.png6bbb694cba1db841^d4f0694cba1db841^---0#0#1#-19%DVTDocumentLocation2@104"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Default~iphone.png003418c2ddffdf42^727"CpResource HelloCordova/Resources/splash/Default~iphone.png build/emulator/HelloCordova.app/Default~iphone.png    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/Resources/splash/Default~iphone.png /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"B63FFFA2-BA70-4F8C-905D-6770CD0BAA04-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CCpResource HelloCordova/config.xml build/emulator/HelloCordova.app/config.xml
+s404601420.403143
+e404601420.404369
+r1
+xCpResource
+xHelloCordova/config.xml
+xbuild/emulator/HelloCordova.app/config.xml
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/emulator/HelloCordova.app/config.xml77"CpResource HelloCordova/config.xml build/emulator/HelloCordova.app/config.xml0f47674cba1db841^8b87674cba1db841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/config.xml003418c2ddffdf42^669"CpResource HelloCordova/config.xml build/emulator/HelloCordova.app/config.xml    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/config.xml /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"F2F02982-A097-48B3-AF4B-21C629A25331-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CGenerateDSYMFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app.dSYM /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova
+s404601420.645298
+e404601420.684131
+r1
+xGenerateDSYMFile
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app.dSYM
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Generate /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app.dSYM98"GenerateDSYMFile build/emulator/HelloCordova.app.dSYM build/emulator/HelloCordova.app/HelloCordova1041a54cba1db841^d122af4cba1db841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app.dSYM003418c2ddffdf42^707"GenerateDSYMFile build/emulator/HelloCordova.app.dSYM build/emulator/HelloCordova.app/HelloCordova    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app.dSYM36"B166C5EF-C59E-42D0-90CA-3BBBE6597944-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CLd /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova normal i386
+s404601420.595487
+e404601420.644505
+r1
+xLd
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova
+xnormal
+xi386
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/HelloCordova.LinkFileList
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/crt1.o
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/main.o
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/AppDelegate.o
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/MainViewController.o
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVSplashScreen.o
+d/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/CDVInAppBrowser.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphonesimulator.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libcorecrypto.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_asl.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_configuration.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_malloc.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_platform.dylib
+d/usr/lib/system/libsystem_pthread.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Link /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova59"Ld build/emulator/HelloCordova.app/HelloCordova normal i3868787984cba1db841^bdfea44cba1db841^---0#0#1#--1781"Ld build/emulator/HelloCordova.app/HelloCordova normal i386    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -F/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator -filelist /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/HelloCordova.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -force_load /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a -ObjC -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -framework AssetsLibrary /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a -framework CoreGraphics -framework MobileCoreServices -framework CoreLocation -Xlinker -dependency_info -Xlinker /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/HelloCordova_dependency_info.dat -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/HelloCordova36"A319196A-54CC-4679-8EC1-02503E5C3DA0-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CPhaseScriptExecution Copy\ www\ directory /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Script-304B58A110DAC018002A0835.sh
+s404601420.208129
+e404601420.402704
+r1
+xPhaseScriptExecution
+xCopy www directory
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Script-304B58A110DAC018002A0835.sh
+o
+oreal	0m0.171s
+ouser	0m0.070s
+osys	0m0.100s
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'142"PhaseScriptExecution Copy\ www\ directory build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Script-304B58A110DAC018002A0835.sh7e55364cba1db841^7121674cba1db841^-42"real	0m0.171suser	0m0.070ssys	0m0.100s3(21%IDEActivityLogMessage2@14"real	0m0.171s-404601420#1#14#-0#-----2@14"user	0m0.070s-404601420#15#14#-0#-----2@13"sys	0m0.100s-404601420#29#13#-0#-----0#0#1#--22377"PhaseScriptExecution Copy\ www\ directory build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Script-304B58A110DAC018002A0835.sh    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv ACTION build    setenv AD_HOC_CODE_SIGNING_ALLOWED NO    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER Andy    setenv ALWAYS_SEARCH_USER_PATHS NO    setenv ALWAYS_USE_SEPARATE_HEADERMAPS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD i386    setenv ARCHS_STANDARD_32_64_BIT i386    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv ARCHS_STANDARD_INCLUDING_64_BIT "i386 x86_64"    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build    setenv BUILD_ROOT /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator    setenv CACHE_ROOT /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode    setenv CCHROOT /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLANG_ENABLE_OBJC_ARC YES    setenv CLANG_WARN_BOOL_CONVERSION YES    setenv CLANG_WARN_CONSTANT_CONVERSION YES    setenv CLANG_WARN_EMPTY_BODY YES    setenv CLANG_WARN_ENUM_CONVERSION YES    setenv CLANG_WARN_INT_CONVERSION YES    setenv CLANG_WARN__DUPLICATE_METHOD_MATCH YES    setenv CLASS_FILE_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app    setenv CODE_SIGNING_ALLOWED NO    setenv CODE_SIGN_CONTEXT_CLASS XCiPhoneSimulatorCodeSignContext    setenv COLOR_DIAGNOSTICS NO    setenv COMBINE_HIDPI_IMAGES NO    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/CompositeSDKs    setenv COMPRESS_PNG_FILES YES    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator    setenv CONFIGURATION_TEMP_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator    setenv CONTENTS_FOLDER_PATH HelloCordova.app    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CREATE_INFOPLIST_SECTION_IN_BINARY NO    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf-with-dsym    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEFAULT_KEXT_INSTALL_PATH /System/Library/Extensions    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH HelloCordova.app/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/HelloCordova.dst    setenv DT_TOOLCHAIN_DIR /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    setenv DWARF_DSYM_FILE_NAME HelloCordova.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator    setenv EFFECTIVE_PLATFORM_NAME -iphonesimulator    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH HelloCordova.app/Executables    setenv EXECUTABLE_FOLDER_PATH HelloCordova.app    setenv EXECUTABLE_NAME HelloCordova    setenv EXECUTABLE_PATH HelloCordova.app/HelloCordova    setenv FILE_LIST /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH HelloCordova.app/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME HelloCordova.app    setenv GCC3_VERSION 3.3    setenv GCC_C_LANGUAGE_STANDARD c99    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OBJC_LEGACY_DISPATCH YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER HelloCordova/HelloCordova-Prefix.pch    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_THUMB_SUPPORT NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_VERSION_IDENTIFIER com_apple_compilers_llvm_clang_1_0    setenv GCC_WARN_ABOUT_RETURN_TYPE YES    setenv GCC_WARN_UNDECLARED_SELECTOR YES    setenv GCC_WARN_UNINITIALIZED_AUTOS YES    setenv GCC_WARN_UNUSED_FUNCTION YES    setenv GCC_WARN_UNUSED_VARIABLE YES    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/include \"/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/usr/local/lib/include\" \"/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/UninstalledProducts/include\" \"/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator\""    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE HelloCordova/HelloCordova-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT binary    setenv INFOPLIST_PATH HelloCordova.app/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH HelloCordova.app/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/HelloCordova.dst/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER Andy    setenv INSTALL_PATH /Applications    setenv INSTALL_ROOT /tmp/HelloCordova.dst    setenv IPHONEOS_DEPLOYMENT_TARGET 5.0    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH HelloCordova.app/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_DEPENDENCY_INFO_FILE /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/HelloCordova_dependency_info.dat    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/HelloCordova-LinkMap-normal-i386.txt    setenv LD_NO_PIE NO    setenv LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER YES    setenv LEGACY_DEVELOPER_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_KEXT_INSTALL_PATH /Library/Extensions    setenv LIBRARY_SEARCH_PATHS "/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator "    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal/i386/HelloCordova.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH HelloCordova.app/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 13A603    setenv MAC_OS_X_VERSION_ACTUAL 1090    setenv MAC_OS_X_VERSION_MAJOR 1090    setenv MAC_OS_X_VERSION_MINOR 0900    setenv MODULE_CACHE_DIR /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/ModuleCache    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJC_ABI_VERSION 2    setenv OBJECT_FILE_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Objects-normal    setenv OBJROOT /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build    setenv ONLY_ACTIVE_ARCH YES    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_LDFLAGS "-weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -force_load \"/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/libCordova.a\" -ObjC"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH HelloCordova.app/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS objective-c    setenv PKGINFO_FILE_PATH /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/PkgInfo    setenv PKGINFO_PATH HelloCordova.app/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr    setenv PLATFORM_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform    setenv PLATFORM_NAME iphonesimulator    setenv PLATFORM_PREFERRED_ARCH i386    setenv PLATFORM_PRODUCT_BUILD_VERSION 11B508    setenv PLATFORM_VERSION_AVAILABILITY_H_FORMAT 70000    setenv PLIST_FILE_OUTPUT_FORMAT binary    setenv PLUGINS_FOLDER_PATH HelloCordova.app/PlugIns    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH HelloCordova.app/PrivateHeaders    setenv PRODUCT_NAME HelloCordova    setenv PRODUCT_SETTINGS_PATH /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT HelloCordova    setenv PROJECT_DERIVED_FILE_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/DerivedSources    setenv PROJECT_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PROJECT_FILE_PATH /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova.xcodeproj    setenv PROJECT_NAME HelloCordova    setenv PROJECT_TEMP_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build    setenv PROJECT_TEMP_ROOT /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build    setenv PUBLIC_HEADERS_FOLDER_PATH HelloCordova.app/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator "    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH HelloCordova.app/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk    setenv SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk    setenv SDK_NAME iphonesimulator7.0    setenv SDK_PRODUCT_BUILD_VERSION 11B508    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHALLOW_BUNDLE YES    setenv SHARED_DERIVED_FILE_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH HelloCordova.app/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH HelloCordova.app/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv SRCROOT /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv STRINGS_FILE_OUTPUT_ENCODING binary    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_DEVICE_FAMILIES "1 2"    setenv SUPPORTED_PLATFORMS "iphonesimulator iphoneos"    setenv SYMROOT /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Applications/Xcode.app/Contents/Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Applications/Xcode.app/Contents/Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_KEXT_INSTALL_PATH /System/Library/Extensions    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETED_DEVICE_FAMILY 1,2    setenv TARGETNAME HelloCordova    setenv TARGET_BUILD_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator    setenv TARGET_NAME HelloCordova    setenv TARGET_TEMP_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build    setenv TEMP_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build    setenv TEMP_FILES_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build    setenv TEMP_FILE_DIR /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build    setenv TEMP_ROOT /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH HelloCordova.app    setenv UNSTRIPPED_PRODUCT NO    setenv USER Andy    setenv USER_APPS_DIR /Users/Andy/Applications    setenv USER_LIBRARY_DIR /Users/Andy/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS i386    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH HelloCordova.app/version.plist    setenv VERSION_INFO_BUILDER Andy    setenv VERSION_INFO_FILE HelloCordova_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:HelloCordova  PROJECT:HelloCordova-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME HelloCordova.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Applications/Xcode.app/Contents/Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 5A2053    setenv XCODE_VERSION_ACTUAL 0501    setenv XCODE_VERSION_MAJOR 0500    setenv XCODE_VERSION_MINOR 0500    setenv XPCSERVICES_FOLDER_PATH HelloCordova.app/XPCServices    setenv YACC yacc    setenv arch i386    setenv variant normal    /bin/sh -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/HelloCordova.build/Debug-iphonesimulator/HelloCordova.build/Script-304B58A110DAC018002A0835.sh36"DABED162-42A2-4214-B30D-751A7A7557EF-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CProcessInfoPlistFile /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Info.plist /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist
+s404601420.205282
+e404601420.206731
+r1
+xProcessInfoPlistFile
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Info.plist
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Process /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist100"ProcessInfoPlistFile build/emulator/HelloCordova.app/Info.plist HelloCordova/HelloCordova-Info.plistd49c344cba1db841^a7ec344cba1db841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist0000000000000000^797"ProcessInfoPlistFile build/emulator/HelloCordova.app/Info.plist HelloCordova/HelloCordova-Info.plist    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    builtin-infoPlistUtility /Users/Andy/git/Risk/iRiskAssess/platforms/ios/HelloCordova/HelloCordova-Info.plist -genpkginfo /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app/Info.plist36"B7907650-8D63-410E-99BD-8BB0C7171B6C-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
+CProcessPCH /var/folders/7h/kkt395ds623fz63f16m38_780000gn/C/com.apple.DeveloperTools/5.0.1-5A2053/Xcode/SharedPrecompiledHeaders/HelloCordova-Prefix-dogsfagsfqbpvxatlnjpwfvcwbwr/HelloCordova-Prefix.pch.pch HelloCordova/HelloCordova-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CTouch /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app
+s404601420.685083
+e404601420.688861
+r1
+xTouch
+x/Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app37"Touch build/emulator/HelloCordova.app506eaf4cba1db841^4b5bb04cba1db841^---0#0#1#--468"Touch build/emulator/HelloCordova.app    cd /Users/Andy/git/Risk/iRiskAssess/platforms/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin"    /usr/bin/touch -c /Users/Andy/git/Risk/iRiskAssess/platforms/ios/build/emulator/HelloCordova.app36"F4952E53-20CA-499B-ADA1-6C4AD082812A-
+bE0EBDACE-0F4E-4CFA-B16F-F27651C5ED2B
+
